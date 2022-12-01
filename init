@@ -1,0 +1,45 @@
+#!/bin/bash
+# AUR-Database Init
+
+onekeyMkdir() {
+    if [ ! -f pkglist.txt ]; then
+        onekeyUpdateList
+    fi
+    for ((i_mkdir = 1; i_mkdir <= $(cat pkglist.txt | wc -l); i_mkdir++)); do
+        pkgname=$(cat pkglist.txt | awk 'NR=='"$i_mkdir"'{print}')
+        save_link="./package/"$(echo $pkgname | cut -c1)"/"$(echo $pkgname | awk -F- '{print $1}')"/"$pkgname
+        mkdir -p $save_link
+        echo "Y:" $save_link
+    done
+}
+
+onekeyUpdateList() {
+    ./ctl-git-aur --getbranch >pkglist.txt
+}
+
+onekeyGetAllPkgCfg() {
+    for ((i_ga = 1; i_ga <= $(cat pkglist.txt | wc -l); i_ga++)); do
+    onekeyGetOnePkgCfg $(cat pkglist.txt | awk 'NR=='"$i_ga"'{print}')
+    done
+}
+
+onekeyGetOnePkgCfg() {
+    ./ctl-git-aur --setbranch $1
+    var_list="`cat ../aur-list/PKGBUILD | grep "=" | grep -v "make " | grep -v " " | grep -v "^#" `"
+    for ((i_var= 1; i_var<= $(echo "$var_list" | wc -l ); i_var++)); do
+        var=$(echo "$var_list" | awk 'NR=='"$i_var"'{print}')
+        save_link="./package/"$(echo $1 | cut -c1)"/"$(echo $1 | awk -F- '{print $1}')"/"$1"/"`echo $var|awk -F= '{print $1}'`
+        #echo $save_link
+        echo ${var#*=} > $save_link
+    done
+    function_list="`cat ../aur-list/PKGBUILD | grep "()" | sed 's#() {##g' | grep -v "^#" `"
+    for ((i_func= 1; i_func<= $(echo "$function_list" | wc -l ); i_func++)); do
+        a_function=$(echo "$function_list" | awk 'NR=='"$i_func"'{print}')
+        save_link="./package/"$(echo $1 | cut -c1)"/"$(echo $1 | awk -F- '{print $1}')"/"$1"/f_"`echo $a_function `
+        #echo $save_link
+        echo "`cat ../aur-list/PKGBUILD | sed -n '/'"$a_function"'()/,/^}/p'| `" > $save_link
+    done
+}
+./ctl-git-aur || exit 1
+onekeyMkdir
+onekeyGetAllPkgCfg

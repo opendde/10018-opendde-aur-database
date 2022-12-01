@@ -1,0 +1,34 @@
+#!/bin/bash
+# AUR-Database Ctl-Git
+#prepare
+if [ -d "../aur-list" ];then
+    cd ../aur-list
+else
+    git clone https://github.com/opendde/10006-opendde-aur-ci ../aur-list -b main
+    if [ $? = 0 ]; then
+        cd ../aur-list
+    else
+    exit 1
+    fi
+fi
+#function
+getBranch(){
+    git branch -a | sed 's#  remotes/origin/##g' | grep -v "main"  1>&1 2>&2
+}
+setBranch(){
+    git checkout $1 1>&1 2>&2
+}
+#function var
+case "$1" in
+    "--getbranch")
+        getBranch
+    ;;
+    "--setbranch")
+        if [ $2 ]; then
+            setBranch $2
+        else
+            echo "错误"
+            exit 1
+        fi
+    ;;
+esac
