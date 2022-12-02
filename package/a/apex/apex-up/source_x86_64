@@ -1,0 +1,1 @@
+("${_pkgname}::https://github.com/apex/up/releases/download/v${pkgver}/${_pkgname}_${pkgver}_linux_amd64.tar.gz")

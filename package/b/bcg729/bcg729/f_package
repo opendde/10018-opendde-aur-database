@@ -1,0 +1,6 @@
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir/" install
+  install -dm0755 "$pkgdir/usr/include/bcg729"
+  cp include/bcg729/*.h "$pkgdir/usr/include/bcg729"
+}

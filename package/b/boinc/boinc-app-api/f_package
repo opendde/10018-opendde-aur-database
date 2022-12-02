@@ -1,0 +1,5 @@
+package() {
+  cd ${srcdir}/build
+
+  DESTDIR="${pkgdir}" ninja install
+}

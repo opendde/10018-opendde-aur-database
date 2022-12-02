@@ -1,0 +1,11 @@
+package() {
+	local SRC="${pkgname}-${pkgver}"
+	local DEST="${pkgdir}/usr/src/${_pkgbase}-${pkgver}"
+
+	install -dm 755 "${DEST}"
+	cp -a "${SRC}"/* "${DEST}/"
+
+	sed -e "s/@PKGNAME@/${_pkgbase}/" \
+	    -e "s/@PKGVER@/${pkgver}/" \
+	    dkms.conf > "${DEST}/dkms.conf"
+}

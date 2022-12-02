@@ -1,0 +1,10 @@
+build() {
+    cd "$srcdir/bcprov-jdk15on-${pkgver/./}"
+
+    javac -encoding ISO-8859-1 -d classes @src.list
+
+    cd classes
+    find . -depth -type d -empty -delete
+    install -m644 ../org/bouncycastle/x509/*.properties org/bouncycastle/x509/
+    jar cf ../bcprov.jar *
+}

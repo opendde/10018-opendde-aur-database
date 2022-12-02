@@ -1,0 +1,4 @@
+prepare() {
+    sed -ri 's#^(data.folder=).*$#\1/var/lib/blynk#' server.properties 
+    sed -ri 's#^(logs.folder=).*$#\1/var/log/blynk#' server.properties 
+}

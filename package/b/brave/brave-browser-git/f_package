@@ -1,0 +1,3 @@
+package() {
+  echo "Empty package that pulls new package brave-git. Falling in line with opera and vivaldi."
+}

@@ -1,0 +1,3 @@
+package() {
+  install -Dm755 bw "${pkgdir}/usr/bin/bw"
+}

@@ -1,0 +1,10 @@
+prepare() {
+	cd "${srcdir}/${_archive}"
+
+	chmod 755 -R package.json
+	sed -i -e 's@node script/bootstrap@node script/bootstrap --no-quiet@g' \
+		./script/build
+
+	sed -i -e "s/<%=Desc=%>/${pkgdesc}/g" \
+		${srcdir}/${_pkgname}-${_version}.desktop
+}

@@ -1,0 +1,1 @@
+(http://ftp.gnu.org/gnu/${_pkgname/avr-}/${_pkgname/avr-}-${pkgver}.tar.bz2)

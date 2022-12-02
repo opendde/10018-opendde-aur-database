@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir/$pkgname"
+  install -d "$pkgdir"/usr
+  cp -a include "$pkgdir"/usr/include
+}

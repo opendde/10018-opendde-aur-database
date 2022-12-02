@@ -1,0 +1,13 @@
+package_bareos-filedaemon-glusterfs-plugin() {
+  pkgdesc="${pkgdesc} - GlusterFS plugin for Bareos File daemon"
+  depends=("bareos-filedaemon=${pkgver}"
+           "glusterfs")
+  for f in \
+     usr/lib/bareos/plugins/gfapi-fd.so \
+     usr/share/bareos/config/bareos-dir.d/fileset/plugin-gfapi.conf.example \
+     usr/share/bareos/config/bareos-dir.d/job/BackupGFAPI.conf.example \
+     usr/share/bareos/config/bareos-dir.d/job/RestoreGFAPI.conf.example \
+  ; do
+    cp_pkgdir "$f" "$srcdir/install/"
+  done
+}

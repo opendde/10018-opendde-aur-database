@@ -1,0 +1,4 @@
+build() {
+    cd "${srcdir}/$pkgname-v$pkgver"
+    a2x -d manpage -f manpage alpm-html.1.asciidoc
+}

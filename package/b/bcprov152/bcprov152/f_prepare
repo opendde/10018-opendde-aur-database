@@ -1,0 +1,18 @@
+prepare() {
+    cd "$srcdir/bcprov-jdk15on-${pkgver/./}"
+
+    jar xf src.zip
+    rm -rf test
+
+    local RM_TEST_FILES=()
+    while read -d $'\0' -r file; do
+        RM_TEST_FILES+=("${file}")
+    done < <(find . -name "*Test*.java" -type f -print0)
+    while read -d $'\0' -r file; do
+        RM_TEST_FILES+=("${file}")
+    done < <(find . -name "*Mock*.java" -type f -print0)
+    rm -f "${RM_TEST_FILES[@]}"
+
+    mkdir classes
+    find . -name '*.java' >src.list
+}

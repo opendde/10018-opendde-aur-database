@@ -1,0 +1,4 @@
+package() {
+   cd "${srcdir}/aacgain/linux/build/"
+   make prefix="$pkgdir/usr" install aacgain || return 1
+}

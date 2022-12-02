@@ -1,0 +1,4 @@
+pkgver() {
+	cd meshlint
+	printf "1.0_r%s" "$(git rev-parse --short HEAD)"
+}

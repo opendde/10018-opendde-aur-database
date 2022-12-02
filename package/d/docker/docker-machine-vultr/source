@@ -1,0 +1,1 @@
+("docker-machine-driver-vultr::https://github.com/janeczku/docker-machine-vultr/releases/download/v$pkgver/docker-machine-driver-vultr-Linux-$CARCH")

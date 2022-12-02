@@ -1,0 +1,4 @@
+package() {
+  cd "$pkgname-$pkgver"
+  install -Dm644 -t "$pkgdir/usr/share/ansible/plugins/modules" pacman_key.py
+}

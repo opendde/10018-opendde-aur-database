@@ -1,0 +1,5 @@
+build() {
+	cd "$pkgname-v${_pkgver}"
+
+	cmake --build build
+}

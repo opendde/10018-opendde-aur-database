@@ -1,0 +1,4 @@
+package() {
+  cd "$srcdir"
+  tar -xf data.tar.xz -C ${pkgdir}
+}

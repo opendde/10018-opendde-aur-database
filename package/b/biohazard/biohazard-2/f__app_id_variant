@@ -1,0 +1,5 @@
+_app_id_variant() {
+  local app_id="${1}"
+  local disc="${2}"
+  echo "${app_id}${disc}"
+}

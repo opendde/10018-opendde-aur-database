@@ -1,0 +1,4 @@
+build() {
+  cd "${srcdir}/3bc"
+  gcc -o 3bc -O2 -lm programs/interpreter.c 
+}

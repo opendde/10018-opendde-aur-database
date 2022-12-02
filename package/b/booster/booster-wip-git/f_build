@@ -1,0 +1,17 @@
+build() {
+  cd booster
+
+  cd generator
+  CGO_CPPFLAGS="${CPPFLAGS}" CGO_CFLAGS="${CFLAGS}" CGO_CXXFLAGS="${CXXFLAGS}" CGO_LDFLAGS="${LDFLAGS}" \
+    go build -trimpath \
+      -buildmode=pie \
+      -mod=readonly \
+      -modcacherw \
+      -ldflags "-linkmode external -extldflags \"${LDFLAGS}\""
+
+  cd ../init
+  CGO_ENABLED=0 go build -trimpath -mod=readonly -modcacherw
+
+  cd ..
+  ronn docs/manpage.md
+}

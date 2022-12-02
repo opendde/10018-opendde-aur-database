@@ -1,0 +1,12 @@
+package() {
+        git clone https://github.com/m1ndflay3r/aurtool aurtool-git
+        mv aurtool-git/aurtool .
+        mv aurtool-git/resources/libaurtool .
+        mv aurtool-git/README.md .
+        mkdir -p "$pkgdir"/usr/bin
+        mkdir -p "$pkgdir"/usr/include
+        mkdir -p "$pkgdir"/etc
+        install -m755 aurtool "$pkgdir"/usr/bin/aurtool
+        install -m644 libaurtool "$pkgdir"/usr/include/libaurtool
+        install -m644 README.md "$pkgdir"/etc/aurtool-readme.md
+}

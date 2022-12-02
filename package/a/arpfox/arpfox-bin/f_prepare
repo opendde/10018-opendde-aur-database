@@ -1,0 +1,11 @@
+prepare() {
+  cd "$srcdir"
+
+  if [ -f "arpfox_linux_amd64" ]; then
+    mv arpfox_linux_amd64 arpfox
+  elif [ -f "arpfox_linux_386" ]; then
+    mv arpfox_linux_386 arpfox
+  else
+    mv arpfox_linux_armv7 arpfox
+  fi
+}

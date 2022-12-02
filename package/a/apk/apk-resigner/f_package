@@ -1,0 +1,3 @@
+package() {
+  install -Dm0755 ${srcdir}/signapk.sh ${pkgdir}/usr/bin/signapk.sh
+}

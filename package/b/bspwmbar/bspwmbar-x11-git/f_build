@@ -1,0 +1,5 @@
+build() {
+  cd ${pkgname%-x11-git}
+  ./configure --prefix=/usr
+  make
+}

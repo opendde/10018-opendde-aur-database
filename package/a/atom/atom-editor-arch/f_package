@@ -1,0 +1,35 @@
+package() {
+  cd "$srcdir/${_pkgname}-${_atomver}"
+
+  _ver=$(cat package.json | grep version | sed 's/version//g' | sed 's/://g' | sed 's/ //g' |  sed 's/"//g' | sed 's/,//g')
+
+  _arch=amd64
+  if [ "${CARCH}" = "i686" ]; then
+  _arch=i386
+  fi
+  install -dm755 ${pkgdir}/usr/bin
+  install -dm755 ${pkgdir}/usr/share/${_pkgname}
+  install -dm755 ${pkgdir}/usr/share/applications
+  install -dm755 ${pkgdir}/usr/share/licenses/$pkgname
+  install -dm755 ${pkgdir}/usr/share/pixmaps
+
+  cp -r out/${_pkgname}-${_ver}-${_arch}/* ${pkgdir}/usr/share/${_pkgname}/
+  mv ${pkgdir}/usr/share/${_pkgname}/atom.png ${pkgdir}/usr/share/pixmaps/${_pkgname}.png
+  mv ${pkgdir}/usr/share/${_pkgname}/LICENSE ${pkgdir}/usr/share/licenses/$pkgname/LICENSE
+  install -Dm755 $srcdir/${_pkgname} ${pkgdir}/usr/bin/${_pkgname}
+  install -Dm644 $srcdir/${_pkgname}.desktop ${pkgdir}/usr/share/applications/${_pkgname}.desktop
+  rm ${pkgdir}/usr/share/${_pkgname}/resources/app/atom.sh
+  rm -rf ${pkgdir}/usr/share/${_pkgname}/resources/app.asar.unpacked/resources
+  ln -sf "/usr/share/${_pkgname}/resources/app/apm/node_modules/.bin/apm" "${pkgdir}/usr/bin/apm"
+
+  find "$pkgdir" \
+    -name "*.a" -exec rm '{}' \; \
+    -or -name "*.bat" -exec rm '{}' \; \
+    -or -name "benchmark" -prune -exec rm -r '{}' \; \
+    -or -name "doc" -prune -exec rm -r '{}' \; \
+    -or -name "html" -prune -exec rm -r '{}' \; \
+    -or -name "man" -prune -exec rm -r '{}' \; \
+    -or -path "*/less/gradle" -prune -exec rm -r '{}' \; \
+    -or -path "*/task-lists/src" -prune -exec rm -r '{}' \; \
+    -or -name "package.json" -exec sed -i -e "s|${srcdir}/atom-${_ver}/apm|/usr/share/${_pkgname}/resources/app/apm|g" '{}' +
+}

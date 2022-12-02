@@ -1,0 +1,5 @@
+build() {
+	cd "source"
+
+	scdoc <accio.1.scd | gzip -c >accio.1.gz
+}

@@ -1,0 +1,7 @@
+build() {
+	export PKG_CONFIG_PATH="/usr/lib/ffmpeg4.4/pkgconfig/:$PKG_CONFIG_PATH"
+	cd "${pkgname%-git}"
+	./autogen.sh
+	./configure
+	make
+}

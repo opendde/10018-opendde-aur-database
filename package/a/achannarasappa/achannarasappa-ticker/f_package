@@ -1,0 +1,4 @@
+package() {
+    cd "ticker-${pkgver}"
+    install -Dm755 ticker "${pkgdir}"/usr/bin/ticker
+}

@@ -1,0 +1,3 @@
+package() {
+  install -Dm755 "${source##*/}" "${pkgdir}/usr/bin/bpfps"
+}

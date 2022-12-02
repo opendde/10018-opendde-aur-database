@@ -1,0 +1,1 @@
+("docker-credential-helpers-$pkgver.tar.gz::https://$_gourl/archive/refs/tags/v$pkgver.tar.gz")

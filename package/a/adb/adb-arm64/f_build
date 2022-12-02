@@ -1,0 +1,18 @@
+build() {
+  mkdir -p system external
+  test -d system/core || \
+    git clone -b "$_branch" https://android.googlesource.com/platform/system/core system/core
+  test -d system/extras || \
+    git clone -b "$_branch" https://android.googlesource.com/platform/system/extras system/extras
+  test -d external/zlib || \
+    git clone -b "$_branch" https://android.googlesource.com/platform/external/zlib external/zlib
+  test -d external/openssl || \
+    git clone -b "$_branch" https://android.googlesource.com/platform/external/openssl external/openssl
+  test -d external/libselinux || \
+    git clone -b "$_branch" https://android.googlesource.com/platform/external/libselinux external/libselinux
+  grep --quiet '#include <sys/sysmacros.h>' 'system/core/adb/usb_linux.c' || \
+    sed -i '1s|^|#include <sys/sysmacros.h>\n|' 'system/core/adb/usb_linux.c'
+  cp Makefile system/core/adb/Makefile
+  cd system/core/adb
+  make
+}

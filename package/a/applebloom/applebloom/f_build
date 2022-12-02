@@ -1,0 +1,4 @@
+build() {
+	cd "${srcdir}/applebloom-${pkgver}"
+	make PREFIX="${_prefix}" PKGNAME="${pkgname}" DESTDIR="${pkgdir}" default
+}

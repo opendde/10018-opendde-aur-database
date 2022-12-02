@@ -1,0 +1,4 @@
+package() {
+  mkdir "${pkgdir}/opt"
+  cp -r "${srcdir}/addon-sdk" "${pkgdir}/opt/${pkgname}"
+}

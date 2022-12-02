@@ -1,0 +1,6 @@
+pkgver() {
+  cd "${pkgname}"
+  # Checkout the most recent branch for the AUFS-friendly kernel version installed
+  git checkout -q "$(git for-each-ref --format='%(refname:short)' --sort=-refname:short "*/*/*/aufs${_kernel}*" --count=1)"
+  echo "${_kernel}_$(sed -n '/AUFS_VERSION/s/^.*-\([0-9]*\)"$/\1/p' include/uapi/linux/aufs_type.h)"
+}

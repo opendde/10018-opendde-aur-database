@@ -1,0 +1,6 @@
+build() {
+  #cd "$srcdir"/$pkgbase-$pkgver
+  cd auto-multiple-choice-1.4.0
+  patch -p 1 < $srcdir"/amc.patch"
+  make all_precomp || return 1
+}

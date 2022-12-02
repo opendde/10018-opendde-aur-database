@@ -1,0 +1,1 @@
+("${pkgname}::git+$url.git#tag=v6.0.6"

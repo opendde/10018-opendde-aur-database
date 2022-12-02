@@ -1,0 +1,4 @@
+build() {
+  # generate ppd and wrapper file
+  "${srcdir}"/usr/local/Brother/cupswrapper/cupswrapperMFC7840W-$pkgver
+}

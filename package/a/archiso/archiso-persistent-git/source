@@ -1,0 +1,1 @@
+("${_pkgbase}::git+https://gitlab.archlinux.org/tallero/${_pkgbase}#branch=${_variant}")

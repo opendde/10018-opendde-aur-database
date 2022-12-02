@@ -1,0 +1,5 @@
+build() {
+	export BKR_PY3="$(which python3)"
+	cd "$pkgbase-$pkgbase-$pkgver"
+	make
+}

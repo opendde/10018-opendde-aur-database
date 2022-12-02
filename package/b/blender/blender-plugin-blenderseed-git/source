@@ -1,0 +1,1 @@
+("${_name}::git+https://github.com/appleseedhq/blenderseed.git${fragment}")

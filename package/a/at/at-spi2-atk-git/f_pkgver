@@ -1,0 +1,4 @@
+pkgver() {
+  cd at-spi2-atk
+  git describe --tags | sed 's/^AT_SPI2_ATK_//;s/_/./g;s/-/+/g'
+}

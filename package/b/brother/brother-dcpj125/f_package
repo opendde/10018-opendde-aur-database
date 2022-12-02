@@ -1,0 +1,8 @@
+package() {
+   cd "$pkgdir"
+   for n in $startdir/src/*.rpm; do
+     rpmextract.sh "$n"
+   done
+
+   sed -i 's|/etc/init.d/cups|/etc/rc.d/cupsd|' "${pkgdir}/opt/brother/Printers/dcpj125/cupswrapper/cupswrapperdcpj125"
+}

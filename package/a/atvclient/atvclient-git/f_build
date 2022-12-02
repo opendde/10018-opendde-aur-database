@@ -1,0 +1,6 @@
+build() {
+	cd "${srcdir}/atvclient"
+	autoreconf
+	./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var
+	make
+}

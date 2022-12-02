@@ -1,0 +1,4 @@
+pkgver() {
+  cd "$srcdir/Audio-M4P"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}

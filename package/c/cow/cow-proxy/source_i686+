@@ -1,0 +1,1 @@
+(cow-i686-$pkgver.gz::https://github.com/cyfdecyf/cow/releases/download/$pkgver/cow-linux32-$pkgver.gz)

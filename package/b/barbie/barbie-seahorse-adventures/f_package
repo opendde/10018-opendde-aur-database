@@ -1,0 +1,10 @@
+package() {
+  cd barbie-$pkgver
+  install -Dm755 run_game.py "$pkgdir"/usr/share/barbie/run_game.py
+  install -m644 README.txt "$pkgdir"/usr/share/barbie
+  cp -r lib data "$pkgdir"/usr/share/barbie
+  rm "$pkgdir"/usr/share/barbie/data/*.txt
+  install -Dm644 icon128.png "$pkgdir"/usr/share/pixmaps/barbie.png
+  install -Dm644 barbie.desktop "$pkgdir"/usr/share/applications/barbie.desktop
+  install -Dm755 ../barbie "$pkgdir"/usr/bin/barbie
+}

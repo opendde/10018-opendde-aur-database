@@ -1,0 +1,15 @@
+package() {
+	cd "$srcdir/${pkgname%-git}"
+        mkdir -p $pkgdir/usr/share/texmf-dist/tex/latex/beamer/themes/{theme,images}
+
+        install -m644 images/cwru-logo-blue-light.pdf \
+                "$pkgdir/usr/share/texmf-dist/tex/latex/beamer/themes/images/"
+        install -m644 images/cwru-logo-blue.pdf \
+                "$pkgdir/usr/share/texmf-dist/tex/latex/beamer/themes/images/"
+        install -m644 theme/beamercolorthemeCWRU.sty \
+                "$pkgdir/usr/share/texmf-dist/tex/latex/beamer/themes/theme/"
+        install -m644 theme/beamerouterthemeCWRU.sty \
+                "$pkgdir/usr/share/texmf-dist/tex/latex/beamer/themes/theme/"
+        install -m644 theme/beamerthemeCWRU.sty \
+                "$pkgdir/usr/share/texmf-dist/tex/latex/beamer/themes/theme/"
+}

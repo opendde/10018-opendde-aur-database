@@ -1,0 +1,5 @@
+prepare() {
+  rm -rf "$srcdir/azure-cli"
+  grep -v -E '^===>|^$' install.response | python "$srcdir/install-$pkgver.py"
+  find "$srcdir/azure-cli/bin" -type f -print0 | xargs -0 sed -i -e "s|$srcdir|/opt|g"
+}

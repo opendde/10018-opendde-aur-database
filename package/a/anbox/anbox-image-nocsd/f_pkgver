@@ -1,0 +1,18 @@
+pkgver () {
+  local _pkgver _sha __sha
+  _pkgver=$(( $(echo $pkgver|sed -En 's/r([[:digit:]]+)\..*/\1/p') + 1))
+  _sha=$(echo $pkgver|sed -En 's/r[[:digit:]]+\.(.*)/\1/p')
+  __sha=$(
+    printf '%s\n' \
+      "$_img_rel" \
+      "$_fdroidver" \
+      "$_fdroidprivver" \
+      "$_bromite_release" \
+    | sha256sum - | cut -c1-8
+  )
+  if [ "$_sha" = "$__sha" ];then
+    echo "$pkgver"
+  else
+    echo "r$_pkgver.$__sha"
+  fi
+}

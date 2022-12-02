@@ -1,0 +1,1 @@
+("${_appimage}::https://github.com/mrstallion/fchat-rising/releases/download/v${pkgver}/F-Chat-Rising-${pkgver}-linux.AppImage"

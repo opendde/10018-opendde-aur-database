@@ -1,0 +1,1 @@
+("git+https://github.com/kensanata/${pkgname%-git}.git#branch=master")

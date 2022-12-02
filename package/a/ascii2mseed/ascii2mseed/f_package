@@ -1,0 +1,6 @@
+package() {
+	cd "${pkgname}-${pkgver}"
+	install -d ${pkgdir}/usr/{bin,share/man/man1}
+	cp ascii2mseed ${pkgdir}/usr/bin/
+	cp doc/ascii2mseed.1 ${pkgdir}/usr/share/man/man1/
+}

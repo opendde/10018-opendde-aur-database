@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}-${pkgrel}-x64.zip::https://github.com/PQCraft/${ghpkgname}/releases/download/${pkgver}/clibasic-linux-x64.zip")

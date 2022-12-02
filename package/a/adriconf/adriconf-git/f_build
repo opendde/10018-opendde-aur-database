@@ -1,0 +1,5 @@
+build() {
+  mkdir -p adriconf-build; cd adriconf-build
+  cmake ../adriconf
+  make
+}

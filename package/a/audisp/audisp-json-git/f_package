@@ -1,0 +1,6 @@
+package() {
+    cd "${srcdir}/${pkgname}"
+    install -Dm644 "au-json.conf" "${pkgdir}/etc/audisp/plugins.d/au-json.conf"
+    echo 'file_log = /var/log/audisp.json' > "${pkgdir}/etc/audisp/audisp-json.conf"
+    install -Dm755 "audisp-json" "${pkgdir}/sbin/audisp-json"
+}

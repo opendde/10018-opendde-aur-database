@@ -1,0 +1,15 @@
+package() {
+  mkdir -p $pkgdir/usr/{bin,share/bethewumpus/sounds}
+  cd $srcdir/$pkgname-$pkgver
+  make
+  install -D -m755 ./bethewumpus $pkgdir/usr/share/bethewumpus/bethewumpus
+  install -D -m644 ./sounds/* $pkgdir/usr/share/bethewumpus/sounds
+  gzip -f bethewumpus.6
+  install -D -m644 bethewumpus.6.gz $pkgdir/usr/share/man/man6/bethewumpus.6.gz
+  echo "#!/bin/sh
+cd /usr/share/bethewumpus
+./bethewumpus \"\$@\"" > $pkgdir/usr/bin/bethewumpus
+  chmod 755 $pkgdir/usr/bin/bethewumpus
+  install -D -m644 $srcdir/bethewumpus.png $pkgdir/usr/share/pixmaps/bethewumpus.png && \
+  install -D -m644 $srcdir/bethewumpus.desktop $pkgdir/usr/share/applications/bethewumpus.desktop
+}

@@ -1,0 +1,7 @@
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  make DESTDIR="${pkgdir}" install
+
+  # get rid of empty directories
+  rm -rf "${pkgdir}/var/"{log,run}
+}

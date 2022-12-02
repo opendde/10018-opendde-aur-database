@@ -1,0 +1,7 @@
+package() {
+  _srcdir="${srcdir}/${pkgname}/src/workspaces-compact-applet"
+  _plugin_dir="${pkgdir}/usr/lib/budgie-desktop/plugins/workspaces-compact-applet"
+  install -d "${_plugin_dir}"
+  install -D -m644 "${_srcdir}/WorkspacesCompactApplet.plugin" "${_plugin_dir}/WorkspacesCompactApplet.plugin"
+  install -D -m644 "${_srcdir}/workspaces_compact.py" "${_plugin_dir}/workspaces_compact.py"
+}

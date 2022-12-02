@@ -1,0 +1,9 @@
+package_autodesk-nlm() {
+  pkgdesc="Autodesk® vendor daemon (adskflex) for FLEXnet License Manager"
+  optdepends=("autodesk-lmgrd: FLEXnet License Manager core (lmgrd) distributed by Autodesk"
+              "flexnet: FLEXnet License Manager core (lmgrd) distributed by Arm"
+              "lmgrd: FLEXnet License Manager core (lmgrd) distributed by MATLAB")
+
+  mkdir -p "$pkgdir"/usr/lib/flexnetserver
+  cp -a opt/flexnetserver/adskflex "$pkgdir"/usr/lib/flexnetserver/adskflex
+}

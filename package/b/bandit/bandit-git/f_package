@@ -1,0 +1,12 @@
+package() {
+  cd 'bandit'
+  python2 setup.py install --optimize=1 --root=${pkgdir}
+
+
+  install -Dm 644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+
+  # FIXME: setup.cfg
+  install -d $pkgdir/etc/bandit
+  mv $pkgdir/usr/etc/bandit/bandit.yaml $pkgdir/etc/bandit/
+  rm -rf $pkgdir/usr/etc
+}

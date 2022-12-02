@@ -1,0 +1,5 @@
+build() {
+  cd "$_pkgname"
+  sed -i 's/maxVersion="[^"]*/maxVersion="40/' pentadactyl/install.rdf 
+  make -C pentadactyl xpi
+}

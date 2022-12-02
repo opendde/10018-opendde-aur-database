@@ -1,0 +1,6 @@
+package() {
+    cd "${srcdir}/${_pkgname}-${pkgver}"
+
+    make DESTDIR="${pkgdir}" install
+    install -Dm644 "${srcdir}/libavrdude.pc" "${pkgdir}/usr/lib/pkgconfig/libavrdude.pc"
+}

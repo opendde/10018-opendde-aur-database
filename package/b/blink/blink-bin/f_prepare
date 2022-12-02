@@ -1,0 +1,4 @@
+prepare() {
+	chmod +x "$pkgname-$pkgver.AppImage"
+	./"$pkgname-$pkgver.AppImage" --appimage-extract &>/dev/null
+}

@@ -1,0 +1,6 @@
+build() {
+  cp abtransfers.pro $srcdir/$pkgname-$pkgver
+  cd $srcdir/$pkgname-$pkgver
+  qmake-qt4
+  make
+}

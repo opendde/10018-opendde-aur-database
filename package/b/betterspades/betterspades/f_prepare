@@ -1,0 +1,17 @@
+prepare() {
+	cd BetterSpades-${pkgver}-beta
+	cp -v $srcdir/dr_wav.h src/
+	mv src/dr_wav.h src/dr_wav.c
+	mkdir src/lodepng/
+	cp -v $srcdir/lodepng.h src/lodepng/
+	cp -v $srcdir/lodepng.cpp src/lodepng/lodepng.c 
+	cp -v /usr/lib/libdeflate.a libs
+	cp -v $srcdir/libdeflate.h src
+	cp -v $srcdir/ini.* src/
+	cp -v $srcdir/http.h src/
+	cp -v $srcdir/stb_truetype.h src/
+	cp -v $srcdir/log.* src/
+	cp -v $srcdir/parson.* src/
+	cd build
+	cmake ..
+}

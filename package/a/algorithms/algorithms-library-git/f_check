@@ -1,0 +1,4 @@
+check() {
+	cd "$_pkgbase/build"
+	make test ARGS="--output-on-failure"
+}

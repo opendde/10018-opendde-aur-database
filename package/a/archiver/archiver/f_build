@@ -1,0 +1,9 @@
+build() {
+  cd "${pkgname}-${pkgver}"
+  go build \
+    -trimpath \
+	-buildmode=pie \
+	-mod=readonly \
+    -ldflags "-linkmode external -extldflags ${LDFLAGS}" \
+    -o . ./cmd/arc/...
+}

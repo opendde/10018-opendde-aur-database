@@ -1,0 +1,4 @@
+build() {
+  cd apk-tools-v$pkgver
+  make
+}

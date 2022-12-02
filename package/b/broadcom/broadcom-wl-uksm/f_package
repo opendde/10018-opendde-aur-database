@@ -1,0 +1,15 @@
+package() {
+    install -Dm644 wl.ko "${pkgdir}/usr/lib/modules/${_extramodules}/wl.ko"
+
+    # makepkg does not do this automatically for this pkg so do it here
+    gzip -9 "${pkgdir}/usr/lib/modules/${_extramodules}/wl.ko"
+    install -Dm644 lib/LICENSE.txt "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    install -Dm644 modprobe.d "${pkgdir}/usr/lib/modprobe.d/broadcom-wl_uksm.conf"
+}
+package() {
+    install -Dm644 wl.ko "${pkgdir}/usr/lib/modules/${_extramodules}/wl.ko"
+    # makepkg does not do this automatically for this pkg so do it here
+    gzip -9 "${pkgdir}/usr/lib/modules/${_extramodules}/wl.ko"
+    install -Dm644 lib/LICENSE.txt "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    install -Dm644 modprobe.d "${pkgdir}/usr/lib/modprobe.d/broadcom-wl_uksm.conf"
+}

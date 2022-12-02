@@ -1,0 +1,10 @@
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}/${pkgname}"
+  POETRY_CACHE_DIR=${srcdir}/poetry-cache poetry build -f sdist
+
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  tar xf dist/${_pkgname}-${pkgver}.tar.gz
+
+  cd "${_pkgname}-${pkgver}"
+  python setup.py build
+}

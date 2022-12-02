@@ -1,0 +1,8 @@
+build() {
+  # Extract files
+  chmod +x "$srcdir/$_package"
+  $srcdir/$_package --appimage-extract
+
+  # Correct .desktop
+  sed -e "s/AppRun/${_pkgbin}/g" -i "$srcdir/squashfs-root/$_pkgbin.desktop"
+}

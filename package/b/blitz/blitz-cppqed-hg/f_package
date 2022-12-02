@@ -1,0 +1,15 @@
+package() {
+  # Blitz uses /usr/bin/env python but needs python2
+  mkdir "$srcdir/tempbin"
+  ln -s /usr/bin/python2 "$srcdir/tempbin/python"
+  export PATH="$srcdir/tempbin":$PATH
+
+  cd "$srcdir/$pkgname"
+  install -D -m644 LICENSE $pkgdir/usr/share/licenses/$pkgname/LICENSE
+  make DESTDIR=$pkgdir install || return 1
+  # building documentation causes trouble in some cases
+  # make DESTDIR=$pkgdir install-html || return 1
+  rm -rf "$srcdir/tempbin"
+  # rm -rf $pkgdir/usr/lib/pkgconfig
+  # rmdir $pkgdir/usr/share/doc/blitz-*/doxygen
+}

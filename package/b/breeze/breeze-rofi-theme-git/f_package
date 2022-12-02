@@ -1,0 +1,6 @@
+package() {
+    cd "${srcdir}/${_pkgname}"
+
+    install -dm755 "$pkgdir/usr/share/rofi/themes/"
+    install -Dm644 ./dist/*.rasi "$pkgdir/usr/share/rofi/themes/"
+}

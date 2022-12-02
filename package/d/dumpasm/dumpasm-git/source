@@ -1,0 +1,1 @@
+("${pkgname%-git}::git://github.com/jonay2000/dumpasm.git")

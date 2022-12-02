@@ -1,0 +1,5 @@
+build() {
+    cd "$srcdir"/armips/build
+    cmake -DCMAKE_BUILD_TYPE=Release -DARMIPS_USE_STD_FILESYSTEM=ON -DARMIPS_PRECOMPILE_HEADERS=ON ..
+    make armips-bin
+}

@@ -1,0 +1,6 @@
+build() {
+	export RUSTUP_TOOLCHAIN=stable
+	export CARGO_TARGET_DIR=target
+	cd "$pkgname"
+	cargo build --release --frozen --all-features --target="$CARCH-unknown-linux-gnu"
+}

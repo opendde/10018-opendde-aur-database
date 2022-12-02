@@ -1,0 +1,13 @@
+package() {
+    cd "${srcdir}/${pkgname}"
+    # License
+    install -Dm644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
+    # Create Package Directory
+    mkdir -p "${pkgdir}/$(kpsewhich -var-value=TEXMFDIST)/tex/latex/${pkgname}"
+    # Copy Files
+    install -Dm644 tex/* "${pkgdir}/$(kpsewhich -var-value=TEXMFDIST)/tex/latex/${pkgname}/"
+
+    # Install pygments
+    echo "Installing pygments...(if pygments is already installed, this will print a warning)"
+    pip install pygments
+}

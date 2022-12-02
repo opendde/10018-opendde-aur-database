@@ -1,0 +1,12 @@
+prepare() {
+  # shellcheck disable=SC2154
+  cd "${srcdir}/${_gitname}" || {
+        msg "Failed to cd into ${srcdir}/${_gitname}"
+        return 1
+  }
+
+  # Apply patches
+  patch -p1 -i "${srcdir}/00-fix-sbin.patch"
+  patch -p1 -i "${srcdir}/01-fix-sbin.patch"
+  patch -p1 -i "${srcdir}/02-fix-service.patch"
+}

@@ -1,0 +1,5 @@
+prepare() {
+    cd "$_pkgname"
+
+    autoreconf -fi
+}

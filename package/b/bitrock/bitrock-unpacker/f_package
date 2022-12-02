@@ -1,0 +1,5 @@
+package() {
+  cd bitrock-unpacker-${pkgver}
+  mv bitrock-unpacker.tcl bitrock-unpacker
+  install -m755 -Dt "${pkgdir}"/usr/bin bitrock-unpacker
+}

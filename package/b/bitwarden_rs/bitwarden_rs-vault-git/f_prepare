@@ -1,0 +1,6 @@
+prepare() {
+	# patch paths
+	cd "$srcdir/web"
+	git submodule update --init --recursive
+	patch -N -p1 -i "$srcdir/0001-Set-Vault-BaseURL.patch" 
+}

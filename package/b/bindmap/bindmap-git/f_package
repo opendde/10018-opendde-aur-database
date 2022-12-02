@@ -1,0 +1,4 @@
+package() {
+	cd "$srcdir/${pkgname%-git}"
+	make PREFIX="/usr" DESTDIR="$pkgdir" install
+}

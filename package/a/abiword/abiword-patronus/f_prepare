@@ -1,0 +1,11 @@
+prepare() {
+  cd ${_pkgname}
+  # Install missing m4 files
+  install -m644 ../aiksaurus-plugin.m4 plugins/aiksaurus/plugin.m4
+  install -m644 ../plugin-builtin.m4 .
+  install -m644 ../plugin-configure.m4 .
+  install -m644 ../plugin-makefiles.m4 .
+
+  # Generate m4 file for configure
+  find plugins -name plugin.m4 | xargs cat > plugin-list.m4
+}

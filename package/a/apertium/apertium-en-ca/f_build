@@ -1,0 +1,11 @@
+build() {
+  patch -p1 < configure.ac.patch
+  patch -p1 < Makefile.am.patch
+
+  cd "$srcdir/$pkgname-$pkgver"
+
+  autoreconf -fi
+
+  ./configure --prefix=/usr
+  make
+}

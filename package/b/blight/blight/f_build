@@ -1,0 +1,3 @@
+build() {
+	scdoc < blight.1.scd > blight.1
+}

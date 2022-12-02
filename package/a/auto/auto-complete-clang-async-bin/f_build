@@ -1,0 +1,4 @@
+build() {
+  cd "${srcdir}/emacs-clang-complete-async"
+  make
+}

@@ -1,0 +1,4 @@
+build() {
+  cd "${srcdir}"/${_pkgname}-${pkgver}
+  python3.7 setup.py build
+}

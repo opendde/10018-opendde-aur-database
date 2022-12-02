@@ -1,0 +1,4 @@
+prepare() {
+	cd "$srcdir/$pkgname"
+	patch --input="${srcdir}/amd-disable-c6.patch"
+}

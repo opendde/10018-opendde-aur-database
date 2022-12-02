@@ -1,0 +1,8 @@
+prepare() {
+  cd "$srcdir"
+  sed -i 's|^ROOT_DIR=.*|ROOT_DIR=/usr/share/java/bt747|
+          s|"$JAVA" -jar "${ROOT_DIR}/dist/BT747_j2se.jar" arch|uname -m|
+          s|amd64|x86_64|
+          s|/usr/share/java/RXTXcomm.jar|/usr/share/java/rxtx/RXTXcomm.jar|
+          s|bt747.j2se_view.BT747Main $\* &|-Dbt747_settings="`echo ~`/.config/bt747/bt747settings.pdb" bt747.j2se_view.BT747Main $\*|' ./run_j2se.sh
+}

@@ -1,0 +1,4 @@
+pkgver() {
+  cd Uranium
+  git describe --tags | sed 's/-/./g'
+}

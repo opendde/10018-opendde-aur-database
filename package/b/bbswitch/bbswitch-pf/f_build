@@ -1,0 +1,7 @@
+build() {
+  cd ${_pkgname}-${pkgver}
+
+  _kernver="$(</usr/src/linux-pf/version)"
+
+  make KDIR=/lib/modules/${_kernver}/build
+}

@@ -1,0 +1,5 @@
+prepare() {
+  cd $pkgname
+  sed -i -e 's,"login","system-auth",' src/auth_pam.c
+  autoreconf -fiv
+}

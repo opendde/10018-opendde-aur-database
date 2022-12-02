@@ -1,0 +1,5 @@
+package() {
+	#cd "ags-v.$pkgver"
+	#DESTDIR="${pkgdir}" cmake --install "build"
+	install -Dm755 'build/ags' -t "$pkgdir/usr/bin/"
+}

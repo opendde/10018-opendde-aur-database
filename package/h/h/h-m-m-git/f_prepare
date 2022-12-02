@@ -1,0 +1,7 @@
+prepare() {
+	cd "$srcdir/${pkgname%-git}"
+
+	git submodule init
+	git config submodule.gtest.url $srcdir/googletest
+	git submodule update
+}

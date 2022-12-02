@@ -1,0 +1,5 @@
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  install -p -m 755 -D buffer ${pkgdir}/usr/bin/buffer
+  install -p -m 644 -D buffer.man ${pkgdir}/usr/share/man/man1/buffer.1
+}

@@ -1,0 +1,11 @@
+prepare() {
+  cd aria2-$pkgver
+
+  local src
+  for src in "${source[@]}"; do
+    src="${src%%::*}"
+    src="${src##*/}"
+    [[ $src == *.patch ]] || continue
+    patch -Np1 <"../$src"
+  done
+}

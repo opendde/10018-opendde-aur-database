@@ -1,0 +1,36 @@
+package() {
+	cd "${srcdir}"
+
+	install -Dm 755 budgetcalendar "${pkgdir}/usr/share/${pkgname}/budgetcalendar"
+
+	cp -R "${srcdir}/${pkgname}-${pkgver}"/* "${pkgdir}"
+
+	cd "${pkgdir}"
+
+	msg "Relocating..."
+	mv "${pkgdir}"/usr/local/share/Budget/* "${pkgdir}/usr/share/${pkgname}"
+	rm -rf "${pkgdir}"/usr/share/${pkgname}/{Budget,uninstall.sh{,.env}} "${pkgdir}/usr/local/bin/"
+
+	rm -rf "${pkgdir}/usr/local"
+	myarch=$(uname -m)
+	if [ "${myarch}" = "x86_64" ]; then
+		swtarch="64"
+	else
+		swtarch="32"
+	fi
+	mv "${pkgdir}/usr/share/${pkgname}/swt/${swtarch}/swt.jar" "${pkgdir}/usr/share/${pkgname}/swt/swt.jar"
+	rm -rf "${pkgdir}/usr/share/${pkgname}/swt/"{32,64}
+
+	msg "Installing license..."
+	install -Dm 644 "${pkgdir}/usr/share/${pkgname}/license.txt" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+	mv "${pkgdir}/usr/share/${pkgname}/license.txt" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+
+	msg "Installing documentation..."
+	mkdir -p "${pkgdir}/usr/share/doc"
+	mv "${pkgdir}/usr/share/${pkgname}/doc" "${pkgdir}/usr/share/doc/${pkgname}"
+
+	msg "Fixing desktop file paths..."
+	install -Dm 644 "${pkgdir}/usr/share/${pkgname}/icons/Budget.ico" "${pkgdir}/usr/share/icons/hicolor/32x32/${pkgname}.ico"
+	sed -i 's/^Icon=.*/Icon=budgetcalendar.ico/' "${pkgdir}/usr/share/applications/budget-calendar.desktop"
+	sed -i 's/^Exec=.*/Exec=\/usr\/bin\/budgetcalendar/' "${pkgdir}/usr/share/applications/budget-calendar.desktop"
+}

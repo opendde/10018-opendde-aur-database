@@ -1,0 +1,1 @@
+("https://github.com/astronomer/$pkgname/releases/download/$pkgver/astro_${pkgver/v/}_linux_amd64.tar.gz")

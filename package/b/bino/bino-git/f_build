@@ -1,0 +1,7 @@
+build() {
+  cd "$srcdir/$pkgname"
+  autoreconf -i
+  patch -Np1 -i ${srcdir}/ffmpeg4.4.patch
+  ./configure --prefix=/usr --with-qt-version=5
+  make
+}

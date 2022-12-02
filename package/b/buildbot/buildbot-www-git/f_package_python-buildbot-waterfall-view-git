@@ -1,0 +1,9 @@
+package_python-buildbot-waterfall-view-git() {
+  pkgdesc="Buildbot Waterfall View plugin"
+  depends=('buildbot-git')
+  provides=("python-buildbot-waterfall-view=$pkgver")
+  conflicts=('python-buildbot-waterfall-view')
+
+  cd buildbot/www/waterfall_view
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+}

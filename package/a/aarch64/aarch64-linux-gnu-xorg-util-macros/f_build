@@ -1,0 +1,5 @@
+build() {
+  cd util-macros-${pkgver}
+  ./configure --build $_target --prefix=/usr/$_target
+  make
+}

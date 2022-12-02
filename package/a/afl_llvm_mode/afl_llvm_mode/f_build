@@ -1,0 +1,5 @@
+build() {
+  cd afl-${pkgver}
+  make PREFIX=/usr
+  make -C llvm_mode PREFIX=/usr
+}

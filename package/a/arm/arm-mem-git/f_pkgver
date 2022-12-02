@@ -1,0 +1,4 @@
+pkgver() {
+  cd "${srcdir}/arm-mem"
+  echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
+}

@@ -1,0 +1,8 @@
+package() {
+  cd "$srcdir"/"$pkgname"-"$pkgver"
+  make DESTDIR="$pkgdir" install
+  mv "$pkgdir/usr/doc" "$pkgdir/usr/share/"
+
+  install -m644 -D "$srcdir"/$pkgname-$pkgver/data/berusky2.png "$pkgdir"/usr/share/pixmaps/berusky2.png
+  install -m644 -D "$srcdir"/$pkgname-$pkgver/data//berusky2.desktop "$pkgdir"/usr/share/applications/berusky2.desktop
+}

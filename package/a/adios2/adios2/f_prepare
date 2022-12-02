@@ -1,0 +1,3 @@
+prepare () {
+  cd ADIOS2-$pkgver
+}

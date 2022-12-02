@@ -1,0 +1,6 @@
+package() {
+  cd "${srcdir}/${pkgname}"
+
+  mkdir -p ${pkgdir}/usr/bin
+  install -m755 ${srcdir}/${pkgname}/2cdt ${pkgdir}/usr/bin
+}

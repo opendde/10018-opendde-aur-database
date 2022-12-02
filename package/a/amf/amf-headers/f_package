@@ -1,0 +1,9 @@
+package() {
+    local _file
+    while read -r -d '' _file
+    do
+        install -D -m644 "$_file" "${pkgdir}/usr/include/AMF/${_file#"AMF-${pkgver}/amf/public/include"}"
+    done < <(find "AMF-${pkgver}/amf/public/include" -type f -print0)
+    
+    install -D -m644 "AMF-${pkgver}/LICENSE.txt" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

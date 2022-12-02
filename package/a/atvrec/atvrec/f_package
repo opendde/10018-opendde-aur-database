@@ -1,0 +1,4 @@
+package() {
+  mkdir -p "$pkgdir/usr/bin/"
+  install $pkgname "$pkgdir/usr/bin/"
+}

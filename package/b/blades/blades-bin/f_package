@@ -1,0 +1,3 @@
+package() {
+    install -Dm755 blades -t "$pkgdir/usr/bin/"
+}

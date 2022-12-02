@@ -1,0 +1,4 @@
+build() {
+  cd "${srcdir}/adjbacklight"
+  make DESTDIR="${pkgdir}/" PREFIX=/usr
+}

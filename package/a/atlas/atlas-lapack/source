@@ -1,0 +1,1 @@
+("lapack-$_lapackver.tar.gz::https://github.com/Reference-LAPACK/lapack/archive/v$_lapackver.tar.gz"

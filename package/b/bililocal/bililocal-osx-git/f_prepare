@@ -1,0 +1,4 @@
+prepare() {
+     rm -rf ${srcdir}/build
+     mkdir ${srcdir}/build
+}

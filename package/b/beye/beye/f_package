@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir"/biew-${_lver}
+
+  make DESTDIR="$pkgdir" install
+}

@@ -1,0 +1,6 @@
+prepare() {
+    cd "$pkgname-$pkgver"
+    patch -p1 <"$srcdir/01-echo-off.patch"
+    cp "$srcdir/Makefile" .
+    cp "$srcdir/away.pam" data
+}

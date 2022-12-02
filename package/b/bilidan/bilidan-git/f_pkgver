@@ -1,0 +1,4 @@
+pkgver() {
+  cd ${srcdir}/${_reponame}
+  echo $(git log -1 --format="%cd" --date=short | tr -d -)
+}

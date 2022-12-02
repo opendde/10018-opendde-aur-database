@@ -1,0 +1,5 @@
+build() {
+cd "${srcdir}/${pkgname}-linux-${pkgver}"
+cmake -DCMAKE_INSTALL_PREFIX=/usr CMakeLists.txt
+make
+}

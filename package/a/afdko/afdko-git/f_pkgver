@@ -1,0 +1,7 @@
+pkgver() {
+    cd "${pkgname%-git}"
+    # Upstream develop branch doesn't reparent to master with tags :(
+    git tag -f 3.4.0 6874081 2>&1 >/dev/null ||:
+    git describe --long --abbrev=7 --tags --match="[0-9]*" HEAD |
+        sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}

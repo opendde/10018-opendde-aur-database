@@ -1,0 +1,18 @@
+package() {
+	# used amd-sfh-hid-dkms as reference
+	local DEST="$pkgdir/usr/src/${pkgname%-dkms}-$pkgver"
+	local SRC="linux-$_upstreamver/sound/soc/amd/renoir"
+
+	install -dm755 "$DEST"
+
+	for f in "$SRC/"*.[hc] "$SRC/Makefile"; do
+		install -m644 "$f" "$DEST"
+	done
+
+	install -m644 dkms.conf "$DEST"
+
+	# substitution in dkms.conf
+	sed -e 's/PACKAGE_NAME=""/PACKAGE_NAME="'"${pkgname%-dkms}"'"/' \
+		  -e 's/PACKAGE_VERSION=""/PACKAGE_VERSION="'"$pkgver"'"/' \
+			-i "$DEST/dkms.conf"
+}

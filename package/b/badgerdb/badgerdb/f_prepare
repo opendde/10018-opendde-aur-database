@@ -1,0 +1,4 @@
+prepare() {
+  cd "${srcdir}/${_name}-${pkgver}/badger"
+  mkdir -p build/
+}

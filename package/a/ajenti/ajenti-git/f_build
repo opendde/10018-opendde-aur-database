@@ -1,0 +1,11 @@
+build() {
+  cd ${srcdir}/${pkgname}
+
+  python2 setup.py build
+  python2 compile_resources.py
+  python2 make_messages.py compile
+  #make tgz
+
+  #cd ${srcdir}/${pkgname}-${pkgver}/dist
+  #tar xzf ${pkgname}-${pkgver}.tar.gz
+}

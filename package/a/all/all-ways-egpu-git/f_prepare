@@ -1,0 +1,6 @@
+prepare() {
+	cd "${_pkgname}"
+	awk "/^DESTDIR=/ { printf \"DESTDIR=%s\\n\", \"${pkgdir}\"; next } 1" install.sh > install-new.sh
+	mv -f install-new.sh install.sh
+	chmod +x install.sh
+}

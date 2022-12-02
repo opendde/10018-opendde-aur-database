@@ -1,0 +1,5 @@
+prepare() {
+  cd brasero-$pkgver
+  patch -Np2 < ../dvdcss-nocheck.patch 
+  autoreconf -fi
+}

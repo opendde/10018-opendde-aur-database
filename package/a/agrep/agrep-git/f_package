@@ -1,0 +1,8 @@
+package() {
+  cd "$srcdir/$pkgname"
+  install -Dm755 agrep "$pkgdir/usr/bin/agrep"
+  install -Dm644 COPYRIGHT "$pkgdir/usr/share/licenses/${pkgname%-*}/COPYRIGHT"
+  cd docs/
+  unzip -d $pkgname agrep-and-glimpse-docs.zip
+  install -Dm644 $pkgname/agrep.1 "$pkgdir/usr/share/man/man1/agrep.1"
+}

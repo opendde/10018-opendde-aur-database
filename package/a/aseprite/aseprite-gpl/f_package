@@ -1,0 +1,9 @@
+package() {
+  cd "aseprite"/build
+
+  make DESTDIR="$pkgdir/" install/fast
+  install -Dm644 "$srcdir/aseprite.desktop" \
+    "$pkgdir/usr/share/applications/aseprite.desktop"
+  install -Dm644 "../data/icons/ase48.png" \
+    "$pkgdir/usr/share/pixmaps/aseprite.png"
+}

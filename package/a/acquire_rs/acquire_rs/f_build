@@ -1,0 +1,4 @@
+build() {
+	cd "$srcdir/Acquire_rs-$pkgver"
+	cargo build --release
+}

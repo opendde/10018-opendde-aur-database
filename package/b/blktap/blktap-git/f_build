@@ -1,0 +1,18 @@
+build() {
+  cd "$srcdir"
+
+  if [[ -d "$_gitname" ]]; then
+    cd "$_gitname" && git pull origin
+  else
+    git clone "$_gitroot" "$_gitname"
+  fi
+
+  cd "$srcdir"
+  rm -rf build
+  git clone "$_gitname" build
+  cd "$srcdir/build"
+
+  ./autogen.sh
+  ./configure --prefix=/usr
+  make
+}

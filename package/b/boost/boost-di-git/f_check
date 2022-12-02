@@ -1,0 +1,6 @@
+check() {
+   cd "${srcdir}/${_pkgname}"
+   # let user know this test isn't hung, because it will take around a minute even though tons of prior tests were nearly instant
+   sleep 3 && echo && echo "*** test.ft_di_errors will take at least a minute ***" &
+   ctest
+}

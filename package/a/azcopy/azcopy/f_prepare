@@ -1,0 +1,4 @@
+prepare() {
+  mkdir -p "${srcdir}/src/github.com/Azure"
+  mv "${srcdir}/azure-storage-azcopy-${pkgver}" "${srcdir}/src/github.com/Azure/azure-storage-azcopy"
+}

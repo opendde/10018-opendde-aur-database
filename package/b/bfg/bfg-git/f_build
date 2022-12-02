@@ -1,0 +1,4 @@
+build() {
+  cd "$_gitname"
+  sbt "bfg/assembly"
+}

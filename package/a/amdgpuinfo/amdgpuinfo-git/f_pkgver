@@ -1,0 +1,6 @@
+pkgver() {
+	cd "$_pkgname"
+	hash=$(git log --pretty=format:'%h' -n 1)
+	revision=$(git rev-list --count HEAD)
+	echo $(ver).$revision.$hash
+}

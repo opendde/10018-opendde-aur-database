@@ -1,0 +1,4 @@
+check() {
+    cd "$srcdir/${pkgname%-git}"
+    python setup.py test
+}

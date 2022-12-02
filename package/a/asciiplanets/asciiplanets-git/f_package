@@ -1,0 +1,13 @@
+package() {
+  cd "$srcdir/${pkgname%-git}"
+
+  install -Dm755 "${pkgname%-git}" "$pkgdir"/usr/bin/"${pkgname%-git}"
+  install -Dm755 "${pkgname%-git}"-interactive \
+      "$pkgdir"/usr/bin/"${pkgname%-git}"-interactive
+
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/${pkgname%-git}/LICENSE"
+  install -Dm644 man1/"${pkgname%-git}".1 \
+    "$pkgdir"/usr/share/man/man1/"${pkgname%-git}".1
+  install -Dm644 man1/"${pkgname%-git}"-interactive.1 \
+    "$pkgdir"/usr/share/man/man1/"${pkgname%-git}"-interactive.1
+}

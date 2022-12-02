@@ -1,0 +1,4 @@
+build() {
+  cd "$_pkgname-$pkgver"
+  SODIUM_USE_PKG_CONFIG=1 cargo build --release --locked
+}

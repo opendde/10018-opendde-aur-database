@@ -1,0 +1,23 @@
+package() {
+    # create the desitination folder
+    mkdir -p "${pkgdir}${_instdir}"
+
+    # copy over the linux 64 bit files
+    cp --recursive ${_prefix}/opt/AstroDMx-Capture/* "${pkgdir}${_instdir}"
+
+    # add xdg menu
+    mkdir -p ${pkgdir}/etc/xdg/menus/applications-merged/
+    cp "${_prefix}/etc/xdg/menus/applications-merged/astrodmx.menu" "${pkgdir}/etc/xdg/menus/applications-merged/"
+
+    # copy usr share
+    mkdir -p "${pkgdir}/usr/share/"
+    cp -r ${_prefix}/usr/share/* "${pkgdir}/usr/share/"
+
+    # copy over the udev rules
+    mkdir -p "${pkgdir}/etc/udev/rules.d"
+    cp ${_prefix}/etc/udev/rules.d/* "${pkgdir}/etc/udev/rules.d"
+
+    # create a profile file to add an alias for astrodmx
+    mkdir -p "${pkgdir}/etc/profile.d"
+    echo "alias astrodmx=\"${_instdir}/bin/AstroDMx-Capture\"" > "${pkgdir}/etc/profile.d/${pkgname}.sh"
+}

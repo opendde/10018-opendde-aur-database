@@ -1,0 +1,8 @@
+build() {
+    cd "${srcdir}/${pkgname}-${pkgver}"
+    cmake \
+        -B build \
+        -DCMAKE_BUILD_TYPE:STRING='None' \
+        -DCMAKE_INSTALL_PREFIX:PATH='/usr'
+    make -C build all
+}

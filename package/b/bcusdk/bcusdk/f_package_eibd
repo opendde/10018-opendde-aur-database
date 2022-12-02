@@ -1,0 +1,15 @@
+package_eibd() {
+    backup=(etc/conf.d/eibd.conf)
+
+    cd "${srcdir}"
+    install -Dm644 eibd.socket eibd.service -t "${pkgdir}/usr/lib/systemd/system"
+    install -Dm644 eibd.conf -t "${pkgdir}/etc/conf.d"
+    install -Dm644 eibd.sysusers $pkgdir/usr/lib/sysusers.d/eibd.conf
+    install -Dm644 90-eibd.rules -t "${pkgdir}/etc/udev/rules.d"
+
+    cd "${srcdir}/${pkgbase}-${pkgver}/common"
+    make DESTDIR="${pkgdir}" install
+
+    cd "${srcdir}/${pkgbase}-${pkgver}/eibd"
+    make DESTDIR="${pkgdir}" install
+}

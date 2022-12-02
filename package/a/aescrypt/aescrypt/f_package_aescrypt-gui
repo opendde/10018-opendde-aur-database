@@ -1,0 +1,12 @@
+package_aescrypt-gui() {
+  pkgdesc="Graphical user interface for AESCrypt"
+  depends=('aescrypt' 'perl')
+  optdepends=(
+    'zenity: GTK-based password prompt'
+    'kdialog: Qt-based password prompt'
+  )
+  
+  install -Dm755 "${srcdir}/${pkgbase}-${pkgver}/gui/aescrypt-gui"  "${pkgdir}/usr/bin/aescrypt-gui"
+  install -Dm644 "${srcdir}/${pkgbase}-${pkgver}/gui/AESCrypt.desktop" "${pkgdir}/usr/share/applications/AESCrypt.desktop"
+  install -Dm644 "${srcdir}/${pkgbase}-${pkgver}/gui/SmallLock.png" "${pkgdir}/usr/share/aescrypt/SmallLock.png"
+}

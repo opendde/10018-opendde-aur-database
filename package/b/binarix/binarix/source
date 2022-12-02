@@ -1,0 +1,1 @@
+("$pkgname-$pkgver.tar.gz::https://gitlab.com/reck1610/$pkgname/repository/archive.tar.gz?ref=release%2F$pkgver")

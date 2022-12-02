@@ -1,0 +1,29 @@
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  
+  # Install program
+  install -Dm755 apoo "$pkgdir/usr/bin/apoo"
+  for _file in *.py; do \
+    install -Dm755 "$_file" "$pkgdir/usr/lib/$pkgname/$_file"
+  done
+  
+  # Install documentation
+  cd docs
+  for _file in *; do \
+    install -Dm644 "$_file" "$pkgdir/usr/share/doc/$pkgname/$_file"
+  done
+  
+  cd ../html
+  for _file in *; do \
+    install -Dm644 "$_file" "$pkgdir/usr/share/doc/$pkgname/html/$_file"
+  done
+  
+  cd ../examples
+  for _file in *; do \
+    install -Dm644 "$_file" "$pkgdir/usr/share/doc/$pkgname/examples/$_file"
+  done
+  
+  # Install .desktop
+  cd "$srcdir"
+  install -Dm644 $pkgname.desktop "$pkgdir/usr/share/applications/$pkgname.desktop"
+}

@@ -1,0 +1,23 @@
+package_boost-65-compat() {
+   pkgdesc+=' - development headers'
+   depends=("boost-65-compat-libs=${pkgver}")
+   optdepends=('python: for python bindings'
+               'python2: for python2 bindings')
+   conflicts=('boost' 'boost-libs')
+   options=('staticlibs')
+
+   install -dm755 "${pkgdir}"/usr
+   cp -a "${_stagedir}"/{bin,include,share} "${pkgdir}"/usr
+
+   install -d "${pkgdir}"/usr/lib
+   cp -a "${_stagedir}"/lib/*.a "${pkgdir}"/usr/lib/
+   cp -a "${_stagedir}"/lib/libboost_*.so "${pkgdir}"/usr/lib/
+
+   install -Dm644 "${_stagedir}"/python3/lib/libboost_*.a \
+      "${pkgdir}"/usr/lib/
+
+   install -Dm644 "${srcdir}/"${_pkgname}_${_boostver}/LICENSE_1_0.txt \
+      "${pkgdir}"/usr/share/licenses/boost-65-compat/LICENSE_1_0.txt
+
+   ln -s /usr/bin/b2 "$pkgdir"/usr/bin/bjam
+}

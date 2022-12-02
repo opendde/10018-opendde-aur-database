@@ -1,0 +1,44 @@
+package() {
+	msg2 "unzip distributive"
+	unzip -o ./${_achivename}_${pkgver}.zip
+
+	appdir=${pkgdir}/opt/${_dstdirname}
+
+	msg2 "create structure"
+	mkdir $pkgdir/opt
+	mv ${_achivename} ${appdir}
+
+	msg2 "remove win files"
+	rm -f ${appdir}/*.{bat,exe,ini}
+
+	msg2 "rename launch scripts (runner.sh -> bgbillingrunner.sh)"
+	rename runner.sh bgbillingrunner.sh ${appdir}/runner.sh
+
+	msg2 "chmod package files"
+	chmod +x ${appdir}/*.sh
+
+	msg2 "patch/remove JAVA_HOME in launch script"
+	sed -i "s|\${JAVA_HOME}\/bin\/java|java|" ${appdir}/bgbillingrunner.sh
+	# if JAVA_HOME ... fi
+	sed -i '5d' ${appdir}/bgbillingrunner.sh
+	sed -i '5d' ${appdir}/bgbillingrunner.sh
+	sed -i '5d' ${appdir}/bgbillingrunner.sh
+	sed -i '5d' ${appdir}/bgbillingrunner.sh
+	sed -i '5d' ${appdir}/bgbillingrunner.sh
+	# newline + BGRUNNER_DIR=.
+	sed -i '5d' ${appdir}/bgbillingrunner.sh
+	sed -i '5d' ${appdir}/bgbillingrunner.sh
+
+	msg2 "patch log path in launch script"
+	sed -i "s/runner\.log/\$\{HOME\}\/\.bgbilling\/runner\.log/" ${appdir}/bgbillingrunner.sh
+
+	msg2 "patch var in files"
+	_patch_var_file bgbillingrunner.desktop
+	_patch_var_file bgbillingrunner.sh
+
+	msg2 "copy package files"
+	mkdir -p $pkgdir/usr/share/{applications,pixmaps}
+	install    -m644 $srcdir/bgbillingrunner.png $pkgdir/usr/share/pixmaps/
+	install    -m644 $srcdir/bgbillingrunner.desktop $pkgdir/usr/share/applications/
+	install -D -m755 $srcdir/bgbillingrunner.sh $pkgdir/etc/profile.d/bgbillingrunner.sh
+}

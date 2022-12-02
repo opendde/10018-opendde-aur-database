@@ -1,0 +1,3 @@
+package() {
+    install -Dm755 "${srcdir}"/ampart/ampart -t "${pkgdir}"/usr/bin/
+}

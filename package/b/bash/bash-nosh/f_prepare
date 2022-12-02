@@ -1,0 +1,8 @@
+prepare() {
+  cd $pkgname-$_basever
+
+  for (( _p=1; _p<=$((10#${_patchlevel})); _p++ )); do
+    msg "applying patch bash${_basever//.}-$(printf "%03d" $_p)"
+    patch -p0 -i ../bash${_basever//.}-$(printf "%03d" $_p)
+  done
+}

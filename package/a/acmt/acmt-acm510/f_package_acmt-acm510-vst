@@ -1,0 +1,5 @@
+package_acmt-acm510-vst() {
+	groups=('pro-audio' 'vst-plugins')
+	pkgdesc="ACM510 Channel Compressor (VST)"
+	install -Dm755 ${srcdir}/plugin-binaries/VST/ACM510.so ${pkgdir}/usr/lib/vst/ACM510.so
+}

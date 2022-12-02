@@ -1,0 +1,11 @@
+check() {
+  cd "$pkgname"
+
+  # run cargo tests
+  cargo test
+
+  # run cli tests
+  # ensure recently-built binary is first in $PATH
+  PATH="$(pwd)/target/release:$PATH"
+  bats ./cli-tests
+}

@@ -1,0 +1,3 @@
+package() {
+    install -Dm755 ./$_src/bgc "$pkgdir"/usr/bin/bgc
+}

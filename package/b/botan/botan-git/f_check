@@ -1,0 +1,5 @@
+check() {
+  cd "botan"
+
+  ./botan-test
+}

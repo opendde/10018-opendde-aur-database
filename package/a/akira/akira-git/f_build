@@ -1,0 +1,5 @@
+build() {
+  cd "${srcdir}/${pkgname%-git}"
+  meson build --prefix=/usr
+  ninja -C build
+}

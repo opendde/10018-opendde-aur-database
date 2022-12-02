@@ -1,0 +1,5 @@
+prepare() {
+  cd "${srcdir}/amarok-${pkgver}"
+
+  mkdir -p "${srcdir}/amarok-${pkgver}/build"
+}

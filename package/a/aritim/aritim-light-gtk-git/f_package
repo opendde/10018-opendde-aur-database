@@ -1,0 +1,6 @@
+package() {
+    cd $_pkgname
+
+    mkdir -p "${pkgdir}/usr/share/themes/Aritim-Light"
+    cp -r GTK/* ${pkgdir}/usr/share/themes/Aritim-Light
+}

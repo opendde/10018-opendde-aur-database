@@ -1,0 +1,5 @@
+package() {
+  cd "${srcdir}"/Arrongin-Suru-$pkgver
+  install -d "$pkgdir"/usr/share/icons/Arrongin
+  cp -rf * "$pkgdir"/usr/share/icons/Arrongin
+}

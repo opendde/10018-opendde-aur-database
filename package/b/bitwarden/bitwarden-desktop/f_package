@@ -1,0 +1,9 @@
+package() {
+  install -d "$pkgdir"/opt/bitwarden
+
+  # Move everything from /opt/Bitwarden to /opt/bitwarden
+  cp -arT "$srcdir/dist/opt/Bitwarden" "$pkgdir/opt/bitwarden"
+  install -d "$pkgdir"/usr/{bin,lib,share/{pixmaps,icons,applications}}
+  cp -a "$srcdir/dist/usr/share/icons" "$pkgdir/usr/share/icons" 
+  install -Dm644 "$srcdir/dist/usr/share/applications/bitwarden.desktop" "$pkgdir/usr/share/applications/bitwarden.desktop"
+}

@@ -1,0 +1,5 @@
+package() {
+  install -Dm644 "${srcdir}/adb.service" "${pkgdir}/usr/lib/systemd/system/adb.service"
+  install -Dm644 "${srcdir}/license.html" "${pkgdir}/usr/share/licenses/${pkgname}/license.html"
+  install -Dm755 "${srcdir}/system/core/adb/adb" "${pkgdir}/usr/bin/adb"
+}

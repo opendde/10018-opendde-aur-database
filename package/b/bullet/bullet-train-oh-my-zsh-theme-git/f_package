@@ -1,0 +1,15 @@
+package() {
+    cd "$_pkgname"
+
+    # We don't need anything related to git in the package
+    rm -rf .git*
+
+    # License is inside of README
+    install -D -m644 README.md "${pkgdir}/usr/share/licenses/${_pkgname}/LICENSE"
+
+    # Install empty documentation
+    install -D -m644 README.md "${pkgdir}/usr/share/doc/${_pkgname}/README.md"
+
+    # Install the theme
+    install -D -m644 bullet-train.zsh-theme "${pkgdir}/usr/share/oh-my-zsh/themes/bullet-train.zsh-theme"
+}

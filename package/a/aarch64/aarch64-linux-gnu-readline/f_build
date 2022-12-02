@@ -1,0 +1,8 @@
+build() {
+  cd $_srcdir
+
+  mkdir -p build-$_target && pushd build-$_target
+  $_target-configure
+  make SHLIB_LIBS=-lncurses
+  popd
+}

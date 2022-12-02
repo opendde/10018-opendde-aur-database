@@ -1,0 +1,4 @@
+package() {
+  install -d "$pkgdir/usr/share/themes/BetterGruvbox"
+  cp -rv ${srcdir}/BetterGruvbox/* "$pkgdir/usr/share/themes/BetterGruvbox"
+}

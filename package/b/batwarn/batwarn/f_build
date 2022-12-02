@@ -1,0 +1,5 @@
+build() {
+	cd "$pkgname-$pkgname-$pkgver"
+	sed -i '/-Wl,-R/d' Makefile
+	make
+}

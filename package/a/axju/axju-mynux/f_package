@@ -1,0 +1,9 @@
+package() {
+    cd dotfiles
+    mkdir -p ${pkgdir}/usr/share/mynux/storage/axju
+    cp -rf mynux.toml ${pkgdir}/usr/share/mynux/storage/axju/mynux.toml
+    cp -rf .config ${pkgdir}/usr/share/mynux/storage/axju/.config
+    cp -rf .local ${pkgdir}/usr/share/mynux/storage/axju/.local
+    cp -rf .bashrc ${pkgdir}/usr/share/mynux/storage/axju/.bashrc
+    cp -rf .xinitrc ${pkgdir}/usr/share/mynux/storage/axju/.xinitrc
+}

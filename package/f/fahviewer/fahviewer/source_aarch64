@@ -1,0 +1,1 @@
+(https://download.foldingathome.org/releases/public/release/"${pkgname}"/debian-stable-arm64/v"${pkgver%.*}"/"${pkgname}"_"${pkgver}"-64bit-release.tar.bz2)

@@ -1,0 +1,7 @@
+package() {
+    addons="$pkgdir/usr/share/blender/$(blender -v | head -n1 | cut -f2 -d ' ')/scripts/addons/"
+    if [ ! -d "$addons" ]; then
+        mkdir -p "$addons"
+    fi
+    unzip archimesh_v1_1_2.zip -d "$addons"
+}

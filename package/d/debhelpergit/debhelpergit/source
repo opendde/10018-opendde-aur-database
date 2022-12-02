@@ -1,0 +1,1 @@
+("git+https://salsa.debian.org/debian//debhelper.git#tag=debian/$pkgver")

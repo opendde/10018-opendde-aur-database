@@ -1,0 +1,12 @@
+package() {
+  cd "${srcdir}/${_pkgname}"
+
+  install -v -d -m755 "${pkgdir}/usr/bin/"
+  install -v -m755 balong-usbdload loader-patch ptable-injector "${pkgdir}/usr/bin"
+  install -v -d -m755 "${pkgdir}/usr/share/${_pkgname}/data"
+  install -v -m644 *.bin "${pkgdir}/usr/share/${_pkgname}/data"
+
+  install -v -D -m644 README.md "${pkgdir}/usr/share/doc/${_pkgname}/README.md"
+  install -v -D -m644 "${srcdir}/README.english.md" "${pkgdir}/usr/share/doc/${_pkgname}/README.english.md"
+  install -v -D -m644 "${srcdir}/helpmessages_english.txt" "${pkgdir}/usr/share/doc/${_pkgname}/helpmessages_english.txt"
+}

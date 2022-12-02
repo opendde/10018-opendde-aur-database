@@ -1,0 +1,21 @@
+build() {
+  cd ${srcdir}/binutils-2.21.1/
+  cd ${_builddir}
+  CFLAGS="-Os -g0" "${srcdir}/binutils-2.21.1/configure" \
+      --prefix=/usr \
+      --program-prefix="msp430-" \
+      --disable-multilib \
+      --disable-werror \
+      --disable-nls \
+      --enable-install-libbfd \
+      --infodir=/usr/share/info \
+      --libdir=/usr/msp430/lib \
+      --mandir=/usr/share/man \
+      --target=msp430
+
+  # This checks the host environment and makes sure all the necessary
+  # tools are available to compile Binutils.
+  make configure-host
+
+  make tooldir=/usr all
+}

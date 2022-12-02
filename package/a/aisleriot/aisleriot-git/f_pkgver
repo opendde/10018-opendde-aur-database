@@ -1,0 +1,4 @@
+pkgver() {
+  cd ${pkgname%-git}
+  printf %s.r%s $(grep "^  version:" meson.build | cut -d: -f2|tr -d ,|tr -d \') $(git describe --tags | cut -d- -f2)
+}

@@ -1,0 +1,35 @@
+package() {
+    install -d "$pkgdir"/usr/share/beast2
+    install -d ${pkgdir}/usr/bin/$bin
+    cd "$srcdir/BeastFX/release2/Linux/"
+    cp -rf beast/* "${pkgdir}/usr/share/${pkgname}"
+
+    # shipped modules
+    for module in {beastfx,beast,beagle}
+    do
+        install -d "${pkgdir}/usr/share/${pkgname}/lib/${module}"
+    done
+    cp -rf ${srcdir}/BeastFX/build/beastfx/* "${pkgdir}/usr/share/${pkgname}/lib/beastfx"
+    cp -rf ${srcdir}/${pkgname}-${pkgver}/build/beast/* "${pkgdir}/usr/share/${pkgname}/lib/beast"
+    cp -rf ${srcdir}/${pkgname}-${pkgver}/lib/beagle/*  "${pkgdir}/usr/share/${pkgname}/lib/beagle"
+
+    # correct excutable
+    rm -rf $pkgdir/usr/share/beast2/bin/*
+    for exe in {"beauti","densitree","logcombiner","treeannotator","beast2","loganalyser","applauncher","packagemanager"}
+    do
+        install -Dm755 $srcdir/${pkgname}-${exe} -t $pkgdir/usr/share/beast2/bin/
+    done
+    mv $pkgdir/usr/share/beast2/bin/${pkgname}-beast2  $pkgdir/usr/share/beast2/bin/${pkgname}
+
+    for bin in $(ls $pkgdir/usr/share/beast2/bin)
+    do
+        ln -s /usr/share/beast2/bin/$bin ${pkgdir}/usr/bin/$bin
+    done
+    install -Dm 755 ${srcdir}/*.desktop -t ${pkgdir}/usr/share/applications
+    # Do NOT put link this file to /usr/bin
+    install -Dm755 $srcdir/${pkgname}-environment -t $pkgdir/usr/share/beast2/bin/
+
+    # clear files
+    rm -rf $pkgdir/usr/share/beast2/jre
+    ln -sf /usr/lib/jvm/default/  $pkgdir/usr/share/beast2/jre
+}

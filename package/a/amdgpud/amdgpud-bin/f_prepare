@@ -1,0 +1,5 @@
+prepare() {
+	mkdir -p glow wayland
+	bsdtar -xf amdguid-glow.zip -C glow
+	bsdtar -xf amdguid-wayland.zip -C wayland
+}

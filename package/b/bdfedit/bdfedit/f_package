@@ -1,0 +1,11 @@
+package() {
+  cd "$srcdir/$pkgname$pkgver"
+  patch -Np1 -i ../$pkgname-$pkgver.diff
+  install -Dm755 $pkgname "$pkgdir/usr/bin/$pkgname"
+  install -Dm644 completion.tcl "$pkgdir/usr/share/$pkgname/completion.tcl"
+  install -Dm644 $pkgname.samprc "$pkgdir/etc/bdfeditrc"
+  install -Dm644 $pkgname.help "$pkgdir/usr/share/doc/$pkgname/readme.txt"
+  install -Dm644 ../COPYING "$pkgdir/usr/share/licenses/$pkgname/COPYING"
+  install -Dm644 ../$pkgname.png "$pkgdir/usr/share/pixmaps/$pkgname.png"
+  install -Dm644 ../$pkgname.desktop  "$pkgdir/usr/share/applications/$pkgname.desktop"
+}

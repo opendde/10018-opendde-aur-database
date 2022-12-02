@@ -1,0 +1,55 @@
+package() {
+  # Extract archive
+  msg "Extracting the data.tar.gz..."
+  bsdtar -xf data.tar.gz -C "$pkgdir/"
+
+  # Main install
+  msg2 "Moving files..."
+  install -d "$pkgdir"/opt
+  mv "$pkgdir"/usr/lib/beyondcompare/ "$pkgdir"/opt/$pkgname/
+
+  # Architecture
+  _arch=amd64
+  [[ $CARCH = i686 ]] && _arch=i386
+
+  ## File manager plugins
+  msg2 "Installing file manager plugins..."
+  # Dolphin
+  install -Dm755 "$pkgdir"/opt/$pkgname/ext/bcompare_ext_kde.$_arch.so \
+           "$pkgdir"/usr/lib/kde4/bcompare_ext_kde.so
+  # .desktop for Dolphin
+  install -Dm644 "$pkgdir"/opt/$pkgname/ext/bcompare_ext_kde.desktop \
+           "$pkgdir"/usr/share/kde4/services/bcompare_ext_kde.desktop
+  # Nautilus
+  install -Dm755 "$pkgdir"/opt/$pkgname/ext/bcompare-ext-nautilus.$_arch.so \
+           "$pkgdir"/usr/lib/nautilus/extensions-3.0/bcompare-ext-nautilus.so 
+  # Thunar
+  install -Dm755 "$pkgdir"/opt/$pkgname/ext/bcompare-ext-thunarx.$_arch.so \
+           "$pkgdir"/usr/lib/thunarx-2/bcompare-ext-thunarx.so
+  # Nemo
+  install -Dm755 "$pkgdir"/opt/$pkgname/ext/bcompare-ext-nemo.$_arch.so \
+          "$pkgdir"/usr/lib/nemo/extensions-3.0/bcompare-ext-nemo.so 
+  # Caja
+  install -Dm755 "$pkgdir"/opt/$pkgname/ext/bcompare-ext-caja.$_arch.so \
+           "$pkgdir"/usr/lib/caja/extensions-2.0/bcompare-ext-caja.so
+
+  # License
+  install -Dm644 LICENSE \
+           "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+
+  # Directory location
+  msg2 "Fixing main directory location..."
+  sed "s|BC_LIB=.*|BC_LIB=/opt/$pkgname|" \
+    -i "$pkgdir"/usr/bin/bcompare
+
+  # Remove redundancies
+  msg2 "Removing redundancies..."
+  rm -r "$pkgdir"/opt/$pkgname/ext/
+  rm -r "$pkgdir"/usr/share/mime/
+  rm    "$pkgdir"/opt/$pkgname/GPG-KEY-scootersoftware
+  rm    "$pkgdir"/opt/$pkgname/scootersoftware.list
+  
+  # Fix permissions
+  msg2 "Fixing directory permissions..."
+  find "$pkgdir" -type d -exec chmod 755 {} +
+}

@@ -1,0 +1,7 @@
+package() {
+  npm install -g --user root --prefix="$pkgdir/usr" "assemblyscript-$pkgver.tgz"
+
+  find "$pkgdir/usr" -type d -exec chmod 755 {} +
+
+  chown -R root:root "$pkgdir"
+}

@@ -1,0 +1,5 @@
+package() {
+  cd bluez-${pkgver}/tools
+  install -Dm0755 hcitool "$pkgdir"/usr/bin/hcitool
+  install -Dm0755 hcitool.1 "$pkgdir"/usr/share/man/man1/hcitool.1
+}

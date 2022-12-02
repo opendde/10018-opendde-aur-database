@@ -1,0 +1,9 @@
+package() {
+	cd "${srcdir}/$pkgname-$pkgver/AssimpNet/bin/Net45-Debug"
+	install -Dm644 "AssimpLicense.txt" "$pkgdir/usr/share/licenses/$pkgname/AssimpLicense.txt"
+	find . -name 'AssimpNet.dll*' -exec install -Dm644 {} "$pkgdir/usr/lib/$pkgname/"{} \;
+	install -m644 "$srcdir/AssimpNet.dll.config" "$pkgdir/usr/lib/$pkgname/"
+	find "$pkgdir" -name '*.dll' -exec gacutil -i {} -root "$pkgdir/usr/lib" \;
+	install -Dm644 "$srcdir/assimp-net.pc.in" "$pkgdir/usr/lib/pkgconfig/assimp-net.pc"
+	sed -i "s,@VERSION@,$pkgver," "$pkgdir/usr/lib/pkgconfig/assimp-net.pc"
+}

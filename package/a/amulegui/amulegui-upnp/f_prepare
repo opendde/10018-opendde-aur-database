@@ -1,0 +1,3 @@
+prepare() {
+  patch -d aMule-SVN-r${pkgver} -p1 < fix-locale-translations.patch
+}

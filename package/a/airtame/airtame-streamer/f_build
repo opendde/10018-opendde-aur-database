@@ -1,0 +1,18 @@
+build() {
+  cd "$srcdir/enet"
+  autoreconf -vfi
+  ./configure
+  make
+
+  cd "${srcdir}/zlog"
+  make CFLAGS=-Wno-error=cpp
+
+  cd "${srcdir}/x264"
+  ./configure --enable-shared
+  make
+}
+  #and that we've built in the build() function
+  cp enet/.libs/libenet.so.7.0.0 ${pkgdir}/opt/airtame/lib/libenet.so.7
+  cp zlog/src/libzlog.so.1.2 ${pkgdir}/opt/airtame/lib
+  cp x264/libx264.so.146 ${pkgdir}/opt/airtame/lib
+}

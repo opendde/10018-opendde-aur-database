@@ -1,0 +1,8 @@
+package() {
+  cd "$srcdir/$_gitname"
+  install -D -m755 ./blarb "$pkgdir/usr/bin/blarb"
+
+	mkdir -p "$pkgdir/usr/lib"
+  cp -r ./library "$pkgdir/usr/lib/blarb"
+  chmod -R 755 "$pkgdir/usr/lib/blarb"
+}

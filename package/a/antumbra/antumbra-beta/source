@@ -1,0 +1,1 @@
+("${pkgname}::git+https://github.com/TeamAntumbra/libantumbra.git#tag=${_pkgver}-beta"

@@ -1,0 +1,4 @@
+build() {
+  cd "charm-v${pkgver}"
+  ./build AMPI mpi-linux-$CARCH --with-production
+}

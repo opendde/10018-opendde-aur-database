@@ -1,0 +1,6 @@
+prepare() {
+	cd "$_srcname"
+	mkdir -p Release-Linux
+#pwd
+#	patch -Np1 -i ../../Comp.patch
+}

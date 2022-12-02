@@ -1,0 +1,4 @@
+package() {
+    install -d "$pkgdir/usr/share/fonts/TTF"
+    install -m644 "$srcdir/"*.TTF "$pkgdir/usr/share/fonts/TTF/"
+}

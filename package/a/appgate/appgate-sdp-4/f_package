@@ -1,0 +1,14 @@
+package() {
+  # Install application files
+  cp -dpr "${srcdir}/${pkgname}/"{opt,usr,etc} "${pkgdir}"
+
+  # Install service files
+  install -dm755 "${pkgdir}/usr/lib/systemd/system"
+  install -Dm644 "${srcdir}/${pkgname}/lib/systemd/system/"* "${pkgdir}/usr/lib/systemd/system/"
+  install "${srcdir}/appgatedriver.service" "${pkgdir}/usr/lib/systemd/system/appgatedriver.service"
+
+  # Install license files
+  install -Dm644 "${srcdir}/${pkgname}/usr/share/doc/${pkgname%%-*}/copyright" "${pkgdir}/usr/share/licenses/${pkgname}/copyright"
+  install -Dm644 "${srcdir}/${pkgname}/usr/share/doc/${pkgname%%-*}/LICENSE.github" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.github"
+  install -Dm644 "${srcdir}/${pkgname}/usr/share/doc/${pkgname%%-*}/LICENSES.chromium.html.bz2" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSES.chromium.html.bz2"
+}

@@ -1,0 +1,7 @@
+build() {
+  cd $pkgname-$pkgver
+  ./configure
+  # Fight unused direct deps
+  sed -i -e "s| -shared | $LDFLAGS\0 |g" -e "s|    if test \"\$export_dynamic\" = yes && test -n \"\$export_dynamic_flag_spec\"; then|      func_append compile_command \" $LDFLAGS\"\n      func_append finalize_command \" $LDFLAGS\"\n\0|" libtool
+  make
+}

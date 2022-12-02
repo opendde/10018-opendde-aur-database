@@ -1,0 +1,3 @@
+check() {
+  make -k check -C "${_pkgname}"
+}

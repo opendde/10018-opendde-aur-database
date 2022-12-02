@@ -1,0 +1,5 @@
+build() {
+  # rm "${srcdir}/${pkgname}-${pkgver}/go.sum"
+  cd "${srcdir}/${pkgname}-${pkgver}/cmd/proxy"
+  go build -ldflags "-extldflags ${LDFLAGS}" -buildmode=pie
+}

@@ -1,0 +1,9 @@
+prepare() {
+  cd ${srcdir}/binutils
+
+  # https://bugs.archlinux.org/task/34629
+  sed -i "/ac_cpp=/s/\$CPPFLAGS/\$CPPFLAGS -O2/" libiberty/configure
+
+  rm -rf ${_builddir}
+  mkdir ${_builddir}
+}

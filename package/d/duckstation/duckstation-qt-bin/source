@@ -1,0 +1,1 @@
+("${pkgname%-bin}-${pkgver}.AppImage::https://github.com/stenzek/duckstation/releases/download/latest/duckstation-qt-x64.AppImage")

@@ -1,0 +1,3 @@
+build() {
+install -D -m 755 "$srcdir/$pkgname" "$pkgdir/usr/bin/$pkgname"
+}

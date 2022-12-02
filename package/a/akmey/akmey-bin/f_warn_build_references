@@ -1,0 +1,3 @@
+warn_build_references() {
+    : # I like __FILE__ and don't consider build references to be a problem
+}

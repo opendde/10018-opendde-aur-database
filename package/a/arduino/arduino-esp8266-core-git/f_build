@@ -1,0 +1,18 @@
+build() {
+  cd "$srcdir/esp-quick-toolchain"
+
+  # Include our custom "bin" directory into the PATH variable
+  export PATH=$PATH:$PWD/bin
+
+  # Cleanup prior building to prevent duplicates on rebuild
+  rm -f *.tar.gz *.tar.gz.json
+
+  # Compile toolchain. Clear "LINUX_BFLGS" to allow dynamic linking
+  make GCC=10.2 GHUSER=earlephilhower GHTOKEN=none LINUX_BFLGS=" "
+
+  # "make install" does actually compile additional parts of the toolchain
+  make GCC=10.2 GHUSER=earlephilhower GHTOKEN=none LINUX_BFLGS=" " install
+
+  # Insert a custom name to distinguish from official builds
+  sed -ri "s/^(name=).*/\1Arch Linux ESP8266 Boards/" arduino/platform.txt
+}

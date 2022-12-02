@@ -1,0 +1,9 @@
+package() {
+  install_scripts="/opt/brother/Printers/dcpt820dw/scripts"
+  scripts="${pkgdir}${install_scripts}"
+  mkdir -p "${scripts}"
+  tar -xf control.tar.gz -C "${scripts}"
+  tar -xf data.tar.gz -C "${pkgdir}"
+  cd "${pkgdir}"
+  patch -Np0 < "${srcdir}/spool.patch"
+}

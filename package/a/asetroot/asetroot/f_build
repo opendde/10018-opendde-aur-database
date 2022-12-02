@@ -1,0 +1,8 @@
+build() {
+	cd asetroot
+	make
+	}
+
+package() {
+    install -D ${srcdir}/asetroot/asetroot ${pkgdir}/usr/bin/asetroot
+    }

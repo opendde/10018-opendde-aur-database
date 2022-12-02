@@ -1,0 +1,11 @@
+prepare() {
+  [[ ! -d gcc ]] && ln -s gcc-${pkgver/+/-} gcc
+  cd gcc
+  sed -i 's@\./fixinc\.sh@-c true@' gcc/Makefile.in
+
+  # Arch Linux ARM installs aarch64 libraries /lib
+  sed -i '/lp64=/s/lib64/lib/' gcc/config/aarch64/t-aarch64-linux
+
+  rm -rf "$srcdir"/gcc-build
+  mkdir "$srcdir"/gcc-build
+}

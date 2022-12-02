@@ -1,0 +1,10 @@
+package() {
+    cd "$pkgname-$_pkgver"
+
+    # Install bgpscanner binary
+    make DESTDIR="$pkgdir" install
+
+    # Install license
+    mkdir -p "$pkgdir/usr/share/licenses/$pkgname"
+    install -m 644 ../license "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

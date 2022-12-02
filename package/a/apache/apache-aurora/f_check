@@ -1,0 +1,3 @@
+check() {
+  msg "Skipping 'check'."
+}

@@ -1,0 +1,5 @@
+prepare() {
+  cd aegisub
+
+  arch-meson builddir -Dportaudio=disabled -Dopenal=disabled -Dtests=false
+}

@@ -1,0 +1,33 @@
+build() {
+	# export required perl executable locations
+	export MAKEFLAGS+=" POD2MAN=${_core_perl}/pod2man"
+	export MAKEFLAGS+=" POD2HTML=${_core_perl}/pod2html"
+	export MAKEFLAGS+=" PODCHECKER=${_core_perl}/podchecker"
+	export MAKEFLAGS+=" PROVE=${_core_perl}/prove"
+
+	(
+		cd "${srcdir}/${pkgname%-git}/libraries/libapparmor"
+		./configure \
+			--prefix=/usr \
+			--sbindir=/usr/bin \
+			--sysconfdir=/etc \
+			--with-pic \
+			--with-perl \
+			--with-python \
+			--with-ruby
+		make
+	)
+	cd "${srcdir}/${pkgname%-git}"
+	make -C binutils
+	make -C parser
+	make -C profiles
+	make -C utils
+	make -C changehat/pam_apparmor
+	make -C changehat/mod_apparmor
+	make -C utils/vim
+
+	# copy to test location as some tests render the resulting python bytecode
+	# unreproducible: https://gitlab.com/apparmor/apparmor/-/issues/184
+	cd ..
+	cp -av "${srcdir}/${pkgname%-git}" "${srcdir}/${pkgname%-git}-test"
+}

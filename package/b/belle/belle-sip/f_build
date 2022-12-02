@@ -1,0 +1,9 @@
+build() {
+  cmake -B build "$pkgname-$pkgver" \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DENABLE_STATIC=NO \
+        -DENABLE_MDNS=YES \
+        -DENABLE_STRICT=YES \
+        -DENABLE_TESTS=NO
+  make -C build
+}

@@ -1,0 +1,11 @@
+package() {
+	install -d "$pkgdir/opt/"
+	install -d "$pkgdir/usr/bin/"
+	install -d "$pkgdir/usr/share/applications/"
+	install -d "$pkgdir/usr/share/pixmaps/"
+
+	cp -r "$srcdir/$_progname-${pkgver//_/-}+$_buildid/" "$pkgdir/opt/$_progname"
+	ln -s "/opt/$_progname/AetherP2P" "$pkgdir/usr/bin/${pkgname%%-bin}"
+	install -Dm644 "Logo-lg.png" "$pkgdir/usr/share/pixmaps/${pkgname%%-bin}.png"
+	install -Dm644 "${pkgname%%-bin}.desktop" "$pkgdir/usr/share/applications/${pkgname%%-bin}.desktop"
+}

@@ -1,0 +1,10 @@
+package() {
+  mkdir -p "$pkgdir/usr/lib"
+  mkdir -p "$pkgdir/usr/bin"
+  
+  rm -rf "$srcdir/$pkgname/.git"
+  cp -r "$srcdir/$pkgname" "$pkgdir/usr/lib/aceproxy"
+
+  ln -s "/usr/lib/aceproxy/acehttp.py" "$pkgdir/usr/bin/aceproxy"
+  ln -s "/usr/lib/aceproxy/acehttp.py" "$pkgdir/usr/bin/acestreamproxy"
+} 

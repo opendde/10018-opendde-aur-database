@@ -1,0 +1,5 @@
+package() {
+  mkdir -p ${pkgdir}/usr/bin
+  cp ade+x86_64 ${pkgdir}/usr/bin/ade
+  chmod +x ${pkgdir}/usr/bin/ade
+}

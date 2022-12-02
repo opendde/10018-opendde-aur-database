@@ -1,0 +1,7 @@
+build() {
+  tar xf tdmCliLnx.tgz
+  tar xf tdm2Msg.tgz
+  tar xf tdm2Help.tgz
+  sed -i 's@Help .*@Help /usr/share/doc/3dm2/html@' 3dm2.conf
+  sed -i 's@MsgPath .*@MsgPath /usr/share/3dm2/msg@' 3dm2.conf
+}

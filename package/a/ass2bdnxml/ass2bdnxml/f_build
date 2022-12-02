@@ -1,0 +1,5 @@
+build() {
+	cd "${pkgname}-${pkgver}"
+        cmake -Bbuild -DCMAKE_BUILD_TYPE=Release .
+        cmake --build build
+}

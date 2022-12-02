@@ -1,0 +1,4 @@
+build() {
+    cd $srcdir/
+    tar -xvf $srcdir/amdguid-wayland.tar.gz
+}

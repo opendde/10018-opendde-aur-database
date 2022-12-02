@@ -1,0 +1,15 @@
+prepare() {
+  cd $pkgname-$pkgver
+
+  # Build fix from Fedora
+  patch -Np1 -i ../agave-0.4.7-mdv-fix-str-fmt.patch
+
+  # Another build fix
+  patch -Np1 -i ../schemebox.patch
+
+  # Remove deprecated libgnome dependency
+  patch -Np1 -i ../drop-libgnome.patch
+
+  # Fix build without gconfmm installed
+  patch -Np1 -i ../fix-build-without-gconf.patch
+}

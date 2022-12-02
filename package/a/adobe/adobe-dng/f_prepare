@@ -1,0 +1,6 @@
+prepare() {
+    cd "$srcdir/"
+    7z x -y "DNGConverter_${pkgver//./_}.exe" '$APPDATA'
+    mv '$APPDATA/Adobe/CameraRaw/' ./
+    rmdir -p '$APPDATA/Adobe/'
+}

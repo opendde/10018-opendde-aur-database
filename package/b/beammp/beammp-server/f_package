@@ -1,0 +1,6 @@
+package() {
+	install -D beammp.sysusers "${pkgdir}/usr/lib/sysusers.d/beammp.conf"
+	install -D beammp.service "${pkgdir}/usr/lib/systemd/system/beammp.service"
+	cd "$srcdir/${_pkgname}"
+	install -D BeamMP-Server "${pkgdir}/opt/beammp/beammp-server"
+}

@@ -1,0 +1,5 @@
+package() {
+    install -Dm755 bin/ArcWelder -t "$pkgdir/usr/bin/"
+    cd "$pkgdir/usr/bin"
+    ln -s ArcWelder arcwelder
+}

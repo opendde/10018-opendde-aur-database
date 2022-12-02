@@ -1,0 +1,5 @@
+package() {
+cd $srcdir/antigravitaattori-master
+make exec_prefix=$pkgdir/usr prefix=$pkgdir/usr install
+install -D -m644 $srcdir/antigrav.desktop $pkgdir/usr/share/applications/antigrav.desktop
+}

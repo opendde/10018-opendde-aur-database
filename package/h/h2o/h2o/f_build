@@ -1,0 +1,13 @@
+build() {
+  cd "$srcdir/$pkgname-${pkgver/_/-}"
+
+  msg2 'Building...'
+  cmake \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+    -DWITH_BUNDLED_SSL=on \
+    -DWITH_MRUBY=off \
+    .
+  make
+  make libh2o
+}

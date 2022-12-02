@@ -1,0 +1,5 @@
+prepare() {
+  cd $pkgname-beta_${pkgver/\./_}
+  # fix root issue in package
+  patch -Np1 -i "$srcdir/bsnes-hd.patch"
+}

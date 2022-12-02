@@ -1,0 +1,4 @@
+package() {
+  install -d "$pkgdir"/usr/{bin,share/{applications,pixmaps}}
+  make -C abbayedesmorts-gpl-$pkgver DESTDIR="$pkgdir/" install
+}

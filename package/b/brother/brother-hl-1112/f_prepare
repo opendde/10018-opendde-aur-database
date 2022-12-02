@@ -1,0 +1,4 @@
+prepare() {
+	cd "$srcdir/hl1110cupswrapper-GPL_src-3.0.1-1/brcupsconfig"
+	sh ./mk
+}

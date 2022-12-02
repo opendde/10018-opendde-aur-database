@@ -1,0 +1,4 @@
+package() {
+    install -Dm 755 "$srcdir/binfmt-wasmtime-wrapper" "$pkgdir/usr/bin/binfmt-wasmtime-wrapper"
+    install -Dm 644 "$srcdir/wasm.conf" "$pkgdir/usr/lib/binfmt.d/wasm.conf"
+}

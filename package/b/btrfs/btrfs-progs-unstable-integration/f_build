@@ -1,0 +1,5 @@
+build() {
+  cd "$_gitname"
+  ./configure --prefix=/usr CFLAGS="$CFLAGS"
+  make
+}

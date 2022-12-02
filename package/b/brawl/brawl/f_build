@@ -1,0 +1,5 @@
+build() {
+	mkdir -p build
+	arch-meson build "${pkgname}-${pkgver}" --buildtype=release
+	ninja -C build
+}

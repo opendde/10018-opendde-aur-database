@@ -1,0 +1,3 @@
+build() {
+	make -C "$srcdir/2048"
+}

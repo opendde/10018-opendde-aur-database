@@ -1,0 +1,12 @@
+package() {
+	install -dm755 "$pkgdir/opt/"
+	chmod -R 755 "Arduino Pro IDE-v$pkgver-linux"
+	cp -r "Arduino Pro IDE-v$pkgver-linux" "$pkgdir/opt/arduino-pro-ide"
+	install -dm755 "${pkgdir}/usr/bin"
+	ln -s "/opt/arduino-pro-ide/arduino-pro-ide_${pkgver}_Linux_64bit" "${pkgdir}/usr/bin/arduino-pro-ide"
+	install -Dm644 "arduino-pro-ide/LICENSE.md" "$pkgdir/usr/share/licenses/arduino-pro-ide/LICENSE.md"
+	install -Dm644 "arduino-pro-ide/README" "$pkgdir/usr/share/man/man1/arduino-pro-ide.1"
+	install -Dm644 "arduino-pro-ide.desktop" "$pkgdir/usr/share/applications/arduino-pro-ide.desktop"
+	install -Dm644 "arduino-pro-ide.png" "$pkgdir/usr/share/pixmaps/arduino-pro-ide.png"
+    
+}

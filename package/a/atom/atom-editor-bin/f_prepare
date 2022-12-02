@@ -1,0 +1,7 @@
+prepare() {
+  # Extract data
+  bsdtar xf data.tar.xz
+ 
+  # Apply patches
+  patch -sp1 < "${srcdir}"/startupwmclass.patch
+}

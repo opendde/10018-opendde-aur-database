@@ -1,0 +1,9 @@
+build() {
+  cd "${srcdir}/${pkgname}/${_pkgname}"
+  ./bootstrap
+  ./configure --mandir=/usr/share/man \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --enable-linuxgpio
+  make
+}

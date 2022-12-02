@@ -1,0 +1,6 @@
+package() {
+  install -Dm755 linux/${pkgname%-*} "$pkgdir"/usr/bin/${pkgname%-*}
+  install -Dm644 readme.txt "$pkgdir"/usr/share/doc/${pkgname%-*}/README
+  sed -n '1,7p' readme.txt > COPYING
+  install -Dm644 COPYING "$pkgdir"/usr/share/licenses/${pkgname%-*}/COPYING
+}

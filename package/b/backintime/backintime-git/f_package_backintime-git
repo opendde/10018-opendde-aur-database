@@ -1,0 +1,12 @@
+package_backintime-git() {
+  pkgdesc="Simple backup/snapshot system inspired by Flyback and TimeVault. Qt5 GUI version."
+  #depends=('backintime-cli'    'libnotify' 'polkit' 'python-dbus' 'python-pyqt5' 'xorg-xdpyinfo')
+  depends=('backintime-cli-git' 'libnotify' 'polkit' 'python-dbus' 'python-pyqt5' 'xorg-xdpyinfo')
+  optdepends=('kompare: diff tool'
+              'meld: diff tool'
+              'python-secretstorage: store passwords')
+  provides=($_pkgname)
+  conflicts=($_pkgname)
+
+  make -C $_pkgname/qt DESTDIR="$pkgdir" install
+}

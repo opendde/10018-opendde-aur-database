@@ -1,0 +1,14 @@
+build() {
+  cd audience-${pkgver}
+
+  if [[ -d build ]]; then
+    rm -rf build
+  fi
+  mkdir build && cd build
+
+  cmake .. \
+    -DCMAKE_BUILD_TYPE='Release' \
+    -DCMAKE_INSTALL_PREFIX='/usr' \
+    -DGSETTINGS_COMPILE='FALSE'
+  make
+}

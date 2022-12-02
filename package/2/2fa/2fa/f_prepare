@@ -1,0 +1,4 @@
+prepare() {
+  mkdir -p src/rsc.io
+  mv ${pkgname}-${pkgver} src/rsc.io/2fa
+}

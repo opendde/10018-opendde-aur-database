@@ -1,0 +1,5 @@
+package() {
+  cd "Bluetooth-Unlock-${_pkgver}"
+  install -Dm755 Bluetooth-Unlock.py "${pkgdir}/usr/bin/${pkgname}"
+  install -Dm644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+}

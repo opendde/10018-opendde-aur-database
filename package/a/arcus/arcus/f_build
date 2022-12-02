@@ -1,0 +1,12 @@
+build() {
+  export _sitelib="$(python -c 'import site; print(site.getsitepackages()[0])')"
+  source .venv/bin/activate
+
+  cmake -S libArcus-${pkgver} -B build -G Ninja \
+    -DCMAKE_BUILD_TYPE=None \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=/usr/lib/ \
+    -DPython_SITELIB_LOCAL="${_sitelib}"
+
+  cmake --build build
+}

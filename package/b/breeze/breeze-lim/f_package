@@ -1,0 +1,4 @@
+package() {
+  DESTDIR="$pkgdir" cmake --install build
+  rm -rf "$pkgdir"{/usr/share/metainfo,/usr/share/plasma/look-and-feel}
+}

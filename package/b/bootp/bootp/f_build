@@ -1,0 +1,5 @@
+build() {
+  cd "$srcdir/$pkgname-${pkgver%_*}"
+  patch -Np1 < ../bootp_${pkgver/_/-}.diff || true
+  make
+}

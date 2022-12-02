@@ -1,0 +1,5 @@
+package() {
+    install -dm 0755 "${pkgdir}/usr/share/icons"
+    cp -rf "${srcdir}/${name}/Breeze_Hacked" "${pkgdir}/usr/share/icons"
+    chmod -R u=rwX,g=rX,o=rX "${pkgdir}/usr/share/icons/Breeze_Hacked"
+}

@@ -1,0 +1,5 @@
+package() {
+  cd "${srcdir}/Batsh-${pkgver}/src"
+  
+  ocp-build install -install-destdir $pkgdir
+}

@@ -1,0 +1,4 @@
+prepare() {
+  cd "AFLplusplus-${pkgver}"
+  make clean
+}

@@ -1,0 +1,7 @@
+package() {
+	cd "$srcdir"
+	install -Dp -m755 amttool "$pkgdir/usr/bin/$pkgname"
+	install -Dp -m644 README.txt "$pkgdir/usr/share/doc/$pkgname/README.txt"
+	install -Dp -m755 amt_traps_v1.4.sh "$pkgdir/usr/share/$pkgname/amt_traps.sh"
+	mkdir -p "$pkgdir/var/log/amt"
+}

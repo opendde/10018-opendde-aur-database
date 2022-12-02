@@ -1,0 +1,3 @@
+post_remove() {
+    type update-desktop-database && update-desktop-database -q
+}

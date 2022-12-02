@@ -1,0 +1,5 @@
+package() {
+  cd deploy
+	install -Dm755 "${_pkgname}" "${pkgdir}/usr/bin/${_pkgname}"
+	install -Dm644 "${startdir}/LICENSE" "${pkgdir}/usr/share/licenses/${_pkgname}/LICENSE"
+}

@@ -1,0 +1,28 @@
+build() {
+  cd ${srcdir}/binutils
+
+  config_guess=$(./config.guess)
+
+  cd ${_builddir}
+
+  # major difference with atmel's build script:
+  #   --enable-install-libiberty
+  #   --enable-install-libbfd
+  CFLAGS="-Os -g0" ${srcdir}/binutils/configure \
+        --prefix=/usr \
+        --with-lib-path=/usr/lib:/usr/local/lib \
+        --disable-nls \
+        --enable-doc \
+        --target=avr \
+        --build=${config_guess} \
+        --host=${config_guess} \
+        --disable-werror \
+        --disable-gdb \
+        --disable-libdecnumber \
+        --disable-readline \
+        --disable-sim
+
+  make configure-host
+
+  make tooldir=/usr
+}

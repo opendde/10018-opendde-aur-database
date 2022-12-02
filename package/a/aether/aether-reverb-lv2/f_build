@@ -1,0 +1,8 @@
+build() {
+	cd "${srcdir}/${pkgname}"
+	git clone --recurse-submodules -j$(nproc) https://github.com/Dougal-s/Aether.git
+	cd Aether
+	mkdir build && cd build
+	cmake .. -DCMAKE_BUILD_TYPE="Release"
+	make -j$(nproc)
+}

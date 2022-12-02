@@ -1,0 +1,4 @@
+build() {
+  patch $srcdir/"$_pkgname-$pkgver"/pacstrap.in < $srcdir/pacstrap.patch
+  make -C "$_pkgname-$pkgver"
+}

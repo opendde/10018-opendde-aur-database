@@ -1,0 +1,4 @@
+prepare() {
+	cd "$srcdir"
+	7z x "$_appimage" blacknut.desktop usr/share/icons/hicolor
+}

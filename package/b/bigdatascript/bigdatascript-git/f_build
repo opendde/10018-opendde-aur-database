@@ -1,0 +1,13 @@
+build() {
+  cd "${srcdir}/${_gitname}"
+  export BDS_HOME="$(realpath ../bds_home)"
+
+  # wrap ant to build everything locally
+  mkdir -p $BDS_HOME/.bds
+  ant -Duser.home="$BDS_HOME"
+  cp $BDS_HOME/.bds/bds.jar $BDS_HOME/bds.jar 
+  rm -rf $BDS_HOME/.bds
+  
+  # now run the rest of the install script
+  tail -n +21 scripts/install.sh | exec bash
+}

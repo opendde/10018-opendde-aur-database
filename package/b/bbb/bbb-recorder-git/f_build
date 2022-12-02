@@ -1,0 +1,6 @@
+build() {
+    cd "$srcdir"/bbb-recorder
+    npm install --ignore-scripts --silent --no-package-lock --no-update-notifier
+    npm install --ignore-scripts --silent --no-package-lock --no-update-notifier examples
+    find -name package.json -exec sed -i '/_where/d' {} +
+}

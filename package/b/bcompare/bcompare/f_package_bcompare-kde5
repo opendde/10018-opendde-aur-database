@@ -1,0 +1,12 @@
+package_bcompare-kde5() {
+  pkgdesc="KDE Plasma 5 service menus for Beyond Compare 4"
+  depends=('bcompare' 'kinit')
+  install=${pkgbase}-kde5.install
+
+   msg2 "Packaging KDE Plasma 5 service menus..."
+  _install_dir="${srcdir}/install"
+  # Set up service menus
+  mkdir -p "${pkgdir}/usr/lib"
+  mv "${_install_dir}/usr/lib/x86_64-linux-gnu/qt5" "${pkgdir}/usr/lib/qt"
+  msg2 "Done!"
+}

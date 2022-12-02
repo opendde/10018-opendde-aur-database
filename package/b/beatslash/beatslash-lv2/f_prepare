@@ -1,0 +1,15 @@
+prepare() {
+  cd "$pkgname-$pkgver"
+
+  # patch sources for lvtk v2
+  for src in src/*;
+    do sed -i 's/lvtk-1/lvtk-2/g' "$src";
+  done
+
+  # patch waf build script for lvtk v2
+  sed -i \
+    -e 's/lvtk-plugin-1/lvtk-plugin-2/' \
+    -e 's/lvtk-ui-1/lvtk-ui-2/' \
+    -e 's/lvtk-gtkui-1/lvtk-gtkui-2/' \
+    wscript
+}

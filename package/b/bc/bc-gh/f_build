@@ -1,0 +1,6 @@
+build() {
+  cd "bc-$pkgver"
+
+  PREFIX=/usr ./configure.sh -p GNU -e -G -sbc.banner -sdc.tty_mode
+  make
+}

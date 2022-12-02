@@ -1,0 +1,7 @@
+build() {
+  cd "$srcdir/$_alias"
+  ./autogen.sh
+  autoreconf -i
+  ./configure --prefix=/usr
+  make
+}

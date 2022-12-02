@@ -1,0 +1,4 @@
+pkgver() {
+    cd "${srcdir}/amgcl"
+    git describe | tr - .
+}

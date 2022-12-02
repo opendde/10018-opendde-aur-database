@@ -1,0 +1,6 @@
+prepare() {
+  cd $srcdir/benzene-$pkgver/
+  patch -p1 -i $srcdir/mohex-paths.patch
+  mv share/ice-patterns.txt share/mohex-ice-patterns.txt
+  mv share/vc-captured-set.txt share/mohex-vc-captured-set.txt
+}

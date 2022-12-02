@@ -1,0 +1,20 @@
+package() {
+  cd "$srcdir/bed-$pkgver"
+
+  install -dm755 "$pkgdir/usr/share/doc/bed"
+  install -dm755 "$pkgdir/usr/share/bed"
+  install -dm755 "$pkgdir/usr/bin"
+
+  install -m755 bed.pl  "$pkgdir/usr/share/bed"
+
+  cp --no-preserve=ownership -a bedmod "$pkgdir/usr/share/bed"
+  cp --no-preserve=ownership -a docs/* "$pkgdir/usr/share/doc/bed"
+
+  # Joint script.
+  cat >> "$pkgdir/usr/bin/bed" <<EOF
+#!/bin/sh
+cd /usr/share/bed
+./bed.pl "\$@"
+EOF
+  chmod +x "$pkgdir/usr/bin/bed"
+}

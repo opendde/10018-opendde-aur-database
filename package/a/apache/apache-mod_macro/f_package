@@ -1,0 +1,8 @@
+package() {
+  cd $srcdir/$_pkgname-$pkgver
+
+  install -Dm444 .libs/$_pkgname.so $pkgdir/$_MODDIR/$_pkgname.so
+
+  # install docs
+  install -Dm444 $_pkgname.html $pkgdir/$_DOCDIR/$_pkgname.html
+}

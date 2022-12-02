@@ -1,0 +1,1 @@
+("$url/releases/download/$pkgver/${pkgname%-bin}-$pkgver-linux-x86_64.tar.gz"

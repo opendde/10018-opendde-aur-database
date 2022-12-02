@@ -1,0 +1,9 @@
+package() {
+	cd "$pkgname-3bb4c748f622687a7ecbfe0017b02f5807f52b9b"
+	cd build
+	make DESTDIR="$pkgdir/" install
+	mkdir "$pkgdir/usr/bin"
+	cp animeloop-cli color cuts-switch similar-and-same "$pkgdir/usr/bin/"
+	mkdir -p "$pkgdir/usr/share/licenses/animeloop-cli"
+	cp ../LICENSE "$pkgdir/usr/share/licenses/animeloop-cli/"
+}

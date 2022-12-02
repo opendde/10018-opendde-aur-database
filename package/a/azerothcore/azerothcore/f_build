@@ -1,0 +1,19 @@
+build() {
+	cd "${srcdir}/${_pkgname}"
+	_acore="$(pwd)"
+	mkdir ${_acore}/build && cd ${_acore}/build
+
+	if [ -z "${_cmakeargs}" ]
+	then
+		if [ -z "${_extraargs}" ]
+		then
+			cmake ${_acore} -DCMAKE_INSTALL_PREFIX=${_acore} -DCMAKE_C_COMPILER=${_clang} -DCMAKE_CXX_COMPILER=${_clangcxx} -DTOOLS=${_DTOOLS} -DSCRIPTS=${_DSCRIPTS}
+		else
+			cmake ${_acore} -DCMAKE_INSTALL_PREFIX=${_acore} -DCMAKE_C_COMPILER=${_clang} -DCMAKE_CXX_COMPILER=${_clangcxx} -DTOOLS=${_DTOOLS} -DSCRIPTS=${_DSCRIPTS} ${_extraargs}
+		fi
+	else
+		cmake ${_acore} ${_cmakeargs}
+	fi
+
+	make -j$(nproc --all)
+}

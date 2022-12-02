@@ -1,0 +1,5 @@
+package() {
+  cd "${srcdir}"/$pkgname-$pkgname-$pkgver
+
+  make DESTDIR="${pkgdir}" SBINDIR=/usr/bin install
+}

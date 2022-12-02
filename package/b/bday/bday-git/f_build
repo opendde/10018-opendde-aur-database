@@ -1,0 +1,6 @@
+build() {
+	cd "$_pkgname"
+	rustup install stable
+	rustup default stable
+	cargo build --release
+}

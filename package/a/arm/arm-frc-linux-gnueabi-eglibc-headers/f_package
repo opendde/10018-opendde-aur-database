@@ -1,0 +1,16 @@
+package() {
+  cd "$srcdir/eglibc-$pkgver/build"
+
+  make install-headers "install_root=${pkgdir}/usr/${_target}" \
+    install-bootstrap-headers=yes
+
+  mkdir -p "${pkgdir}/usr/${_target}/lib"
+  cp csu/crt1.o csu/crti.o csu/crtn.o "${pkgdir}/usr/${_target}/lib"
+
+  # create stub lib
+  ${_target}-gcc -nostdlib -nostartfiles -shared -x c /dev/null \
+    -o "${pkgdir}/usr/${_target}/lib/libc.so"
+
+  mkdir -p "${pkgdir}/usr/${_target}/usr"
+  ln -s ../{include,lib} "${pkgdir}/usr/${_target}/usr"
+}

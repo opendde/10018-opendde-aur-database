@@ -1,0 +1,5 @@
+package() {
+	cd $srcdir
+	ng completion --bash > ${srcdir}/bash_completion.bash
+	install -m 0644 -D "${srcdir}/bash_completion.bash" "${pkgdir}"/usr/share/bash-completion/completions/ng
+}

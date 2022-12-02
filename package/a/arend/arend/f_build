@@ -1,0 +1,4 @@
+build() {
+    cd "Arend-${pkgver}"
+    ./gradlew :cli:jarDep
+}

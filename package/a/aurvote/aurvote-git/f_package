@@ -1,0 +1,6 @@
+package() {
+  cd ${pkgname%-git}
+  install -Dm755 aurvote "$pkgdir/usr/bin/aurvote"
+  install -Dm644 bash-completion "$pkgdir/usr/share/bash-completion/completions/aurvote"
+  install -Dm644 zsh-completion "$pkgdir/usr/share/zsh/site-functions/_aurvote"
+}

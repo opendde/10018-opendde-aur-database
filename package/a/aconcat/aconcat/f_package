@@ -1,0 +1,3 @@
+package () {
+  install -Dm755 aconcat.sh "${pkgdir}/usr/bin/${pkgname}"
+}

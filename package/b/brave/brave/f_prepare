@@ -1,0 +1,84 @@
+prepare() {
+	cd brave-browser
+
+	# Hack to prioritize python2 in PATH
+	mkdir -p "$srcdir/bin"
+	ln -sf /usr/bin/python2 "$srcdir/bin/python"
+	ln -sf /usr/bin/python2-config "$srcdir/bin/python-config"
+	export PATH="$srcdir/bin:$PATH"
+
+	_msg "Prepare the environment..."
+	npm install
+	patch -Np1 -i ../chromium-no-history.patch
+
+	git submodule init
+	git config submodule.chromium.url "$srcdir"/chromium
+	git config submodule.brave-core.url "$srcdir"/brave
+	git config submodule.depot_tools.url "$srcdir"/depot_tools
+	git config submodule.adblock-rust.url "$srcdir"/adblock-rust
+	git submodule update
+	cp -rT "$srcdir"/chromium src
+	cp -rT "$srcdir"/brave-core src/brave
+	cp -r "$srcdir"/depot_tools src/brave/vendor/
+	cp -rT "$srcdir"/adblock-rust src/components/adblock_rust_ffi
+
+	_msg "Running \"npm run\""
+	if [ -d src/out/Release ]; then
+		npm run sync -- --force
+	else
+		npm run init
+	fi
+
+	_msg "Apply Chromium patches..."
+	cd src/
+
+	# https://crbug.com/893950
+	sed -i -e 's/\<xmlMalloc\>/malloc/' -e 's/\<xmlFree\>/free/' \
+		third_party/blink/renderer/core/xml/*.cc \
+		third_party/blink/renderer/core/xml/parser/xml_document_parser.cc \
+		third_party/libxml/chromium/*.cc
+
+	# Upstream fixes
+	# patch -Np1 -i ../../extend-enable-accelerated-video-decode-flag.patch
+	patch -Np1 -i ../../linux-sandbox-syscall-broker-use-struct-kernel_stat.patch
+	patch -Np1 -i ../../linux-sandbox-fix-fstatat-crash.patch
+
+	# https://chromium-review.googlesource.com/c/chromium/src/+/2862724
+	patch -Np1 -i ../../sql-make-VirtualCursor-standard-layout-type.patch
+
+	# Fix build with FreeType 2.11 (patch from Gentoo)
+	# patch -Np1 -i ../../chromium-freetype-2.11.patch
+
+	# Fixes for building with libstdc++ instead of libc++
+	patch -Np1 -i ../../patches/chromium-90-ruy-include.patch
+
+	# Hacky patching
+	sed -e 's/enable_distro_version_check = true/enable_distro_version_check = false/g' -i chrome/installer/linux/BUILD.gn
+
+	# Allow building against system libraries in official builds
+	if [ "$COMPONENT" = "4" ]; then
+		sed -i 's/OFFICIAL_BUILD/GOOGLE_CHROME_BUILD/' \
+			tools/generate_shim_headers/generate_shim_headers.py
+
+		_msg "Add patches for custom build"
+		for _patch in "$srcdir/brave-patches-$brave_patchset_name"/*.patch; do
+			patch -Np1 -i "$_patch"
+		done
+
+		# Remove bundled libraries for which we will use the system copies; this
+		# *should* do what the remove_bundled_libraries.py script does, with the
+		# added benefit of not having to list all the remaining libraries
+		local _lib
+		for _lib in "${_unwanted_bundled_libs[@]}"; do
+		find "third_party/$_lib" -type f \
+		\! -path "third_party/$_lib/chromium/*" \
+		\! -path "third_party/$_lib/google/*" \
+		\! -path "third_party/harfbuzz-ng/utils/hb_scoped.h" \
+		\! -regex '.*\.\(gn\|gni\|isolate\)' \
+		-delete
+		done
+
+		./build/linux/unbundle/replace_gn_files.py \
+		--system-libraries "${!_system_libs[@]}"
+	fi
+}

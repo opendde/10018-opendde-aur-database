@@ -1,0 +1,4 @@
+pkgver() {
+  cd basis_universal
+  git describe --long --abbrev=10 --tags | sed 's/-/+/; s/-/./'
+}

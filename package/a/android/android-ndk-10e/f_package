@@ -1,0 +1,10 @@
+package() {
+  install -d "$pkgdir/opt"
+  mv "$_pkg-${pkgver/_/}" "$pkgdir/opt/$_pkg"
+
+  install -Dm755 android-ndk.sh "$pkgdir/etc/profile.d/android-ndk.sh"
+
+  # Fix broken permissions
+  chmod -R o=g "$pkgdir/opt/$_pkg"
+  find "$pkgdir/opt/$_pkg" -perm 744 -exec chmod 755 {} +
+}

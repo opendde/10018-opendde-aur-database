@@ -1,0 +1,63 @@
+prepare() {
+  set -u
+  cd "${_srcdir}"
+  _install_check
+
+  if [ "${_amandauid}" -ge 1000 ]; then
+    echo "This package won't create UID >= 1000"
+    set +u
+    false
+  fi
+
+  patch -Nup1 -i "${srcdir}/0000-fedora-patch-tirpc.patch"
+
+  # rm -r 'packaging' # cleaner path listings, crashes make
+  # grep -shroe '/[a-z][a-z/]*/' | grep -e 'etc\|usr\|var' | sort -u
+
+  # Get rid of sbin
+  sed -e 's:/sbin/:/bin/:g' -i 'example/amanda.conf.in' 'example/template.d/dumptypes'
+
+  # Lots of confusion where the amanda home folder is
+  if [ "${_amhome}" != '/var/lib/amanda' ]; then
+    local _amhfiles
+    readarray -t _amhfiles <<<"$(grep -slire 'LOCALSTATEDIR.*/lib/amanda')"
+    sed -e '/LOCALSTATEDIR/I s:/lib/amanda:'"${_amhome#/var}:g" -i "${_amhfiles[@]}"
+    readarray -t _amhfiles <<<"$(grep -sliFre '/var/lib/amanda')"
+    sed -e "s:/var/lib/amanda:${_amhome}:g" -i "${_amhfiles[@]}"
+  fi
+  local _hfiles
+  readarray -t _hfiles <<<"$(grep -slrFe '/var/amanda/')"
+  sed -e "s:/usr/local/var/amanda:${_amhome}:g" -e "s:/var/amanda:${_amhome}:g" -i "${_hfiles[@]}"
+  readarray -t _hfiles <<<"$(grep -slrFe '/usr/local/etc/amanda')"
+  sed -e "s:/usr/local/etc/amanda:${_ametc}:g" -i "${_hfiles[@]}"
+  sed -e '/chg-disk/ s:/@prefix@::g' -i 'example/template.d/amanda-harddisk.conf.in'
+
+  # Set the default auth to ssh if bsdtcp is not installed
+  if [ -z "${_opt_bsd}" ]; then
+    #cp -p 'server-src/amserverconfig.pl' 'server-src/amserverconfig.Arch.pl' # for diff comparison
+    sed -e '/print CONF/ s:bsdtcp:ssh:g' -i 'server-src/amserverconfig.pl'
+    #cp -p 'server-src/amaddclient.pl' 'server-src/amaddclient.Arch.pl'
+    sed -e '/^\$auth=/ s:bsdtcp:ssh:g' -i 'server-src/amaddclient.pl'
+  fi
+
+  # Amend the tapetype file. Mark each line to be written with a >. Add a blank line after each entry.
+  pushd "${srcdir}" > /dev/null
+  sed -e '1i # Do not modify this file. It is overwritten on every upgrade' -i "${_srcdir}/example/template.d/tapetypes"
+  echo -e "# Added by ${pkgname}-${pkgver} PKGBUILD from Arch Linux AUR\n# https://aur.archlinux.org/\n" >> "${_srcdir}/example/template.d/tapetypes"
+  sed -n -e 's:^>\(.*\)$:\1:p' "${_tapetypes[@]}" >> "${_srcdir}/example/template.d/tapetypes"
+  popd > /dev/null
+
+  # Fix xinetd files. Our xinetd file is fixed in package()
+  sed -e "/^\s*user\s\+=/ s:amandabackup:${_amandauser}:g" \
+      -e "/^\s*group\s\+=/ s:disk:${_amandagroup}:g" \
+    -i 'example/xinetd.'*
+
+  # Various fixes
+  #cp -p 'example/template.d/advanced.conf.in' 'example/template.d/advanced.conf.in.Arch'
+  sed -e 's:@CONFIG_DIR/:@CONFIG_DIR@/:g' \
+      -e 's:DailySet1:@DEFAULT_CONFIG@:g' \
+      -e '/^netusage/ s:8000 :80000 :g' \
+    -i 'example/template.d/advanced.conf.in'
+
+  set +u
+}

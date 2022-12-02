@@ -1,0 +1,4 @@
+pkgver() {
+  cd ${_gitname}
+  git describe --tags --always | sed 's/v//'
+}

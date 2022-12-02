@@ -1,0 +1,8 @@
+package() {
+  tar xvf "${srcdir}/data.tar.xz" -C "${pkgdir}/"
+  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  install -d "${pkgdir}/usr/bin"
+  ln -sf '/opt/BetBlocker/BetBlocker' "${pkgdir}/usr/bin/betblocker"
+  cd "${pkgdir}/usr/share/doc"
+  mv bet-blocker betblocker
+}

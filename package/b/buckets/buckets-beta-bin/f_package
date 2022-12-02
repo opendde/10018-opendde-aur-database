@@ -1,0 +1,10 @@
+package() {
+  bsdtar -O -xf "${_pkgname}_${pkgver}_amd64.deb" data.tar.xz | bsdtar -C "${pkgdir}" -xJf -
+
+  install -d "${pkgdir}/usr/bin"
+
+  # Remove unnecessary stuff
+  rm -rf "${pkgdir}/usr/share/doc"
+
+  ln -s /opt/${_pkgname}/buckets "${pkgdir}"/usr/bin/buckets
+}

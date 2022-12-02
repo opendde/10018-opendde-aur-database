@@ -1,0 +1,4 @@
+prepare() {
+  install -d $pkgname
+  tar jxf AdobeAIRSDK.tbz2 -C $pkgname
+}

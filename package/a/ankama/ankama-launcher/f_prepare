@@ -1,0 +1,12 @@
+prepare() {
+    cd "${srcdir}"
+    mv "${pkgname}-${pkgver}-${CARCH}.AppImage" "ankama-launcher.AppImage"
+    7z e "${srcdir}/ankama-launcher.AppImage" "zaap.desktop"
+    7z e "${srcdir}/ankama-launcher.AppImage" "usr/share/icons/hicolor/128x128/apps/zaap.png"
+
+    mv "zaap.desktop" "ankama-launcher.desktop"
+    mv "zaap.png" "ankama-launcher.png"
+
+    sed -i "s/^Exec=.*$/Exec=${pkgname}/" "ankama-launcher.desktop"
+    sed -i "s/^Icon=zaap$/Icon=ankama-launcher/" "ankama-launcher.desktop"
+}

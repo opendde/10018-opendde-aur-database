@@ -1,0 +1,30 @@
+build() {
+    cd "$srcdir/$pkgname"
+
+    ./configure \
+        --prefix=/usr \
+        --without-wx \
+        --with-x11 \
+        --with-x \
+        --with-term \
+        --disable-docbook \
+        --enable-cpu-level=6 \
+        --enable-fpu \
+        --enable-3dnow \
+        --enable-disasm \
+        --enable-smp \
+        --enable-x86-64 \
+        --enable-avx \
+        --enable-long-phy-address \
+        --enable-disasm \
+        --enable-usb \
+        --enable-debugger \
+        --enable-sb16 \
+        --enable-e1000
+        #--with-sdl
+        #--enable-x86-debugger
+        #--enable-all-optimizations
+        #--enable-plugins
+
+    make -j 1
+}

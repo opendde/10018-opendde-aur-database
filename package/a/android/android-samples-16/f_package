@@ -1,0 +1,6 @@
+package() {
+  mkdir -p "${pkgdir}/opt/android-sdk/samples/"
+  mv "${srcdir}/android-4.1" "${pkgdir}/opt/android-sdk/samples/android-16"
+
+  chmod -R ugo+rX "${pkgdir}/opt"
+}

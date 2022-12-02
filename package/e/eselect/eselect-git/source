@@ -1,0 +1,1 @@
+("${pkgname%-git}::git://anongit.gentoo.org/proj/eselect.git")

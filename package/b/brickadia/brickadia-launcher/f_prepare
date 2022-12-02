@@ -1,0 +1,3 @@
+prepare() {
+    ar p "$_dist" data.tar.xz | tar -Jx
+}

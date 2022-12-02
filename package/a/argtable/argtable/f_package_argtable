@@ -1,0 +1,8 @@
+package_argtable() {
+  options=('!libtool')
+
+  cd "$srcdir/${pkgname%-*}${pkgver/./-}"
+  sed -i '/^install-data-am:/s/install-dist_exampleDATA //' Makefile
+  make SUBDIRS="src tests" DESTDIR="$pkgdir/" install
+  install -D -m644 "COPYING" "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
+}

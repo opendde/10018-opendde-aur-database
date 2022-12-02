@@ -1,0 +1,6 @@
+package() {
+  mkdir -p "${pkgdir}/opt/android-sdk/cmdline-tools/"
+  cp -a cmdline-tools "${pkgdir}/opt/android-sdk/cmdline-tools/latest"
+  install -Dm755 "${pkgname}.sh" "${pkgdir}/etc/profile.d/${pkgname}.sh"
+  install -Dm755 "${pkgname}.csh" "${pkgdir}/etc/profile.d/${pkgname}.csh"
+}

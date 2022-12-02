@@ -1,0 +1,7 @@
+prepare() {
+  cd "$srcdir/alsa-tools-$pkgver/qlo10k1"
+  sed 's|$QTDIR/include|/usr/include/qt3/|g' -i configure
+  sed 's|$QTDIR/bin|/usr/lib/qt3/bin|g' -i configure
+  sed 's|$QTDIR/lib|/usr/lib|g' -i configure
+  sed 's|$QTDIR/$QT_LIB_DIR|/usr/lib|g' -i configure
+}

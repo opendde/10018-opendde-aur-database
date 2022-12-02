@@ -1,0 +1,1 @@
+("${pkgname}_game_sdl2_${pkgver}-${pkgrel}.tar.gz::https://github.com/PQCraft/CaveCube/releases/download/${pkgver}/cavecube_game_sdl2_linux_x86_64.tar.gz")

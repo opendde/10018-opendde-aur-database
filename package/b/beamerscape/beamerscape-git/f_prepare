@@ -1,0 +1,5 @@
+prepare() {
+  cd ${srcdir}/${pkgname}
+  # as of 24/Sep/2015 a new escaping "%" is needed.
+  sed -i 's#\\% Layer#%% Layer#g' bin/export_overlays
+}

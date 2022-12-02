@@ -1,0 +1,8 @@
+prepare() {
+	_setpath
+	flutter channel stable
+	flutter config --enable-linux-desktop
+
+	cd "$srcdir/$_pkgname/frontend"
+	sed -i "/rustup/d" scripts/makefile/env.toml
+}

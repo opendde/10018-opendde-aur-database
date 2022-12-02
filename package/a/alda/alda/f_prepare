@@ -1,0 +1,4 @@
+prepare() {
+	cd "$pkgname-release-$pkgver/client"
+	go mod download
+}

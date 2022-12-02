@@ -1,0 +1,5 @@
+build() {
+    cd "$srcdir"/armips-0.11.0/build
+    cmake -DCMAKE_BUILD_TYPE=Release ..
+    make armips-bin
+}

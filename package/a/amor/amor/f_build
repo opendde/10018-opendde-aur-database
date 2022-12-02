@@ -1,0 +1,9 @@
+build() {
+  mkdir -p build
+  cd build
+  cmake ../amor \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DKDE4_BUILD_TESTS=OFF \
+    -DCMAKE_INSTALL_PREFIX=/usr
+  make
+}

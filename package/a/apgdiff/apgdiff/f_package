@@ -1,0 +1,7 @@
+package() {
+  install -Dm 644 \
+    "$pkgname-$pkgver/target/apgdiff-$pkgver.jar" \
+    "$pkgdir/usr/share/apgdiff/apgdiff-$pkgver.jar"
+
+  install -Dm 755 apgdiff "$pkgdir/usr/bin/apgdiff"
+}

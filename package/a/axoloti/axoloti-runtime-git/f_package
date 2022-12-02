@@ -1,0 +1,10 @@
+package() {
+    mkdir -p "$pkgdir/opt/$_gitname/platform_linux"
+    cp -r "$srcdir/$_gitname/platform_linux/"{arm-none-eabi,bin,include,lib} "$pkgdir/opt/$_gitname/platform_linux/"
+    cp -r "$srcdir/$_gitname/firmware" "$pkgdir/opt/$_gitname/"
+    cp -r "$srcdir/$_gitname/chibios" "$pkgdir/opt/$_gitname/chibios/"
+    cp -r "$srcdir/$_gitname/api" "$pkgdir/opt/$_gitname/api"
+    rm -rf "$pkgdir/opt/$_gitname/platform_linux/arm-none-eabi/lib/"{armv6-m,armv7-ar,armv7-m}
+    rm -rf "$pkgdir/opt/$_gitname/platform_linux/lib/gcc/arm-none-eabi/4.9.3/"{armv6-m,armv7-ar,armv7-m}
+    install -Dm755 "$srcdir/$_gitname/platform_linux/compile_firmware.sh" "$pkgdir/opt/$_gitname/platform_linux/compile_firmware.sh"
+}

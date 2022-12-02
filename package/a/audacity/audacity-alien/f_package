@@ -1,0 +1,6 @@
+package() {
+	mkdir -p "${pkgdir}/usr/"
+	cp -r "${srcdir}/usr/bin/" "${srcdir}/usr/share/" "${pkgdir}/usr/"
+	cp -r "${srcdir}/usr/lib64/" "${pkgdir}/usr/lib/"
+	cp -r "${srcdir}/usr/doc/" "${srcdir}/usr/man/" "${pkgdir}/usr/share/"
+}

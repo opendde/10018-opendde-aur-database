@@ -1,0 +1,4 @@
+prepare() {
+    # make the source files writable, so that they can be deleted later, because upstream gives them no write file permissions
+    chmod -R +w "${srcdir}/result"
+}

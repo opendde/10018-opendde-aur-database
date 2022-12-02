@@ -1,0 +1,12 @@
+prepare() {
+  cd $_basename-$pkgver
+
+  # Make use of the pulse plugin's "fallback" feature
+  # Keeps parity with our old config from pulseaudio-alsa
+  patch -Np1 -i ../pulse-sysdefault.diff
+ 
+  # Make rate plugin use libswresample
+  patch -Np1 -i ../9cdbbb9874757b6f8fda7fb4ac2e3fc59da65946.patch
+
+  autoreconf -fvi
+}

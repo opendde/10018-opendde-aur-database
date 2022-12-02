@@ -1,0 +1,9 @@
+package() {
+  _setvars
+  install -d "$pkgdir/opt"
+  cp -r "$_base_dir" "$pkgdir/opt/blender-lts"
+
+  install -Dm644 "$_base_dir/blender.desktop" "${pkgdir}/usr/share/applications/blender-lts.desktop"
+  install -Dm755 "${srcdir}/blender.sh" "${pkgdir}/usr/bin/blender-lts"
+  install -Dm644 "$_base_dir/license/GPL-license.txt" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

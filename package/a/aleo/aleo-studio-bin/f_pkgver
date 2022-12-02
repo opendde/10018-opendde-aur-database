@@ -1,0 +1,7 @@
+pkgver() {
+	pushd "${srcdir}" > /dev/null
+	mkdir -p control
+	tar -xf control.tar.gz -C control
+	grep -Po "Version: \K.*" control/control
+	popd > /dev/null
+}

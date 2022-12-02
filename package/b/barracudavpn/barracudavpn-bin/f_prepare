@@ -1,0 +1,5 @@
+prepare() {
+    cd "${srcdir}"
+    ar x barracudavpn_${pkgver}_amd64.deb data.tar.xz
+    tar -xf data.tar.xz
+}

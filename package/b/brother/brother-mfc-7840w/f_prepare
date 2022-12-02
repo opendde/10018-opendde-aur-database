@@ -1,0 +1,4 @@
+prepare() {
+  # patch files to adhere arch packaging standard
+  patch -p0 < "${srcdir}"/brother-mfc-7840w.patch
+}

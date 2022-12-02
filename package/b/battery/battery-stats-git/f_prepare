@@ -1,0 +1,9 @@
+prepare() {
+  mkdir -p build
+  sed "s/ \/lib/ \${CMAKE_INSTALL_PREFIX}\/lib/" \
+      -i ${_pkgname}/data/CMakeLists.txt
+  sed "s/sbin/bin/" \
+      -i ${_pkgname}/src/CMakeLists.txt
+  sed "/set fit quiet/a \\\techo \"set fit logfile '\/dev\/null'\"" \
+      -i ${_pkgname}/src/battery-graph.in
+}

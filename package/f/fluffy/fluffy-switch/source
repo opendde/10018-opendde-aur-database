@@ -1,0 +1,1 @@
+("Fluffy-${_pkgver}.tar.gz::https://github.com/fourminute/Fluffy/archive/v${_pkgver}.tar.gz")

@@ -1,0 +1,10 @@
+build() {
+    cd "autotrace-travis-${_date}.${_build}"
+    ./configure \
+        --prefix='/usr' \
+        --disable-static \
+        --without-magick \
+        --with-png \
+        --with-pstoedit
+    make
+}

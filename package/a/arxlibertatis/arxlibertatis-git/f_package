@@ -1,0 +1,16 @@
+package() {
+    cd $_gitname
+    
+    make DESTDIR="$pkgdir" install
+    
+    install -Dm644 README.md \
+            "$pkgdir"/usr/share/doc/$_installname/README.md
+    install -Dm644 CHANGELOG \
+            "$pkgdir"/usr/share/doc/$_installname/CHANGELOG
+    install -Dm644 AUTHORS \
+            "$pkgdir"/usr/share/doc/$_installname/AUTHORS
+    install -Dm644 LICENSE \
+            "$pkgdir"/usr/share/licenses/$_installname/LICENSE
+    install -Dm644 LICENSE.DejaVu \
+            "$pkgdir"/usr/share/licenses/$_installname/LICENSE.DejaVu
+}

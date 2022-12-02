@@ -1,0 +1,4 @@
+build() {
+    cd ${_pkgname}-${pkgver}
+    make KDIR=/lib/modules/${_kernver}/build
+}

@@ -1,0 +1,12 @@
+package_boost-git() {
+  pkgdesc+=' - development headers'
+  depends=("boost-libs=${pkgver}")
+  optdepends=('python: for python bindings')
+  provides=('boost')
+  conflicts=('boost')
+  options=('staticlibs')
+
+  install -D fakeinstall/lib/*.a -t "$pkgdir/usr/lib/"
+  cp -a --no-preserve=ownership fakeinstall/lib/cmake "$pkgdir/usr/lib/"
+  cp -a --no-preserve=ownership fakeinstall/{bin,include,share} "$pkgdir/usr"
+}

@@ -1,0 +1,13 @@
+prepare() {
+  cd "$srcdir/bladeRF"
+  git submodule update --init --recursive
+  
+  # FS#47168
+  #sed -i 's|MODE.*$|TAG+="uaccess"|' host/misc/udev/*.in
+
+  # todo, report warning
+  #sed -i '94i add_definitions(-Wno-error=format-truncation)' host/CMakeLists.txt
+
+  # FS#55326
+  #sed -i '44s/^else/#&/' host/misc/udev/CMakeLists.txt
+}

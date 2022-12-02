@@ -1,0 +1,9 @@
+package() {
+    install -Dm 755 artem -t "$pkgdir/usr/bin"
+	install -Dm 644 README.md -t "$pkgdir/usr/share/doc/$pkgname"
+	install -Dm 644 doc/CHANGELOG.md -t "$pkgdir/usr/share/doc/$pkgname"
+	install -Dm 644 doc/artem.1 -t "$pkgdir/usr/share/man/man1"
+	install -Dm 644 completions/artem.bash -t "$pkgdir/usr/share/bash-completion/completions"
+	install -Dm 644 completions/artem.fish -t "$pkgdir/usr/share/fish/vendor_completions.d"
+	install -Dm 644 completions/_artem -t "$pkgdir/usr/share/zsh/site-functions"
+}

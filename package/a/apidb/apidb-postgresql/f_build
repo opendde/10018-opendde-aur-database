@@ -1,0 +1,7 @@
+build() {
+    cd apidb-5.0.0-alpha19
+    mkdir build
+    cd build
+    cmake -DCMAKE_INSTALL_PREFIX=/usr -DAPIDB_VERSION_STAGE=alpha -DPLATFORM=LINUX_ARCH -DAPIDBBUILD="CORE;POSTGRESQL" -DAPIDBINSTALL="POSTGRESQL" ..
+    make
+}

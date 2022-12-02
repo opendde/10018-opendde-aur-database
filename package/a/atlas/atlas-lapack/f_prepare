@@ -1,0 +1,12 @@
+prepare() {
+  echo 'Before building this package, as root you must set the CPU(s)'
+  echo 'governor(s) to "performance" and disable intel_pstate.'
+  echo 'See: https://wiki.archlinux.org/index.php/CPU_frequency_scaling'
+  
+  cd "$srcdir"
+  tar -xjf atlas$pkgver.tar.bz2
+  mkdir -p $_PKGNAME/build
+
+  cd $_PKGNAME
+  patch -p1 < "$srcdir/gfortran-10.patch"
+}

@@ -1,0 +1,4 @@
+build() {
+    cd "${pkgname}-${pkgver}"
+    [ -f "/etc/os-release" ] && make bitfetch || make bitfetch ID=artix
+}

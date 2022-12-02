@@ -1,0 +1,6 @@
+prepare() {
+  cd ${_gitname}
+  #git checkout b83f719460ccfad52bf9f2bf0a5f9ab73bde3cc3
+  git submodule update --force --recursive --init
+  icns2png -x ILSpy/ILSpy.icns
+}

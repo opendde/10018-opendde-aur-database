@@ -1,0 +1,6 @@
+package() {
+  cd "$pkgname-$_releasever"
+
+  install -Dm755 aws-saml "$pkgdir"/usr/bin/aws-saml
+  install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

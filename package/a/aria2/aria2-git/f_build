@@ -1,0 +1,10 @@
+build() {
+  cd "$pkgname"
+
+  ./configure \
+    --prefix=/usr \
+    --enable-libaria2 \
+    --with-ca-bundle=/etc/ssl/certs/ca-certificates.crt
+
+  make
+}

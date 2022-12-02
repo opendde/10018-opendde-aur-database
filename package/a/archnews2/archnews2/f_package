@@ -1,0 +1,15 @@
+package() {
+    cd "${srcdir}/${pkgname%2}-${pkgver}"
+
+    # Binaries
+    mkdir -p ${pkgdir}/usr/bin/
+    install archnews archnews_wrap ${pkgdir}/usr/bin/
+
+    # Man pages
+    mkdir -p ${pkgdir}/usr/share/man/man1/
+    install archnews.1 ${pkgdir}/usr/share/man/man1/archnews.1
+
+    # License
+    mkdir -p ${pkgdir}/usr/share/licenses/${pkgname}/
+    install LICENSE ${pkgdir}/usr/share/licenses/${pkgname}/
+}

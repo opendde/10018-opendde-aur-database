@@ -1,0 +1,5 @@
+prepare() {
+  patch -p0 -d ${pkgname%-git} -i "${srcdir}/bigloo-emacs.patch"
+  cd ${pkgname%-git}
+  git apply "$srcdir"/no_scribe.patch
+}

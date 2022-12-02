@@ -1,0 +1,6 @@
+package() {
+  cp -R "$srcdir/usr" "$pkgdir"
+  cp -R "$srcdir/opt" "$pkgdir"
+  mkdir -p "$pkgdir/usr/lib/cups/filter"
+  DESTDIR="$pkgdir" "$pkgdir/opt/brother/Printers/${_modelname}/cupswrapper/cupswrapper${_modelname}"
+}

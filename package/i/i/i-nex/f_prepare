@@ -1,0 +1,14 @@
+prepare() {
+    cd "${srcdir}/I-Nex-${pkgver}"
+
+    patch -Np1 -i "${srcdir}/Fix-error-if-proc-mtrr-doesn-t-exist.patch"
+    patch -Np1 -i "${srcdir}/Fix-libcpuid-SOVERSION.patch"
+    patch -Np1 -i "${srcdir}/Adapt-for-new-libcpuid-structure.patch"
+    patch -Np1 -i "${srcdir}/Fix-for-gambas-compiler-change.patch"
+    patch -Np1 -i "${srcdir}/Hack-for-weird-json-issue.patch"
+
+    sed -i -e 's|^STATIC.*|STATIC = false|' i-nex.mk
+    sed -i -e 's|^UDEV_RULES_DIR.*|UDEV_RULES_DIR = /usr/lib/udev/rules.d|' i-nex.mk
+    cd "I-Nex"
+    autoreconf -i
+}

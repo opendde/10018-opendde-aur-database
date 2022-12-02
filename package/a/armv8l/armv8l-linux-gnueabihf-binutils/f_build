@@ -1,0 +1,19 @@
+build() {
+  cd binutils-build
+
+  ../binutils-${pkgver}/configure --prefix=/usr \
+      --program-prefix=${_target}- \
+      --with-lib-path=/usr/lib/binutils/${_target} \
+      --with-local-prefix=/usr/lib/${_target} \
+      --with-sysroot=/usr/${_target} \
+      --target=${_target} --host=${CHOST} --build=${CHOST} \
+      --disable-nls \
+      --enable-threads --enable-shared --with-pic \
+      --enable-ld=default --enable-gold --enable-plugins \
+      --enable-deterministic-archives \
+      --disable-werror --disable-gdb --disable-sim
+
+  make configure-host
+
+  make tooldir=/usr
+}

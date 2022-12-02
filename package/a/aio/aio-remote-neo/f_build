@@ -1,0 +1,3 @@
+build() {
+  rm -f "${srcdir}/AIO REMOTE NEO/.DS_Store"
+}

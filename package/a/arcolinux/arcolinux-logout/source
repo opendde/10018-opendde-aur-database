@@ -1,0 +1,1 @@
+("$pkgname-$pkgver.tar.gz::https://github.com/arcolinux/arcolinux-logout/archive/refs/tags/${pkgver//_/-}.tar.gz")

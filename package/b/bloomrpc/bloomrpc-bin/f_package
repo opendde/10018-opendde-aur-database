@@ -1,0 +1,5 @@
+package() {
+
+	tar xf data.tar.xz -C "${pkgdir}"
+	patch -uN "${pkgdir}"/usr/share/applications/bloomrpc.desktop "${srcdir}"/bloomrpc.desktop.patch || return 1
+}

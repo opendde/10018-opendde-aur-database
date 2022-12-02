@@ -1,0 +1,21 @@
+build() {
+  cd ${srcdir}/amber${_releasever}_src/build
+
+  export AMBER_PREFIX="${srcdir}"
+
+  CC=gcc-10 CXX=g++-10 FC=gfortran-10 cmake $AMBER_PREFIX/amber${_releasever}_src \
+      -DCMAKE_INSTALL_PREFIX=/opt/amber \
+      -DCHECK_UPDATES=FALSE \
+      -DCOMPILER=MANUAL \
+      -DMPI=TRUE -DCUDA=TRUE \
+      -DOPENMP=TRUE \
+      -DINSTALL_TESTS=FALSE \
+      -DDOWNLOAD_MINICONDA=FALSE \
+      -DFORCE_DISABLE_LIBS="plumed" \
+      -DFORCE_INTERNAL_LIBS="arpack;xblas;netcdf;netcdf-fortran;pnetcdf;mpi4py;fftw" \
+      -DFORCE_EXTERNAL_LIBS="boost" \
+      -Wno-dev \
+      2>&1 | tee cmake.log
+
+  make
+}

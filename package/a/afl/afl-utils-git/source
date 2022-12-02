@@ -1,0 +1,1 @@
+(${pkgname}::git+https://gitlab.com/rc0r/afl-utils)

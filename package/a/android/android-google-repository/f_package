@@ -1,0 +1,6 @@
+package() {
+  mkdir -p "${pkgdir}/opt/android-sdk/extras/google/"
+  cp -dpr --no-preserve=ownership "${srcdir}/m2repository" "${pkgdir}/opt/android-sdk/extras/google/m2repository"
+  chmod -R ugo+rX "${pkgdir}/opt"
+  install -m644 "${srcdir}/source.properties" "${pkgdir}/opt/android-sdk/extras/google/m2repository/source.properties"
+}

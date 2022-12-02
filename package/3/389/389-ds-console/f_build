@@ -1,0 +1,6 @@
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+
+  ant -Dbuilt.dir=${srcdir}/${pkgname}-${pkgver}/built \
+    -Dconsole.location=/usr/share/java 
+} 

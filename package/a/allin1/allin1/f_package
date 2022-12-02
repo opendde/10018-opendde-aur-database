@@ -1,0 +1,5 @@
+package() {
+  install -Dm 755 "$srcdir/$pkgname-$pkgver/src/$pkgname" "$pkgdir/usr/bin/$pkgname"
+  install -Dm 644 "allin1.conf" "$pkgdir/usr/share/$pkgname/allin1.conf"
+  install -Dm 644 "$srcdir/$pkgname-$pkgver/docs/$pkgname.1" "$pkgdir/usr/share/man/man1/$pkgname.1"
+}

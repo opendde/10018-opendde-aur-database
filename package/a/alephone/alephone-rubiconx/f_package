@@ -1,0 +1,7 @@
+package() {
+  install -Dm755 $pkgname.sh "$pkgdir"/usr/bin/$pkgname
+  install -Dm644 $pkgname.desktop "$pkgdir"/usr/share/applications/$pkgname.desktop
+  install -d "$pkgdir"/usr/share/AlephOne/scenarios
+  cp -r "Rubicon X ƒ" "$pkgdir"/usr/share/AlephOne/scenarios/rubiconx
+  find "$pkgdir"/usr/share/AlephOne/scenarios/rubiconx -type f -exec chmod 644 {} \;
+}

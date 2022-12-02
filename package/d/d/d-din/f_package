@@ -1,0 +1,12 @@
+package() {
+	cd "${srcdir}"/broadcom-wl-${pkgver}
+
+	# Directories
+	install -d "${pkgdir}"/usr/lib/firmware/
+
+	# Application
+	b43-fwcutter -w "${pkgdir}"/usr/lib/firmware/ linux/wl_apsta.o
+
+	# Messages
+	#msg "You should add 'b43' to the 'MODULES' array of your '/etc/rc.conf' file."
+}

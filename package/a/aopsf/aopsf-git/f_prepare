@@ -1,0 +1,5 @@
+prepare() {
+  cd "$srcdir/$pkgname"
+  test -e Makefile || patch -p0 < "$srcdir"/makefile.patch
+  patch -p0 < "$srcdir"/decl.patch
+}

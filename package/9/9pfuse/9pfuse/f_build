@@ -1,0 +1,7 @@
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+  make
+
+  # Compress man page, the Makefile won't do it
+  gzip -9c 9pfuse.4 > 9pfuse.4.gz
+}

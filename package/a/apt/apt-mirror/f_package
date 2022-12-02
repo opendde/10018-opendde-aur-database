@@ -1,0 +1,7 @@
+package() {
+    cd $srcdir/$pkgname-$pkgver
+    install -d ${pkgdir}/etc/apt
+    install -d ${pkgdir}/usr/bin
+    install -d ${pkgdir}/var/spool/apt-mirror/{var,skel,mirror}
+    install -m755 $srcdir/$pkgname-$pkgver/apt-mirror ${pkgdir}/usr/bin/
+}

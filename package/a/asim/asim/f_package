@@ -1,0 +1,3 @@
+package() {
+	mv -t $pkgdir $srcdir/opt $srcdir/usr
+}

@@ -1,0 +1,13 @@
+package() {
+  cd "${srcdir}/${_srcname}/build"
+  make -C "lib" DESTDIR="${pkgdir}" install
+  make -C "data" DESTDIR="${pkgdir}" install
+
+  # These files have moved to vala-panel-appmenu-common package.
+  rm -rf "${pkgdir}/usr/share"
+
+  # Document and license.
+  cd "${srcdir}/${_srcname}"
+  install -Dm644 README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
+  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

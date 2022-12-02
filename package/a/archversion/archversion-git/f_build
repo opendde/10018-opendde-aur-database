@@ -1,0 +1,6 @@
+build() {
+  cd ${pkgname%-git}
+  ./bootstrap
+  ./configure --prefix=/usr
+  make
+}

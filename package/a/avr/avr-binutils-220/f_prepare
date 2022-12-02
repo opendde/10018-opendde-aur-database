@@ -1,0 +1,49 @@
+prepare() {
+	cd "${srcdir}"/${_pkgname/avr-}-${pkgver/a}
+
+    sed -i 's/int do_wide;/static int do_wide;/g' binutils/readelf.c 
+    sed -i 's/int do_wide;/static int do_wide;/g' binutils/dwarf.c 
+    #sed -i 's/bfd_boolean dwarf2_loc_directive_seen;/extern bfd_boolean dwarf2_loc_directive_seen;/g' gas/dwarf2dbg.h 
+    #sed -i 's/bfd_boolean dwarf2_loc_mark_labels;/extern bfd_boolean dwarf2_loc_mark_labels;/g' gas/dwarf2dbg.h 
+    sed -i 's/\/\* Reads just the header part/histogram *histograms; unsigned num_histograms; \/*/g' gprof/hist.c
+    sed -i 's/histogram \*histograms;/extern histogram *histograms;/g' gprof/hist.h 
+    sed -i 's/unsigned num_histograms;/extern unsigned num_histograms;/g' gprof/hist.h 
+
+	mkdir build
+	cd build
+
+    CFLAGS="$CLFAGS -Wno-error=implicit-fallthrough -Wno-error=unused-value -Wno-error -fcommon"
+    CXXFLAGS="$CXXLFAGS -Wno-error=implicit-fallthrough -Wno-error=unused-value -Wno-error -fcommon"
+    LDFLAGS="$LDFLAGS -fcommon"
+  	CC="gcc -L$(pwd)/bfd/.libs/ -Wno-error"
+  	if [ "${CARCH}" = "x86_64" ]; then
+    		../configure --build=$(../config.guess) \
+                	--disable-multilib \
+                 	--disable-nls \
+                 	--enable-64-bit-bfd \
+                 	--enable-install-libbfd \
+                 	--includedir=/usr/$(../config.guess)/include \
+                 	--infodir=/usr/share/info \
+                 	--libdir=/usr/lib \
+                 	--mandir=/usr/share/man \
+                 	--prefix=/usr \
+                    --disable-werror \
+                 	--target=avr
+	else
+		../configure --build=$(../config.guess) \
+                	--disable-nls \
+                	--enable-install-libbfd \
+                 	--includedir=/usr/$(../config.guess)/include \
+                 	--infodir=/usr/share/info \
+                 	--libdir=/usr/lib \
+                 	--mandir=/usr/share/man \
+                 	--prefix=/usr \
+                    --disable-werror \
+                 	--target=avr
+  	fi
+
+  	# This checks the host environment and makes sure all the necessary tools are available to compile Binutils.
+  	make configure-host
+
+  	make tooldir=/usr
+}

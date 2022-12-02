@@ -1,0 +1,5 @@
+build() {
+  cd "${srcdir}/adafruit-ampy-${pkgver}"
+
+  python setup.py build
+}

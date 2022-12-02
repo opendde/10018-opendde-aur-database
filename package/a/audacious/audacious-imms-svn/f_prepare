@@ -1,0 +1,5 @@
+prepare() {
+   cd $srcdir/$_svnmod
+   msg "Patching sources"
+   patch -p1 < "${srcdir}/audacious-3.x.patch"
+}

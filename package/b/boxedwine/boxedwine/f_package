@@ -1,0 +1,5 @@
+package() {
+  cd Boxedwine-$pkgver
+  install -Dm755 "project/linux/bin/$pkgname" -t "$pkgdir/usr/bin"
+  install -Dm644 "$srcdir/$pkgname.desktop" -t "$pkgdir/usr/share/applications"
+}

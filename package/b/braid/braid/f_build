@@ -1,0 +1,7 @@
+build() {
+  cd "$srcdir"
+  unzip -o $_gamepkg || true
+  
+  # Create launch script
+  echo -e '#!/bin/sh\ncd /opt/Braid && ./braid "$@"' > "$srcdir"/launcher
+}

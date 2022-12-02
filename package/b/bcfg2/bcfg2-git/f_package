@@ -1,0 +1,14 @@
+package() {
+  cd bcfg2
+
+  python2 setup.py install --root="$pkgdir"
+
+  install -Dm 644 redhat/systemd/bcfg2.service \
+    "$pkgdir"/usr/lib/systemd/system/bcfg2.service
+  install -Dm 644 redhat/systemd/bcfg2-server.service \
+    "$pkgdir"/usr/lib/systemd/system/bcfg2-server.service
+  install -Dm 644 ../bcfg2-report-collector.service \
+    "$pkgdir"/usr/lib/systemd/system/bcfg2-report-collector.service
+  install -Dm 644 ../httpd-bcfg2.conf \
+    "$pkgdir"/etc/httpd/conf/extra/httpd-bcfg2.conf
+}

@@ -1,0 +1,4 @@
+build() {
+	arch-meson appcenter-$pkgver build
+	meson compile -C build
+}

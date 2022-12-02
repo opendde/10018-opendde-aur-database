@@ -1,0 +1,15 @@
+prepare() {
+  cd "$srcdir/$pkgname"
+
+  case $CARCH in
+    i686) sed -i 's#^OBJTYPE\s.*$#OBJTYPE = 386#' config.mk ;;
+    x86_64) sed -i 's#^OBJTYPE\s.*$#OBJTYPE = x86_64#' config.mk ;;
+  esac
+
+  sed -i 's#^PREFIX\s.*$#PREFIX = /opt/9base#' config.mk
+  sed -i 's#^CFLAGS\s*+=#CFLAGS += -DPLAN9PORT #' config.mk
+
+  # Force dynamic linking.  Several of the programs in 9base won't work
+  # when statically linked against the latest glibc.
+  sed -i '/-static/d' config.mk
+}

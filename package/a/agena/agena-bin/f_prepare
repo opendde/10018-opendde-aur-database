@@ -1,0 +1,4 @@
+prepare() {
+	# extract data.tar.xz from the .deb file
+	ar p $_pkgname-$pkgver-linux.i386.deb data.tar.xz | tar x -J
+}

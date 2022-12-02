@@ -1,0 +1,9 @@
+package() {
+  cd "${pkgname}2-${pkgver}"
+  #make INSTALL_ROOT=${pkgdir} install
+  mkdir -p ${pkgdir}/usr/{bin,share/doc/packages/${pkgname}2}
+  install -D -m755 src/release/${pkgname}2 ${pkgdir}/usr/bin/
+  cp -r doc/de ${pkgdir}/usr/share/doc/packages/${pkgname}2/de
+  cp -r doc/en ${pkgdir}/usr/share/doc/packages/${pkgname}2/en
+  cp doc/${pkgname}2.qhc ${pkgdir}/usr/share/doc/packages/${pkgname}2
+}

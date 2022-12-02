@@ -1,0 +1,4 @@
+build() {
+  cd "$srcdir/BalazarBrothers-$pkgver"
+  python2 setup.py build
+}

@@ -1,0 +1,4 @@
+check() {
+  cd afew
+  python -m unittest discover afew/tests
+}

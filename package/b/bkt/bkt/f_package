@@ -1,0 +1,6 @@
+package() {
+	cd "$srcdir/$pkgname-$pkgver"
+
+	install -Dm0755 -t "$pkgdir/usr/bin/" "target/release/$pkgname"
+	install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname"
+}

@@ -1,0 +1,13 @@
+package() {
+    cd "$srcdir/$pkgname"
+
+    for repo in aw-{core,client,qt,server,watcher-{afk,window}}; do
+        pushd $repo
+        python setup.py install --root="$pkgdir" --prefix=/usr --optimize=1 --skip-build
+        popd
+    done
+
+    pushd aw-server
+    install -Dm644 misc/aw-server.service "$pkgdir/usr/lib/systemd/user/aw-server.service"
+    popd
+}

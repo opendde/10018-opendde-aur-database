@@ -1,0 +1,7 @@
+package() {
+  cd "$srcdir/bitlbee"
+  make DESTDIR="$pkgdir" install{,-etc,-dev,-systemd}
+
+  install -o65 -g65 -dm770 "$pkgdir/var/lib/bitlbee"
+  install -Dm644 "$srcdir/bitlbee.tmpfiles" "$pkgdir/usr/lib/tmpfiles.d/bitlbee.conf"
+}

@@ -1,0 +1,7 @@
+check() {
+  set -u
+  cd "${_srcdir}"
+  # If pip is installed, some package tests download missing packages. We can't allow that.
+  #${_pyver} setup.py test --verbose
+  set +u
+}

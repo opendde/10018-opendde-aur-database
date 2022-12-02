@@ -1,0 +1,17 @@
+build() {
+  local _conditional_options
+  cd "$pkgname-$pkgver"
+
+  mkdir -p build
+  cd build
+
+
+  cmake \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+    -DCMAKE_INSTALL_LIBEXECDIR=/usr/lib \
+    -DCMAKE_ENABLE_SERIALISATION=ON \
+    ..
+
+  make LDFLAGS="$LDFLAGS" lib
+}

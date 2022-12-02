@@ -1,0 +1,12 @@
+package() {
+  for file in *.deb; do
+    echo "Extracting $file"
+    ar x "$file"
+    tar -xf data.tar.* -C $pkgdir
+    rm data.tar.* control.tar.*
+  done
+  rm "$srcdir/debian-binary"
+
+  install -Dm644 "../android-home.sh" "${pkgdir}/etc/profile.d/android-home.sh"
+  install -Dm644 "../android-home.csh" "${pkgdir}/etc/profile.d/android-home.csh"
+}

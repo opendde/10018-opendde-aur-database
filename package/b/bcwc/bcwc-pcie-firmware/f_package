@@ -1,0 +1,4 @@
+package() {
+  install -Dm 644 "$srcdir/$pkgname/firmware/firmware.bin" \
+    "$pkgdir/usr/lib/firmware/facetimehd/firmware.bin"
+}

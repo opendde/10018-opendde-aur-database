@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  mkdir -p "${pkgdir}/usr/bin"
+  cp -p target/release/${pkgname} "${pkgdir}/usr/bin"
+}

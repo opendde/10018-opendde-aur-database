@@ -1,0 +1,9 @@
+package() {
+  # Install files
+  install -d -m 755 "${pkgdir}/opt/android-sdk/system-images/android-${pkgver/_*/}/default"
+  cp -r 'x86' "${pkgdir}/opt/android-sdk/system-images/android-${pkgver/_*/}/default/"
+  # Install license
+  install -D -m 644 "package.xml" "${pkgdir}/usr/share/licenses/${pkgname}/package.xml"
+  ln -s "/usr/share/licenses/${pkgname}/package.xml" \
+    "${pkgdir}/opt/android-sdk/system-images/android-${pkgver/_*/}/default/x86/"
+}

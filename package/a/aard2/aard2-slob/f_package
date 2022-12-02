@@ -1,0 +1,4 @@
+package() {
+  cd "${srcdir}"
+  install -Dm755  "${_pkgname}.py" "${pkgdir}/usr/bin/${_pkgname}"
+}

@@ -1,0 +1,5 @@
+package() {
+  cd "${srcdir}"/bluefish
+
+  make DESTDIR="${pkgdir}" install
+}

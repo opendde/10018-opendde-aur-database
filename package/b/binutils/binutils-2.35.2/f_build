@@ -1,0 +1,25 @@
+build() {
+  cd binutils-build
+
+  "${srcdir}/binutils-gdb/configure" \
+    --prefix="/usr" \
+    --with-lib-path="/usr/lib:/usr/local/lib" \
+    --with-bugurl="https://aur.archlinux.org/packages/${pkgname}/" \
+    --enable-cet \
+    --enable-deterministic-archives \
+    --enable-gold \
+    --enable-ld="default" \
+    --enable-lto \
+    --enable-plugins \
+    --enable-relro \
+    --enable-targets="x86_64-pep" \
+    --enable-threads \
+    --disable-gdb \
+    --disable-werror \
+    --with-debuginfod \
+    --with-pic \
+    --with-system-zlib
+
+  make configure-host
+  make tooldir=/usr
+}

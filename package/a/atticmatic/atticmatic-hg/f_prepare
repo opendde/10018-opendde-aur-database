@@ -1,0 +1,4 @@
+prepare() {
+  cd "$srcdir/$pkgname"
+  touch atticmatic/commands/__init__.py
+}

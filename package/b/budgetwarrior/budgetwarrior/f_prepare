@@ -1,0 +1,6 @@
+prepare() {
+    cd "${srcdir}/${pkgname}/"
+
+    git submodule init
+    git submodule update
+}

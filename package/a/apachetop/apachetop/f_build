@@ -1,0 +1,5 @@
+build() {
+        cd "${pkgname}-${pkgver}"
+        ./configure --prefix=/usr --with-logfile=/var/log/httpd/access_log  || return 1
+
+}

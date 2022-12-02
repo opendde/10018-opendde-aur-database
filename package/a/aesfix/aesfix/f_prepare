@@ -1,0 +1,4 @@
+prepare() {
+	cd "$pkgname"
+	sed -i '/CXXFLAGS/s/=/?=/;/(CXX)/s/$/ \$(LDFLAGS)/' Makefile
+}

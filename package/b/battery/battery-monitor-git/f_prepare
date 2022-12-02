@@ -1,0 +1,9 @@
+prepare() {
+	cd "$srcdir/${pkgname%-git}"
+	sed -e 's|%EXEC_PATH%|battery-monitor|' \
+		-e 's|%ICON_PATH%|battery-monitor|' \
+		battery-monitor.desktop.in > battery-monitor.desktop
+	sed -e 's|%EXEC_PATH%|battery-monitor|' \
+		-e 's|%ICON_PATH%|battery-monitor|' \
+		battery-monitor-autostart.desktop.in > battery-monitor-autostart.desktop
+}

@@ -1,0 +1,45 @@
+package() {
+  cd "$pkgdir"
+
+  mkdir opt/
+  mv "$srcdir/$_prefix/" opt/
+
+  xdg_name="$(cd "opt/$_prefix/$_basenamever/" &&
+    ls -1 *.desktop | sed -r 's|\.desktop$||')"
+  mkdir -p usr/share/applications/
+  ln -s "/opt/$_prefix/$_basenamever/${xdg_name}.desktop" \
+    "$pkgdir/usr/share/applications/"
+
+  mkdir -p usr/bin/
+  cat > "usr/bin/$xdg_name" <<EOF
+#!/bin/sh
+
+set -e
+
+# according to the XDG specification standard
+XDG_CONFIG_HOME="\${XDG_CONFIG_HOME-\${HOME}/.config}"
+XDG_DATA_HOME="\${XDG_DATA_HOME-\${HOME}/.local/share}"
+
+#       # see https://github.com/guari/eclipse-ui-theme/issues/73
+#       [ "0\$SWT_GTK3" -eq 0 -a -n "\$GTK_THEME" ] ||
+#         printf 'INFO To avoid dark themes issues, switch to the default GTK3 light theme using\n\n\t%s\n\n' \
+#         'export SWT_GTK3=0 GTK_THEME=some_nonsense'
+#       # FIXME or use this one
+#         #GTK2_RC_FILES='/usr/share/themes/Default/gtk-2.0-key/gtkrc'
+
+cd '/opt/$_prefix/$_basenamever/'
+exec '$(grep -E '^[[:blank:]]*Exec=' "opt/$_prefix/$_basenamever/"*.desktop |
+    sed -r 's|^[^=]+=|/opt/|')' \
+    -configuration "\$XDG_CONFIG_HOME/$_prefix/$_basenamever/configuration" \
+    -data "\$XDG_DATA_HOME/$_prefix/$_basenamever/workspace" \
+    "\$@"
+EOF
+  chmod a+x "usr/bin/$xdg_name"
+
+  # overwrite the executable and icon paths (we can't do this before the
+  #   here-doc construct as the original values are needed)
+  sed -i -r \
+    -e "s%^([[:blank:]]*Exec=).*%\1/usr/bin/$xdg_name%" \
+    -e "s%^([[:blank:]]*Icon=)%\1/opt/%" \
+    "opt/$_prefix/$_basenamever/"*.desktop
+}

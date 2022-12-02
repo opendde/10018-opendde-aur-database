@@ -1,0 +1,4 @@
+package() {
+    cd "ALPSCore-$pkgver/build"
+    make DESTDIR="$pkgdir/" install
+}

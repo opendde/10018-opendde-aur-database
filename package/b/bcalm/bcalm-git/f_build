@@ -1,0 +1,7 @@
+build() {
+  builddir="$srcdir/$_pkgname/build"
+  mkdir -p "$builddir"
+  cd "$builddir"
+  cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INTERPROCEDURAL_OPTIMIZATION=True
+  make
+}

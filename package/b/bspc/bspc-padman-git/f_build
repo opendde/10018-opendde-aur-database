@@ -1,0 +1,11 @@
+build() {
+	cd "$srcdir"
+	
+	cmake -B build -S "$_srcname" \
+		-DCMAKE_BUILD_TYPE=None     \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-Wno-dev                    \
+		-G Ninja
+	
+	cmake --build build
+}

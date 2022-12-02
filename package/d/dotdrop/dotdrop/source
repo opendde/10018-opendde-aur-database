@@ -1,0 +1,1 @@
+("git+https://github.com/deadc0de6/dotdrop.git#tag=v${pkgver}")

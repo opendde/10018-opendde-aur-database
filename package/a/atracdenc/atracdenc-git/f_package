@@ -1,0 +1,4 @@
+package() {
+  cd "$srcdir/${_gitname}/src/build"
+  install -Dt "$pkgdir"/usr/bin atracdenc 
+}

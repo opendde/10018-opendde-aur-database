@@ -1,0 +1,13 @@
+package() {
+  cp -r --no-preserve=ownership usr opt "$pkgdir"
+
+  # move the filter into the cups filter directory
+  install -m 755 -D "$pkgdir"/opt/brother/Printers/mfcj435w/lpd/filtermfcj435w \
+    "$pkgdir"/usr/lib/cups/filter/brother_lpdwrapper_mfcj435w
+
+  # move the ppd into the cups model directory
+  install -m 755 -D "$pkgdir"/opt/brother/Printers/mfcj435w/cupswrapper/brother_mfcj435w_printer_en.ppd \
+    "$pkgdir"/usr/share/cups/model/brother_mfcj435w_printer_en.ppd
+
+  install -m 644 -D lpr-license.txt "$pkgdir"/usr/share/licenses/${pkgname}/lpr-licence.txt
+}

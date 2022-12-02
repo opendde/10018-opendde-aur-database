@@ -1,0 +1,12 @@
+package() {
+    cd "Aseprite-DarkFlat-Theme-${pkgver}"
+
+    install -d -m755 "${pkgdir}/usr/share/aseprite/data/skins/Aseprite-DarkFlat-Theme"
+    cp -r * "${pkgdir}/usr/share/aseprite/data/skins/Aseprite-DarkFlat-Theme"
+    find "${pkgdir}/usr/share/aseprite/data/skins/Aseprite-DarkFlat-Theme" -type f -print0 | xargs -0 chmod 0644
+    find "${pkgdir}/usr/share/aseprite/data/skins/Aseprite-DarkFlat-Theme" -type d -print0 | xargs -0 chmod 0755
+
+    install -d -m755 "${pkgdir}/usr/share/licenses/${pkgname}"
+    sed -n '/This theme is based/,/ this project, too./p' README.md > "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.md"
+    chmod 0644 "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.md"
+}

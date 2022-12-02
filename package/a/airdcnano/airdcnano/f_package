@@ -1,0 +1,4 @@
+package() {
+  cd "$srcdir/airdcnano-$pkgver"
+  scons -Q PREFIX=/usr --install-sandbox="$pkgdir" install
+}

@@ -1,0 +1,1 @@
+("$pkgname-$pkgver.tar.gz::https://github.com/eucalyptus/euca2ools/archive/v$pkgver.tar.gz")

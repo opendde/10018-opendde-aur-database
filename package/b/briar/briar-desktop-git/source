@@ -1,0 +1,1 @@
+("${_pkgname}::git+https://code.briarproject.org/briar/${_pkgname}.git"

@@ -1,0 +1,29 @@
+prepare() {
+  cd "${pkgname}"
+
+  # Initialize subproject wraps for bestsource
+  ln -s ../../"${pkgname}-bestsource" subprojects/bestsource
+  meson subprojects packagefiles --apply bestsource
+
+  # Initialize subproject wraps for avisynth
+  mv ../"${pkgname}-avisynth" subprojects/avisynth
+  meson subprojects packagefiles --apply avisynth
+
+  # Initialize subproject wraps for vapoursynth
+  ln -s ../../"${pkgname}-vapoursynth" subprojects/vapoursynth
+  meson subprojects packagefiles --apply vapoursynth
+
+  # Initialize subproject wraps for luajit
+  ln -s ../../"${pkgname}-luajit" subprojects/luajit
+  meson subprojects packagefiles --apply luajit
+
+  # Initialize subproject wraps for gtest
+  mkdir subprojects/packagecache
+  ln -s ../../../"${pkgname}-gtest-1.8.1.zip" subprojects/packagecache/gtest-1.8.1.zip
+  ln -s ../../../"${pkgname}-gtest-1.8.1-1-wrap.zip" subprojects/packagecache/gtest-1.8.1-1-wrap.zip
+
+  # Fix boost "undefined reference" error
+  sed -i '/BOOST_USE_WINDOWS_H/{n;s/$/\nadd_project_arguments('"'"'-DBOOST_NO_CXX11_SCOPED_ENUMS'"'"', language: '"'"'cpp'"'"')/}' meson.build
+
+  arch-meson --buildtype=release -D default_audio_output=PulseAudio build
+}

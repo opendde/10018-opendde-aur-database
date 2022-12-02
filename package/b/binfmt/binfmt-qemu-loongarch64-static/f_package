@@ -1,0 +1,3 @@
+package() {
+  install -Dm 644 "$srcdir/qemu-loongarch64-static.conf" "$pkgdir/usr/lib/binfmt.d/qemu-loongarch64-static.conf"
+}

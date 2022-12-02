@@ -1,0 +1,7 @@
+package() {
+	tar -xf data.tar.xz -C "${pkgdir}"
+	chown root:root -R ../pkg/aleo-studio-bin/opt
+	chmod 755 -R ../pkg/aleo-studio-bin/opt
+	chown root:root -R ../pkg/aleo-studio-bin/usr
+	chmod 755 -R ../pkg/aleo-studio-bin/usr
+}

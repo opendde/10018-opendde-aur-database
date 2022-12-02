@@ -1,0 +1,12 @@
+package() {
+  mkdir -p "$pkgdir/usr/share"
+  cp -R "$srcdir/usr/bin" "$pkgdir/usr"
+  cp -R "$srcdir/usr/lib" "$pkgdir/usr"
+  cp -R "$srcdir/usr/local/Brother" "$pkgdir/usr/share/brother"
+
+  rm "$pkgdir/usr/share/brother/cupswrapper/cupswrapperHL2030-2.0.1"
+  rm "$pkgdir/usr/share/brother/inf/setupPrintcap"
+
+  install -m 644 -D ppd_file "$pkgdir/usr/share/cups/model/HL2030.ppd"
+  install -m 755 -D wrapper "$pkgdir/usr/lib/cups/filter/brlpdwrapperHL2030"
+}

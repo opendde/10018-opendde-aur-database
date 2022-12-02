@@ -1,0 +1,46 @@
+package() {
+  # unpack the server console package
+  cd "$srcdir/vmware-mui-distrib/console-distrib"
+  tar -xzf VMware-server-console-${pkgver}-203137.tar.gz
+
+  cd "$srcdir/vmware-mui-distrib/console-distrib/vmware-server-console-distrib"
+
+  # Install binary files
+  mkdir -p "$pkgdir/usr/bin"
+  install -m755 bin/* "$pkgdir/usr/bin"
+
+  # Install libs
+  mkdir -p "$pkgdir/usr/lib/vmware-server-console"
+  cp -a lib/* "$pkgdir/usr/lib/vmware-server-console"
+  chmod -R u+w "$pkgdir/usr/lib/vmware-server-console"
+
+  # Install configuration files
+  install -D -m755 etc/installer.sh "$pkgdir/etc/vmware-server-console/installer.sh"
+
+  # Install man page
+  install -D -m644 man/man1/vmware-server-console.1.gz \
+    "$pkgdir/usr/share/man/man1/vmware-server-console.1.gz"
+
+  # Install license
+  mkdir -p "$pkgdir/usr/share/licenses/vmware-server-console"
+  install -m644 doc/{EULA,open_source_licenses.txt} \
+    "$pkgdir/usr/share/licenses/vmware-server-console"
+
+  # Install desktop file
+  install -D -m644 doc/icon48x48.png \
+    "$pkgdir/usr/share/pixmaps/vmware-server-console.png"
+  install -D -m644 "$srcdir/vmware-server-console.desktop" \
+    "$pkgdir/usr/share/applications/vmware-server-console.desktop"
+
+  sed -i "s|/usr|$pkgdir/usr|g" $srcdir/vmware-server-console_1.0.8-intrepid-patch/install
+  sed -i "s|-C /|-C $pkgdir|g" $srcdir/vmware-server-console_1.0.8-intrepid-patch/install
+  cd $srcdir/vmware-server-console_1.0.8-intrepid-patch
+  ./install
+
+  patch -Np1 -i "$srcdir/wrapper-gtk24-2.patch" -d "$pkgdir/usr/lib/vmware-server-console/lib"
+
+  tar -C "$pkgdir/usr/lib/vmware-server-console/lib" -xf "$srcdir/bin32-vmware-server-console-add-libs.tar.xz"
+
+  rm -f $pkgdir/usr/bin/vmware-server-console.bkp
+  rm -f $pkgdir/usr/lib/vmware-server-console/lib/wrapper-gtk24.sh.bkp
+}

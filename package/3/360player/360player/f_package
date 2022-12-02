@@ -1,0 +1,16 @@
+package() {
+  cd ${srcdir}
+
+  # desktop entry
+  install -Dm644 usr/share/applications/${pkgname}.desktop -t ${pkgdir}/usr/share/applications
+
+  # icons
+  find usr/share/icons/hicolor -type f -exec install -Dm644 {} ${pkgdir}/{} \;
+
+  # binary 
+  install -Dm755 opt/${pkgname}/${pkgname} -t ${pkgdir}/opt/${pkgname}
+
+  # soft link
+  install -dm755 ${pkgdir}/usr/bin
+  ln -sf /opt/${pkgname}/${pkgname} ${pkgdir}/usr/bin/${pkgname}
+}

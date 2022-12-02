@@ -1,0 +1,11 @@
+build() {
+export GOPATH=$srcdir/go
+export GOBIN=${GOPATH}/bin
+export PATH=${GOPATH}/bin:${PATH}
+cd $srcdir/go/src/$pkggopath
+GO111MODULE=on go install  \
+-gcflags "all=-trimpath=${GOPATH}" \
+-asmflags "all=-trimpath=${GOPATH}" \
+-ldflags "-extldflags $LDFLAGS" \
+-v ./...
+}

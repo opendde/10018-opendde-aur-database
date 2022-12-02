@@ -1,0 +1,8 @@
+package() {
+  cd ${_base}
+  install -dm755 "${pkgdir}/usr/src/${_base}-${pkgver}/"
+  for i in "${srcdir}/${_base}/"{Makefile,*.c}; do
+    install -D -m644 "${i}" "${pkgdir}/usr/src/${_base}-${pkgver}/"
+  done
+  sed "s/#MODULE_VERSION#/${pkgver}/" "${srcdir}/dkms.conf.in" >"${pkgdir}/usr/src/${_base}-${pkgver}/dkms.conf"
+}

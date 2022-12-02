@@ -1,0 +1,11 @@
+build() {
+  cd "$pkgname-$pkgver"
+
+  chmod 755 ./configure
+
+  ./configure --prefix=/usr --sysconfdir=/etc \
+    --localstatedir=/var \
+    --with-scriptlet-shell=/usr/bin/bash \
+    --with-ldconfig=/usr/bin/ldconfig
+  make V=1
+}

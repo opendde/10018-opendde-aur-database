@@ -1,0 +1,29 @@
+build() {
+    cd ${srcdir}/blender-${pkgver}/build
+
+    # 06-2020: added -fcommon to override default gcc10 behaviour
+    # 05-2021: remove OpenEXR, broken after release of OpenEXR 3.x
+    #
+    cmake \
+        -GNinja \
+        -DCMAKE_EXE_LINKER_FLAGS:STRING="-lX11 -ldl -lpthread -lGL" \
+        -DCMAKE_CXX_FLAGS:STRING="-fcommon -fpermissive -Wno-register" \
+        -DCMAKE_C_FLAGS:STRING="-fcommon" \
+        -DPYTHON_EXECUTABLE:PATH=/usr/bin/python2 \
+        -DPYTHON_LIBRARY:PATH=/usr/lib/libpython2.7.so \
+        -DPYTHON_INCLUDE_DIR:PATH=/usr/include/python2.7 \
+        -DOpenGL_GL_PREFERENCE:STRING="GLVND" \
+        -DWITH_OPENMP:BOOL=ON \
+        -DWITH_OPENJPEG:BOOL=ON \
+        -DWITH_OPENEXR:BOOL=OFF \
+        -DWITH_PLAYER:BOOL=ON \
+        ../
+
+    ninja
+
+    # build plugins
+    #
+    ln -sf ../../source/blender/blenpluginapi ../release/plugins/include
+    chmod +x ../release/plugins/bmake
+    make -C ../release/plugins
+}

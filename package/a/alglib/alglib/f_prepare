@@ -1,0 +1,34 @@
+prepare() {
+    # generate a simple cmake file to build the library since the release
+    # doesn't provide any build system
+    cd ${srcdir}/cpp
+    cat > CMakeLists.txt <<END
+cmake_minimum_required(VERSION 3.0)
+project(alglib VERSION ${pkgver})
+
+file(GLOB SRCS src/*.cpp)
+file(GLOB HEADERS src/*.h)
+
+add_library(alglib_static STATIC \${SRCS})
+set_target_properties(alglib_static PROPERTIES
+    OUTPUT_NAME alglib
+    PUBLIC_HEADER "\${HEADERS}"
+)
+
+add_library(alglib SHARED \${SRCS})
+set_target_properties(alglib PROPERTIES
+    VERSION "\${PROJECT_VERSION}"
+    SOVERSION "\${PROJECT_VERSION_MAJOR}"
+    PUBLIC_HEADER "\${HEADERS}"
+)
+
+include(GNUInstallDirs)
+install(TARGETS alglib alglib_static
+    LIBRARY DESTINATION "\${CMAKE_INSTALL_LIBDIR}"
+    ARCHIVE DESTINATION "\${CMAKE_INSTALL_LIBDIR}"
+    PUBLIC_HEADER DESTINATION "\${CMAKE_INSTALL_INCLUDEDIR}/libalglib"
+)
+install(FILES manual.cpp.html DESTINATION "\${CMAKE_INSTALL_DOCDIR}")
+END
+    mkdir -p build && cd build
+}

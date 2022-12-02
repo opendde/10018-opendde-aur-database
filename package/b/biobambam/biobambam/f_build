@@ -1,0 +1,5 @@
+build() {
+  cd "${srcdir}"/"${pkgname}2"-"${pkgver//_/-}"
+  autoreconf -i -f
+  ./configure --prefix="${pkgdir}"/usr --with-libmaus2=${LIBMAUSPREFIX}
+}

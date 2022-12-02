@@ -1,0 +1,5 @@
+prepare() {
+	cd "$srcdir/up1-cli-client-nodejs-$_commit"
+
+	cat package.json | jq '.dependencies.mmmagic = "0.5.3"' | sponge package.json
+}

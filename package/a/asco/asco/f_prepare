@@ -1,0 +1,6 @@
+prepare() {
+  #cd "$srcdir/ASCO-$pkgver"
+  # append ' -fcommon' after CFLAGS of all Makefiles
+  # find . -type f -iname "Makefile" -exec sed -i "/^CFLAGS =/ s/$/ -fcommon/" {} \;
+  true
+}

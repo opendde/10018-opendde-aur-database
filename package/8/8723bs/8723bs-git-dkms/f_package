@@ -1,0 +1,28 @@
+package() {
+	cd "${srcdir}"
+
+	local install_dir="${pkgdir}/usr/src/${_pkgbase}-${pkgver}"
+
+  	# Copy dkms.conf
+  	install -Dm644 dkms.conf "${install_dir}/dkms.conf"
+
+	#blacklist r8723bs 
+	install -Dm644 blacklist-r8723bs.conf "${pkgdir}"/etc/modprobe.d/blacklist-r8723bs.conf
+
+  	# Set name and version
+  	sed -e "s/@_PKGBASE@/${_pkgbase}/" \
+      	-e "s/@PKGVER@/${pkgver}/" \
+      	-i "${install_dir}/dkms.conf"
+
+	cd "${srcdir}/rtl8723bs"	
+
+	for d in $(find . -type d)
+  	do
+    	 install -dm755 "${install_dir}/$d"
+  	done
+
+  	for f in $(find . -type f)
+  	do
+    	 install -m644 "$f" "${install_dir}/$f"
+  	done
+}

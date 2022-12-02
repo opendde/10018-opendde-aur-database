@@ -1,0 +1,6 @@
+build() {
+  cd $_gitname
+
+  waf configure --prefix=/usr
+  waf build
+}

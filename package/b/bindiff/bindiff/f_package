@@ -1,0 +1,15 @@
+package() {
+  # Extract
+  tar -xJf data.tar.xz --exclude="usr/share/lintian" -C "${pkgdir}"/
+
+  # Remove the bundled Java runtime
+  rm -r "${pkgdir}"/opt/bindiff/jre
+
+  # Install license files
+  install -dm 755 "${pkgdir}/usr/share/licenses/${pkgname}"
+  ln -s "/usr/share/doc/${pkgname}/copyright" "${pkgdir}/usr/share/licenses/${pkgname}/"
+  ln -s "/opt/${pkgname}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/"
+
+  # Write install location to config file
+  sed -i 's/^\( "directory": "\)\(",\)/\1\/opt\/bindiff\/\2/' "${pkgdir}"/etc/opt/bindiff/bindiff.json
+}

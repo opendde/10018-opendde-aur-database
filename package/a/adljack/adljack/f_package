@@ -1,0 +1,6 @@
+package() {
+  cd "$pkgname-$pkgver"
+  install -D -m 644 LICENSE "$pkgdir"/usr/share/licenses/"$pkgname"/LICENSE
+  cd build
+  make DESTDIR="$pkgdir/" install
+}

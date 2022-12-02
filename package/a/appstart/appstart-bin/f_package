@@ -1,0 +1,7 @@
+package() {
+    mkdir -p ${pkgdir}/usr/share/${basename}/  
+    mkdir -p ${pkgdir}/usr/share/${basename}/config
+    cd ${pkgname}-${pkgver}
+    install -Dm777 ${basename} ${pkgdir}/usr/bin/${basename}
+    cp AppInfo.json ${pkgdir}/usr/share/${basename}/config/
+}

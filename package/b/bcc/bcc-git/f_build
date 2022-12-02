@@ -1,0 +1,18 @@
+build() {
+	cd "${srcdir}/${pkgname}"
+
+	rm -rf build/
+	mkdir -p build/
+	cd build/
+
+	export CFLAGS+=" -ffat-lto-objects"
+	export CXXFLAGS+=" -ffat-lto-objects"
+
+	# The python version is irrelevant at this stage
+	cmake -DREVISION=$pkgver \
+	  -DCMAKE_INSTALL_PREFIX=/usr \
+	  -DCMAKE_INSTALL_LIBDIR=/usr/lib .. \
+	  -DENABLE_LLVM_SHARED=1   # FS#71163
+
+	make
+}

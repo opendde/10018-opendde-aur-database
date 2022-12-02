@@ -1,0 +1,9 @@
+package() {
+  cd "$srcdir/avro-release-$pkgver/lang/c"
+
+  msg2 'Installing license...'
+  install -Dm 644 LICENSE -t "$pkgdir/usr/share/licenses/avro-c"
+
+  msg2 'Installing...'
+  make DESTDIR="$pkgdir" install -C build/
+}

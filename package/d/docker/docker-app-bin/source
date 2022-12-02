@@ -1,0 +1,1 @@
+("docker-app-bin-${pkgver//_/-}::https://github.com/docker/app/releases/download/v${pkgver//_/-}/docker-app-linux.tar.gz")

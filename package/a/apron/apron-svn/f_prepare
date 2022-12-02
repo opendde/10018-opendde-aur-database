@@ -1,0 +1,10 @@
+prepare() {
+  cd "$srcdir/$pkgname"
+  sed \
+    -e 's|^APRON_PREFIX *=.*$|APRON_PREFIX=/usr|' \
+    -e 's|^HAS_OCAML *=.*$|HAS_OCAML=|' \
+    -e 's|^HAS_OCAMLOPT *=.*$|HAS_OCAMLOPT=|' \
+    -e 's|^OCAMLFIND *=.*$|OCAMLFIND=|' \
+    -e 's|^# HAS_PPL *=.*$|HAS_PPL=1|' \
+    Makefile.config.model > Makefile.config
+}

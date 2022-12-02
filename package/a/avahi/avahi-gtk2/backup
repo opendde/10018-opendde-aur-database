@@ -1,0 +1,1 @@
+(etc/avahi/{hosts,avahi-daemon.conf,avahi-{autoip,dnsconf}d.action}

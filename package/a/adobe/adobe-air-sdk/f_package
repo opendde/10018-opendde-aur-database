@@ -1,0 +1,26 @@
+package() {
+  # Install profile script
+  install -dm755 "$pkgdir/etc/profile.d"
+  printf '%s\n%s\n' "export AIR_HOME=$_air_root/$pkgname" 'export PATH="$PATH:$AIR_HOME/bin"' \
+    > "$pkgdir/etc/profile.d/$pkgname.sh"
+  printf '%s\n%s\n' "setenv AIR_HOME $_air_root/$pkgname" 'setenv PATH "$PATH:$AIR_HOME/bin"' \
+    > "$pkgdir/etc/profile.d/$pkgname.csh"
+  chmod 755 "$pkgdir/etc/profile.d/$pkgname."{sh,csh}
+
+  # Install directories
+  install -dm755 "$pkgdir$_air_root" "$pkgdir/usr/share/licenses/$pkgname" "$pkgdir/usr/share/doc/$pkgname"
+
+  # Install main folder
+  cp -r --no-preserve=ownership $pkgname "$pkgdir$_air_root"
+
+  # Explicitly set permissions of the binaries
+  chmod 755 "$pkgdir$_air_root/$pkgname/bin/ad"{l,t}
+
+  # Create a link to the license in the licenses folder
+  ln -s "$_air_root/$pkgname/AIR SDK license.pdf" "$pkgdir/usr/share/licenses/$pkgname"
+
+  # Create links to the readme, samples and templates in the docs folder
+  ln -s "$_air_root/$pkgname/AIR SDK Readme.txt" "$pkgdir/usr/share/doc/$pkgname"
+  ln -s "$_air_root/$pkgname/samples" "$pkgdir/usr/share/doc/$pkgname"
+  ln -s "$_air_root/$pkgname/templates" "$pkgdir/usr/share/doc/$pkgname"
+}

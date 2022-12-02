@@ -1,0 +1,5 @@
+package() {
+  cd $srcdir/$pkgname-$pkgver
+  scons prefix=$pkgdir/usr install
+  sed -i "s|$pkgdir||" $pkgdir/usr/lib/pkgconfig/bugle.pc
+}

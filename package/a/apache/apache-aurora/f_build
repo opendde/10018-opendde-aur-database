@@ -1,0 +1,11 @@
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+  ./gradle-3.1/bin/gradle installDist
+  ./pants binary src/main/python/apache/aurora/kerberos:kaurora
+  ./pants binary src/main/python/apache/aurora/kerberos:kaurora_admin
+  ./pants binary src/main/python/apache/aurora/executor:thermos_executor
+  ./pants binary src/main/python/apache/aurora/tools:thermos
+  ./pants binary src/main/python/apache/aurora/tools:thermos_observer
+  ./pants binary src/main/python/apache/thermos/runner:thermos_runner
+  build-support/embed_runner_in_executor.py
+}

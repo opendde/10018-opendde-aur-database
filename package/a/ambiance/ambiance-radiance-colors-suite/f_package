@@ -1,0 +1,5 @@
+package() {
+	cd "${srcdir}"
+
+	bsdtar -xf data.tar.xz -C "${pkgdir}"
+}

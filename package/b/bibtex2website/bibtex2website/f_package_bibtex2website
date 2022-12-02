@@ -1,0 +1,11 @@
+package_bibtex2website() {
+    pkgname=('bibtex2website')
+    license=('GPL3' 'LGPL3')
+
+    build_bibtex2website
+
+    cd "$srcdir/build"
+
+    install -Dm644 "$srcdir/build/bin/bibtex2website" "$pkgdir/usr/bin/bibtex2website"
+    chmod +x "$pkgdir/usr/bin/bibtex2website"
+}

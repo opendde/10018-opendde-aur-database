@@ -1,0 +1,7 @@
+prepare() {
+  cd "$_pkgname"
+  git submodule init
+  git config submodule.submodules/RtAudio/src.url $srcdir/rtaudio
+  git config submodule.submodules/RtMidi/src.url $srcdir/rtmidi
+  git submodule update
+}

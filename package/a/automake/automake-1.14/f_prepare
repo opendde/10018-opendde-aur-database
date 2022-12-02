@@ -1,0 +1,4 @@
+prepare () {
+  cd "$srcdir/$_realname-$pkgver"
+  ./configure --prefix=/usr
+}

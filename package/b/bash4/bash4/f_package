@@ -1,0 +1,23 @@
+package() {
+  set -u
+
+  cd "${_srcdir}"
+  if [ "${_opt_alt}" -ne 0 ]; then
+    install -Dpm755 'bash' "${pkgdir}/usr/bin/${pkgname}"
+    install -Dpm755 'doc/bash.1' "${pkgdir}/usr/share/man/man1/${pkgname}.1"
+  else
+    make -s -j1 DESTDIR="${pkgdir}" install
+    ln -s bash "${pkgdir}/usr/bin/sh"
+
+    cd "${srcdir}"
+    # system-wide configuration files
+    install -Dpm644 'system.bashrc' "${pkgdir}/etc/bash.bashrc"
+    install -Dpm644 'system.bash_logout' "${pkgdir}/etc/bash.bash_logout"
+
+    # user configuration file skeletons
+    install -Dpm644 'dot.bashrc' "${pkgdir}/etc/skel/.bashrc"
+    install -Dpm644 'dot.bash_profile' "${pkgdir}/etc/skel/.bash_profile"
+    install -Dpm644 'dot.bash_logout' "${pkgdir}/etc/skel/.bash_logout"
+  fi
+  set +u
+}

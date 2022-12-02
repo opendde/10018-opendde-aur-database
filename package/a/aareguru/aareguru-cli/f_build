@@ -1,0 +1,10 @@
+build() {
+  _untardir=$(ls -d */)
+  cd "$_untardir"
+
+  for i in ${_golibs[@]}; do
+    go get $i
+  done
+
+  go build
+}

@@ -1,0 +1,5 @@
+package() {
+  cd "${srcdir}/${_pkgname}"/acetoneiso
+
+  make INSTALL_ROOT="${pkgdir}" install
+}

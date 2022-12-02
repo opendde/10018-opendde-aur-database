@@ -1,0 +1,10 @@
+package() {
+  cd amule
+  make DESTDIR="${pkgdir}" install
+  find "${pkgdir}" -type d -name .git -exec rm -r '{}' +
+  install -Dm644 "${srcdir}/amuled.service" "${pkgdir}/usr/lib/systemd/system/amuled.service"
+  install -Dm644 "${srcdir}/amuled@.service" "${pkgdir}/usr/lib/systemd/system/amuled@.service"
+  install -Dm644 "${srcdir}/amuled.tmpfile" "${pkgdir}/usr/lib/tmpfiles.d/amuled.conf"
+  install -dm750 -o129 -g129 "${pkgdir}/var/lib/amule"
+  rm -fr "${pkgdir}/usr/share"/{pixmaps,applications}
+}

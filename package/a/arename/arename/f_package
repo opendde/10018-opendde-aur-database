@@ -1,0 +1,6 @@
+package() {
+	cd "$srcdir/$pkgname-$pkgver"
+	mkdir -p "$pkgdir"/usr
+	make install prefix="$pkgdir"/usr libpath=share/perl5/site_perl
+	make install-doc prefix="$pkgdir"/usr
+}

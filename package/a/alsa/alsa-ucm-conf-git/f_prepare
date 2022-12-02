@@ -1,0 +1,10 @@
+prepare() {
+    local _patchfile
+    for _patchfile in "${source[@]}"; do
+        _patchfile="${_patchfile%%::*}"
+        _patchfile="${_patchfile##*/}"
+        [[ $_patchfile = *.patch ]] || continue
+        echo "Applying patch $_patchfile..."
+        patch --directory="${pkgbasename}" --forward --strip=1 --input="${srcdir}/${_patchfile}"
+    done
+}

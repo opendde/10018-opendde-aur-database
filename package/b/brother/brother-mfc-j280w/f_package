@@ -1,0 +1,13 @@
+package() {
+	deb2targz *.deb >/dev/null || return 1
+	rm -f *.deb || return 1
+	cd $srcdir || return 1
+	[ -d "mfcj280w" ] || (mkdir mfcj280w || return 1)
+	for i in *.tar.gz;do tar xfz $i -C mfcj280w;done || return 1
+	cd mfcj280w || return 1
+	cd opt/brother/Printers/mfcj280w || return 1
+	perl -i -pe 's#/etc/init.d#/etc/rc.d#g' ./cupswrapper/cupswrappermfcj280w || return 1
+	perl -i -pe 's#printcap\.local#printcap#g' ./inf/setupPrintcapij || return 1
+	cp -rf $srcdir/mfcj280w/usr/ $pkgdir/ || return 1
+	cp -rf $srcdir/mfcj280w/opt/ $pkgdir/ || return 1
+}

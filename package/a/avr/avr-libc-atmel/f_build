@@ -1,0 +1,11 @@
+build() {
+  cd $srcdir/libc/avr-libc
+  ./bootstrap
+  ./configure \
+      --build=$(./config.guess) \
+      --host=avr \
+      --prefix=/usr \
+      --enable-device-lib
+
+  make
+}

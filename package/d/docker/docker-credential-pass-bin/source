@@ -1,0 +1,1 @@
+("docker-credential-pass-v${pkgver}.linux-amd64::${url}/releases/download/v${pkgver}/docker-credential-pass-v${pkgver}.linux-amd64"

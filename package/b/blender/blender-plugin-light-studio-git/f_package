@@ -1,0 +1,9 @@
+package() {
+depends=('blender')
+  _blender=$(pacman -Sddp --print-format %v blender|grep -oP '(?<=\:)[[:digit:]]+\.[[:digit:]]+(?=\.)')
+  cd ${srcdir}
+  addons="$pkgdir/usr/share/blender/${_blender}/scripts/addons"
+  install -dm755 ${addons}/${name}
+  cp -a -t ${addons}/${name} ${srcdir}/${name}/*
+  install -Dm644 ${name}/LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

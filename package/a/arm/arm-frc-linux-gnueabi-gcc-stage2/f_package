@@ -1,0 +1,15 @@
+package() {
+  cd "${srcdir}/gcc-${pkgver}"/gcc-build
+
+  make DESTDIR="$pkgdir" install-gcc install-target-libgcc
+
+  rm -rf "$pkgdir"/usr/share/{man/man7,info}/
+
+  cp -r "$pkgdir"/usr/libexec/* "$pkgdir"/usr/lib/
+  rm -rf "$pkgdir/usr/libexec"
+
+  # strip it manually
+  strip "$pkgdir"/usr/bin/* 2>/dev/null || true
+  find "$pkgdir"/usr/lib -type f -exec /usr/bin/${_target}-strip \
+    --strip-unneeded {} \; 2>/dev/null || true
+}

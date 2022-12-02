@@ -1,0 +1,14 @@
+prepare() {
+  cd "${_base}-${pkgver}"
+  # Apply select patches to Alpine
+  # Maildir patch
+  patch -p1 -i "${srcdir}/maildir.patch"
+  # Fancy Thread Interface
+  patch -p1 -i "${srcdir}/fancy.patch"
+  # Justify paragraphs that contain more than one level of quoting
+  patch -p1 -i "${srcdir}/fillpara.patch"
+  # Add new subcommands to the compose command
+  patch -p1 -i "${srcdir}/compose.patch"
+  # Recognize multiline URLs
+  patch -p1 -i "${srcdir}/longurl.patch"
+}

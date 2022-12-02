@@ -1,0 +1,12 @@
+package_bareos-storage-ceph() {
+  pkgdesc="${pkgdesc} - Backup Archiving Recovery Open Sourced - storage daemon CEPH backend"
+  depends=("bareos-storage=${pkgver}")
+  for f in \
+     usr/lib/bareos/backends/libbareossd-rados.so* \
+     usr/lib/bareos/backends/libbareossd-cephfs.so* \
+     usr/share/bareos/config/bareos-dir.d/storage/Rados.conf.example \
+     usr/share/bareos/config/bareos-sd.d/device/RadosStorage.conf.example \
+  ; do
+    cp_pkgdir "$f" "$srcdir/install/"
+  done
+}

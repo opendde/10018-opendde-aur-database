@@ -1,0 +1,19 @@
+package_bitcoin-tx-bin() {
+  local binname=bitcoin-tx
+
+  pkgdesc="A peer-to-peer network based digital currency - Transaction tool"
+  depends=(gcc-libs)
+  provides=('bitcoin-tx')
+  conflicts=('bitcoin-tx')
+
+  (
+    cd "$_bindirbase"
+    _package "$binname"
+  )
+
+  (
+    cd "$_srcdirbase"
+    _maybe_install_completion "$binname"
+    install -Dm644 COPYING "$pkgdir/usr/share/licenses/$pkgname/COPYING"
+  )
+}

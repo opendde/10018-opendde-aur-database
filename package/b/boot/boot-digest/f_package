@@ -1,0 +1,12 @@
+package() {
+    cd "$srcdir/$pkgname-$pkgname-$pkgver"
+    sed -i '2,3d' boot-digest-mark
+    install -Dm755 -t ${pkgdir}/usr/bin boot-digest-calc boot-digest-check boot-digest-mark
+    install -Dm644 -t ${pkgdir}/usr/share/licenses/${pkgname} LICENSE
+    install -Dm644 -t ${pkgdir}/usr/share/doc/${pkgname} ChangeLog
+    cd "$srcdir"
+    install -Dm644 boot-digest.mkinitcpio-hook ${pkgdir}/usr/lib/initcpio/install/boot-digest
+    install -Dm644 -t ${pkgdir}/usr/lib/systemd/system boot-digest-check.service 
+    install -Dm755 -t ${pkgdir}/usr/bin boot-digest-alert boot-digest-mkinitcpio
+    install -Dm644 -t ${pkgdir}/etc/xdg/autostart boot-digest-alert.desktop
+}

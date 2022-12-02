@@ -1,0 +1,35 @@
+package() {
+  cd "${_pkgname}-${pkgver}"
+
+  # Delete unused Windows binaries
+  # https://github.com/sleuthkit/autopsy/issues/6806
+  find . -name '*.exe' -delete
+  find . -name '*.dll' -delete
+
+  # Add permissions to solr
+  # https://github.com/sleuthkit/autopsy/issues/7547
+  chmod 755 autopsy/solr/bin/autopsy-solr
+
+  install -d "${pkgdir}/opt/${_pkgname}"
+  cp -r * "$pkgdir/opt/${_pkgname}/"
+
+  # copy sleuthkit jar into autopsy
+  rm -f $pkgdir/opt/${_pkgname}/${_pkgname}/modules/ext/sleuthkit-${_skver}.jar
+  ln -s /usr/share/java/sleuthkit-${_skver}.jar $pkgdir/opt/${_pkgname}/${_pkgname}/modules/ext/sleuthkit-${_skver}.jar
+
+  # overwrite bin/autopsy with proper permissions
+  # https://github.com/sleuthkit/autopsy/issues/7547
+  install -m755 bin/autopsy "$pkgdir/opt/${_pkgname}/bin/autopsy"
+
+  # add executable
+  install -d "$pkgdir/usr/bin"
+  install -Dm755 "$srcdir/autopsy" "$pkgdir/usr/bin"
+
+  install -d "$pkgdir/usr/share/pixmaps"
+  install -Dm0644 icon.ico $pkgdir/usr/share/pixmaps/autopsy.ico
+
+  install -d "$pkgdir/usr/share/applications"
+  install -Dm644 "$srcdir/Autopsy.desktop" "$pkgdir/usr/share/applications"
+
+  install -Dm644 'LICENSE-2.0.txt' "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

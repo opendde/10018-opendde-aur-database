@@ -1,0 +1,4 @@
+package() {
+  cd "$srcdir/${_name}"
+  make prefix=/usr mandir=/usr/share/man DESTDIR=$pkgdir/ install
+}

@@ -1,0 +1,4 @@
+prepare() {
+  cd "$srcdir/allacrost"
+  svn patch ../png15.patch
+}

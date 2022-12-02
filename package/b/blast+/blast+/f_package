@@ -1,0 +1,7 @@
+package() {
+    cd "$srcdir"/ncbi-blast-"$pkgver"+-src/c++ || exit
+    make prefix="$pkgdir"/usr install
+    chmod +x "$pkgdir"/usr/lib/*.so
+    install -d "$pkgdir"/usr/share/licenses/"$pkgname"
+    echo 'public domain' >"$pkgdir"/usr/share/licenses/"$pkgname"/LICENSE
+}

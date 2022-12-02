@@ -1,0 +1,5 @@
+pkgver() {
+  cd adchpp
+  _ver="$(cat ${srcdir}/adchpp/adchpp/version.cpp | grep VERSIONSTRING | grep -o "[[:digit:]]*" | paste -sd'.')"
+  echo "${_ver}.$(hg log -r -1 --template '{rev}.{node|short}\n')"
+}

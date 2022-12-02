@@ -1,0 +1,11 @@
+build() {
+  cd antlr-${pkgver}
+
+  sed -i "/^CFLAGS=/d" ./configure
+  export CXX_LIB_CMD="ld ${LDFLAGS}"
+  export CXX_LINK_CMD="ld ${LDFLAGS}"
+  ./configure --prefix=/usr \
+    --disable-examples \
+    --disable-csharp
+  make CXXFLAGS="${CXXFLAGS} -fPIC"
+}

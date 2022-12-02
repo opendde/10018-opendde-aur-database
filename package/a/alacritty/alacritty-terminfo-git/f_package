@@ -1,0 +1,5 @@
+package() {
+	cd "$srcdir/$pkgname"
+  install -dm 755 "$pkgdir/usr/share/terminfo/a/"
+  tic -o "$pkgdir/usr/share/terminfo" alacritty.info
+}

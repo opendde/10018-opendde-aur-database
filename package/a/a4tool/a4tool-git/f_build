@@ -1,0 +1,6 @@
+build() {
+  cd "$srcdir/${_gitname}/libgmouse"
+  make
+  cd ../a4tool
+  make
+}

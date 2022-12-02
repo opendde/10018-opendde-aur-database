@@ -1,0 +1,4 @@
+build() {
+  cd $pkgname-src-$pkgver
+  ant
+}

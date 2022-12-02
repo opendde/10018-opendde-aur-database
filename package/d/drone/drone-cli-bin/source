@@ -1,0 +1,1 @@
+("https://github.com/drone/drone-cli/releases/download/v${pkgver}/drone_linux_amd64.tar.gz")

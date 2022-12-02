@@ -1,0 +1,6 @@
+build() {
+  ./compile.sh
+  ./output/bazel build scripts:bazel-complete.bash
+  cd output
+  ./bazel shutdown
+}

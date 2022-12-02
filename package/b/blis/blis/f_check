@@ -1,0 +1,5 @@
+check() {
+  cd blis-${pkgver}/testsuite
+  make
+  ./test_libblis.x
+}

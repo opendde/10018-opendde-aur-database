@@ -1,0 +1,4 @@
+package() {
+  cd "$srcdir/${_libname}/"
+  make DESTDIR="${pkgdir}" install -j1
+}

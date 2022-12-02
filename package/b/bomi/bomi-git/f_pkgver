@@ -1,0 +1,4 @@
+pkgver() {
+    cd "$srcdir/$_pkgbase"
+    echo $(git describe --tags | sed -E 's/([^-]*-g)/r\1/;s/-/./g' | cut -c2-)
+}

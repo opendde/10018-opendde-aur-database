@@ -1,0 +1,10 @@
+package() {
+    cd "$srcdir/${pkgname%-git}"
+    bsdtar -xf dist/gdesktopsuite-*.pacman -C "$pkgdir"
+ 
+    install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/${pkgname%-git}"
+ 
+    ln -sf '/opt/G Desktop Suite/gdesktopsuite' '/usr/bin/gdesktopsuite'
+
+    rm "$pkgdir"/.[^.]*
+}

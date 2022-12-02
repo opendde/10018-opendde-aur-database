@@ -1,0 +1,11 @@
+package() {
+  cd "$srcdir"
+  install -Dm0644 "${pkgname}-${pkgver}.php" \
+    "$pkgdir/usr/share/webapps/$pkgname/index.php"
+
+  # TODO: I don't really like this. What if someone is using nginx, for
+  # example? Or doesn't care to have any configuration installed at all.
+  # Consider removing.
+  install -Dm0644 "httpd-${pkgname}.conf" \
+    "$pkgdir/etc/httpd/conf/extra/httpd-${pkgname}.conf"
+}

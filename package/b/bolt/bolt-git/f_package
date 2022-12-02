@@ -1,0 +1,7 @@
+package() {
+  cd "${srcdir}"/bolt
+
+  DESTDIR="${pkgdir}" ninja -C build install
+# Fixup mode to match polkit
+  install -d -o root -g 102 -m 750 "${pkgdir}/usr/share/polkit-1/rules.d"
+}

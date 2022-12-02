@@ -1,0 +1,26 @@
+package() {
+  # Create pkgdir folders
+  install -d ${pkgdir}/usr/bin
+  install -d ${pkgdir}/opt/bitwig-studio
+  install -d ${pkgdir}/opt/bitwig-studio/libexec
+  install -d ${pkgdir}/usr/share/{applications,icons}
+  install -d ${pkgdir}/usr/share/licenses/${pkgname}
+
+  # Unpack package contents
+  bsdtar -xf ${srcdir}/data.tar.gz -C ${pkgdir}/
+
+  # Install launcher (replacing default symlink)
+  install -m755 ${srcdir}/bitwig-studio.launcher ${pkgdir}/usr/bin/bitwig-studio
+
+  # Workaround MP3 support by providing symlinks to ffmpeg
+  ln -s /usr/bin/ffmpeg ${pkgdir}/opt/bitwig-studio/libexec/avconv
+  ln -s /usr/bin/ffprobe ${pkgdir}/opt/bitwig-studio/libexec/avprobe
+
+  # Install license
+  install -m644 ${pkgdir}/opt/bitwig-studio/EULA.rtf \
+    ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
+
+  # Fix launcher category
+  sed -i 's:Categories=Multimedia:Categories=Multimedia;AudioVideo;Player;Recorder;:' \
+    ${pkgdir}/usr/share/applications/bitwig-studio.desktop
+}

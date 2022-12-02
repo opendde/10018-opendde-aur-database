@@ -1,0 +1,11 @@
+package() {
+    install -dm755 "$pkgdir"/usr/{bin,share/{applications,${pkgname}}}
+    sed -i 's/\/usr\/local\/lib/\/usr\/lib/g'  ${srcdir}/BEASTv${pkgver}/bin/beast
+    mv ${srcdir}/BEASTv${pkgver}/* ${pkgdir}/usr/share/beast/
+    for bin in $(ls $pkgdir/usr/share/beast/bin)
+do
+    ln -s /usr/share/beast2/bin/$bin ${pkgdir}/usr/bin/$bin
+done   
+    install -m 755 treestat.png ${pkgdir}/usr/share/beast/images/
+    install -m 755 *.desktop ${pkgdir}/usr/share/applications
+    }

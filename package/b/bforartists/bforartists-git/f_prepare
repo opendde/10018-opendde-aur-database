@@ -1,0 +1,8 @@
+prepare() {
+  cd "$srcdir/Bforartists"
+  printf "%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+  # update the submodules
+  git submodule update --init --recursive
+  git submodule foreach git checkout master
+  git submodule foreach git pull --rebase origin master
+}

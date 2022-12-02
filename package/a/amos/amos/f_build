@@ -1,0 +1,7 @@
+build() {
+  cd ${pkgname}-${pkgver}
+  patch -p1 < ${srcdir}/amos-3.1.0-gcc4.7.patch
+  PYTHON=/usr/bin/python2 PERL=/usr/bin/perl \
+	  	./configure --prefix=/usr --with-qmake-qt4=/usr/bin/qmake-qt4
+  make
+}

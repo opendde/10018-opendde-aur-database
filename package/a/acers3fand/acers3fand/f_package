@@ -1,0 +1,5 @@
+package() {
+    install -Dm 755 "$srcdir/$pkgname/acer_ec.pl" "$pkgdir/usr/local/bin/acer_ec.pl"
+    install -Dm 755 "$srcdir/$pkgname/acers3fand" "$pkgdir/usr/local/bin/acers3fand"
+    install -Dm 644 "$(dirname $srcdir)/acers3fand.service" "$pkgdir/usr/lib/systemd/system/acers3fand.service"
+}

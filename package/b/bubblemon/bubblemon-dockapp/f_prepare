@@ -1,0 +1,4 @@
+prepare() {
+  cd "$srcdir/$pkgname-$pkgver"
+  patch -Np2 -b -z .orig -i ../gdk2.patch
+}

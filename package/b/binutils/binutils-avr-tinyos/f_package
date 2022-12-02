@@ -1,0 +1,16 @@
+package() {
+  cd ${srcdir}/binutils-${pkgver}
+
+  cd build
+  make DESTDIR=${pkgdir} tooldir=/usr install || return 1
+
+  rm -f ${pkgdir}/usr/lib/libiberty.a
+
+  for bin in addr2line ar as c++filt gprof ld nm objcopy objdump ranlib readelf size strings strip ; do
+    rm -f ${pkgdir}/usr/bin/${bin} || return 1
+  done
+
+  for info in as bfd binutils configure ld standards; do
+    mv ${pkgdir}/usr/share/info/${info}.info ${pkgdir}/usr/share/info/avr-${info}.info || return 1
+  done
+}

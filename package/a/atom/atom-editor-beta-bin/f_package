@@ -1,0 +1,18 @@
+package() {
+  cd "atom-beta-${_pkgver}-amd64"
+
+  install -d -m 755 "${pkgdir}/usr/share/applications"
+  install -d -m 755 "${pkgdir}"/usr/lib
+  install -d -m 755 "${pkgdir}"/usr/bin
+  cp -r ./ "${pkgdir}"/usr/lib/atom
+
+  sed -e "s|<%= appName %>|Atom|" \
+      -e "s/<%= description %>/${pkgdesc}/" \
+      -e "s|<%= installDir %>|/usr|" \
+      -e "s|<%= appFileName %>|atom|" \
+      -e "s|<%= iconPath %>|atom|" \
+      ../atom.desktop.in > "${pkgdir}/usr/share/applications/atom.desktop"
+
+  cd "${pkgdir}"/usr/bin
+  ln -sf ../lib/atom/atom atom
+}

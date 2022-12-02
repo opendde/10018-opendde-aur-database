@@ -1,0 +1,3 @@
+package() {
+  install -Dm755 airbrake "$pkgdir/usr/bin/airbrake"
+}

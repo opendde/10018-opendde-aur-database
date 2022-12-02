@@ -1,0 +1,6 @@
+package() {
+  _blender=$(pacman -Sddp --print-format %v blender|grep -oP '(?<=\:)[[:digit:]]+\.[[:digit:]]+(?=\.)')
+  addons="$pkgdir/usr/share/blender/${_blender}/scripts/addons/"
+  install -dm755 ${addons}/${name}
+  cp -a ${srcdir}/${pkgname}/blender/addons/2.8/* ${addons}/${name}
+}

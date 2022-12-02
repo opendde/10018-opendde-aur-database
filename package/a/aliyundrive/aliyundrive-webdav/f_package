@@ -1,0 +1,6 @@
+package() {
+	cd "$pkgname-$pkgver"
+	install -Dm755 "target/release/${pkgname}" -t "${pkgdir}/usr/bin/"
+	install -Dm644 "LICENSE" -t "${pkgdir}/usr/share/licenses/${pkgname}/"
+	install -Dm644 "systemd.service" -T "${pkgdir}/usr/lib/systemd/system/$pkgname.service"
+}

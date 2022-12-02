@@ -1,0 +1,4 @@
+prepare() {
+	cd $srcdir/$_pkgname
+	sed -i "s|/usr/local/bin/aclidswitch|/usr/bin/aclidswitch|g" *.rules
+}

@@ -1,0 +1,1 @@
+(${pkgname}_${pkgver}.tar.xz::https://launchpad.net/~teejee2008/+archive/ubuntu/ppa/+files/${pkgname}_${pkgver}${_ubuntu}.tar.xz)

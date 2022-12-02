@@ -1,0 +1,7 @@
+build() {
+  mkdir -p ${srcdir}/${pkgname}-${pkgver}
+  cd ${srcdir}/${pkgname}-${pkgver}
+  /usr/bin/bsdtar -xf ${srcdir}/bassmod20-linux.zip
+  /usr/bin/bsdtar -xf ${srcdir}/${pkgname}.zip
+  make || return 1
+}

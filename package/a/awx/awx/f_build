@@ -1,0 +1,5 @@
+build() {
+  cd "$srcdir/${pkgname}-${pkgver}"
+  echo "${pkgver}" > VERSION
+  python -c "from setuptools import setup; setup();" build
+}

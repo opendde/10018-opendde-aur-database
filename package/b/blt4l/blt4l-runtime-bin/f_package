@@ -1,0 +1,18 @@
+package() {
+	install -D -m644 "${srcdir}/${__filename//.SteamRT/(SteamRT)}/libblt_loader.so" "${pkgdir}/usr/lib/blt4l/libblt_loader_steamrt.so"
+
+	## Preliminary work on including the installer
+	## I'll need to patch the installer for this to be usable.
+	# # Base Lua, needed by the game
+	# cp -r "${srcdir}/${__filename}/mods" "${pkgdir}/usr/lib/blt4l/mods"
+	# chmod 755 "${pkgdir}/usr/lib/blt4l/mods"
+	#
+	# # Installer scripts
+	# cp -r "${srcdir}/${__filename}/.installer" "${pkgdir}/usr/lib/blt4l/.installer"
+	# chmod -R 755 "${pkgdir}/usr/lib/blt4l/.installer"
+	# install -D -m755 "${srcdir}/${__filename}/install.sh" "${pkgdir}/usr/lib/blt4l/install.sh"
+	#
+	# # Setup the install binary
+	# mkdir -p "${pkgdir}/usr/bin/"
+	# ln -s "/usr/lib/blt4l/install.sh" "${pkgdir}/usr/bin/blt4l-installer"
+}

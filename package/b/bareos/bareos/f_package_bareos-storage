@@ -1,0 +1,24 @@
+package_bareos-storage() {
+  pkgdesc="${pkgdesc} - Storage daemon"
+  depends=("bareos-common=${pkgver}" 'zlib' 'lzo' 'jansson' 'openssl' 'libcap')
+  install=bareos-storage.install
+  for f in \
+     usr/lib/bareos/plugins/autoxflate-sd.so \
+     usr/lib/bareos/scripts/disk-changer \
+     usr/share/bareos/config/bareos-sd.d/device/FileStorage.conf \
+     usr/share/bareos/config/bareos-sd.d/director/bareos-dir.conf \
+     usr/share/bareos/config/bareos-sd.d/director/bareos-mon.conf \
+     usr/share/bareos/config/bareos-sd.d/messages/Standard.conf \
+     usr/share/bareos/config/bareos-sd.d/storage/bareos-sd.conf \
+     usr/share/bareos/config/tray-monitor.d/storage/StorageDaemon-local*.conf \
+     usr/bin/bareos-sd \
+     usr/share/man/man8/bareos-sd.8 \
+     usr/lib/systemd/system/bareos-sd.service \
+     +var/lib/bareos/storage \
+  ; do
+    cp_pkgdir "$f" "$srcdir/install/"
+  done
+
+  # Currently upstream systemd file does not automatically create run directory
+  sed -i '/\[Service\]/a RuntimeDirectory=bareos' ${pkgdir}/usr/lib/systemd/system/bareos-sd.service
+}

@@ -1,0 +1,6 @@
+pkgver() {
+	cd "$srcdir/${pkgname%-kian-git}"
+
+	# print version using latest tag/commit
+	printf "%s" "$(git describe --long --tags | sed 's/\([^-]*-\)g/r\1/;s/-/./g')"
+}

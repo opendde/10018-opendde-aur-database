@@ -1,0 +1,7 @@
+build() {
+    cd "${srcdir}"/libvorbis-${pkgver}
+    source android-env ${_android_arch}
+
+    android-${_android_arch}-configure
+    make $MAKEFLAGS
+}

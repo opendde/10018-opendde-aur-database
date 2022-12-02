@@ -1,0 +1,4 @@
+build() {
+  cd "${srcdir}/Arcade-Learning-Environment-${pkgver}/build"
+  make -j `nproc`
+}

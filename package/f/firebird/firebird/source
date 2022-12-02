@@ -1,0 +1,1 @@
+("https://github.com/FirebirdSQL/firebird/releases/download/v${_pkgver}/Firebird-${pkgver}-0.tar.xz"

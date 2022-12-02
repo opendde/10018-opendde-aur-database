@@ -1,0 +1,18 @@
+package() {
+    # Game data
+    install -g games -d "$pkgdir"/opt/$_installname
+    cp -rT $_gamefolder "$pkgdir"/opt/$_installname
+    
+    # Readme
+    install -Dm644 readme.htm \
+                   "$pkgdir"/usr/share/doc/$_installname/readme.html
+    
+    # Desktop entry
+    install -Dm644 $_installname.desktop \
+                   "$pkgdir"/usr/share/applications/$_installname.desktop
+    install -Dm644 atom-zombie-smashertCCn9V.png \
+                   "$pkgdir"/usr/share/pixmaps/$_installname.png
+    
+    # Launcher
+    install -Dm755 launcher.sh "$pkgdir"/usr/bin/$_installname
+}

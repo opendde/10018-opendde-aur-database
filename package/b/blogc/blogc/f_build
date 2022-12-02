@@ -1,0 +1,9 @@
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  ./configure \
+    --prefix=/usr \
+    --enable-git-receiver \
+    --enable-runserver \
+    --enable-make
+  make
+}

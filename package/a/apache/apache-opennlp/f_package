@@ -1,0 +1,11 @@
+package() {
+  mkdir -p $pkgdir/usr/bin
+  mkdir -p $pkgdir/usr/lib/opennlp
+  mkdir -p $pkgdir/usr/share/doc/opennlp
+
+  cp -r $srcdir/$pkgname-$pkgver/lib/* $pkgdir/usr/lib/opennlp
+  cp -r $srcdir/$pkgname-$pkgver/docs/* $pkgdir/usr/share/doc/opennlp
+
+  sed 's/$OPENNLP_HOME\/lib/$OPENNLP_HOME\/lib\/opennlp/g' < $srcdir/$pkgname-$pkgver/bin/opennlp > $pkgdir/usr/bin/opennlp
+  chmod +x $pkgdir/usr/bin/opennlp
+}

@@ -1,0 +1,12 @@
+package_afick-gui() {
+pkgdesc="A security tool similar to tripwire with tk GUI"
+depends=('perl-tk')
+conflicts=('afick')
+
+  cd "${srcdir}"/$pkgbase-$pkgver
+
+  make DESTDIR="${pkgdir}" install-gui
+
+  chmod a+r "${pkgdir}"/etc/{afick.conf,cron.daily/afick_cron}
+  chmod a+rx "${pkgdir}"/{etc/logrotate.d,var/{log/afick,lib/afick,lib/afick/archive},usr/lib/afick/lib/Afick}
+}

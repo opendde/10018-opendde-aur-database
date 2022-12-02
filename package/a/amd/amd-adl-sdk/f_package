@@ -1,0 +1,10 @@
+package() {
+    install -m755 -d ${pkgdir}/usr/bin
+    install -m755 ${srcdir}/adlutil/adlutil ${pkgdir}/usr/bin
+
+    install -m755 -d ${pkgdir}/usr/include/ADL
+    install -m644 ${srcdir}/include/* ${pkgdir}/usr/include/ADL
+
+    install -m755 -d ${pkgdir}/usr/share/doc/ADL
+    mv -v ${srcdir}/Public-Documents ${srcdir}/Sample ${srcdir}/Sample-Managed ${srcdir}/ADL_SDK.html ${pkgdir}/usr/share/doc/ADL
+}

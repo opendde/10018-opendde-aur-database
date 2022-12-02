@@ -1,0 +1,5 @@
+package() {
+	mkdir -p $pkgdir/usr/bin
+	cp $pkgname $pkgdir/usr/bin
+	chmod 755 $pkgdir/usr/bin/$pkgname
+}

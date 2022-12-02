@@ -1,0 +1,13 @@
+package() {
+    pushd ${_pkgname}-build
+    make DESTDIR="${pkgdir}" install
+    popd
+
+    install -dm0755 "${pkgdir}/usr/${_target}/etc/ld.so.conf.d/"
+    echo "usr/${_target}/usr/lib/libfakeroot" > "${pkgdir}/usr/${_target}/etc/ld.so.conf.d/fakeroot.conf"
+
+    # install README for sysv/tcp usage
+    install -Dm0644 "${_pkgname}-${pkgver}/README" "${pkgdir}/usr/${_target}/usr/share/doc/${_pkgname}/README"
+
+    rm -rf ${_pkgname}-build
+}

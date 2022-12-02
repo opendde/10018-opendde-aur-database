@@ -1,0 +1,9 @@
+build() {
+  cd "$_pkgname"
+  NOCONFIGURE=1 ./autogen.sh
+  ./configure \
+    --prefix=/usr           \
+    --sbindir=/usr/bin      \
+    --sysconfdir=/etc       ;
+  make
+}

@@ -1,0 +1,1 @@
+("http://downloads.sourceforge.net/${pkgname%-patched}/${pkgname%-patched}-${pkgver}.tar.bz2"

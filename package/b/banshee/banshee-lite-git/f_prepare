@@ -1,0 +1,12 @@
+prepare() {
+  cd "$srcdir/${pkgname/-lite-git/}"
+
+  patch -p1 -i ../banshee-autogen.sh-remove-git-submodules-update.patch
+  patch -p1 -i ../banshee-Update-.gitmodules.patch
+
+  git submodule init
+  git config 'submodule.src/Hyena.url' "${srcdir}/Hyena"
+  git submodule update
+
+  NOCONFIGURE=1 ./autogen.sh
+}

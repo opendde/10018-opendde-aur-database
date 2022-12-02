@@ -1,0 +1,13 @@
+package_bareos-storage-python2-plugin() {
+  conflicts=("bareos-storage-python-plugin")
+  pkgdesc="${pkgdesc} - Python plugin for storage daemon"
+  depends=("bareos-storage=${pkgver}"
+           "bareos-storage-python-plugins-common=${pkgver}"
+           'python2' 'lzo' 'libcap' 'jansson')
+  for f in \
+    usr/lib/bareos/plugins/python-sd.so \
+    usr/lib/python${python2_ver}/site-packages/bareossd.so \
+  ; do
+    cp_pkgdir "$f" "$srcdir/install/"
+  done
+}

@@ -1,0 +1,13 @@
+prepare() {
+    # Verify the checksum
+    echo "$(grep SHA256 "$pkgname-$pkgver.info" | cut -d" " -f2) $pkgname-$pkgver.deb" >sum
+    sha256sum -c sum
+
+    ar x "$pkgname-$pkgver.deb"
+    tar axvf data.tar.xz
+    tar axvf control.tar.xz
+
+    # Fix the .desktop entry
+    sed -i -e 's/\/opt\/workspacesclient/\/usr\/share\/amazon-workspaces/' $srcdir/usr/share/applications/workspacesclient.desktop
+    mv $srcdir/usr/share/applications/workspacesclient.desktop $srcdir/usr/share/applications/amazon-workspaces.desktop
+}

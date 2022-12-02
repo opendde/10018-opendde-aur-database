@@ -1,0 +1,6 @@
+pkgver() {
+  cd $_pkgbase
+
+  local ver="$(svnversion)"
+  printf "1.4.0.%s" "${ver//[[:alpha:]]}"
+}

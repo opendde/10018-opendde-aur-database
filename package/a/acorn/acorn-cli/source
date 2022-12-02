@@ -1,0 +1,1 @@
+("acorn-$pkgver::git+https://github.com/acorn-io/acorn#tag=$pkgver")

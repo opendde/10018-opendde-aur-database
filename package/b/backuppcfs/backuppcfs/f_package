@@ -1,0 +1,4 @@
+package () {
+  cd ${srcdir}
+  install -D backuppcfs.pl ${pkgdir}/usr/share/backuppc/bin/backuppcfs
+}

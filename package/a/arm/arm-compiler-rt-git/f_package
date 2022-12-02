@@ -1,0 +1,9 @@
+package() {
+  cd "$srcdir/${pkgname%-git}"
+
+  install -d "$pkgdir/usr/arm-none-eabi/"
+  cp -a "lib" "$pkgdir/usr/arm-none-eabi/"
+
+  install -Dm644 "$srcdir/compiler-rt/LICENSE.TXT" \
+    "$pkgdir/usr/share/licenses/${pkgname}/LICENSE"
+}

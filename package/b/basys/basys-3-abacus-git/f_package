@@ -1,0 +1,5 @@
+package() {
+	cd "$srcdir/${pkgname%-git}"
+	mkdir -p "$pkgdir/usr/share/digilent/${pkgname%-git}"
+	cp -r * "$pkgdir/usr/share/digilent/${pkgname%-git}"
+}

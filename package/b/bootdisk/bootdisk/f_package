@@ -1,0 +1,5 @@
+package() {
+	cd ${pkgname}
+	install -Dm755 "src/bootdisk" "${pkgdir}/usr/bin/bootdisk"
+	install -Dm644 "LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

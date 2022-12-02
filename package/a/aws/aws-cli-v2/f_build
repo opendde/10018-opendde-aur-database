@@ -1,0 +1,4 @@
+build() {
+  cd "$srcdir/aws-cli-$pkgver"
+  python -m build --wheel --no-isolation --skip-dependency-check
+}

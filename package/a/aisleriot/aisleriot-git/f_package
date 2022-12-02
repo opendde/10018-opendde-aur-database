@@ -1,0 +1,4 @@
+package() {
+  cd ${pkgname%-git}
+  DESTDIR="$pkgdir" ninja -C builddir install
+}

@@ -1,0 +1,4 @@
+package() {
+  cd apidb-${pkgver}-${phase}/build
+  make DESTDIR="$pkgdir" install
+}

@@ -1,0 +1,22 @@
+package() {
+  build_dir="$srcdir/$pkgname-$pkgver"
+  lib_dir="$pkgdir/usr/lib/$pkgname"
+
+  mkdir -p $lib_dir
+  cp -r $build_dir/dist/install/aurora-scheduler/* $lib_dir
+  mkdir -p -m755 $pkgdir/usr/bin
+  install -m755 $build_dir/dist/kaurora_admin.pex $pkgdir/usr/bin/aurora_admin
+  install -m755 $build_dir/dist/kaurora.pex $pkgdir/usr/bin/aurora
+  install -m755 $build_dir/dist/thermos_executor.pex $pkgdir/usr/bin/thermos_executor
+  install -m755 $build_dir/dist/thermos_observer.pex $pkgdir/usr/bin/thermos_observer
+  install -m755 $build_dir/dist/thermos.pex $pkgdir/usr/bin/thermos
+  install -m755 $build_dir/dist/thermos_runner.pex $pkgdir/usr/bin/thermos_runner
+
+  mkdir -p -m755 $pkgdir/etc/aurora
+  install -m755 aurora-startup.sh $pkgdir/usr/bin/aurora-startup.sh
+  install -m755 thermos-startup.sh $pkgdir/usr/bin/thermos-startup.sh
+  install -m644 aurora-env.sh $pkgdir/etc/aurora/aurora-env.sh
+  install -m644 thermos-env.sh $pkgdir/etc/aurora/thermos-env.sh
+  mkdir -p -m755 $pkgdir/usr/lib/systemd/system
+  install -m644 $srcdir/{aurora,thermos}.service $pkgdir/usr/lib/systemd/system
+}

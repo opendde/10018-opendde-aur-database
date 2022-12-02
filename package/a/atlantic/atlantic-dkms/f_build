@@ -1,0 +1,3 @@
+build() {
+  cd "${srcdir}/AQtion-${commit}"
+}

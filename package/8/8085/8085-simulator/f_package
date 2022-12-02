@@ -1,0 +1,10 @@
+package() {
+    msg2 "Copying source files..."
+    install -Dm644 "${srcdir}/${pkgname}-${pkgver}.jar" "${pkgdir}/opt/${pkgname}/${pkgname}-${pkgver}.jar"
+
+    msg2 "Creating executable file..."
+    install -Dm755 "${srcdir}/${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+
+    msg2 "Creating desktop entry..."
+    install -Dm644 "${srcdir}/${pkgname}.desktop" "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+}

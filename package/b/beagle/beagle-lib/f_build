@@ -1,0 +1,6 @@
+build() {
+  cd $srcdir/$pkgname-$pkgver
+  cd build
+  export JAVA_HOME=/usr/lib/jvm/default
+  cmake -DBUILD_CUDA=ON -DBUILD_OPENCL=ON -DCMAKE_INSTALL_PREFIX:PATH=$pkgdir/usr ..
+}

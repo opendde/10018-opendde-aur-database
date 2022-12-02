@@ -1,0 +1,7 @@
+package() {
+  cd "$srcdir/afew-$pkgver"
+  python setup.py install --root="$pkgdir" --optimize=1
+  install -D -m 644 docs/build/man/afew.1 "$pkgdir/usr/share/man/man1/afew.1"
+  install -D -m644 "$srcdir/LICENSE" \
+    "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

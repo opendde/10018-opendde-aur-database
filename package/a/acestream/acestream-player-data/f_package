@@ -1,0 +1,9 @@
+package() {
+  cd "$srcdir"
+  bsdtar -xf data.tar.xz -C "$pkgdir"
+
+# create symlinks for libs that Ubuntu names differenly
+  cd "$pkgdir/usr/lib"
+  ln -s liba52.so.0.0.0 liba52-0.7.4.so
+  ln -s liblua.so.5.2 liblua5.2.so.0
+}

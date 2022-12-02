@@ -1,0 +1,10 @@
+build() {
+    mkdir -p ${srcdir}/${_pkgname}/build
+    cd ${srcdir}/${_pkgname}/build
+
+	cmake .. -Wno-dev \
+        -DCMAKE_BUILD_TYPE="Release" \
+        -DCMAKE_INSTALL_PREFIX="/usr" \
+
+    make
+}

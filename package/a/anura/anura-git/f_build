@@ -1,0 +1,6 @@
+build() {
+  cd $_gitname
+
+  # USE_CCACHE=no to honor makepkg's ccache setting.
+  make -e USE_CCACHE=no CXXFLAGS='-Wno-error=return-type' anura
+}

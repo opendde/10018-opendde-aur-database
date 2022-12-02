@@ -1,0 +1,5 @@
+build() {
+  cd "$srcdir/aspell6-eo-$pkgver-2"
+  ./configure
+  make
+}

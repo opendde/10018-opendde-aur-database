@@ -1,0 +1,4 @@
+build() {
+  cd "$srcdir/$_pkgname"
+  $_python setup.py build
+}

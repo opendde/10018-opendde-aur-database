@@ -1,0 +1,20 @@
+package_bullet-multithreaded() {
+    optdepends=('glu: for the example browser'
+                            'python: python bindings'
+                            'python-numpy: python bindings'
+                            'bullet-multithreaded-docs: documentation')
+    provides=('bullet')
+    conflicts=('bullet')
+
+    DESTDIR="${pkgdir}" ninja -C _build install
+    
+    install -Dm755 _build/examples/ExampleBrowser/libBulletExampleBrowserLib.so.${pkgver} "${pkgdir}"/usr/lib/libBulletExampleBrowserLib.so.${pkgver}
+    install -Dm755 _build/examples/OpenGLWindow/libOpenGLWindow.so "${pkgdir}"/usr/lib/libOpenGLWindow.so
+    install -Dm755 _build/examples/ThirdPartyLibs/Gwen/libgwen.so "${pkgdir}"/usr/lib/libgwen.so
+    install -Dm755 _build/examples/ThirdPartyLibs/BussIK/libBussIK.so "${pkgdir}"/usr/lib/libBussIK.so
+    install -Dm755 "${srcdir}"/bullet3_examplebrowser.sh "${pkgdir}"/usr/bin/bullet3_examplebrowser
+    install -Dm755 _build/examples/ExampleBrowser/App_ExampleBrowser "${pkgdir}"/opt/bullet/App_ExampleBrowser
+    cp -r _build/data "${pkgdir}"/opt/bullet/
+
+    install -Dm644 "${srcdir}"/${_name}/LICENSE.txt "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
+}

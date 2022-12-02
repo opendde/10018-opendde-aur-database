@@ -1,0 +1,18 @@
+package() {
+  # install the electron wrapper
+  install -Dm755 "$pkgname" "$pkgdir/usr/bin/$pkgname"
+
+  # install asar file
+  install -Dm644 "${srcdir}/squashfs-root/resources/app.asar" "$pkgdir/usr/lib/$pkgname.asar"
+
+  # desktop entry
+  sed -i.bak s/Exec=AppRun/Exec=altair/g "${srcdir}/squashfs-root/${pkgname}.desktop"
+  install -Dm644 "${srcdir}/squashfs-root/${pkgname}.desktop" "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+
+  # install the icons
+  for i in 16 32 48 60 120 192 310; do
+    install -Dm 644 \
+      "${srcdir}/squashfs-root/usr/share/icons/hicolor/${i}x${i}/apps/${pkgname}.png" \
+      "${pkgdir}/usr/share/icons/hicolor/${i}x${i}/apps/${pkgname}.png"
+  done
+}

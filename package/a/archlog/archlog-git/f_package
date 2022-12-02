@@ -1,0 +1,5 @@
+package() {
+  cd "${pkgname%-git}"
+
+  install -Dm755 archlog "$pkgdir/usr/bin/archlog"
+}

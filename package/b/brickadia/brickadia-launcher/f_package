@@ -1,0 +1,11 @@
+package() {
+    install -Dm755 -t "$pkgdir"/usr/bin "$srcdir"/usr/bin/brickadia
+    install -Dm755 -t "$pkgdir"/usr/share/applications "$srcdir"/usr/share/applications/brickadia-launcher*.desktop
+    install -Dm755 -t "$pkgdir"/usr/share/icons/hicolor/256x256/apps "$srcdir"/usr/share/icons/hicolor/256x256/apps/brickadia-launcher*.png
+
+    mkdir -p "$pkgdir"/usr/lib/
+    cp -dr --no-preserve=ownership -t "$pkgdir"/usr/lib/ "$srcdir"/usr/lib/brickadia-launcher
+
+    mkdir -p "$pkgdir"/usr/share/licenses/
+    cp -dr --no-preserve=ownership -t "$pkgdir"/usr/share/licenses/ "$srcdir"/usr/share/licenses/brickadia-launcher
+}

@@ -1,0 +1,5 @@
+build() {
+  cd "${srcdir}/aspell6-ar-${pkgver}-0"
+  ./configure
+  make
+}

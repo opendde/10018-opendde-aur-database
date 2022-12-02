@@ -1,0 +1,6 @@
+build() {
+    cd "${srcdir}/${_pkgname}"
+
+    yarn install --immutable
+    yarn gulp
+}

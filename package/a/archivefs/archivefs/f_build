@@ -1,0 +1,7 @@
+build() {
+	cd "$pkgname-$pkgver"
+
+	cargo build --release --locked
+
+	a2x -f manpage doc/archivefs.1.adoc
+}

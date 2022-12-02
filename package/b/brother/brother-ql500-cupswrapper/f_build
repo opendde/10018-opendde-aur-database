@@ -1,0 +1,13 @@
+build() {
+        cd $srcdir
+        rpmextract.sh "${_pkgname}-${pkgver}-0.i386.rpm"
+
+        rm -f ${_pkgname}-${pkgver}-0.i386.rpm
+
+        mkdir -p usr/share/ || return 1
+        rm -rf usr/share/brother 
+        mv opt/brother usr/share/brother || return 1
+        rmdir opt || return 1
+
+        sed -i 's|/opt/brother|/usr/share/brother|g' `grep -lr '/opt/brother' ./` || return 1
+}

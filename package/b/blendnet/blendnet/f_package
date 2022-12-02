@@ -1,0 +1,16 @@
+package() {
+  _blender=$(blender -v | head -n1 | cut -f2 -d ' ' | sed 's/\.0$//')
+  cd ${srcdir}
+  addons="$pkgdir/usr/share/blender/${_blender}/scripts/addons"
+  install -dm755 ${addons}/${pkgname}
+  cp -a -t ${addons}/${pkgname} ${_pkgname}-${pkgver}/*
+  install -Dm755 ${pkgname}-validate -t ${addons}/${pkgname}/
+
+  install -Dm644 "${_pkgname}-${pkgver}/LICENSE" -t "${pkgdir}"/usr/share/licenses/${pkgname}/
+  install -Dm644 ${pkgname}-manager.service -t "${pkgdir}"/usr/lib/systemd/system/
+  install -Dm644 ${pkgname}-agent.service -t "${pkgdir}"/usr/lib/systemd/system/
+  install -Dm644 ${pkgname}.tmpfiles "${pkgdir}"/usr/lib/tmpfiles.d/${pkgname}.conf
+  install -Dm644 ${pkgname}.sysusers "${pkgdir}"/usr/lib/sysusers.d/${pkgname}.conf
+  install -Dm644 manager.json "${pkgdir}"/etc/${pkgname}/manager.json
+  install -Dm644 agent.json "${pkgdir}"/etc/${pkgname}/agent.json
+}

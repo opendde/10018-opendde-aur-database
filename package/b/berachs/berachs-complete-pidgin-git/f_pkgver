@@ -1,0 +1,4 @@
+pkgver() {
+	cd "$srcdir/BERACHS_COMPLETE_PIDGIN"
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}

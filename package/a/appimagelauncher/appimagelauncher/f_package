@@ -1,0 +1,7 @@
+package() {
+  cd "$srcdir/AppImageLauncher"
+  make DESTDIR="$pkgdir" install
+
+  install -Dm644 LICENSE.txt -t "$pkgdir/usr/share/licenses/$pkgname/"
+  install -Dm644 "$srcdir"/*.hook -t "$pkgdir"/usr/share/libalpm/hooks/
+}

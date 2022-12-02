@@ -1,0 +1,4 @@
+prepare() {
+  mv -v "audacity-Audacity-${pkgver}" "audacity-${pkgver}"
+  mkdir "audacity-${pkgver}/build"
+}

@@ -1,0 +1,3 @@
+package() {
+	install -D "${srcdir}/afl-${pkgver}/qemu_mode/qemu-${qemu_version}/x86_64-linux-user/qemu-x86_64" "${pkgdir}/usr/bin/afl-qemu-trace"
+}

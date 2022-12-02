@@ -1,0 +1,14 @@
+build() {
+  cd "${pkgname}"-"${pkgver}"
+
+  ./configure --prefix=/usr \
+    --sbindir=/usr/bin \
+    --enable-cpumining \
+    --enable-bfsb \
+    --enable-metabank \
+    --enable-scrypt \
+    --enable-opencl \
+    --with-udevrulesdir=/usr/lib/udev/rules.d
+  # --enable-knc (FS#33640)
+  make CFLAGS="-fcommon"
+}

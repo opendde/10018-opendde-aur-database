@@ -1,0 +1,7 @@
+package() {
+  cd "${srcdir}/backward-cpp-${pkgver}/build"
+  make install DESTDIR="${pkgdir}"
+  install -Dm755 libbackward.so "${pkgdir}/usr/lib/libbackward.so"
+  ln -s "/usr/lib/libbackward.so" "${pkgdir}/usr/lib/libbackward.so.${pkgver}"
+  install -Dm644 "${srcdir}/backward-cpp-${pkgver}/LICENSE.txt" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.txt"
+}

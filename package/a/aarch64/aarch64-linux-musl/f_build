@@ -1,0 +1,8 @@
+build() {
+  cd musl-$pkgver
+  ./configure --prefix=$_sysroot \
+              --exec-prefix=/usr \
+              --target=$_target \
+              --enable-wrapper=all
+  make
+}

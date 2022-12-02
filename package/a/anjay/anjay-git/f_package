@@ -1,0 +1,4 @@
+package() {
+	cd "Anjay"
+	make "DESTDIR=${pkgdir}" install
+}

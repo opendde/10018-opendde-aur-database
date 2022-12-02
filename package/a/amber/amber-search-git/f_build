@@ -1,0 +1,5 @@
+build() {
+  cd "$pkgname"
+
+  cargo build --release --target=$CARCH-unknown-linux-gnu
+}

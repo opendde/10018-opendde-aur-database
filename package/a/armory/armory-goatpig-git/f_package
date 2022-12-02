@@ -1,0 +1,28 @@
+package() {
+  cd "$srcdir/$_name"
+  make DESTDIR="$pkgdir/" install
+
+  mkdir -p "$pkgdir/usr/share/pixmaps"
+  cp "$pkgdir/usr/share/armory/img/armory_icon_fullres.png" \
+     "$pkgdir/usr/share/pixmaps/armory.png"
+  cp "$pkgdir/usr/share/armory/img/armory_icon_green_fullres.png" \
+     "$pkgdir/usr/share/pixmaps/armory_green.png"
+
+  desktop-file-install -m 644 \
+  --set-key="Exec" --set-value="/usr/bin/armory" \
+  --set-icon="/usr/share/pixmaps/armory.png" \
+  --dir="$pkgdir/usr/share/applications/" \
+  "$srcdir/$_name/dpkgfiles/armory.desktop"
+
+  desktop-file-install -m 644 \
+  --set-key="Exec" --set-value="/usr/bin/armory --offline" \
+  --set-icon="/usr/share/pixmaps/armory.png" \
+  --dir="$pkgdir/usr/share/applications/" \
+  "$srcdir/$_name/dpkgfiles/armoryoffline.desktop"
+
+  desktop-file-install -m 644 \
+  --set-key="Exec" --set-value="/usr/bin/armory --testnet" \
+  --set-icon="/usr/share/pixmaps/armory_green.png" \
+  --dir="$pkgdir/usr/share/applications/" \
+  "$srcdir/$_name/dpkgfiles/armorytestnet.desktop"
+}

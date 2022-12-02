@@ -1,0 +1,10 @@
+package() {
+	cd "$srcdir"
+	install -Dm755 "bbg.sh"             "${pkgdir}/usr/bin/${pkgname}"
+	install -Dm644 "app-${pkgver}.asar" "${pkgdir}/usr/lib/${pkgname}/app.asar"
+	install -Dm644 "bbg.desktop"        "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+	install -Dm644 "icon.png"           "${pkgdir}/usr/share/icons/${pkgname}.png"
+
+	# install bbgvertype: https://github.com/bbg-contributors/bbg/blob/f3d61ce4d79680329bad4cb014c909fb86037f38/App/start.js
+	echo "aur-bbg-zzjzxq33-misaka13514" | install -Dm644 /dev/stdin "${pkgdir}/usr/share/bbg/bbgvertype"
+}

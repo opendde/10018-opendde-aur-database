@@ -1,0 +1,13 @@
+package() {
+  mkdir -p "$pkgdir/etc/automua"
+  mkdir -p "$pkgdir/srv/http/automua"
+  cd "$pkgdir/srv/http/automua"
+  install -Dm644 "${srcdir}/setupvenv.sh" "setupvenv.sh"
+  sh setupvenv.sh
+  source .venv/bin/activate
+  pip install -Iv $pkgname==$pkgver
+  install -Dm644 "${srcdir}/automua.sysusers" "${pkgdir}/usr/lib/sysusers.d/automua.conf"
+  install -Dm644 "${srcdir}/automua.conf" "${pkgdir}/etc/automua/automua.conf"
+  install -Dm644 "${srcdir}/automua.service" "${pkgdir}/usr/lib/systemd/system/automua.service"
+  install -Dm644 "${srcdir}/automua.tmpfiles" "${pkgdir}/usr/lib/tmpfiles.d/automua.conf"
+}

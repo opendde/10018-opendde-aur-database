@@ -1,0 +1,10 @@
+package() {
+  cd ${srcdir}/linux-${_basever}
+  make INSTALL_HDR_PATH=${pkgdir}/usr/${_target} ARCH=arm headers_install
+
+  # use headers from libdrm
+  rm -rf ${pkgdir}/usr/${_target}/include/drm
+
+  # clean-up unnecessary files generated during install
+  find ${pkgdir} \( -name .install -o -name ..install.cmd \) -delete
+}

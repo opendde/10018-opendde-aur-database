@@ -1,0 +1,6 @@
+prepare() {
+  cp -v "${srcdir}/asterisk-opus/formats/"* "${srcdir}/${_pkgname}-${pkgver}/formats/"
+  cp -v "${srcdir}/asterisk-opus/codecs/"* "${srcdir}/${_pkgname}-${pkgver}/codecs/"
+  cd "${srcdir}/${_pkgname}-${pkgver}"
+  patch -p1 < "${srcdir}/asterisk-opus/asterisk.patch"
+}

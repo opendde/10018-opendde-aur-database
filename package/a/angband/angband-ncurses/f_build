@@ -1,0 +1,13 @@
+build() {
+  cd "${srcdir}/${_pkgname}-${pkgver}"
+
+  ./configure \
+    --prefix=/usr \
+    --bindir=/usr/bin \
+    --sysconfdir=/usr/share/angband \
+    --with-configpath=/usr/share/angband \
+    --with-libpath=/usr/share/angband \
+    --disable-x11
+
+  make
+}

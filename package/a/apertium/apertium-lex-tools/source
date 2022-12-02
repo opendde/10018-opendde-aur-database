@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}.tar.gz::https://github.com/apertium/apertium-lex-tools/archive/refs/tags/v${pkgver}.tar.gz")

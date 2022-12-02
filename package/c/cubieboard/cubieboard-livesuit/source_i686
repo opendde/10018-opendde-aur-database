@@ -1,0 +1,1 @@
+("${pkgname}"::'git+https://github.com/linux-sunxi/sunxi-livesuite.git'

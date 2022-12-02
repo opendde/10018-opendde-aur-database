@@ -1,0 +1,24 @@
+package() {
+    # Unzip will produce an error code because it is unable to unzip the Mojo Installer.
+    # Therefore, a conditional into a no-op command will keep the PKGBUILD from failing
+    # Of course, if you have any real problems unzipping the PKGBUILD will not abort.
+    unzip -d "${srcdir}" "amnesia_tdd_${pkgver/_/-}.sh" || :
+    mkdir -p "${pkgdir}/opt/${pkgname}"
+    mv "${srcdir}/data/noarch/"* "${pkgdir}/opt/${pkgname}"
+    mv "${srcdir}/data/${_arch}/"* "${pkgdir}/opt/${pkgname}"
+
+    # Install Binaries/Launchers
+    mkdir -p "$pkgdir/usr/bin"
+    ln -s "/opt/${pkgname}/Amnesia.bin.${_arch}"  "${pkgdir}/usr/bin/${pkgname}"
+    ln -s "/opt/${pkgname}/Launcher.bin.${_arch}" "${pkgdir}/usr/bin/${pkgname}-launcher"
+    install -Dm755 "${pkgname}-justine.sh" "${pkgdir}/usr/bin"
+
+    # Install License
+    mkdir -p "${pkgdir}/usr/share/licenses/${pkgname}"
+    mv "${srcdir}/data/EULA/"* "${pkgdir}/usr/share/licenses/${pkgname}/"
+
+    # Install Desktop Integration
+    mkdir -p "$pkgdir"/usr/share/{pixmaps,applications}
+    ln -s "/opt/${pkgname}/Amnesia.png" "${pkgdir}/usr/share/pixmaps/${pkgname}.png"
+    install -Dm644 "${pkgname}.desktop" "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+}

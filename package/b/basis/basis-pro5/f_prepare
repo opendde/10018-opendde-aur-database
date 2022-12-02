@@ -1,0 +1,152 @@
+prepare() {
+  set -u
+  _install_check
+
+  if [ "${#_basedir}" -ne 16 ] || [ "${#_basefolder}" -ne 10 ]; then
+    echo 'Due to replacements within binary files the following strings must be the same length as the sample string'
+    echo '_basedir same length as /usr/local/basis'
+    echo '_basefolder same length as /usr/local'
+    set +u
+    false
+  fi
+
+  cd "${srcdir}"
+
+  # unpack most of the new BLM, removing files customized by the BLM installer
+  # for seamless reinstalls and upgrades.
+  rm -rf 'blmgr' 'blmgr.tmp'
+  mkdir 'blmgr.tmp'
+  mkdir 'blmgr'
+  cd 'blmgr.tmp'
+  bsdtar -xf "${srcdir}/${_blmjar}"
+  if [ ! -s 'BBjWebstartBootstrap.jar' ]; then
+    mkdir 'webstart.tmp'
+    cd 'webstart.tmp'
+    bsdtar -xf "${srcdir}/${_blmjarwebstart}"
+    mv 'BBjWebstartBootstrap.jar' ..
+    cd ..
+    rm -r 'webstart.tmp'
+  fi
+  rm -r 'com' 'org' 'META-INF' 'blminstall.xml'
+  mkdir 'Archtemp'
+  cd 'Archtemp'
+  bsdtar -xf '../package_blm.jar'
+  declare -A _arch=([any]='32' [i686]='32' [x86_64]='64')
+  mv 'unix'/* "2145/blm/${_arch[${CARCH}]}"/* "${srcdir}/blmgr"
+  mv "${srcdir}/blmgr/bin/basisrunlm" "${srcdir}/blmgr"
+  rm "${srcdir}/blmgr/bin/unixautostart"
+  # mv "${srcdir}/blmgr/bin/admin" "${srcdir}/blmgr/bin/blmadmin"
+  rm "${srcdir}/blmgr/bin/admin" # Java isn't using this version any more
+  cd '..'
+  rm -r 'Archtemp'
+  mkdir 'Archtemp'
+  cd 'Archtemp'
+  bsdtar -xf '../package_install.jar' 'lib/' 'unix'
+  rm 'unix/images'/*.png 'unix/images/BasisB.xpm' 'unix'/*.directory 'unix'/*.menu 'unix/bin/.envsetup'
+  local _df
+  for _df in 'unix'/*/; do
+    local _df2="${_df%/}"
+    mv "${_df2}"/* "${srcdir}/blmgr/${_df2##*/}"
+    rmdir "${_df2}"
+  done
+  rmdir 'unix'
+  mv * "${srcdir}/blmgr"
+  cd ..
+  mv 'BBjWebstartBootstrap.jar' "${srcdir}/blmgr/lib"
+  cd "${srcdir}/blmgr"
+  bsdtar -xf '../blmgr.tmp/package_native_2145.jar'
+  rm -r 'META-INF'
+  mkdir -p 'cfg' 'log' 'uninstall/com/basis/install/'
+  cd "${srcdir}"
+  rm -r 'blmgr.tmp'
+
+  cd "${srcdir}"
+  # The permissions on these files are horrendous
+  local _file
+  for _file in $(find . -type 'f'); do
+    #echo "${_file}"
+    local _pm_executable=0
+    local _pm_type="$(file "${_file}")"
+    local _pm_isdata="${_pm_type##*:}" # bash
+    local _pm_isdata="$(echo ${_pm_isdata})" # Trim spaces
+
+    case "${_pm_isdata}" in
+      #'empty')         _pm_executable=0;;
+      'ASCII text'*)    _pm_executable=0;;
+      'HTML'*)          _pm_executable=0;;
+      #*'tar archive'*) _pm_executable=0;;
+      *'ELF '*)         _pm_executable=1;;
+      #*'compressed data'*) _pm_executable=0;;
+      *' batch '*)      _pm_executable=1;;
+      *' source, '*)    _pm_executable=0;;
+      'BBx '*)          _pm_executable=0;;
+      *'POSIX shell script'*) _pm_executable=1;;
+      *) echo "${_pm_isdata}: ${_file}";;
+    esac
+
+    if [ "${_pm_executable}" -eq 0 ]; then
+      chmod 644 "${_file}"
+    else
+      chmod 755 "${_file}"
+    fi
+  done
+  unset _file
+  unset _pm_executable
+  unset _pm_type
+  unset _pm_isdata
+  unset _pm_isdata
+
+  find . -type 'd' -exec chmod 755 '{}' '+'
+  chmod 644 'scripts'/* # these are all sourced
+  chmod 755 'install' # only root can run install (the installer is fixed with an EUID check later)
+
+  # these will be marked immutable during install to prevent root from modifying
+  chmod 444 'pro5'/{ext,std,graphics}/*
+
+  # Fix a few missing utility files with old names for easier upgrades.
+  ln -s '_ask.utl' 'pro5/ext/_ask.pub'
+  #ln -s '_copy.pub' 'pro5/std/_copy.utl'
+  #ln -s '_ddguess.utl' 'pro5/ext/_guess'
+  #ln -s '_msg.utl' 'pro5/ext/_msg'
+  ln -s '_unerr.utl' 'pro5/ext/_unerr.pub'
+  ln -s '_yesno.utl' 'pro5/ext/_yesno.pub'
+  #ln -s '_warn.utl' 'pro5/ext/_warn'
+
+  # Branding the EXE eliminates the need for the license path in an ENV variable
+  # Branding didn't work in the Basis installer. Only two files contain BLM_LICLOC.
+  # Branding causes a linker error if done in package when fakeroot is active.
+  local _touches
+  for _touches in 'pro5/pro5'{b,s}; do
+    pro5/BLMbrand "${_touches}" "${_touches}.tmp" "${_basedir}/pro5"
+    touch -r "${_touches}" "${_touches}.tmp"
+    mv "${_touches}.tmp" "${_touches}"
+  done
+  unset _touches
+
+  # Fix the date on every file modified
+  local _badfiles
+  readarray -t _badfiles <<<"$(grep -larF $'/usr/local/\n/usr/tmp')"
+  local _badfile
+  for _badfile in "${_badfiles[@]}"; do
+    touch -r "${_badfile}" "${_badfile}.Archtmp"
+  done
+
+  # Fix a little sbin, within the protection of touch
+  sed -e 's:/usr/sbin:/usr/bin:g' -i 'scripts/BasisFuns'
+
+  # We are modifying binary files so replace strings must be exactly the same length.
+  sed -e '# fix /usr/local' \
+      -e "s:/usr/local/:${_basefolder}/:g" \
+      -e '# fix /usr/tmp' \
+      -e 's:/usr/tmp:/var/tmp:g' \
+    -i "${_badfiles[@]}"
+
+  for _badfile in "${_badfiles[@]}"; do
+    touch -r "${_badfile}.Archtmp" "${_badfile}"
+    rm "${_badfile}.Archtmp"
+  done
+  unset _badfiles
+  unset _badfile
+
+  set +u
+}

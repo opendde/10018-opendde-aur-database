@@ -1,0 +1,4 @@
+package() {
+	cd "${srcdir}/${pkgname}${pkgver}/src"
+	install -D -m755 acme ${pkgdir}/usr/bin/acme
+}

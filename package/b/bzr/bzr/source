@@ -1,0 +1,1 @@
+("https://launchpad.net/bzr/${pkgver%.*}/${pkgver}/+download/bzr-${pkgver}.tar.gz"{,.sig}

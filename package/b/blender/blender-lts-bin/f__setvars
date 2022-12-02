@@ -1,0 +1,3 @@
+_setvars() {
+  _base_dir="$srcdir/${pkgname%-lts-bin}-$pkgver-linux-x64"
+}

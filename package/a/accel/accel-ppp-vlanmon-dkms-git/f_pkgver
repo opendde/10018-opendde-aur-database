@@ -1,0 +1,4 @@
+pkgver() {
+    cd "$srcdir/${_pkgname%-git}"
+    printf "%s" "$(git describe --tags | sed 'y/-/_/')"
+}

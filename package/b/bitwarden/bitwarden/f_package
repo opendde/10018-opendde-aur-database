@@ -1,0 +1,22 @@
+package() {
+  cd "${srcdir}/desktop-${pkgver}"
+
+  install -dm755 "${pkgdir}/usr/lib/${pkgname}"
+
+  if [ $CARCH == "aarch64" ]; then
+    cp -r dist/linux-arm64-unpacked/resources "${pkgdir}/usr/lib/${pkgname}/"
+  else
+    cp -r dist/linux-unpacked/resources "${pkgdir}/usr/lib/${pkgname}/"
+  fi
+  
+  install -dm755 "${pkgdir}/usr/share/icons/hicolor"
+  for i in 16 32 48 64 128 256 512; do
+    install -Dm644 resources/icons/${i}x${i}.png "${pkgdir}/usr/share/icons/hicolor/${i}x${i}/apps/${pkgname}.png"
+  done
+  install -Dm644 resources/icon.png "${pkgdir}/usr/share/icons/hicolor/1024x1024/apps/${pkgname}.png"
+
+  install -dm755 "${pkgdir}/usr/bin"
+  install -Dm755 "${srcdir}/${pkgname}.sh" "${pkgdir}/usr/bin/bitwarden-desktop"
+
+  install -Dm644 "${srcdir}"/${pkgname}.desktop "${pkgdir}"/usr/share/applications/${pkgname}.desktop
+}

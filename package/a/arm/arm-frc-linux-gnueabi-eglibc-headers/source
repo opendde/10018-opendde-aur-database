@@ -1,0 +1,1 @@
+(eglibc-${pkgver}::svn://svn.eglibc.org/branches/eglibc-${pkgver/./_}/libc)

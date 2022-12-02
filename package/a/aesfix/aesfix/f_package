@@ -1,0 +1,6 @@
+package() {
+	cd "$pkgname"
+	install -Dm 755 aesfix -t "$pkgdir/usr/bin/"
+	install -Dm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
+	find samples -type f -exec install -Dm 644 '{}' "$pkgdir/usr/share/$pkgname/{}" \;
+}

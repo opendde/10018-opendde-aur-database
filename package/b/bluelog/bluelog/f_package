@@ -1,0 +1,10 @@
+package() {
+  cd ${_pkgname}-${pkgver}
+  make DESTDIR="${pkgdir}/" install
+
+  # license
+  #install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+
+  # man
+  #install -Dm644 ${pkgname}.1 "${pkgdir}/usr/share/man/man1/${pkgname}.1"
+}

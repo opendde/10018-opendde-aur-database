@@ -1,0 +1,3 @@
+prepare() {
+  rm -rf "$srcdir/etc"
+}

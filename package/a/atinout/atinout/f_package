@@ -1,0 +1,4 @@
+package() {
+    cd ${srcdir}/atinout-$pkgver
+    install -Dm 755 atinout $pkgdir/usr/bin/atinout
+}

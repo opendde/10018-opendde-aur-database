@@ -1,0 +1,46 @@
+package() {
+  sed -i "s/Brother ${_MODEL}/Brother ${_Model}/" \
+         "${srcdir}/opt/brother/Printers/${_MODEL}/cupswrapper/brother-${_MODEL}-cups-en.ppd"
+
+  cp -a "${srcdir}/var" "${pkgdir}"
+
+  for _file in \
+    "cupswrapper/brother-${_MODEL}-cups-en.ppd" \
+    "inf/br${_MODEL}func" \
+    "inf/br${_MODEL}rc"
+  do
+    install -Dm644 {${srcdir},${pkgdir}}"/opt/brother/Printers/${_MODEL}/${_file}"
+  done
+
+  for _file in \
+    "cupswrapper/lpdwrapper" \
+    "cupswrapper/paperconfigml2" \
+    "inf/setupPrintcap" \
+    "lpd/lpdfilter"
+  do
+    install -Dm755 {${srcdir},${pkgdir}}"/opt/brother/Printers/${_MODEL}/${_file}"
+  done
+
+  for _file in brprintconflsr3 rawtobr3; do
+    install -Dm755 \
+    "${srcdir}/opt/brother/Printers/${_MODEL}/lpd/${CARCH}/${_file}" \
+    "${pkgdir}/opt/brother/Printers/${_MODEL}/lpd/${_file}"
+  done
+
+  install -d "${pkgdir}/usr/share/cups/model"
+  ln -s "/opt/brother/Printers/${_MODEL}/cupswrapper/brother-${_MODEL}-cups-en.ppd" \
+        "${pkgdir}/usr/share/cups/model"
+
+  install -d "${pkgdir}/usr/lib/cups/filter"
+  ln -s "/opt/brother/Printers/${_MODEL}/cupswrapper/lpdwrapper" \
+        "${pkgdir}/usr/lib/cups/filter/brother_lpdwrapper_${_MODEL}"
+
+  install -d "${pkgdir}/etc/opt/brother/Printers/${_MODEL}/inf/"
+  ln -s "/opt/brother/Printers/${_MODEL}/inf/br${_MODEL}rc" \
+        "${pkgdir}/etc/opt/brother/Printers/${_MODEL}/inf/"
+
+  install -Dm444 'lpr-license.txt' "${pkgdir}/usr/share/licenses/${pkgname}/lpr-license.txt"
+
+  ln -s "/usr/share/licenses/common/GPL2/license.txt" \
+  "${pkgdir}/usr/share/licenses/${pkgname}/cupswrapper-license.txt"
+}

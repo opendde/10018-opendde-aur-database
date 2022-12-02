@@ -1,0 +1,8 @@
+prepare() {
+  cd "${pkgname}-${pkgver}"
+  sed -e "s:normalize-audio:normalize:g" -i ${pkgname}
+  # https://bugs.archlinux.org/task/58046
+  sed -i 's/^#CDDBMETHOD=musicbrainz/CDDBMETHOD=cddb/' abcde.conf
+  # replace inetutils hostname with coreutils uname -n
+  patch -Np1 -i ../hostname.patch
+}

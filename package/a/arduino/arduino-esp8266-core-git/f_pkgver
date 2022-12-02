@@ -1,0 +1,4 @@
+pkgver() {
+  # Multiple GIT repositories are involved --> no specific pkgver
+  date +%Y%m%d
+}

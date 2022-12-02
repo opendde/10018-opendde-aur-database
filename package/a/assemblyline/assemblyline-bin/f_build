@@ -1,0 +1,5 @@
+build() {
+  cd "${pkgname%-bin}-${pkgver}"
+  ./configure --prefix=/usr
+  make clean all
+}

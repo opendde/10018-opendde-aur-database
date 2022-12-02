@@ -1,0 +1,9 @@
+build() {
+  cd ${srcdir}/${pkgname}-${pkgver}
+  ./autogen.sh
+  ./configure --prefix="/usr" --enable-pcre --enable-locallists --enable-sslmitm=yes \
+	      --enable-icap --enable-commandline= --enable-email --enable-trickledm \
+              --sysconfdir=/etc --localstatedir=/var --enable-email --enable-clamd \
+              --sbindir=/usr/bin
+  make
+}

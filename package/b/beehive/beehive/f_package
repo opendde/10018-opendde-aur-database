@@ -1,0 +1,8 @@
+package() {
+    # Install binary
+    install -Dm755 "$pkgname-$pkgver/beehive" "$pkgdir/usr/bin/beehive"
+    # Copy License
+    install -Dm644 "$pkgname-$pkgver/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    # Copy Unit file
+    install -Dm644 beehive.service "$pkgdir/usr/lib/systemd/system/beehive.service"
+}

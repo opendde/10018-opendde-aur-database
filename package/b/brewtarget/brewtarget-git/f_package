@@ -1,0 +1,5 @@
+package() {
+  cd "${_pkgname}-build"
+  make DESTDIR="${pkgdir}" install
+  install -Dm644 "../${_pkgname}/COPYING.WTFPL" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.WTFPL"
+}

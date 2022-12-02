@@ -1,0 +1,7 @@
+package() {
+	tar \
+		--extract \
+		--file $gzfirm \
+		--directory $srcdir \
+	&& cp -R $gzdir/* $pkgdir
+	}

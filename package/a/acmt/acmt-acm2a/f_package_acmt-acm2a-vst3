@@ -1,0 +1,7 @@
+package_acmt-acm2a-vst3() {
+	pkgdesc="ACM-2A Program EQ (VST3)"
+	groups=('pro-audio' 'vst-plugins')
+	mkdir -p ${pkgdir}/usr/lib/vst3
+	rm -r ${srcdir}/plugin-binaries/VST3/ACM-2A.vst3/Contents/Resources
+	cp -r ${srcdir}/plugin-binaries/VST3/ACM-2A.vst3 ${pkgdir}/usr/lib/vst3/ACM-2A.vst3
+}

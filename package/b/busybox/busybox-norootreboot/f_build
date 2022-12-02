@@ -1,0 +1,4 @@
+build() {
+  cd "busybox-$pkgver"
+  make
+}

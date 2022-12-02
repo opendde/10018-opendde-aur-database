@@ -1,0 +1,19 @@
+build() {
+    cd "${srcdir}/amdgpu-pro-${major}-${minor}-ubuntu-18.04"
+
+    for m in core dkms; do
+        echo "Extracting ${m}..."
+        ar x "amdgpu-${m}_${major}-${minor}_all.deb"
+        tar -xJf data.tar.xz -C "${srcdir}"
+    done
+
+    for p in ${srcdir}/patch_*.patch; do
+        test -f "${p}" || continue
+        patch -p1 -d "${srcdir}/usr/src/amdgpu-${major}-${minor}" -i "${p}"
+    done
+
+    mkdir -p "${srcdir}/usr/share/licenses/${pkgname}"
+    find "${srcdir}/usr/share/doc" -name 'changelog.Debian.gz' -delete
+    find "${srcdir}/usr/share/doc" -name 'copyright' -exec mv {} ${srcdir}/usr/share/licenses/${pkgname} \;
+    find "${srcdir}/usr/share/doc" -type d -empty -delete
+}

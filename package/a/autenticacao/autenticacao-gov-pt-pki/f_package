@@ -1,0 +1,4 @@
+package() {
+	mkdir -p ${pkgdir}/etc/ca-certificates/trust-source/anchors
+	install ${srcdir}/*.cer ${pkgdir}/etc/ca-certificates/trust-source/anchors/
+}

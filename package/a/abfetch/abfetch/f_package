@@ -1,0 +1,8 @@
+package() {
+	mkdir "$pkgdir/usr"
+	mkdir "$pkgdir/usr/bin"
+	mkdir "$pkgdir/etc/"
+	mkdir "$pkgdir/etc/abfetch"
+	cp "$srcdir/$pkgname/$pkgname" "$pkgdir/usr/bin"
+	cp "$srcdir/$pkgname/logo.sf" "$pkgdir/etc/abfetch"
+}

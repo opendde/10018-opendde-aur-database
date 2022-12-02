@@ -1,0 +1,4 @@
+prepare() {
+    cd "${srcdir}/${pkgname}"
+    NOCONFIGURE=1 ./autogen.sh
+}

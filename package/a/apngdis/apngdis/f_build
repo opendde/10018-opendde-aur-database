@@ -1,0 +1,3 @@
+build() {
+  gcc -Wall -pedantic -g -Wl,-z,relro,-z,now -o $pkgname $pkgname.cpp -lstdc++ -lpng
+}

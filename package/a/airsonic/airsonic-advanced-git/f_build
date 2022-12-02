@@ -1,0 +1,4 @@
+build() {
+  cd "${srcdir}/airsonic-advanced"
+  mvn --settings=./.mvn/settings.xml clean compile package verify -e -DskipTests -Dcheckstyle.skip=true
+}

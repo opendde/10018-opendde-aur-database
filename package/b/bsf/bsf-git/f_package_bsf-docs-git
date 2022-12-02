@@ -1,0 +1,10 @@
+package_bsf-docs-git() {
+	arch=(any)
+
+	mkdir -p "$pkgdir"/usr/share/doc/$pkgbase
+	cp -r "$_pkgname"/Documentation/Generated/native "$pkgdir"/usr/share/doc/$pkgbase/
+	cp -r "$_pkgname"/Documentation/Generated/csharp "$pkgdir"/usr/share/doc/$pkgbase/
+
+	cp -r SemanticUI "$pkgdir"/usr/share/doc/$pkgbase/native/
+	cp -r SemanticUI "$pkgdir"/usr/share/doc/$pkgbase/csharp/
+}

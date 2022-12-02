@@ -1,0 +1,1 @@
+("${_pkgname}::git+git://github.com/arthurzam/${_pkgname}.git")

@@ -1,0 +1,6 @@
+package() {
+  mkdir -p "${pkgdir}/opt/android-sdk/platforms/"
+  mv "${srcdir}/android-${_sdkver}" "${pkgdir}/opt/android-sdk/platforms/android-${_sdkint}"
+
+  chmod -R ugo+rX "${pkgdir}/opt"
+}

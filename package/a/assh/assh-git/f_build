@@ -1,0 +1,10 @@
+build() {
+    cd "${srcdir}/${_pkgname}"
+    version=$(git describe --tags --always)
+    vcs_ref=$(git rev-parse --short HEAD)
+    GOPATH=${srcdir} \
+        GO111MODULE=on \
+        go build \
+        --ldflags "-X moul.io/assh/v2/pkg/version.Version=$version -X moul.io/assh/v2/pkg/version.VcsRef=$vcs_ref" \
+        -modcacherw -o assh
+}

@@ -1,0 +1,4 @@
+build() {
+   cd $pkgname
+   cargo build --release --all-features --target-dir=target
+}

@@ -1,0 +1,10 @@
+prepare() {
+
+	# Change directory to source directory
+	cd $pkgoname-$pkgver
+
+	# Run autogen script if exists
+	if [ -x autogen.sh ]; then
+		NOCONFIGURE=1 ./autogen.sh
+	fi
+}

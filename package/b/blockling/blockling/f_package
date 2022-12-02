@@ -1,0 +1,16 @@
+package() {
+    mkdir -p ${pkgdir}/usr/share/blockling ${pkgdir}/usr/bin
+
+    cd ${srcdir}/blockling-$pkgver
+    cp -r blockling data ${pkgdir}/usr/share/blockling
+
+    BIN=${pkgdir}/usr/bin/blockling
+    cat <<EOF > $BIN
+#!/bin/sh
+
+cd \$HOME
+/usr/share/blockling/blockling
+EOF
+
+    chmod +x $BIN
+}

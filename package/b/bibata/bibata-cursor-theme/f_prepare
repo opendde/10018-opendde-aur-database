@@ -1,0 +1,4 @@
+prepare() {
+  cd Bibata_Cursor-$pkgver
+  rm -rf themes
+}

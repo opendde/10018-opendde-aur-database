@@ -1,0 +1,5 @@
+prepare() {
+	cd "$pkgname-$_debver"
+
+	patch -p1 -i "$srcdir/${pkgname}_${_debver}-${_debrel}.diff"
+}

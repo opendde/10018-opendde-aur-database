@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir"
+  mkdir $pkgdir/usr $pkgdir/usr/lib
+  gacutil -i AMPSharp.dll -root $pkgdir/usr/lib
+}

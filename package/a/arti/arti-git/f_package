@@ -1,0 +1,11 @@
+package() {
+  cd "arti"
+
+  cargo install \
+    --no-track \
+    --locked \
+    --root "$pkgdir/usr" \
+    --path "$srcdir/arti/crates/arti"
+  install -Dm644 "README.md" -t "$pkgdir/usr/share/doc/arti"
+  install -Dm644 "LICENSE-MIT" -t "$pkgdir/usr/share/licenses/arti"
+}

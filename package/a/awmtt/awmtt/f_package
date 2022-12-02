@@ -1,0 +1,4 @@
+package() {
+  install -d "${pkgdir}/usr/bin"
+  install -m755 "${srcdir}/${pkgname}/${pkgname}.sh" "${pkgdir}/usr/bin/${pkgname}"
+}

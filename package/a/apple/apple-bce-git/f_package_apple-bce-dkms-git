@@ -1,0 +1,14 @@
+package_apple-bce-dkms-git() {
+	depends=('dkms')
+	conflicts=("${_pkgbase}")
+	provides=("${_pkgbase}")
+
+	install -Dm644 dkms.conf "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}/dkms.conf
+
+	cd "$_pkgbase"
+
+	# XXX: Find a better solution...
+	make KVERSION=$(</usr/src/linux-mbp/version) clean
+
+	cp -dr --no-preserve='ownership' ./* "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}/
+}

@@ -1,0 +1,15 @@
+package() {
+    cd $srcdir
+    # extract both packages
+    ar x dcp${_model}lpr-${_lprver}.i386.deb
+    tar xf data.tar.gz
+    ar x dcp${_model}cupswrapper-${_wrpver}.i386.deb
+    tar xf data.tar.gz
+
+    # do some packing
+    cd opt/brother/Printers/dcp${_model}
+    perl -i -pe 's#/etc/init.d#/etc/rc.d#g' ./cupswrapper/cupswrapperdcp${_model}
+    perl -i -pe 's#printcap\.local#printcap#g' $srcdir/opt/brother/Printers/dcp${_model}/inf/setupPrintcapij
+    cp -rf $srcdir/usr/ $pkgdir/
+    cp -rf $srcdir/opt/ $pkgdir/
+}

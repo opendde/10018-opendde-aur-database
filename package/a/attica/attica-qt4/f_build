@@ -1,0 +1,8 @@
+build() {
+  cd build
+  cmake ../attica-${pkgver} \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DQT4_BUILD=1
+  make
+}

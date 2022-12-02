@@ -1,0 +1,5 @@
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}/build"
+  make install DESTDIR="${pkgdir}"
+  install -Dm644 "${srcdir}/${pkgname}-${pkgver}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

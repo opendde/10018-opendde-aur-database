@@ -1,0 +1,7 @@
+build() {
+  cd ${srcdir}/${pkgname}
+  #sed -i 's:MY_QT_PATH=/Qt/5.6:MY_QT_PATH=/usr/bin:' unixBuildScript.sh
+  sed -i 's:MY_QT_PATH=.*:MY_QT_PATH=/usr/bin:' unixBuildScript.sh
+  sed -i "s: make: make ${MAKEFLAGS}:" unixBuildScript.sh
+  ./unixBuildScript.sh yes
+}

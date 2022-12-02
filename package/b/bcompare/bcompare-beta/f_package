@@ -1,0 +1,70 @@
+package() {
+  # Prepare the directory skeleton needed for install.sh
+  mkdir -p "${pkgdir}/usr/share/applications"
+  mkdir -p "${pkgdir}/usr/share/doc"
+  mkdir -p "${pkgdir}/usr/share/mime/packages"
+  mkdir -p "${pkgdir}/usr/share/pixmaps"
+
+  # Set up service menus
+  echo -n "Do you want to install KDE service menus globally? [Y/n] "
+  read key
+  if [ "$key" != "n" -a "$key" != "N" ]; then
+    echo -n "Including KDE service menus in the package..."
+    mkdir -p "${pkgdir}/usr/lib/kde4"
+    mkdir -p "${pkgdir}/usr/share/kde4/services/"
+    echo -e " Done!\n"
+  else
+   echo -e "KDE service menus will NOT be included in the package.\n"
+  fi
+
+  echo -n "Do you want to install Nautilus service menus globally? [Y/n] "
+  read key
+  if [ "$key" != "n" -a "$key" != "N" ]; then
+    echo -n "Including Nautilus service menus in the package..."
+    mkdir -p "${pkgdir}/usr/lib/nautilus/extensions-3.0/"
+    echo -e " Done!\n"
+  else
+   echo -e "Nautilus service menus will NOT be included in the package.\n"
+  fi
+
+  echo -n "Do you want to install Thunar service menus globally? [Y/n] "
+  read key
+  if [ "$key" != "n" -a "$key" != "N" ]; then
+    echo -n "Including Thunar service menus in the package..."
+    mkdir -p "${pkgdir}/usr/lib/thunarx-2/"
+    echo -e " Done!\n"
+  else
+   echo -e "Thunar service menus will NOT be included in the package.\n"
+  fi
+
+  # Apply some fixes on install.sh before run it
+  cd ${srcdir}/bcompare-${pkgver}
+  sed -i 's|/usr/|${PREFIX}/usr/|g' install.sh
+  sed -i '/-h \/lib64/{N;N;d;}' install.sh
+  sh install.sh --prefix="${pkgdir}"
+
+  # Move some directories to usr
+  cd "${pkgdir}"
+  if [ -d usr/lib ]; then
+    mv usr/lib/* lib
+  fi 
+  mv bin lib usr/
+
+  # Fix wrong paths
+  sed -i "s|"${pkgdir}"|/usr|g" usr/bin/bcompare
+
+  #Clean unneded files
+  pushd usr/lib/beyondcompare/ > /dev/null
+  rm -f uninstall.sh RPM-GPG-KEY-scootersoftware scootersoftware.repo kde_context_menu
+  mv help "${pkgdir}/usr/share/doc/beyondcompare"
+  mv README "${pkgdir}/usr/share/doc/beyondcompare/"
+  rm -rf ext
+  popd > /dev/null
+
+  # Clean some mime files
+  pushd usr/share > /dev/null
+  mv  mime/packages .
+  rm -rf mime/*
+  mv packages mime/
+  popd > /dev/null
+}

@@ -1,0 +1,5 @@
+pkgver() {
+	cd "${srcdir}/${gitname}"
+	local ver="$(git describe --tags)"
+	printf "%s" "${ver//-/.}"
+}

@@ -1,0 +1,4 @@
+package() {
+  DESTDIR="$pkgdir" cmake --install "$srcdir/Audacity-$pkgver-Source/build"
+  rm $pkgdir/usr/audacity
+}

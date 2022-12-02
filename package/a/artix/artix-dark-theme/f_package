@@ -1,0 +1,5 @@
+package() {
+  cd "${srcdir}/$pkgname"
+  mkdir -p "${pkgdir}"/usr/share/themes
+  cp -rf usr "${pkgdir}"/
+}

@@ -1,0 +1,6 @@
+package() {
+	cd "$srcdir"
+
+	install -Dm644  -t "${pkgdir}"/usr/lib/authy app.asar icon128.png
+	install -Dm644 "$srcdir"/authy.desktop -t "$pkgdir"/usr/share/applications
+}

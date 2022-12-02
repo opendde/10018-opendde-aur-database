@@ -1,0 +1,13 @@
+package() {
+  cd ${pkgname}-${pkgver}
+
+  make install DESTDIR=${pkgdir}
+  make docs DESTDIR=${pkgdir}
+
+  install -Dm644 filters/graphviz/asciidoc-graphviz-sample.txt \
+    -t "${pkgdir}"/etc/asciidoc/filters/graphviz
+  install -Dm644 asciidocapi.py \
+    -t "${pkgdir}"/usr/lib/python3.8/site-packages
+  ln -sf ../../../../../etc/asciidoc/filters/graphviz/asciidoc-graphviz-sample.txt \
+    "${pkgdir}"/usr/share/doc/asciidoc/website/asciidoc-graphviz-sample.txt
+}

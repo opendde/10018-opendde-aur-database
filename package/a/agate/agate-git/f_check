@@ -1,0 +1,7 @@
+check() {
+  cd "agate"
+
+  cargo test \
+    --release \
+    --locked
+}

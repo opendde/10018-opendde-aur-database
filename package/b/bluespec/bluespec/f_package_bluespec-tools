@@ -1,0 +1,14 @@
+package_bluespec-tools() {
+	cd "$srcdir"
+	install -d "$pkgdir/etc/profile.d"
+	install -Dm 755 ./bluespec-home.sh "$pkgdir/etc/profile.d/"
+
+	cd "Bluespec-${pkgver}-centos7-amd64"
+	install -d "$pkgdir/opt/bluespec"
+	cp -r ./lib/* "$pkgdir/opt/bluespec/"
+	install -d "$pkgdir/usr/bin"
+	install -Dm 755 ./bin/* "$pkgdir/usr/bin/"
+
+	install -d "$pkgdir/usr/share/vim/vimfiles"
+	cp -r ./util/vim/{ftdetect,indent,syntax} "$pkgdir/usr/share/vim/vimfiles/"
+}

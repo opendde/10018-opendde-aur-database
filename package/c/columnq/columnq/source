@@ -1,0 +1,1 @@
+("git+https://github.com/roapi/roapi.git#tag=${_pkgname}-v${_pkgver}")

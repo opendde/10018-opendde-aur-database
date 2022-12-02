@@ -1,0 +1,4 @@
+build() {
+  cd "${srcdir}/asroot"
+  make DESTDIR="${pkgdir}/" PREFIX=/usr
+}

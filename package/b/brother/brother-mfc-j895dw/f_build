@@ -1,0 +1,85 @@
+build() {
+  set -u
+
+  local _basedir="opt/brother/Printers/${_brotherxnd}"
+  #local _basedir="usr/share/${_conflict}"
+  #local _basedir="usr/share/${_conflict}/Printer/${_brotherxnd}"
+  shopt -s nullglob
+  local _wrapper_source=("${_basedir}/cupswrapper/cupswrapper${_brotherxnd}"*)
+  shopt -u nullglob
+  test "${#_wrapper_source[@]}" -eq 1 || echo "${}"
+  _wrapper_source="${_wrapper_source[0]}"
+  test -x "${_wrapper_source}" || echo "${}"
+  echo "Wrapper source: ${_wrapper_source}"
+
+  # Some Brother installers create files here
+  mkdir -p 'var/tmp'
+
+  # This generated wrapper isn't used. We just want to run the install commands.
+
+  # Modify the installer so we can finish the install here in PKGBUILD.
+  #cp -p "${_wrapper_source}" "${_wrapper_source}.Arch" # debug: diff compare with Total Commander
+  sed -e '# Install to _srcdir. Some folders may not apply to this model.' \
+      -e '# quick fix for path that needs to be double quoted' \
+      -e "s:'/usr/share/ppd':"'"/usr/share/ppd":g' \
+      -e 's:/usr:"${_srcdir}"&:g' \
+      -e 's:/opt:"${_srcdir}"&:g' \
+      -e 's:/var:"${_srcdir}"&:g' \
+      -e 's:/etc:"${_srcdir}"&:g' \
+      -e '# Remove unwanted srcdir from the generated files' \
+      -e '/^cat <<ENDOFPPDFILE/,/^ENDOFPPDFILE/ s:"${_srcdir}"::g' \
+      -e '/^cat <<!ENDOFWFILTER/,/^!ENDOFWFILTER!/ s:"${_srcdir}"::g' \
+      -e '# Remove extra quotes where path was already quoted' \
+      -e 's:""\${_srcdir}":"${_srcdir}:g' \
+      -e '#s:/model/Brother:/model:g' \
+      -e "# Stop the Install script after the files are generated. cups doesn't require a reload to see the printer driver." \
+      -e 's:^sleep.*$:exit 0 # & #Arch Linux Compatible:g' \
+      -e '# not using set -u allows bugs like this to slip by' \
+      -e '#/Nup=/ s:`:\\`:g' \
+      -e '# Fix a forgotten escape script error' \
+      -e 's: \$errorcode: \\$errorcode:g' \
+      -e '# Fix symlinks' \
+      -e 's:^ldpwrapper="\${_srcdir}":ldpwrapper=:g' \
+    -i "${_wrapper_source}"
+  grep -lqe '#Arch Linux Compatible$' "${_wrapper_source}" || echo "${}"
+  test -f "${_wrapper_source}.Arch" && echo "${}" # Halt for debugging
+  # Generate PPD and wrapper. Use sh -x to debug
+  # Possible bug: copying to /usr/share/ppd is disabled.
+  _srcdir="${srcdir}" \
+  sh -u -e "${_wrapper_source}" -i
+  local _ppdir='usr/share/cups/model/Brother'
+  chmod 644 "${_ppdir}"/*.ppd # Some installers make ppd executable
+  rm -rf 'var'
+
+  local _wrapgen="${_basedir}/cupswrapper/brother_lpdwrapper_${_brotherxnd}"
+  #local _wrapgen="usr/lib/cups/filter/brlpdwrapper${_brotherxnd}"
+  #local _wrapgen="usr/lib/cups/filter/brother_lpdwrapper_${_brotherxnd}"
+  test -s "${_wrapgen}" || echo "${}"
+
+  # Ensure all paths were removed
+  grep -qFe $'${_srcdir}\n'"${srcdir}" "${_wrapgen}" && echo "${}"
+
+  # We did everything in the installer so we can get rid of it.
+  rm "${_wrapper_source}"
+
+  # Misnamed printer does not sort or autodetect properly
+  #sed -e "s:Brother ${_brotherund} :Brother ${_brotheru} :g" -i "${_ppdir}"/*.ppd
+
+  # Check to see if the lpd wrapper is referenced by the ppd
+  # Check to see if our compiled code is referenced by the lpd wrapper
+  local _nppdfound=0
+  #local _ncodefound=0
+  #local _lwrapper
+  for _lwrapper in 'usr/lib/cups/filter'/*; do
+    if grep -q "$(basename "${_lwrapper}")" "${_ppdir}"/*.ppd; then
+      _nppdfound=$((_nppdfound+1))
+    fi
+    #if grep -q "${_brcupsconf##*/}" "${_lwrapper}"; then
+    #  _ncodefound=$((_ncodefound+1))
+    #fi
+  done
+  test "${_nppdfound}" -ne 0 || echo "${}"
+  #test "${_ncodefound}" -ne 0 || echo "${}"
+
+  set +u
+}

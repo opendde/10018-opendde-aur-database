@@ -1,0 +1,13 @@
+package() {
+    deb2targz *.deb >/dev/null
+    rm -f *.deb
+    cd $srcdir
+    mkdir dcp${_model}
+    for i in *.tar.gz ; do
+        tar xfz $i -C dcp${_model}
+    done
+    cd dcp${_model}/usr/local/Brother/Printer/dcp${_model}
+    perl -i -pe 's#/etc/init.d#/etc/rc.d#g' ./cupswrapper/cupswrapperdcp${_model}
+    perl -i -pe 's#printcap\.local#printcap#g' $srcdir/dcp${_model}/usr/local/Brother/Printer/dcp${_model}/inf/setupPrintcapij
+    cp -rf $srcdir/dcp${_model}/usr/ $pkgdir/
+}

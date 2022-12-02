@@ -1,0 +1,6 @@
+prepare() {
+    cd "${srcdir}"/libtheora-${pkgver}
+    source android-env ${_android_arch}
+
+    autoreconf -fi -I m4
+}

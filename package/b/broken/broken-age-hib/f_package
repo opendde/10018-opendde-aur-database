@@ -1,0 +1,13 @@
+package() {
+    # Install .desktop
+    install -Dm644 "${pkgname}.desktop" "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+
+    # Move all the gamedata
+    mkdir -p "${pkgdir}/opt/${pkgname}"
+    cd "$srcdir"
+    mv lib *.pck ReadMe.txt BrokenAge "${pkgdir}/opt/${pkgname}"
+    install -Dm755 ${pkgname}.png "${pkgdir}/usr/share/pixmaps/${pkgname}.png"
+
+    # Launcher
+    install -Dm755 "${srcdir}/${pkgname}.sh" "${pkgdir}/usr/bin/${pkgname}"
+}

@@ -1,0 +1,8 @@
+package() {
+	cd $srcdir/$pkgname-$pkgver
+	for f in setup.py test_archivemail archivemail; do
+		sed 's#/usr/bin/env python#/usr/bin/env python2#g' -i $f
+	done
+
+	python2 setup.py install --root=$pkgdir
+}

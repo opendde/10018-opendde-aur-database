@@ -1,0 +1,12 @@
+build() {
+	cd "$srcdir"
+
+	msg "Connecting to $_mygitroot..."
+	if [[ -d $_mygitname ]]; then
+		cd $_mygitname && git pull origin && cd ..
+		msg2 "updated"
+	else
+		git clone $_mygitroot
+		msg2 "checkout done"
+	fi
+}

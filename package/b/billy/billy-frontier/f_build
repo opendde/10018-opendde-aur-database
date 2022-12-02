@@ -1,0 +1,11 @@
+build() {
+  cd "$pkgname"
+  cmake \
+    -S . \
+    -B build \
+    -D CMAKE_BUILD_TYPE=None \
+    -D CMAKE_INSTALL_PREFIX=/usr \
+    -W no-dev
+
+  cmake --build build
+}

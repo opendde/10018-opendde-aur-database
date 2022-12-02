@@ -1,0 +1,5 @@
+pkgver() {
+  cd "$srcdir/$_pkgname"
+
+  echo r$(svnversion)
+}

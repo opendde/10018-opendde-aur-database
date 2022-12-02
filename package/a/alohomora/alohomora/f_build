@@ -1,0 +1,4 @@
+build() {
+        arch-meson "$pkgname-$_commit" build
+        meson compile -C build
+}

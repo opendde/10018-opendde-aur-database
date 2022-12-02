@@ -1,0 +1,1 @@
+(${pkgname}::git+https://github.com/devttys0/${_gitname})

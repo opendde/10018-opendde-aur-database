@@ -1,0 +1,4 @@
+package() {
+	cd "${srcdir}/linux-amd64"
+  install -Dm755 ${pkgname} "${pkgdir}/usr/bin/${pkgname}"
+}

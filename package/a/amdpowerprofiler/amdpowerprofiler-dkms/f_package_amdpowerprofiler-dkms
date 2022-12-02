@@ -1,0 +1,14 @@
+package_amdpowerprofiler-dkms() {
+	cd ${srcdir}/${_driver_module_name}-${_driver_version}
+
+	mkdir -p ${pkgdir}/usr/src/${_driver_module_name}-${_driver_version}
+	cp -pr * ${pkgdir}/usr/src/${_driver_module_name}-${_driver_version}
+
+	# systemd service unit for module (un)loading
+	mkdir -p ${pkgdir}/usr/lib/systemd/system
+	install -Dm644 "$srcdir/amdpowerprofiler-load.service" "${pkgdir}/usr/lib/systemd/system/amdpowerprofiler-load.service"
+
+	# Module (un)loader script
+	mkdir -p ${pkgdir}/usr/bin
+	install -Dm755 "$srcdir/amdpowerprofiler-load" "${pkgdir}/usr/bin/amdpowerprofiler-load"
+}

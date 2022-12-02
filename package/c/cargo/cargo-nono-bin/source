@@ -1,0 +1,1 @@
+("$pkgname-$pkgver.tar.gz::https://github.com/hobofan/cargo-nono/releases/download/$pkgver/cargo-nono-$pkgver-x86_64-unknown-linux-gnu.tar.gz"

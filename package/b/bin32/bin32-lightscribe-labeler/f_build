@@ -1,0 +1,4 @@
+build() {
+  cd $srcdir/$_pkgpath
+  chmod -x $_realname/qt.conf
+}

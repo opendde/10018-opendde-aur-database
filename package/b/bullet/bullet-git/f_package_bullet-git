@@ -1,0 +1,13 @@
+package_bullet-git() {
+  optdepends=('bullet-docs: documentation')
+  provides=('bullet') 
+  conflicts=('bullet')
+
+  cd bullet3/build
+
+  # install it
+  make DESTDIR=${pkgdir} install
+
+  # install license
+  install -Dm644 ../LICENSE.txt ${pkgdir}/usr/share/licenses/${pkgbase}/LICENSE
+}

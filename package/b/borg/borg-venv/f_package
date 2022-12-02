@@ -1,0 +1,36 @@
+package() {
+  cd "$srcdir/$_pkgname-$pkgver"
+  local venvdir="$srcdir/venv-$_pkgname-$pkgver"
+
+  local venvdest="$pkgdir/opt/$pkgname/"
+
+  # copy venv to pkg
+  install -dm755 "$venvdest/lib/python3.7/site-packages/"
+  cp -r "$venvdir/lib/python3.7/site-packages/"{msgpack,llfuse}* "$venvdest/lib/python3.7/site-packages/"
+  install -dm755 "$venvdest/bin/"
+  install -Dm644 "$venvdir/pyvenv.cfg" "$venvdest/pyvenv.cfg"
+  install -Dm755 "$venvdir"/bin/{python,python3} "$venvdest/bin/"
+
+  # install to copied venv
+  "$venvdest/bin/python" setup.py install --optimize=1
+
+  # change script interpreters to installed venv path
+  sed -i "s|${pkgdir}/opt/$pkgname|/opt/$pkgname|g" "$venvdest"/bin/{borg,borgfs}
+
+  # create symlinks in /usr/bin
+  install -dm755 "$pkgdir"/usr/bin/
+  ln -s /opt/"$pkgname"/bin/{borg,borgfs} "$pkgdir"/usr/bin/
+
+  # remove junk files
+  rm -f "$venvdest"/lib/python*/site-packages/"$_pkgname-"*/{.benchmarks,.coverage}
+
+  # install misc files
+  install -Dm644 scripts/shell_completions/bash/borg \
+    "$pkgdir/usr/share/bash-completion/completions/borg"
+  install -Dm644 scripts/shell_completions/fish/borg.fish \
+    "$pkgdir/usr/share/fish/vendor_completions.d/borg.fish"
+  install -Dm644 scripts/shell_completions/zsh/_borg "$pkgdir/usr/share/zsh/site-functions/_borg"
+
+  install -Dm644 -t "$pkgdir/usr/share/man/man1/" "docs/man/"*.1
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

@@ -1,0 +1,20 @@
+package() {
+  depends+=('libFLAC.so' 'libasound.so' 'libatk-1.0.so' 'libaubio.so'
+            'libarchive.so' 'libcurl.so' 'libdbus-1.so' 'libfftw3f.so'
+            'libfftw3f_threads.so' 'libfluidsynth.so' 'libfreetype.so'
+            'libgdk-x11-2.0.so' 'libgio-2.0.so' 'libglib-2.0.so'
+            'libgobject-2.0.so' 'libgtk-x11-2.0.so' 'libharfbuzz.so'
+            'liblo.so' 'liblilv-0.so' 'liblrdf.so' 'libltc.so' 'libogg.so'
+            'libpango-1.0.so' 'libpangocairo-1.0.so' 'libpangoft2-1.0.so'
+            'libpulse.so' 'libreadline.so' 'librubberband.so'
+            'libsamplerate.so' 'libserd-0.so' 'libsndfile.so' 'libsord-0.so'
+            'libsratom-0.so' 'libsuil-0.so' 'libusb-1.0.so'
+            'libvamp-hostsdk.so' 'libvamp-sdk.so')
+
+  cd "${srcdir}/${pkgname%-*}"
+
+  python waf --destdir="${pkgdir}" i18n
+  python waf --destdir="${pkgdir}" install
+
+  # NEXT try to reenable stuff from ardour-git
+}

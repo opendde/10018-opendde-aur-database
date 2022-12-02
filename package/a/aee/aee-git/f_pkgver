@@ -1,0 +1,4 @@
+pkgver() {
+  cd ${pkgbase%-git}
+  printf "%s.r%s.%s" $(awk -F\" '/AEE_VERSION/ {print $2}' aee_version.h ) $(git rev-list --count HEAD) $(git rev-parse --short HEAD)
+}

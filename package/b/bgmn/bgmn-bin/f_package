@@ -1,0 +1,6 @@
+package() {
+	mkdir -p "${pkgdir}/opt/${pkgname%-bin}"
+
+	cp -R "${srcdir}/${pkgname%-bin}-${pkgver}/." \
+		"${pkgdir}/opt/${pkgname%-bin}/"
+}

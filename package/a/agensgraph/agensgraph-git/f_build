@@ -1,0 +1,23 @@
+build() {
+  cd "${srcdir}/${_pkgname}"
+  export JAVA_LIBRARY_PATH="/usr/lib/jvm/default-runtime/lib/amd64/server"
+  ./configure \
+    --prefix=/usr \
+    --mandir=/usr/share/man \
+    --datadir=/usr/share/postgresql \
+    --sysconfdir=/etc \
+    --with-gssapi \
+    --with-libxml \
+    --with-perl \
+    --with-openssl \
+    --with-python PYTHON=/usr/bin/python2 \
+    --with-tcl \
+    --with-pam \
+    --with-uuid=e2fs \
+    --with-system-tzdata=/usr/share/zoneinfo \
+    --enable-nls \
+    --enable-thread-safety
+
+  make
+  make -C contrib
+}

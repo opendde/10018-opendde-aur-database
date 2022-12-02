@@ -1,0 +1,5 @@
+package() {
+  cd src/rsc.io/2fa
+  install -Dm755 2fa "${pkgdir}/usr/bin/${pkgname}"
+  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

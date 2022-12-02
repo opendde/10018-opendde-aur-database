@@ -1,0 +1,16 @@
+prepare() {
+  cd "Bombermaaan_${pkgver}_${_pkgdate}_src"
+
+  # copy data files for generated library
+  cp -r "../Bombermaaan_${pkgver}_${_pkgdate}_res/RES32" .
+
+  cd "Bombermaaan"
+  # type fix
+  sed "s|\tchar \*backslash|\tconst char \*backslash|" -i winreplace.cpp
+  # adapt directory to arch standards
+  sed "s|share/games/bombermaaan|share/bombermaaan|" -i CGame.cpp
+  # add our cflags/ldflags
+  sed "s|SDL_CFLAGS :=|& $CXXFLAGS |;s|SDL_LDFLAGS :=|& $LDFLAGS |" -i Makefile
+  
+  patch -N -i "${srcdir}/print.patch"
+}

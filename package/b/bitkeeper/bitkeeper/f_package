@@ -1,0 +1,4 @@
+package() {
+  cd "${srcdir}/${pkgname}-${_commit}"
+  make DESTDIR="${pkgdir}" install
+}

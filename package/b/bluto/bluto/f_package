@@ -1,0 +1,6 @@
+package() {
+        cd "${srcdir}/Bluto-master"
+        pip2 install --isolated --root="${pkgdir}" --no-deps --ignore-installed .
+        install -dm755 "${pkgdir}/usr/share/licenses/${pkgname}"
+        cp LICENSE.txt "${pkgdir}/usr/share/licenses/${pkgname}/"
+}

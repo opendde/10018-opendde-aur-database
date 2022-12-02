@@ -1,0 +1,9 @@
+build() {
+    cd $_pkgname
+    PREFIX="/usr" make -C src
+ }
+
+package() {
+    cd "$srcdir/$_pkgname"
+    PREFIX="${pkgdir}/usr" make -C src install
+}

@@ -1,0 +1,5 @@
+package() {
+  cd "$pkgname-$pkgver"/build
+
+  make INSTALL_ROOT="$pkgdir/" install
+}

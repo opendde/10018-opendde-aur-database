@@ -1,0 +1,7 @@
+package() {
+  install -D -m644 "$srcdir/${pkgname%-git}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+
+  mkdir -p "${pkgdir}/usr/lib/"
+  cp -r "${srcdir}/${pkgname%-git}" "${pkgdir}/usr/lib/${pkgname}"
+  rm -rf "${pkgdir}/usr/lib/${pkgname}/.git"
+}

@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}.gz::https://sourceforge.net/projects/${pkgname}/files/${pkgname}/${pkgname}-1.1/${pkgname}-${pkgver}.gz/download")

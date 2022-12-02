@@ -1,0 +1,3 @@
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+}

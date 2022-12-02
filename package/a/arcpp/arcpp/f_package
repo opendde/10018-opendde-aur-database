@@ -1,0 +1,4 @@
+package() {
+  cd ${pkgname/a/A}-${pkgver}
+  install -Dm755 "arc++" "${pkgdir}/usr/bin/arc++"
+}

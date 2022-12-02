@@ -1,0 +1,14 @@
+package() {
+  cd $pkgdir
+
+  # Install game files
+  mkdir -p usr/share/aquaria
+  cp -rT "$srcdir/data" usr/share/aquaria
+
+  # Install documentation
+  mkdir -p usr/share/doc/aquaria
+  mv -T usr/share/aquaria/docs usr/share/doc/aquaria/original
+
+  # Install icon
+  install -Dm644 "$srcdir/data/aquaria.png" usr/share/pixmaps/aquaria.png
+}

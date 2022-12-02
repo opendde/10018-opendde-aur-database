@@ -1,0 +1,6 @@
+package() {
+  _srcdir="${srcdir}/${pkgname}/themes"
+  _output="${pkgdir}/usr/share/alacritty"
+  install -dm755 "${_srcdir}" "${_output}"
+  cp -r "${_srcdir}" "${_output}"
+}

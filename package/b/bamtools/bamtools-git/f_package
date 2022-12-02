@@ -1,0 +1,8 @@
+package() {
+  cd "$srcdir/$_gitname-build"
+  mkdir "$pkgdir/usr"
+  cp -r bin lib "$pkgdir/usr"
+
+  mkdir -p "$pkgdir/usr/include/bamtools"
+  cp -r include/* "$pkgdir/usr/include/bamtools"
+} 

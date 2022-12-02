@@ -1,0 +1,5 @@
+package() {
+  install -Dm644 "52-airspyhf.rules" "$pkgdir/usr/lib/udev/rules.d/52-airspyhf.rules"
+  cd "$srcdir/$_gitname/build"
+  make DESTDIR="$pkgdir" install
+}

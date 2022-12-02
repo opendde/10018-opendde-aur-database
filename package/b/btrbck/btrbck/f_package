@@ -1,0 +1,14 @@
+package() {
+    cd "$srcdir"
+
+    mkdir -p "$pkgdir/usr/bin"
+
+    install -Dm644 $_jar_name "$pkgdir/usr/share/$pkgname/$_jar_name"
+
+    cat > "$pkgdir/usr/bin/$pkgname" << EOF
+#!/bin/sh
+exec \$JAVA_HOME/bin/java -jar /usr/share/$pkgname/$_jar_name "\$@"
+EOF
+
+    chmod +x "$pkgdir/usr/bin/$pkgname"
+}

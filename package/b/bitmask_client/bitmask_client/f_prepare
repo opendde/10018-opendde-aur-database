@@ -1,0 +1,9 @@
+prepare() {
+  cd "$srcdir/$pkgname-$pkgver"
+  # Install to /usr/bin instead of /usr/sbin
+  sed -i 's/sbin/bin/' setup.py
+
+  # Point the tests to python2 executables
+  #sed -i 's/\/bin\/nosetests/\/bin\/nosetests2/' run_tests.sh
+  #sed -i 's/flake8/flake8-python2/' run_tests.sh
+}

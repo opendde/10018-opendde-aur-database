@@ -1,0 +1,9 @@
+package() {
+  set -u
+  cd "${pkgdir}"
+  bsdtar -xf "${srcdir}/data.tar".?z
+  # This gets them to sort correctly but does not make automatic matching work.
+  # sed -Ee '/^\*(NickName|ShortNickName):/ s:(DCP|FAX|HL|MFC)([0-9]):\1-\2:g' -i 'usr/share/ppd/Brother'/*.ppd
+  # gzip 'usr/share/ppd/Brother'/*.ppd
+  set +u
+}

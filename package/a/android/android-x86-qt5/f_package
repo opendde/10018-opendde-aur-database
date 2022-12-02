@@ -1,0 +1,15 @@
+package() {
+    cd ${_pkgfqn}
+    source android-env ${_android_arch}
+
+    make INSTALL_ROOT=${pkgdir} install
+
+    rm -rvf ${pkgdir}/libs
+    find ${pkgdir}/${ANDROID_PREFIX_BIN} -type f ! -name '*.pl' -exec strip -s {} \;
+    find ${pkgdir}/${ANDROID_PREFIX_LIB} -type f -name 'lib*.so' -exec ${ANDROID_STRIP} -g --strip-unneeded {} \;
+#    find ${pkgdir}/${ANDROID_PREFIX_LIB} -type f \( -name 'lib*.a' ! -name 'libQt5Bootstrap.a' ! -name 'libQt5QmlDevTools.a' \) -exec ${ANDROID_STRIP} -g {} \;
+    find ${pkgdir}/${ANDROID_PREFIX}/plugins -type f -name 'lib*.so' -exec ${ANDROID_STRIP} -g --strip-unneeded {} \;
+    find ${pkgdir}/${ANDROID_PREFIX}/qml -type f -name 'lib*.so' -exec ${ANDROID_STRIP} -g --strip-unneeded {} \;
+    sed -i '/QMAKE_PRL_BUILD_DIR/d' ${pkgdir}/${ANDROID_PREFIX_LIB}/lib*.prl
+    cp -rvf qtbase/src/android/jar/src/org/qtproject/qt5/android/* ${pkgdir}/${ANDROID_PREFIX}/src/android/java/src/org/qtproject/qt5/android/
+}

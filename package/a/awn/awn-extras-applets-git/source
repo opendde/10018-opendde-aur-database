@@ -1,0 +1,1 @@
+("${_pkgname}"::git+https://github.com/p12tic/awn-extras.git

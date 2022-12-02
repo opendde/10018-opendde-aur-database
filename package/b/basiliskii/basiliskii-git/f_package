@@ -1,0 +1,4 @@
+package() {
+  cd macemu/BasiliskII/src/Unix
+  make DESTDIR="${pkgdir}" install
+}

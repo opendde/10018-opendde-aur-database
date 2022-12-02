@@ -1,0 +1,15 @@
+package() {
+    mkdir -p "$pkgdir/opt/${pkgname}-runtime/platform_linux"
+    cp -r "$srcdir/${pkgname}-runtime/platform_linux/"{arm-none-eabi,bin,include,lib} "$pkgdir/opt/${pkgname}-runtime/platform_linux/"
+    cp -r "$srcdir/$pkgname/firmware" "$pkgdir/opt/${pkgname}-runtime/"
+    cp -r "$srcdir/${pkgname}-runtime/chibios" "$pkgdir/opt/${pkgname}-runtime/chibios/"
+    cp -r "$srcdir/$pkgname/CMSIS" "$pkgdir/opt/${pkgname}-runtime/CMSIS"
+    rm -rf "$pkgdir/opt/${pkgname}-runtime/platform_linux/arm-none-eabi/lib/"{armv6-m,armv7-ar,armv7-m}
+    rm -rf "$pkgdir/opt/${pkgname}-runtime/platform_linux/lib/gcc/arm-none-eabi/4.9.3/"{armv6-m,armv7-ar,armv7-m}
+    install -Dm755 "$srcdir/$pkgname/platform_linux/compile_firmware.sh" "$pkgdir/opt/${pkgname}-runtime/platform_linux/compile_firmware.sh"
+    install -Dm644 "$srcdir/$pkgname/platform_linux/49-axoloti.rules" "$pkgdir/usr/lib/udev/rules.d/49-axoloti.rules"
+    install -Dm644 "$srcdir/$pkgname/dist/Axoloti.jar" "$pkgdir/usr/share/$pkgname/Axoloti.jar"
+    install -Dm644 "$srcdir/$pkgname/doc/axoloti_icon.png" "$pkgdir/usr/share/$pkgname/axoloti_icon.png"
+    install -Dm644 "$srcdir/$pkgname/doc/user guide.html" "$pkgdir/usr/share/doc/$pkgname/user guide.html"
+    install -Dm755 "$srcdir/axoloti.sh" "$pkgdir/usr/bin/axoloti"
+}

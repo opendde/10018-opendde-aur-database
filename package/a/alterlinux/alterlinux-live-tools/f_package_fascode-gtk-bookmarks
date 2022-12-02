@@ -1,0 +1,7 @@
+package_fascode-gtk-bookmarks() {
+    pkgdesc="Simple script to automatically generate GTK bookmarks"
+    replaces+=("alterlinux-gtk-bookmarks")
+    provides+=("alterlinux-gtk-bookmarks")
+    install_files
+    install_license
+}

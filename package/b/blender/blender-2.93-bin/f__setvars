@@ -1,0 +1,10 @@
+_setvars() {
+	cd "$srcdir"
+	_upstreamversion=$(echo $pkgname | cut -d '-' -f2)
+	local regex="blender-${_upstreamversion}[^-]*[^\+]+\+([^.]+).([^-]+)-linux.x86_64-release.tar.xz" && [[ $(cat $_webpage) =~ $regex ]]
+	_full=${BASH_REMATCH[0]}
+	_branch=${BASH_REMATCH[1]}
+	_commit=${BASH_REMATCH[2]}
+	local regex="([A-Za-z]+ [0-9]+, [0-9]+:[0-9]+:[0-9]+) - $_branch - $_commit" && [[ $(cat $_webpage) =~ $regex ]]
+	_date=$(date --date="${BASH_REMATCH[1]//,}" "+%y%m%d")
+}

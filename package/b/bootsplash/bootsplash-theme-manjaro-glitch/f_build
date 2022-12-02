@@ -1,0 +1,4 @@
+build() {
+  cd "$srcdir"/"bootsplash-theme-manjaro-glitch"
+  sh ./bootsplash-manjaro-glitch.sh
+}

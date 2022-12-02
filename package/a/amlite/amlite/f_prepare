@@ -1,0 +1,18 @@
+prepare() {
+    cd "$srcdir"
+
+    if [[ "$CARCH" == "i686" ]]; then
+        installer="AmScopeAmLite.x86.run"
+    elif [[ "$CARCH" == "x86_64" ]]; then
+        installer="AmScopeAmLite.x64.run"
+    else
+        exit 1
+    fi
+
+    replacements=""
+    replacements+="s#targetdir=/usr/local/AmLite#targetdir=${pkgdir}/usr/local/amlite#g;"
+    replacements+="s#sudo ##g;"
+    replacements+="s#/etc/udev/rules.d/99-amcam.rules#${pkgdir}/etc/udev/rules.d/99-amcam.rules#g"
+    sed "${replacements}" "${installer}" > "installer.bin"
+    chmod +x "installer.bin"
+}

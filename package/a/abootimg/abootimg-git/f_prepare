@@ -1,0 +1,4 @@
+prepare() {
+  cd "${srcdir}/abootimg"
+  patch -p0 --binary < ../no-initrd.patch
+}

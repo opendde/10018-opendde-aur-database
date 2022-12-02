@@ -1,0 +1,8 @@
+build() {
+  cd "$pkgname"
+  ./configure \
+    --prefix=/usr           \
+    --sbindir=/usr/bin      \
+    --sysconfdir=/etc       ;
+  make
+}

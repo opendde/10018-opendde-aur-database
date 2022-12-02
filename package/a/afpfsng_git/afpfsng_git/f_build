@@ -1,0 +1,5 @@
+build() {
+	cd "$srcdir/afpfs-ng"
+	./configure
+	make
+}

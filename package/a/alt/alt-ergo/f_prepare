@@ -1,0 +1,7 @@
+prepare() {
+    cd "$pkgname-$pkgver"/sources
+
+    # Make deprecation warnings for Pervasives non-fatal
+    # https://github.com/ocaml/dune/issues/1465
+    patch -p0 < "$srcdir"/non_fatal_warnings.patch
+}

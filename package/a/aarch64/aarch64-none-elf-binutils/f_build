@@ -1,0 +1,18 @@
+build() {
+    cd binutils-$pkgver
+
+    ./configure \
+        --disable-nls \
+        --disable-werror \
+        --enable-deterministic-archives \
+        --enable-gold \
+        --enable-ld=default \
+        --enable-plugins \
+        --prefix=/usr \
+        --target=$_target \
+        --with-gnu-as \
+        --with-gnu-ld \
+        --with-sysroot=/usr/$_target
+
+    make
+}

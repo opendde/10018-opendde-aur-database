@@ -1,0 +1,4 @@
+build() {
+  cd $srcdir/tinkerforge-$pkgname-$_pkgver/brickd
+  make
+}

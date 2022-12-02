@@ -1,0 +1,5 @@
+package() {
+  cd ${srcdir}
+  cp -r opt usr ${pkgdir}
+  install -D -m644 index.html ${pkgdir}/usr/share/licenses/$pkgname/license.html
+}

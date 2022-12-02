@@ -1,0 +1,16 @@
+package() {
+  cd "${srcdir}/${pkgname}/haskell/aura"
+
+  # Install binary
+  install -Dm755 "bin/aura" "${pkgdir}/usr/bin/aura"
+
+  # Install man page
+  install -Dm644 "doc/aura.8" "${pkgdir}/usr/share/man/man8/aura.8"
+
+  # Install bash and zsh completions
+  install -Dm644 "doc/completions/bashcompletion.sh" "${pkgdir}/usr/share/bash-completion/completions/aura"
+  install -Dm644 "doc/completions/_aura" "${pkgdir}/usr/share/zsh/site-functions/_aura"
+
+  # Directory for storing {PKGBUILDs, source packages, installed package states}
+  mkdir -p "${pkgdir}/var/cache/aura"/{pkgbuilds,src,states}
+}

@@ -1,0 +1,4 @@
+package() {
+  cd "$srcdir/${pkgname%-git}"
+  install -D arms "$pkgdir/usr/bin/arms"
+}

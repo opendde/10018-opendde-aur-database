@@ -1,0 +1,5 @@
+prepare() {
+    cd ${pkgname}-${pkgver}
+
+    sed -e '/postinstall/d' -i package.json
+}

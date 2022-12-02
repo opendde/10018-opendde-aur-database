@@ -1,0 +1,7 @@
+package() {
+  install -Dm744 -o 926 "${srcdir}"/barrel/build/libs/barrel*.jar "${pkgdir}/usr/share/barrel/barrel.jar"
+  install -Dm600 -o 926 "${srcdir}/barrel/src/main/resources/application.yml" "${pkgdir}/etc/barrel/barrel.yml"
+
+  install -Dm644 "${srcdir}/barrel.sysusers" "${pkgdir}/usr/lib/sysusers.d/barrel.conf"
+  install -Dm644 "${srcdir}/barrel.service" -t "${pkgdir}/usr/lib/systemd/system"
+}

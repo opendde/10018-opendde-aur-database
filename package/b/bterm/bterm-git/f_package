@@ -1,0 +1,13 @@
+package() {
+	cd "$srcdir/${pkgname}"
+  ar x dist/*.deb
+  tar -xf data.tar.xz
+  mv usr "${pkgdir}"
+  mv opt "${pkgdir}"
+
+  install -Dm755 /dev/stdin "$pkgdir"/usr/bin/$_pkgname <<END
+  #!/usr/bin/bash
+  /opt/bterm/bterm
+
+END
+}

@@ -1,0 +1,4 @@
+package() {
+  install -D -m 0755 "$srcdir/$pkgname-$pkgver/brightmare" "$pkgdir/usr/bin/brightmare"
+  install -D -m 0644 "$srcdir/$pkgname-$pkgver/doc/brightmare.1" "$pkgdir/usr/share/man/man1/brightmare.1"
+}

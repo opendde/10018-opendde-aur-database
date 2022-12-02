@@ -1,0 +1,13 @@
+build() {
+  for i in $startdir/*.deb; do
+    ar -x $i
+    bsdtar xf data.tar.gz
+  done
+
+  cat <<END >>$srcdir/usr/local/Brother/inf/brDCP7030func
+  [psconvert2]
+  pstops=/usr/bin/pstops
+END
+
+  patch $srcdir/usr/local/Brother/cupswrapper/cupswrapperDCP7030-2.0.2 < $startdir/cupswrapper-systemd.patch
+}

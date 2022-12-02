@@ -1,0 +1,6 @@
+prepare() {
+  cd "${srcdir}/${_pkgname}"
+
+  # Patch for 5.10-lts
+  patch -p1 -i "${srcdir}"/7c19d3c66758747d854c63e4c34ef127ce201fa6.patch
+}

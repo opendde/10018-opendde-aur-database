@@ -1,0 +1,26 @@
+build() {
+    cmake \
+        -G Ninja \
+        -S "${srcdir}/${pkgname}-rel-${pkgver//./-}" \
+        -B "${srcdir}/build" \
+        -Wno-dev \
+        "-DCMAKE_INSTALL_PREFIX=${_pkgprefix}" \
+        "-DCMAKE_BUILD_TYPE=${_build_config}" \
+        -DBUILD_STATIC_LIBS=OFF \
+        -DBRLCAD_ENABLE_COMPILER_WARNINGS=OFF \
+        -DBRLCAD_ENABLE_STRICT=OFF \
+        -DBRLCAD_FLAGS_DEBUG=OFF \
+        -DBRLCAD_BUNDLED_LIBS=BUNDLED \
+        -DBRLCAD_FREETYPE=OFF \
+        -DBRLCAD_PNG=OFF \
+        -DBRLCAD_REGEX=OFF \
+        -DBRLCAD_ZLIB=OFF \
+        -DBRLCAD_ENABLE_OPENGL=ON \
+        -DBRLCAD_ENABLE_QT=OFF
+
+    cmake --build "${srcdir}/build" --config "${_build_config}"
+
+    echo \
+        "export PATH=\"\$PATH:${_pkgprefix}/bin\"" \
+        >"${srcdir}/build/${pkgname}.sh"
+}

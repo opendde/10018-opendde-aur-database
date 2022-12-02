@@ -1,0 +1,4 @@
+package() {
+  cd "$_pkgname"
+  install -Dm755 "blazy.py" "${pkgdir}/usr/bin/blazy.py"
+}

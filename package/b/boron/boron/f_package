@@ -1,0 +1,12 @@
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  mkdir -p $pkgdir/usr/{bin,lib,include/boron}
+  install -m755 boron $pkgdir/usr/bin/
+  sed -e 's~"urlan.h"~<boron/urlan.h>~' include/boron.h >boron.x
+  install -Tm644 boron.x $pkgdir/usr/include/boron/boron.h
+  install -m644 -t $pkgdir/usr/include/boron include/{boron,urlan{,_atoms}}.h
+  install -m755 -t $pkgdir/usr/lib libboron.so.$pkgver
+  cd $pkgdir/usr/lib
+  ln -sf libboron.so.$pkgver libboron.so
+  ln -sf libboron.so.$pkgver libboron.so.0  
+}

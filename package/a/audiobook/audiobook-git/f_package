@@ -1,0 +1,5 @@
+package() {
+  cd "${srcdir}/${pkgname}/build"
+  make DESTDIR="$pkgdir" install
+  install -Dm644 -t "${pkgdir}/usr/share/doc/${pkgname}" ../README.md
+}

@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}.tar.gz::https://dl.dell.com/FOLDER08385603M/1/command-configure_${_pkgver}.ubuntu20_amd64.tar.gz")

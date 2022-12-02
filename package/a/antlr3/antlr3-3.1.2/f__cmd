@@ -1,0 +1,7 @@
+_cmd() {
+  # Prints out what to be run to stdout, and then executes it.
+  # The command and it's arguments is passed as argument(s).
+
+  printf '%s' '> '; cat <<< "$@"
+  "$@"
+}

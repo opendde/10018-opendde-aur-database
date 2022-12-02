@@ -1,0 +1,11 @@
+prepare() {
+  cd "${srcdir}/BigDataScript-${pkgver}"
+
+  INSTALL_DIR="$pkgdir/opt/$pkgname"
+
+  sed -i 's,BDS_HOME="$HOME/.bds",BDS_HOME="'$INSTALL_DIR'",g' scripts/install.sh
+  sed -i '/echo "Changing dir" `dirname $0`/d' scripts/install.sh
+  sed -i '/cd `dirname $0` &&  cd ../d' scripts/install.sh
+  sed -i '/mkdir -p "$BDS_HOME" 2> \/dev\/null/d' scripts/install.sh
+  sed -i 's,<jar destfile="${user.home}/.bds/,<jar destfile="'$INSTALL_DIR'/,g' build.xml
+}

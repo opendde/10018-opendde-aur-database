@@ -1,0 +1,4 @@
+pkgver() {
+	cd "${pkgname}"
+	echo "0.r$(git rev-list --count HEAD)"
+}

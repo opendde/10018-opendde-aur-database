@@ -1,0 +1,7 @@
+prepare() {
+    cd ${_pkgname}
+    patch --forward --strip=1 --input="${srcdir}/cmake.patch"
+    git submodule init
+    git config submodule.abseil-cpp.url $srcdir/abseil-cpp
+    git submodule update external/abseil-cpp
+}

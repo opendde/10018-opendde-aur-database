@@ -1,0 +1,12 @@
+package_akonadi-git() {
+	depends=(libakonadi-git)
+	optdepends=('mariadb: MariaDB backend'
+	            'postgresql: PostgreSQL backend'
+	            'postgresql-old-upgrade: upgrade from previous major PostgreSQL version using pg_upgrade'
+	            'sqlite: SQLite backend')
+	conflicts=("${pkgname%-git}")
+	provides=("${pkgname%-git}=${pkgver}")
+
+	DESTDIR="$pkgdir" cmake --install build
+	rm -r "$pkgdir"/{etc,usr/{include,lib,share}} # Provided by libakonadi
+}

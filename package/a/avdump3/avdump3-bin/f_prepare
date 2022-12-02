@@ -1,0 +1,3 @@
+prepare() {
+    unzip -o "${_pkgname}_${pkgver}.zip" -d "${_pkgname}_${pkgver}"
+}

@@ -1,0 +1,3 @@
+prepare() {
+	patch -p1 < brother-hll6200dw.patch
+}

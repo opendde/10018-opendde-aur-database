@@ -1,0 +1,15 @@
+package_barrier-headless() {
+    pkgdesc="Open-source KVM software based on Synergy (client and server CLI binaries)"
+
+    # Install all the files:
+    _package_common
+
+    # Now go and delete the GUI-related files:
+    for file in \
+        /usr/bin/barrier \
+        /usr/share/applications \
+        /usr/share/icons \
+    ;do
+        rm -rf "${pkgdir:?}/${file:?}"
+    done
+}

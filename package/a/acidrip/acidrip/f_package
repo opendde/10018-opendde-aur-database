@@ -1,0 +1,9 @@
+package() {
+  cd "${srcdir}"/${pkgname}-${pkgver}
+  make install DESTDIR="${pkgdir}"
+
+  install -Dm644 "${srcdir}"/acidrip.png \
+      "${pkgdir}"/usr/share/pixmaps/acidrip.png
+  install -Dm644 "${srcdir}"/acidrip.desktop \
+      "${pkgdir}"/usr/share/applications/acidrip.desktop
+}

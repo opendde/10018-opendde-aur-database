@@ -1,0 +1,25 @@
+build() {
+	cd avahi
+
+	export MOC_QT4=/usr/bin/moc-qt4
+	export PYTHON=/usr/bin/python3
+
+	./configure \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--localstatedir=/var \
+		--sbindir=/usr/bin \
+		with_dbus_sys=/usr/share/dbus-1/system.d \
+		--disable-monodoc \
+		--enable-compat-libdns_sd \
+		--with-distro=archlinux \
+		--with-avahi-priv-access-group=network \
+		--with-autoipd-user=avahi \
+		--with-autoipd-group=avahi
+	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+
+	cp -a avahi-python/avahi avahi-python/avahi2
+
+	make
+	make -C avahi-python/avahi2 PYTHON=/usr/bin/python2
+}

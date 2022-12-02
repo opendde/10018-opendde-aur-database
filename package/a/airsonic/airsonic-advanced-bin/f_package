@@ -1,0 +1,22 @@
+package() {
+    install -dm755 "${pkgdir}/var/lib/airsonic"
+    install -dm755 "${pkgdir}/var/lib/airsonic/playlists"
+    install -dm755 "${pkgdir}/usr/lib/systemd/system"
+    install -dm755 "${pkgdir}/etc/airsonic"
+
+    install -Dm644 \
+        "${srcdir}/airsonic-${pkgver}.war" \
+        "${pkgdir}/var/lib/airsonic/airsonic.war"
+    install -Dm644 \
+        "${srcdir}/${_dirname}/contrib/airsonic-systemd-env" \
+        "${pkgdir}/etc/airsonic/airsonic.conf" 
+    install -Dm644 \
+        "${srcdir}/${_dirname}/contrib/airsonic.service" \
+        "${pkgdir}/usr/lib/systemd/system/airsonic.service"
+    install -Dm644 \
+        "${srcdir}/airsonic.sysusers" \
+        "${pkgdir}/usr/lib/sysusers.d/airsonic.conf"
+    install -Dm644 \
+        "${srcdir}/airsonic.tmpfiles" \
+        "${pkgdir}/usr/lib/tmpfiles.d/airsonic.conf" 
+}

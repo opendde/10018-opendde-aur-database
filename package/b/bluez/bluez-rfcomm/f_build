@@ -1,0 +1,4 @@
+build() {
+  cd bluez-${pkgver}
+  gcc tools/rfcomm.c lib/bluetooth.c lib/hci.c -o tools/rfcomm -DVERSION=\"$pkgver\" -I.
+}

@@ -1,0 +1,23 @@
+prepare() {
+  mkdir -p "$srcdir/unpack" || return 1
+  for i in "$srcdir/"*.deb; do
+    cd "$srcdir/unpack"
+    ar -x "$i" || return 1
+    cd "$srcdir"
+    bsdtar -pxf "$srcdir/unpack/data.tar.gz" || return 1
+  done
+#  do not install in '/usr/local'
+  if [ -d "$srcdir/usr/local/Brother" ]; then
+    install -d "$srcdir/usr/share"
+    mv "$srcdir/usr/local/Brother/" "$srcdir/usr/share/brother"
+    rm -rf "$srcdir/usr/local"
+      sed -i 's|/usr/local/Brother|/usr/share/brother|g' `grep -lr '/usr/local/Brother' ./`
+    fi
+# setup cups-directories
+  install -d "$srcdir/usr/share/cups/model"
+  install -d "$srcdir/usr/lib/cups/filter"
+  #link LPD wrapper to cups/filter
+  ln -s /opt/brother/Printers/BrGenML1/cupswrapper/brother_lpdwrapper_BrGenML1 "$srcdir/usr/lib/cups/filter"
+  #link PPD file to cups/model
+  ln -s /opt/brother/Printers/BrGenML1/cupswrapper/brother-BrGenML1-cups-en.ppd "$srcdir/usr/share/cups/model"
+}

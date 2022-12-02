@@ -1,0 +1,1 @@
+("$_program-$pkgver.tar.gz::https://github.com/$_coder/$_program/archive/v$pkgver.tar.gz")

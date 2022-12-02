@@ -1,0 +1,4 @@
+prepare() {
+  cd ${pkgname}
+  find . -type f -exec sed 's|/usr/local|/usr|g' -i {} +
+}

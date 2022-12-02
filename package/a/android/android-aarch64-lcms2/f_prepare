@@ -1,0 +1,6 @@
+prepare() {
+    cd "${srcdir}"/lcms2-${pkgver}
+    source android-env ${_android_arch}
+
+    autoreconf -fi
+}

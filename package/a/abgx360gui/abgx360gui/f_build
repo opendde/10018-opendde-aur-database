@@ -1,0 +1,7 @@
+build() {
+  patch "${srcdir}/${pkgname}-${pkgver}/src/Images/abgx360gui_TopBitmap_XPM.xpm" "${srcdir}/abgx360gui_TopBitmap_XPM.xpm.patch"
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  sed -i 's/abgx360\.net/hadzz\.com\/abgx/g' src/abgx360gui.cpp
+  ./configure --prefix=/usr --with-wx-config=/usr/bin/wx-config-2.8
+  make
+}

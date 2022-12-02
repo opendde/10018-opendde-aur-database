@@ -1,0 +1,9 @@
+package_atoms-core-git() {
+  pkgdesc='Atoms Core allows you to create and manage your own chroots and podman containers.'
+  depends=('python-orjson')
+  provides=("${pkgname%-git}")
+  conflicts=("${pkgname%-git}")
+
+  cd "${pkgbase%-git}-core"
+  python setup.py install --root="$pkgdir" --optimize=1
+}

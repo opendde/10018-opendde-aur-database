@@ -1,0 +1,11 @@
+package() {
+  gendesk -f -n --pkgname "${pkgname}" --pkgdesc "${pkgdesc}" \
+   --exec="${pkgname}" --categories=Utility --icon "${pkgname}"
+  echo "#!/usr/bin/env bash
+archlinux-java-run -a 8 -b 8 -- -jar /usr/share/java/blobsaver/blobsaver.jar
+" > "${pkgname}.sh"
+  install -Dm755 "$srcdir/$pkgname.jar" "$pkgdir/usr/share/java/$pkgname/$pkgname.jar"
+  install -Dm755 "$srcdir/tsschecker" "$pkgdir/usr/share/java/$pkgname/tsschecker"
+  install -Dm775 "$srcdir/$pkgname.sh" "$pkgdir/usr/bin/$pkgname"
+  install -Dm644 "$srcdir/$pkgname.desktop" "$pkgdir/usr/share/applications/$pkgname.desktop"
+}

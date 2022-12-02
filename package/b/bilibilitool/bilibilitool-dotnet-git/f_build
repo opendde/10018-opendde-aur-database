@@ -1,0 +1,8 @@
+build() {
+  cd "${_pkgname}"
+  export MSBUILDDISABLENODEREUSE=1
+
+  dotnet build \
+    --configuration Release \
+    --no-restore
+}

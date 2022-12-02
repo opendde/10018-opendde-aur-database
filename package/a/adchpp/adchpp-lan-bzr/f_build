@@ -1,0 +1,4 @@
+build() {
+  cd adchpp-lan
+  scons -j"$(nproc)" mode=release docs=yes ssl=yes langs=all tools=default arch="${_arch}"
+}

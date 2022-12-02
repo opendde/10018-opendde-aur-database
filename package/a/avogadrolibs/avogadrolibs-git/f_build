@@ -1,0 +1,17 @@
+build() {
+  mkdir -p "${srcdir}"/build
+  cd "${srcdir}"/build
+  cmake \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DCMAKE_INSTALL_PREFIX=/usr \
+      -DCMAKE_INSTALL_LIBDIR=lib \
+      -DBUILD_SHARED_LIBS=ON \
+      -DENABLE_TESTING=ON \
+      -DUSE_HDF5=ON \
+      -DUSE_VTK=OFF \
+      -DUSE_MMTF=ON \
+      -DUSE_PYTHON=ON \
+      -DPYTHON_EXECUTABLE=/usr/bin/python \
+      "${srcdir}/${_pkgname}"
+  make
+}

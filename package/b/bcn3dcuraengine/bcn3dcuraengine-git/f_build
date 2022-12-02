@@ -1,0 +1,6 @@
+build() {
+  mkdir -p CuraEngine/build
+  cd CuraEngine/build
+  cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr ..
+  make
+}

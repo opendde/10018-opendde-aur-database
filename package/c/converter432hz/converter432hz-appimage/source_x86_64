@@ -1,0 +1,1 @@
+("${_appimage}::https://github.com/mysteryx93/NaturalGroundingPlayer/releases/download/v${pkgver}/Converter432hz-${pkgver}_Linux_x64.AppImage")

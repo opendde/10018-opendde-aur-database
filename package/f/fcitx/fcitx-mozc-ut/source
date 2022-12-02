@@ -1,0 +1,1 @@
+("${pkgname}-git::git+https://github.com/google/mozc.git#commit=05ec1326a17121f4ddd42303fcdbb44010769266"

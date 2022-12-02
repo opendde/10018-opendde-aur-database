@@ -1,0 +1,11 @@
+prepare() {
+    cd "${pkgname}" || exit 1
+    git fetch --prune
+    git checkout main
+    git pull --autostash
+    if [ -z "$AL_BRANCH_OVERRIDE" ]; then
+        git checkout "${AL_COMMIT_OVERRIDE:-12c2a9b7e90024f2990956ba0d0efff42d2b45bc}"
+    else
+        git checkout "${AL_COMMIT_OVERRIDE:-HEAD}"
+    fi
+}

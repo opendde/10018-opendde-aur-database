@@ -1,0 +1,4 @@
+prepare () {
+	cd $srcdir/$pkgname-$_pkgver
+	sed -i -e "s#ncursesw/ncurses.h#ncurses.h#" call/call.c
+}

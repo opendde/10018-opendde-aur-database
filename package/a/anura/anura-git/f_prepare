@@ -1,0 +1,6 @@
+prepare() {
+  cd $_gitname
+  git submodule init
+  git config submodule.imgui.url "$srcdir/imgui"
+  git submodule update
+}

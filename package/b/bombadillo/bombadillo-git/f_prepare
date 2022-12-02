@@ -1,0 +1,4 @@
+prepare() {
+  cd "$_pkgname"
+  patch --forward --strip=1 --input="${srcdir}/remove-update-desktop-database.patch"
+}

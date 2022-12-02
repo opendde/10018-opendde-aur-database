@@ -1,0 +1,14 @@
+package() {
+  cd "$pkgname-$pkgver"
+  install -Dm644 dist/linux-unpacked/resources/app.asar -t "$pkgdir/usr/lib/$pkgname/resources/"
+
+  install -Dm755 "$srcdir/$pkgname.sh" "$pkgdir/usr/bin/$pkgname"
+  install -Dm644 "$srcdir/$pkgname.desktop" -t "$pkgdir/usr/share/applications"
+  install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname"
+
+  for icon_size in 16 24 32 48 64 128 256 512 1024; do
+    icons_dir=/usr/share/icons/hicolor/${icon_size}x${icon_size}/apps
+    install -Dm644 resources/icons/${icon_size}x${icon_size}.png \
+      $pkgdir$icons_dir/$pkgname.png
+  done
+}

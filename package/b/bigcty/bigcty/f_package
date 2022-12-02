@@ -1,0 +1,7 @@
+package() {
+	mkdir -p  $pkgdir/usr/share/cty
+
+	cd $srcdir
+
+	cp -R *.{csv,dat} $pkgdir/usr/share/cty
+}

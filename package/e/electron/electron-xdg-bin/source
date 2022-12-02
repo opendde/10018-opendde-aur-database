@@ -1,0 +1,1 @@
+("https://github.com/noahvogt/${pkgname%-*}/releases/download/$pkgver-$pkgrel/${pkgname%-*}-$pkgver-$pkgrel-x86_64.pkg.tar.zst")

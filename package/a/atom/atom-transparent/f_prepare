@@ -1,0 +1,12 @@
+prepare() {
+  cd "${srcdir}/atom"
+
+  patch -Np1 -i ../fix-atom-sh.patch
+  patch -Np1 -i ../use-system-electron.patch
+  patch -Np1 -i ../use-system-apm.patch
+  patch -Np1 -i ../fix-license-path.patch
+  patch -Np1 -i ../fix-restart.patch
+  patch -Np1 -i ../node-env-production.patch
+  patch -Np1 -i ../no-unsafe-eval-warning.patch
+  patch -Np1 -i ../enable-transparency.patch
+}

@@ -1,0 +1,10 @@
+package_apple-bce-git() {
+	depends=('linux-mbp' 'linux-mbp-headers')
+
+	_kernver=$(</usr/src/linux-mbp/version)
+	_extramodules="/usr/lib/modules/${_kernver}/extramodules"
+
+	cd "$_pkgbase"
+	install -Dt "${pkgdir}${_extramodules}" -m644 *.ko
+	find "${pkgdir}" -name '*.ko' -exec xz {} +
+}

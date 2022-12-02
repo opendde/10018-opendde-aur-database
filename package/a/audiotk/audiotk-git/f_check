@@ -1,0 +1,6 @@
+check() {
+  cd "${srcdir}/${_pkgname}/build"
+
+  return 0  # Skip tests for now
+  make test
+}

@@ -1,0 +1,1 @@
+("docker-credential-helpers::git+https://${_gourl}#branch=master")

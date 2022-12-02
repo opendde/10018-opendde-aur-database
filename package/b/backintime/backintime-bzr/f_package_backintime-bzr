@@ -1,0 +1,12 @@
+package_backintime-bzr() {
+  pkgdesc="Simple backup/snapshot system inspired by Flyback and TimeVault. QT4 GUI version."
+  #depends=('backintime-cli' 'libnotify' 'polkit' 'python-dbus' 'python-pyqt4' 'xorg-xdpyinfo')
+  depends=('backintime-cli-bzr' 'libnotify' 'polkit' 'python-dbus' 'python-pyqt4' 'xorg-xdpyinfo')
+  optdepends=('meld: diff tool' 'kompare: diff tool'
+              'python-secretstorage: store passwords')
+  provides=($_pkgname)
+  conflicts=($_pkgname $_pkgname-gnome $_pkgname-gtk $_pkgname-kde4 $_pkgname-qt4)
+
+  cd $_pkgname/qt4
+  make DESTDIR="$pkgdir" install 
+}

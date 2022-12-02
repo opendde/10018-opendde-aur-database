@@ -1,0 +1,5 @@
+package() {
+    tar -xf data.tar.gz -C "${pkgdir}"
+    # Add .ppd
+    install -m 644 -D BR5250_2_GPL.ppd "$pkgdir/etc/cups/ppd/BR5250_2_GPL.ppd"
+}

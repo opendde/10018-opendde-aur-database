@@ -1,0 +1,1 @@
+("${_pkgname}-${pkgver}-aarch64::${url}/releases/download/v${pkgver}/${_pkgname}_linux_arm64")

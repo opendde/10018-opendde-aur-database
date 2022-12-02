@@ -1,0 +1,4 @@
+package() {
+	cd "$_pkgname"
+    sudo make install
+}

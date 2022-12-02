@@ -1,0 +1,5 @@
+package() {
+  cd bluez-${pkgver}/tools
+  install -Dm0755 hciconfig "$pkgdir"/usr/bin/hciconfig
+  install -Dm0755 hciconfig.1 "$pkgdir"/usr/share/man/man1/hciconfig.1
+}

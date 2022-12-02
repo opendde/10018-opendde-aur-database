@@ -1,0 +1,7 @@
+package() {
+depends=('bash-completion' 'findutils')
+
+  cd ${_gitname}-${pkgver}
+  install -Dm644 complete_alias "${pkgdir}"/usr/share/${pkgname}/complete_alias
+  install -Dm644 README.md "${pkgdir}"/usr/share/doc/${pkgname}/README.md
+}

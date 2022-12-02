@@ -1,0 +1,18 @@
+build() {
+  cd ${srcdir}/
+
+  if [[ -d ${srcdir}/${_gitname} ]] ; then
+    rm -rf "${srcdir}/${_gitname}"
+  fi
+
+  git clone --recursive --branch ${pkgver} ${_gitroot}
+
+  cd ${srcdir}/${_gitname}/src/
+
+  export DOWNLOAD_C_CLIENT=0;
+  export PREFIX=/usr;
+  export LUA_PATH=/opt/aerospike/client/sys/udf/lua;
+  export LUA_SYSPATH=${srcdir}
+  export LUA_USRPATH=${srcdir}
+  sh build.sh
+}

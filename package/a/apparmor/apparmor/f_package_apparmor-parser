@@ -1,0 +1,10 @@
+package_apparmor-parser() {
+	pkgdesc='AppArmor parser - loads AA profiles to kernel module'
+	depends=('apparmor-libapparmor')
+	backup=('etc/apparmor/parser.conf' 'etc/apparmor/subdomain.conf')
+
+	cd "${srcdir}/${pkgbase}-${_majorver}"
+	make -C parser DESTDIR="${pkgdir}" install
+	mv "${pkgdir}/lib" "${pkgdir}/usr/lib"
+	mv "${pkgdir}/sbin" "${pkgdir}/usr/bin"
+}

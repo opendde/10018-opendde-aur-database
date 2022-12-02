@@ -1,0 +1,4 @@
+prepare() {
+  cd $_reponame-$pkgver
+  patch -p1 -N -r - -i "$srcdir"/a-sid-build-linux.patch
+}

@@ -1,0 +1,11 @@
+package() {
+  cd "bc-$pkgver"
+
+  DESTDIR="$pkgdir" make install
+
+  install -Dm0644 LICENSE.md "$pkgdir/usr/share/licenses/$pkgname/LICENSE.md"
+
+  for _doc in {NEWS,NOTICE,README}.md; do
+    install -Dm0644 "$_doc" "$pkgdir/usr/share/doc/$pkgname/$_doc"
+  done
+}

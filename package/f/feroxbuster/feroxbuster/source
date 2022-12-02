@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}::https://github.com/epi052/feroxbuster/archive/refs/tags/${pkgver}.tar.gz")

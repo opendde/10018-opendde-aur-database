@@ -1,0 +1,4 @@
+pkgver() {
+  cd AirStatus
+  printf "%s.%s" "$(git show -s --format=%cs | tr -d -)" "$(git rev-parse --short HEAD)"
+}

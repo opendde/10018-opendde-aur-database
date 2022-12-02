@@ -1,0 +1,5 @@
+prepare() {
+    cd "$pkgname-$pkgver"
+
+    patch -Np0 -i "${srcdir}/rebar.config.patch"
+}

@@ -1,0 +1,7 @@
+pkgver() {
+  cd aegisub
+
+  tag='v3.3.3'
+
+  echo "${tag#v}.r$(git rev-list --count ${tag}..HEAD).$(git rev-parse --short HEAD)"
+}

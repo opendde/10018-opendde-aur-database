@@ -1,0 +1,16 @@
+prepare() {
+  prepare_submodule
+  cd "${srcdir}/${pkgname}"
+# fix doc build
+  ((BUILD_DOXYGEN)) && sed -i '/^ *install.*doc/s/doc/htmlDoc/' src/CMakeLists.txt || true
+  git apply -v "${srcdir}"/{cmake_cxx_std_14,openexr3}.patch
+  #fix gcc:11 headers regression
+  grep -lR "std::numeric_limits" src/aliceVision/hdr |xargs sed -i '1 i\#include <limits>'
+}
+# Call prepare_submodule in prepare() function
+prepare_submodule() {
+  git -C "$srcdir/alice-vision-git" config submodule.src/dependencies/osi_clp.url "$srcdir/osi_clp"
+  git -C "$srcdir/alice-vision-git" config submodule.src/dependencies/MeshSDFilter.url "$srcdir/MeshSDFilter"
+  git -C "$srcdir/alice-vision-git" config submodule.src/dependencies/nanoflann.url "$srcdir/nanoflann"
+  git -C "$srcdir/alice-vision-git" -c protocol.file.allow=always submodule update --init --recursive
+}

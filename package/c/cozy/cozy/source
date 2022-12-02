@@ -1,0 +1,1 @@
+(${_pkgctrl}-${_verctrl}.tar.gz::"https://github.com/${pkgname}/${_pkgctrl}/archive/v${_verctrl}.tar.gz"

@@ -1,0 +1,13 @@
+package() {
+  cd "${srcdir}/build"
+  make install
+
+  # illumina uses folders
+  install -d "${pkgdir}"/usr/bin
+  mv "${pkgdir}"/bin/bcl2fastq "${pkgdir}"/usr/bin/bcl2fastq
+  rm -rf "${pkgdir}"/bin
+
+  mv "${pkgdir}"/share "${pkgdir}"/usr/share
+
+
+}

@@ -1,0 +1,4 @@
+package() {
+	install -m755 -d "${pkgdir}/usr/"
+	cp -r ${srcdir}/${_pkgname}/usr ${pkgdir}
+}

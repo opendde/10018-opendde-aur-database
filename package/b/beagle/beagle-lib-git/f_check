@@ -1,0 +1,5 @@
+check() {
+  cd $srcdir/$pkgname
+
+  make check
+}

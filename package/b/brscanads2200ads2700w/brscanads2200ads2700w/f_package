@@ -1,0 +1,22 @@
+package() {
+    depends=('libjpeg6-turbo')
+    mkdir $pkgdir/opt
+    cp -r $srcdir/opt/brother/scanner/$pkgname $pkgdir/opt
+    cp -r $srcdir/usr $pkgdir
+    install -D -m644 $srcdir/agree.html $pkgdir/usr/share/licenses/$pkgname/LICENSE.html
+    [ "$CARCH" = "x86_64" ] && mv $pkgdir/usr/lib64 $pkgdir/usr/lib
+    
+    #install sane-dll config file, so that the backend gets loaded.
+    install -D -m644 $srcdir/brscanads2200ads2700w.conf $pkgdir/etc/sane.d/dll.d/brscanads2200ads2700w.conf
+    
+    #install the udev-rule
+    install -D -m644 $srcdir/40-brscanads2200ads2700w.rules $pkgdir/etc/udev/rules.d/40-brscanads2200ads2700w.rules
+    
+    # move the links to the right direction
+    cd $pkgdir/usr/lib/sane
+    ln -sf libsane-BrotherADS2200.so.1.0.25 $pkgdir/usr/lib/sane/libsane-BrotherADS2200.so.1
+    ln -sf libsane-BrotherADS2200.so.1 $pkgdir/usr/lib/sane/libsane-BrotherADS2200.so
+    
+    ln -sf libsane-BrotherADS2700.so.1.0.25 $pkgdir/usr/lib/sane/libsane-BrotherADS2700.so.1
+    ln -sf libsane-BrotherADS2700.so.1 $pkgdir/usr/lib/sane/libsane-BrotherADS2700.so
+}

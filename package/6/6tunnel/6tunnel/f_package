@@ -1,0 +1,5 @@
+package() {
+	cd python-geojson-$pkgver
+	python setup.py install --root="$pkgdir" --optimize=1
+	install -Dm644 LICENSE.rst "$pkgdir"/usr/share/licenses/python-geojson/LICENSE
+}

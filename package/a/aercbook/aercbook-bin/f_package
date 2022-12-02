@@ -1,0 +1,4 @@
+package() {
+    cd "$srcdir"
+    install -Dm755 "aercbook-v${pkgver}--x86_64-linux" "${pkgdir}/usr/local/bin/aercbook"
+}

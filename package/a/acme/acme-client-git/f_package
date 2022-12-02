@@ -1,0 +1,13 @@
+package() {
+	cd "${pkgname}"
+
+	install -Dm755 -t "${pkgdir}/usr/bin" acme-client
+	install -Dm644 -t "${pkgdir}/usr/share/man/man1" acme-client.1
+	install -Dm644 -t "${pkgdir}/usr/share/licenses/acme-client" LICENSE.md
+
+	install -Dm644 -t "${pkgdir}/usr/lib/systemd/system" ../acme@.{timer,service}
+	install -Dm644 -t "${pkgdir}/etc/acme" ../example.conf
+	install -Dm755 -t "${pkgdir}/etc/acme" ../example.hook
+
+	install -dm755 "${pkgdir}/var/lib/acme"/{accounts,certs}
+}

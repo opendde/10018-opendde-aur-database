@@ -1,0 +1,5 @@
+check() {
+  cd booster/tests
+  # arch chroot does not allow access to KVM
+  # TEST_DISABLE_KVM=1 go test -v # integration tests require a lot of time and space to build 10G images
+}

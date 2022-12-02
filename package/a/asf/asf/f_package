@@ -1,0 +1,23 @@
+package() {
+    cd asf/out/result
+    install -d -m 755 "${pkgdir}/usr/lib/${pkgname}"
+    cp -rdp --no-preserve=ownership . "${pkgdir}/usr/lib/asf"
+    install -D -m755 ../../run.sh "${pkgdir}/usr/bin/${pkgname}"
+    sed -i 's,^\(BINARY_DIR[ ]*=\).*,\1'/usr/lib/asf',g' "${pkgdir}/usr/bin/${pkgname}"
+    find "${pkgdir}/usr/lib/${pkgname}" -type f -exec chmod 644 {} \;
+    find "${pkgdir}/usr/lib/${pkgname}" -type d -exec chmod 755 {} \;
+
+    install -d -m 755 "${pkgdir}/var/lib/${pkgname}/config"
+    install -D -m644 "${srcdir}/ASF.json" "${pkgdir}/var/lib/${pkgname}/config/ASF.json"
+    install -D -m644 "${srcdir}/NLog.config" "${pkgdir}/usr/lib/${pkgname}/NLog.config"
+
+    install -D -m644 "${srcdir}/asf.env" "${pkgdir}/etc/asf/asf"
+    install -D -m644 "${srcdir}/asf/ArchiSteamFarm/overlay/variant-base/linux/ArchiSteamFarm@.service" "${pkgdir}/usr/lib/systemd/system/ArchiSteamFarm@.service"
+
+    # Setup system user and group
+    echo 'u asf - "ArchiSteamFarm" /var/lib/asf' |
+      install -Dm644 /dev/stdin "${pkgdir}"/usr/lib/sysusers.d/${pkgname}.conf
+    echo -e 'd /var/lib/asf 0755 asf asf -\n
+             d /tmp/ASF 0777 asf asf -' |
+      install -Dm644 /dev/stdin "${pkgdir}"/usr/lib/tmpfiles.d/${pkgname}.conf
+}

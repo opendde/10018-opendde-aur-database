@@ -1,0 +1,15 @@
+build() {
+  cd "$pkgbase-$pkgbase-$pkgver"
+
+  mkdir -p build-airspy
+  cd build-airspy
+  cmake .. -Dairspy=ON
+  make
+  cd ..
+
+  mkdir -p build-rtl
+  cd build-rtl
+  cmake .. -Drtl=ON
+  make
+  cd ..
+}

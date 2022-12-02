@@ -1,0 +1,26 @@
+package() {
+   cd "$srcdir/ATLAS/build"
+   unset MAKE
+
+   msg 'Packaging ATLAS'
+
+   make DESTDIR="$pkgdir/opt/${pkgname}" install
+   cp -d lib/*.so* "$pkgdir/opt/${pkgname}/lib"
+   [ -e lib/libptlapack.a ] && cp lib/libptlapack.a "$pkgdir/opt/${pkgname}/lib"
+   cd "$pkgdir/opt/${pkgname}/lib"
+   ln -s libblas.so libblas.so.3
+   ln -s liblapack.so.3 liblapack.so
+
+   install -Dm644 "${srcdir}/blas-license.txt" \
+      "${pkgdir}/usr/share/licenses/$pkgname/blas-license.txt"
+   install -Dm644 "${srcdir}/ATLAS/build/src/lapack/reference/LICENSE" \
+      "${pkgdir}/usr/share/licenses/$pkgname/lapack-license.txt"
+   install -Dm644 "${srcdir}/atlas-license.txt" \
+      "${pkgdir}/usr/share/licenses/$pkgname/atlas-license.txt"
+
+   # remove traces from $srcdir
+   for ii in $(find ${pkgdir} -name \*.h); do
+       sed -i 's;/var/aur/atlas-lapack-for-flexiblas/src/ATLAS/build/..//;;g' $ii
+   done
+   sed -i 's;/var/aur/atlas-lapack-for-flexiblas/src/;;g' ${pkgdir}/opt/atlas-lapack-for-flexiblas/include/atlas/atlas_buildinfo.h
+}

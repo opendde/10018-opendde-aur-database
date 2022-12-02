@@ -1,0 +1,9 @@
+package() {
+  cd "Amazon_Typefaces_Complete_Font_Set_${pkgver}"
+  unzip 'amazon_typography_all.zip'
+  install -m755 -d "${pkgdir}/usr/share/"{fonts/amazon,{doc,licenses}/${pkgname}}
+  install -m644 -t "${pkgdir}/usr/share/fonts/amazon" ./*_all_*/all/*.ttf
+  install -m644 -t "${pkgdir}/usr/share/fonts/amazon" ./Bookerly/Bookerly-*.ttf
+  install -m644 "Amazon Ember Licensing Guidelines.pdf" "${pkgdir}/usr/share/doc/${pkgname}/Amazon_Ember_Licensing_Guidelines.pdf"
+  ln -s "../../doc/${pkgname}/Amazon_Ember_Licensing_Guidelines.pdf" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

@@ -1,0 +1,5 @@
+package () {
+	cd "${pkgname}/build"
+	DESTDIR="${pkgdir}" make install
+	install -Dm644 -t "${pkgdir}/usr/share/licenses/${pkgname}" ../COPYING
+}

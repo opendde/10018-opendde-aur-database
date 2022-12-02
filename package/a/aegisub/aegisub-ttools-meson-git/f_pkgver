@@ -1,0 +1,6 @@
+pkgver() {
+  cd "$_srcname"
+
+  tag='v3.2.2'
+  echo "${tag#v}.r$(git rev-list --count ${tag}..HEAD).$(git rev-parse --short HEAD)"
+}

@@ -1,0 +1,4 @@
+prepare() {
+ cd "$pkgname"
+ sed -i 's/\/local//g' amdgpu-clocks.service
+}

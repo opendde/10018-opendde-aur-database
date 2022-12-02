@@ -1,0 +1,7 @@
+package_filebeat() {
+    pkgdesc='Sends log files to Logstash or directly to Elasticsearch'
+
+    _do_package_beat
+    cp -R build/package/modules.d "$pkgdir"/etc/$_pkgname/
+    cp -R build/package/module "$pkgdir"/usr/share/$_pkgname/
+}

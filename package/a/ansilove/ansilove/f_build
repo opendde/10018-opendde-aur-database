@@ -1,0 +1,9 @@
+build() {
+  cd "${srcdir}/libansilove-${libver}"
+  cmake . -DCMAKE_INSTALL_PREFIX:PATH="${pkgdir}/usr"
+  make
+
+  cd "${srcdir}/ansilove-${pkgver}"
+  cmake . -DCMAKE_INSTALL_PREFIX:PATH="${pkgdir}/usr" -DANSILOVE_INCLUDE_DIRS=../libansilove-${libver}/include/ -D ANSILOVE_LIBRARIES=../libansilove-${libver}/libansilove.so .
+  make
+}

@@ -1,0 +1,4 @@
+package() {
+  cd "${srcdir}/ANTs-${pkgver}/build/ANTS-build"
+  make DESTDIR="${pkgdir}" install
+}

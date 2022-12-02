@@ -1,0 +1,6 @@
+package() {
+    cd "GoAuthing-$pkgver"
+    install -Dm755 "auth-thu" "$pkgdir/usr/bin/auth-thu"
+    install -Dm644 "$srcdir/auth-thu.service" "$pkgdir/usr/lib/systemd/user/auth-thu.service"
+    install -Dm644 "$srcdir/auth-thu.timer" "$pkgdir/usr/lib/systemd/user/auth-thu.timer"
+}

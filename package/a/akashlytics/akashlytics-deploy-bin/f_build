@@ -1,0 +1,5 @@
+build() {
+  # Extract files
+  chmod +x "$srcdir/$_pkgsrc"
+  $srcdir/$_pkgsrc --appimage-extract
+}

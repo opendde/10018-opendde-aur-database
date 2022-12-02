@@ -1,0 +1,3 @@
+build() {
+  ct-ng build
+}

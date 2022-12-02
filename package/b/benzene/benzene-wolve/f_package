@@ -1,0 +1,9 @@
+package() {
+  mkdir -p $pkgdir/usr/bin
+  mkdir -p $pkgdir/usr/local/share/benzene
+
+  cp $srcdir/benzene-$pkgver/src/wolve/wolve $pkgdir/usr/bin/wolve
+  cp $srcdir/benzene-$pkgver/share/wolve-ice-patterns.txt $pkgdir/usr/local/share/benzene/
+  cp $srcdir/benzene-$pkgver/share/wolve-vc-captured-set.txt $pkgdir/usr/local/share/benzene/
+  cp $srcdir/benzene-$pkgver/share/wolve-cache-book.txt $pkgdir/usr/local/share/benzene/wolve-cache-book.txt
+}

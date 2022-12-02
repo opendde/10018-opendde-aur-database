@@ -1,0 +1,7 @@
+check() {
+  cd "$pkgname-$pkgname-$pkgver"
+
+  #cargo test \
+  #  --release \
+  #  --locked
+}

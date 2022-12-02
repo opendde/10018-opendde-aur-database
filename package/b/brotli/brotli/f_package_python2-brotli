@@ -1,0 +1,7 @@
+package_python2-brotli() {
+    depends=('python2')
+
+    cd "$pkgbase-$pkgver"
+
+    python2 ./setup.py install --skip-build --root="$pkgdir/"
+}

@@ -1,0 +1,12 @@
+build() {
+    cd $_src
+    # Build as per Go package guidelines
+    # https://wiki.archlinux.org/index.php/Go_package_guidelines#Flags_and_build_options
+    go build \
+      -trimpath \
+      -buildmode=pie \
+      -mod=readonly \
+      -modcacherw \
+      -ldflags "-linkmode external -extldflags \"${LDFLAGS}\"" \
+      ./cmd/bgc
+}

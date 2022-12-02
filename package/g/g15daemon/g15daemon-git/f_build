@@ -1,0 +1,5 @@
+build() {
+  cd "${pkgname}"
+  ./configure --prefix=/usr --sbindir=/usr/bin
+  make
+}

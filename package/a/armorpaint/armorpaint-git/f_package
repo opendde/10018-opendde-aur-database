@@ -1,0 +1,12 @@
+package() {
+	cd "$srcdir"/"$_pkgname"
+	mkdir -p ${pkgdir}/usr/{bin,share,lib}
+	mkdir -p ${pkgdir}/usr/lib/armorpaint
+	install -Dm755 ${srcdir}/armorpaint.sh ${pkgdir}/usr/bin/armorpaint
+	install -Dm644 LICENSE.md ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
+	install -Dm755 armorcore/Deployment/ArmorPaint ${pkgdir}/usr/lib/armorpaint/
+	install -Dm644 ${srcdir}/armorpaint.desktop ${pkgdir}/usr/share/applications/armorpaint.desktop
+	mkdir -p ${pkgdir}/usr/share/armorpaint
+	cp -r build/krom ${pkgdir}/usr/share/armorpaint/krom
+	install -Dm644 ${srcdir}/armorpaint.png ${pkgdir}/usr/share/icons/armorpaint.png
+}

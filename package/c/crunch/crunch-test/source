@@ -1,0 +1,1 @@
+("https://github.com/DX-MON/crunch/releases/download/v${pkgver}/${_pkgname}-${pkgver}.tar.xz"{,.asc})

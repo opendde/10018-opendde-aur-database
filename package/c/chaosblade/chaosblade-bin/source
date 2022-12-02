@@ -1,0 +1,1 @@
+("${pkgname%-bin}-${pkgver}.tar.gz::https://ghproxy.com/${url}/releases/download/v${pkgver}/${pkgname%-bin}-${pkgver}-linux-amd64.tar.gz")

@@ -1,0 +1,20 @@
+prepare() {
+  cd "$_srcname"
+
+  # for patch in ../*.patch; do
+  #   echo "  applying patch: $patch"
+  #   patch -u -p1 < "$patch"
+  # done
+
+  # Initialize subproject wraps for luajit
+  ln -s ../../luajit subprojects/luajit
+  meson subprojects packagefiles --apply luajit
+  # and gtest
+  mkdir subprojects/packagecache
+  ln -s ../../../gtest-1.8.1.zip subprojects/packagecache/gtest-1.8.1.zip
+  ln -s ../../../gtest-1.8.1-1-wrap.zip subprojects/packagecache/gtest-1.8.1-1-wrap.zip
+
+  arch-meson builddir \
+    -Dportaudio=disabled \
+    -Dopenal=disabled
+}

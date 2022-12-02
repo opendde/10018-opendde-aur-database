@@ -1,0 +1,17 @@
+prepare() {
+    cd ${_pkgfqn}
+
+    # Platform specific patches.
+    case "$android_arch" in
+        mips)
+            patch -Np1 -i "../JavaScript.Platform.h.patch"
+            ;;
+        armeabi)
+            # Disable JIT.
+            patch -Np1 -i "../JavaScriptCore.pri.patch"
+            patch -Np1 -i "../geoservices.pro.patch"
+            ;;
+        *)
+            ;;
+    esac
+}

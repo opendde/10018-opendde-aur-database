@@ -1,0 +1,11 @@
+build() {
+	cd ${srcdir}/src
+        echo " 
+1c1
+< CFLAGS=-O9 -Wall --pedantic -foptimize-register-move -ffast-math -fschedule-insns2 -frerun-loop-opt -frerun-cse-after-loop -finline-functions -ffunction-cse -fmove-all-movables -freduce-all-givs -funroll-all-loops -fexpensive-optimizations -mcpu=pentiumpro -march=i386 
+---
+> CFLAGS=-O9 -Wall --pedantic -foptimize-register-move -ffast-math -fschedule-insns2 -frerun-loop-opt -frerun-cse-after-loop -finline-functions -ffunction-cse -funroll-all-loops -fexpensive-optimizations
+EOF" | patch -p1 Makefile
+	make || sed -i 's%int yyparse (void);%//&%' ass.tab.h
+	make
+}

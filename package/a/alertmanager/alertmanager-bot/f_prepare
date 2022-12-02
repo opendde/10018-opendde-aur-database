@@ -1,0 +1,18 @@
+prepare() {
+  cd "$pkgname-$pkgver"
+
+  # create folder for build output
+  rm -Rf build
+  mkdir build
+
+  # download dependencies
+  go mod download
+
+  # download test dependencies
+  for pkg in $(go list ./... | grep -v /vendor/); do
+    go get -t "$pkg"
+  done
+
+  sed -i '/BOLT_PATH=\/tmp\/bot.db/d' .env.example
+  echo "TEMPLATE_PATHS=/etc/alertmanager-bot/default.tmpl" >> .env.example
+}

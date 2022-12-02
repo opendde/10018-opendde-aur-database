@@ -1,0 +1,1 @@
+("${_upstream_pkgname}.deb::https://packages.cloud.google.com/apt/pool/${_upstream_pkgname}_${_upstream_pkgver}_amd64_${sha256sums[0]}.deb")

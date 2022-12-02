@@ -1,0 +1,4 @@
+prepare() {
+	# Patch the Makefile to allow setting LDFLAGS from the environment
+	sed '/LDFLAGS :=/s/$/ ${LDFLAGS}/' -i c-bsp/Makefile
+}

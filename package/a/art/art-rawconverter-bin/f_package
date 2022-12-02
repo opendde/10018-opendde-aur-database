@@ -1,0 +1,20 @@
+package() {
+  OPT_PATH="opt/${_pkgname}"
+
+  # Install the package files
+  install -d "${pkgdir}"/{usr/bin,opt}
+  cp -r "${_pkgname}-${pkgver}" "${pkgdir}/${OPT_PATH}"
+  ln -s "/${OPT_PATH}/ART" "${pkgdir}/usr/bin/art"
+  ln -s "/${OPT_PATH}/ART-cli" "${pkgdir}/usr/bin/art-cli"
+
+  # Install .desktop files
+  install -Dm644 "${srcdir}/${_pkgname}.desktop" -t "${pkgdir}/usr/share/applications"
+
+  # Install icons
+  SRC_LOC="${srcdir}/${_pkgname}-${pkgver}/share/icons/hicolor"
+  DEST_LOC="${pkgdir}/usr/share/icons/hicolor"
+  for i in 16 24 48 128 256
+  do
+    install -Dm644 "${SRC_LOC}/${i}x${i}/apps/ART.png" "${DEST_LOC}/${i}x${i}/apps/${_pkgname}.png"
+  done
+}

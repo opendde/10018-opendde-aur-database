@@ -1,0 +1,4 @@
+build() {
+	cd "$srcdir/${pkgname%-git}"
+	env JAVA_HOME=/usr/lib/jvm/java-11-openjdk ./gradlew buildUpdate
+}

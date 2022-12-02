@@ -1,0 +1,5 @@
+build() {
+  cd "$srcdir/$_pkgname"
+  qmake-qt5 -r apkstudio.pro CONFIG+=release
+  make
+}

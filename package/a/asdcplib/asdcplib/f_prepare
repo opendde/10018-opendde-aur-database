@@ -1,0 +1,5 @@
+prepare() {
+  cd ${pkgname}-rel_${_pkgver}
+  autoreconf -if
+  ./configure --enable-freedist --enable-as-02 --prefix=/usr
+}

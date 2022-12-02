@@ -1,0 +1,5 @@
+prepare() {
+  cd "$srcdir/phc-winner-$pkgname-$pkgver"
+  cp "${srcdir}/libargon2.pc" libargon2.pc
+  sed -i -e "s/@UPSTREAM_VER@/${pkgver}/" libargon2.pc
+}

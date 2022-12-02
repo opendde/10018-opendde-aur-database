@@ -1,0 +1,9 @@
+package() {
+  install -Dm644 ${srcdir}/LICENSE.txt ${pkgdir}/usr/share/licenses/${_dlname}/LICENSE
+  install -dm755 $pkgdir/opt/${_dlname}/
+  install -Dm644 ${_dlname}.desktop $pkgdir/usr/share/applications/${_dlname}.desktop
+rm ${srcdir}/brailleblaster-nix.sh
+  cp -r ${srcdir}/* $pkgdir/opt/${_dlname}/
+rm ${srcdir}/${_dlname}-${pkgver}-stable.zip
+install -Dm755 brailleblaster.sh $pkgdir/opt/${_dlname}/brailleblaster-nix.sh
+}

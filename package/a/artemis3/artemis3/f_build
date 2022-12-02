@@ -1,0 +1,5 @@
+build() {
+  cd "${srcdir}/Artemis-${pkgver}/spec_files/Linux"
+
+  pyinstaller Artemis.spec
+}

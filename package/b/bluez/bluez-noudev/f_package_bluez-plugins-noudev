@@ -1,0 +1,8 @@
+package_bluez-plugins-noudev() {
+  pkgdesc="bluez plugins (PS3 Sixaxis controller)"
+  conflicts=( 'bluez-plugins' )
+  provides=( 'bluez-plugins' )
+  cd "${_pkgbase}"-${pkgver}
+  make DESTDIR="${pkgdir}" \
+       install-pluginLTLIBRARIES
+}

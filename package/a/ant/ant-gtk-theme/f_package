@@ -1,0 +1,9 @@
+package() {
+  mkdir -p "${pkgdir}/usr/share/themes"
+  find "${srcdir}" -type f -name 'index.theme' | while read -r THEME_INDEX_FILE
+  do
+    THEME_SRC_DIR=$(dirname "${THEME_INDEX_FILE}")
+    THEME_NAME=$(basename "${THEME_SRC_DIR}")
+    cp -r "${THEME_SRC_DIR}" "${pkgdir}/usr/share/themes"
+  done
+}

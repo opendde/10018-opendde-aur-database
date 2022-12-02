@@ -1,0 +1,9 @@
+_patch_var_file() {
+	local file="$1"
+	v1="s/\\\${_versuf}/${_versuf}/g"
+	v2="s/\\\${pkgver}/${pkgver}/g"
+	v3="s/\\\${_vermajor}/${_vermajor}/g"
+	sed -i "$v1" $file
+	sed -i "$v2" $file
+	sed -i "$v3" $file
+}

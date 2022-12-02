@@ -1,0 +1,14 @@
+build() {
+	cmake \
+		-B build \
+		-S "$pkgname-$pkgver" \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DBUILD_SHARED_LIBS=ON \
+		-DAUTODIFF_BUILD_TESTS=ON \
+		-DAUTODIFF_BUILD_PYTHON=ON \
+		-DAUTODIFF_BUILD_EXAMPLES=OFF
+	cmake --build build
+	cd build/python/package
+	python -m build --wheel --no-isolation
+}

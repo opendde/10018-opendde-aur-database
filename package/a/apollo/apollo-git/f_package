@@ -1,0 +1,16 @@
+package() {
+  cd apollo
+
+  # We don't need anything related to git in the package
+  rm -rf .git*
+
+  # Setup Python by hand since no setup.py 
+  mkdir -p $pkgdir/usr/lib/python2.7/site-packages/apollo/
+  cp python/caffe/proto/caffe_pb2.py $pkgdir/usr/lib/python2.7/site-packages/apollo/
+  cp -R apollo/* $pkgdir/usr/lib/python2.7/site-packages/apollo/
+
+  # Install shared libraries
+  mkdir -p $pkgdir/usr/lib/
+  install -Dm644 .build_release/lib/* "${pkgdir}/usr/lib/"
+
+}

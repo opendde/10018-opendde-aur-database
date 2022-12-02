@@ -1,0 +1,4 @@
+prepare() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  autoreconf -i
+}

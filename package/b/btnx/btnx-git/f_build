@@ -1,0 +1,5 @@
+build() {
+  cd btnx
+  ./configure --prefix=/usr
+  make
+}

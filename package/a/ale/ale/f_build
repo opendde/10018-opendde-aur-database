@@ -1,0 +1,6 @@
+build() {
+    cd ${srcdir}/${pkgname}-${pkgver}
+    sed -i 's/!defined @ARGV || //' ale
+    ./configure
+    make || return 1
+}

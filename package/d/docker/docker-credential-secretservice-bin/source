@@ -1,0 +1,1 @@
+("docker-credential-helpers-$pkgver.tar.gz::${url}/releases/download/v${pkgver}/docker-credential-secretservice-v${pkgver}-amd64.tar.gz"

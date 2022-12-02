@@ -1,0 +1,4 @@
+build() {
+  cd $_pkgname
+  go build -o ./dist/app -v ./app
+}

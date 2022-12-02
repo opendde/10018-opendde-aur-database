@@ -1,0 +1,5 @@
+pkgver() {
+  cd altrace
+  #hg log -r . -T "{latesttag}{sub('^-0-.*', '', '.{latesttagdistance}+m{node|short}')}"
+  printf "r%s.%s" "$(hg identify -n)" "$(hg identify -i)"
+}

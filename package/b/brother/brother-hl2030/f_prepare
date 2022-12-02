@@ -1,0 +1,7 @@
+prepare() {
+  cd "$srcdir/usr/" || return 1
+  patch -p1 < ../brother-hl2030.patch
+
+  cd "$srcdir" || return 1
+  "$srcdir/usr/local/Brother/cupswrapper/cupswrapperHL2030-2.0.1"
+}

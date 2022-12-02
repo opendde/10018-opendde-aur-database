@@ -1,0 +1,5 @@
+build() {
+  cmake -B build -S $pkgname-$_pkgver-beta \
+    -DBUILD_TESTING=OFF
+  cmake --build build
+}

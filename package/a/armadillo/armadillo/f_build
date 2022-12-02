@@ -1,0 +1,9 @@
+build() {
+  if [ "$CARCH" == "x86_64" ]; then
+    ARMA64LIBDIR="-DINSTALL_LIB_DIR:PATH=/usr/lib"
+  fi
+
+  cd "${srcdir}/$pkgname-$_pkgver"
+  cmake $ARMA64LIBDIR -DCMAKE_INSTALL_PREFIX:PATH=/usr .
+  make
+}

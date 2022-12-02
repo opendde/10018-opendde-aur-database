@@ -1,0 +1,1 @@
+(${pkgname%-git}::git+https://github.com/CounterpartyXCP/counterparty-gui)

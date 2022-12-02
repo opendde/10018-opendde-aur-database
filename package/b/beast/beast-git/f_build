@@ -1,0 +1,4 @@
+build() {
+  cd "beast"
+	make
+}

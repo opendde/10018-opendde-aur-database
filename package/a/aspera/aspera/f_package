@@ -1,0 +1,6 @@
+package() {
+  export GOPATH="$srcdir/_go"
+  cd "$GOPATH/src/${_importpath}"
+  install -dm755 "$pkgdir/usr/bin"
+  install -m755 "${_realname}" "$pkgdir/usr/bin/${_realname}"
+}

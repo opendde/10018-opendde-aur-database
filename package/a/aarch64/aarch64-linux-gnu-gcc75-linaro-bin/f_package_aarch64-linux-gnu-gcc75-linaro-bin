@@ -1,0 +1,39 @@
+package_aarch64-linux-gnu-gcc75-linaro-bin() {
+
+	provides=("${_target}-gcc")
+	conflicts=("${_target}-gcc")
+#	depends=("${_target}-binutils224-linaro-bin=${_reldate}"
+#			 "${_target}-eglibc219-linaro-bin=${_reldate}")
+# 	pkgver="${_gccver}_${_reldate}"
+
+	cd ${pkgdir}
+
+	mkdir -p opt/$pkgbase/{${_target},bin,lib,libexec,share/man/man1}
+
+	# 
+	mv ${srcdir}/${_path}/${_target}/include opt/$pkgbase/${_target}/
+	# 
+	mv ${srcdir}/${_path}/${_target}/lib64 opt/$pkgbase/${_target}/
+	# 
+	for i in c++ cpp g++ gcc gcc-7.5.0 gcc-ar gcc-nm gcc-ranlib gcov gfortran; do
+		mv ${srcdir}/${_path}/bin/${_target}-${i} opt/$pkgbase/bin/
+	done
+	# 
+	mv ${srcdir}/${_path}/lib/gcc opt/$pkgbase/lib/
+	# 
+	mv ${srcdir}/${_path}/libexec/gcc opt/$pkgbase/libexec/
+
+	cd ${pkgdir}/opt/$pkgbase/share/man/man1/
+	# 
+	for i in cpp g++ gcc gcov gfortran; do
+		mv ${srcdir}/${_path}/share/man/man1/${_target}-${i}.1 ./
+	done
+	# 
+	ln -sf	${_target}-{c++,g++}.1
+
+	mkdir -p ${pkgdir}/usr/bin/
+	cd ${pkgdir}/usr/bin/
+	ln -sf	../../opt/$pkgbase/bin/* ./
+	ln -sf	${_target}-{c++,g++}
+	ln -sf	${_target}-gcc{,-7.5.0}
+}

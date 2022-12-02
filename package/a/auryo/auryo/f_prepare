@@ -1,0 +1,6 @@
+prepare() {
+    cd "${srcdir}/${pkgname}-${pkgver}"
+    sed -i 's/"deb",//' package.json
+    sed -i 's/"rpm",//' package.json
+    sed -i 's/"AppImage",//' package.json
+}

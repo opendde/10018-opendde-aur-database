@@ -1,0 +1,24 @@
+prepare() {
+  cd "${srcdir}"
+  for THEME_FILE in "${noextract[@]}"
+  do
+    THEME_NAME="${THEME_FILE%.*}"
+    THEME_NAME="${THEME_NAME%-*}"
+    mkdir -p "${THEME_NAME}"
+    if echo "${THEME_FILE}" | grep "slim" > /dev/null
+    then
+      bsdtar xf "${THEME_FILE}" -C "${THEME_NAME}"
+      cd "${THEME_NAME}"
+      find . -type f -name '*.tar' | while read -r SUB_THEME_FILE
+      do
+        SUB_THEME_NAME=$(basename "${SUB_THEME_FILE}")
+        SUB_THEME_NAME="${SUB_THEME_NAME%.*}"
+        mkdir -p "${SUB_THEME_NAME}"
+        bsdtar xf "${SUB_THEME_FILE}" --strip-components=1 -C "${SUB_THEME_NAME}"
+      done
+      cd ..
+    else
+      bsdtar xf "${THEME_FILE}" --strip-components=1 -C "${THEME_NAME}"
+    fi
+  done
+}

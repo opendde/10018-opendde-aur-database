@@ -1,0 +1,14 @@
+package() {
+	cd "$_pkgname"
+
+	# install executable
+	install -Dm 755 "$_pkgname" "$pkgdir/usr/bin/$_pkgname"
+
+	# install systemd user service
+    sed -i 's,usr/local,usr,' "system/$_pkgname@.service"
+	install -Dm 644 "system/$_pkgname@.service" "$pkgdir/usr/lib/systemd/system/$_pkgname@.service"
+
+	# add config example and LICENCE files
+	install -Dm 644 "examples/${_pkgname}rc" "$pkgdir/usr/share/doc/$_pkgname/examples/${_pkgname}rc"
+	install -Dm 644 "LICENSE" "$pkgdir/usr/share/licenses/$_pkgname/LICENCE"
+}

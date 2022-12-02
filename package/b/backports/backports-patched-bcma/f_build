@@ -1,0 +1,67 @@
+build() {
+  cd "${srcdir}/backports-${_upver}"
+  # unset _selected_drivers # WARNING! DEBUGGING UNSET - MAKE SURE THAT THIS LINE IS COMMENTED
+  # Get config - not in prepare beause interactive part is using cc
+  if [ -n "${_selected_drivers}" ]; then
+    msg "Defconfig(s) detected"
+  else # TODO: else if not that try showing up dialog menu with checkboxes based on available defconfigs ;)
+    warning "Config undetected"
+    # Check for dialog
+    if [ ! -e /usr/bin/dialog ]; then
+      error "Cannot fallback to interactive config - dialog package not installed"
+      false
+    fi
+    # WAIT 10s FOR INTEACTIVE PART - PRESS I FOR INTERACTIVE CONFIG
+    tty -s # Checks if user input is accesssible, otherwise fail
+    countdown 10 & countdown_pid=$!
+    read -s -n 1 -t 10 ikey || true
+    kill -s SIGHUP $countdown_pid
+    echo -e -n "\n"
+    [[ "$ikey" =~ ^[iI]$ ]] || false
+    # BEGIN INTERACTIVE PART TODO: ADD OLDCONFIG OPTION WITH FILE SELECT
+    cfgway=$(dialog --keep-tite --backtitle "$pkgname" --no-items --radiolist 'Choose method to configure' 0 0 0 'defconfig' off 'menuconfig' off 2>&1 >/dev/tty)
+    msg2 "Chosen to configure with \"${cfgway}\""
+    case "$cfgway" in
+      defconfig)
+        for i in $(ls ./defconfigs/); do
+          list_opts+=("$i" "off")
+        done
+        echo "${list_opts[*]}"
+        _selected_drivers=( $(dialog --keep-tite --backtitle "$pkgname" --no-items --checklist 'Choose driver groups to compile' 0 0 0 ${list_opts[*]} 2>&1 >/dev/tty) )
+        msg2 "Selected drivers groups: ${_selected_drivers[*]}"
+        ;;
+      menuconfig)
+        make menuconfig
+        ;;
+      "")
+        error "Nothing selected!\nPerhaps You used [enter] instead of [space] to select menu item?"
+        false
+        ;;
+      *)
+        echo Break out from the PKGBUILD
+        false
+        ;;
+    esac
+    # END OF THE INTERACTIVE PART
+  fi
+
+  if [[ -n "$_selected_drivers" ]]; then #THIS means that defconfigs are used! actual config has to be generated here!!
+    # Workaround - create slapped together defconfig "user" http://i.imgur.com/axyrOZH.jpg
+    (
+      cd ./defconfigs/
+      warning "Creating slapped together defconfig 'user'"
+      cat ${_selected_drivers[*]} | sort -u
+      cat ${_selected_drivers[*]} | sort -u > user
+    )
+
+    # Temporary disabled until resolved
+    # make ${_selected_drivers[*]/#/defconfig-}
+    make defconfig-user # Temporary solution
+
+    msg "» ${_selected_drivers[*]} «" # CONVERT TO MESSAGE AND ONLY IF VAR IS -n
+  fi
+
+  # Actual build
+  msg "Starting actual build"
+  make KLIB=/usr/lib/modules/"${_kernver}" # should be make modules
+}

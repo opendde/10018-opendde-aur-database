@@ -1,0 +1,10 @@
+package() {
+  cd "${_gitname}/src"
+  install -Dm755 "BORG-BackUP-GUI" "${pkgdir}/usr/bin/BORG-BackUP-GUI"
+  install -D -m 644 ${srcdir}/borg-backup-gui.desktop ${pkgdir}/usr/share/applications/borg-backup-gui.desktop
+  for icons in $(ls ../images/icons/); do
+    echo ${icons}
+    mkdir -p "${pkgdir}/usr/share/icons/hicolor/${icons}/apps"
+    cp ../images/icons/${icons}/BORG-BackUP-GUI.* "${pkgdir}/usr/share/icons/hicolor/${icons}/apps/"
+  done
+}

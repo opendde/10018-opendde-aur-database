@@ -1,0 +1,4 @@
+build() {
+	cd "$_pkgbase"
+	make PREFIX=/usr
+}

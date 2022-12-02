@@ -1,0 +1,12 @@
+build() {
+  mkdir -p ${srcdir}/${_pkgname}/build
+  cd ${srcdir}/${_pkgname}/build
+
+  cmake .. \
+    -DCMAKE_INSTALL_PREFIX="/usr" \
+    -DCMAKE_INSTALL_LIBDIR="lib" \
+    -DBLASFEO_EXAMPLES=OFF \
+    -DCMAKE_BUILD_TYPE="Release"
+
+  make
+}

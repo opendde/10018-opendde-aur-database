@@ -1,0 +1,1 @@
+("$pkgname::git+http://git.savannah.gnu.org/r/$pkgname.git#branch=master"

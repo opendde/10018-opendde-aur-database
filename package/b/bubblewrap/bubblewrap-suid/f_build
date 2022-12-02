@@ -1,0 +1,5 @@
+build() {
+  cd bubblewrap
+  ./configure --prefix=/usr --with-priv-mode=setuid
+  make
+}

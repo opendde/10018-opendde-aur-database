@@ -1,0 +1,7 @@
+prepare() {
+  chmod +x "${pkgname%-bin}_linux_$pkgver.AppImage"
+  ./"${pkgname%-bin}_linux_$pkgver.AppImage" --appimage-extract
+
+  # Remove X-AppImage-Version
+  sed -i '/AppImage/d' "squashfs-root/${pkgname%-bin}.desktop"
+}

@@ -1,0 +1,16 @@
+package() {
+  cd "${srcdir}/${pkgname}"
+
+  install -D -m644 fs/aufs/aufs.ko \
+    "${pkgdir}/usr/lib/modules/extramodules-${_kernver}/aufs.ko"
+    #"${pkgdir}/usr/lib/modules/${_kernver}/kernel/fs/aufs/aufs.ko"
+
+  # tweak the install script for the right kernel version
+  sed -i -e "s/KERNEL_VERSION=.*/KERNEL_VERSION=${_kernver}/g" "${startdir}/aufs.install"
+
+  # install include file
+  install -D -m 644 include/uapi/linux/aufs_type.h "${pkgdir}/usr/include/linux/aufs_type.h"
+
+  # gzip -9 the module
+  find "${pkgdir}" -name '*.ko' -exec gzip -9 {} \;
+}

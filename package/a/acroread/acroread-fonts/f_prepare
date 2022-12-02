@@ -1,0 +1,5 @@
+prepare() {
+    cd "${srcdir}"
+    find "${srcdir}" -iname LANG\*.TAR -exec tar -pxf {} \;    
+    rm Adobe/Reader9/Resource/CMap/Identity-[HV]
+}

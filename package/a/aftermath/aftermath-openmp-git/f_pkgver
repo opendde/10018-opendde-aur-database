@@ -1,0 +1,9 @@
+pkgver() {
+  cd "${srcdir}/${pkgname}"
+  # The repository has no tag. There is no reference to a version number
+  # in the source code.
+  # We use the number of commits and the commit hash as a version number.
+  printf "r%s.%s" \
+      "$(git rev-list --count HEAD)" \
+      "$(git rev-parse --short HEAD)"
+}

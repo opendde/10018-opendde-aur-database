@@ -1,0 +1,1 @@
+("${_pkgbasename%%-*}::git://github.com/DISTRHO/DISTRHO-Ports.git"

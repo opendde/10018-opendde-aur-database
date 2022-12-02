@@ -1,0 +1,3 @@
+build() {
+  make -C "/usr/src/$_kernelname" M=`pwd`
+}

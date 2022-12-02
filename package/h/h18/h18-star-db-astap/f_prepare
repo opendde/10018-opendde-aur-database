@@ -1,0 +1,37 @@
+prepare() {
+   cd "${srcdir}"
+   ar -x "$pkgname-$pkgver.data.deb"  data.tar.xz
+   mv data.tar.xz c-data.tar.xz
+   ar -x "$pkgname-$pkgver.stdai.deb" data.tar.xz
+   mv data.tar.xz c-stdai.tar.xz
+   ar -x "$pkgname-$pkgver.gtk2.deb"  data.tar.xz
+   mv data.tar.xz c-gtk2.tar.xz
+   
+   tar -xf c-stdai.tar.xz
+   tar -xf c-data.tar.xz
+   tar -xf c-gtk2.tar.xz
+   
+   # Remove unwanted
+   rm -fr usr/share/doc-base
+   rm -fr usr/share/lintian
+   rm -fr usr/share/doc/c-evo-gtk2
+   rm -fr usr/share/doc/c-evo-stdai
+   
+   # Arch does not use a games subfolder
+   rm -fr usr/bin
+   mv -T usr/games usr/bin
+   rm -fr usr/share/c-evo
+   mkdir usr/share/c-evo
+   mv usr/share/games/c-evo/* usr/share/c-evo
+   rm -r usr/share/games
+   rm usr/share/c-evo/AI/StdAI/libstdai.so
+   ln -srv usr/lib/c-evo/libstdai.so usr/share/c-evo/AI/StdAI/libstdai.so
+   
+   sed -i "s|share/games|share|"   usr/bin/c-evo-launch-gtk2
+   sed -i "s|/usr/games|/usr/bin|" usr/bin/c-evo-launch-gtk2
+ }
+
+package() {
+    cd $srcdir
+    cp -Rf ./usr $pkgdir
+}

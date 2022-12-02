@@ -1,0 +1,1 @@
+("git+https://github.com/EdgeTX/edgetx.git#tag=v${pkgver}"

@@ -1,0 +1,13 @@
+build() {
+  cd "$srcdir"/$pkgname-${pkgver}
+
+  unset LDFLAGS
+  unset CFLAGS
+  patch -p1 <"$srcdir"/disable-build-ext2fs.patch
+
+  #Dirty Arch64 fix which doesn't affect i686
+  CFLAGS="-DNO_INLINE_FUNCS -D_INLINE_=static" \
+    ./configure --prefix=/usr --build=i686-linux-gnu
+  make -j1
+  sed -i 's|ldconfig||' src/anysurrect/Makefile
+}

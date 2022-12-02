@@ -1,0 +1,8 @@
+package() {
+  cd "${srcdir}"
+  local _prefix="${pkgdir}"/usr/lib/firefox/distribution/searchplugins/common
+
+  for i in ${source[@]}; do
+    install -D -m 0644 "${srcdir}"/$i ${_prefix}/$i
+  done
+}

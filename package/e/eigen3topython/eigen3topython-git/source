@@ -1,0 +1,1 @@
+("${_name}::git+https://github.com/jorisv/Eigen3ToPython")

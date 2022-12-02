@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir/$_gitname-build"
+  make -C build DESTDIR="$pkgdir/" install
+  install -m 755 -d "$pkgdir/usr/share/licenses/$pkgname"
+  install -m 644 LICENSE-BOOST_1_0 "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

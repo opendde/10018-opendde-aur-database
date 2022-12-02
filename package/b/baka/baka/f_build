@@ -1,0 +1,5 @@
+build() {
+	cd baka
+	./configure --prefix=/usr
+	make
+}

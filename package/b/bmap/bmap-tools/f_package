@@ -1,0 +1,5 @@
+package() {
+  cd $pkgname-$pkgver
+  python setup.py install --root=$pkgdir/ --optimize=1
+  install -Dm644 docs/man1/bmaptool.1 "$pkgdir"/usr/share/man/man1/bmaptool.1
+} 

@@ -1,0 +1,9 @@
+package() {
+  mkdir -p "$pkgdir"/opt/biomart
+  cp -r "$srcdir"/martj-bin/* "$pkgdir"/opt/biomart/
+
+  mkdir -p "$pkgdir"/usr/bin
+  for L in martbuilder marteditor martexplorer martregistrydbtool martrunner martshell; do
+      ln -s /opt/biomart/bin/$L.sh "$pkgdir"/usr/bin/$L
+  done
+}

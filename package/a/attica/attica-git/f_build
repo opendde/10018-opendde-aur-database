@@ -1,0 +1,4 @@
+build() {
+  cmake -B build -S $_name
+  cmake --build build
+}

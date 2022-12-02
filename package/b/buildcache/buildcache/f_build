@@ -1,0 +1,10 @@
+build() {
+  cd "$pkgname-$pkgver"
+
+  cmake \
+    -B "_build" \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX="/usr" \
+    "src"
+  make -C "_build"
+}

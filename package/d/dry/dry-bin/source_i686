@@ -1,0 +1,1 @@
+("${_pkgdownload}-i686::https://github.com/moncho/$_pkgname/releases/download/v${pkgver}/$_pkgname-linux-386")

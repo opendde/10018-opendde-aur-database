@@ -1,0 +1,6 @@
+package() {
+	cd "$srcdir/"
+	tar -xzf data.tar.gz
+	mv usr/bin/acme usr/bin/acme-sac
+	cp -r usr "$pkgdir/"
+}

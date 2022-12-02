@@ -1,0 +1,10 @@
+build() {
+  cd "$srcdir/$_PKGNAME/build"
+  ../configure --prefix=/usr \
+               --shared \
+               --with-netlib-lapack-tarfile="$srcdir/lapack-$_lapackver.tar.gz"
+  make build
+  cd lib
+  cp "$srcdir/Makefile" .
+  make
+}

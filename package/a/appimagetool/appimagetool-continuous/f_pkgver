@@ -1,0 +1,5 @@
+pkgver() {
+	curl --silent -H "Accept: application/vnd.github.v3+json" \
+		'https://api.github.com/repos/AppImage/AppImageKit/tags' | \
+	jq --raw-output '.[] | select(.name=="continuous") | .commit.sha | scan("^\\w{7}") | @sh "r0.\(.)"'
+}

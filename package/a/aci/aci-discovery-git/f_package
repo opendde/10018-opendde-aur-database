@@ -1,0 +1,7 @@
+package() {
+	cd aci-discovery
+	./build
+
+	install -d "$pkgdir/opt/aci"
+	install -Dm 755 bin/aci-discovery "$pkgdir/usr/bin/aci-discovery"
+}

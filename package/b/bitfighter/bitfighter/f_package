@@ -1,0 +1,17 @@
+package() {
+  cd $pkgname-${pkgver/./}
+
+  # install game ressources and executable
+  install -d "$pkgdir"/usr/share/$pkgname "$pkgdir"/usr/bin
+  cp "${srcdir}"/classic_level_pack/* resource/levels
+  cp -r resource/* "$pkgdir"/usr/share/$pkgname
+  install -m755 exe/$pkgname "$pkgdir"/usr/bin/$pkgname
+
+  # install a desktop entry
+  install -Dm644 ../$pkgname.png "$pkgdir"/usr/share/pixmaps/$pkgname.png
+  install -Dm644 ../$pkgname.desktop "$pkgdir"/usr/share/applications/$pkgname.desktop
+
+  # install documentation and license
+  install -Dm644 doc/README.txt "$pkgdir"/usr/share/doc/$pkgname/README
+  install -Dm644 LICENSE.txt "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}

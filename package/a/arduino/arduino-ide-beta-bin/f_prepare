@@ -1,0 +1,3 @@
+prepare() {
+	echo -e "[Desktop Entry] \nType=Application \nName=Arduino IDE v2 \nGenericName=Arduino IDE v2 \nComment=Open-source electronics prototyping platform \nExec=arduino-ide \nIcon=arduino-ide-v2 \nTerminal=false \nMimeType=text/x-arduino; \nCategories=Development;IDE;Electronics; \nKeywords=embedded electronics;avr;microcontroller; \nStartupWMClass=Arduino IDE" > arduino-ide-v2.desktop
+}

@@ -1,0 +1,5 @@
+pkgver() {
+	cd "${pkgbase%-git}"
+	# cutting off 'BRLTTY.' prefix that presents in the git tag
+	git describe --long | sed 's/^BRLTTY.//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}

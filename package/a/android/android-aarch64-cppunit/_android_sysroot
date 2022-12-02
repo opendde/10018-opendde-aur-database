@@ -1,0 +1,1 @@
+${_android_ndk_path}/platforms/android-$_android_api_level/${_android_platform_arch}

@@ -1,0 +1,19 @@
+package() {
+	cd avahi
+
+	make DESTDIR="${pkgdir}" install
+	make DESTDIR="$pkgdir" -C avahi-python/avahi2 install \
+		PYTHON=/usr/bin/python2 pythondir=/usr/lib/python2.7/site-packages
+
+	rmdir "$pkgdir/run"
+
+	# this isn't ported
+	sed -i '1s|python3|python2|' "$pkgdir/usr/bin/avahi-bookmarks"
+
+	# mdnsresponder compat
+	ln -s avahi-compat-libdns_sd/dns_sd.h "$pkgdir/usr/include/dns_sd.h"
+
+	# install rc scripts
+	install -Dm755 "$srcdir"/avahi-daemon.rc "$pkgdir"/etc/rc.d/avahi-daemon
+	install -Dm755 "$srcdir"/avahi-dnsconfd.rc "$pkgdir"/etc/rc.d/avahi-dnsconfd
+}

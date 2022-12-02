@@ -1,0 +1,4 @@
+prepear() {
+rm -rf ${pkgdir}/asudo.sh
+rm -rf /usr/bin/asudo
+}

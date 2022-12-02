@@ -1,0 +1,11 @@
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+
+  sed -i '/^CFLAGS=*/a CFLAGS+=-I/usr/include/libtcod-1.5.1' Makefile
+  sed -i 's/-ltcod/-l:libtcod.so.1.5.1 -lSDL -lm/g' Makefile
+
+  # todo, fix sources to use /usr/share directly and remove brogue.sh
+
+  make clean
+  make
+}

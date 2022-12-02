@@ -1,0 +1,1 @@
+("https://github.com/ethereum-mining/ethminer/releases/download/v${pkgver}/ethminer-${pkgver}-cuda-9-linux-x86_64.tar.gz")

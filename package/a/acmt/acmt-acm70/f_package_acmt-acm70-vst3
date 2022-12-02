@@ -1,0 +1,7 @@
+package_acmt-acm70-vst3() {
+	groups=('pro-audio' 'vst-plugins')
+	pkgdesc="ACM70 Mid-Range EQ (VST3)"
+	mkdir -p ${pkgdir}/usr/lib/vst3
+	rm -r ${srcdir}/plugin-binaries/VST3/ACM70.vst3/Contents/Resources
+	cp -r ${srcdir}/plugin-binaries/VST3/ACM70.vst3 ${pkgdir}/usr/lib/vst3/ACM70.vst3
+}

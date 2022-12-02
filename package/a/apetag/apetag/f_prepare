@@ -1,0 +1,4 @@
+prepare() {
+    cd "Apetag"
+    patch -i "${srcdir}/Makefile.patch" Makefile
+}

@@ -1,0 +1,27 @@
+build() {
+  cd amule
+
+  ./autogen.sh
+
+  local confopts=(
+    --disable-debug
+    --disable-rpath
+    --enable-alcc
+    --enable-amule-daemon
+    --enable-amulecmd
+    --enable-cas
+    --enable-ccache
+    --enable-fileview
+    --enable-geoip
+    --enable-mmap
+    --enable-optimize
+    --enable-webserver
+    --enable-xas
+    --prefix=/usr
+    --with-wx-config=wx-config-2.8
+  )
+
+  ./configure ${confopts[@]}
+
+  make
+}

@@ -1,0 +1,9 @@
+build() {
+  set -u
+  cd "${_srcdir[${CARCH}]}"
+  cp -p 'ArchOpts' '/tmp/'
+  "./${_exe[${CARCH}]}" /MAKEDRV # amifldrv_mod.o
+  rm 'amifldrv_mod.o' # All we want to know is if it builds.
+  rm '/tmp/ArchOpts'
+  set +u
+}

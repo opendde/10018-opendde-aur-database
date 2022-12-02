@@ -1,0 +1,6 @@
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+  sed -i "s|LIBS =|LIBS = -lm |" src/Makefile.am
+  gnome-autogen.sh
+  make
+}

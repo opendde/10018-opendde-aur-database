@@ -1,0 +1,4 @@
+package() {
+	depends=('firefox>=63')
+	install -Dm755 ${provides[0]} "$pkgdir/usr/bin/${provides[0]}"
+}

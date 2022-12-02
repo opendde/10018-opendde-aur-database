@@ -1,0 +1,7 @@
+package() {
+  _addondir="$pkgdir/usr/share/blender/$_blenderver/scripts/addons/io_scene_dae"
+  install -dm755 $_addondir
+  install -Dm644 $srcdir/$pkgname/io_scene_dae/*.py $_addondir
+  install -dm755 $pkgdir/usr/share/licenses/$pkgname/licenses
+  install -Dm644 $srcdir/$pkgname/LICENSE.txt $pkgdir/usr/share/licenses/$pkgname/licenses
+}

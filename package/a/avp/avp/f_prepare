@@ -1,0 +1,5 @@
+prepare() {
+  mkdir -p ${pkgname}-${_dirname}/build
+  cd ${pkgname}-${_dirname}
+  patch -p1 -i "${srcdir}/gcc-10-multiple-definition-fix.patch"
+}

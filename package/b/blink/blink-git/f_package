@@ -1,0 +1,12 @@
+package() {
+  cd "${pkgname}"
+  python3 setup.py install --root="$pkgdir/" --optimize=1 --skip-build
+
+  # license
+  install -Dm644 LICENSE \
+    "${pkgdir}/usr/share/licenses/${_name}/LICENSE"
+
+  # desktop file
+  install -Dm644 "debian/${_name}.desktop" \
+    "${pkgdir}/usr/share/applications/${_name}.desktop"
+}

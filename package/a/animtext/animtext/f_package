@@ -1,0 +1,6 @@
+package() {
+cd $srcdir/$pkgname-master
+install -D -m755 ./animtext $pkgdir/usr/bin/animtext
+install -D -m644 ./README $pkgdir/usr/share/doc/animtext/README
+install -D -m644 ./test.txt $pkgdir/usr/share/doc/animtext/test.txt
+}

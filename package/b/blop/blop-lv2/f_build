@@ -1,0 +1,5 @@
+build() {
+  cd $pkgname-$pkgver
+  python2 ./waf configure --prefix=/usr
+  python2 ./waf
+}

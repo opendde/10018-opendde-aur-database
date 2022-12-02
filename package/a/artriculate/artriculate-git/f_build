@@ -1,0 +1,5 @@
+build() {
+  cd "$srcdir"/"$_pkgname"
+  $_qmake
+  make
+}

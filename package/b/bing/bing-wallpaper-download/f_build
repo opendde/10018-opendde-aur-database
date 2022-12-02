@@ -1,0 +1,8 @@
+build() {
+    cd "${srcdir}/${pkgbase}"
+    make -j $(nproc)
+    mv -v "${_pkgname}" "${srcdir}/${pkgbase}/${_pkgname}-us" 
+
+    sed -i 's/return fmt.Sprintf("%s%s", bingURL, link), nil/return fmt.Sprintf("%s", link), nil/g' "${srcdir}/${pkgname}/${_pkgname}.go"
+    make -j $(nproc)
+}

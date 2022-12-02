@@ -1,0 +1,1 @@
+("https://github.com/RyanScottLewis/$pkgname/releases/download/0.0.1-pre/$pkgname-linux-$arch-${pkgver//_/-}.tar.gz")

@@ -1,0 +1,4 @@
+package() {
+  cd ${srcdir}/aomp-roc-$pkgver
+  make DESTDIR="$pkgdir" install
+}

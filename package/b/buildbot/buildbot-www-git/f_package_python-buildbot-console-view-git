@@ -1,0 +1,9 @@
+package_python-buildbot-console-view-git() {
+  pkgdesc="Buildbot Console View plugin"
+  depends=('buildbot-git')
+  provides=("python-buildbot-console-view=$pkgver")
+  conflicts=('python-buildbot-console-view')
+
+  cd buildbot/www/console_view
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+}

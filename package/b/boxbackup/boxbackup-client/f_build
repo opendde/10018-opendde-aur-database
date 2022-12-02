@@ -1,0 +1,9 @@
+build() {
+	export MAKEFLAGS="-j1"
+	cd boxbackup-${pkgver}
+
+	./bootstrap
+	./configure --prefix=/usr --mandir=/usr/share/man --sbindir=/usr/bin
+
+	make
+}

@@ -1,0 +1,7 @@
+build() {
+  cd "$pkgname-$pkgver/src"
+  ./build
+
+  cd ../
+  cp -v src/bin/map_gen "$pkgname"
+}

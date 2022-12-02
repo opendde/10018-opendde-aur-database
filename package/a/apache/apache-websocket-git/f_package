@@ -1,0 +1,5 @@
+package() {
+  cd "$_buildroot"
+  install -d "$pkgdir"/usr/lib/httpd/modules
+  install -m 755 "$srcdir/$pkgname"/mod_websocket{,_draft76}.so "$pkgdir"/usr/lib/httpd/modules/
+}

@@ -1,0 +1,1 @@
+("https://github.com/bitwarden/clients/releases/download/desktop-v${pkgver}/Bitwarden-${pkgver}-amd64.deb")

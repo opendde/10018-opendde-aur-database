@@ -1,0 +1,9 @@
+prepare() {
+  # Create a symlink to the archon directory with a common name
+  for dir in ./*archon*; do
+    [[ -d "$dir" ]] && ln -sf "$dir" $pkgname
+  done
+
+  # Increase the application font size by 1.2 times (the default is a bit too small)
+  sed -i 's|window\.devicePixelRatio|1\.2\*window\.devicePixelRatio|' $pkgname/gen_{index,main}.min.js
+}

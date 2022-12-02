@@ -1,0 +1,7 @@
+package() {
+  install -Dm 644 'gnome-2048.png' "${pkgdir}/usr/share/pixmaps/${_pkgname}.png"
+  install -Dm 755 "${pkgname}-source/launch.sh" "${pkgdir}/usr/bin/${_pkgname}"
+  install -Dm 755 "${pkgname}-source/asm2048" -t "${pkgdir}/usr/share/${_pkgname}/"
+  cp -r --preserve=mode "${pkgname}-source/assets" "${pkgdir}/usr/share/${_pkgname}/"
+  install -Dm 644 "${pkgname}-source/launch.desktop" "${pkgdir}/usr/share/applications/${_pkgname}.desktop"
+}

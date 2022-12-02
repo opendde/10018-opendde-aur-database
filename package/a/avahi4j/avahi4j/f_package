@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir"/$pkgname-$pkgver
+  ant jar
+  install -Dm644 $pkgname.jar "$pkgdir"/usr/share/java/$pkgname.jar
+}

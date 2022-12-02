@@ -1,0 +1,1 @@
+("v${pkgver}-32.tar.gz::https://www.bouml.fr/files/$pkgname-${pkgver%\.0}-CentOS6.i686.rpm")

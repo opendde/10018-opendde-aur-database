@@ -1,0 +1,11 @@
+package() {
+	cd "${srcdir}/${pkgname}"
+	ls
+
+	install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+
+	mv bullscows.py ${pkgname}
+
+	install -m 755 -d "${pkgdir}/usr/bin"
+	install -m 755 -t "${pkgdir}/usr/bin/" "bullsandcows"
+} 

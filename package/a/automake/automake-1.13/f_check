@@ -1,0 +1,6 @@
+check() {
+  cd ${srcdir}/${_realname}-${pkgver}
+
+  # expect 1 failure due to perl-5.18 incompatibility
+  make -k check || true
+}

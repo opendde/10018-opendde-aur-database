@@ -1,0 +1,8 @@
+build() {
+  cd "$srcdir/$_pkgname/cola"
+  mkdir m4 || true
+  aclocal
+  autoreconf --install
+  ./configure --prefix=/usr
+  make
+}

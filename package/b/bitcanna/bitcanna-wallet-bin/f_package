@@ -1,0 +1,13 @@
+package() {
+  cd "$srcdir" || exit 1
+
+  for fname in README.md CONTRIBUTING.md; do
+    install -Dm0644 "$fname" "$pkgdir/usr/share/doc/$pkgname/$fname"
+  done
+
+  cd "$srcdir" || exit 1
+
+  for fname in bitcannad bitcanna-cli bitcanna-qt bitcanna-tx; do
+    install -Dm0755 "$fname" "$pkgdir/usr/bin/$fname"
+  done
+}

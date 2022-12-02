@@ -1,0 +1,7 @@
+package() {
+    cd ${srcdir}/${_hkgname}-${pkgver}
+	runhaskell Setup copy --destdir="${pkgdir}"
+	install -Dm 644 arbtt-capture.desktop  "${pkgdir}/usr/share/applications/arbtt-capture.desktop"
+	install -Dm 644 categorize.cfg "${pkgdir}/usr/share/${pkgname}/categorize.cfg"
+	install -Dm 644 LICENSE -t "${pkgdir}/usr/share/licenses/arbtt"
+}

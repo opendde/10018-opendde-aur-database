@@ -1,0 +1,3 @@
+prepare() {
+    patch -d astc-codec -Np1 -i "${srcdir}/010-astc-codec-fix-shared-build.patch"
+}

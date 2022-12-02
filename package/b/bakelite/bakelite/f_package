@@ -1,0 +1,5 @@
+package() {
+  cd "$pkgname"
+
+  install -D bakelite "$pkgdir/usr/bin/bakelite"
+}

@@ -1,0 +1,5 @@
+pkgver() {
+  cd "${pkgname}"
+  # use the revision count.hash
+  printf "r%s.g%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}

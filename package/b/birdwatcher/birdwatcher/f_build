@@ -1,0 +1,13 @@
+build() {
+  export GOPATH="${srcdir}/go"
+  export CGO_ENABLED=0
+
+  mkdir -p bin
+  cd bin
+
+  go build \
+    -ldflags="-w -s" \
+    -gcflags="all=-trimpath=${GOPATH}/src" \
+    -asmflags="all=-trimpath=${GOPATH}/src" \
+    "${_gourl}"
+}

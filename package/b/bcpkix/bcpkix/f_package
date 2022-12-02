@@ -1,0 +1,7 @@
+package() {
+  cd "${srcdir}"
+  install -m755 -d "${pkgdir}/usr/share/java"
+  install -m755 -d "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -m644 bcpkix-jdk15on-${pkgver/./}.jar "${pkgdir}/usr/share/java/bcpkix.jar"
+  install -m644 LICENSE.html "${pkgdir}/usr/share/licenses/${pkgname}/"
+}

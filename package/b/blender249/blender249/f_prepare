@@ -1,0 +1,17 @@
+prepare() {
+    cd ${srcdir}/blender-${pkgver}
+
+    # one file we need to patch has CLCR line endings, with is not good
+    # for a patch to work unfortunately. We convert it before applying
+    # the patch
+    dos2unix extern/bullet2/src/BulletSoftBody/btSoftBodyInternals.h
+    dos2unix source/gameengine/Ketsji/KX_PolygonMaterial.cpp
+
+    # applying various patches
+    patch -Np1 -i ${srcdir}/blender249py27_gcc9_all.patch
+
+    # 2022-04: problem with using namespace::std; now fixed
+    patch -Np1 -i ${srcdir}/blender249-namespace-std.patch
+
+    mkdir -p build
+}

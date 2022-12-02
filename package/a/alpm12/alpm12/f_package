@@ -1,0 +1,21 @@
+package() {
+  cd "$pkgname-$pkgver"
+
+  make DESTDIR="$pkgdir" install
+
+  rm "$pkgdir/usr/lib/libalpm.a"
+  rm "$pkgdir/usr/lib/libalpm.la"
+  rm "$pkgdir/usr/lib/libalpm.so"
+  rm "$pkgdir/usr/lib/libalpm.so.12"
+
+  mkdir "$pkgdir/usr/include"
+
+  cp "$srcdir/alpm12.h" "$pkgdir/usr/include/alpm12.h"
+  cp "$srcdir/alpm12_list.h" "$pkgdir/usr/include/alpm12_list.h"
+
+  mv "$pkgdir/usr/lib/libalpm.so.12.0.2" "$pkgdir/usr/lib/libalpm12.so.12.0.2"
+
+  cd "$pkgdir/usr/lib"
+  ln -sf "libalpm12.so.12.0.2" "libalpm12.so.12"
+  ln -sf "libalpm12.so.12" "libalpm12.so"
+}

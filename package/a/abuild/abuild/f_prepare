@@ -1,0 +1,4 @@
+prepare() {
+	cd "$srcdir/$pkgname-$_ver"
+	sed -i -e "/^CHOST=/s/=.*/=$CARCH/" abuild.conf
+}

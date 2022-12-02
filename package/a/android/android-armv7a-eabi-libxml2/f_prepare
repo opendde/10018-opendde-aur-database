@@ -1,0 +1,8 @@
+prepare () {
+    cd "${srcdir}"/libxml2-v${pkgver}
+    source android-env ${_android_arch}
+
+    # disable doc & examples
+    sed -i "s| doc example | |g" Makefile.am
+    autoreconf -vfi
+}

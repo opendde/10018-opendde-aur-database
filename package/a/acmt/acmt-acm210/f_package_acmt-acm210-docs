@@ -1,0 +1,4 @@
+package_acmt-acm210-docs () {
+	pkgdesc="ACM210 Graphical EQ (Documentation)"
+	install -Dm644 ${srcdir}/ACM210/manual.pdf ${pkgdir}/usr/share/doc/${pkgbase}/manual.pdf
+}

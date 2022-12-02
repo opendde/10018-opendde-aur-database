@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}.tar.xz::https://github.com/falkTX/Carla/releases/download/v$majorver/Carla_$minorver-linux64.tar.xz")

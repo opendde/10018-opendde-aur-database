@@ -1,0 +1,1 @@
+("git+https://gitlab.com/${_gitauthor}/${_gitname}#branch=${_gitbranch}"

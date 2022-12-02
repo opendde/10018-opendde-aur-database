@@ -1,0 +1,16 @@
+package() {
+  cd $srcdir
+
+  mkdir -p $pkgdir/usr/bin
+  mkdir -p $pkgdir/usr/share/doc/$pkgname
+  mkdir -p $pkgdir/usr/share/licenses/$pkgname
+  mkdir -p $pkgdir/usr/lib/anyenv/completions
+  mkdir -p $pkgdir/usr/lib/anyenv/libexec
+
+  install -m 644 ./README.md $pkgdir/usr/share/doc/$pkgname
+  install -m 644 ./LICENSE.txt $pkgdir/usr/share/licenses/$pkgname
+  install -m 644 ./completions/* $pkgdir/usr/lib/anyenv/completions/
+  install -m 755 ./libexec/* $pkgdir/usr/lib/anyenv/libexec/
+
+  ln -s /usr/lib/anyenv/libexec/anyenv $pkgdir/usr/bin/
+}

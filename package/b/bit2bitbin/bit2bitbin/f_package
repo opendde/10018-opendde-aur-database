@@ -1,0 +1,6 @@
+package() {
+	cd "$srcdir/"
+	
+	# Install Arch-Linux specific files
+	install -Dm755 'bit2bitbin' "$pkgdir/usr/bin/bit2bitbin"
+}

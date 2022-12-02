@@ -1,0 +1,28 @@
+build() {
+    cd "${srcdir}"/x264
+    source android-env ${_android_arch}
+    unset LDFLAGS CPPFLAGS
+
+    configue_opts="
+        --disable-cli
+        --enable-pic
+        --enable-lto"
+
+    # Platform specific patches
+    case "$_android_arch" in
+        x86)
+             configue_opts+="
+                 --disable-asm
+                 --host=i686-linux"
+            ;;
+        x86-64)
+             configue_opts+="
+                 --disable-asm"
+            ;;
+        *)
+            ;;
+    esac
+
+    android-${_android_arch}-configure ${configue_opts}
+    make $MAKEFLAGS
+}

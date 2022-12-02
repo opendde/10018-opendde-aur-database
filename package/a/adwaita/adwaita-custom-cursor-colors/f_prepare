@@ -1,0 +1,4 @@
+prepare() {
+  cd "$_sourcefolder"
+  autoreconf -fvi
+}

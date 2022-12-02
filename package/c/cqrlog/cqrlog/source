@@ -1,0 +1,1 @@
+($url/files/${pkgname//_/-}_${pkgver}/${_pkg}.tar.gz)

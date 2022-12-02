@@ -1,0 +1,8 @@
+package() {
+    cd $srcdir/"$_pkgname"_"$pkgver"/install
+    cp -R usr/ "$pkgdir"/
+    cd $srcdir/"$_pkgname"_"$pkgver"
+    install -Dm644 "$_pkgname"_icon.png "$pkgdir"/usr/share/pixmaps/avidemux.png
+    install -Dm644 "$_pkgname"2.desktop "$pkgdir"/usr/share/applications/avidemux.desktop
+
+}

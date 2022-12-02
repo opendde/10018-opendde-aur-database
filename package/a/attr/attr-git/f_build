@@ -1,0 +1,7 @@
+build() {
+  cd "attr"
+
+  ./autogen.sh
+  ./configure --prefix="/usr"
+  make
+}

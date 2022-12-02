@@ -1,0 +1,11 @@
+package() {
+  cd $_srcname/vendor/penguin_client
+  python setup.py install --root="$pkgdir"
+  cd ../../..
+
+  install -Dm644 $_srcname/LICENSE "$pkgdir"/usr/share/licenses/$_pkgname/LICENSE
+  cp -aT $_srcname/ "$pkgdir"/usr/share/$_srcname/
+
+  install -Dm755 $_pkgname "$pkgdir"/usr/bin/$_pkgname
+  install -Dm755 $_pkgname-gui "$pkgdir"/usr/bin/$_pkgname-gui
+}

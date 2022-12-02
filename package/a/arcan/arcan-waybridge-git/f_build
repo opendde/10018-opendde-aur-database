@@ -1,0 +1,10 @@
+build () {
+	rm -rf "${pkgname}/build"
+	mkdir "${pkgname}/build"
+	cd "${pkgname}/build"
+	cmake \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		../src/tools/waybridge
+	make
+}

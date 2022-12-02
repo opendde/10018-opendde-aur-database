@@ -1,0 +1,10 @@
+prepare() {
+  cd "$srcdir/$pkgname-$pkgver"
+
+  for filename in "${source[@]}";
+  do
+    if [[ "$filename" =~ \.patch$ ]]; then
+      patch -p1 -N -i "$srcdir/${filename##*/}"
+    fi
+  done
+}

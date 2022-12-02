@@ -1,0 +1,3 @@
+build() {
+  make -C "${srcdir}/ares-${pkgver}/desktop-ui" hiro=gtk3
+}

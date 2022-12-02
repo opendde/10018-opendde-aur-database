@@ -1,0 +1,1 @@
+("${_pkgname}-${pkgver}.tar.gz::${url}/releases/download/v${pkgver}/${_pkgname}-client_${pkgver}_linux_amd64.tar.gz")

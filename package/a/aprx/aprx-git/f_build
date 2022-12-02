@@ -1,0 +1,5 @@
+build() {
+  cd aprx
+  ./configure --prefix=/usr -mandir=/usr/share/man #--with-embedded 
+  make CFLAGS="-fcommon -O2 -DERLANGSTORAGE"
+}

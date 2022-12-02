@@ -1,0 +1,6 @@
+build() {
+  cd AlephOne-$_pkgdate
+
+  PKG_CONFIG_PATH="/usr/lib/ffmpeg4.4/pkgconfig" ./configure --prefix=/usr
+  make
+}

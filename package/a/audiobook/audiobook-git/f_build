@@ -1,0 +1,7 @@
+build() {
+  cd "${pkgname}"
+  mkdir -p build
+  cd "${srcdir}/${pkgname}/build"
+  cmake .. -DCMAKE_INSTALL_PREFIX=/usr
+  make
+}

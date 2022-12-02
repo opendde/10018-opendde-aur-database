@@ -1,0 +1,15 @@
+pkgver() {
+	wget --no-remove-listing ftp://ftp.bgbilling.ru/pub/bgbilling/${_vermajor}/${_achivename}_*.zip
+	# lrwxrwxrwx    1 0        0              34 Jan 09 18:48 BGBillingRunner_7.2.zip -> BGBillingRunner_7.2_1901091804.zip
+	# -rw-rw-r--    1 0        0           81124 Jan 09 18:04 BGBillingRunner_7.2_1901091804.zip
+	# _ver=$(grep -o -P --max-count=1 "${_achivename}_(\d+)\.(\d+)_(\d+)" .listing)
+	# потом стало: BGBillingRunner_1903251819.zip
+	_ver=$(grep -o -P --max-count=1 "${_achivename}_(\d+)" .listing)
+	# BGBillingRunner_7.2_1901091804
+	# _v1=$(echo ${_ver}|cut -d'_' -f2)  # 7.2
+	# _v2=$(echo ${_ver}|cut -d'_' -f3)  # 1901091804
+	# echo "${_v1}.${_v2}"
+	# потом стало: BGBillingRunner_1901091804
+	_v2=$(echo ${_ver}|cut -d'_' -f2)  # 1901091804
+	echo "${_vermajor}.${_v2}"
+}

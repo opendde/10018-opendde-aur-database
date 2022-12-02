@@ -1,0 +1,6 @@
+package() {
+  install -d "${pkgdir}/usr/share/icons"
+  for _variant in ${_variants[*]}; do
+    mv "${srcdir}/${_gitname}/${_variant}/out/X11/${_variant}" "${pkgdir}/usr/share/icons"
+  done
+}

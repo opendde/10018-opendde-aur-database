@@ -1,0 +1,12 @@
+package_bareos-storage-glusterfs() {
+  pkgdesc="${pkgdesc} - GlusterFS support for storage daemon"
+  depends=("bareos-storage=${pkgver}" 
+           "glusterfs")
+  for f in \
+     usr/lib/bareos/backends/libbareossd-gfapi.so* \
+     usr/share/bareos/config/bareos-dir.d/storage/Gluster.conf.example \
+     usr/share/bareos/config/bareos-sd.d/device/GlusterStorage.conf.example \
+  ; do
+    cp_pkgdir "$f" "$srcdir/install/"
+  done
+}

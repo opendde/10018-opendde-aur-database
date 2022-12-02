@@ -1,0 +1,23 @@
+package() {
+  cd abuse-$pkgver
+
+  make DESTDIR="$pkgdir" install
+
+  # Desktop shortcut and icon
+  install -Dm644 $pkgname.desktop \
+    "$pkgdir/usr/share/applications/$pkgname.desktop"
+  install -Dm644 doc/$pkgname.png \
+    "$pkgdir/usr/share/pixmaps/$pkgname.png"
+
+  # Default configuration
+  mv "$pkgdir/usr/bin/$pkgname" "$pkgdir/usr/bin/$pkgname.elf"
+  install -Dm755 "$srcdir/$pkgname.sh" "$pkgdir/usr/bin/$pkgname"
+  install -Dm644 "$srcdir/default.${pkgname}rc" \
+    "$pkgdir/usr/share/$pkgname/default.${pkgname}rc"
+  install -Dm644 "$srcdir/default.gamma.lsp" \
+    "$pkgdir/usr/share/$pkgname/default.gamma.lsp"
+
+  # License (for the original source code)
+  install -d "$pkgdir/usr/share/licenses/abuse"
+  sed -n '1,/^$/p' src/view.cpp > "$pkgdir/usr/share/licenses/abuse/original"
+}

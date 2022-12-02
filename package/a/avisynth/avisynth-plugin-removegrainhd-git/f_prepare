@@ -1,0 +1,5 @@
+prepare() {
+  mkdir -p build
+
+  rm -fr "${_plug}/RemoveGrainHD/"{avs*,avi*}
+}

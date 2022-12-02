@@ -1,0 +1,7 @@
+build() {
+  cd "$srcdir/Ascii-Design-$pkgver"
+  cmake -DCMAKE_INSTALL_PREFIX=/usr \
+        -Dlibdir=/usr/lib \
+        .
+  make
+}

@@ -1,0 +1,4 @@
+package() {
+	cd "$srcdir"
+	install -Dm755 "$srcdir/${pkgname}-${pkgver}/build/aes" "$pkgdir/usr/bin/aes"
+}

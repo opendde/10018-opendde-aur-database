@@ -1,0 +1,12 @@
+package() {
+    # Create directories
+    install -dm755 ${pkgdir}/{opt/${pkgname},usr/{bin,share/applications}}
+    # Copy the files
+    cd ${srcdir}
+    cp -R bricscad ${pkgdir}/opt/${pkgname}/
+    install -Dm644 bricscad_simple_logo.png ${pkgdir}/opt/${pkgname}/bricscad/
+    install -Dm644 bricscad.desktop         ${pkgdir}/usr/share/applications/
+    install -Dm755 bricscad13               ${pkgdir}/usr/bin/
+    # Create a link in /usr/bin
+    #ln -s /opt/${pkgname}/bricscad/bricscad.sh ${pkgdir}/usr/bin/bricscad13
+}

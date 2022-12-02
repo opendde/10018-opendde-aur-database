@@ -1,0 +1,5 @@
+build() {
+  cd "${srcdir}"
+  make -C /usr/lib/modules/${_kernver}/build M=`pwd`
+  gzip -f act_mirred.ko
+}

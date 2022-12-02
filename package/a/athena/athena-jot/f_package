@@ -1,0 +1,6 @@
+package() {
+  install -d ${pkgdir}/usr/local/bin
+  install -d ${pkgdir}/usr/local/man/man1
+  cd ${srcdir}/${pkgname}-${pkgver}
+  make DESTDIR="${pkgdir}" install
+}

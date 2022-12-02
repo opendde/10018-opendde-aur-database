@@ -1,0 +1,8 @@
+package() {
+    cd "${srcdir}"/fribidi-${pkgver}
+    source android-env ${_android_arch}
+
+    DESTDIR="${pkgdir}" meson install -C build
+    rm -r "${pkgdir}"/${ANDROID_PREFIX_BIN}
+    ${ANDROID_STRIP} -g --strip-unneeded "${pkgdir}"/${ANDROID_PREFIX_LIB}/*.so
+}

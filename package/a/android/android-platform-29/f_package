@@ -1,0 +1,6 @@
+package() {
+	_destdir="${pkgdir}/opt/android-sdk/platforms"
+	mkdir -p "${_destdir}"
+	mv "${srcdir}/android-${_sdkShortVer}" "${_destdir}/android-${_apilevel}"
+	chmod -R ugo+rX "${pkgdir}/opt"
+}

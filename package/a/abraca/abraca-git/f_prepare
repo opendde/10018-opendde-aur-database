@@ -1,0 +1,12 @@
+prepare() {
+  cd $_gitname
+
+  # Pull in subzero.
+  git submodule update --init --recursive
+
+  # Patch to restore compilation.
+  patch -p1 < ../33.patch
+
+  # Use dynamic icon.
+  sed -i 's/\(Icon=abraca\)-.*/\1/' data/*.desktop
+}

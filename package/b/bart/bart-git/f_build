@@ -1,0 +1,6 @@
+build() {
+    cd "$_pkgname"
+
+    make
+    make doc/commands.txt
+}

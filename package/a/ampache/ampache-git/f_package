@@ -1,0 +1,9 @@
+package() {
+  cd ${srcdir}/${_gitname}
+  mkdir -p ${pkgdir}/srv/http/${_gitname}
+  cp -a * ${pkgdir}/srv/http/${_gitname}/
+  cd ${pkgdir}/srv/http/${_gitname}
+  composer install --prefer-source --no-interaction
+  mkdir -p ${pkgdir}/usr/share/doc/${_gitname}
+  install -D -m644 ${srcdir}/nginx-example.conf ${pkgdir}/usr/share/doc/${_gitname}/
+}

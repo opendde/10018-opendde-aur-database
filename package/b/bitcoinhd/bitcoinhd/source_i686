@@ -1,0 +1,1 @@
+("https://github.com/btchd/btchd/releases/download/v$pkgver/bhd-v$pkgver-${_commit}-i686-linux-gnu.tar.gz")

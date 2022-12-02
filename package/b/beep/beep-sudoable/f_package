@@ -1,0 +1,4 @@
+package() {
+  cd "beep-${pkgver}"
+  make DESTDIR="${pkgdir}" prefix=/usr install
+}

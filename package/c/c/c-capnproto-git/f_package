@@ -1,0 +1,4 @@
+package() {
+  cd "polybar-d-tracker-control"
+  make DESTDIR="$pkgdir/" all
+}

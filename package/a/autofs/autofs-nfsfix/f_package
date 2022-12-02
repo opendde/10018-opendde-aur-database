@@ -1,0 +1,8 @@
+package() {
+  cd "${srcdir}/${_pkgname}-${pkgver}"
+
+  make INSTALLROOT="${pkgdir}" install
+  rm -r "$pkgdir/run"
+  install -dm755 "$pkgdir/etc/autofs/auto.master.d"
+  patch "$pkgdir/usr/lib/systemd/system/autofs.service" "${srcdir}/autofs.service.patch"
+}

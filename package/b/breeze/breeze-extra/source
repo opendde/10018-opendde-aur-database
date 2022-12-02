@@ -1,0 +1,1 @@
+("${pkgbase}::git+https://github.com/varlesh/breeze-extra.git#commit=$_commit")

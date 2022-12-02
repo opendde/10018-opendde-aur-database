@@ -1,0 +1,1 @@
+("${pkgname%-bin}-${pkgver}::https://github.com/liamg/aminal/releases/download/${_pkgver}/aminal-linux-amd64")

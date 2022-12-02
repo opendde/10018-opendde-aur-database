@@ -1,0 +1,4 @@
+package() {
+	cd $srcdir/$pkgname-$pkgver
+	npm install -g --user root --prefix "$pkgdir"/usr
+}

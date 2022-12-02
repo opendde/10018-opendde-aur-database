@@ -1,0 +1,1 @@
+("builder-$pkgver::https://github.com/coursier/coursier/releases/download/v${_version}/coursier")

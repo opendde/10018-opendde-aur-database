@@ -1,0 +1,4 @@
+package() {
+  cd "$_pkgname"
+  make INSTALL_ROOT="$pkgdir" install
+}

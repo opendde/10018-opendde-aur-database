@@ -1,0 +1,7 @@
+package() {
+  cd "$srcdir/"
+
+  msg2 'Installing...'
+  install -Dm 644 arc-dark.theme \
+    "$pkgdir/usr/share/xfce4/terminal/colorschemes/arc-dark.theme"
+}

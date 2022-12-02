@@ -1,0 +1,8 @@
+build() {
+  cd $srcdir/breath-gtk-$_gitcommit/build
+  cmake .. \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DKDE_INSTALL_USE_QT_SYS_PATHS=ON
+  make
+}

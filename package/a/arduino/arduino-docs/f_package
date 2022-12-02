@@ -1,0 +1,7 @@
+package() {
+    # Create directory
+    install -dm755 "${pkgdir}/usr/share/doc/arduino"
+
+    # Copy docs
+    cp -a . "${pkgdir}/usr/share/doc/arduino"
+}

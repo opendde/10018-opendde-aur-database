@@ -1,0 +1,6 @@
+prepare() {
+    # Duplicated from upstream's ats2-postiats archive
+    rm -fr "${srcdir}/${_pkgname}-${pkgver}/contrib/libatscc/DATS"
+    rm -fr "${srcdir}/${_pkgname}-${pkgver}/contrib/libatscc/SATS"
+    rm -fr "${srcdir}/${_pkgname}-${pkgver}/contrib/libatscc/basics.sats"
+}

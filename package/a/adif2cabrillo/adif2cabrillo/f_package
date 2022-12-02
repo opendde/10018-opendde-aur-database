@@ -1,0 +1,10 @@
+package() {
+	cd $srcdir/$pkgname
+
+#	make DISTDIR=$pkgdir install
+  
+	install -Dm755 $pkgname $pkgdir/usr/bin/$pkgname
+
+	install -Dm644 ../*.desktop $pkgdir/usr/share/applications/$pkgname.desktop
+	install -Dm644 icons/*.png $pkgdir/usr/share/pixmaps/$pkgname.png
+}

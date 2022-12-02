@@ -1,0 +1,13 @@
+package_bareos-database-tools() {
+  pkgdesc="${pkgdesc} - CLI tools with database dpendencies (dbcheck, bscan)"
+  depends=("bareos-database-common=${pkgver}" 'openssl' 'jansson')
+
+  for f in \
+     usr/bin/bareos-dbcheck \
+     usr/bin/bscan \
+     usr/share/man/man8/bareos-dbcheck.8* \
+     usr/share/man/man8/bscan.8* \
+  ; do
+    cp_pkgdir "$f" "$srcdir/install/"
+  done
+}

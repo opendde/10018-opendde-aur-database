@@ -1,0 +1,4 @@
+build() {
+ cd $srcdir || return 1
+ ar -x ${pkgname}_${pkgver}-4-0ubuntu3_${_a}.deb || return 1
+}

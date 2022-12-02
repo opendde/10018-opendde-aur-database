@@ -1,0 +1,5 @@
+package() {
+    mkdir $pkgdir/usr; chmod 755 $pkgdir/usr
+    cp -r $srcdir/{lib,bin,share} $pkgdir/usr
+
+}

@@ -1,0 +1,10 @@
+build() {
+    cd ${pkgname}-${pkgver}
+
+    ATOM_HOME="${PWD}" apm install --production
+    rmdir packages
+
+    npm install typescript
+    npm run compile
+    npm uninstall typescript
+}

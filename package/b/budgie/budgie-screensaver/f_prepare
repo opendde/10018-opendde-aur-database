@@ -1,0 +1,8 @@
+prepare() {
+  cd "${pkgname}"
+  # Fix build with systemd support
+  sed -i 's/libsystemd-login libsystemd-daemon/libsystemd/' configure.ac
+
+  autoreconf -fi
+  ./autogen.sh
+}

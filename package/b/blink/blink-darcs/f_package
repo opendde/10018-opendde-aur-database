@@ -1,0 +1,8 @@
+package() {
+	cd "$srcdir/$_darcsmod-build"
+	python2 setup.py install --root="$pkgdir"
+
+	install -Dm 644 'debian/blink.desktop' "$pkgdir/usr/share/applications/blink.desktop"
+	install -Dm 644 'debian/blink.xpm' "$pkgdir/usr/share/pixmaps/blink.xpm"
+	install -Dm 644 'debian/blink.1' "$pkgdir/usr/share/man/man1/blink.1"
+}

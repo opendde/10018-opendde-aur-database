@@ -1,0 +1,7 @@
+package_resident-evil-2-claire-en() {
+  depends+=("${_pkgbase}-claire")
+  local _lang="en"
+  local _uuid="${_uuid_claire[$_lang]}"
+  local _app_id="$(_app_id_variant "${_app_id}" "Claire")"
+  _package "${_uuid}" "${_lang}" "${_title} (USA) (Disc 2)"  "${_app_id}"
+}

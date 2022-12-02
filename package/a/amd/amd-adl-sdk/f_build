@@ -1,0 +1,4 @@
+build() {
+    cd ${srcdir}/adlutil
+    gcc main.c -o adlutil -DLINUX -ldl -I ../include/
+}

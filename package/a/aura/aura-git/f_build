@@ -1,0 +1,5 @@
+build() {
+  cd "${srcdir}/${pkgname}/haskell"
+  mkdir -p "aura/bin"
+  stack --jobs "$[$(nproc)+1]" --local-bin-path "aura/bin/" install -- aura
+}

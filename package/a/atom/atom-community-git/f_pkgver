@@ -1,0 +1,4 @@
+pkgver() {
+ cd ${_gitname}
+ printf "%s_%s" "$(npm pkg get version | sed 's/-/_/' | sed 's/"//g')" "$(git log -1 --pretty=format:'%h')"
+}

@@ -1,0 +1,8 @@
+package() {
+    DESTDIR="${pkgdir}" cmake --build "${srcdir}/build" --target install
+    for i in 48x48 64x64 72x72 96x96 128x128 192x192 256x256 512x512; do
+        install -Dm644 "$srcdir/$_pkgname-$pkgver/src/unix/assets/$i/net.86box.86Box.png" -t "$pkgdir/usr/share/icons/hicolor/$i/apps"
+    done
+    mkdir "$pkgdir/usr/share/applications"
+    sed 's/^Exec.*/Exec=86Box -P .local\/share\/86Box/' "$srcdir/$_pkgname-$pkgver/src/unix/assets/net.86box.86Box.desktop" > "$pkgdir/usr/share/applications/net.86box.86Box.desktop"
+}

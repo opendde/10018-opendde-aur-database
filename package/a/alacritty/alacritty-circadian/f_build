@@ -1,0 +1,6 @@
+build() {
+	cd "$pkgname-$pkgver"
+	cp docs/alacritty-circadian.service $HOME/.config/systemd/user/alacritty-circadian.service
+	cp -n docs/circadian.yaml.example $HOME/.config/alacritty/circadian.yaml
+	python setup.py build
+}

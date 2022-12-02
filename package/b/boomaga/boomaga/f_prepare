@@ -1,0 +1,4 @@
+prepare() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  [[ -d build ]] || mkdir build
+}

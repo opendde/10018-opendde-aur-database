@@ -1,0 +1,7 @@
+package() {
+  cd "${srcdir}/${pkgname}/scratch"
+
+# Install the scratch library
+  install -d "${pkgdir}/usr/share/awesome/lib/scratch"
+  install -m644 *.lua "${pkgdir}/usr/share/awesome/lib/scratch"
+}

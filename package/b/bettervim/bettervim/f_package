@@ -1,0 +1,7 @@
+package() {
+  install -Dm644 usr/share/${pkgname}/colors/concise.vim "${pkgdir}/usr/share/${pkgname}/colors/concise.vim"
+  install -Dm644 usr/share/${pkgname}/autoload/plug.vim "${pkgname}/usr/share/${pkgname}/autoload/plug.vim"
+  install -Dm644 usr/share/${pkgname}/{init.vim,highlight.css} -t "${pkgdir}/usr/share/${pkgname}"
+  install -Dm644 usr/share/${pkgname}/autoload/plug.vim -t "${pkgdir}/usr/share/${pkgname}/autoload"
+  install -Dm644 usr/share/licenses/${pkgname}/LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

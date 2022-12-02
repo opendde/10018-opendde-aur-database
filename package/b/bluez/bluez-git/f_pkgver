@@ -1,0 +1,4 @@
+pkgver() {
+  cd $pkgname
+  git describe --tags --long|sed -r 's,^[^0-9],,;s,([0-9]*-g),r\1,;s,[-_],.,g'
+}

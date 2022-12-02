@@ -1,0 +1,11 @@
+prepare() {
+  cd ${srcdir}/${_realname}
+
+  # Debian patches
+  patch -Np1 -i "${srcdir}/wx3.0-compat.patch"
+
+  # Disable Werror
+  find /$(pwd) -type f -exec sed -i 's/-Werror//g' '{}' \;
+
+  autoreconf -fi
+}

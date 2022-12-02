@@ -1,0 +1,5 @@
+package() {
+	cd "$srcdir/Phone/src/block-apps"
+	make DESTDIR=$pkgdir install
+	install -Dm600 --owner=$USER "./unblock/config.ini" "$pkgdir/$HOME/.config/unblock-pi"
+}

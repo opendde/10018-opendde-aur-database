@@ -1,0 +1,11 @@
+package() {
+  install -d "$pkgdir"/{opt/,usr/bin/,usr/share/applications,/usr/share/pixmaps}
+
+  # Install all .deb files into /opt.
+  cp -r "$srcdir/opt" "$pkgdir"
+
+  # Symlink some files to complete install.
+  ln -s "/opt/bisq/bin/$_binname" "$pkgdir/usr/bin/bisq"
+  ln -s "/opt/bisq/lib/bisq-${_binname}.desktop" "${pkgdir}/usr/share/applications/bisq.desktop"
+  ln -s "/opt/bisq/lib/${_binname}.png" "${pkgdir}/usr/share/pixmaps/bisq.png"
+}

@@ -1,0 +1,6 @@
+package() {
+  cd "${srcdir}/${pkgname}"
+  install -Dm744 btrbackup.tcl "$pkgdir/usr/bin/btrbackup"
+  install -Dm644 btrbackupconfig.tcl "$pkgdir/etc/btrbackupconfig.tcl"
+  install -Dm644 logrotate "$pkgdir/etc/logrotate.d/btrbackup"
+}

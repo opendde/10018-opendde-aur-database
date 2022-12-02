@@ -1,0 +1,25 @@
+pkgver() {
+  function describe {
+    printf "$(git -C "$srcdir/$1" describe --tags `git -C "$srcdir/$1" rev-list --tags --max-count=1` | sed 's/v//g')"
+  }
+  _apmver=$(describe apm)
+  _autocomplete_plus_ver="$(describe autocomplete-plus)"
+  _dark_bint_syntax_ver="$(describe dark-bint-syntax)"
+  _fusion_ui_ver="$(describe fusion-ui)"
+  _language_archlinux_ver="$(describe language-archlinux)"
+  _language_c_ver="$(describe language-c)"
+  _language_css_ver="$(describe language-css)"
+  _language_javascript_ver="$(describe language-javascript)"
+  _language_less_ver="$(describe language-less)"
+  _language_perl_ver="$(describe language-perl)"
+  _language_unix_shell_ver="$(describe language-unix-shell)"
+  _markdown_preview_ver="$(describe markdown-preview)"
+  _open_on_github_ver="$(describe open-on-github)"
+  _spell_check_ver="$(describe spell-check)"
+  _settings_view_ver="$(describe settings-view)"
+  _tabs_ver="$(describe tabs)"
+  _tf_ver="$(describe terminal-fusion)"
+  _tree_view_ver="$(describe tree-view)"
+
+  printf "${_atomver}.a${_apmver}.d${_dark_bint_syntax_ver}.e${_ELECTRON_VERSION}.f${_fusion_ui_ver}.la${_language_archlinux_ver}.lu${_language_unix_shell_ver}.m${_markdown_preview_ver}.o${_open_on_github_ver}.sc${_spell_check_ver}.sv${_settings_view_ver}.t${_tabs_ver}.tf${_tf_ver}.tv${_tree_view_ver}"
+}

@@ -1,0 +1,4 @@
+build() {
+  cd ${srcdir}/${pkgname}-devel-${pkgver}
+  make -j1 || return 1
+}

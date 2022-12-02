@@ -1,0 +1,4 @@
+pkgver() {
+  cd $pkgname
+  echo "1.0.`git show | grep ^commit | wc -l`"
+}

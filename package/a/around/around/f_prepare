@@ -1,0 +1,12 @@
+prepare() {
+    cat > "${srcdir}/${pkgname}.desktop" <<EOL
+[Desktop Entry]
+Name=Around
+Comment=Around.co linux client
+Exec="/opt/${pkgname}/${_appimage}" %U
+Terminal=false
+Type=Application
+Categories=Network;Application;
+Icon=${pkgname}.png
+EOL
+}

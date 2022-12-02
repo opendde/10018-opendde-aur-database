@@ -1,0 +1,11 @@
+package() {
+  cd "${srcdir}"/${pkgname}-${pkgver}
+
+  make DESTDIR="${pkgdir}" INSTALLDIRS=vendor install
+
+#remove the font stuff
+  rm -f "${pkgdir}"/usr/share/adesklets/{FONT_LICENSE,Vera.ttf}
+
+  find "${pkgdir}" -name '.packlist' -exec rm  '{}' \;
+  find "${pkgdir}" -name 'perllocal.pod' -exec rm  '{}' \;
+}

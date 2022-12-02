@@ -1,0 +1,7 @@
+package() {
+  cd "$srcdir"
+
+  [ -z "$CC" ] && CC=gcc
+  $CC $CFLAGS -Wall -o "$pkgname" "$pkgname${_dlver}_linux.c"
+  install -Dm755 "$pkgname" "$pkgdir/usr/bin/$pkgname"
+}

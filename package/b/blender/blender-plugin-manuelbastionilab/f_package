@@ -1,0 +1,8 @@
+package() {
+  depends=('blender')
+  _blender=$(pacman -Sddp --print-format %v blender|grep -oP '(?<=\:)[[:digit:]]+\.[[:digit:]]+(?=\.)')
+  cd ${_dir}
+  addons="$pkgdir/usr/share/blender/${_blender}/scripts/addons"
+  install -dm755 "${addons}/${_name}"
+  cp -a -t "${addons}/${_name}" ./*
+}

@@ -1,0 +1,4 @@
+package() {
+  install -dm755 "${pkgdir}/usr/share/icons/Arc-ICONS"
+  cp -r "${srcdir}"/rtl88-Themes/Arc-ICONS/* "${pkgdir}/usr/share/icons/Arc-ICONS/"
+}

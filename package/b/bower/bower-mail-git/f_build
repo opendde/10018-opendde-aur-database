@@ -1,0 +1,7 @@
+build() {
+    patch "$srcdir/bower/src/Mercury.options" < ../arch.patch
+    cd "$srcdir/bower"
+    make PARALLEL=$MAKEFLAGS
+    make man
+    gzip -f bower.1
+}

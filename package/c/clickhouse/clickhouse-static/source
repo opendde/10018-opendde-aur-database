@@ -1,0 +1,1 @@
+("ClickHouse-${pkgver}-stable.tar.gz::https://github.com/yandex/ClickHouse/archive/v$pkgver-stable.tar.gz"

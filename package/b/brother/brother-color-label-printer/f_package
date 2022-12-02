@@ -1,0 +1,11 @@
+package() {
+  mkdir -p "${pkgdir}/opt/${pkgname}"
+  mkdir -p "${pkgdir}/usr/bin"
+  cp -ra "${srcdir}/${provides}-vc500w-$pkgver/${provides}" "${pkgdir}/opt/${pkgname}"
+  touch  "${pkgdir}/opt/${pkgname}/labelprinter.sh"
+ echo -en '#!/bin/sh \n PYTHONPATH=/opt/brother-color-label-printer python3 -m labelprinter "$@"' >  "${pkgdir}/opt/${pkgname}/labelprinter.sh"
+ chmod a+rw "${pkgdir}/opt/${pkgname}/labelprinter.sh"
+ chmod +x "${pkgdir}/opt/${pkgname}/labelprinter.sh"
+  ln -s "/opt/${pkgname}/labelprinter.sh" "${pkgdir}/usr/bin/${pkgname}"
+  ln -s "/opt/${pkgname}/labelprinter.sh" "${pkgdir}/usr/bin/bclprinter"
+}

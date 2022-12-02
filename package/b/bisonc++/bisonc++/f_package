@@ -1,0 +1,7 @@
+package() {
+  cd "$srcdir/bisoncpp-${pkgver}/bisonc++"
+
+  # Since 4.12.00, first argument to install is <what to install> (x = all),
+  # and second is the base directory
+  ./build install x "$pkgdir"
+}

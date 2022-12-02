@@ -1,0 +1,6 @@
+package() {
+  install -D -m 755 "$srcdir/$pkgname-$pkgver/autotags" \
+                    "$pkgdir/usr/bin/autotags"
+  install -D -m644 "$srcdir/$pkgname-$pkgver/LICENSE" \
+                   "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

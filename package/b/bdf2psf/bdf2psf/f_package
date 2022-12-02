@@ -1,0 +1,5 @@
+package() {
+	tar -xf data.tar.xz
+	mv $srcdir/usr $pkgdir
+	sed -i '44s/if (/if (\$\#ARGV \< 0 \|\| /' $pkgdir/usr/bin/bdf2psf
+}

@@ -1,0 +1,1 @@
+("https://github.com/ofiwg/libfabric/releases/download/v${pkgver}/${pkgname}-${pkgver}.tar.bz2")

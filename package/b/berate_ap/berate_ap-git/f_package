@@ -1,0 +1,5 @@
+package() {
+    cd "$pkgname"
+    make DESTDIR="$pkgdir" install
+    install -Dm644 "LICENSE" "${pkgdir}/usr/share/licenses/berate_ap/LICENSE"
+}

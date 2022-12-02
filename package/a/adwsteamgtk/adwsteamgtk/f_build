@@ -1,0 +1,4 @@
+build() {
+  arch-meson "AdwSteamGtk-$pkgver" build
+  meson compile -C build
+}

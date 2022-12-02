@@ -1,0 +1,1 @@
+("${pkgname}::svn+http://svn.savannah.nongnu.org/svn/avrdude/trunk")

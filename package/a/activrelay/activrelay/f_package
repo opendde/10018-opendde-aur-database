@@ -1,0 +1,12 @@
+package() {
+	# extract archive
+        bsdtar -C "$pkgdir" -xf data.tar.xz
+
+        # move out of the local directory to match arch standards
+        mv "$pkgdir"/usr/local/* "$pkgdir"/usr/
+        rmdir "$pkgdir"/usr/local
+
+        # delete the following line if you want an autostart of activrelay
+        cd "$pkgdir"
+	rm -r etc
+}

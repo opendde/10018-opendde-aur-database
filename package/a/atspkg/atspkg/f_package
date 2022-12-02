@@ -1,0 +1,6 @@
+package() {
+	cd "$srcdir"
+
+	install -Dm0755 "${srcdir}/atspkg-${CARCH}-unknown-linux" "${pkgdir}/usr/bin/atspkg"
+	install -Dm0644 "${srcdir}/atspkg.1" "${pkgdir}/usr/share/man/man1/atspkg.1"
+}

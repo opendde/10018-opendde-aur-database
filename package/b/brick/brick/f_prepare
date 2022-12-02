@@ -1,0 +1,4 @@
+prepare() {
+  mkdir -p "brick-${pkgver}/Release/"
+  tar -xzf "cef-${CARCH}.tar.gz" --directory "brick-${pkgver}/Release"
+}

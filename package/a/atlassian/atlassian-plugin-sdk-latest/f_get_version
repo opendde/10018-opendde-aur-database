@@ -1,0 +1,11 @@
+get_version() {
+    if [[ "$PKGVER" ]]; then
+        echo "$PKGVER"
+        return
+    fi
+
+    _url=${_maven}/maven-metadata.xml
+
+    version=$(curl -sL "${_url}" | grep -Po '<latest>\K[^<]+')
+    echo "$version"
+}

@@ -1,0 +1,4 @@
+prepare() {
+	cd "$_srcname"
+	mkdir -p Release-Linux
+}

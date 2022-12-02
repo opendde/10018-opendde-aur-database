@@ -1,0 +1,1 @@
+("git://github.com/$_gitauthor/$_gitname.git#branch=$_gitbranch")

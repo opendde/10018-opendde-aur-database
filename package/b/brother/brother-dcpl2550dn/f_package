@@ -1,0 +1,12 @@
+package() {
+  mkdir -p ${pkgdir}/usr/share/cups/model/Brother
+  mkdir -p ${pkgdir}/usr/lib/cups/filter
+  cp ${srcdir}/opt/brother/Printers/DCPL2550DN/cupswrapper/brother-DCPL2550DN-cups-en.ppd ${pkgdir}/usr/share/cups/model/Brother
+  cp ${srcdir}/opt/brother/Printers/DCPL2550DN/cupswrapper/lpdwrapper ${pkgdir}/usr/lib/cups/filter/brother_lpdwrapper_DCPL2550DN
+
+  mkdir -p ${pkgdir}/opt/brother/Printers/DCPL2550DN/lpd/
+  cp -r ${srcdir}/opt/brother/Printers/DCPL2550DN/inf ${pkgdir}/opt/brother/Printers/DCPL2550DN/
+  cp ${srcdir}/opt/brother/Printers/DCPL2550DN/lpd/lpdfilter ${pkgdir}/opt/brother/Printers/DCPL2550DN/lpd/
+  cp ${srcdir}/opt/brother/Printers/DCPL2550DN/lpd/${CARCH}/* ${pkgdir}/opt/brother/Printers/DCPL2550DN/lpd/
+  cp -r ${srcdir}/var ${pkgdir}/
+}

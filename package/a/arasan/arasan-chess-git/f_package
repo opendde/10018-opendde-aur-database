@@ -1,0 +1,8 @@
+package() {
+	cd "$srcdir/$pkgname/src"
+	make INSTALL="$pkgdir/usr/lib" install
+	mkdir -p $pkgdir/usr/bin
+	ln -s -r $pkgdir/usr/lib/arasan-$(grep '^VERSION =.*' Makefile | awk '{print $3}')/arasanx-64 $pkgdir/usr/bin/arasanx
+	install -D -m644 ../README.md $pkgdir/usr/share/doc/${pkgname%-*}/README.md
+	install -D -m644 ../doc/license.txt $pkgdir/usr/share/licenses/${pkgname%-*}/LICENSE
+}

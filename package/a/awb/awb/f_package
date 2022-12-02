@@ -1,0 +1,6 @@
+package() {
+	install -Dm645 awb.conf "$pkgdir/usr/share/awb/awb.conf"
+	cd $pkgname-$pkgver
+	install -Dm755 awb "$pkgdir/usr/bin/awb"
+	install -m644 ChangeLog "$pkgdir/usr/share/awb/ChangeLog"
+}

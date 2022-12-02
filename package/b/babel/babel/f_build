@@ -1,0 +1,5 @@
+build() {
+	cd "$srcdir/$pkgname-${pkgver//_/-}"
+	runhaskell Setup configure --prefix=/usr
+	runhaskell Setup build
+}

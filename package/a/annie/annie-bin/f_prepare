@@ -1,0 +1,4 @@
+prepare() {
+  mkdir -p "$pkgname-$pkgver-$CARCH"
+  /usr/bin/bsdtar -xf "$pkgname-$pkgver-$CARCH.tar.gz" -C "$pkgname-$pkgver-$CARCH"
+}

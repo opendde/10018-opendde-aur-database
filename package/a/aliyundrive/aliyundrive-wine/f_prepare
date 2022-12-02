@@ -1,0 +1,82 @@
+prepare() {
+
+    _ftname="wqy-microhei.ttc"
+    install -Dm0644 /dev/stdin "${srcdir}/regpatch.reg" << EOF
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\FontLink\SystemLink]
+"Lucida Sans Unicode"="${_ftname}"
+"Microsoft Sans Serif"="${_ftname}"
+"MS Sans Serif"="${_ftname}"
+"Tahoma"="${_ftname}"
+"Tahoma Bold"="${_ftname}"
+"SimSun"="${_ftname}"
+"Arial"="${_ftname}"
+"Arial Black"="${_ftname}"
+"Lucida Sans Unicode"=str(7):"${_ftname}"
+"Microsoft Sans Serif"=str(7):"${_ftname}"
+"Tahoma"=str(7):"${_ftname}"
+
+[HKEY_CURRENT_USER\Software\Wine\X11 Driver]
+"ClientSideAntiAliasWithCore"="N"
+"ClientSideAntiAliasWithRender"="N"
+"ClientSideWithRender"="N"
+
+[HKEY_CURRENT_USER\Control Panel\Desktop]
+"FontSmoothing"="2"
+"FontSmoothingType"=dword:00000002
+"FontSmoothingGamma"=dword:00000578
+"FontSmoothingOrientation"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion]
+"RegisteredOrganization"="${pkgname%-wine}"
+"RegisteredOwner"="${pkgname%-wine}"
+
+
+[HKEY_CURRENT_USER\Software\Wine\Dll Overrides]
+"msvcp100"="native,builtin"
+"msvcr100"="native,builtin"
+"msvcp120"="native,builtin"
+"msvcr120"="native,builtin"
+"vcruntime140"="native,builtin"
+"nim"="native,builtin"
+"nrtc"="native,builtin"
+"libcef"="native,builtin"
+"libEGL"="native,builtin"
+"libGLESv2"="native,builtin"
+"d3dcompiler_43"="native,builtin"
+"d3dcompiler_47"="native,builtin"
+"Log4cxx2_vc140x_mt"="native,builtin"
+"CryptTool_vc140x_mt"="native,builtin"
+"Log4cxxx_vc140x_mt"="native,builtin"
+"DuiLib_vc140x_mt"="native,builtin"
+"MemoryBuffer_vc140x_mt"="native,builtin"
+"ExtractTool_vc140x_mt"="native,builtin"
+"GerberDll_vc140x_mt"="native,builtin"
+"HookFlash_vc140x_mt"="native,builtin"
+"RarExt"="native,builtin"
+"SmtCheckTools_vc140x_mt"="native,builtin"
+"acge15"="native,builtin"
+"acge18"="native,builtin"
+"chrome_elf"="native,builtin"
+"SmtCheckTools_vc140x_mt"="native,builtin"
+"zextract_vc140x_mt"="native,builtin"
+"zlibwapi_vc140x_mt"="native,builtin"
+"nim_audio"="native,builtin"
+"nim_audio_hook"="native,builtin"
+"nim_chatroom"="native,builtin"
+"nim_tools_http"="native,builtin"
+"nrtc"="native,builtin"
+"nrtc_audio_process"="native,builtin"
+"libcef"="native,builtin"
+"log4cxx_vc140x_mt"="native,builtin"
+"mmpool_vc140x_mt"="native,builtin"
+"libGLESv2"="native,builtin"
+"libEGL"="native,builtin"
+"importODB_vc140x_mt"="native,builtin"
+"importExcellon_vc140x_mt"="native,builtin"
+"import274x_vc140x_mt"="native,builtin"
+"image_ole"="native,builtin"
+EOF
+
+}

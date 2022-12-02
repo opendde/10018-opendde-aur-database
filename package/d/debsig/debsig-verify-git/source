@@ -1,0 +1,1 @@
+("${pkgname%-git}::git+https://git.dpkg.org/git/dpkg/${pkgname%-git}.git")

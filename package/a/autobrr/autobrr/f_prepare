@@ -1,0 +1,13 @@
+prepare() {
+  cd "$pkgname"
+
+  # create directory for build output
+  mkdir build
+
+  # download go dependencies
+  go mod download
+
+  # download yarn dependencies
+  cd web
+  yarn install
+}

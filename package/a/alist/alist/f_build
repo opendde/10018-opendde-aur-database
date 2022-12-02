@@ -1,0 +1,13 @@
+build() {
+	export CGO_CPPFLAGS="${CPPFLAGS}"
+	export CGO_CFLAGS="${CFLAGS}"
+	export CGO_CXXFLAGS="${CXXFLAGS}"
+	export CGO_LDFLAGS="${LDFLAGS}"
+	export GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw"
+	cd "$pkgname-$pkgver"
+	## i tried, doesn't actually tag properly
+	go build -o build \
+		-ldflags="-linkmode external -extldflags \"${LDFLAGS}\" \
+		-X 'github.com/Xhofe/alist/conf.GoVersion=$(go version | awk '{print $3}')' \
+		-X 'github.com/Xhofe/alist/conf.GitTag=$pkgver'"
+}

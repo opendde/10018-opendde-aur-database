@@ -1,0 +1,24 @@
+package() {
+  cd "adchpp_${pkgver}_source"
+
+  install -Dm755 ../adchpp.sh "${pkgdir}/usr/bin/adchpp"
+  install -Dm755 "build/release-default-x64/bin/adchppd" "${pkgdir}/usr/lib/adchpp/adchpp"
+
+  (cd "build/release-default-x64/bin"; for i in $(find . -maxdepth 1 -type f -name "*.so"); do install -Dm755 "${i}" "${pkgdir}/usr/lib/adchpp/${i}"; done)
+
+  install -Dm755 linux/generate_certs.sh "${pkgdir}/usr/share/adchpp/generate_certs.sh"
+
+  install -d "${pkgdir}/etc/adchpp/certs/trusted"
+
+  install -Dm644 etc/adchpp.xml "${pkgdir}/etc/adchpp/adchpp.xml"
+  install -Dm644 etc/Script.xml "${pkgdir}/etc/adchpp/Script.xml"
+
+  (cd plugins/Script/examples; for i in $(find . -type f); do install -Dm644 "${i}" "${pkgdir}/usr/share/adchpp/scripts/${i}"; done)
+  for i in $(find pyutil rbutil -type f); do install -Dm644 "${i}" "${pkgdir}/usr/share/adchpp/${i}"; done
+
+  (cd build/docs; for i in $(find . -type f); do install -Dm644 "${i}" "${pkgdir}/usr/share/doc/adchpp/${i}"; done)
+
+  install -Dm644 ../adchpp.service "${pkgdir}/usr/lib/systemd/system/adchpp.service"
+  install -Dm644 ../adchpp.tmpfile "${pkgdir}/usr/lib/tmpfiles.d/adchpp.conf"
+  install -Dm644 ../adchpp.sysuser "${pkgdir}/usr/lib/sysusers.d/adchpp.conf"
+}

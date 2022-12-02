@@ -1,0 +1,8 @@
+package_akava-konsole-git() {
+    provides=('akava-konsole')
+
+    cd $_pkgname
+    install -d "${pkgdir}/usr/share"
+    mkdir -p "${pkgdir}/usr/share/konsole"
+    cp -r Akava.colorscheme "${pkgdir}/usr/share/konsole"
+}

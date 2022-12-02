@@ -1,0 +1,5 @@
+package_acmt-acm70-vst() {
+	groups=('pro-audio' 'vst-plugins')
+	pkgdesc="ACM70 Mid-Range EQ (VST)"
+	install -Dm755 ${srcdir}/plugin-binaries/VST/ACM70.so ${pkgdir}/usr/lib/vst/ACM70.so
+}

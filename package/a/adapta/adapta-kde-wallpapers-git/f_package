@@ -1,0 +1,6 @@
+package() {
+  cd adapta-kde
+  install -Dm644 wallpapers/Adapta/LICENSE ${pkgdir}/usr/share/licenses/adapta-kde-wallpapers-git/LICENSE
+  rm wallpapers/Adapta/{AUTHORS,LICENSE}
+  cp -r wallpapers ${pkgdir}/usr/share
+}

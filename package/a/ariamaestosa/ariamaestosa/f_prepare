@@ -1,0 +1,10 @@
+prepare() {
+  cd "AriaSrc-$pkgver"
+
+  patch -p1 -i ../$pkgname.patch
+
+  setconf Freedesktop/Aria.desktop Exec "$pkgname"
+  sed -i -e "/^Version/s:1.4.1:$pkgver:" -e "/^Icon/s:/local::" \
+    Freedesktop/Aria.desktop
+  setconf Freedesktop/Aria.desktop Icon "$pkgname"
+}

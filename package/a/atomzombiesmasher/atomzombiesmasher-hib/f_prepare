@@ -1,0 +1,22 @@
+prepare() {
+    msg2 "Prepare launch script..."
+    echo -e "#!/usr/bin/sh\n" \
+            "export MONO_WINFORMS_XIM_STYLE=disabled\n" \
+            "cd /opt/$_installname\n" \
+            "export LD_LIBRARY_PATH='./$_lib:\$LD_LIBRARY_PATH'\n" \
+            'exec mono AtomZombieSmasher.exe "$@"' \
+        > data/$_installname
+    
+    msg2 "Fix permissions..."
+    find -type f -exec chmod 644 {} \;
+    chmod 755 data/$_installname
+    
+    msg2 "Remove unneeded files..."
+    rm data/AtomZombieSmasher{,.bin.*}
+    rm data/$_lib/{libopenal.so.1,libSDL2-2.0.so.0}
+    rm data/{Mono*,System*,mscorlib}.dll
+    rm -r data/$_libother
+    
+    # Set apart files to install separately
+    mv data/Linux.README .
+}

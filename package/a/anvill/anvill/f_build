@@ -1,0 +1,17 @@
+build() {
+    vcpkg_libs='/opt/cxx-common/installed/x64-linux-rel'
+    export PATH="$vcpkg_libs/bin:$vcpkg_libs/tools/*:${PATH}"
+    export CC="$vcpkg_libs/tools/llvm/clang"
+    export CXX="$vcpkg_libs/tools/llvm/clang++"
+
+    cd "$srcdir/$pkgname-$pkgver"
+    mkdir -p build && cd build
+    cmake \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DANVILL_ENABLE_INSTALL_TARGET=True \
+        -DANVILL_ENABLE_TESTS=True \
+        -DVCPKG_ROOT="/opt/cxx-common" \
+        -G Ninja \
+        "$srcdir/$pkgname-$pkgver"
+    cmake --build .
+}

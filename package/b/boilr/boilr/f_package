@@ -1,0 +1,4 @@
+package() {
+	# copy binary
+	install -D -m 0755 "$srcdir/$pkgname-$pkgver/$pkgname" "$pkgdir/usr/bin/$pkgname"
+}

@@ -1,0 +1,9 @@
+package() {
+  tar xvf data.tar.xz -C "${pkgdir}/"
+  cd "${pkgdir}/usr"
+  mv local/bin .
+  rm -rf local
+  chmod -R 755 "${pkgdir}/usr/"
+  chmod 644 "${pkgdir}/usr/share/applications/Backer.desktop"
+  chmod 644 "${pkgdir}/usr/share/pixmaps/Backer.png"
+}

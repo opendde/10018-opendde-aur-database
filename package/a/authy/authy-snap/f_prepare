@@ -1,0 +1,4 @@
+prepare() {
+    echo "Extracting snap file..."
+    unsquashfs -q -f -d "${srcdir}/${pkgname}" "${_snapid}_${_snaprev}.snap"
+}

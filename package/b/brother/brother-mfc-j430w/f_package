@@ -1,0 +1,4 @@
+package() {
+    cp -rf $srcdir/usr/ $pkgdir || return 1
+    cp -rf $srcdir/opt/ $pkgdir || return 1
+}

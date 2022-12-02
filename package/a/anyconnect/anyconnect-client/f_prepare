@@ -1,0 +1,18 @@
+prepare() {
+	# Separate script for processing
+	TARLINE=$(grep -an 'BEGIN ARCHIVE' ${source[0]} | cut -d ":" -f 1)
+	head -n $TARLINE ${source[0]} > anyconnect.sh
+	tail -n +$(($TARLINE+1)) ${source[0]} > payload.tar.gz
+	
+	# Output to $pkgdir
+	sed -i "s#/opt#$pkgdir/opt#g" anyconnect.sh
+	sed -i "s#/etc#$pkgdir/etc#g" anyconnect.sh
+	sed -i "s#/usr#$pkgdir/usr#g" anyconnect.sh
+	
+	# Skip .install stuff
+	sed -i 's/# generate default/if false; then # generate default/g' anyconnect.sh
+	sed -i 's/if \[ "${RMTEMP}" = "yes" \]; then/fi; if \[ "${RMTEMP}" = "yes" \]; then/g' anyconnect.sh
+	
+	# Assemble script
+	cat payload.tar.gz >> anyconnect.sh
+}

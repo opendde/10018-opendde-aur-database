@@ -1,0 +1,4 @@
+build() {
+	cd alpc
+    cargo build --release
+}

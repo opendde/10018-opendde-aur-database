@@ -1,0 +1,12 @@
+package() {
+  cd "${srcdir}/ComputeLibrary"
+  mkdir -p ${pkgdir}/usr/arm-linux-gnueabihf/lib/
+  cp -r build/*.a ${pkgdir}/usr/arm-linux-gnueabihf/lib/
+  cp -r build/*.so ${pkgdir}/usr/arm-linux-gnueabihf/lib/
+
+  mkdir -p ${pkgdir}/usr/arm-linux-gnueabihf/include/arm_compute/
+  cp -r arm_compute/* ${pkgdir}/usr/arm-linux-gnueabihf/include/arm_compute/
+  cp -r support ${pkgdir}/usr/arm-linux-gnueabihf/include/arm_compute/
+  cp -r include/* ${pkgdir}/usr/arm-linux-gnueabihf/include/arm_compute/
+  cp -r utils ${pkgdir}/usr/arm-linux-gnueabihf/include/arm_compute/
+}

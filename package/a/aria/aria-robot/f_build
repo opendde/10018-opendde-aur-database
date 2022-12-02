@@ -1,0 +1,4 @@
+build() {
+  cd ${srcdir}/${distname}
+  make
+}

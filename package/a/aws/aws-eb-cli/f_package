@@ -1,0 +1,19 @@
+package() {
+  set -u
+  depends=("${_pyver}" "${_pydepends[@]}")
+  conflicts=("${_pyverother}${_pybase}")
+  cd "${_srcdir}"
+  ${_pyver} 'setup.py' install --root "${pkgdir}"
+  install -Dpm644 'LICENSE.txt' "${pkgdir}/usr/share/licenses/${pkgname%-git}/LICENSE"
+
+  # Install the files into /opt since they depend on a non-standard directory
+  # structure.
+  #mkdir -p ${pkgdir}/opt
+  #cp -r ${srcdir}/AWS-ElasticBeanstalk-CLI-${pkgver}/eb/linux/python3 ${pkgdir}/opt/aws-eb-cli
+  #cp -r ${srcdir}/AWS-ElasticBeanstalk-CLI-${pkgver}/AWSDevTools/Linux ${pkgdir}/opt/aws-eb-cli/AWSDevTools
+
+  # Link the CLI program into /usr/bin
+  #mkdir -p ${pkgdir}/usr/bin
+  #ln -s ../../opt/aws-eb-cli/eb ${pkgdir}/usr/bin
+  set +u
+}

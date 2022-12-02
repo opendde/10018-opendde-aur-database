@@ -1,0 +1,13 @@
+package() {
+    ### builded
+    install -d          ${pkgdir}/usr/share/beaker-browser
+    cp -r               ${srcdir}/${pkgname}/dist/linux-unpacked/*      ${pkgdir}/usr/share/beaker-browser/
+
+    ### tools
+    install -Dm644      ${srcdir}/beaker-browser.desktop                ${pkgdir}/usr/share/applications/beaker-browser.desktop
+    install -Dm755      ${srcdir}/beaker-browser                        ${pkgdir}/usr/bin/beaker-browser
+
+    ### icons
+    install -d          ${pkgdir}/usr/share/icons/hicolor    
+    cp -r               ${srcdir}/${pkgname}/hicolor                               ${pkgdir}/usr/share/icons/
+}

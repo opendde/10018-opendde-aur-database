@@ -1,0 +1,12 @@
+build() {
+   cd "$srcdir"/ajaxterm || cd "$srcdir"/ajaxterm-${_commit:0:7}
+
+   cat debian/patches/series | while read A; do [ -z $A ] || patch -p1 <debian/patches/$A; done
+
+   # python2 fix
+   for file in configure ajaxterm.py qweb.py; do
+      sed -i 's_#!/usr/bin/env python_#!/usr/bin/env python2_' $file
+   done
+
+   ./configure --prefix=/usr
+}

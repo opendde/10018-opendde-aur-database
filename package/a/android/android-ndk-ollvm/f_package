@@ -1,0 +1,12 @@
+package() {
+    install -Ddm755 "$pkgdir/opt/${pkgname}"
+    install -Ddm755 "$pkgdir/usr/share/libalpm/hooks"
+    
+    install -Dm755 update_links.sh -t "$pkgdir/opt/${pkgname}/"
+    install -Dm644 ${pkgname}.hook -t "$pkgdir/usr/share/libalpm/hooks/"
+    
+    install -Ddm755 "$pkgdir/opt/${pkgname}/toolchains/llvm/prebuilt/linux-x86_64"
+    
+    cp -r install/bin "$pkgdir/opt/${pkgname}/toolchains/llvm/prebuilt/linux-x86_64"
+    cp -r install/lib "$pkgdir/opt/${pkgname}/toolchains/llvm/prebuilt/linux-x86_64"
+}

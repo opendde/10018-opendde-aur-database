@@ -1,0 +1,1 @@
+(${pkgname}-${pkgver}.tar.gz::https://bintray.com/akashrawal/${pkgname}/download_file?file_path=release-1.0%2F${pkgname}-${pkgver}.tar.gz)

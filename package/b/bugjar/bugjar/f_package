@@ -1,0 +1,4 @@
+package() {
+  cd ${pkgname}
+  python2 setup.py install --root="${pkgdir}"
+}

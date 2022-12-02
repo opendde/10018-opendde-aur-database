@@ -1,0 +1,47 @@
+build() {
+    cd ${_pkgfqn}
+
+    unset CC
+    unset CXX
+    unset CFLAGS
+    unset CXXFLAGS
+    unset LDFLAGS
+    unset CHOST
+    unset QMAKESPEC
+    unset QTDIR
+
+    if [ "${CARCH}" == 'i686' ]; then
+        ndkhost='linux-x86'
+    elif [ "${CARCH}" == 'x86_64' ]; then
+        ndkhost='linux-x86_64'
+    fi
+
+    unset CARCH
+
+    export ANDROID_SDK_ROOT=/opt/android-sdk
+    export ANDROID_BUILD_TOOLS_REVISION=23.0.2
+    export ANDROID_API_VERSION=android-23
+    export PYTHON=/usr/bin/python2
+
+    ./configure -confirm-license -opensource \
+        -prefix /opt/android-qt5/${pkgver} \
+        -docdir /usr/share/doc/android-qt5-${_pkgver} \
+        -xplatform android-g++ \
+        -nomake tests \
+        -nomake examples \
+        -android-ndk /opt/android-ndk \
+        -android-sdk /opt/android-sdk \
+        -android-ndk-host ${ndkhost} \
+        -android-toolchain-version 4.9 \
+        -skip qttranslations \
+        -skip qtwebkit \
+        -skip qtserialport \
+        -skip qtwebkit-examples \
+        -no-warnings-are-errors \
+        -qt-zlib \
+        -qt-freetype
+#        -android-ndk-platform android-21 \
+#        -android-arch armeabi-v7a \
+
+    make || return 1
+}

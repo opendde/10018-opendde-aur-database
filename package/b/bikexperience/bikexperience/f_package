@@ -1,0 +1,6 @@
+package() {
+ install -D -m644 -t ${pkgdir}/usr/share/applications/               ${startdir}/bikeXperience.desktop
+ install -D -m755 -t ${pkgdir}/usr/bin/                              ${startdir}/bikeXperience 
+ install -D -m755 -t ${pkgdir}/usr/share/java/${pkgname}/            ${srcdir}/bikeXperience.jar 
+ install -D -m644 -t ${pkgdir}/usr/share/icons/hicolor/100x100/apps/ ${srcdir}/linux/bxpIcon.png 
+}

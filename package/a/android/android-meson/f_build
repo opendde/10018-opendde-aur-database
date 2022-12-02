@@ -1,0 +1,11 @@
+build() {
+    for _arch in ${_architectures}; do
+        unset CPPFLAGS
+        unset CFLAGS
+        unset CXXFLAGS
+        unset LDFLAGS
+        source android-env ${_arch}
+        python toolchain_generator.py --arch ${_arch} --output-file toolchain-android-${_arch}.meson
+        sed "s|@TRIPLE@|${_arch}|g;" meson-android-wrapper > android-${_arch}-meson
+    done
+}

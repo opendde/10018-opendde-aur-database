@@ -1,0 +1,7 @@
+build() {
+    cd apidb-${pkgver}-beta
+    mkdir build
+    cd build
+    cmake -DCMAKE_INSTALL_PREFIX=/usr -DPLATFORM=LINUX_ARCH -DAPIDBBUILD="CORE;GTK3" -DAPIDBINSTALL=GTK3 ..
+    make
+}

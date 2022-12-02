@@ -1,0 +1,11 @@
+package() {
+  cd glibc-build
+
+  make install_root=${pkgdir}/usr/${_target} install
+
+  mkdir -p ${pkgdir}/usr/${_target}/usr
+  ln -s ../{include,lib} ${pkgdir}/usr/${_target}/usr
+
+  # Remove unneeded for compilation files
+  rm -rf ${pkgdir}/usr/${_target}/{bin,sbin,etc,share,var}
+}

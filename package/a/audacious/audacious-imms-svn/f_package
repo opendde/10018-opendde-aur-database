@@ -1,0 +1,7 @@
+package() {
+   cd $srcdir/$_svnmod
+   mkdir -p "$pkgdir/usr/bin"
+   make prefix="$pkgdir/usr" DESTDIR="$pkgdir/usr/lib/xmms/General" \
+        BMPDESTDIR="$pkgdir/usr/lib/bmp/General" \
+        AUDACIOUSDESTDIR="$pkgdir/usr/lib/audacious/General" install
+}

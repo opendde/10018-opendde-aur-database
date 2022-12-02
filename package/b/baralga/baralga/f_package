@@ -1,0 +1,13 @@
+package() {
+	cd "${srcdir}/${_pkgname}-${pkgver//_/-}"
+
+	mkdir -p "${pkgdir}/usr/bin"
+	install -d "${pkgdir}/usr/share/${pkgname}/"{lib,data}
+	install -m644 "${_pkgname}-${pkgver//_/-}.jar" "${pkgdir}/usr/share/${pkgname}/${pkgname}.jar"
+	#ignore contents of data/ for now ...
+
+	#create startup file
+	echo "#!/bin/sh" > ${pkgdir}/usr/bin/${pkgname}
+	echo "exec \$JAVA_HOME/bin/java -jar /usr/share/${pkgname}/${pkgname}.jar \$@" >> ${pkgdir}/usr/bin/${pkgname}
+	chmod +x ${pkgdir}/usr/bin/${pkgname}
+}

@@ -1,0 +1,19 @@
+package() {
+  msg "Installing..."
+
+  # Create directories
+  install -d "$pkgdir/usr/bin"
+  install -d "$pkgdir/opt/$_gitname"
+
+  # Copy files
+  for filename in $(find "$srcdir/$_gitname" -maxdepth 1 -mindepth 1 -not -name "*.git*"); do
+    if file "$filename" | grep "executable" &>/dev/null; then
+      install -m755 "$filename" "$pkgdir/opt/$_gitname/"
+    else
+      install -m644 "$filename" "$pkgdir/opt/$_gitname/"
+    fi
+  done
+
+  # Create the symlink
+  ln -s "/opt/$_gitname/main.sh" "$pkgdir/usr/bin/$_gitname"
+}

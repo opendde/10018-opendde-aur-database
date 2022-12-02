@@ -1,0 +1,10 @@
+build() {
+  cd "${pkgname%-cblas}-${pkgver}"
+  
+  export BLIS_NUM_THREADS=`nproc`
+  export nt_use=1
+  
+  # static build is necessary for some packages and programs (e. g. GAMESS)
+  ./configure --prefix=/usr --enable-static --enable-shared --enable-cblas --enable-threading=pthreads auto
+  make
+}

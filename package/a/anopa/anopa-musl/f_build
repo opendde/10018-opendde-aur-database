@@ -1,0 +1,8 @@
+build() {
+  cd "$_pkgname-$pkgver"
+
+  export CPPFLAGS='-nostdinc -isystem /usr/lib/musl/include -isystem /usr/include'
+  export CC="musl-gcc"
+  ./configure --enable-static-libc --bindir=/usr/bin --libexecdir=/usr/lib/anopa
+  make
+}

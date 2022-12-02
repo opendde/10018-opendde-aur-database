@@ -1,0 +1,10 @@
+package_triangle() {
+  url='http://www.cs.cmu.edu/~quake/triangle.html'
+  pkgdesc='A Two-Dimensional Quality Mesh Generator and Delaunay Triangulator.'
+  depends=('glibc')
+
+  install -Dm755 triangle "${pkgdir}/usr/bin/triangle"
+  install -Dm644 triangle.h "${pkgdir}/usr/include/triangle.h"
+  install -Dm644 libtriangle.so "${pkgdir}/usr/lib/libtriangle.so"
+  install -Dm644 "${srcdir}/README" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

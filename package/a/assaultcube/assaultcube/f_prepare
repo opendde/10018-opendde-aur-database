@@ -1,0 +1,9 @@
+prepare() {
+	cd "${_srcdir}"
+	sed -i 's/libSDL-1.2/libSDL-2.0/' 'check_install.sh'
+	sed -i 's|CUBE_OPTIONFILE=-Cconfig/servercmdline.txt|CUBE_OPTIONFILE=-C/etc/assaultcube/servercmdline.txt|' 'server.sh'
+	sed -i 's|//#define PRODUCTION|#define PRODUCTION|' 'source/src/cube.h'
+	rm -rf 'source/include'
+	cd 'source/src'
+	sed -i "s/CXXFLAGS= -O3/CXXFLAGS= ${_cxxflags} -O3/" 'Makefile'
+}

@@ -1,0 +1,3 @@
+prepare() {
+  patch -p1 < "$srcdir/brother-hll2360d.patch"
+}

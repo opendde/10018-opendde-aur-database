@@ -1,0 +1,4 @@
+check() {
+    cd "$srcdir/avro-release-$pkgver/lang/c++/build"
+    make test
+}

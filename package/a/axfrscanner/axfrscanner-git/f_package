@@ -1,0 +1,9 @@
+package() {
+	cd "$srcdir/$pkgname"
+	mkdir -p "$pkgdir/usr/bin"
+	mkdir -p "$pkgdir/usr/share/licenses/$pkgname"
+	chmod +x axfr-test.py
+	mv axfr-test.py "$pkgdir/usr/bin/axfrscanner"
+	
+	mv "LICENSE.md" "$pkgdir/usr/share/licenses/$pkgname/"
+}

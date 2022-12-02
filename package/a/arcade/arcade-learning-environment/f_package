@@ -1,0 +1,4 @@
+package() {
+  cd "${srcdir}/Arcade-Learning-Environment-${pkgver}/build"
+  make DESTDIR="${pkgdir}" install
+}

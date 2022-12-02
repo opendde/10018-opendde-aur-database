@@ -1,0 +1,6 @@
+build() {
+	cd "$srcdir/${pkgname}"
+  npm install
+  npm install 7zip-bin-linux
+  npm run app
+}

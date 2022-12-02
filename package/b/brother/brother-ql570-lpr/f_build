@@ -1,0 +1,10 @@
+build() {
+        cd $srcdir
+        rpmextract.sh "${_pkgname}-$pkgver-0.i386.rpm" || return 1
+        rm "${_pkgname}-$pkgver-0.i386.rpm"
+        
+        mkdir -p usr/share/ || return 1
+        rm -rf usr/share/brother
+        mv opt/brother usr/share/brother || return 1
+        rmdir opt || return 1
+}

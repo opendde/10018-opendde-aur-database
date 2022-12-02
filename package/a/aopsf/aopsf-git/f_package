@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir/$pkgname"
+  install -D -m644 -t "$pkgdir/usr/lib" libaopsf.so
+  install -D -m644 -t "$pkgdir/usr/include/aopsf" psx_external.h ao.h
+  install -D -m644 -t "$pkgdir/usr/share/licenses/$pkgname" "$srcdir"/LICENSE.BSD
+}

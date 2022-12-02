@@ -1,0 +1,5 @@
+pkgver() {
+  cd alephone/Source_Files/Misc
+  local _ver="$(grep '^#define A1_DISPLAY_VERSION' alephversion.h | cut -d\" -f2)"
+  printf "%s.r%s.%s" "$_ver" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}

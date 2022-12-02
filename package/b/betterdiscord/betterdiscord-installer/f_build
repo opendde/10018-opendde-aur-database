@@ -1,0 +1,5 @@
+build() {
+    cd Installer-${pkgver}
+    export NODE_OPTIONS=--openssl-legacy-provider
+    yarn && yarn dist:dir
+}

@@ -1,0 +1,7 @@
+post_install() {
+	/opt/brother/Printers/dcpj525w/cupswrapper/cupswrapperdcpj525w
+
+    # Scanner
+    echo "For network scanners, please run following command :"
+    echo "brsaneconfig4 -a name=\"Brother_DCP-J525W\" model=\"DCP-J525W\" ip=YOUR.SCANNER.IP.HERE"
+}

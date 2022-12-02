@@ -1,0 +1,3 @@
+package() {
+        install -D -m755 ${srcdir}/amap.32.ubuntu2104.x64.GTK ${pkgdir}/usr/bin/amap;
+}

@@ -1,0 +1,18 @@
+package() {
+	prefix="${pkgdir}"/opt/${pkgname}
+	LD_PRELOAD="/usr/lib/libfakeroot/libfakeroot.so"
+
+	# Packaging anaconda for installation to /opt/anaconda
+	bash "${srcdir}"/Anaconda3-${pkgver}-Linux-${CARCH}.sh -b -p $prefix -f
+	[ "$BREAK_EARLY" = 1 ] && exit 1
+	cd $prefix
+
+	# Correcting permissions
+	chmod a+r -R pkgs
+
+	# Stripping $pkgdir
+	sed -e "s|${pkgdir}||g" -i $(grep "${pkgdir}" . -rIl 2>/dev/null)
+
+	# Installing license
+	install -D -m644 LICENSE.txt "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
+}

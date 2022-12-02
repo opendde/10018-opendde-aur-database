@@ -1,0 +1,4 @@
+package() {
+  cd "${srcdir}/abiword-${pkgver}"
+  make DESTDIR="${pkgdir}" install
+}

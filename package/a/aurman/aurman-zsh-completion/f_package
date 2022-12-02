@@ -1,0 +1,4 @@
+package() {
+    cd "$srcdir/$pkgname-$pkgver"
+    install -Dm644 _aurman "$pkgdir/usr/share/zsh/site-functions/_aurman"
+}

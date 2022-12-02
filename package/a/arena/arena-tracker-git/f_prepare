@@ -1,0 +1,3 @@
+prepare() {
+  patch -p0 "$srcdir/$pkgname/Sources/utility.cpp" < unixpaths.patch
+}

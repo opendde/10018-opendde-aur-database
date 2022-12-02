@@ -1,0 +1,4 @@
+build() {
+     cd "$srcdir"/5up-1.7.3/
+     qmake-qt4 && make
+}

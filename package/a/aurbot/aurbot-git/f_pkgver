@@ -1,0 +1,4 @@
+pkgver() {
+  cd aurbot
+  git log --pretty=format:''|wc -l
+}

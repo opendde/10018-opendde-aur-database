@@ -1,0 +1,6 @@
+build() {
+  cd "bat"
+  sed -i 's/github.com\/astaxie\/bat\//.\//' http.go
+  sed -i 's/github.com\/astaxie\/bat\//.\//' bench.go
+  go build
+}

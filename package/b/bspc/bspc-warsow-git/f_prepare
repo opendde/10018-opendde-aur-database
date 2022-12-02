@@ -1,0 +1,11 @@
+prepare() {
+	cd "$srcdir/$_srcname"
+
+	patch --forward --strip=1 --input="${srcdir}/bspc-makefile.patch"
+	git add Makefile
+	git commit -m autopatch-makefile
+
+	git remote add ttimo "${srcdir}/bspc-ttimo" || true
+	git fetch ttimo
+	git merge ttimo/master -m automerge -s ort -X theirs
+}

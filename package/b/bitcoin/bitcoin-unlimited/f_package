@@ -1,0 +1,18 @@
+package() {
+  cd "$srcdir/$_pkgbase"
+  
+  make install DESTDIR=$pkgdir
+  install -Dm644 "contrib/debian/bitcoin-qt.desktop" \
+                 "$pkgdir/usr/share/applications/bitcoin.desktop"
+  install -Dm644 "share/pixmaps/bitcoin128.png"\
+                 "$pkgdir/usr/share/pixmaps/bitcoin128.png"
+  install -Dm644 "contrib/debian/manpages/bitcoin-qt.1" \
+                 "$pkgdir/usr/share/man/man1/bitcoin-qt.1"
+  install -Dm644 "contrib/debian/examples/bitcoin.conf"\
+                 "$pkgdir/usr/share/doc/$pkgname/examples/bitcoin.conf"
+  install -Dm644 "contrib/debian/manpages/bitcoind.1"\
+                 "$pkgdir/usr/share/man/man1/bitcoind.1"
+  install -Dm644 "contrib/debian/manpages/bitcoin.conf.5"\
+                 "$pkgdir/usr/share/man/man5/bitcoin.conf.5"
+  install -Dm644 COPYING "$pkgdir/usr/share/licenses/$pkgname/COPYING"
+}

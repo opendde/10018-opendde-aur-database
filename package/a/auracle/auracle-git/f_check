@@ -1,0 +1,5 @@
+check() {
+  cd "$_pkgname"
+
+  meson test -C build
+}

@@ -1,0 +1,11 @@
+package() {
+  mkdir -p "$pkgdir/usr/share"
+  cp -R "$srcdir/usr/bin" "$pkgdir/usr"
+  cp -R "$srcdir/usr/local/Brother" "$pkgdir/usr/share/brother"
+
+  rm "$pkgdir/usr/share/brother/Printer/mfc240c/cupswrapper/cupswrappermfc240c"
+  rm "$pkgdir/usr/share/brother/Printer/mfc240c/inf/setupPrintcapij"
+
+  install -m 644 -D ppd_file "$pkgdir/usr/share/cups/model/brmfc240c.ppd"
+  install -m 755 -D wrapper "$pkgdir/usr/lib/cups/filter/brlpdwrappermfc240c"
+}

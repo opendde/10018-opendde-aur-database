@@ -1,0 +1,7 @@
+build () {
+  cd "${srcdir}/${pkgname}"
+  export PYTHON=/usr/bin/python2
+  export HOME="$PWD"
+  echo "cache = $PWD/.atom/.npm" > build/.npmrc
+  script/build --build-dir "${srcdir}/atom-build"
+}

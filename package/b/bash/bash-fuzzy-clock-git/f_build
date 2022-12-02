@@ -1,0 +1,8 @@
+build() {
+  cd "$srcdir/$_pkgname"
+  msgfmt fr.po -o fr.mo
+  msgfmt de.po -o de.mo
+  msgfmt es.po -o es.mo
+  msgfmt it.po -o it.po
+  msgfmt pt.po -o pt.po
+}

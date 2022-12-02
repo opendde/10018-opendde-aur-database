@@ -1,0 +1,6 @@
+package() {
+  cd $srcdir/blendercam
+  blenderVer="$(blender -v | grep -oP '^Blender \K\d+\.\d+')"
+  mkdir -p "$pkgdir/usr/share/blender/${blenderVer}/"
+  cp -r scripts "$pkgdir/usr/share/blender/${blenderVer}/"
+}

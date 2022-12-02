@@ -1,0 +1,10 @@
+build() {
+
+  cd "${srcdir}/$pkgname-$_pkgver"
+  ./configure --prefix=/usr \
+	--libexecdir=/usr/lib \
+	--sbindir=/usr/bin \
+	--sysconfdir=/etc \
+	--disable-upstart
+  make
+}

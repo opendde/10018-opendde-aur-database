@@ -1,0 +1,4 @@
+package() {
+	cd $pkgname
+	install -D -m755 "$srcdir/$pkgname/target/release/boringtun-cli" "$pkgdir/usr/bin/boringtun"
+}

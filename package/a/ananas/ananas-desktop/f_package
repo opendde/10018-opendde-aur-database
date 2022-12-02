@@ -1,0 +1,18 @@
+package() {
+  chmod 755 ./${pkgname}-${pkgver}.AppImage
+  ./${pkgname}-${pkgver}.AppImage --appimage-extract
+  install -Dm644 squashfs-root/usr/share/icons/hicolor/512x512/apps/ananasanalytics.png "${pkgdir}/usr/share/pixmaps/ananas-desktop.png"
+  gendesk -f -n --pkgname "${pkgname}" \
+          --pkgdesc "$pkgdesc" \
+          --name "Ananas Desktop" \
+          --comment "$pkgdesc" \
+          --exec "${pkgname}" \
+          --categories 'Utility;Application' \
+          --icon "${pkgname}"
+  install -Dm644 "${pkgname}.desktop" -t "${pkgdir}/usr/share/applications"
+  install -d "${pkgdir}/usr/bin"
+  install -d "${pkgdir}/opt"
+  cp -avR squashfs-root/ "${pkgdir}/opt/${pkgname}"
+  ln -s /opt/${pkgname}/AppRun "${pkgdir}/usr/bin/ananas-desktop"
+  find "${pkgdir}/opt/${pkgname}" -type d -exec chmod 755 {} +
+}

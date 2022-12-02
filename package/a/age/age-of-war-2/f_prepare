@@ -1,0 +1,5 @@
+prepare() {
+    mkdir "$pkgname-$pkgver"
+    cp -r opt "$pkgname-$pkgver"/opt
+    cp -r usr "$pkgname-$pkgver"/usr
+}

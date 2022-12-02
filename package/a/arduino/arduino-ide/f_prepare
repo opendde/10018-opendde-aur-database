@@ -1,0 +1,3 @@
+prepare() {
+	gendesk -f --pkgname $pkgname --name 'Arduino IDE' --pkgdesc $pkgdesc
+}

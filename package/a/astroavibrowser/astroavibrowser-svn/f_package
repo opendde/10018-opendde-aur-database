@@ -1,0 +1,4 @@
+package() {
+	cd $_svnname
+	make DESTDIR=$pkgdir install
+}

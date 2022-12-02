@@ -1,0 +1,22 @@
+build() {
+  # deps
+  cd "$srcdir/BambuStudio/deps"
+  for dir in build deps; do
+    test -d $dir || mkdir $dir
+  done
+  cd build
+  if [ ! -f $srcdir/.deps_done ]; then
+    cmake ../ -DDESTDIR="$srcdir/dep_linux" -DCMAKE_BUILD_TYPE=Release -DDEP_WX_GTK3=1
+    { test "$(nproc)" -gt 1 && make -j"$(nproc)" ;} || make
+  fi
+  touch $srcdir/.deps_done
+
+  # bins
+  cd "$srcdir/BambuStudio"
+  for dir in build install_dir; do
+    test -d $dir || mkdir $dir
+  done
+  cd build
+  cmake .. -DSLIC3R_FHS=1 -DSLIC3R_STATIC=ON -DSLIC3R_GTK=3 -DBBL_RELEASE_TO_PUBLIC=1 -DCMAKE_PREFIX_PATH="$srcdir/dep_linux/usr/local" -DCMAKE_INSTALL_PREFIX="$srcdir/install_dir" -DCMAKE_BUILD_TYPE=Release
+  { test "$(nproc)" -gt 1 && cmake --build . --target install --config Release -j"$(nproc)" ;} || cmake --build . --target install --config Release
+}

@@ -1,0 +1,12 @@
+build() {
+  cd "$_archive"
+
+  npx coffee --compile --output lib src
+  npm uninstall coffee-script coffeelint express jasmine-focused shx node-gyp
+
+  # pushd node_modules/git-utils
+  # node-gyp rebuild
+  # popd
+
+  npm pack
+}

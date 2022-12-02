@@ -1,0 +1,8 @@
+build() {
+  cd "$srcdir/_build"
+
+  cmake \
+    -DCMAKE_INSTALL_PREFIX="/usr" -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=1 \
+    ../aom
+  make
+}

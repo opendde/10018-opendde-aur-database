@@ -1,0 +1,4 @@
+package() {
+	cd "${srcdir}/${pkgname}"
+	DESTDIR="$pkgdir" PREFIX="/usr" make install
+}

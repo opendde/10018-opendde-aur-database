@@ -1,0 +1,4 @@
+pkgver() {
+  cd "$pkgbase"
+  git describe --tags --always | sed -r 's|release-||g;s/([^-]*-g)/r\1/;s/-/./g'
+}

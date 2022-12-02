@@ -1,0 +1,3 @@
+package() {
+    install -Dm755 "bullettrain-$CARCH" "$pkgdir/usr/bin/bullettrain"
+}

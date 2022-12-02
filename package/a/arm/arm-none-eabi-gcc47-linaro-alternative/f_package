@@ -1,0 +1,7 @@
+package() {
+  cd ${srcdir}/${_basedir}/build
+  make -j1 DESTDIR=${pkgdir} install
+
+  # libiberty.a conflicts with host version
+  rm -f  $pkgdir/usr/lib/libiberty.a
+}

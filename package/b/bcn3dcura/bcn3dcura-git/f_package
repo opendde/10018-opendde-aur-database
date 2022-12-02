@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir/Cura/build"
+  make DESTDIR="$pkgdir/" install
+  cd "$srcdir/CuraResources"
+  cp -r ./. "$pkgdir/usr/share/cura/resources"
+}

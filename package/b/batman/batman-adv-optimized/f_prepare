@@ -1,0 +1,11 @@
+prepare() {
+  cd "${srcdir}/${_pkgname}-${pkgver}"
+
+  for s in "${source[@]}"
+  do
+          case "$s" in
+                  (*.patch)
+                          #patch -p1 < "${srcdir}/${s}"
+          esac
+  done
+}

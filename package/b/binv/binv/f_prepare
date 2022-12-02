@@ -1,0 +1,7 @@
+prepare() {
+    cd bitwise_invert
+    git submodule init
+    git submodule update
+    mkdir -p build
+    cmake -DCMAKE_BUILD_TYPE=Release -DCLANG_FORMAT=OFF -DCOMPILER_WARNINGS=OFF -DBUILD_DOC=OFF -B build .
+}

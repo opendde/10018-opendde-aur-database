@@ -1,0 +1,4 @@
+package() {
+    cd "$srcdir/avr-libc/libc/avr-libc"
+    make DESTDIR="$pkgdir" install
+}

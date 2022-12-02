@@ -1,0 +1,4 @@
+package() {
+  cd "$srcdir"/BAmp
+  make INSTALL_DIR="${pkgdir}/usr/lib/lv2" install 
+}

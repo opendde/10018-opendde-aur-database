@@ -1,0 +1,9 @@
+prepare() {
+  cd "${srcdir}/gcc-${pkgver}"
+
+  echo ${pkgver} > gcc/BASE-VER
+
+  patch -p1 < ${srcdir}/config.patch
+
+  mkdir -p ${srcdir}/gcc-build
+}

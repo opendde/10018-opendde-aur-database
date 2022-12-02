@@ -1,0 +1,4 @@
+pkgver() {
+	cd "${srcdir}/bambam"
+	echo "r$(git rev-list --count HEAD).$(git rev-parse --short HEAD)"
+}

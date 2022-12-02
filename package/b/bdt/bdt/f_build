@@ -1,0 +1,5 @@
+build() {
+    cd $pkgname-$pkgver-alpha
+	autoreconf -fi
+	./configure --prefix=/usr --sysconfdir=/etc
+}

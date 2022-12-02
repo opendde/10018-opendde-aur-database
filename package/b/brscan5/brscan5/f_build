@@ -1,0 +1,4 @@
+build() {
+  mkdir -p usr/lib/udev/rules.d
+  mkdir -p etc/sane.d/dll.d
+}

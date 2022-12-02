@@ -1,0 +1,4 @@
+pkgver() {
+  cd "${pkgname%-git}"
+  printf %s "$(date -I -ud "$(git log -1 --format=%ci)" | tr -d -)"
+}

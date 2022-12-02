@@ -1,0 +1,12 @@
+package() {
+  cd "${srcdir}/blackbox-${pkgver}"
+
+  # Copy bin files to /usr/bin
+  install -d "${pkgdir}/usr/bin"
+  for f in `find bin -type f -iname "*" ! -iname "Makefile"`; do
+    cp -a "$f" "${pkgdir}/usr/bin/"
+  done
+
+  # License
+  install -D -m644 LICENSE.txt "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

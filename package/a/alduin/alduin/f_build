@@ -1,0 +1,7 @@
+build() {
+  cd $pkgname-$pkgver
+  npm uninstall 7zip-bin-linux --save-optional
+  npm run build
+  npm prune --production
+  npm rebuild --runtime=electron --target=$(</usr/lib/electron/version) --disturl=https://atom.io/download/electron --build-from-source
+}

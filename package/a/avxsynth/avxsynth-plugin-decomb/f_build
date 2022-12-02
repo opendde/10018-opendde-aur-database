@@ -1,0 +1,8 @@
+build() {
+  cd build
+  cmake ../decomb \
+  -DCMAKE_INSTALL_PREFIX=/usr/lib/avxsynth \
+  -DCMAKE_ASM_NASM_COMPILER=yasm
+
+  make
+}

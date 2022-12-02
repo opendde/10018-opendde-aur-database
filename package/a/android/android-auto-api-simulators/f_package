@@ -1,0 +1,7 @@
+package() {
+	install -dm755 "${pkgdir}/opt/android-sdk/extras/google/"
+	cp -ar "${srcdir}/simulator" "${pkgdir}/opt/android-sdk/extras/google/simulators"
+	install -Dm644 "${srcdir}/source.properties" "${pkgdir}/opt/android-sdk/extras/google/simulators/"
+
+	chmod -R ugo+rX "${pkgdir}/opt"
+}

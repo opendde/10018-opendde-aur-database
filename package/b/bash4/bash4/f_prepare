@@ -1,0 +1,11 @@
+prepare() {
+  set -u
+  cd "${_srcdir}"
+
+  local _p
+  for _p in "${_patches[@]}"; do
+    set +u; msg2 "applying patch ${_p}"; set -u
+    patch -Ncp0 -i "${srcdir}/${_p}"
+  done
+  set +u
+}

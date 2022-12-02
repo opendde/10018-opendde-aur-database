@@ -1,0 +1,1 @@
+("i2c-piix4-${pkgver}.c::https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git/plain/drivers/i2c/busses/i2c-piix4.c?h=v${pkgver}"

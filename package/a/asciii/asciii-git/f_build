@@ -1,0 +1,4 @@
+build() {
+    cd "$srcdir/asciii-rs/"
+    cargo build --release
+}

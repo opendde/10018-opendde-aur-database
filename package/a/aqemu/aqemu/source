@@ -1,0 +1,1 @@
+("aqemu-$pkgver.tar.gz::https://github.com/TBK/aqemu/archive/v${pkgver}.tar.gz")

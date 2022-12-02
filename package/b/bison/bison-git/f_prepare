@@ -1,0 +1,5 @@
+prepare() {
+  cd "bison"
+
+  git submodule update --init "submodules/autoconf"
+}

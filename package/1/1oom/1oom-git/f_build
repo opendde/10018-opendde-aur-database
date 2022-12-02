@@ -1,0 +1,6 @@
+build() {
+    cd 1oom
+    autoreconf -fi
+    ./configure --prefix=/usr --disable-hwsdl1
+    make
+}

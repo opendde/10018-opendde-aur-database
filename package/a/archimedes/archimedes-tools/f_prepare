@@ -1,0 +1,3 @@
+prepare() {
+  patch < ${srcdir}/triangle_definitions.patch triangle.h
+}

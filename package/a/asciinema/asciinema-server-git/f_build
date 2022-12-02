@@ -1,0 +1,18 @@
+build() {
+	cd "${srcdir}/${_srcdir}"
+
+	msg "Fetching bundled gems..."
+	bundle install -j$(nproc) --no-cache --deployment --without development test
+
+	msg "Precompiling assets..."
+	# We'll temporarily stick this in here so we can build the assets
+	cp config/database.yml.example config/database.yml
+	bundle exec rake assets:precompile RAILS_ENV=production
+	# After building assets, clean this up again
+	rm config/database.yml
+
+	# Build terminal executable
+	cd src
+	make all
+	cd ..
+}

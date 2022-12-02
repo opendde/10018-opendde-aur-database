@@ -1,0 +1,4 @@
+prepare() {
+  cd ${srcdir}/opt/brother/Printers/dcpl8450cdw/cupswrapper
+  patch < ${srcdir}/wrapper.patch
+}

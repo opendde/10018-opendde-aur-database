@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir/aspell5-id-$pkgver-0"
+  make DESTDIR="$pkgdir" install
+
+  install -D -m644 COPYING "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

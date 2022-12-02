@@ -1,0 +1,5 @@
+pkgver() {
+  cd ${pkgname%-git}
+  _ver="$(git describe | sed 's/^v//;s/-.*//')"
+  echo "${_ver}_r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
+}

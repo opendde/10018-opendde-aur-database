@@ -1,0 +1,4 @@
+build() {
+	cd "$srcdir/batteryinfo"
+	make DESTDIR=/usr batteryinfo batteryinfo.1.gz
+}

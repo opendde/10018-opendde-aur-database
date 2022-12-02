@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}-armv7h::${_url}_armv7")

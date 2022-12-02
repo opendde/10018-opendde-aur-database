@@ -1,0 +1,18 @@
+prepare() {
+  printf 'Configuring external build flags for CMake...\n'
+  printf '# Adding CPPFLAGS to CFLAGS, CXXFLAGS; otherwise CMake might ignore the former.\n'
+
+  export CFLAGS+=" ${CPPFLAGS}" # CMake ignores CPPFLAGS
+  export CXXFLAGS+=" ${CPPFLAGS}" # CMake ignores CPPFLAGS
+
+  printf '# Adding LDFLAGS to CMake LINKER_FLAGS_INIT vars, otherwise CMake might ignore the former.\n\n'
+
+  printf 'Configuring CMake build...\n'
+  cmake -B build -S "${_basename}" \
+    -DCMAKE_BUILD_TYPE='RelWithDebInfo' \
+    -DCMAKE_EXE_LINKER_FLAGS_INIT="${LDFLAGS}" \
+    -DCMAKE_SHARED_LINKER_FLAGS_INIT="${LDFLAGS}" \
+    -DCMAKE_MODULE_LINKER_FLAGS_INIT="${LDFLAGS}" \
+    -DCMAKE_INSTALL_PREFIX='/usr' \
+    -DBUILD_TESTING='OFF'
+}

@@ -1,0 +1,23 @@
+package() {
+  local _dir
+  # /var/spool is not used anywhere in this package. Maybe it's needed for non cups lprng.
+  for _dir in 'usr' 'opt'; do # 'var'
+    if [ -d "${srcdir}/${_dir}" ]; then
+      cp -pR "${srcdir}/${_dir}" "${pkgdir}"
+    fi
+  done
+  cp "${srcdir}/opt/brother/Printers/mfcj5930dw/cupswrapper/brother_mfcj5930dw_printer_en.ppd" "${pkgdir}/usr/share/cups/model/Brother/brother_mfcj5930dw_printer_en.ppd"
+  chmod 644 "${pkgdir}/usr/share/cups/model/Brother/brother_mfcj5930dw_printer_en.ppd"
+  ln -s "/opt/brother/Printers/mfcj5930dw/cupswrapper/brother_lpdwrapper_mfcj5930dw" "${pkgdir}/usr/lib/cups/filter/brother_lpdwrapper_mfcj5930dw"
+
+  # /etc/printcap is managed by cups. This eliminates any need for a printcap helper.
+  rm -f "`find "${pkgdir}" -type f -name 'setupPrintcap*'`"
+  # Ensure we got a ppd and a filter for CUPS
+  test "$(find "${pkgdir}/usr/share/cups/model" -type f -name '*.ppd')"
+  #test "$(find "${pkgdir}/usr/lib/cups/filter/" -type f)"
+
+  # Ensure there are no forbidden paths
+  ! grep -alqr "/sbin" "${pkgdir}" || echo "${}"
+  ! grep -alqr "/usr/tmp" "${pkgdir}" || echo "${}"
+
+}

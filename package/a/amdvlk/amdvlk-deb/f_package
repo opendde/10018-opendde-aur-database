@@ -1,0 +1,3 @@
+package() {
+  tar -xJC "$pkgdir" -f data.tar.xz
+}

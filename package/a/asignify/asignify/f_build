@@ -1,0 +1,15 @@
+build() {
+	cd "$pkgname-$pkgver"
+	./autogen.sh
+	./configure \
+		--prefix=/usr \
+		--sbindir=/usr/bin \
+		--datadir=/usr/share \
+		--libexecdir=/usr/lib/asignify \
+		--sysconfdir=/etc \
+		--sharedstatedir=/usr/share/asignify \
+		--localstatedir=/var/lib/asignify \
+		--with-gnu-ld \
+		--enable-openssl
+	make
+}

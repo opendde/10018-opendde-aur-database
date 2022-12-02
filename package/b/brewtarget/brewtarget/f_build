@@ -1,0 +1,8 @@
+build() {
+  mkdir -p "${pkgname}-build"
+  cd "${pkgname}-build"
+  cmake "../${pkgname}-${pkgver}" \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DNO_MESSING_WITH_FLAGS=ON
+  make
+}

@@ -1,0 +1,4 @@
+build() {
+  cd "$_pkgname"
+  sed -i -e 's!\(/usr/bin/\)env !&!' src/$_pkgname
+}

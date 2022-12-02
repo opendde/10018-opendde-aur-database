@@ -1,0 +1,4 @@
+package() {
+ mkdir -p $pkgdir/usr/bin/
+ install "${srcdir}/artifact-${pkgver}/target/release/art" "$pkgdir/usr/bin/"
+}

@@ -1,0 +1,16 @@
+build() {
+  export qtpath=/usr/lib/qt4/
+
+  cd "${srcdir}"/bsnes-classic/bsnes
+
+  for p in {accuracy,compatibility,performance}; do
+    make profile="$p"
+    mv out/bsnes{,-$p}
+    make clean
+  done
+
+  for l in {snesfilter,snesreader,supergameboy}; do
+    cd "${srcdir}"/bsnes-classic/"$l"
+    make
+  done
+}

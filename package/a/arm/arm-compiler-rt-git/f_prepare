@@ -1,0 +1,7 @@
+prepare() {
+  cd "$srcdir/${pkgname%-git}"
+
+  git submodule init
+  git config submodule.compiler-rt.url $srcdir/compiler-rt
+  git submodule update
+}

@@ -1,0 +1,5 @@
+prepare() {
+  cd $_srcdir
+
+  NOCONFIGURE=1 ./autogen.sh
+}

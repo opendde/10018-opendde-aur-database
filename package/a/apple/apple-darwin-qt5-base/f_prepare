@@ -1,0 +1,15 @@
+prepare() {
+  cd "${srcdir}/${_pkgfqn}"
+
+  # Apply patches; further descriptions can be found in patch files itself
+  for patch in "$srcdir/"*.patch; do
+    patch -p1 -i "$patch"
+  done
+
+  # Some Xcode tools for SDK detection are not available under osxcross (at least I don't know where to get them)
+  # Hence the SDK info must be provided manually
+  msg2 "Setting SDK info"
+  sed -i '1s;^;QMAKE_MAC_SDK.macosx.Path = '"$(${_osxcrossprefix}/bin/xcrun --sdk macosx --show-sdk-path)"'\
+QMAKE_MAC_SDK.macosx.SDKVersion = '"$(${_osxcrossprefix}/bin/xcrun --sdk macosx --show-sdk-version)"'\
+QMAKE_MAC_SDK.macosx.PlatformPath = '"${_osxcrossprefix}"'\n;' 'mkspecs/features/mac/sdk.prf'
+}

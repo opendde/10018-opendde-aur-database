@@ -1,0 +1,47 @@
+_fn_post_remove() {
+  local _cmd='#!/bin/sh
+_true=""
+if [ "\${EUID}" -ne 0 ]; then
+  echo "This must be run as root"
+  echo "You may want to look through the folders to be deleted for anything valuable"
+  _true="true"
+else
+  echo "This is likely to destroy backup configurations, encryption keys, and ssh keys."
+fi
+_delself=1
+'
+  rm -f '/usr/bin/amanda-uninstall.sh'
+  local _file
+  for _file in${_pacsave}; do
+    if [ -f "\${_file}" ]; then
+      echo -n "\${_cmd}" >> '/usr/bin/amanda-uninstall.sh'; _cmd=''
+      echo "echo rm -f '\${_file}'" >> '/usr/bin/amanda-uninstall.sh'
+      echo '\${_true} '"rm -i '\${_file}'" >> '/usr/bin/amanda-uninstall.sh'
+      echo "if [ -f '\${_file}' ]; then" >> '/usr/bin/amanda-uninstall.sh'
+      echo '  _delself=0' >> '/usr/bin/amanda-uninstall.sh'
+      echo 'fi' >> '/usr/bin/amanda-uninstall.sh'
+    fi
+  done
+
+  local _folder
+  for _folder in "\${_amhome}" "\${_ametc}" "\${_amdump}" "\${_amlog}"; do
+    if [ -d "\${_folder}" ]; then
+      echo -n "\${_cmd}" >> '/usr/bin/amanda-uninstall.sh'; _cmd=''
+      echo "echo rm -r '\${_folder}'" >> '/usr/bin/amanda-uninstall.sh'
+      echo '\${_true} '"rm -I -r '\${_folder}'" >> '/usr/bin/amanda-uninstall.sh'
+      echo "if [ -d '\${_folder}' ]; then" >> '/usr/bin/amanda-uninstall.sh'
+      echo '  _delself=0' >> '/usr/bin/amanda-uninstall.sh'
+      echo 'fi' >> '/usr/bin/amanda-uninstall.sh'
+    fi
+  done
+
+  if [ -s '/usr/bin/amanda-uninstall.sh' ]; then
+    chmod 755 '/usr/bin/amanda-uninstall.sh'
+    echo 'if [ "\${_delself}" -ne 0 ]; then' >> '/usr/bin/amanda-uninstall.sh'
+    echo '  \${_true} '"echo 'Amanda folders removed'" >> '/usr/bin/amanda-uninstall.sh'
+    echo '  \${_true} '"echo 'Amanda uninstaller removed'" >> '/usr/bin/amanda-uninstall.sh'
+    echo '  \${_true} rm -f "\$0"' >> '/usr/bin/amanda-uninstall.sh'
+    echo 'fi' >> '/usr/bin/amanda-uninstall.sh'
+    echo "amanda: use '/usr/bin/amanda-uninstall.sh' to remove all Amanda config files and folders"
+  fi
+}

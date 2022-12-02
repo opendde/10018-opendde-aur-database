@@ -1,0 +1,1 @@
+("https://kojipkgs.fedoraproject.org/packages/${_pkg}/${pkgver}/${_patch}.${_fc}/src/${_pkg}-${pkgver}-${_patch}.${_fc}.src.rpm")

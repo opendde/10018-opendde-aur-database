@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  python setup.py install --prefix=/usr --root="$pkgdir"
+  mkdir -p "$pkgdir/usr/lib/systemd/system"
+  install -Dm644 src/amdfan/amdfan.service "$pkgdir/usr/lib/systemd/system/"
+}

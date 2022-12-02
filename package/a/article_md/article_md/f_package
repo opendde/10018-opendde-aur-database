@@ -1,0 +1,3 @@
+package() {
+    npm install -g --prefix "${pkgdir}/usr" "${srcdir}/${pkgname}-${pkgver}.tgz"
+}

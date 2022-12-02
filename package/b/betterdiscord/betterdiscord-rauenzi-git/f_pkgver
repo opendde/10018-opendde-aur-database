@@ -1,0 +1,6 @@
+pkgver() {
+  cd "${srcdir}/${pkgname%-git}"
+  printf '%s.r%s.g%s' \
+    "$(sed -n 's/\s*"version": "\(.*\)",/\1/p' package.json)" \
+    "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}

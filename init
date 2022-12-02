@@ -18,28 +18,40 @@ onekeyUpdateList() {
 }
 
 onekeyGetAllPkgCfg() {
-    for ((i_ga = 1; i_ga <= $(cat pkglist.txt | wc -l); i_ga++)); do
-    onekeyGetOnePkgCfg $(cat pkglist.txt | awk 'NR=='"$i_ga"'{print}')
+    pkg_list="`cat pkglist.txt`"
+    if [ $1 ];then
+    echo "1"
+        pkg_list=`echo "$pkg_list" | grep "^$1"`
+    else
+    echo "无参数"
+    fi
+    for ((i_ga = 1; i_ga <= $(echo "$pkg_list" | wc -l); i_ga++)); do
+        onekeyGetOnePkgCfg $(echo "$pkg_list" | awk 'NR=='"$i_ga"'{print}')
     done
 }
 
 onekeyGetOnePkgCfg() {
     ./ctl-git-aur --setbranch $1
     var_list="`cat ../aur-list/PKGBUILD | grep "=" | grep -v "make " | grep -v " " | grep -v "^#" `"
-    for ((i_var= 1; i_var<= $(echo "$var_list" | wc -l ); i_var++)); do
+    for ((i_var = 1; i_var <= $(echo "$var_list" | wc -l ); i_var++)); do
         var=$(echo "$var_list" | awk 'NR=='"$i_var"'{print}')
         save_link="./package/"$(echo $1 | cut -c1)"/"$(echo $1 | awk -F- '{print $1}')"/"$1"/"`echo $var|awk -F= '{print $1}'`
         #echo $save_link
         echo ${var#*=} > $save_link
     done
     function_list="`cat ../aur-list/PKGBUILD | grep "()" | sed 's#() {##g' | grep -v "^#" `"
-    for ((i_func= 1; i_func<= $(echo "$function_list" | wc -l ); i_func++)); do
+    for ((i_func = 1; i_func <= $(echo "$function_list" | wc -l ); i_func++)); do
         a_function=$(echo "$function_list" | awk 'NR=='"$i_func"'{print}')
-        save_link="./package/"$(echo $1 | cut -c1)"/"$(echo $1 | awk -F- '{print $1}')"/"$1"/f_"`echo $a_function `
+        save_link="./package/"$(echo $1 | cut -c1)"/"$(echo $1 | awk -F- '{print $1}')"/"$1"/f_"`echo $a_function`
         #echo $save_link
-        echo "`cat ../aur-list/PKGBUILD | sed -n '/'"$a_function"'()/,/^}/p'| `" > $save_link
+        echo "`cat ../aur-list/PKGBUILD | sed -n '/'"$a_function"'()/,/^}/p'`" > $save_link
     done
 }
 ./ctl-git-aur || exit 1
-onekeyMkdir
-onekeyGetAllPkgCfg
+#onekeyMkdir
+#onekeyGetAllPkgCfg
+case "$1" in
+    "--getallcfg")
+        onekeyGetAllPkgCfg $2
+    ;;
+esac

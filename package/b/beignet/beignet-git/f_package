@@ -1,0 +1,6 @@
+package() {
+    DESTDIR="${pkgdir}" ninja -C build install
+    # Remove headers already provided by 'opencl-headers'
+    cd "${pkgdir}"/usr/include/CL
+    rm cl.h cl_egl.h cl_ext.h cl_gl.h cl_gl_ext.h cl_platform.h opencl.h
+}

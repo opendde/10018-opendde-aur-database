@@ -1,0 +1,10 @@
+package() {
+  cd "${pkgname}-${pkgver}"
+  
+  msg2 "Running make install..."
+  make install DESTDIR="${pkgdir}"
+
+  #rm -rf "${pkgdir}/etc/rc.d"
+  #mkdir -p "${pkgdir}/usr/lib/systemd/system"
+  #cp -f "${srcdir}/dirsrv-admin.service" "${pkgdir}/usr/lib/systemd/system/"
+}

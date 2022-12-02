@@ -1,0 +1,10 @@
+build() {
+  cmake -B build -S "${pkgname%*-git}" \
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_BUILD_TYPE=None \
+    -DCMAKE_SKIP_INSTALL_RPATH=YES \
+    -DCMAKE_SKIP_RPATH=YES \
+    -Wno-dev
+  make -C build
+}

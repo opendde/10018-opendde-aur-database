@@ -1,0 +1,29 @@
+package_aocl-gcc() {
+	install=${pkgname}.install
+
+	aocl_prefix=/opt/${pkgname}
+	prefix=${pkgdir}/${aocl_prefix}
+	mkdir -p ${prefix}
+
+	cd ${srcdir}/${pkgbase}-linux-gcc-${pkgver}
+
+	#cp AOCL_User_Guide_${pkgver}.pdf ${prefix}
+
+	# Option: set '-i ilp64' for ILP64 libraries as default
+	./install.sh -t ${prefix} -i lp64
+
+	# strip unneeded directories
+	mv ${prefix}/${pkgver}/* ${prefix}
+	rm -r ${prefix}/${pkgver}
+
+	# fix amd-libs.cfg containing ${pkgdir} and ${pkgver}
+	sed -e "s:=.*/opt:=/opt:g" -e "s:/${pkgver}::g" -i ${prefix}/amd-libs.cfg
+
+	# env-modules (optional)
+	cp ${srcdir}/modulefile ${prefix}
+	sed -e "s/aocl-aocc/aocl-gcc/g" \
+		-e "s/conflict aocl-gcc/conflict aocl-aocc/g" \
+		-i ${prefix}/modulefile
+	mkdir -p ${pkgdir}/etc/modules/modulefiles
+	ln -s ${aocl_prefix}/modulefile ${pkgdir}/etc/modules/modulefiles/${pkgname}
+}

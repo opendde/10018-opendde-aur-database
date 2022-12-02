@@ -1,0 +1,16 @@
+build() {
+  cd "${pkgname//-git/}"
+
+  ./configure --prefix=/usr \
+    --sbindir=/usr/bin \
+    --sysconfdir=/etc \
+    --enable-cpumining \
+    --enable-bfsb \
+    --enable-metabank \
+    --enable-scrypt \
+    --enable-opencl \
+    --with-udevrulesdir=/usr/lib/udev/rules.d \
+    --without-system-libbase58
+  # --enable-knc (FS#33640)
+  make
+}

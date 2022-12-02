@@ -1,0 +1,24 @@
+build() {
+	msg "Performing source checkout..."
+	if [ -d "$_cvsmod/CVS" ]; then
+		cd "$_cvsmod"
+		cvs -z3 update -d || return 1
+		cd ..
+	else
+		cvs -z3 -d $_cvsroot co -D $pkgver -f "$_cvsmod" || return 1
+	fi
+	msg "Source checkout finished."
+	rm -rf "$_cvsmod-build"
+	cp -r "$_cvsmod" "$_cvsmod-build" || return 1
+	cd "$_cvsmod-build"
+
+	sed -i 's/-1.7//g' bootstrap || return 1  # It wants an old version of the autotools.
+	# iostream.h doesn't work (new versions of GCC)
+	for file in "${_iostrfix[@]}"; do sed -i 's/iostream.h/iostream/g' "$file"; done || return 1
+
+	./bootstrap || return 1  # Run autotools
+	# Needs Qt spoon-fed to it...
+	./configure --prefix="/usr" --with-qt-dir="/opt/qt" --with-qt-includes="/opt/qt/include" \
+	            --with-qt-libraries="/opt/qt/lib" || return 1
+	make || return 1
+}

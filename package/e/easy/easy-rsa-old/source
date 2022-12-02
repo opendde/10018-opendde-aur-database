@@ -1,0 +1,1 @@
+(${pkgname}-${pkgver}::https://github.com/OpenVPN/easy-rsa-old/archive/${pkgver}.tar.gz)

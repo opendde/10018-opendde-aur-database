@@ -1,0 +1,15 @@
+package() {
+  install -d "$pkgdir/opt/$_pkgbin"
+  cp -a "$srcdir/squashfs-root/." "$pkgdir/opt/$_pkgbin/"
+  chmod -R +rx "$pkgdir/opt/$_pkgbin"
+
+  install -d "$pkgdir/usr/bin"
+  ln -s "/opt/$_pkgbin/$_pkgbin" "$pkgdir/usr/bin/$_pkgbin"
+
+  install -d "$pkgdir/usr/share"
+  cp -r "$srcdir/squashfs-root/usr/share/." "${pkgdir}/usr/share/"
+
+  find "$pkgdir" -type d -exec chmod 755 {} +
+
+  install -Dm644 "$srcdir/squashfs-root/$_pkgbin.desktop" "$pkgdir/usr/share/applications/$_pkgbin.desktop"
+}

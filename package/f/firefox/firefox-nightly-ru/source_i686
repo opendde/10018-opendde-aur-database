@@ -1,0 +1,1 @@
+("${_date}-${_filename}.tar.bz2::${_baseurl}${_filename}-i686.tar.bz2"

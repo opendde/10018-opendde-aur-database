@@ -1,0 +1,1 @@
+("git+https://github.com/LinkTed/$pkgname.git#tag=v$pkgver")

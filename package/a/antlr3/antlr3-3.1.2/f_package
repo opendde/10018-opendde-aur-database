@@ -1,0 +1,11 @@
+package() {
+  cd "${srcdir}"
+
+  _cmd install -D -m644 "${_shortname}-${pkgver}.jar" "${pkgdir}/usr/share/java/${_shortname}-${pkgver}.jar"
+  _cmd ln -s "${_shortname}-${pkgver}.jar" "${pkgdir}/usr/share/java/antlr3.jar"
+  _cmd ln -s "${_shortname}-${pkgver}.jar" "${pkgdir}/usr/share/java/antlr3-complete.jar"
+  _cmd ln -s "${_shortname}-${pkgver}.jar" "${pkgdir}/usr/share/java/${_shortname}-${pkgver}-complete.jar"
+  _cmd install -D -m755 antlr3 "${pkgdir}"/usr/bin/antlr3
+
+  _cmd install -D -m644 "${srcdir}/antlr_python_runtime-${pkgver}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

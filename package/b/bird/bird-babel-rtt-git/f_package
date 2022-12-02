@@ -1,0 +1,7 @@
+package () {
+  cd $_pkgname
+  make DESTDIR="$pkgdir" install
+
+  # systemd
+  install -D -m 644 "$srcdir/bird.service" "$pkgdir/usr/lib/systemd/system/bird.service"
+}

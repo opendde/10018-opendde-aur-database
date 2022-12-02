@@ -1,0 +1,8 @@
+build() {
+    cd "$pkgname"
+        
+ 	msg "Starting make..."
+	
+	#./linux/gen.sh				
+ 	scons PREFIX=/usr/ LIBDIR=/usr/share || return 1
+}

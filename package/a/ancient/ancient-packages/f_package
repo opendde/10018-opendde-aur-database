@@ -1,0 +1,5 @@
+package() {
+	cd "${srcdir}"
+
+	install -D -m755 ${pkgname} "${pkgdir}"/usr/bin/${pkgname}
+}

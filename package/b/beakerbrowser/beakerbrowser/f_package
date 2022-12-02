@@ -1,0 +1,76 @@
+package() {
+
+	cd "${srcdir}/$_pkgname"
+
+	#Copy icons for Desktop Integration
+	#install -Dm644 build/icons/48x48.png \
+    	#"$pkgdir/usr/share/icons/hicolor/48x48/apps/beaker.png"
+	
+	cd "${srcdir}"
+
+	echo "------------------------------------------------"
+	pwd
+	echo "------------------------------------------------"
+
+	#create dirs
+
+	mkdir -p ${pkgdir}/opt
+	mkdir -p "${pkgdir}/opt/${pkgname}"
+
+	echo -e "\033[1;31m==> Please wait until that installation is complete, Building the package... \033[1;0m \033[1;1m$1\033[1;0m" >&2
+
+	#Copy source to /opt
+	cd "${srcdir}/beaker/"
+	echo "------------------------------------------------"
+	pwd
+
+	if [ -d "node_modules" ]; then
+		echo "OK node modules"
+	else 
+		npm install
+		npm run rebuild #see https://github.com/electron/electron/issues/5851
+	fi
+
+	echo "------------------------------------------------"
+
+	cd "${srcdir}"
+
+	if [ -d "beaker" ]; then
+
+		echo -e "\033[1;31m==> Please wait: Copy data and files \033[1;0m \033[1;1m$1\033[1;0m" >&2
+
+		cd "${srcdir}/beaker"
+
+		#Before install icons and data
+		#Copy icons for Desktop Integration
+		install -Dm644 build/icons/48x48.png \
+    	"$pkgdir/usr/share/icons/hicolor/48x48/apps/beaker.png"
+	
+		mv * "${pkgdir}/opt/${pkgname}/"
+
+	fi
+
+	echo -e "\033[1;31m==> Copy binaries \033[1;0m \033[1;1m$1\033[1;0m" >&2
+
+	cd "${srcdir}"
+
+	# Install Binaries/Launchers
+	install -Dm755 ${pkgname} "$pkgdir"/usr/bin/${pkgname}
+
+	#copy launcher to desktop
+	install -Dm644 "${pkgname}.desktop" "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+
+	#copy License
+	install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+
+	echo -e "\033[1;31m==> FIX permissions \033[1;0m \033[1;1m$1\033[1;0m" >&2
+
+	# Fix wonky permissions
+	if [ -d "/opt/beakerbrowser" ]; then
+	
+		chown -R $USER /usr/local
+		chown -R $('whoami') /opt/beakerbrowser
+	fi
+
+    echo -e "\033[1;31m==> The package is completed .... \033[1;0m \033[1;1m$1\033[1;0m" >&2
+}

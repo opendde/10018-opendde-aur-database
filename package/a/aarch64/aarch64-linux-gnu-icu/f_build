@@ -1,0 +1,16 @@
+build() {
+  cd $_srcdir
+
+  mkdir -p nativebuild && pushd nativebuild
+  CC=gcc CXX=g++ ../configure --enable-static --disable-shared
+  make
+  popd
+
+  mkdir -p build-$_target && pushd build-$_target
+  $_target-configure \
+    --with-cross-build=${PWD}/../nativebuild \
+    --disable-rpath \
+    --disable-tests
+  make
+  popd
+}

@@ -1,0 +1,5 @@
+build() {
+  cd ${_pkgname}
+  npm install
+  npx electron-builder --linux deb
+}

@@ -1,0 +1,4 @@
+package() {
+	install -d "$pkgdir/usr/share/fonts/${pkgname%-fonts}"
+	install -t "$pkgdir/usr/share/fonts/${pkgname%-fonts}" -m644 *.otf
+}

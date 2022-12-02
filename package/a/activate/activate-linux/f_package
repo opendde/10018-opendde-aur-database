@@ -1,0 +1,5 @@
+package() {
+  cd $_pkg
+  install -Dm 644 LICENSE.md "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -D activate-linux "$pkgdir/usr/bin/activate-linux"
+}

@@ -1,0 +1,9 @@
+package() {
+	cd $_srcname/dist
+	install -d "$pkgdir/var/boorudownloader/"
+	cp -av config.json "$pkgdir/var/boorudownloader/"
+	
+	install -d "$pkgdir/usr/bin/"
+	cp -av downloader "$pkgdir/usr/bin/$pkgname"
+	chmod 755 "$pkgdir/usr/bin/$pkgname"
+}

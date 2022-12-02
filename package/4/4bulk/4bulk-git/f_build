@@ -1,0 +1,6 @@
+build() {
+	cd "$pkgname"
+	echo '#!/bin/sh' > 4bulk
+	echo python /usr/share/$pkgname/4bulk.py \$@ >> 4bulk
+	chmod +x 4bulk
+}

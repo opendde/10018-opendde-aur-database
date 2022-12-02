@@ -1,0 +1,20 @@
+build() {
+  cd build
+  CPPFLAGS+=" -DwxHAS_LARGE_FILES=1" \
+  ../"amule-${_pkgcomm}/configure" \
+    --prefix=/usr \
+    --disable-monolithic \
+    --enable-alcc \
+    --enable-amule-daemon \
+    --enable-amulecmd \
+    --enable-fileview \
+    --enable-optimize \
+    --enable-upnp \
+    --enable-webserver \
+    --enable-mmap \
+    --with-boost \
+    --with-toolkit=base \
+    --with-wx-config=/usr/bin/wx-config-base
+
+  make
+}

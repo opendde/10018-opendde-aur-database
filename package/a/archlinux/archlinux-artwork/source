@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}.tar.gz::https://sources.archlinux.org/other/artwork/${pkgname}-${pkgver}.tar.gz")

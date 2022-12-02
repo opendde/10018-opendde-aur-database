@@ -1,0 +1,11 @@
+package_bitcoinhd-tx-git() {
+	pkgdesc="BitcoinHD is a peer-to-peer network based digital currency - Transaction tool"
+	depends=('boost-libs' 'openssl')
+
+	install -Dm755 btchd/src/btchd-tx "$pkgdir/usr/bin/btchd-tx"
+	install -Dm644 btchd/doc/man/btchd-tx.1 "$pkgdir/usr/share/man/man1/btchd-tx.1"
+
+	if [ ! -f "/usr/share/licenses/btchd/COPYING" ]; then
+	    install -Dm644 btchd/COPYING "$pkgdir/usr/share/licenses/btchd/COPYING"
+	fi
+}

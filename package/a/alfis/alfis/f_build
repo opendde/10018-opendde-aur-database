@@ -1,0 +1,4 @@
+build() {
+    cd ${_dirname}
+    cargo build --release --all-features
+}

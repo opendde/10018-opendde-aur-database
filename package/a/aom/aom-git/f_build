@@ -1,0 +1,13 @@
+build() {
+  cd "aom"
+
+  cmake \
+    -B "_build" \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX="/usr" \
+    -DCMAKE_INSTALL_LIBDIR="lib" \
+    -DBUILD_SHARED_LIBS="1" \
+    -DENABLE_TESTS="0" \
+    ./
+  make -C "_build"
+}

@@ -1,0 +1,8 @@
+build() {
+  cd "$pkgname-$pkgver"
+
+  mkdir build && cd build
+
+  qmake ..
+  make
+}

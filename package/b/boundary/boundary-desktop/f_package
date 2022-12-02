@@ -1,0 +1,10 @@
+package() {
+  msg2 "Extracting the data.tar.xz"
+  tar -xf data.tar.xz -C "${pkgdir}/"
+
+  # .deb has 775
+  cd ${pkgdir}
+  chmod 755 ${pkgdir}/usr
+  chmod 755 ${pkgdir}/usr/*
+  chmod 755 ${pkgdir}/usr/share/*
+}

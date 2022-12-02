@@ -1,0 +1,3 @@
+build() {
+  sh "${srcdir}/usr/local/Brother/Printer/MFC7860DW/cupswrapper/cupswrapperMFC7860DW-${_wrapper_ver}"
+}

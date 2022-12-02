@@ -1,0 +1,1 @@
+("contao-${pkgver}.tar::https://download.contao.org/$pkgver/tar"

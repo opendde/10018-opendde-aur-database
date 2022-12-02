@@ -1,0 +1,6 @@
+package() {
+  cd $_srcdir
+  pushd build-$_target
+  make DESTDIR=${pkgdir} install
+  popd
+}

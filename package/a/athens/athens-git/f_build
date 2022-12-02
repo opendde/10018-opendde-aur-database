@@ -1,0 +1,11 @@
+build() {
+    cd "$srcdir/${_pkgname}"
+    local i686=ia32 x86_64=x64
+
+    clojure -P
+
+    yarn --cache-folder "${srcdir}/yarn-cache" run \
+        electron-builder --linux --"${!CARCH}" --dir \
+        -c.electronDist=/usr/lib/electron \
+        -c.electronVersion="$(</usr/lib/electron/version)"
+}

@@ -1,0 +1,7 @@
+prepare() {
+  msg "Applying patch files ..."
+  cd $srcdir
+  patch -p0 <beebem-0.0.13_64bit.patch
+  patch -p0 <beebem-0.0.13-keys.patch
+  patch -p0 <beebem-0.0.13_menu_crash.patch
+}

@@ -1,0 +1,3 @@
+package() {
+  install -Dm755 "${srcdir}/go/src/${_gourl}/${_pkgname}/${_pkgname}" "${pkgdir}/usr/bin/${_pkgname}"
+}

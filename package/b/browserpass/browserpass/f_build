@@ -1,0 +1,11 @@
+build() {
+    _GOPATH="$(pwd)/.go"
+
+    _go_pkgname='github.com/dannyvankooten/browserpass'
+    _go_pkgpath="$_GOPATH/src/$_go_pkgname"
+    mkdir -p "$(dirname "$_go_pkgpath")"
+    ln -sf "$srcdir/$pkgname" "$_go_pkgpath"
+
+    cd "$_go_pkgpath"
+    GOPATH="$_GOPATH" make browserpass
+}

@@ -1,0 +1,5 @@
+package() {
+        tar -xvzf "biscuit_${pkgver}_Linux-64bit.tar.gz"
+
+	install -D -m755 "biscuit" "${pkgdir}/usr/bin/biscuit"
+}

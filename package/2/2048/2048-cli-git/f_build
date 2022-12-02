@@ -1,0 +1,6 @@
+build() {
+	cd "$srcdir"/"$_pkgname"
+	make
+	cd man
+	gzip "$_pkgname2".6
+}

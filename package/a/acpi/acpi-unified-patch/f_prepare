@@ -1,0 +1,5 @@
+prepare() {
+  cd "${srcdir}/${_pkgbase}-$pkgver"
+
+  patch -p1 -N <${srcdir}/0001_add_merged.patch
+}

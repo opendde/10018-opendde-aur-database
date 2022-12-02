@@ -1,0 +1,6 @@
+package() {
+    cd "$srcdir/$_pkgname"
+    make DESTDIR="$pkgdir/" install
+    install -dm0755 $pkgdir/var/lib/binfmts
+    install -Dm755 ../binfmts.service $pkgdir/usr/lib/systemd/system/binfmts.service
+}

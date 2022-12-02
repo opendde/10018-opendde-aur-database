@@ -1,0 +1,34 @@
+package() {
+
+  install -dm755 "${pkgdir}/usr/src/anbox-binder-1"
+  install -dm755 "${pkgdir}/usr/src/anbox-ashmem-1"
+
+  echo 'Copying files..'
+  cp -r "${srcdir}/${_pkgname}/binder/"* "${pkgdir}/usr/src/anbox-binder-1/"
+  cp -r "${srcdir}/${_pkgname}/ashmem/"* "${pkgdir}/usr/src/anbox-ashmem-1/"
+
+  echo 'Building anbox-ashmem..'
+  cd "${srcdir}/${_pkgname}/binder"
+  make
+  make DESTDIR="${pkgdir}/usr/src/anbox-binder-1" install
+
+  echo 'Building anbox-binder..'
+  cd "${srcdir}/${_pkgname}/ashmem"
+  make
+  make DESTDIR="${pkgdir}/usr/src/anbox-ashmem-1" install
+
+  echo 'Build done! Please reboot after install to apply changes!'
+  echo '**********************************************************'
+  echo '
+  # Verify by loading these modules and checking the created devices:
+  sudo modprobe ashmem_linux
+  sudo modprobe binder_linux
+  lsmod | grep -e ashmem_linux -e binder_linux
+  ls -alh /dev/binder /dev/ashmem
+  '
+
+#   echo '** To activate binder_linux and ashmem_linux **
+# # $ sudo modprobe binder_linux devices=binder,hwbinder,vndbinder,anbox-binder,anbox-hwbinder,anbox-vndbinder
+# # $ sudo modprobe ashmem_linux'
+
+}

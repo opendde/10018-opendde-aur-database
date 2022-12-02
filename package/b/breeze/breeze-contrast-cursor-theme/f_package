@@ -1,0 +1,8 @@
+package() {
+    cd $srcdir/Breeze_Contrast
+    install -d $pkgdir/usr/share/icons/Breeze_Contrast
+    cp -rf *   $pkgdir/usr/share/icons/Breeze_Contrast
+    chmod -R 644 $pkgdir/usr/share/icons/Breeze_Contrast/*
+    chmod 755 $pkgdir/usr/share/icons/Breeze_Contrast
+    chmod 755 $pkgdir/usr/share/icons/Breeze_Contrast/cursors
+}

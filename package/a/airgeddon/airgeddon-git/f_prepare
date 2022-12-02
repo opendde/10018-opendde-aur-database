@@ -1,0 +1,12 @@
+prepare() {
+  if [ -d "$srcdir/$pkgname" ]; then
+    rm -rf "$srcdir/$pkgname"
+  fi
+
+  mkdir -p "$srcdir/$pkgname"
+  cd "$srcdir/$pkgname"
+}
+prepare() {
+  cd "$srcdir/$_pkgname"
+  sed -i 's|AIRGEDDON_AUTO_UPDATE=true|AIRGEDDON_AUTO_UPDATE=false|' .airgeddonrc
+}

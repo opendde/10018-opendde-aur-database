@@ -1,0 +1,15 @@
+package() {
+  depends=('android-sdk' 'android-sdk-platform-tools')
+  
+  mkdir -p "${pkgdir}/opt/android-sdk/platforms/"
+  find "${srcdir}" -maxdepth 1 -mindepth 1 -type d | grep -P 'android-[0-9]+(\.[0-9]*)*$' | while read directory; do
+      mv "${directory}" "${pkgdir}/opt/android-sdk/platforms/android-${_apilevel}"
+  done
+
+  install -D -m 644 "package.xml" "${pkgdir}/usr/share/licenses/${pkgname}/package.xml"
+
+  ln -s "/usr/share/licenses/${pkgname}/package.xml" \
+    "${pkgdir}/opt/android-sdk/platforms/android-${_apilevel}/"
+
+  chmod -R ugo+rX "${pkgdir}/opt"
+}

@@ -1,0 +1,1 @@
+("${pkgname}_${pkgver}_aarch64.tar.gz::https://github.com/purpleclay/dns53/releases/download/v0.10.0/dns53_0.10.0_linux-arm64.tar.gz")

@@ -1,0 +1,13 @@
+package() {
+  cd ${srcdir}/${pkgname}
+  # cd ${srcdir}/${pkgname}-${pkgver}/dist/${pkgname}-${pkgver}
+  
+  python2 setup.py install --root=${pkgdir} --optimize=1
+ 
+  # Fix config file permissions
+  chmod 0640 ${pkgdir}/etc/ajenti/config.json
+
+  rm -r ${pkgdir}/etc/init.d
+
+  install -D -m 644 ${srcdir}/${pkgname}/packaging/files/ajenti.service ${pkgdir}/usr/lib/systemd/system/ajenti.service
+}

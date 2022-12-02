@@ -1,0 +1,20 @@
+package_asusctl() {
+  pkgdesc="${pkgdesc/tools/CLI tools}"
+  depends=('libusb' 'systemd' 'power-profiles-daemon' 'hicolor-icon-theme')
+  install='asusctl.install'
+  optdepends=('acpi_call: fan control'
+            'supergfxctl: hybrid GPU control'
+            'asusctltray: tray profile switcher'
+            'rog-control-center: app to control asusctl')
+
+  cd "${pkgbase}"
+  make DESTDIR="${pkgdir}" install
+
+  install -Dm 644 "${srcdir}/asusd-nohwdep.service" \
+    -t "${pkgdir}/usr/lib/systemd/system"
+
+  _pick rogcc "${pkgdir}/usr/bin/rog-control-center" \
+     "${pkgdir}/usr/share/applications/rog-control-center.desktop" \
+     "${pkgdir}/usr/share/icons/hicolor/512x512/apps/rog-control-center.png" \
+     "${pkgdir}/usr/share/rog-gui"
+}

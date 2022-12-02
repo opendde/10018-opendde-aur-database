@@ -1,0 +1,7 @@
+package() {
+  cd "${srcdir}/${_gitname}-build"
+
+  python2 ./waf install --destdir=${pkgdir}
+
+  install -Dm444 README ${pkgdir}/usr/share/a2jmidid/README
+} 

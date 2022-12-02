@@ -1,0 +1,17 @@
+build() {
+    cd ${srcdir}/atom-${_atomver}
+    mkdir -p ${srcdir}/install
+    ./script/build --install=${srcdir}/install
+
+    cd ${srcdir}/install
+
+    echo "patching atom.destkop..."
+    sed -i \
+        -e 's/Exec=.*/Exec=env PYTHON=python2 \/usr\/share\/atom\/atom --enable-transparent-visuals --disable-gpu %U/' \
+        -e 's/Icon=.*/Icon=atom/' \
+        -e '/StartupNotify/ a StartupWMClass=Atom' \
+        share/applications/atom.desktop
+
+    echo "applying apm-python2.patch"
+    patch -p1 < "${srcdir}"/apm-python2.patch
+}

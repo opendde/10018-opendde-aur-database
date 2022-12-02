@@ -1,0 +1,4 @@
+pkgver() {
+  cd alacenc
+  echo "$(git describe --long --tags | tr - . | tr -d v)"
+}

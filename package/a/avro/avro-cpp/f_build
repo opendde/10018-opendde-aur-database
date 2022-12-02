@@ -1,0 +1,12 @@
+build() {
+    cd "$srcdir/avro-release-$pkgver/lang/c++"
+    mkdir build
+    cd build
+
+    cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr \
+        -DCMAKE_CXX_FLAGS_RELEASE="$CXXFLAGS $CPPFLAGS -DNDEBUG" \
+        -DCMAKE_C_FLAGS_RELEASE="$CFLAGS $CPPFLAGS -DNDEBUG" \
+        -DCMAKE_EXE_LINKER_FLAGS="$LDFLAGS" \
+        -DCMAKE_SHARED_LINKER_FLAGS="$LDFLAGS" ..
+    make
+}

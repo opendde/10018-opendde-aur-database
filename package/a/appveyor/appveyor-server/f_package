@@ -1,0 +1,10 @@
+package() {
+    bsdtar -O -xf "${srcdir}/${noextract[0]}" data.tar.xz | bsdtar -C "${pkgdir}" -xJf -
+
+    # move license
+    LICENSE_DIR="usr/share/licenses/${pkgname}"
+    ORIG_LICENSE="usr/share/doc/appveyor-server/copyright" 
+    install -dm0755 "${pkgdir}/${LICENSE_DIR}"
+    mv "${pkgdir}/${ORIG_LICENSE}" "${pkgdir}/${LICENSE_DIR}/LICENSE"
+    ln -s "/${LICENSE_DIR}/LICENSE" "${pkgdir}/${ORIG_LICENSE}"
+}

@@ -1,0 +1,5 @@
+package() {
+  cd bls
+
+  make -C build DESTDIR="$pkgdir" install
+}

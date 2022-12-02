@@ -1,0 +1,4 @@
+package() {
+    install -d ${pkgdir}/usr/bin/
+    install -Dm 755 G-Code_Ripper-${pkgver}_src/g-code_ripper.py ${pkgdir}/usr/bin/g-code_ripper.py
+}

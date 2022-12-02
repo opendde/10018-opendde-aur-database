@@ -1,0 +1,6 @@
+package() {
+	cd "$srcdir/zf-apigility-skeleton-${pkgver}"
+	install -Dm644 LICENSE.txt "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+	install -d "$pkgdir/usr/share/webapps/$pkgname"
+	cp -R . "$pkgdir/usr/share/webapps/$pkgname"
+}

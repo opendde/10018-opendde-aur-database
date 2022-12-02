@@ -1,0 +1,6 @@
+build() {
+  cd "${_pkgname}-releases-${pkgver}"
+
+  ./configure --prefix=/usr --libdir=/usr/lib
+  make
+}

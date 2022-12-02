@@ -1,0 +1,19 @@
+package() {
+    cd "${srcdir}"
+
+    install -Dm 0644 Data/*.{drs,dat,Dat} -t "${pkgdir}/usr/share/ageofconquerors-trial/Data"
+
+    install -Dm 0644 Campaign/Media/* -t "${pkgdir}/usr/share/ageofconquerors-trial/Campaign/Media/"
+    install -Dm 0644 Campaign/*.cpx -t "${pkgdir}/usr/share/ageofconquerors-trial/Campaign/"
+
+    install -Dm 0644 Sound/Campaign/*.mp3 -t "${pkgdir}/usr/share/ageofconquerors-trial/Sound/Campaign/"
+    install -Dm 0644 Sound/Scenario/*.mp3 -t "${pkgdir}/usr/share/ageofconquerors-trial/Sound/Scenario/"
+    install -Dm 0644 Sound/Midi/*.mid -t "${pkgdir}/usr/share/ageofconquerors-trial/Sound/Midi/"
+
+    install -Dm 0644 language{,_x1}.dll -t "${pkgdir}/usr/share/ageofconquerors-trial/"
+
+    install -Dm 0644 *.TTF -t "${pkgdir}/usr/share/ageofconquerors-trial/"
+
+    install -Dm 644 EULA -t "${pkgdir}/usr/share/licenses/${pkgname}/"
+    install -Dm 644 README -t "${pkgdir}/usr/share/doc/${pkgname}"
+}

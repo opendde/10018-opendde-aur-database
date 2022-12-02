@@ -1,0 +1,18 @@
+package() {
+  cd $pkgname-$pkgver
+  
+  make DESTDIR="$pkgdir" install
+  
+  install -Dm644 README.md \
+          "$pkgdir/usr/share/doc/$pkgname/README.md"
+  install -Dm644 CHANGELOG \
+          "$pkgdir/usr/share/doc/$pkgname/CHANGELOG"
+  install -Dm644 AUTHORS \
+          "$pkgdir/usr/share/doc/$pkgname/AUTHORS"
+  install -Dm644 LICENSE \
+          "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 LICENSE.DejaVu \
+          "$pkgdir/usr/share/licenses/$pkgname/LICENSE.DejaVu"
+          
+          
+}

@@ -1,0 +1,12 @@
+build() {
+	#build boilr binary
+	cd "$srcdir/$pkgname-$pkgver"
+	
+	go build \
+		-trimpath \
+		-buildmode=pie \
+		-mod=readonly \
+		-modcacherw \
+		-gcflags "all=-trimpath=${PWD}" \
+		-ldflags "-linkmode external -extldflags \"${LDFLAGS}\""
+}

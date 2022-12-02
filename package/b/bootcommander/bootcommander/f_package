@@ -1,0 +1,6 @@
+package() {
+  cd "openblt_v0${pkgver//.}/Host"
+
+  install -D "BootCommander"	  "$pkgdir/usr/bin/BootCommander"
+  ln -sf "/usr/bin/BootCommander" "$pkgdir/usr/bin/bootcommander"
+}

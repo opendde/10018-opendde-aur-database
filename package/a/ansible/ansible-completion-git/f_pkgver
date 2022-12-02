@@ -1,0 +1,7 @@
+pkgver() {
+    cd "${pkgname}"
+
+    # TODO: Right now there are no tags in the git repo.
+    # Change the command below to use tags when the first official version gets released.
+    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}

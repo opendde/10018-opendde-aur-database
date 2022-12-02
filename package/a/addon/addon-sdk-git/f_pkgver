@@ -1,0 +1,4 @@
+pkgver() {
+  cd "$srcdir/addon-sdk"
+  echo $(git rev-list --count master).$(git rev-parse --short master)
+}

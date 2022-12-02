@@ -1,0 +1,13 @@
+build() {
+  cd "${srcdir}/AdunanzA-2012.1"
+
+  ./configure \
+    --prefix=/usr \
+    --disable-monolithic \
+    --enable-{alcc,amule-daemon,amulecmd,ccache,fileview,optimize,upnp,mmap} \
+    --with-boost=/usr/include \
+    --with-toolkit=base \
+    --with-wxversion=2.8 \
+    --with-wx-config=/usr/lib/wx/config/base-unicode-release-2.8
+  make
+}

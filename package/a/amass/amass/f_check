@@ -1,0 +1,8 @@
+check() {
+  cd "Amass-$pkgver"
+
+  go test ./...
+
+  # Remove golang mod cache otherwise makepkg clean doesn't work due to perms
+  go clean -modcache
+}

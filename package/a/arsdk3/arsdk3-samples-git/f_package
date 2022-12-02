@@ -1,0 +1,11 @@
+package() {
+    mkdir -p "$pkgdir/usr/bin"
+	cp "$srcdir/arsdk-samples/Unix/BebopDroneDecodeStream/BebopDroneDecodeStream" "$pkgdir/usr/bin"
+	cp "$srcdir/arsdk-samples/Unix/BebopDroneReceiveStream/BebopDroneReceiveStream" "$pkgdir/usr/bin"
+	cp "$srcdir/arsdk-samples/Unix/BebopPilotingNewAPI/BebopPilotingNewAPI" "$pkgdir/usr/bin"
+	cp "$srcdir/arsdk-samples/Unix/JSPilotingNewAPI/JSPilotingNewAPI" "$pkgdir/usr/bin"
+
+	# Install license
+	mkdir -p "$pkgdir/usr/share/licenses/$pkgname"
+	cp "$srcdir/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

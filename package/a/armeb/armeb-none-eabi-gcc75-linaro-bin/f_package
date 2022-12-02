@@ -1,0 +1,9 @@
+package() {
+    mkdir -p "${pkgdir}/opt/${pkgname}/"
+    cp -Rv "${srcdir}/${_toolchain}/." "${pkgdir}/opt/${pkgname}"
+
+    mkdir -p "${pkgdir}/usr/bin"
+    for binary in "${srcdir}/${_toolchain}/bin/"*; do
+        ln -sv "/opt/${pkgname}/bin/$(basename ${binary})" "${pkgdir}/usr/bin/$(basename "${binary}")"
+    done
+}

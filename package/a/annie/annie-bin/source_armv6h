@@ -1,0 +1,1 @@
+("$pkgname-$pkgver-armv6h.tar.gz::https://github.com/iawia002/annie/releases/download/v$pkgver/annie_${pkgver}_Linux_ARM_v6.tar.gz")

@@ -1,0 +1,3 @@
+build() {
+  cd "${srcdir}/${pkgname%%-git}"
+}

@@ -1,0 +1,1 @@
+("${pkgname}_${pkgver}.tgz::https://github.com/alicevision/AliceVision/archive/v${pkgver}.tar.gz"

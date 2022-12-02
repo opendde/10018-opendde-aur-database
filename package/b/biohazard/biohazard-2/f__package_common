@@ -1,0 +1,8 @@
+_package_common() {
+  local _app_id="${1}" 
+  local _pkgbase="${2}"
+  install -Dm644 any "${pkgdir}/usr/games/${_app_id}/any"
+  install -Dm644 "${_app_id}.png" "${pkgdir}/usr/share/icons/${_app_id}.png"
+  install -Dm755 "${_app_id}.desktop" "${pkgdir}/usr/share/applications/${_app_id}.desktop"
+  install -Dm755 "${pkgbase}" "${pkgdir}/usr/bin/${pkgbase}"
+}

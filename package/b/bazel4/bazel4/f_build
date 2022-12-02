@@ -1,0 +1,12 @@
+build() {
+  # https://github.com/bazelbuild/bazel/issues/13613
+  CC=/usr/bin/gcc-10 \
+  CXX=/usr/bin/g++-10 \
+  EMBED_LABEL=$pkgver EXTRA_BAZEL_ARGS="--host_javabase=@local_jdk//:jdk" ./compile.sh
+  # https://github.com/bazelbuild/bazel/issues/13613
+  CC=/usr/bin/gcc-10 \
+  CXX=/usr/bin/g++-10 \
+  ./output/bazel build scripts:bazel-complete.bash
+  cd output
+  ./bazel shutdown
+}

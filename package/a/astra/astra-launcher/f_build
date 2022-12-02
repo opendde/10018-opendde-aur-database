@@ -1,0 +1,4 @@
+build() {
+    cmake -DCMAKE_BUILD_TYPE=Release -DUSE_OWN_LIBRARIES=OFF ./
+    cmake --build ./
+}

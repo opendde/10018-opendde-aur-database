@@ -1,0 +1,5 @@
+package() {
+  cd "${pkgname%-*}"/build
+  DESTDIR="$pkgdir" ninja install
+  install -m644 -D ../COPYING "$pkgdir"/usr/share/licenses/bookworm/COPYING
+}

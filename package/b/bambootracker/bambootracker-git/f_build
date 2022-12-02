@@ -1,0 +1,6 @@
+build() {
+  cd "$_pkgname"
+  qmake Project.pro CONFIG+=release CONFIG-=debug CONFIG+=use_jack CONFIG+=jack_has_rename CONFIG+=use_pulse PREFIX=/usr
+  make -j1 qmake_all
+  make
+}

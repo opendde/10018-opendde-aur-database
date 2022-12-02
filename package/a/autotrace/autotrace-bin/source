@@ -1,0 +1,1 @@
+("https://github.com/autotrace/autotrace/releases/download/travis-$_date.$_revision/${_pkgname}_${_pkgver}_all.deb")

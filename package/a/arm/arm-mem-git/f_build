@@ -1,0 +1,5 @@
+build() {
+  cd "${srcdir}/arm-mem"
+
+  make
+}

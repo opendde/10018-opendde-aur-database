@@ -1,0 +1,5 @@
+build_aerospike-client-python2() {
+  export DOWNLOAD_C_CLIENT=0
+  cd "${srcdir}/aerospike-${pkgver}"
+  python2 setup.py build
+}

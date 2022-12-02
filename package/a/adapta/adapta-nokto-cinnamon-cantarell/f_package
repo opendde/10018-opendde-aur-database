@@ -1,0 +1,4 @@
+package() {
+    install -Dm644 cinnamon.css.patch "$pkgdir/usr/share/$pkgname/cinnamon.css.patch"
+    install -Dm644 $pkgname.hook "$pkgdir/usr/share/libalpm/hooks/$pkgname.hook"
+}

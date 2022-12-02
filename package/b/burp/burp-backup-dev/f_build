@@ -1,0 +1,12 @@
+build() {
+  cd "$_pkgname-$pkgver"
+  autoreconf -vif
+  # In the 2.70 version of autotools the ability exists to define "runstatedir"
+  # which will eliminate the need for the patch file. Archlinux is currently at v2.69.
+  # I.E. use "--runstatedir=/run" when 2.70 is released.
+  ./configure --prefix=/usr \
+              --sbindir=/usr/bin \
+              --localstatedir=/var \
+              --sysconfdir=/etc/burp \
+	      CFLAGS="$CFLAGS -Wno-error=format-security"
+}

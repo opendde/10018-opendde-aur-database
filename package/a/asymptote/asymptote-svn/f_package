@@ -1,0 +1,14 @@
+package() {
+  cd "$srcdir/$_svnmod/${_svnmod}"
+  make -j1 DESTDIR="${pkgdir}" install-all
+  sed -i -e 's@env python@env python2@' ${pkgdir}/usr/share/asymptote/GUI/*.py
+  # this dir contains png files that are already embedded in the pdf documentation:
+  rm -rf ${pkgdir}/usr/share/info/asymptote
+
+  # move vim files to correct place
+  install -dm755 ${pkgdir}/usr/share/vim/vimfiles/{ftdetect,syntax}
+  mv ${pkgdir}/usr/share/asymptote/asy.vim \
+    ${pkgdir}/usr/share/vim/vimfiles/syntax/asy.vim
+  mv ${pkgdir}/usr/share/asymptote/asy_filetype.vim \
+    ${pkgdir}/usr/share/vim/vimfiles/ftdetect/asy.vim
+}

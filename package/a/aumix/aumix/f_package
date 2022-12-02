@@ -1,0 +1,8 @@
+package() {
+  cd "$srcdir"/aumix-$pkgver
+  install -D -m0755 src/aumix "$pkgdir"/usr/bin/aumix-nox
+
+  cd "$srcdir"/aumix-gtk-$pkgver
+  make DESTDIR="$pkgdir" install
+  install -D -m0644 "$srcdir"/aumix.desktop "$pkgdir"/usr/share/applications/aumix.desktop
+}

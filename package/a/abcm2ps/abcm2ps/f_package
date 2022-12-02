@@ -1,0 +1,6 @@
+package() {
+  depends+=(libpangocairo-1.0.so libpangoft2-1.0.so libpango-1.0.so
+            libgobject-2.0.so libglib-2.0.so libfreetype.so)
+  cd $pkgname-$pkgver
+  make prefix="$pkgdir"/usr docdir="$pkgdir"s/usr/share/doc install
+}

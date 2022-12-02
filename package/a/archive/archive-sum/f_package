@@ -1,0 +1,10 @@
+package() {
+  # shellcheck disable=2154
+  DESTDIR="$pkgdir" ninja -C build install
+
+  # shellcheck disable=2154
+  install \
+    -Dm644 \
+    "$srcdir"/$pkgname-$pkgver/LICENSE \
+    "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}

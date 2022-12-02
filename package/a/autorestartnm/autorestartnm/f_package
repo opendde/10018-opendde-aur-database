@@ -1,0 +1,7 @@
+package() {
+	install -Dm755 autorestartNM ${pkgdir}/usr/bin/autorestartNM
+	install -Dm644 timer-variable.target ${pkgdir}/etc/systemd/system/timer-variable.target
+	install -Dm644 timer-variable.timer ${pkgdir}/etc/systemd/system/timer-variable.timer
+	install -Dm644 autorestartNM.service ${pkgdir}/etc/systemd/system/timer-variable.target.wants/autorestartNM.service
+	install -Dm644 autorestartNM.conf ${pkgdir}/etc/conf.d/autorestartNM.sample.conf
+}

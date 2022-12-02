@@ -1,0 +1,4 @@
+_patch_install_path() {
+  local file_path="$1"
+  sed "s%/usr/local/Astrill%${_install_path}%g" -i "${pkgdir}${file_path}"
+}

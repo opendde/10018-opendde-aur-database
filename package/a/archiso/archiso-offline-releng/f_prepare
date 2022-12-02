@@ -1,0 +1,4 @@
+prepare() {
+    mkdir -p "$srcdir/usr/share/archiso/configs/offline_releng"
+    cp -r /usr/share/archiso/configs/releng/* "$srcdir/usr/share/archiso/configs/offline_releng/"
+}

@@ -1,0 +1,8 @@
+package() {
+  echo "pacman" > "$srcdir/apw.conf"
+  install -Dm644 $srcdir/apw.conf "${pkgdir}/etc/apw.conf"
+  install -Dm644 $srcdir/es.mo "${pkgdir}/usr/share/locale/es/LC_MESSAGES/apw.mo"
+  install -Dm755 $srcdir/apw "${pkgdir}/usr/bin/apw"
+  install -Dm644 $srcdir/apw.1 "${pkgdir}/usr/share/man/man1/apw.1"
+  gzip "${pkgdir}/usr/share/man/man1/apw.1"
+}

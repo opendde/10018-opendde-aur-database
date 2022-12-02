@@ -1,0 +1,10 @@
+package_brotli-git() {
+  depends=('glibc')
+  provides=('brotli' 'libbrotlicommon.so' 'libbrotlidec.so' 'libbrotlienc.so')
+  conflicts=('brotli')
+
+  cd "brotli"
+
+  make -C "_build" DESTDIR="$pkgdir" install
+  install -Dm644 "LICENSE" -t "$pkgdir/usr/share/licenses/brotli"
+}

@@ -1,0 +1,15 @@
+package() {
+  cd "${srcdir}/${_pkgname}"
+
+  make GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 DESTDIR="$pkgdir" install
+
+  mkdir -p "$pkgdir/usr/share/gconf/schemas"
+  gconf-merge-schema "$pkgdir/usr/share/gconf/schemas/awn-extras.schemas" "$pkgdir"/etc/gconf/schemas/*.schemas
+  rm -r "$pkgdir"/etc
+
+  # Remove bandwidth-monitor applet, because it's not compatible with latest netstat
+  rm -R "$pkgdir"/usr/share/avant-window-navigator/applets/bandwidth-monitor*
+
+  # Remove pandora applet, because gtkmozembed is not available
+  rm -R "$pkgdir"/usr/share/avant-window-navigator/applets/pandora*
+}

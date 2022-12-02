@@ -1,0 +1,6 @@
+build() {
+  cd biogeme-${pkgver}
+
+  ./configure --prefix=/usr --enable-bison --enable-python --enable-gui
+  make
+}

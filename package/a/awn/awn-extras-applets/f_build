@@ -1,0 +1,22 @@
+build() {
+  cd "$srcdir/$_pkgname-$pkgver"
+  patch -Np1 -i "$srcdir/awn-extras-libnotify0.7.patch"
+  patch -Np1 -i "$srcdir/remove-settings-menu.patch"
+  patch -Np0 -i "$srcdir/add-battery-upower-support.patch"
+  patch -Np0 -i "$srcdir/fix-shinyswitcher-scrolling.patch"
+  patch -Np1 -i "$srcdir/fix-weather-applet.patch"
+  patch -Np0 -i "$srcdir/awn-extras-glib2.32.patch"
+  patch -Np1 -i "$srcdir/cairo-menu-upower.patch"
+  patch -Np1 -i "$srcdir/check-dependencies.patch"
+
+  # Python2 fix
+  find . -type f -name *.py | xargs sed -i 's@^#.*python$@#!/usr/bin/python2@'
+  sed -i 's/async(\"python \"/async(\"python2 \"/' applets/maintained/shiny-switcher/shinyswitcherapplet.c
+
+  ./configure --prefix=/usr --sysconfdir=/etc \
+              --disable-static \
+              --disable-pymod-checks \
+              --with-webkit \
+              PYTHON=/usr/bin/python2
+  make
+}

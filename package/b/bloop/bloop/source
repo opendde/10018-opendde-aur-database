@@ -1,0 +1,1 @@
+("bloop-coursier-channel-$pkgver::https://github.com/scalacenter/bloop/releases/download/v$pkgver/bloop-coursier.json"

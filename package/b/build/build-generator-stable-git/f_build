@@ -1,0 +1,12 @@
+build() {
+    cd "${srcdir}/build-generator"
+    export ASDF_OUTPUT_TRANSLATIONS="/:${srcdir}/fasl-cache"
+    export CC=cc
+    "${srcdir}/cl-launch" -Q \
+        -S "(:source-registry \
+             (:tree \""${srcdir}"\")
+             :ignore-inherited-configuration)" \
+        -s jenkins.project.commandline-interface \
+        --dump ! --output "build-generator" \
+        -r "jenkins.project.commandline-interface:main"
+}

@@ -1,0 +1,18 @@
+build() {
+	${_prefix}gcc --print-multi-lib |
+	while IFS=';' read -r dir opts; do
+		opts=$(sed 's/@/ -/g' <<<"$opts")
+		( set -x
+		cmake \
+			-B "build/$dir" \
+			-S "yio" \
+			-D CMAKE_TOOLCHAIN_FILE="$PWD/yio/cmake/Toolchain/${_prefix}gcc.cmake" \
+			-D CMAKE_BUILD_TYPE="Release" \
+			-D CMAKE_C_FLAGS_RELEASE="-Os -DNDEBUG -g -ffunction-sections -fdata-sections" \
+			-D CMAKE_C_FLAGS="$opts" \
+			-D CMAKE_INSTALL_LIBDIR="lib/$dir"
+		cmake --build "build/$dir" --target yio
+		cmake --build "build/$dir" --target yio_compat
+		)
+	done
+}

@@ -1,0 +1,11 @@
+package_backintime-cli-git() {
+  pkgdesc="Simple backup/snapshot system inspired by Flyback and TimeVault. CLI version."
+  depends=('cron' 'fuse2' 'openssh' 'python-dbus' 'python-keyring' 'python-packaging' 'rsync')
+  #'ecryptfs-utils: verify home encryption'
+  optdepends=('encfs: encrypted filesystems'
+              'sshfs: remote filesystems')
+  provides=($_pkgname-cli)
+  conflicts=($_pkgname-cli)
+
+  make -C $_pkgname/common DESTDIR="$pkgdir" install
+}

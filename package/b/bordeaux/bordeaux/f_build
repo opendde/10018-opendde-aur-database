@@ -1,0 +1,13 @@
+build() {
+	cd "$srcdir/$pkgname"
+	cmake \
+		-DCMAKE_INSTALL_FULL_SYSCONFDIR:PATH=/etc \
+		-DCMAKE_INSTALL_FULL_LOCALSTATEDIR:PATH=/var \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=/usr/lib \
+		-DSERVER_PREFIX_PATH=/var/lib/bordeaux \
+		-DSERVER_LOGGER_PATH=/var/log/bordeaux \
+		-DSERVER_CONFIG_FILE=/etc/bordeaux.conf \
+		-DCMAKE_BUILD_TYPE=Release .
+	make
+}

@@ -1,0 +1,5 @@
+build() {
+  cd "$srcdir/aspell6-lv-$pkgver-1"
+  ./configure
+  make
+}

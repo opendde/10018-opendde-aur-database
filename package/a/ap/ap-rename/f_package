@@ -1,0 +1,6 @@
+package() {
+  cd "rename-$pkgver"
+  # Change name to "prename" to not conflict with util-linux.
+  install -D -m644 rename.1 "$pkgdir/usr/share/man/man1/prename.1"
+  install -D rename "$pkgdir/usr/bin/vendor_perl/prename"
+}

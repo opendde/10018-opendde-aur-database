@@ -1,0 +1,5 @@
+package() {
+    builddir="${pkgname}-${pkgver}-build"
+    cd "$builddir"
+    make install
+}

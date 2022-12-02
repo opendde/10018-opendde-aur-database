@@ -1,0 +1,9 @@
+package() {
+  cd "$srcdir/$pkgname-$pkgver_"
+  python2 setup.py install \
+    --prefix=/usr \
+    --root="$pkgdir" \
+    --strip="$pkgdir"
+  install -Dm644 "$srcdir/$pkgname.desktop" \
+    "$pkgdir/usr/share/applications/$pkgname.desktop"
+}

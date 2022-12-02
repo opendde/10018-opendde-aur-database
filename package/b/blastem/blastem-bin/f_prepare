@@ -1,0 +1,3 @@
+prepare() {
+    mv "$srcdir/blastem64-$pkgver" "$srcdir/$pkgname"
+}

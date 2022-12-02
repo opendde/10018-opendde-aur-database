@@ -1,0 +1,9 @@
+build() {
+  cd $_pkg
+  go get -d ./...
+  go build \
+    -gcflags "all=-trimpath=$PWD" \
+    -asmflags "all=-trimpath=$PWD" \
+    -ldflags "-extldflags $LDFLAGS" \
+    -o $_pkg .
+}

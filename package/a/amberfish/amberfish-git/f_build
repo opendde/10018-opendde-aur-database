@@ -1,0 +1,8 @@
+build() {
+  cd ${pkgname%-git}
+  autoconf 
+  CXXFLAGS+="-std=c++11" ${FLAGS} ./configure --prefix=/usr \
+              --mandir=/usr/share/man \
+              LDFLAGS=''
+  make
+}

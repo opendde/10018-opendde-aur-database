@@ -1,0 +1,8 @@
+prepare() {
+  cd ${pkgname}
+  git submodule init
+  git config submodule.briar.url "$srcdir/briar"
+  # git submodule--helper update --init --recursive
+  # https://bugs.archlinux.org/task/76255#comment212136
+  git -c protocol.file.allow=always submodule update --init --recursive
+}

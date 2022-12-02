@@ -1,0 +1,7 @@
+prepare() {
+  cd blobby-code
+  # Only patch if patch applies
+  if patch -p0 -N -i "$srcdir/0001-fix-vector-include.patch" --dry-run; then
+    patch -p0 -N -i "$srcdir/0001-fix-vector-include.patch"
+  fi
+}

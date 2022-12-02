@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir/apaxy"
+  install -D -m644 './apaxy/htaccess.txt' "${pkgdir}/etc/httpd/conf/extra/httpd-autoindex-apaxy.conf"
+  install -D -m644 -t "${pkgdir}/usr/share/httpd/apaxy" ./apaxy/theme/{footer.html,header.html,style.css}
+  install -D -m644 -t "${pkgdir}/usr/share/httpd/apaxy/icons/" ./apaxy/theme/icons/*
+}

@@ -1,0 +1,10 @@
+package() {
+  cd $_srcdir
+
+  pushd build-$_target
+  make DESTDIR="${pkgdir}" install
+  popd
+
+  # Install license
+  install -Dm644 "${srcdir}"/icu/LICENSE "${pkgdir}"/usr/$_target/share/licenses/icu/LICENSE
+}

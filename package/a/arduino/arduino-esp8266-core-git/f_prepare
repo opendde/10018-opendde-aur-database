@@ -1,0 +1,13 @@
+prepare() {
+  cd "$srcdir/esp-quick-toolchain"
+
+  # Prepare a custom "bin" directory for esp-quick-toolchain which expects
+  # a build toolchain with "architecture prefixes" even when not crossbuilding
+  mkdir -p "bin"
+  ln -sf "/usr/bin/g++" "bin/x86_64-linux-gnu-g++"
+  ln -sf "/usr/bin/gcc" "bin/x86_64-linux-gnu-gcc"
+  ln -sf "/usr/bin/strip" "bin/x86_64-linux-gnu-strip"
+
+  # Request esp-quick-toolchain to do its downloads
+  make GCC=10.2 GHUSER=earlephilhower GHTOKEN=none download
+}

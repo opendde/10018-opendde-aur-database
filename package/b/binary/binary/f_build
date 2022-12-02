@@ -1,0 +1,4 @@
+build() {
+  cd bin/cmd/$pkgname
+  go build -mod=vendor -gcflags "all=-trimpath=${PWD}" -asmflags "all=-trimpath=${PWD}" -ldflags "-extldflags ${LDFLAGS}"
+}

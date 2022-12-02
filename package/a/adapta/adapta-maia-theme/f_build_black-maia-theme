@@ -1,0 +1,15 @@
+build_black-maia-theme() {
+    cd "adapta-black-maia-theme-${pkgver}"
+    msg "Apply Black Maia theme"
+
+    find . -type f -name '*.*' -exec sed -i \
+    "s/#00BCD4/#16a085/Ig" {} \;
+
+    _adapta-black
+
+    ./autogen.sh --prefix "${pkgdir}/usr" \
+      --enable-plank \
+      --enable-telegram \
+      --enable-parallel #--enable-gtk_next
+    make
+}

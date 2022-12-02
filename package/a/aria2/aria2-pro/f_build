@@ -1,0 +1,12 @@
+build() {
+  cd aria2-$pkgver
+
+  ./configure \
+    --prefix=/usr \
+    --enable-libaria2 \
+    --with-ca-bundle=/etc/ssl/certs/ca-certificates.crt \
+    --without-gnutls \
+    --with-openssl
+
+  make
+}

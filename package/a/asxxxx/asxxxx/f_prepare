@@ -1,0 +1,6 @@
+prepare() {
+  # convert to unix as described in readme
+  for update in ${noextract[@]}; do
+    unzip -L -a -u -o ${update}
+  done
+}

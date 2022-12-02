@@ -1,0 +1,8 @@
+package() {
+  cd "${srcdir}/arm-mem"
+
+  mkdir -p "${pkgdir}/"{etc/profile.d,usr/lib,usr/share/licenses/arm-mem-git}
+
+  cp "${srcdir}/LICENSE" "${pkgdir}/usr/share/licenses/arm-mem-git/"
+  cp libarmmem.so "${pkgdir}/usr/lib/"
+}

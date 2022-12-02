@@ -1,0 +1,9 @@
+package() {
+  cd "${srcdir}/aster-${pkgver}"
+  python2 waf install --install-tests
+  # python2 waf install_debug
+  for _FILE in share/aster/${_installsuff}/profile.sh share/aster/${_installsuff}/config.txt include/aster/${_installsuff}/asterf_config.h include/aster/${_installsuff}/asterc_config.h lib/aster/${_installsuff}/aster_pkginfo.py
+  do
+    sed -e "s|${pkgdir}||g" -i "${pkgdir}${_installdir}/${_FILE}"
+  done
+}

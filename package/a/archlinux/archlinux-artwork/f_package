@@ -1,0 +1,15 @@
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+
+  install -d "${pkgdir}/usr/share/archlinux"/{docs,cd-labels,icons,logos,wmlogos,web}
+  install -m644 FONTS "${pkgdir}/usr/share/archlinux/docs"
+  install -m644 TRADEMARKS "${pkgdir}/usr/share/archlinux/docs"
+  install -m644 cd-labels/* "${pkgdir}/usr/share/archlinux/cd-labels"
+  install -m644 icons/* "${pkgdir}/usr/share/archlinux/icons"
+  install -m644 logos/* "${pkgdir}/usr/share/archlinux/logos"
+  install -m644 wmlogos/* "${pkgdir}/usr/share/archlinux/wmlogos"
+  install -m644 web/* "${pkgdir}/usr/share/archlinux/web"
+
+  # add the custom license
+  install -D -m644 TRADEMARKS "${pkgdir}/usr/share/licenses/${pkgname}/TRADEMARKS"
+}

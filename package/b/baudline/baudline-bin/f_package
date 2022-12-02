@@ -1,0 +1,34 @@
+package() {
+
+  _verpkg=${pkgver}
+  _arch=${CARCH}
+
+  if [ "${_arch}" == "i686" ]; then
+    _arch=x86
+  fi
+
+  cd ${srcdir}/${pkgname/-bin/}_${_verpkg}_linux_${_arch}
+
+  # Intallation
+  mkdir -p ${pkgdir}/usr/share/baudline ${pkgdir}/usr/bin/
+  cp -a ./* ${pkgdir}/usr/share/baudline/
+  mv ${pkgdir}/usr/share/baudline/baudline ${pkgdir}/usr/bin/
+  mv ${pkgdir}/usr/share/baudline/baudline_jack ${pkgdir}/usr/bin/
+
+  # Fixing permissions
+  chmod 755 ${pkgdir}/usr/bin/*
+
+  # .desktop file and icon
+  mkdir -p ${pkgdir}/usr/share/pixmaps
+  /usr/bin/convert ${srcdir}/${pkgname/-bin/}_${_verpkg}_linux_${_arch}/icons/spectro.gif ${srcdir}/${pkgname/-bin/}_${_verpkg}_linux_${_arch}/icons/baudline.png || return 1
+  /usr/bin/convert ${srcdir}/${pkgname/-bin/}_${_verpkg}_linux_${_arch}/icons/piano_keys.gif ${srcdir}/${pkgname/-bin/}_${_verpkg}_linux_${_arch}/icons/baudline_jack.png || return 1
+  install -m 644 ${srcdir}/${pkgname/-bin/}_${_verpkg}_linux_${_arch}/icons/baudline.png ${pkgdir}/usr/share/pixmaps/ || return 1
+  install -m 644 ${srcdir}/${pkgname/-bin/}_${_verpkg}_linux_${_arch}/icons/baudline_jack.png ${pkgdir}/usr/share/pixmaps/baudline_jack.png || return 1
+  mkdir -p ${pkgdir}/usr/share/applications
+  install -m 644 ${srcdir}/${pkgname/-bin/}.desktop ${pkgdir}/usr/share/applications || return 1
+  install -m 644 ${srcdir}/${pkgname/-bin/}_jack.desktop ${pkgdir}/usr/share/applications || return 1
+
+  # License
+  mkdir -p ${pkgdir}/usr/share/licenses/${pkgname}/
+  install -m 644 ${pkgdir}/usr/share/baudline/README_unix.txt ${pkgdir}/usr/share/licenses/${pkgname}/ || return 1
+}

@@ -1,0 +1,6 @@
+prepare() {
+	find ${srcdir} -type f -name lib${_pkgname}-${pkgver}*rpm -exec bsdtar -xf {} \;
+	if [[ -e ${srcdir}/usr/lib ]]; then rm -rfv ${srcdir}/usr/lib; fi
+	if [[ -e ${srcdir}/usr/lib64 ]]; then mv ${srcdir}/usr/lib64 ${srcdir}/usr/lib; fi
+	if [[ -e ${srcdir}/etc/udev ]]; then mv ${srcdir}/etc/udev ${srcdir}/usr/lib/udev; fi
+}

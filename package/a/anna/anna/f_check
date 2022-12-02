@@ -1,0 +1,4 @@
+check() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  ninja -C build/ test
+}

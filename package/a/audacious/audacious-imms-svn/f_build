@@ -1,0 +1,10 @@
+build() {
+   cd $srcdir/$_svnmod
+
+   autoheader
+   aclocal
+   autoconf
+   ./configure --prefix=/usr --disable-immsremote
+
+   make
+}

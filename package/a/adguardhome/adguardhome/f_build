@@ -1,0 +1,12 @@
+build() {
+  cd "$_pkgname-$pkgver"
+  npm --prefix client run build-prod
+  yarn --cwd client2 build
+  go build \
+    -trimpath \
+    -buildmode=pie \
+    -mod=readonly \
+    -modcacherw \
+    -ldflags "-linkmode external -extldflags \"${LDFLAGS}\" -X 'github.com/AdguardTeam/AdGuardHome/internal/version.version=v$pkgver' -X 'github.com/AdguardTeam/AdGuardHome/internal/version.channel=release'" \
+    -o $pkgname
+}

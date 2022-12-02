@@ -1,0 +1,5 @@
+prepare() {
+  cd "${srcdir}/${pkgname}/"
+
+  patch -p0 -i "${srcdir}/hardware.patch"
+}

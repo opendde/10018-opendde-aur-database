@@ -1,0 +1,4 @@
+check() {
+	cd brainfuck-master
+	cargo check
+}

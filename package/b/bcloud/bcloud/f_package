@@ -1,0 +1,4 @@
+package() {
+  cd  "${srcdir}/${pkgname}-${pkgver}"
+  python setup.py install --prefix=/usr --root="$pkgdir" || return 1
+}

@@ -1,0 +1,8 @@
+build() {
+	cd "${srcdir}/${pkgname}"
+
+    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DCUSTOM_MEMORY_MANAGEMENT=OFF -DENABLE_TESTING=OFF -DBUILD_DEPS=OFF \
+        -DCMAKE_MODULE_PATH=/usr/lib/cmake \
+        -S . -B build -G Ninja
+    ninja -C build -j 2 # the build is so heavy that it gets OOM killed even at powerful machines
+}

@@ -1,0 +1,5 @@
+package() {
+  mkdir -p $pkgdir/srv/http
+  cp -r archweb $pkgdir/srv/http/
+  rm -r $pkgdir/srv/http/archweb/.git*
+}

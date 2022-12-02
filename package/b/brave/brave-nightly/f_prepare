@@ -1,0 +1,8 @@
+prepare() {
+  mkdir -p brave
+  tar xf data.tar.xz -C brave
+  # Delete unneeded cron job
+  rm -rf brave/opt/brave.com/brave-nightly/cron
+  # Use our script to launch (allows overriding flags, sets up data dir)
+  sed -i "s/\/usr\/bin\/brave-browser-nightly/\/usr\/bin\/brave-nightly/g" brave/usr/share/applications/brave-browser-nightly.desktop    
+}

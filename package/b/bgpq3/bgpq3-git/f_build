@@ -1,0 +1,5 @@
+build() {
+  cd $pkgname
+  ./configure --prefix=$pkgdir/usr
+  make -j $(nproc)
+}

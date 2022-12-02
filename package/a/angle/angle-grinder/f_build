@@ -1,0 +1,6 @@
+build() {
+  cd "$pkgname-$pkgver"
+
+  cargo build --release --locked --message-format=json-render-diagnostics |
+  jq -r 'select(.out_dir) | select(.package_id | startswith("ag")) | .out_dir' > out_dir
+}

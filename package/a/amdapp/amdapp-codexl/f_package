@@ -1,0 +1,12 @@
+package() {
+  mkdir -p "${pkgdir}/${_ipath}"
+  cd "${srcdir}/CodeXL_Linux_x86_64_$pkgver/"
+  mv *  "${pkgdir}/${_ipath}"
+  install -D -m644 "${pkgdir}/${_ipath}/Legal/CodeXLEndUserLicenseAgreement-Linux.htm" "$pkgdir/usr/share/licenses/$pkgname/EULA.htm"
+
+  cd "${srcdir}"
+  install -D -m755 "CodeXL.sh" "$pkgdir/usr/bin/CodeXL"
+  install -D -m755 "codexl.png" "$pkgdir/usr/share/pixmaps/codexl.png"
+  install -D -m755 "codexl.desktop" "$pkgdir/usr/share/applications/codexl.desktop"
+  find "${pkgdir}/${_ipath}/RuntimeLibs/QT/" -name "*Qt*" | xargs rm # use system Qt libs
+} 

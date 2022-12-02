@@ -1,0 +1,6 @@
+check() {
+  cd $pkgname-${pkgver}
+  unset PERL5LIB PERL_MM_OPT PERL_LOCAL_LIB_ROOT
+  export PERL_MM_USE_DEFAULT=1
+  make test
+}

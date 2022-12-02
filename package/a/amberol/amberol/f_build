@@ -1,0 +1,8 @@
+build() {
+  local meson_options=(
+    --buildtype release
+  )
+
+  arch-meson $pkgname build "${meson_options[@]}"
+  meson compile -C build
+}

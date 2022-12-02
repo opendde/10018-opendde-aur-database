@@ -1,0 +1,12 @@
+package() {
+  cp -r $srcdir/etc $pkgdir
+  cp -r $srcdir/opt $pkgdir
+  cp -r $srcdir/usr $pkgdir
+  [ "$CARCH" = "x86_64" ] && mv $pkgdir/usr/lib64 $pkgdir/usr/lib
+  install -D -m644 $srcdir/agree.html $pkgdir/usr/share/licenses/$pkgname/LICENSE.html
+  install -D -m644 $srcdir/hwdb $pkgdir/usr/lib/udev/hwdb.d/20-$pkgname.hwdb
+  # move the links to the right direction
+  cd $pkgdir/usr/lib/sane
+  ln -sf libsane-brother4.so.1.0.7 $pkgdir/usr/lib/sane/libsane-brother4.so.1
+  ln -sf libsane-brother4.so.1 $pkgdir/usr/lib/sane/libsane-brother4.so
+}

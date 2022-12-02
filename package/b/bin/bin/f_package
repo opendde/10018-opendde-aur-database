@@ -1,0 +1,8 @@
+package() {
+  cd "$srcdir"
+
+  install -Dm644 bin.service "$pkgdir/usr/lib/systemd/system/bin.service"
+  install -Dm644 Rocket.toml "$pkgdir/etc/bin/Rocket.toml"
+
+  install -Dm755 "$pkgname-$pkgver/target/release/bin" "$pkgdir/usr/bin/bin"
+}

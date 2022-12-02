@@ -1,0 +1,13 @@
+build() {
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  cd "$_name-$pkgver"
+  go build \
+     -trimpath \
+     -buildmode=pie \
+     -modcacherw \
+     -ldflags "-linkmode external -extldflags \"${LDFLAGS}\" -X 'moul.io/assh/v2/pkg/version.Version=${pkgver}' -X 'moul.io/assh/v2/pkg/version.VcsRef=${_vcsref}'" \
+     -o assh \
+     .
+}

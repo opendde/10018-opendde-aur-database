@@ -1,0 +1,7 @@
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  make prefix=/usr DESTDIR="${pkgdir}" install
+
+  install -Dm755 -t "${pkgdir}/usr/share/${pkgname}/scripts/" scripts/*.{pl,sh}
+  install -Dm644 -t "${pkgdir}/usr/share/doc/$pkgname/" MANUAL{,.markdown} TUTORIAL AUTHORS NEWS
+}

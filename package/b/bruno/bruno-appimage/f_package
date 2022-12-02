@@ -1,0 +1,22 @@
+package() {
+  echo Extracting icons and .desktop
+  chmod +x "${_filename}"
+  ./${_filename} --appimage-extract "usr/share/icons" > /dev/null 2>&1
+  ./${_filename} --appimage-extract "bruno.desktop" > /dev/null 2>&1
+  sed -i -E "s|Exec=bruno|Exec=env DESKTOPINTEGRATION=0 APPIMAGELAUNCHER_DISABLE=1 bruno|" "squashfs-root/bruno.desktop"
+  sed -i "s/Exec=AppRun/Exec=\/usr\/bin\/bruno/" "squashfs-root/bruno.desktop"
+  # Install icons
+  echo Installing icons...
+  install -dm755 "${pkdir}/usr/share/icons"
+  mkdir -p "${pkgdir}/usr/share/icons"
+  cp -dpr --no-preserve=ownership "squashfs-root/usr/share/icons" "${pkgdir}/usr/share"
+  chmod -R 755 "${pkgdir}/usr/share/icons"
+  find "${pkgdir}/usr/share/icons" -type f -name "bruno.png" -exec chmod 644 {} \;
+
+  # install .desktop and AppImage file
+  echo Installing AppImage and .desktop files...
+  install -Dm644 "squashfs-root/bruno.desktop" "${pkgdir}/usr/share/applications/bruno.desktop"
+  install -Dm755 "${_filename}" "${pkgdir}/${_install_path}"
+  mkdir "${pkgdir}/usr/bin/" && chmod 755 "${pkgdir}/usr/bin/"
+  ln -s "${_install_path}" "${pkgdir}/usr/bin/bruno"
+}

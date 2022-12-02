@@ -1,0 +1,3 @@
+check() {
+    make -C "$pkgname-$pkgver/build" test
+}

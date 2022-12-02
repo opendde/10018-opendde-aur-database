@@ -1,0 +1,4 @@
+package() {
+   mv "$_filename" -v bluetooth.initd
+   _inst_initd 'bluetooth'
+}

@@ -1,0 +1,7 @@
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  mkdir -p $pkgdir/usr/share/$pkgname
+  mkdir -p $pkgdir/usr/share/emacs/site-lisp/
+  make DIR="$pkgdir/usr/share/$pkgname" install 
+  ln -s /usr/share/$pkgname $pkgdir/usr/share/emacs/site-lisp/$pkgname
+}

@@ -1,0 +1,4 @@
+package() {
+  install -Dm755 "${srcdir}/blokator/target/release/blokator" "${pkgdir}/usr/bin/blokator"
+  install -Dm644 "${srcdir}/blokator/man-pages/blokator.1.gz" "${pkgdir}/usr/share/man/man1/blokator.1.gz"
+}

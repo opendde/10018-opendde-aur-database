@@ -1,0 +1,3 @@
+build() {
+    dtc -I dts -O dtb bcmbt-overlay.dts -o bcmbt.dtbo
+}

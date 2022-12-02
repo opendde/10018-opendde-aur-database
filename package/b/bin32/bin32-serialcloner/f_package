@@ -1,0 +1,6 @@
+package() {
+	mkdir -p $pkgdir/opt
+	mkdir -p $pkgdir/usr/bin
+	cp -r "${_name}${_version}" $pkgdir/opt/${_name}${_version}
+	ln -s /opt/${_name}${_version}/${_name}${pkgver} $pkgdir/usr/bin/${_binname}
+}

@@ -1,0 +1,4 @@
+package() {
+	cd "acorn-$pkgver"
+	install -Dm755 bin/acorn "$pkgdir"/usr/bin/acorn
+}

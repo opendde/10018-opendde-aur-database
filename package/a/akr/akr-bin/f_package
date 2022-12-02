@@ -1,0 +1,5 @@
+package() {
+    tar xf data.tar.xz -C "${srcdir}"
+    install -Dm0755 -t "${pkgdir}/usr/bin/" "${srcdir}/usr/bin/${_pkgname}"
+    install -Dm0644 -t "${pkgdir}/usr/share/licenses/${_pkgname}/" "${srcdir}/usr/share/doc/${_pkgname}/copyright"
+}

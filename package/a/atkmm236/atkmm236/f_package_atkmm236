@@ -1,0 +1,6 @@
+package_atkmm236() {
+  DESTDIR="$pkgdir" meson install -C build
+
+  mkdir -p docs/usr/share
+  mv "$pkgdir"/usr/share/{devhelp,doc} docs/usr/share
+}

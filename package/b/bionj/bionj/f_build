@@ -1,0 +1,4 @@
+build() {
+  cd $srcdir
+  gcc BIONJ.c -o $pkgname
+}

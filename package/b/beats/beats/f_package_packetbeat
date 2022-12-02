@@ -1,0 +1,6 @@
+package_packetbeat() {
+    pkgdesc='Analyzes network traffic and sends the data to Elasticsearch'
+    depends=('libpcap')
+
+    _do_package_beat
+}

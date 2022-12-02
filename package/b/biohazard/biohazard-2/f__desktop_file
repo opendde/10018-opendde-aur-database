@@ -1,0 +1,14 @@
+_desktop_file() {
+  local _app_id="${1}"
+  local _title="${2}"
+  local _pkgbase="${3}"
+  local _pkgdesc="${4}"
+  local _icon="${5}"
+
+  cp psx-template.desktop "${_app_id}.desktop"
+  sed -i "s/%title%/${_title}/g" "${_app_id}.desktop"
+  sed -i "s/%pkgbase%/${_pkgbase}/g" "${_app_id}.desktop"
+  sed -i "s/%pkgdesc%/${_pkgdesc}/g" "${_app_id}.desktop"
+  sed -i "s/%app_id%/${_app_id}/g" "${_app_id}.desktop"
+  sed -i "s/%icon%/${_icon}/g" "${_app_id}.desktop"
+}

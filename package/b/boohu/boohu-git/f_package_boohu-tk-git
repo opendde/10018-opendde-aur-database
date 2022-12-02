@@ -1,0 +1,4 @@
+package_boohu-tk-git() {
+  install -Dm 755 "$srcdir/boohu-git/boohu-tk" -t "$pkgdir/usr/bin";
+  install -Dm 644 "$srcdir/boohu-git/LICENSE" -t "$pkgdir/usr/share/licenses/$pkgname"
+}

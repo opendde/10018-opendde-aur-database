@@ -1,0 +1,5 @@
+build() {
+  cd "bitlbee-steam"
+  ./autogen.sh --prefix=/usr
+  make
+}

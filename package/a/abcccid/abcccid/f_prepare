@@ -1,0 +1,20 @@
+prepare() {
+	# Extracting source tarbal
+	find $srcdir -type f -name $pkgname-$pkgver* -exec bsdtar -xf {} \;
+	
+	# Writing udev rules
+	cat << EOF >  udev.rules
+# udev rules for CCID devices
+
+# If not adding the device, go away
+ACTION!="add", GOTO="pcscd_abcccid_rules_end"
+SUBSYSTEM!="usb", GOTO="pcscd_abcccid_rules_end"
+ENV{DEVTYPE}!="usb_device", GOTO="pcscd_abcccid_rules_end"
+
+# set USB power management to auto.
+ENV{ID_USB_INTERFACES}==":0b0000:", TEST=="power/control", ATTR{power/control}="auto"
+
+# All done
+LABEL="pcscd_abcccid_rules_end"
+EOF
+}

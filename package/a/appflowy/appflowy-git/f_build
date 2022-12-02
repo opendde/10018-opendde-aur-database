@@ -1,0 +1,9 @@
+build() {
+	_setpath
+	cargo install cargo-make
+	cargo install duckscript_cli
+
+	cd "$srcdir/$_pkgname/frontend"
+	cargo make flowy_dev
+	cargo make --profile production-linux-x86_64 appflowy
+}

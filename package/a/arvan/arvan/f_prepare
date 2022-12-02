@@ -1,0 +1,4 @@
+prepare() {
+	mkdir -p $HOME/.arvan
+	tar -xf "${srcdir}/${pkgname}_${pkgver}_linux_amd64.tar.gz" -C "${srcdir}"
+}

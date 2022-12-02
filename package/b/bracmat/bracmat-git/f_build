@@ -1,0 +1,5 @@
+build() {
+	cd "$srcdir/Bracmat/src"
+	make bracmat
+	make bracmatsafe
+}

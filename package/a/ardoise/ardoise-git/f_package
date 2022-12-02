@@ -1,0 +1,12 @@
+package() {
+   BUILD="$srcdir/build"
+   cd "$BUILD"
+   install -d "$pkgdir/usr/bin" || return 1
+   install -Dm755 ardoise "$pkgdir/usr/bin" || return 1
+	cd "$srcdir/${pkgname%-VCS}"
+   install -d "$pkgdir/usr/share/icons" || return 1
+   install -Dm755 erase.png "$pkgdir/usr/share/icons/ardoise.png" || return 1
+   cd linux
+   install -d "$pkgdir/usr/share/applications" || return 1
+   install -Dm755 ardoise.desktop "$pkgdir/usr/share/applications" || return 1
+}

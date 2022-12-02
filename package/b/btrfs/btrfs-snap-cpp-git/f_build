@@ -1,0 +1,7 @@
+build() {
+    cd "${srcdir}/${pkgname}"
+    mkdir build
+    cd build
+    cmake .. -DDEFAULT_CONFIG_FILE=/etc/btrfs-snap-cpp.conf
+    make
+}

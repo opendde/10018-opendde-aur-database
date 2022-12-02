@@ -1,0 +1,1 @@
+("$pkgname-$pkgver.sh::https://github.com/TheAliceProject/alice3/releases/download/$pkgver/alice3_unix_installer_${pkgver//./_}+build_$_build.sh")

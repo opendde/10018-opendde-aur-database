@@ -1,0 +1,8 @@
+build() {
+    # Enter the Antares source folder downloaded from GitHub
+    cd "${srcdir}/antares-${pkgver}"
+    # Compile (WebPack) the application
+    NODE_ENV=production npm run compile
+    # Run Electron Builder
+    npx --no-install electron-builder --linux --"x64" --dir -c.npmRebuild=false -c.electronDist=/usr/lib/electron17 -c.electronVersion=$(</usr/lib/electron17/version) --publish always
+}

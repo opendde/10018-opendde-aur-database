@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir/$_svnmod-build"
+  mkdir -p $pkgdir/usr/bin/
+  cp aircrack-GUI $pkgdir/usr/bin/aircrackgui-m4
+}

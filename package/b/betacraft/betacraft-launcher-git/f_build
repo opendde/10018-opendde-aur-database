@@ -1,0 +1,4 @@
+build() {
+	cd "$srcdir/BetaCraft-Launcher-Java"
+	./gradlew build
+}

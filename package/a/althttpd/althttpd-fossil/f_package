@@ -1,0 +1,9 @@
+package() {
+	cd "${srcdir}/althttpd"
+	mkdir -p "$pkgdir/usr/bin"
+	mkdir -p "$pkgdir/usr/share/licenses/althttpd"
+	mkdir -p "$pkgdir/usr/share/doc/althttpd"
+	install -Dm755 "althttpd" "$pkgdir/usr/bin/"
+	install -Dm644 "althttpd.md" "$pkgdir/usr/share/doc/althttpd/"
+	head -n 10 althttpd.c > "$pkgdir/usr/share/licenses/althttpd/LICENSE"
+}

@@ -1,0 +1,33 @@
+prepare() {
+	# do not install in '/usr/local'
+	if [ -d "$srcdir/usr/local/Brother" ]; then
+		install -d "$srcdir/usr/share"
+		mv "$srcdir/usr/local/Brother/" "$srcdir/usr/share/brother"
+		rm -rf "${srcdir:?}/usr/local"
+		sed -i 's|/usr/local/Brother|/usr/share/brother|g' "$(grep -lr '/usr/local/Brother' ./)"
+	fi
+	# set up cups-directories
+	install -d "$srcdir/usr/share/cups/model"
+	install -d "$srcdir/usr/lib/cups/filter"
+	# find source file in cupswrapper directory
+	cd "$(find . -type d -name 'cupswrapper')" || exit
+	_wrapper_source="$(find . -name "cupswrapper*")"
+	# generate ppd- and wrapper- files
+	sed -i '/^\/etc\/init.d\/cups/d' "$_wrapper_source"
+	sed -i '/^sleep/d' "$_wrapper_source"
+	sed -i '/^lpadmin/d' "$_wrapper_source"
+	# shellcheck disable=2016
+	sed -i 's|/usr|$srcdir/usr|g' "$_wrapper_source"
+	# shellcheck disable=2016
+	sed -i 's|/opt|$srcdir/opt|g' "$_wrapper_source"
+	sed -i 's|/model/Brother|/model|g' "$_wrapper_source"
+	sed -i 's|lpinfo|echo|g' "$_wrapper_source"
+	export srcdir="$srcdir"
+	./"$_wrapper_source"
+	# shellcheck disable=2016
+	sed -i 's|$srcdir||' "$srcdir"/usr/lib/cups/filter/*lpdwrapper*
+	sed -i "s|$srcdir||" "$srcdir"/usr/lib/cups/filter/*lpdwrapper*
+	rm "$_wrapper_source"
+	#  /etc/printcap is managed by cups
+	rm "$(find "$srcdir" -type f -name 'setupPrintcap*')"
+}

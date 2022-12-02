@@ -1,0 +1,5 @@
+build() {
+	cd $_pkgname
+	mkdir build && cd build
+	cmake .. && make $MAKEFLAGS
+}

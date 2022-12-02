@@ -1,0 +1,9 @@
+package() {
+	install -Dm755 "${pkgname}-1.9.0/buf" "${pkgdir}/usr/bin/buf"
+	install -Dm755 "${pkgname}-1.9.0/protoc-gen-buf-lint" "${pkgdir}/usr/bin/protoc-gen-buf-lint"
+	install -Dm755 "${pkgname}-1.9.0/protoc-gen-buf-breaking" "${pkgdir}/usr/bin/protoc-gen-buf-breaking"
+	install -Dm644 "${pkgname}-1.9.0/completion.bash" "${pkgdir}/etc/bash_completion.d/buf"
+	install -Dm644 "${pkgname}-1.9.0/completion.zsh" "${pkgdir}/usr/share/zsh/site-functions/_buf"
+	install -Dm644 "${pkgname}-1.9.0/completion.fish" "${pkgdir}/usr/share/fish/vendor_completions.d/buf.fish"
+	install -Dm644 "${pkgname}-1.9.0/manpages/${pkgname}"* -t "${pkgdir}/usr/share/man/man1/"
+}

@@ -1,0 +1,18 @@
+build() {
+    cd "${srcdir}/${_pkgbase}-gtk3"
+    ./configure \
+        --prefix=/usr \
+        --libexecdir=/usr/lib/${_pkgbase} \
+        --with-gtk=3.0 \
+        --enable-gtk-doc \
+        --enable-djvu \
+        --enable-dvi \
+        --enable-epub \
+        --enable-t1lib \
+        --enable-pixbuf \
+        --enable-comics \
+        --enable-xps \
+        --enable-introspection \
+        --disable-static
+    make
+}

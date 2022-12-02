@@ -1,0 +1,6 @@
+package() {
+  cd $pkgname
+  install -Dm644 "$pkgname.efi" "$pkgdir/boot/EFI/tools/$pkgname.efi"
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
+}

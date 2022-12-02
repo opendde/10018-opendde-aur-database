@@ -1,0 +1,6 @@
+package() {
+  mkdir -p "${pkgdir}"/usr/lib/lv2/bg-arpeggiator.lv2
+  mkdir -p "${pkgdir}"/usr/lib/lv2/bg-midi-pattern.lv2
+  cd "$srcdir"/mod-arpeggiator-lv2
+  make DESTDIR="${pkgdir}" install 
+}

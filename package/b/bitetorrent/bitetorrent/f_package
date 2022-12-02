@@ -1,0 +1,5 @@
+package() {
+	cd "$pkgname-$pkgver"
+	install -Dm 755 bitetorrent "$pkgdir/usr/bin/bitetorrent"
+	install -Dm 644 bitetorrent.service "$pkgdir/usr/lib/systemd/system/bitetorrent.service"
+}

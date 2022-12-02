@@ -1,0 +1,4 @@
+package() {
+	cd "$srcdir/${pkgname}"
+	install -Dm775 app-manager -t ${pkgdir}/usr/bin/
+}

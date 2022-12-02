@@ -1,0 +1,4 @@
+prepare() {
+  cd "$srcdir"
+  7za -o"./$pkgver" e "$_archive"
+}

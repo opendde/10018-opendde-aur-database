@@ -1,0 +1,4 @@
+build() {
+  cd "$srcdir"/3dgamecpp/
+  make DEBUG=0
+}

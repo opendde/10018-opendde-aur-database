@@ -1,0 +1,47 @@
+prepare() {
+  set -u
+
+  shopt -s nullglob
+  local _deb
+  local _debn=1
+  for _deb in *.deb; do
+    local _dx="debextract.${_debn}"
+    mkdir "${_dx}"
+    bsdtar -C "${_dx}" -xf "${_deb}"
+    bsdtar -C "${_dx}" -xf "${_dx}"/control.tar.?z
+    bsdtar -xf "${_dx}"/data.tar.?z
+    rm "${_dx}"/*.tar.?z
+    _debn=$((_debn+1))
+  done
+  shopt -u nullglob
+
+  # Do not Install in '/usr/local'. Does not apply to all Brother models.
+  # This may modify binary blobs which only
+  # works when the old and new strings are exactly the same length.
+  if [ -d 'usr/local' ]; then
+    install -d 'usr/share'
+    mv 'usr/local/Brother' "usr/share/${_conflict}"
+    rmdir 'usr/local'
+    sed -e "s:/usr/local/Brother:/usr/share/${_conflict}:g" -i $(grep -lare '/usr/local/Brother' ./)
+  fi
+
+  # setup cups-directories, some installers create these for us
+  install -d 'usr/lib/cups/filter'
+  install -d 'usr/share/cups/model'
+  #install -d 'usr/share/ppd' # For cups we don't need the ppd file here.
+
+  # /etc/printcap is managed by cups
+  find . -type 'f' -name 'setupPrintcap*' -delete
+
+  # Source code is packed
+  pushd "${_brsource}" > /dev/null
+  local _cwtar="cupswrapper${_brotherxnd}_src"
+  bsdtar -xf "${_cwtar}-${pkgver//_/-}.tar.gz"
+  cd "${_cwtar}"
+  mv * ..
+  cd ..
+  rmdir "${_cwtar}"
+  popd > /dev/null
+
+  set +u
+}

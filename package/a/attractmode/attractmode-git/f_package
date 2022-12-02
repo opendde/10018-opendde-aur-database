@@ -1,0 +1,7 @@
+package() {
+  cd "$srcdir/$_gitname-build"
+  mkdir $pkgdir/usr
+  mkdir $pkgdir/usr/bin
+  mkdir $pkgdir/usr/share
+  make prefix="$pkgdir/usr" install
+}

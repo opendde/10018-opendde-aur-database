@@ -1,0 +1,7 @@
+build() {
+  cd "autoconf"
+
+  autoreconf -fi
+  ./configure --prefix="/usr"
+  make
+}

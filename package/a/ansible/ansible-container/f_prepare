@@ -1,0 +1,4 @@
+prepare() {
+  cd "$pkgname-release-$pkgver"
+  patch -Np1 -i "${srcdir}/fix-pip.patch"
+}

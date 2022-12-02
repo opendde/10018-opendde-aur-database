@@ -1,0 +1,11 @@
+prepare() {
+  cd "$srcdir"
+  msg2 "Decompressing Debian package..."
+  ar xv "boosteroid-install-x64.deb" > /dev/null
+  tar -xf data.tar.bz2 > /dev/null
+  tar -xf control.tar.gz > /dev/null
+  msg2 "Checking archive integrity..."
+  md5sum -c md5sums > /dev/null
+  msg2 "Patching files..."
+  sed -i "s/Exec=.*/Exec=\/usr\/bin\/$pkgname/g" usr/share/applications/Boosteroid.desktop
+}

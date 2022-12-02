@@ -1,0 +1,4 @@
+build() {
+  cd "${srcdir}"/"${pkgname//-git/}"2
+  make
+}

@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}.tar.gz"::"https://github.com/AviSynth/AviSynthPlus/archive/v${pkgver}.tar.gz")

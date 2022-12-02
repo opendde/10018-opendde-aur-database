@@ -1,0 +1,30 @@
+prepare() {
+    # Extracting content from bin file
+    tail -c+6889 AdbeRdr9.5.5-1_i486linux_enu.bin | xz -qqd | tar x
+    mkdir oldlib
+    tar -C oldlib -axf lib32-glib2-2.52.2+9+g3245eba16-1-x86_64.pkg.tar.xz
+    tar -C oldlib -axf lib32-harfbuzz-1.4.6-1-x86_64.pkg.tar.xz
+    tar -C oldlib -axf lib32-pango-1.40.6+9+g92cc73c8-1-x86_64.pkg.tar.xz
+    tar -C oldlib -axf lib32-librsvg-2.40.18-1-x86_64.pkg.tar.xz
+    tar -C oldlib -axf lib32-gdk-pixbuf2-2.36.6-1-x86_64.pkg.tar.xz
+    tar -C oldlib -axf lib32-libxml2-2.9.4+16+g07418011-1-x86_64.pkg.tar.xz
+    tar -C oldlib -axf lib32-gtk2-2.24.31-1-x86_64.pkg.tar.xz
+    tar -C oldlib -axf lib32-libxt-1.1.5-1-x86_64.pkg.tar.xz
+    tar -C oldlib -axf lib32-libidn-1.33-1-x86_64.pkg.tar.xz
+    tar -C oldlib -axf lib32-icu-59.1-1-x86_64.pkg.tar.xz
+    tar -C oldlib -axf lib32-atk-2.24.0+4+gbf71ccc-1-x86_64.pkg.tar.xz
+    tar -C oldlib -axf lib32-cairo-1.14.10-1-x86_64.pkg.tar.xz
+    tar -C oldlib -axf lib32-libffi-3.2.1-2-x86_64.pkg.tar.xz
+    tar -C oldlib -axf lib32-libx11-1.6.9-1-x86_64.pkg.tar.xz
+    tar -C oldlib -axf lib32-freetype2-2.9-2-x86_64.pkg.tar.xz
+    tar -C oldlib -axf lib32-fontconfig-2.13.0-1-x86_64.pkg.tar.xz
+
+    cd AdobeReader/
+    bsdtar -xf COMMON.TAR
+    bsdtar -xf ILINXR.TAR
+
+    sed -i "s/_filedir/&_acroread/" Adobe/Reader9/Resource/Shell/acroread_tab
+    # Bug on log created by Adobe Reader browser plugin https://bugs.launchpad.net/ubuntu/+source/acroread/+bug/986841
+    sed -i 's#C:\\nppdf32Log\\debuglog\.txt#/dev/null\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00#g' \
+Adobe/Reader9/Browser/intellinux/nppdf.so
+}

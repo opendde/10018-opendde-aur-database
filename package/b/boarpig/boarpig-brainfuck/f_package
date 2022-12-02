@@ -1,0 +1,5 @@
+package() {
+  cd brainfuck
+
+  install -Dm755 brainfuck "$pkgdir/usr/bin/bpf"
+}

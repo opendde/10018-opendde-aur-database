@@ -1,0 +1,7 @@
+package_auditbeat-oss() {
+    pkgdesc='Audit the activities of users and processes on your system to Elasticsearch OSS or OpenSearch'
+    install='auditbeat-oss.install'
+
+    _do_package_beat
+    install -D module/auditd/_meta/audit.rules.d/sample-rules-linux-64bit.conf "$pkgdir/etc/$pkgname/audit.rules.d/sample-rules.conf.disabled"
+}

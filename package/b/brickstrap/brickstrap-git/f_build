@@ -1,0 +1,5 @@
+build() {
+	cd "${_pkgname}"
+	pandoc --standalone --to man docs/brickstrap.md > docs/brickstrap.1
+	gzip -f docs/brickstrap.1
+}

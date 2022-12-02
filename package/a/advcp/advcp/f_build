@@ -1,0 +1,6 @@
+build() {
+    cd "${_pkgname}-${pkgver}"
+    ./configure --prefix=/usr \
+                --libexecdir=/usr/lib
+    make
+}

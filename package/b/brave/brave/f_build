@@ -1,0 +1,100 @@
+build() {
+	cd "brave-browser"
+
+	if check_buildoption ccache y; then
+		# Avoid falling back to preprocessor mode when sources contain time macros
+		export CCACHE_SLOPPINESS=time_macros
+	fi
+
+	export CC=clang
+	export CXX=clang++
+	export AR=llvm-ar
+	export NM=llvm-nm
+
+	# Hack to prioritize python2 in PATH
+	mkdir -p "$srcdir/bin"
+	ln -sf /usr/bin/python2 "$srcdir/bin/python"
+	ln -sf /usr/bin/python2-config "$srcdir/bin/python-config"
+	export PATH="$srcdir/bin:$PATH"
+
+	if [ "$USE_SCCACHE" -eq "1" ]; then
+		echo "sccache = /usr/bin/sccache" >> .npmrc
+	fi
+
+	echo 'brave_variations_server_url = https://variations.brave.com/seed' >> .npmrc
+	echo 'brave_stats_updater_url = https://laptop-updates.brave.com' >> .npmrc
+	echo 'brave_stats_api_key = fe033168-0ff8-4af6-9a7f-95e2cbfc' >> .npmrc
+	echo 'brave_sync_endpoint = https://sync-v2.brave.com/v2' >> .npmrc
+	echo "uphold_client_id = 6d8d9473ed20be627f71ed46e207f40c004c5b1a" >> .npmrc
+	echo "uphold_client_secret = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" >> .npmrc
+	echo "uphold_staging_client_id = 4c2b665ca060d912fec5c735c734859a06118cc8" >> .npmrc
+	echo "uphold_staging_client_secret = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" >> .npmrc
+	echo "gemini_api_url = https://api.gemini.com/v1" >> .npmrc
+	echo "gemini_oauth_url = https://api.gemini.com/v1/oauth" >> .npmrc
+	echo "gemini_wallet_client_id = 6d8d9473ed20be627f71ed46e207f40c004c5b1a" >> .npmrc
+	echo "gemini_wallet_client_secret = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" >> .npmrc
+
+	npm_args=()
+	if [ "$COMPONENT" = "4" ]; then
+		local _flags=(
+		'custom_toolchain="//build/toolchain/linux/unbundle:default"'
+		'host_toolchain="//build/toolchain/linux/unbundle:default"'
+		'clang_use_chrome_plugins=false'
+		'treat_warnings_as_errors=false'
+		'fieldtrial_testing_like_official_build=true'
+		'proprietary_codecs=true'
+		'rtc_use_pipewire=true'
+		'link_pulseaudio=true'
+		'use_gnome_keyring=false'
+		'use_sysroot=false'
+		'use_custom_libcxx=false'
+		'use_vaapi=true'
+		'is_clang=true'
+		)
+
+		if [[ -n ${_system_libs[icu]+set} ]]; then
+		_flags+=('icu_use_data_file=false')
+		fi
+
+		if check_option strip y; then
+		_flags+=('symbol_level=0')
+		fi
+
+		# Facilitate deterministic builds (taken from build/config/compiler/BUILD.gn)
+		CFLAGS+='   -Wno-builtin-macro-redefined'
+		CXXFLAGS+=' -Wno-builtin-macro-redefined'
+		CPPFLAGS+=' -D__DATE__=  -D__TIME__=  -D__TIMESTAMP__='
+
+		# Do not warn about unknown warning options
+		CFLAGS+='   -Wno-unknown-warning-option'
+		CXXFLAGS+=' -Wno-unknown-warning-option'
+
+		npm_args+=(
+		"$(echo "${_flags[@]}" | tr ' ' '\n' | sed -e 's/=/:/' -e 's/^/--gn=/')"
+		)
+	fi
+
+	## See explanation on top to select your build
+	case $COMPONENT in
+		0)
+		_msg "Normal build (with debug)"
+		npm run build
+		;;
+		2)
+		_msg "Static build"
+		npm run build -- Static
+		;;
+		3)
+		_msg "Debug build"
+		npm run build -- Debug
+		;;
+		4)
+		_msg "Release custom build"
+		npm run build Release -- "${npm_args[@]}"
+		;;
+		1|*)
+		_msg "Release build"
+		npm run build Release
+		;;
+	esac
+}

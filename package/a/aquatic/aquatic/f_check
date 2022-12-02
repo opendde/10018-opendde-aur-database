@@ -1,0 +1,4 @@
+check() {
+  cd $pkgbase
+  RUSTC_BOOTSTRAP=1 cargo test --release
+}

@@ -1,0 +1,15 @@
+package() {
+  # Fix for the man directory
+  mkdir -p ${pkgdir}/usr/share/man
+
+  # Add license
+  mkdir -p ${pkgdir}/usr/share/licenses/blt
+  cp ${srcdir}/COPYING ${pkgdir}/usr/share/licenses/blt
+
+  cd ${srcdir}/${_pkgname}
+  make -j 1 INSTALL_ROOT=${pkgdir} install
+
+  # Delete man file, it is still owned by extra/tk
+  rm ${pkgdir}/usr/share/man/mann/bitmap.n
+  rm ${pkgdir}/usr/share/man/mann/busy.n
+}

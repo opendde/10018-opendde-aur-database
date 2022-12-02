@@ -1,0 +1,5 @@
+prepare() {
+	cd "$pkgname"
+	patch -p1 < "$srcdir/Makefile.patch"
+	go mod tidy
+}

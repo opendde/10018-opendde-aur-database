@@ -1,0 +1,13 @@
+package() {
+  # Install License (License is in README)
+  install -Dm644 $pkgname/README.md "$pkgdir/usr/share/licenses/$pkgname/README.md"
+
+  # Install html file
+  install -Dm644 $pkgname/bitaddress.org.html "$pkgdir/usr/share/$pkgname/bitaddress.org.html"
+
+  # Install binary
+  install -Dm755 bitaddress.sh "${pkgdir}/usr/bin/bitaddress"
+
+  # Install desktop launcher
+  install -Dm644 bitaddress.desktop "${pkgdir}/usr/share/applications/bitaddress.desktop"
+}

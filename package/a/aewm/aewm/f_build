@@ -1,0 +1,5 @@
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+  patch -p1 -i $srcdir/makefile.patch
+  make CFGDIR='$(DESTDIR)/usr/share/aewm'
+}

@@ -1,0 +1,8 @@
+package() {
+	npm install -g --user root --prefix "$pkgdir"/usr \
+		--cache "${srcdir}/npm-cache" \
+		"${pkgname}@${pkgver}"
+
+	install -Dm644 "${pkgdir}/usr/lib/node_modules/${pkgname}/LICENSE" \
+		"${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

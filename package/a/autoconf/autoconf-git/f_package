@@ -1,0 +1,8 @@
+package() {
+  cd "autoconf"
+
+  make DESTDIR="$pkgdir" install
+  install -Dm644 "COPYING.EXCEPTION" "$pkgdir/usr/share/licenses/$pkgname/COPYING.EXCEPTION"
+
+  rm "$pkgdir/usr/share/info/standards.info"
+}

@@ -1,0 +1,13 @@
+package() {
+  mkdir -p $pkgdir/usr/share/amazon-workspaces
+  mkdir -p $pkgdir/usr/bin
+
+  # Icons
+  cp -a $srcdir/usr/share/* $pkgdir/usr/share/
+
+  # Binary
+  cp -a $srcdir/opt/workspacesclient/* $pkgdir/usr/share/amazon-workspaces/
+
+  # Launcher
+  ln -s /usr/share/amazon-workspaces/workspacesclient $pkgdir/usr/bin/amazon-workspaces
+}

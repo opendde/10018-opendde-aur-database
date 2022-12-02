@@ -1,0 +1,8 @@
+build() {
+  cd ${srcdir}/libav
+
+  TMPDIR=${srcdir} ./configure --prefix=/usr --enable-pthreads \
+    --disable-shared --enable-static --enable-libfaac --enable-libx264 \
+    --enable-libmp3lame --enable-gpl --enable-nonfree 
+  make
+}

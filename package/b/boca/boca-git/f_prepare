@@ -1,0 +1,7 @@
+prepare() {
+  cd "$srcdir/${pkgname%-git}"
+  find . -type f -exec sed -i 's|/usr/local|/usr|g' {} \;
+
+  sed -i 's/FOLDERS += coreaudioconnect/#FOLDERS += coreaudioconnect/g' \
+    components/encoder/Makefile
+}

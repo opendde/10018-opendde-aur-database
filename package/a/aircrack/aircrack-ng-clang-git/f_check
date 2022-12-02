@@ -1,0 +1,4 @@
+check() {
+  cd "aircrack-ng"
+  make check
+}

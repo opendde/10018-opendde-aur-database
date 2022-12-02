@@ -1,0 +1,4 @@
+pkgver() {
+  cd d2vwitch
+  echo "$(git describe --long --tags | tr - .)"
+}

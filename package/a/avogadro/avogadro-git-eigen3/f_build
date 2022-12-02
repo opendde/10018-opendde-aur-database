@@ -1,0 +1,13 @@
+build() {
+        cd "$pkgname"
+        
+	if [ -e $pkgname/build]
+	then
+		cd build
+	else
+		mkdir build
+        	cd build
+    	fi
+        cmake ../
+        make -j2
+}

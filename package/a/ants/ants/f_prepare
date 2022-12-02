@@ -1,0 +1,4 @@
+prepare() {
+  cd "${srcdir}/ANTs-${pkgver}"
+  mkdir -p build
+}

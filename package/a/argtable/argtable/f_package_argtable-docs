@@ -1,0 +1,8 @@
+package_argtable-docs() {
+  pkgdesc+=" - documentation and examples"
+  arch=('any')
+
+  cd "$srcdir/${pkgname%-*}${pkgver/./-}"
+  make -C doc DESTDIR="$pkgdir/" install
+  make DESTDIR="$pkgdir/" install-dist_exampleDATA
+}

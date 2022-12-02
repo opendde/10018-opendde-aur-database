@@ -1,0 +1,26 @@
+package_barriers() {
+  provides=('genPoHoLandscape'
+            'crossrates.pl'
+            'saddle2dot.pl'
+            'saddle2gml.pl'
+            'treeplot.pl')
+
+  cd "${srcdir}/Barriers-${pkgver}"
+
+  # install executables
+  cd src/
+  make DESTDIR="${pkgdir}" install || return 1
+  cd ..
+
+  # install manpages, documentation, examples, and misc files
+  cd man
+  make DESTDIR="${pkgdir}" install
+  cd ..
+
+  # install generic perl scripts
+  cd perl/
+  for perlscript in crossrates.pl saddle2dot.pl saddle2gml.pl treeplot.pl ; do
+    install -Dm755 "$perlscript" "$pkgdir/usr/bin/"
+  done
+  cd ..
+}

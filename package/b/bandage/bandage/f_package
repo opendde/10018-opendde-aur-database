@@ -1,0 +1,7 @@
+package() {
+    cd "$srcdir/Bandage-$pkgver"
+    install -Dm755 Bandage "$pkgdir/usr/bin/Bandage"
+    install -Dm644 "$srcdir/bandage.desktop" "$pkgdir/usr/share/applications/bandage.desktop"
+    install -Dm644 images/icon.png "$pkgdir/usr/share/icons/hicolor/512x512/apps/bandage.png"
+    install -Dm644 COPYING "$pkgdir/usr/share/licenses/$pkgname/COPYING"
+}

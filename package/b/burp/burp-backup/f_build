@@ -1,0 +1,10 @@
+build() {
+  cd "$_pkgname-$pkgver"
+  autoreconf -vif
+  ./configure --prefix=/usr \
+              --sbindir=/usr/bin \
+              --runstatedir=/run \
+              --localstatedir=/var \
+              --sysconfdir=/etc/burp
+  make
+}

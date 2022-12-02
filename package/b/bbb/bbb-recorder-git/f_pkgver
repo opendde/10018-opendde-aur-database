@@ -1,0 +1,5 @@
+pkgver() {
+    cd "$srcdir"/bbb-recorder
+    # Currently no tags exist, using commit count.
+    echo -n 0.0.0+ && git rev-list HEAD --count
+}

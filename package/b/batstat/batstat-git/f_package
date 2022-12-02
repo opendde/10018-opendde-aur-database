@@ -1,0 +1,6 @@
+package() {
+  cd "${srcdir}/${_pkgname}/"
+  bin=$pkgdir/usr/bin
+  mkdir -p "$bin"
+  cp batstat "$bin"
+}

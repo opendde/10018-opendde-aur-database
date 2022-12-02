@@ -1,0 +1,8 @@
+package() {
+    cd $srcdir/
+    mkdir -p $pkgdir/usr/bin/
+    mkdir -p "$pkgdir/usr/lib/systemd/system"
+    install -m 0755 $srcdir/amdguid $pkgdir/usr/bin
+    install -m 0755 $srcdir/amdgui-helper $pkgdir/usr/bin
+    install -m 0755 $srcdir/amdgui-helper.service "$pkgdir/usr/lib/systemd/system/amdgui-helper.service"
+}

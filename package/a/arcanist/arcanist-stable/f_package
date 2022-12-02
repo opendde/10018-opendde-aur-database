@@ -1,0 +1,5 @@
+package() {
+  install -d "$pkgdir/usr/share/php/$_pkgname/" "$pkgdir/usr/bin/"
+  cp -a $_pkgname/* "$pkgdir/usr/share/php/$_pkgname/"
+  ln -s "../share/php/$_pkgname/bin/arc" "$pkgdir/usr/bin/arc"
+}

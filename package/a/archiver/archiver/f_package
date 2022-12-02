@@ -1,0 +1,6 @@
+package() {
+  cd "${pkgname}-${pkgver}"
+
+  install -Dm755 arc -t "${pkgdir}/usr/bin"
+  install -Dm644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+}

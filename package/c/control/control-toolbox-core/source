@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}::https://github.com/ethz-adrl/control-toolbox/archive/${pkgver}.tar.gz")

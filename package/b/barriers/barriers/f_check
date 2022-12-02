@@ -1,0 +1,5 @@
+check() {
+  cd "$srcdir/Barriers-${pkgver}"
+  export LC_ALL=C
+  make check
+}

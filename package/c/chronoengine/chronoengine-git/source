@@ -1,0 +1,1 @@
+("${pkgname}::git+https://github.com/projectchrono/chrono.git${_fragment}"

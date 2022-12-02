@@ -1,0 +1,7 @@
+build() {
+	pwd
+	ls -al
+	cd "$_name"
+	./configure --prefix=/usr
+	make
+}

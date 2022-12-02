@@ -1,0 +1,9 @@
+package() {
+    install -dm755 ${pkgdir}${_destname}
+    install -Dm755 "${srcdir}/bench" "${pkgdir}${_destname}bench"
+
+    install -dm755 ${pkgdir}${_licensedir}${_pkgname}
+    install -dm755 ${pkgdir}${_readmedir}${_pkgname}
+	install -m644  ${srcdir}/LICENSE ${pkgdir}${_licensedir}${_pkgname}
+    install -Dm644 ${srcdir}/README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
+}

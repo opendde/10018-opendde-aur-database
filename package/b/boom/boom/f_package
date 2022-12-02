@@ -1,0 +1,16 @@
+package() {
+  install -Dm755 "${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+	cd "${srcdir}/${_buildpkgname}-${pkgver}"
+  install -Dm644 "LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+	install -DTm755 "${_buildpkgname}" "${pkgdir}/usr/share/${pkgname}/${pkgname}"
+	cp -r "assets" "${pkgdir}/usr/share/${pkgname}/"
+	chmod 544 "${pkgdir}/usr/share/${pkgname}/assets/graphics/"*
+	cp levels.json "${pkgdir}/usr/share/${pkgname}/"
+  
+  # create savegame outside of installdir
+  mkdir "${pkgdir}/usr/share/${pkgname}/saves/"
+  chmod 777 "${pkgdir}/usr/share/${pkgname}/saves/"
+  ln -s "/usr/share/${pkgname}/saves/.lif_prefs.json" "${pkgdir}/usr/share/${pkgname}/.lif_prefs.json"  
+
+  install -Dm644 "${startdir}/${pkgname}.desktop" "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+}

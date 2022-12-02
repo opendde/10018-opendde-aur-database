@@ -1,0 +1,5 @@
+build() {
+  cd "$srcdir/sdk/angelscript/projects/gnuc"
+
+  make all
+}

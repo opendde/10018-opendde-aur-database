@@ -1,0 +1,4 @@
+build() {
+  cd bluez-${pkgver}/tools
+  gcc hcitool.c ../src/oui.c -lbluetooth -o hcitool -DVERSION=\"$pkgver\" -I..
+}

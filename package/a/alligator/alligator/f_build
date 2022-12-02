@@ -1,0 +1,4 @@
+build() {
+  cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -B build -S "${pkgname}-${pkgver}"
+  cmake --build build --config Release
+}

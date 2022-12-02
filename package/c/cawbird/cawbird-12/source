@@ -1,0 +1,1 @@
+("cawbird-${pkgver}.tar.gz::https://github.com/IBBoard/cawbird/archive/v${pkgver}.tar.gz")

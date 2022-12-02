@@ -1,0 +1,7 @@
+package() {
+  cd "$srcdir"/${_pkgname}-$pkgver
+
+  install -d "$pkgdir"/usr/share/$_pkgname
+	cp -a "$srcdir"/httpd-$pkgver/docs/manual \
+    "$pkgdir"/usr/share/$_pkgname/
+}

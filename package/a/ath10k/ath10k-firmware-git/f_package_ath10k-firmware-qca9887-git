@@ -1,0 +1,8 @@
+package_ath10k-firmware-qca9887-git() {
+  #pkgver=10.2.3.31.7
+  cd "$srcdir/${pkgbase%-git}"
+	mkdir -p "$pkgdir/usr/lib/firmware/ath10k"
+  cp -r QCA9887 "$pkgdir/usr/lib/firmware/ath10k"
+	mv "$pkgdir/usr/lib/firmware/ath10k/QCA9887/firmware-5.bin_10.2.3.31.7-1" "$pkgdir/usr/lib/firmware/ath10k/QCA9887/firmware-5.bin"
+	install -Dm644 LICENSE.qca_firmware "$pkgdir/usr/share/licenses/$pkgname/License.qca_firmware"
+}

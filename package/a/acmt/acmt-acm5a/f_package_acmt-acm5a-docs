@@ -1,0 +1,4 @@
+package_acmt-acm5a-docs () {
+	pkgdesc="ACM-5A Mid-Range EQ (Documentation)"
+	install -Dm644 ${srcdir}/ACM-5A/manual.pdf ${pkgdir}/usr/share/doc/${pkgbase}/manual.pdf
+}

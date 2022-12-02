@@ -1,0 +1,12 @@
+package () {
+  # Manually install the engine and data
+  mkdir -p $pkgdir/usr/share/${_svnmod}
+  install -m 644 $srcdir/${_svnmod}-build/gamedata.vfs $pkgdir/usr/share/${_svnmod}/gamedata.vfs
+
+  # Install .desktop, icon and bin
+  install -Dm 644 ${startdir}/astromenace.desktop $pkgdir/usr/share/applications/astromenace.desktop
+  install -Dm 644 ${srcdir}/${_svnmod}-build/astromenace_128.png $pkgdir/usr/share/pixmaps/astromenace.png
+  install -Dm 755 ${srcdir}/${_svnmod}-build/AstroMenace $pkgdir/usr/bin/astromenace
+  cd $pkgdir/usr/bin
+  ln -s /usr/share/astromenace/gamedata.vfs gamedata.vfs
+}

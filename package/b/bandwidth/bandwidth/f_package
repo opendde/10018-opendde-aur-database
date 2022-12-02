@@ -1,0 +1,8 @@
+package() {
+  cd "${srcdir}/${pkgname}-${_orig_fullver}"
+  if [ "${CARCH}" = "x86_64" ]; then
+     install -Dm755 bandwidth64 "${pkgdir}"/usr/bin/bandwidth
+   else
+     install -Dm755 bandwidth32 "${pkgdir}"/usr/bin/bandwidth
+  fi
+}

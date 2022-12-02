@@ -1,0 +1,4 @@
+build() {
+  cd ${srcdir}/${name}-${pkgver}
+  python setup.py --nocopy --noversioncheck
+}

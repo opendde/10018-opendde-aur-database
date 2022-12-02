@@ -1,0 +1,9 @@
+build() {
+    cd "$srcdir/arsse"
+    composer install
+    ./robo manpage
+    ./robo manual
+    composer install --no-dev -o --no-scripts
+    php arsse.php conf save-defaults config.defaults.php
+    rm -r vendor/bin
+}

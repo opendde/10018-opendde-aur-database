@@ -1,0 +1,6 @@
+build() {
+  cd "${pkgname}"
+
+# Download or update the library
+# - automatic since pacman v4.1
+}

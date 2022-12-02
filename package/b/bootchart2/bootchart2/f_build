@@ -1,0 +1,12 @@
+build() {
+	cd "${srcdir}/${pkgname%2}-${pkgver}"
+
+	sed -i -e 's:sbin:usr/bin:g' \
+		-e 's:/lib/systemd/system:/usr/lib/systemd/system:g' \
+		-e 's:bootchartd $(DESTDIR)$(EARLY_PREFIX)/usr/:bootchartd $(DESTDIR)$(EARLY_PREFIX)/:g' \
+		-e 's:SYSTEMD_UNIT_DIR = .*:SYSTEMD_UNIT_DIR = /usr/lib/systemd/system:g' \
+		-e 's:/usr/share/docs:/usr/share/doc:g' Makefile
+	sed -i -e 's:sbin:bin:g' *.service.in 
+
+	make PROGRAM_SUFFIX=2 EARLY_PREFIX=/usr all
+}

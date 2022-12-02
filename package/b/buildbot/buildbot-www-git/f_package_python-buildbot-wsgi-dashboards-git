@@ -1,0 +1,9 @@
+package_python-buildbot-wsgi-dashboards-git() {
+  pkgdesc="Buildbot plugin to integrate flask or bottle dashboards to buildbot UI"
+  depends=('buildbot-git')
+  provides=("python-buildbot-wsgi-dashboards=$pkgver")
+  conflicts=('python-buildbot-wsgi-dashboards')
+
+  cd buildbot/www/wsgi_dashboards
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+}

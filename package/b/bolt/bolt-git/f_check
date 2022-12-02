@@ -1,0 +1,5 @@
+check() {
+  cd "${srcdir}"/bolt
+
+  ninja -C build test
+}

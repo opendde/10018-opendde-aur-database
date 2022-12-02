@@ -1,0 +1,1 @@
+"${_builddate%%-*}.$_commit"

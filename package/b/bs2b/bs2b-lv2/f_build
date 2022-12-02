@@ -1,0 +1,5 @@
+build() {
+	cd "${pkgname}-${pkgver}"
+	./waf configure --prefix="/usr/"
+	./waf build
+}

@@ -1,0 +1,5 @@
+package() {
+	cp -r "$srcdir/etc" "$pkgdir"
+	cp -r "$srcdir/opt" "$pkgdir"
+	cp -r "$srcdir/var" "$pkgdir"
+}

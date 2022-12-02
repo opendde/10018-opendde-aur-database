@@ -1,0 +1,3 @@
+package() {
+  install -Dm755 "$srcdir"/auth0 "${pkgdir}"/usr/bin/auth0
+}

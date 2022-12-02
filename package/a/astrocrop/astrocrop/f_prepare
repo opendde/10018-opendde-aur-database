@@ -1,0 +1,4 @@
+prepare() {
+    mkdir ${_prefix}
+    tar -xvf data.tar.xz -C ${_prefix}
+}

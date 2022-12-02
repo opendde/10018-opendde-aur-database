@@ -1,0 +1,11 @@
+package() {
+  cd $_gitname
+  PREFIX="${pkgdir}/usr"
+  mkdir -p ${PREFIX}/bin/ ${PREFIX}/share/doc/autosshfs/
+  install -D -o root -g root     -m 0750 src/autosshfs-user ${PREFIX}/bin/
+	install -D -o root -g root -m 0750 src/autosshfs-map  ${PREFIX}/bin/ #group will be changed to autosshfs in install file
+	install -D -o root -g root -m 0750 src/autosshfs-ssh  ${PREFIX}/bin/ #group will be changed to autosshfs in install file
+	install -D -o root -g root     -m 0755 bin/keychain-ring  ${PREFIX}/bin/
+	install -D -o root -g root     -m 0755 -d ${PREFIX}/share/doc/autosshfs/
+	install -D -o root -g root     -m 0644 doc/* ${PREFIX}/share/doc/autosshfs
+}

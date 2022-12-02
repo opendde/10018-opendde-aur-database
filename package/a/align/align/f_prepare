@@ -1,0 +1,5 @@
+prepare() {
+	cd "$pkgname-$pkgver"
+	mkdir -p build
+	go mod tidy
+}

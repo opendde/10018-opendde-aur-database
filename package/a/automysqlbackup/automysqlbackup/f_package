@@ -1,0 +1,6 @@
+package() {
+    cd ${srcdir}/
+    install -d ${pkgdir}/etc/${pkgname} ${pkgdir}/usr/bin ${pkgdir}/var/backup/db
+    install -Dm644 ${pkgname}.conf ${pkgdir}/etc/${pkgname}/${pkgname}.conf
+    install -Dm755 ${pkgname} ${pkgdir}/usr/bin/${pkgname}
+}

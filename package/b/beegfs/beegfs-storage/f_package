@@ -1,0 +1,12 @@
+package() {
+    cd "$srcdir/$pkgname-$pkgver/${_srcname}/build"
+    install -D --mode=0644 dist/etc/beegfs-storage.conf "${pkgdir}/etc/beegfs/beegfs-storage.conf"
+    install -D --mode=0755 dist/sbin/beegfs-setup-storage "${pkgdir}/usr/bin/beegfs-setup-storage"
+    install -D --mode=0644 dist/usr/lib/systemd/system/beegfs-storage.service "${pkgdir}/usr/lib/systemd/system/beegfs-storage.service"
+    install -D --mode=0644 dist/usr/lib/systemd/system/beegfs-storage@.service "${pkgdir}/usr/lib/systemd/system/beegfs-storage@.service"
+    install -D --mode=0644 libStorage.a "${pkgdir}/usr/lib/beegfs/libStorage.a"
+    install -D --mode=0755 beegfs-storage "${pkgdir}/usr/bin/beegfs-storage"
+
+    cd "$srcdir/$pkgname-$pkgver"
+    install -D --mode=0644 LICENSE.txt "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.txt"
+}

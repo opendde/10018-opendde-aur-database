@@ -1,0 +1,6 @@
+prepare() {
+    chmod a+x BadlionClient
+    ./BadlionClient --appimage-extract > /dev/null
+    cd "squashfs-root"
+    rm -rf "AppRun" "BadlionClient.desktop" "BadlionClient.png" ".DirIcon" "licenses" "LICENSE.electron.txt" "LICENSES.chromium.html"
+}

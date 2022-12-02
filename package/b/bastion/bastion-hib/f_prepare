@@ -1,0 +1,15 @@
+prepare() {
+    # Set apart files to install separately
+    mv data/{Bastion.bmp,Linux.README} .
+    
+    msg2 "Preparing icon..."
+    convert Bastion.bmp Bastion.png
+    
+    msg2 "Preparing launch script..."
+    echo -e "#!/usr/bin/env sh\n" \
+            "cd /opt/$_installname\n" \
+            "export force_s3tc_enable=true\n" \
+            "export LD_LIBRARY_PATH='./$_lib:\$LD_LIBRARY_PATH'\n" \
+            'exec mono Bastion.exe "$@"' \
+        > launcher.sh
+}

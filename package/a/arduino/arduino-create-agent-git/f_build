@@ -1,0 +1,8 @@
+build() {
+  export GOPATH="${srcdir}"/gopath
+  cd gopath/src/github.com/arduino/${_gitname}
+  mkdir -p build
+#  go build -i &&  go install
+  go build -i -o build/${_gitname}
+  go build -i -tags cli -o build/${_gitname}-cli
+}

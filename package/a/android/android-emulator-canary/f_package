@@ -1,0 +1,15 @@
+package() {
+  # shellcheck disable=SC2154
+  install -Dm755 "${pkgname}.sh" "${pkgdir}/etc/profile.d/${pkgname}.sh"
+  install -Dm755 "${pkgname}.csh" "${pkgdir}/etc/profile.d/${pkgname}.csh"
+
+  install -d "${pkgdir}/opt/android-sdk/"
+  cp -a emulator "${pkgdir}/opt/android-sdk/"
+
+  install -d "${pkgdir}/usr/share/licenses/${pkgname}"
+  xml sel -t -v '/sdk:sdk-repository/license[@id="android-sdk-preview-license"]' repository2-1.xml > "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+
+  # Fix broken permissions
+  chmod -R o=g "${pkgdir}/opt/android-sdk/emulator"
+  find "${pkgdir}/opt/android-sdk/emulator" -perm 744 -exec chmod 755 {} +
+}

@@ -1,0 +1,1 @@
+("aurman_sources::git+https://github.com/polygamma/aurman.git?signed#tag=${pkgver}")

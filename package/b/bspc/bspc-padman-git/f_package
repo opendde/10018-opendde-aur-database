@@ -1,0 +1,8 @@
+package() {
+	# The below does not work, presumably because of the None target.
+	#DESTDIR="$pkgdir/" cmake --install build
+	
+	# Also rename bspcwop to bspc.
+	mkdir -p "$pkgdir/usr/bin"
+	cp "$srcdir/build/bspcwop" "$pkgdir/usr/bin/bspc"
+}

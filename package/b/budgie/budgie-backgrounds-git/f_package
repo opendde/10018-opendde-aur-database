@@ -1,0 +1,4 @@
+package() {
+    meson install -C build --destdir "$pkgdir"
+    install -Dm644 "$pkgname"/LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

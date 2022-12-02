@@ -1,0 +1,6 @@
+build() {
+	cd "$srcdir/bruteforce-luks"
+	./autogen.sh
+    ./configure
+    make
+}

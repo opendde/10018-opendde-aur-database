@@ -1,0 +1,1 @@
+("${pkgname}::git+https://github.com/emuflight/EmuConfigurator.git#tag=$pkgver"

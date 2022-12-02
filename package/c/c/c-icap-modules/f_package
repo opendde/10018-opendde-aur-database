@@ -1,0 +1,16 @@
+package() {
+	mkdir -p "$pkgdir/usr/bin/"
+	mkdir -p "$pkgdir/usr/share/$pkgname"
+	mkdir -p "$pkgdir/usr/share/pixmaps"
+	mkdir -p "$pkgdir/usr/share/applications"
+	mkdir -p "$pkgdir/usr/share/licenses/$pkgname"
+
+	install -m755 "dxx-rebirth_$pkgver-src/build/d2x-rebirth/d2x-rebirth" "$pkgdir/usr/bin/"
+
+	install -m644 "dxx-rebirth_$pkgver-src/d2x-rebirth/d2x-rebirth.xpm" "$pkgdir/usr/share/pixmaps/"
+
+	install -m644 "dxx-rebirth_$pkgver-src/d2x-rebirth/d2x-rebirth.desktop" "$pkgdir/usr/share/applications/"
+
+	install -m644 "dxx-rebirth_$pkgver-src/COPYING.txt" "$pkgdir/usr/share/licenses/$pkgname/"
+	install -m644 "d2xr-sc55-music.dxa" "$pkgdir/usr/share/$pkgname/"
+} 

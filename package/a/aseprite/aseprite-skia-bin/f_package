@@ -1,0 +1,27 @@
+package() {
+	# Now the fun part: components of e.g. `libwebp` get installed as well,
+	# since we've had to compile it. But we don't want them.
+	# So, install normally, and then cherry-pick Aseprite's files out of that.
+	# Use a whitelist to prefer installing not enough (breakage goes noticed),
+	# instead of too much (cruft rarely goes noticed). Also hope that it doesn't break :)
+	cmake --install build --prefix=staging --strip
+
+	# Install the binary and its `.desktop` file
+	install -vDm 755 staging/bin/aseprite "$pkgdir/usr/bin/aseprite"
+	install -vDm 644 aseprite/src/desktop/linux/aseprite.desktop "$pkgdir/usr/share/applications/$pkgname.desktop"
+	install -vDm 644 aseprite/src/desktop/linux/mime/aseprite.xml "${pkgdir}/usr/share/mime/packages/${_pkgname}.xml"
+	# Install the icons in the correct directory (which is not the default)
+	local _size
+	for _size in 16 32 48 64 128 256; do
+		# The installed icon's name is taken from the `.desktop` file
+		install -vDm 644 staging/share/aseprite/data/icons/ase$_size.png "$pkgdir/usr/share/icons/hicolor/${_size}x$_size/apps/aseprite.png"
+	done
+	# Delete the icons to avoid copying them in two places (they aren't used by Aseprite itself)
+	rm -rf staging/share/aseprite/data/icons
+	# Install all of the program's data
+	cp -vrt "$pkgdir/usr/share" staging/share/aseprite
+	# Also install the licenses
+	install -vDm 644 -t "$pkgdir/usr/share/licenses/$pkgname" aseprite/{EULA.txt,docs/LICENSES.md}
+	# Copy the font's license, but leave it in the font directory as well (probably doesn't hurt)
+	install -vm 644 aseprite/data/fonts/LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/font.txt"
+}

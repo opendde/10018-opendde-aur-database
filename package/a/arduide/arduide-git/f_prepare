@@ -1,0 +1,5 @@
+prepare() {
+  msg "Cleaning the previous build directory..."
+  rm -rf build
+  mkdir build
+}

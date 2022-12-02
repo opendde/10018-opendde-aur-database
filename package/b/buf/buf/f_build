@@ -1,0 +1,9 @@
+build() {
+	cd ${pkgname}-1.9.0
+	go build -trimpath -buildmode=pie -mod=readonly -modcacherw -buildvcs=false -o . ./cmd/{buf,protoc-gen-buf-lint,protoc-gen-buf-breaking}
+	./buf completion bash >completion.bash
+	./buf completion zsh >completion.zsh
+	./buf completion fish >completion.fish
+	mkdir -p manpages
+	./buf manpages manpages
+}

@@ -1,0 +1,4 @@
+pkgver() {
+  cd $_gitname
+  echo $(git rev-list --count main).$(git rev-parse --short main)
+}

@@ -1,0 +1,3 @@
+package() {
+	install -Dm755 "$srcdir/2048/2048" "$pkgdir/usr/local/bin/2048"
+}

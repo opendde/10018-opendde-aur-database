@@ -1,0 +1,5 @@
+prepare() {
+	cd "${pkgname}-${pkgver}/src"
+	sed -i 's|CFLAGS += -I../libmseed||' Makefile
+	sed -i 's|LDFLAGS = -L../libmseed||' Makefile
+}

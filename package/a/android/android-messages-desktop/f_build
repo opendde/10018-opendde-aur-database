@@ -1,0 +1,10 @@
+build() {
+  cd "$pkgname-$pkgver"
+  electronDist="/usr/lib/electron${_electronversion}"
+  electronVer="$(sed s/^v// /usr/lib/electron${_electronversion}/version)"
+  yarn config set cache-folder "$srcdir/yarn-cache"
+  yarn install
+  yarn webpack --mode=production
+  yarn electron-builder --linux --x64 --dir \
+    $dist -c.electronDist=$electronDist -c.electronVersion=$electronVer
+}

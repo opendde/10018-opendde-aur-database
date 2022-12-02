@@ -1,0 +1,4 @@
+check() {
+	cd arp-scan
+	make -k check
+}

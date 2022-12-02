@@ -1,0 +1,4 @@
+check() {
+	ninja -C build_with_llvm test
+	ninja -C build_without_llvm test || true
+}

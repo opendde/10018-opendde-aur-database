@@ -1,0 +1,5 @@
+build() {
+	sed -i 's#/usr/lib/java/swt.jar#/usr/share/java/swt.jar#' build.xml
+	JAVA_HOME=/usr/lib/jvm/default CPATH=$CPATH:$JAVA_HOME/include:$JAVA_HOME/include/linux ant -buildfile build.xml
+
+}

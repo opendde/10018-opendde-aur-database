@@ -1,0 +1,4 @@
+pkgver() {
+	cd "${pkgname}"
+	git describe --long --tags | sed 's/^VERSION_//; s/_/./g; s/-/+/g'
+}

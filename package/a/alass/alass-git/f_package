@@ -1,0 +1,4 @@
+package() {
+        cd "$srcdir/$_gitname"
+        install -Dm 755 target/release/alass-cli "${pkgdir}/usr/bin/alass"
+}

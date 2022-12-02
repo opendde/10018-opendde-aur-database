@@ -1,0 +1,4 @@
+prepare() {
+  cd Installer-${pkgver}
+  patch -Np1 -i ../electron-13.patch
+}

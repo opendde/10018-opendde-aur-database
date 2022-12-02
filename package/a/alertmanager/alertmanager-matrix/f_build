@@ -1,0 +1,5 @@
+build() {
+    cd "alertmanager_matrix-$pkgver"
+    export GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw"
+    make PREFIX=/usr
+}

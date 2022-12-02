@@ -1,0 +1,7 @@
+pkgver() {
+  cd "${srcdir}/${_pkgname}"
+  local version="$(grep ^PROJECT_NUMBER Doxyfile | awk '{ print $3 }')"
+  local revision=$(git rev-list --count HEAD)
+  local hash=$(git rev-parse --short HEAD)
+  echo $version.r$revision.$hash
+}

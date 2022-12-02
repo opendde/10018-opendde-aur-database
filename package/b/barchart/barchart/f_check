@@ -1,0 +1,5 @@
+check() {
+    cd "barchart-${pkgver}"
+
+    RUSTUP_TOOLCHAIN=stable cargo test --release --locked --target-dir=target
+}

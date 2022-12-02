@@ -1,0 +1,7 @@
+_set_machtype() {
+  if [ $arch = 'i686' ]; then
+    _machtype=i386
+  else
+    _machtype=x86_64
+  fi
+}

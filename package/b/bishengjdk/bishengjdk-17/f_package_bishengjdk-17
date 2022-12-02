@@ -1,0 +1,14 @@
+package_bishengjdk-17() {
+    depends=("java-environment-common" "java-runtime-common")
+    provides=("java-environment=${_majorver}"
+        "java-environment-bishengjdk=${_majorver}"
+        "java-runtime=${_majorver}"
+        "java-runtime-bishengjdk=${_majorver}"
+        "java-runtime-headless=${_majorver}"
+        "java-runtime-headless-bishengjdk=${_majorver}")
+    install=bishengjdk.install
+    _src=bisheng-jdk-$pkgver
+    _dst=bishengjdk-$_majorver
+    install -dm 755 "${pkgdir}/usr/lib/jvm/$_dst"
+    cp -a ${srcdir}/$_src/* ${pkgdir}/usr/lib/jvm/$_dst
+}

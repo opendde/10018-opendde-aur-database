@@ -1,0 +1,5 @@
+package() {
+	cd alpc
+    install -Dm755 "target/release/alpc" \
+        -t "$pkgdir/usr/bin/"
+}

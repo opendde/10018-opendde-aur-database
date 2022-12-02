@@ -1,0 +1,4 @@
+package() {
+  cd "bat"
+  install -Dm755 "bat" "$pkgdir/usr/bin/bat"
+}

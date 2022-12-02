@@ -1,0 +1,11 @@
+package() {
+	cd "$pkgname-$pkgver"
+	install -D asleap "$pkgdir/usr/bin/asleap"
+	install -D genkeys "$pkgdir/usr/bin/genkeys"
+
+	cd "$srcdir/deb"
+	_so=lib/libxcrypt.so.1.2.4
+	install -D $_so -t "$pkgdir/usr/lib"
+	ln -s /usr/$_so "$pkgdir/usr/lib/libxcrypt.so"
+	ln -s /usr/$_so "$pkgdir/usr/lib/libxcrypt.so.1"
+}

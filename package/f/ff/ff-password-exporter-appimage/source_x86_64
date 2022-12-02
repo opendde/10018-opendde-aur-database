@@ -1,0 +1,1 @@
+("${_appimage}::https://github.com/kspearrin/ff-password-exporter/releases/download/v${pkgver}/FF-Password-Exporter-${pkgver}-x86_64.AppImage"

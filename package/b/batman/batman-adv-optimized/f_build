@@ -1,0 +1,4 @@
+build() {
+  cd "${srcdir}/${_pkgname}-${pkgver}"
+  make KERNELPATH=/usr/lib/modules/$(uname -r)/build
+}

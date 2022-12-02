@@ -1,0 +1,5 @@
+build() {
+    cd "$srcdir/application"
+    npm install "https://github.com/castlabs/electron-releases#v14.2.2-wvvmp" --save-dev
+    npm --cache "$srcdir/npm-cache" i electron-context-menu@3.1.1
+}

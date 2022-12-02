@@ -1,0 +1,8 @@
+build() {
+	export RUSTUP_TOOLCHAIN=stable
+	export CARGO_TARGET_DIR=target
+	cd "$pkgname"
+	cargo build --release --frozen --target "$CARCH-unknown-linux-gnu"
+	## use the line below if your system doesn't use wayland
+	# cargo build --release --frozen --target "$CARCH-unknown-linux-gnu" --no-default-features --features xorg-glium
+}

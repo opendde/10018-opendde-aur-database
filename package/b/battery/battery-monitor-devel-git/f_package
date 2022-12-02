@@ -1,0 +1,12 @@
+package() {
+	cd "$srcdir/${pkgname%-devel-git}"
+	install -d "$pkgdir/usr/share/${pkgname%-devel-git}"
+	cp -a src/. "$pkgdir/usr/share/${pkgname%-devel-git}"
+	install -Dm755 "${pkgname%-devel-git}" -t "$pkgdir/usr/bin"
+	install -Dm644 "${pkgname%-devel-git}-autostart.desktop" -t \
+		"$pkgdir/etc/xdg/autostart"
+	install -Dm644 "${pkgname%-devel-git}.desktop" -t \
+		"$pkgdir/usr/share/applications"
+	install -Dm644 src/icons/icon.png \
+		"$pkgdir/usr/share/pixmaps/${pkgname%-devel-git}.png"
+}

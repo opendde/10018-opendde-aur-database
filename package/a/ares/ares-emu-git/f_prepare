@@ -1,0 +1,4 @@
+prepare() {
+  # Patch Ares so that it can look for its files that are installed system-wide here
+  patch -Np1 -i "${srcdir}/ares-paths.patch"
+}

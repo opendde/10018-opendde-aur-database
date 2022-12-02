@@ -1,0 +1,4 @@
+prepare() {
+    chmod u+x ${srcdir}/Beaker.Browser-${pkgver//_/-}.AppImage
+    ${srcdir}/Beaker.Browser-${pkgver//_/-}.AppImage --appimage-extract
+}

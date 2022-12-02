@@ -1,0 +1,13 @@
+build() {
+  mkdir -p build
+  cd build
+
+  cmake ../$pkgname \
+    -DCMAKE_BUILD_TYPE=RELEASE \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DSYSCONFDIR=/etc \
+    -DLUA_INCLUDE_DIR=/usr/include/luajit-$_LUAJIT_VERSION \
+    -DLUA_LIBRARY=/usr/lib/libluajit-5.1.so \
+    -DLUA_EXECUTABLE=/usr/bin/luajit
+  make
+}

@@ -1,0 +1,6 @@
+build() {
+	cd "$pkgname-$pkgver"
+	# modify the shebang line to force the use of /usr/bin/python2
+	# instead of /usr/bin/python
+	sed -e '1 s/$/2/' -i code/alsa_tray.py
+}

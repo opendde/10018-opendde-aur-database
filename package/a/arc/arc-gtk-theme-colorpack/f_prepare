@@ -1,0 +1,20 @@
+prepare() {
+	cp -a ${_pkgname}-${pkgver}{,-Amber}
+	cp -a ${_pkgname}-${pkgver}{,-Blue}
+	cp -a ${_pkgname}-${pkgver}{,-BlueGrey}
+	cp -a ${_pkgname}-${pkgver}{,-Brown}
+	cp -a ${_pkgname}-${pkgver}{,-Cyan}
+	cp -a ${_pkgname}-${pkgver}{,-DeepOrange}
+	cp -a ${_pkgname}-${pkgver}{,-DeepPurple}
+	cp -a ${_pkgname}-${pkgver}{,-Green}
+	cp -a ${_pkgname}-${pkgver}{,-Grey}
+	cp -a ${_pkgname}-${pkgver}{,-Indigo}
+	cp -a ${_pkgname}-${pkgver}{,-LightBlue}
+	cp -a ${_pkgname}-${pkgver}{,-LightGreen}
+	cp -a ${_pkgname}-${pkgver}{,-Lime}
+	cp -a ${_pkgname}-${pkgver}{,-Orange}
+	cp -a ${_pkgname}-${pkgver}{,-Pink}
+	cp -a ${_pkgname}-${pkgver}{,-Purple}
+	cp -a ${_pkgname}-${pkgver}{,-Red}
+	cp -a ${_pkgname}-${pkgver}{,-Teal}
+}

@@ -1,0 +1,15 @@
+package() {
+  # Make
+
+
+  # Copy dkms.conf
+  install -Dm644 dkms.conf "${pkgdir}"/usr/src/${_pkgname}-${pkgver}/dkms.conf
+
+  # Set name and version
+  sed -e "s/@_PKGBASE@/${_pkgname}/" \
+	  -e "s/@PKGVER@/${pkgver}/" \
+      -i "${pkgdir}"/usr/src/${_pkgname}-${pkgver}/dkms.conf
+
+  # Copy sources (including Makefile)
+  cp -r ${_pkgbase}/* "${pkgdir}"/usr/src/${_pkgname}-${pkgver}/
+}

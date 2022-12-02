@@ -1,0 +1,3 @@
+package() {
+	install -D "${srcdir}/albert-extensions/tex_to_unicode.py" "${pkgdir}/usr/share/albert/org.albert.extension.python/modules/tex_to_unicode.py"
+}

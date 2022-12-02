@@ -1,0 +1,7 @@
+package() {
+  cd ${pkgname}_v$pkgver
+
+  mkdir -m755 -p $pkgdir/opt/$pkgname/log
+  install -m755 ./src/client/$pkgname ./winbin/*.bin $pkgdir/opt/$pkgname/
+  install -Dm755 $srcdir/$pkgname $pkgdir/usr/bin/$pkgname
+}

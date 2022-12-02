@@ -1,0 +1,5 @@
+prepare() {
+  cd "${srcdir}/asroute"
+  git checkout v${pkgver}
+  git submodule update --init --recursive
+}

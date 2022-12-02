@@ -1,0 +1,1 @@
+("${pkgname}-bzr::bzr+http://bazaar.launchpad.net/~vcs-imports/ceemedia/stable/#revision=revno:$_rev")

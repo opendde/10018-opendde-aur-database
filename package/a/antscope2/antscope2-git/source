@@ -1,0 +1,1 @@
+("${pkgname}::git+git://github.com/rigexpert/AntScope2.git")

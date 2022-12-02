@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir/${_pkgname}$pkgver"
+  make DESTDIR="$pkgdir" install install.man
+  install -Dm0644 "$srcdir/asclock.desktop" \
+    "$pkgdir/usr/share/applications/asclock.desktop"
+}

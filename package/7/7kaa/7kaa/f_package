@@ -1,0 +1,24 @@
+package() {
+  # install data files
+  install -dm755 "${pkgdir}/opt/7kaa/"
+  cd "${srcdir}/$pkgname-$pkgver/data/"
+  cp -r {ENCYC,ENCYC2,IMAGE,RESOURCE,SCENARI2,SCENARIO,SOUND,SPRITE,TUTORIAL} "${pkgdir}/opt/7kaa/"
+
+  # fix permissions
+  cd "${pkgdir}/opt/7kaa/"
+  find . -type d -exec chmod 755 {} \;
+
+  # copy readme
+  install -D -m644 "${srcdir}/$pkgname-$pkgver/README" "${pkgdir}/usr/share/doc/7kaa/README"
+
+  # main file
+  install -dm755 "${pkgdir}/opt/${pkgname}/"
+  install -D -m755 "${srcdir}/${pkgname}-${pkgver}/src/${pkgname}" "${pkgdir}/opt/${pkgname}/${pkgname}"
+
+  # bash script
+  install -D -m755 "$srcdir/${pkgname}.sh" "${pkgdir}/usr/bin/${pkgname}"
+
+  # desktop entry
+  install -D -m644 "$srcdir/${pkgname}.desktop" "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+  install -D -m644 "${srcdir}/${pkgname}.ico" "${pkgdir}/usr/share/pixmaps/${pkgname}.ico"
+}

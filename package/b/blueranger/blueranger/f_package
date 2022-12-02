@@ -1,0 +1,4 @@
+package() {
+  cd "$srcdir/${_pkgname}-${pkgver}"
+  install -Dm755 blueranger.sh "$pkgdir/usr/bin/blueranger"
+}

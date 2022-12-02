@@ -1,0 +1,12 @@
+package_assaultcube-common() {
+	install -dm755 "${pkgdir}/usr/share/games/assaultcube"
+	
+	cp -r "${_srcdir}"/{config,docs,bot} "${pkgdir}/usr/share/games/assaultcube"
+	
+	rm "${pkgdir}/usr/share/games/assaultcube/config/servercmdline.txt"
+	find "${pkgdir}/usr/share/games/assaultcube/docs" -type f -exec chmod -R 0644 '{}' \;
+	find "${pkgdir}/usr/share/games/assaultcube/docs" -type d -exec chmod -R 0755 '{}' \;
+	
+	install -Dm644 "${_srcdir}"/{README.html,README.md,SECURITY.md,GOVERNANCE.md} -t "${pkgdir}/usr/share/games/assaultcube"
+	install -Dm644 "${_srcdir}/docs/package_copyrights.txt" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

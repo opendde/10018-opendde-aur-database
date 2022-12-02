@@ -1,0 +1,13 @@
+package() {
+    cd "$srcdir/$pkgname-$pkgver"
+    python setup.py install --optimize=1 --root="$pkgdir"
+    install -Dm644 extra/completion/alot-completion.zsh \
+        "$pkgdir/usr/share/zsh/functions/_alot"
+    install -dm755 "$pkgdir/usr/share/alot/themes/examples"
+    install -Dm644 extra/themes/{mutt,solarized_light,solarized_dark,sup,tomorrow} \
+        "${pkgdir}/usr/share/alot/themes/examples"
+    install -dm755 "$pkgdir/usr/share/doc/$pkgname"
+    cp -a docs/build/html/* "$pkgdir/usr/share/doc/$pkgname"
+    install -Dm644 docs/build/man/alot.1 "$pkgdir/usr/share/man/man1/alot.1"
+    install -Dm644 extra/alot.desktop "$pkgdir/usr/share/applications/alot.desktop"
+}

@@ -1,0 +1,1 @@
+($pkgname-$pkgver.tar.gz::https://gitlab.freedesktop.org/$pkgname/$pkgname/repository/$pkgver/archive.tar.bz2)

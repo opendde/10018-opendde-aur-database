@@ -1,0 +1,13 @@
+prepare() {
+  cd "${pkgname%-a52pcm}-$pkgver"
+  # fix loading of multiple cards
+  # https://github.com/alsa-project/alsa-lib/issues/143
+  patch -Np1 -i ../"${pkgname}-1.2.5-load_all_cards.patch"
+  # probably fix issues with pipewire:
+  # https://github.com/alsa-project/alsa-lib/issues/142
+  patch -Np1 -i ../"${pkgname}-1.2.5-private_device_prefix1.patch"
+  patch -Np1 -i ../"${pkgname}-1.2.5-private_device_prefix2.patch"
+  # Work around broken config parsing in a52 pcm plugin
+  patch -Np1 < ../pcm-config-parsing-workaround.patch
+  autoreconf -vfi
+}

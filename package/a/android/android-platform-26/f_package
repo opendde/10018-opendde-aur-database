@@ -1,0 +1,7 @@
+package() {
+  install -Ddm755 "${pkgdir}/opt/android-sdk/platforms/"
+  cp -dr --no-preserve=ownership "${srcdir}/android-${_sdkver}" \
+      "${pkgdir}/opt/android-sdk/platforms/android-${_sdkint}"
+
+  chmod -R ugo+rX "${pkgdir}/opt"
+}

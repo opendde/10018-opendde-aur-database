@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir/${_pkgname}/"
+  make install PREFIX="$pkgdir"
+
+  rm -r "$pkgdir/lib" "$pkgdir/usr"
+}

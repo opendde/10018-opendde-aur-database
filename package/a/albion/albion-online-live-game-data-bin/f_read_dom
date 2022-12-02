@@ -1,0 +1,8 @@
+read_dom () {
+  local IFS=\>
+  read -d \< ENTITY CONTENT
+  local ret=$?
+  TAG_NAME=${ENTITY%% *}
+  ATTRIBUTES=${ENTITY#* }
+  return $ret
+}

@@ -1,0 +1,5 @@
+build() {
+	cd "${pkgname}"
+	npm install --cache "${srcdir}/npm-cache"
+	npm run build
+}

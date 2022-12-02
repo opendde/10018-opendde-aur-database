@@ -1,0 +1,16 @@
+package() {
+  cd ${srcdir}/${pkgname}-${pkgver}
+
+  # Install files
+  make bindir="${pkgdir}/usr/bin/" \
+       datadir="${pkgdir}/usr/share/" \
+       mandir="${pkgdir}/usr/share/man/" \
+       pkgdocdir="${pkgdir}/usr/share/doc/${pkgname}/" \
+       install
+
+  # Install menu entry
+  cd ..
+  convert favicon.ico ${pkgname}.png
+  install -Dm644 ${pkgname}.png "$pkgdir/usr/share/pixmaps/${pkgname}.png"
+  install -Dm644 ${pkgname}.desktop "$pkgdir/usr/share/applications/${pkgname}.desktop"
+}

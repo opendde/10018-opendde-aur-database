@@ -1,0 +1,5 @@
+package() {
+	npm install -g --cache "$srcdir/npm-cache" --prefix "$pkgdir/usr" "alder-$pkgver.tgz"
+	chown -R root:root "$pkgdir/"
+	install -Dm 644 "${pkgdir}/usr/lib/node_modules/@aweary/alder/LICENSE" -t "${pkgdir}/usr/share/licenses/${pkgname}/"
+}

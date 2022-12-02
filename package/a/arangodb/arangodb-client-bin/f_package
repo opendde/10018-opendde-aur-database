@@ -1,0 +1,4 @@
+package() {
+    msg2 "Extracting the data.tar.gz..."
+    tar -xf "data.tar.gz" -C "${pkgdir}"
+}

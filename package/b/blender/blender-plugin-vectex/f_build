@@ -1,0 +1,10 @@
+build() {
+	cd "$srcdir/vectex-$pkgver"
+
+	if [ "${CARCH}" == "x86_64" ]; then
+		patch -p0 < $startdir/src/64bit.patch
+	fi
+
+	msg "Starting build process."
+	MAKEFLAGS= make || return 1
+}

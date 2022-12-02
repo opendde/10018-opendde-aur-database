@@ -1,0 +1,7 @@
+prepare() {
+	cd "${_srcdir}"
+	
+	patch -p1 -i '../10.patch'
+	patch -p1 -i '../20.patch'
+	patch -p1 -i '../21.patch'
+}

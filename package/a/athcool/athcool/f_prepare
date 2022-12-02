@@ -1,0 +1,10 @@
+prepare() {
+	cd "$pkgname-$pkgver"
+
+	# suppress superfluous warning on start/stop
+	patch -i "$srcdir/non-verbose.patch"
+
+	# move binaries to /usr/bin and fix build
+	sed -i -e '/sbindir    =/ s,\/sbin,/\bin,' \
+		-i -e '/LIBS	=/ s,-lpci,-lpci -lz,' Makefile
+}

@@ -1,0 +1,8 @@
+build() {
+  mkdir -p build
+  cd build
+  cmake ../$pkgname             \
+    -DCMAKE_BUILD_TYPE=Release  \
+    -DCMAKE_INSTALL_PREFIX=/usr
+  make
+}

@@ -1,0 +1,4 @@
+build() {
+	cd "$_reponame-$pkgver"
+	cargo build --release --locked
+}

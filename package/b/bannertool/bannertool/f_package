@@ -1,0 +1,3 @@
+package() {
+    install -D "$srcdir/$pkgname/output/linux-$CARCH/$pkgname" "$pkgdir/usr/bin/$pkgname"
+}

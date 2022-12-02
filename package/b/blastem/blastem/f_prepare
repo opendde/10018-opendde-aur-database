@@ -1,0 +1,7 @@
+prepare() {
+    cd $pkgname-$_srcver
+    patch -Np1 -i "$srcdir/menu.patch"
+    chmod a+x menumake.sh install.sh
+    #GCC10 workaround
+    perl -pi -e 's|(CFLAGS:=)(-std=gnu99.*)|\1-fcommon \2|g' Makefile
+}

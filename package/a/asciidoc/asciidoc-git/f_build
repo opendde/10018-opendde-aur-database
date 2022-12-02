@@ -1,0 +1,8 @@
+build() {
+    cd $_pkgname
+
+    autoconf -i
+    ./configure \
+        --prefix=/usr \
+        --sysconfdir=/etc
+}

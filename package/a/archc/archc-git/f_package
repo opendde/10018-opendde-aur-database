@@ -1,0 +1,5 @@
+package() {
+  cd ArchC
+  make prefix=$pkgdir/usr sysconfdir=$pkgdir/etc install
+  rm $pkgdir/etc/env.sh  # Unneeded for a system wide install
+}

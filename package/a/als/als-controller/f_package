@@ -1,0 +1,8 @@
+package() {
+    cd $srcdir/$pkgname
+    install -Dm644 example/images/active.svg "$pkgdir"/usr/share/als-controller/example/images/active.svg
+    install -Dm644 example/images/inactive.svg "$pkgdir"/usr/share/als-controller/example/images/inactive.svg
+    install -Dm644 ../als-controller.service "$pkgdir"/usr/lib/systemd/system/als-controller.service
+    install -Dm755 example/switch.sh "$pkgdir"/usr/share/als-controller/example/switch.sh
+    install -Dm755 service/${pkgname} "$pkgdir"/usr/bin/${pkgname}
+}

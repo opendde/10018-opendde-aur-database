@@ -1,0 +1,4 @@
+pkgver() {
+  cd adchpp-lan
+  echo "$(bzr revno)"
+}

@@ -1,0 +1,13 @@
+build() {
+  cd "$srcdir/bisoncpp-${pkgver}/bisonc++"
+
+  patch -p1 -i "$srcdir/manual_license.patch"
+
+  CXXFLAGS="$CXXFLAGS --std=c++20"
+  # Add the -P option not to use precompiled headers, which can be useful since
+  # they require a lot of free space, compared to a normal compilation:
+  # ./build -P program
+  ./build program
+  ./build man
+  ./build manual
+}

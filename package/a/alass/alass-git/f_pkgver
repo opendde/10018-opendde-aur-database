@@ -1,0 +1,4 @@
+pkgver() {
+        cd "$srcdir/$_gitname"
+        git describe --long --tag | sed -r 's/-([0-9,a-g,A-G]{7}.*)//' | sed 's/^v//;s/-/.r/'
+}

@@ -1,0 +1,6 @@
+package() {
+    cd "$pkgbase"
+
+    mkdir -p $pkgdir/usr/bin
+    mv bin2c $pkgdir/usr/bin
+}

@@ -1,0 +1,11 @@
+prepare() {
+	cd $srcdir
+
+	[ ! -d core.${lang} ] && mkdir core.${lang}
+	bsdtar -C core.${lang} -xf activresources-core-${lang}_1.0.1-147_all.deb
+	bsdtar -C core.${lang} -xf core.${lang}/data.tar.gz
+
+	[ ! -d help.${lang} ] && mkdir help.${lang}
+	bsdtar -C help.${lang} -xf activinspire-help-${lang}_1.0.2-14_all.deb
+	bsdtar -C help.${lang} -xf help.${lang}/data.tar.gz
+}

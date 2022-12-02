@@ -1,0 +1,11 @@
+prepare() {
+  cd ${srcdir}/gcc
+
+  # https://bugs.archlinux.org/task/34629
+  sed -i "/ac_cpp=/s/\$CPPFLAGS/\$CPPFLAGS -O2/" libiberty/configure gcc/configure
+
+  patch -p0 < ${srcdir}/gperf-inlines.patch
+
+  rm -rf ${_builddir}
+  mkdir -p ${_builddir}
+}

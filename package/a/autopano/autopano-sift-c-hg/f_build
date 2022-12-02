@@ -1,0 +1,6 @@
+build() {
+  cd "$srcdir/autopano-sift-C"
+
+  cmake -DCMAKE_INSTALL_PREFIX=/usr .
+  make
+}

@@ -1,0 +1,4 @@
+pkgver() {
+  cd "${_gitname}"
+  date -u -d @$(git show -s --format=%ct HEAD) "+%Y%m%d_%H%M%S"
+}

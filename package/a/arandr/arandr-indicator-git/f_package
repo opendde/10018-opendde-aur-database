@@ -1,0 +1,7 @@
+package() {
+  cd "${srcdir}/${_pkgname}"
+  install -Dvm755 "${_pkgname}.py" "${pkgdir}/usr/bin/${_pkgname}"
+  install -Dvm644 README.md "${pkgdir}/usr/share/doc/${_pkgname}/README.md"
+  install -Dvm644 "${srcdir}/license.txt" "${pkgdir}/usr/share/licenses/${pkgname}/license.txt"
+  install -Dvm644 "${srcdir}/license-info.txt" "${pkgdir}/usr/share/licenses/${pkgname}/license-info.txt"
+}

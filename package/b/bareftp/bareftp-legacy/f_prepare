@@ -1,0 +1,4 @@
+prepare() {
+  # Simple patch to workaround recent mono dependency
+  sed -e 's;mono/2.0;mono/4.5;g' -i ${srcdir}/${_pkgname}-${pkgver}/configure
+}

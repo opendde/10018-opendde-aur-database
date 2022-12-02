@@ -1,0 +1,1 @@
+("$pkgname"::"git+https://github.com/cybre/budgie-screenshot-applet.git#tag=v${pkgver:0:5}")

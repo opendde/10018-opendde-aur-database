@@ -1,0 +1,8 @@
+package() {
+	mkdir $pkgdir/usr
+	mkdir $pkgdir/usr/bin
+	cp ../blitz-request.sh $pkgdir/usr/bin/blitz-request
+	cp blitz-request.jar $pkgdir/usr/bin
+	chmod a+x $pkgdir/usr/bin/blitz-request
+	chmod a+x $pkgdir/usr/bin/blitz-request.jar
+}

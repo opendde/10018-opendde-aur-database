@@ -1,0 +1,4 @@
+prepare() {
+  cd ${srcdir}/${_realname}-${pkgver}
+  patch -p1 < ../perl2.6.patch
+}

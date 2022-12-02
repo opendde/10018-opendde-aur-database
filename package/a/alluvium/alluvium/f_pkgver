@@ -1,0 +1,9 @@
+pkgver() {
+
+	cd "$srcdir/$pkgname"
+	local DATE=$(git log -1 --format="%cd" --date=short | sed s/-//g)
+	local COUNT=$(git rev-list --count HEAD)
+	local COMMIT=$(git rev-parse --short HEAD)
+	printf "%s.%s_%s" "$DATE" "r${COUNT}" "g${COMMIT}"
+
+}

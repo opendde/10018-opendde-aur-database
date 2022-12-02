@@ -1,0 +1,4 @@
+build() {
+  cd ${srcdir}/${pkgbase}-${pkgver}/src
+  make -j$(nproc)
+}

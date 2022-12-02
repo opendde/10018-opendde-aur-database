@@ -1,0 +1,36 @@
+package() {
+	
+	cd "${srcdir}"
+
+	export SCALA_VERSION=${_scalaver}
+	export ALMOND_VERSION=${pkgver}
+
+	export COURSIER_CACHE="$pkgdir/usr/share/almond/coursier/cache"
+	mkdir -p $COURSIER_CACHE
+	
+	export COURSIER_JVM_CACHE="$pkgdir/usr/share/almond/coursier/jvm_cache"
+	mkdir -p $COURSIER_JVM_CACHE
+
+	#  Alternative way for reference: 
+	#
+	#coursier launch almond:${pkgver} -M almond.ScalaKernel \
+	#  --scala ${_scalaver} --fork \
+	#  -- \
+	#    --install --jupyter-path $pkgdir/usr/share/jupyter/kernels
+	#
+	#install -Dm644 kernel.json -t "$pkgdir/usr/share/jupyter/kernels/scala/"
+
+	# (!) -M option is needed for new versions but not for old versions of almond
+	coursier bootstrap almond:$ALMOND_VERSION \
+      --scala $SCALA_VERSION \
+      --sources --default=true \
+      --embed-files=false \
+	  -M almond.ScalaKernel \
+	  -o almond -f
+
+	./almond --install --jupyter-path "$pkgdir/usr/share/jupyter/kernels/"
+	
+	envsubst < "$srcdir"/kernel.json.template > "$pkgdir/usr/share/jupyter/kernels/scala/kernel.json"
+	chmod 644 "$pkgdir/usr/share/jupyter/kernels/scala/kernel.json"
+
+}

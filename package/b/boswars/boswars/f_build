@@ -1,0 +1,6 @@
+build() {
+  cd $pkgname-$pkgver-src
+
+  # speed up build process with parallel building
+  python2 make.py -j $(nproc)
+}

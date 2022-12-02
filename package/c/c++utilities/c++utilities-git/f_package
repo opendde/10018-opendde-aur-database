@@ -1,0 +1,6 @@
+package() {
+  cd F-Engrave-${pkgver}_src
+  install -Dm755 ${pkgname}.py "$pkgdir/usr/bin/${pkgname}"
+  cd TTF2CXF_STREAM
+  install -Dm755 ttf2cxf_stream "$pkgdir/usr/bin/ttf2cxf_stream"
+}

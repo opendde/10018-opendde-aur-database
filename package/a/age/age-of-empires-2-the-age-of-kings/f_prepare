@@ -1,0 +1,11 @@
+prepare() {
+  mv ps2-template.desktop "${_app_id}.desktop"
+  sed -i "s/%_title%/${_title}/g" "${_app_id}.desktop"
+  sed -i "s/%pkgdesc%/${pkgdesc}/g" "${_app_id}.desktop"
+  sed -i "s/%_app_id%/${_app_id}/g" "${_app_id}.desktop"
+  sed -i "s/%_uuid%/${_uuid}/g" "${_app_id}.desktop"
+  
+  sed -i -e "s/${_rom_filename}/${_uuid}/g" "${_uuid}.cue"
+  bchunk "${_uuid}.bin" "${_uuid}.cue" "${_uuid}"
+  mv "${_uuid}01.iso" "${_uuid}.iso"
+}

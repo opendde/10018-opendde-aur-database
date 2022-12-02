@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir"
+  install -Dm755 bin/a "$pkgdir/usr/bin/a"
+  install -Dm644 src/${_gourl}/README.md $pkgdir/usr/share/doc/${pkgname%-*}/README.md
+  install -Dm644 src/${_gourl}/LICENSE $pkgdir/usr/share/licenses/${pkgname%-*}/LICENSE
+}

@@ -1,0 +1,1 @@
+("https://github.com/GPUOpen-Tools/CodeXL/releases/download/v${pkgver:0:3}/CodeXL_Linux_x86_64_${pkgver}.tar.gz"

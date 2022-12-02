@@ -1,0 +1,5 @@
+pkgver() {
+    cd "$pkgname"
+    git checkout 20b69a49172bf6c84c14abc8251e70f629cdde79
+    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}

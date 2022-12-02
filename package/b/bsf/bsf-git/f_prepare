@@ -1,0 +1,18 @@
+prepare() {
+	cp -r Data bsf/
+	cp -r Dependencies bsf/
+	cp -r Documentation bsf/
+	cp -r Raw bsf/Data
+	cp -r Documentation bsf/
+	cp -r XShaderCompiler/ bsf/Dependencies/
+
+	rm -rf "$_pkgname"/Dependencies/OpenAL
+	rm -rf "$_pkgname"/Dependencies/libFLAC
+	rm -rf "$_pkgname"/Dependencies/libICU
+	rm -rf "$_pkgname"/Dependencies/libogg
+	rm -rf "$_pkgname"/Dependencies/libvorbis
+	rm -rf "$_pkgname"/Dependencies/freetype
+	rm -rf "$_pkgname"/Dependencies/freeimg
+
+	patch -d bsf -p1 < install-dir.patch
+}

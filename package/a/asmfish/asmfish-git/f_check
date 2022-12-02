@@ -1,0 +1,5 @@
+check() {
+    cd "${srcdir}/${_pkgname}"
+    chmod +x ./asmfish
+    ./asmfish bench
+}

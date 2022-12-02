@@ -1,0 +1,10 @@
+build() {
+    cd "$srcdir/$_pkgname_origin-$pkgver"
+    ./configure --prefix=/usr  --libexecdir=/usr/lib/$_pkgname_origin \
+        --sbindir=/usr/bin \
+        --enable-cgi --enable-usb --enable-net \
+        --with-upstype=usb --with-upscable=usb \
+        --with-serial-dev=/dev/usb/hid/hiddev[0-9] \
+        --disable-gapcmon --enable-modbus-usb
+    make
+}

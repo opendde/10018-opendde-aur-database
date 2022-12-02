@@ -1,0 +1,14 @@
+package() {
+  mkdir -p "$pkgdir/usr/bin"
+
+  sed -i "/ROOT=/c\ROOT=\/opt\/acestream" "$srcdir/start-engine"
+
+  install -Dm755 "$srcdir/acestreamengine" "$pkgdir/opt/acestream/acestreamengine"
+  install -Dm755 "$srcdir/start-engine" "$pkgdir/opt/acestream/start-engine"
+  install -Dm644 "$srcdir/acestream-engine.service" "$pkgdir/usr/lib/systemd/system/acestream-engine.service"
+
+  cp -a "$srcdir/acestream.conf" "$pkgdir/opt/acestream/acestream.conf"
+  cp -a "$srcdir/data" "$srcdir/lib" "$pkgdir/opt/acestream"
+
+  ln -sf "/opt/acestream/start-engine" "$pkgdir/usr/bin/acestreamengine"
+}

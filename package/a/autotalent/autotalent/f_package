@@ -1,0 +1,4 @@
+package() {
+	cd "$pkgname-$pkgver"
+	make INSTALL_PLUGINS_DIR="$pkgdir/usr/lib/ladspa" install
+}

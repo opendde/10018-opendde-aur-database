@@ -1,0 +1,4 @@
+package() {
+  cd "${srcdir}/budgie-pixel-saver-applet/build"
+  DESTDIR="${pkgdir}" ninja install
+}

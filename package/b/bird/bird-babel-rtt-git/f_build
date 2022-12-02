@@ -1,0 +1,12 @@
+build() {
+  cd $_pkgname
+  autoreconf -ifv
+  ./configure \
+    --prefix=/usr \
+    --sbindir=/usr/bin \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --runstatedir=/run/$_pkgname \
+    --docdir=/usr/share/doc/$_pkgname
+  make
+}

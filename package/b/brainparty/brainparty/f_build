@@ -1,0 +1,5 @@
+build() {
+	cd "$srcdir/${pkgname}"
+	patch -s -p1 < ../brainparty_arch.patch
+	make
+}

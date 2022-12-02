@@ -1,0 +1,4 @@
+pkgver() {
+        _DATE=$(curl https://api.github.com/repos/ClementTsang/bottom/releases/tags/nightly -s | awk -F '"' '/"'"published_at"'":/{print $4}')
+        date --date="$_DATE" +%Y_%m_%d
+}

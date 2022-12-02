@@ -1,0 +1,7 @@
+build() {
+  cd ${srcdir}/${_realname}-${pkgver}
+
+  _kernver="$(cat /usr/lib/modules/${_extramodules}/version)"
+
+  make KDIR=/lib/modules/${_kernver}/build
+}

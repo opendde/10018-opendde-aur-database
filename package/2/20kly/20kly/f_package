@@ -1,0 +1,13 @@
+package() {
+  cd "${pkgname}-${pkgver}"
+  export PYTHONHASHSEED=0
+  local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+
+  mkdir -p "${pkgdir}/usr/share/lightyears"
+  cp -a data lib20k "${pkgdir}/usr/share/lightyears/"
+  ln -s lib20k "${pkgdir}/usr/share/lightyears/code"
+
+  install -D lightyears "${pkgdir}/usr/bin/lightyears"
+
+  install -Dm644 manual.pdf -t "${pkgdir}/usr/share/doc/lightyears/"
+}

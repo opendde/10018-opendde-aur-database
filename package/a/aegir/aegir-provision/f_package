@@ -1,0 +1,23 @@
+package() {
+    cd $_pkgname
+
+    install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+
+    install --directory "$pkgdir/usr/share/webapps/drush/commands/$_pkgname"
+    cp --archive --target-directory="$pkgdir/usr/share/webapps/drush/commands/$_pkgname" \
+      db http platform Provision Symfony \
+      provision.{api.php,{,{context,drush,file,service}.}inc,info} \
+      {install,migrate,uninstall}.hostmaster.inc parse.backend.inc
+
+    install --directory "$pkgdir/usr/share/doc/$pkgname"
+    for file in example.drushrc.php example.sudoers README.md; do
+      cp --archive --target-directory="$pkgdir/usr/share/doc/$pkgname" $file
+      ln --relative --symbolic $pkgdir/usr/share/{doc/$pkgname,webapps/drush/commands/$_pkgname}/$file
+    done
+
+    install --directory "$pkgdir/usr/share/$pkgname"
+    for file in aegir{,-{dev,release}}.make provision-tests scripts upgrade.sh.txt Vagrantfile; do
+      cp --archive --target-directory="$pkgdir/usr/share/$pkgname" $file
+      ln --relative --symbolic $pkgdir/usr/share/{$pkgname,webapps/drush/commands/$_pkgname}/$file
+    done
+}

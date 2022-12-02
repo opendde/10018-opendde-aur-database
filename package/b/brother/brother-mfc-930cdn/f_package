@@ -1,0 +1,8 @@
+package() {
+  mkdir -p "$pkgdir/usr/share/licenses/$pkgname"
+  cp -Rp "$srcdir/usr/bin" "$pkgdir/usr"
+  cp -Rp "$srcdir/usr/lib" "$pkgdir/usr"
+  cp -Rp "$srcdir/usr/share/cups" "$pkgdir/usr/share"
+  cp -Rp "$srcdir/usr/local/Brother" "$pkgdir/usr/share/Brother"
+  install -m 644 agree_*.html "$pkgdir/usr/share/licenses/$pkgname"
+}

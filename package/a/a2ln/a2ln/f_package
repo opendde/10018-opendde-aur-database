@@ -1,0 +1,4 @@
+package() {
+	cd "$srcdir/a2ln-server-$pkgver/"
+	make install DESTDIR="$pkgdir"
+}

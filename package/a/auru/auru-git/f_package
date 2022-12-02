@@ -1,0 +1,5 @@
+package() {
+    cd "${srcdir}/auru"
+    # Install script
+    install -D -m755 auru "${pkgdir}/usr/bin/auru"
+}

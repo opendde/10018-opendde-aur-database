@@ -1,0 +1,11 @@
+build() {
+  cd "$srcdir/BrogueCE-$pkgver"
+  
+  make clean
+  make DATADIR="/opt/$pkgname" RELEASE="YES"
+
+  cd linux
+  ./make-link-for-desktop.sh > /dev/null
+  sed -i -e "s|$(pwd)|/opt/${pkgname}|" -e 's/brogue$/brogue-multiuser.sh/' -e 's/bin\///' "brogue.desktop"
+  sed -i -e "s|/opt/brogue|/opt/${pkgname}|" -e "s|/Brogue|/${pkgname}|" brogue-multiuser.sh
+}

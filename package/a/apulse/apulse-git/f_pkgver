@@ -1,0 +1,4 @@
+pkgver() {
+  cd ${pkgname%-git}
+  git describe --tags | sed -e 's:^v::' -e 's:\([^-]*-g\):r\1:;s:-:_:g' 
+}

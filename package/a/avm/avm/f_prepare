@@ -1,0 +1,5 @@
+prepare() {
+    git -C avm submodule init
+    git -C avm config --local submodule.third_party/tensorflow.url "${srcdir}/tensorflow"
+    git -C avm -c protocol.file.allow='always' submodule update
+}

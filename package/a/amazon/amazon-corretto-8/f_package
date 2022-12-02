@@ -1,0 +1,11 @@
+package() {
+  mkdir -p "$pkgdir/usr/lib/jvm"
+  case "$CARCH" in
+    "x86_64")
+      cp -a "amazon-corretto-$pkgver-linux-x64" "$pkgdir/usr/lib/jvm/java-8-amazon-corretto"
+      ;;
+    "aarch64")
+      cp -a "amazon-corretto-$pkgver-linux-aarch64" "$pkgdir/usr/lib/jvm/java-8-amazon-corretto"
+      ;;
+  esac
+}

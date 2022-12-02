@@ -1,0 +1,4 @@
+build() {
+	cd "${srcdir}"/${_binname}
+	txt2man -t "${_pkgname}" -v "${pkgname}" -r "${pkgver}" help.txt > ${_binname}.1
+}

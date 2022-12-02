@@ -1,0 +1,6 @@
+package () {
+	cd "${pkgdir}"
+	bsdtar -xf "${srcdir}/data.tar.xz"
+	rm -r usr/share/doc
+	find -name __pycache__ | xargs rm -r
+}

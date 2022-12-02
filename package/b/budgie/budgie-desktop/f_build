@@ -1,0 +1,8 @@
+build() {
+	cd "$srcdir"/$pkgname-$pkgver
+	intltoolize --force
+	gtkdocize || exit 1
+	autoreconf --force --install
+	./configure --prefix=/usr --sysconfdir=/etc
+	make
+}

@@ -1,0 +1,20 @@
+build() {
+    cd "${srcdir}"
+    unzip alinksrc.zip
+    mv ALINK.C alink.c
+    mv ALINK.H alink.h
+    mv COFF.C coff.c
+    mv COFFLIB.C cofflib.c
+    mv COMBINE.C combine.c
+    mv OBJLOAD.C objload.c
+    mv OUTPUT.C output.c
+    mv UTIL.C util.c
+    
+    patch --binary < alink.patch
+    patch --binary < util.patch
+    
+    rm Makefile
+    mv _Makefile Makefile
+    
+    make
+}

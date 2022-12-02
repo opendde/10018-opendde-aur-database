@@ -1,0 +1,5 @@
+package() {
+  install -d "${pkgdir}/usr/share/themes"
+  cp -r "${srcdir}/${pkgname%-git}"/Ambiance-RW "${pkgdir}"/usr/share/themes/
+  cp -r "${srcdir}/${pkgname%-git}"/Ambiance-RW{-BLUE,-DS,-DS-BLUE} "${pkgdir}"/usr/share/themes/
+}

@@ -1,0 +1,5 @@
+package() {
+    install -D -m755 \
+        "$srcdir/$pkgname-$pkgver/btmenu" \
+        "$pkgdir/usr/bin/btmenu"
+}

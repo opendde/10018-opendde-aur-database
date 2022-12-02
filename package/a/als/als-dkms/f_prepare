@@ -1,0 +1,4 @@
+prepare() {
+    cd $_pkgname
+    sed -i 's|PACKAGE_VERSION="[^"]*"|PACKAGE_VERSION="'$pkgver'"|' dkms.conf
+}

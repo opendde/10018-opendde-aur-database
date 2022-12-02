@@ -1,0 +1,4 @@
+build() {
+    cd "amalthea-v$pkgver"
+    make DC=${DC} || return 1
+}

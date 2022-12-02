@@ -1,0 +1,5 @@
+package() {
+  find "$srcdir"/$pkgname-$pkgver/target/release/ -maxdepth 1 -executable -type f \
+    -exec install -Dm755 -t "$pkgdir"/usr/bin '{}' \;
+  install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname" "$srcdir"/$pkgname-$pkgver/LICENSE-*
+}

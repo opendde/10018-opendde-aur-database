@@ -1,0 +1,8 @@
+package() {
+  cd "$srcdir/$pkgname-$pkgver/build"
+
+  make DESTDIR="${pkgdir}" install
+  install -Dm755 ../release/bin/blender-softwaregl "${pkgdir}/usr/bin/blender-softwaregl"
+  python -m compileall "${pkgdir}/usr/share/blender"
+  python -O -m compileall "${pkgdir}/usr/share/blender"
+}

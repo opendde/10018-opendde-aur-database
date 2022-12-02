@@ -1,0 +1,26 @@
+prepare() {
+    export GOPATH="$srcdir"/go
+    mkdir -p "$GOPATH"
+
+    cd "$srcdir"/beats-$pkgver
+
+    # https://github.com/golang/go/issues/51315#issuecomment-1055399831
+    # https://github.com/elastic/beats/pull/30620
+    patch -Np1 -i "$srcdir"/0001-common-seccomp-add-rseq-syscall-30620.patch
+
+    git init # git root required by one of the build scripts
+
+    # Perform some timestomping to avoid make warnings
+    LANG=C _t="$(date -r Makefile +'%Y-%m-%d %k:%M:%S')"
+    touch -m -d "$_t" */Makefile
+
+    # Use version instead of commit id
+    sed -ri "s/^COMMIT_ID=.*/COMMIT_ID=$pkgver/" libbeat/scripts/Makefile
+    sed -ri "s/\bcommitHash, err =.*/commitHash = \"$pkgver\"\nerr = nil/;/github.com\/magefile\/mage\/sh/d" dev-tools/mage/settings.go
+
+    # Use version of MarkupSafe with fix for setuptools
+    sed -i "s/MarkupSafe==1\.0/MarkupSafe==1.1.1/" libbeat/tests/system/requirements.txt
+
+    # Missing BEAT_NAME in metricbeat Makefile
+    sed -i '1i BEAT_NAME?=metricbeat' metricbeat/Makefile
+}

@@ -1,0 +1,5 @@
+package() {
+    cd boxcli/dist/box-v2.4.0
+    sudo tar xvf box-v2.4.0-linux-x64.tar.gz --directory /usr/lib
+    sudo ln -sf /usr/lib/box/bin/box /usr/bin/box
+}

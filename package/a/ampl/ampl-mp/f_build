@@ -1,0 +1,15 @@
+build() {
+  cmake \
+    -S "mp-${pkgver}" \
+    -B build \
+    -G Ninja \
+    -DCMAKE_BUILD_TYPE=None \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DBUILD_SHARED_LIBS=TRUE \
+    -DCMAKE_C_COMPILER=gcc \
+    -DCMAKE_CXX_COMPILER=g++ \
+    -DMP_VARIADIC_TEMPLATES=OFF \
+    -DBUILD=no \
+    -Wno-dev
+  cmake --build build
+}

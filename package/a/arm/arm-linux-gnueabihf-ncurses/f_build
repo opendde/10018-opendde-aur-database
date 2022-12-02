@@ -1,0 +1,17 @@
+build() {
+  cd ${_pkgname}-${pkgver/_/-}
+
+  export CFLAGS="-O2 -pipe -fstack-protector-strong"
+  export CXXFLAGS=${CFLAGS}
+  #export TARGET=${_target}
+  export BUILD_CC='gcc'
+  export CC="${_target}-gcc"
+  export LD="${_target}-ld"
+  export AS="${_target}-as"
+
+  ./configure --prefix=${_sysroot} --target=${_target} --host=${_target} \
+     --with-shared --with-normal --without-debug \
+	 --without-ada --enable-widec --enable-pc-files --with-cxx-binding \
+	 --with-cxx-shared --enable-ext-colors --enable-ext-mouse --enable-overwrite
+  make
+}

@@ -1,0 +1,23 @@
+package() {
+    cd $srcdir
+
+    msg "Connecting to GIT server..."
+    if [[ -d ${_gitname} ]]; then
+        (cd ${_gitname} && git pull origin)
+    else
+        git clone --depth=1 ${_gitroot} ${_gitname}
+    fi
+
+    msg "GIT checkout done or server timeout"
+    msg "Starting make..."
+
+    rm -rf ${_gitname}-build
+    cp -r ${_gitname} ${_gitname}-build
+
+    cd ${srcdir}/${_gitname}-build
+
+    $_py setup.py build || exit 1
+    $_py setup.py install --root="${pkgdir}" --optimize=1
+
+    rm -rf ${_gitname}-build
+}

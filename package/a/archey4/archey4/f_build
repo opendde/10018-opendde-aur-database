@@ -1,0 +1,11 @@
+build() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+
+	# Prepare the manual page.
+	sed \
+		-e "s/\${DATE}/$(date +'%B %Y')/1" \
+		-e "s/\${VERSION}/${pkgver}/1" \
+		archey.1 > dist/archey.1
+
+	python3 setup.py build
+}

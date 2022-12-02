@@ -1,0 +1,4 @@
+build() {
+	cd "${srcdir}/asus-nb-ctrl"
+	make
+}

@@ -1,0 +1,4 @@
+build() {
+  cd "$srcdir/$_pkgname"
+  make PATH_AUDIO=/usr/share/bucklespring libinput=1
+}

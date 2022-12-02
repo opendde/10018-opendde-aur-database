@@ -1,0 +1,9 @@
+package_adlplug-git() {
+  pkgdesc="FM synthesizer for ADLMIDI with OPL3 chip emulation"
+  provides=('adlplug')
+  conflicts=('adlplug')
+
+  cd "${srcdir}/${_pkgname}"
+  make -C build DESTDIR="${pkgdir}/" install
+  install -vDm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+}

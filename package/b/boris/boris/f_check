@@ -1,0 +1,6 @@
+check() {
+  if ! php -i | grep "pcntl support => enabled" >/dev/null 2>&1; then
+      echo -e "Warning: pctnl.so must be loaded in your php.ini to install and use ${pkgname}"
+      exit 1
+  fi
+}

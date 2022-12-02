@@ -1,0 +1,4 @@
+prepare() {
+  # apply patches here
+  true
+}

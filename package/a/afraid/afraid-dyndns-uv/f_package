@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir"
+  mkdir $pkgdir/usr
+  mkdir $pkgdir/usr/bin
+  cp ./afraid-dyndns-uv $pkgdir/usr/bin/afraid-dyndns-uv
+}

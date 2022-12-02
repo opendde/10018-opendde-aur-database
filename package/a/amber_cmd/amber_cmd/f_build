@@ -1,0 +1,7 @@
+build() {
+  cd "amber-cmd-$pkgver"
+  shards
+  mkdir -p bin
+  make build
+  crystal eval 'STDIN.blocking = true'
+}

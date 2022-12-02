@@ -1,0 +1,5 @@
+package() {
+  cd "${srcdir}/${_pkgname}"
+
+  python2 waf --destdir="${pkgdir}/" install
+}

@@ -1,0 +1,16 @@
+package() {
+  cd "arptables"
+
+  make \
+    DESTDIR="$pkgdir" \
+    PREFIX="/usr" \
+    LIBDIR="/usr/lib/arptables" \
+    BINDIR="/usr/bin" \
+    MANDIR="/usr/share/man" \
+    install
+
+  install -Dm644 "$srcdir/arptables.service" \
+    "$pkgdir/usr/lib/systemd/system/arptables.service"
+
+  install -Dm644 /dev/null "$pkgdir/etc/arptables.conf"
+}

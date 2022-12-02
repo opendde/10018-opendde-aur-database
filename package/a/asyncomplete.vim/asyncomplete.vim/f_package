@@ -1,0 +1,10 @@
+package() {
+  VIMFILES=$pkgdir/usr/share/vim/vimfiles
+  install -d "$VIMFILES"
+
+  cd ${srcdir}/${pkgname}-${pkgver}
+  install -Dm 644 $srcdir/LICENSE $pkgdir/usr/share/licenses/${pkgname}/LICENSE
+  cp -drr --no-preserve=ownership autoload $VIMFILES
+  cp -drr --no-preserve=ownership doc $VIMFILES
+  cp -drr --no-preserve=ownership plugin $VIMFILES
+}

@@ -1,0 +1,8 @@
+prepare() {
+	cd "$srcdir"
+	}
+
+
+build() {
+	cd "$srcdir"
+}

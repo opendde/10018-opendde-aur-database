@@ -1,0 +1,6 @@
+prepare() {
+    cd "$srcdir/$pkgname-$pkgver"
+    patch -Np1 -i "$srcdir/05-addr-representation.diff"
+    cp "$srcdir/updates.nlri_mask_trailing_bits.gz" test_data/
+	cp "$srcdir/updates.nlri_mask_trailing_bits.gz.bgp.gz" test_expect/
+}

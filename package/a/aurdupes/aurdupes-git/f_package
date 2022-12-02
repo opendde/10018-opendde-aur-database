@@ -1,0 +1,6 @@
+package() {
+  cd "${srcdir}/${_pkgname}"
+
+  # Install the program.
+  install -Dm755 aurdupes.py "${pkgdir}/usr/bin/aurdupes"
+}

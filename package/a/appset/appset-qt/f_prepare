@@ -1,0 +1,3 @@
+prepare() {
+  patch -p0 -i "appset-qt-errno.patch"
+}

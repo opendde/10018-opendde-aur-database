@@ -1,0 +1,19 @@
+package() {
+  cd $srcdir/$pkgname-$pkgver
+  python2 setup.py install --root=$pkgdir --prefix=/usr
+
+  cd $pkgdir
+  patch -Np1 -i $srcdir/$pkgname-coding.patch
+  sed "s/\#\!\/usr\/bin\/python/\#\!\/usr\/bin\/python2/" -i $pkgdir/usr/bin/albumart-qt
+
+  if [ -f /usr/bin/startkde ]; then
+    echo "Installing with KDE support"
+    install -d $pkgdir/opt/kde/share
+    mv $pkgdir/usr/share/{applnk,apps} $pkgdir/opt/kde/share
+  else
+    install -d $pkgdir/usr/share/applications/
+    mv $pkgdir/usr/share/applnk/Multimedia/albumart.desktop \
+            $pkgdir/usr/share/applications/
+    rm -rf $pkgdir/usr/share/{applnk,apps}
+  fi
+}

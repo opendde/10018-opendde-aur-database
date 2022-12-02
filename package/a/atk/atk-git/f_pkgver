@@ -1,0 +1,4 @@
+pkgver() {
+  cd atk
+  git describe --tags | sed 's/^ATK_//;s/_/./g;s/-/+/g'
+}

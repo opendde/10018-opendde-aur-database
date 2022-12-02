@@ -1,0 +1,7 @@
+build() {
+	cd "./${pkgname}-${pkgver}"
+	make CFLAGS="${CFLAGS} -fpic" \
+	     LDFLAGS="$LDFLAGS" \
+	     LDDLLFLAGS="${LDFLAGS} -shared -Wl,-soname,lib${pkgname}.so.${pkgver%%.*}" \
+	     D=".so.${pkgver}"
+}

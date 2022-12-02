@@ -1,0 +1,11 @@
+package() {
+  cd "${srcdir}"
+  for file in *.ipk; do
+    ar x $file
+    tar xf data.tar.gz
+  done
+
+  mkdir -p ${pkgdir}/usr/${_target}
+  find . \( -name .install -o -name ..install.cmd \) -delete
+  cp -r usr ${pkgdir}/usr/${_target}
+}

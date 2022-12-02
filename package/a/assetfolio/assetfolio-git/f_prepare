@@ -1,0 +1,7 @@
+prepare() {
+  cd assetfolio
+  mkdir -p build/
+  git submodule update --init --recursive
+  cd submodules
+  git clone https://github.com/whoshuu/cpr.git
+}

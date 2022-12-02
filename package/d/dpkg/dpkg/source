@@ -1,0 +1,1 @@
+("$pkgname::git+https://salsa.debian.org/dpkg-team/dpkg.git#commit=$_commit")

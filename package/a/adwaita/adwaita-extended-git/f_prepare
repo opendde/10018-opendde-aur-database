@@ -1,0 +1,4 @@
+prepare() {
+  cd "$pkgname"
+  meson build --prefix=/usr
+}

@@ -1,0 +1,9 @@
+build() {
+  cd $pkgname
+
+  cmake -DLLVM_INSTALL_DIR=/opt/llvm10/bin \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+        -DCMAKE_BUILD_TYPE=RELEASE
+  make
+}

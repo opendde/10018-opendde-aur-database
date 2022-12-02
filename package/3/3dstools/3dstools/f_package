@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir/3dstools-$pkgver"
+
+  make install DESTDIR="$pkgdir/"
+}

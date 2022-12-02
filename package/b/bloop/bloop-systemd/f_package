@@ -1,0 +1,4 @@
+package() {
+  # copy systemd service file
+  install -Dm644 "$srcdir"/bloop.service "$pkgdir"/usr/lib/systemd/user/bloop.service
+}

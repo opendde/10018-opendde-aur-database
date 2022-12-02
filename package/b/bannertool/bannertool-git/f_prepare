@@ -1,0 +1,6 @@
+prepare() {
+    cd "$srcdir/$_gitname"
+    git submodule init
+    git config submodule.buildtools.url "$srcdir/buildtools"
+    git submodule update
+}

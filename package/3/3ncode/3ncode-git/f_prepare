@@ -1,0 +1,5 @@
+prepare() {
+  cd $pkgname
+  sed -i 's/=[Ee]ncode$/=3ncode/g' debian/encode.desktop
+  sed -i 's|/usr/share/encode|/usr/share/3ncode|g' encode
+}

@@ -1,0 +1,6 @@
+package() {
+  cp -r ${srcdir}/var ${pkgdir}/
+  cp -r ${srcdir}/opt ${pkgdir}/
+  cp -r ${srcdir}/etc ${pkgdir}/
+  install -D -m644 agree.html "${pkgdir}/usr/share/licenses/${pkgname}/EULA.html"
+}

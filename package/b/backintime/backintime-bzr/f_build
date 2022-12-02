@@ -1,0 +1,9 @@
+build() {
+  cd "$srcdir/$_pkgname/common"
+  ./configure --python3 --no-fuse-group
+  make
+
+  cd "$srcdir/$_pkgname/qt4"
+  ./configure --python3
+  make
+}

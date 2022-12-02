@@ -1,0 +1,46 @@
+build() {
+  _pyver=$(python -c "from sys import version_info; print(\"%d.%d\" % (version_info[0],version_info[1]))")
+  msg "python version detected: ${_pyver}"
+
+  # determine whether we can precompile CUDA kernels
+  _CUDA_PKG=$(pacman -Qq cuda 2>/dev/null) || true
+  if [ "$_CUDA_PKG" != "" ] && ! ((DISABLE_CUDA)) ; then
+    _CMAKE_FLAGS+=( -DWITH_CYCLES_CUDA_BINARIES=ON
+                  -DCUDA_TOOLKIT_ROOT_DIR=/opt/cuda )
+    if [[ -v _cuda_capability ]]; then
+      _CMAKE_FLAGS+=( -DCYCLES_CUDA_BINARIES_ARCH="$(IFS=';'; echo "${_cuda_capability[*]}";)" )
+    fi
+    [ -f "/usr/lib/ccache/bin/nvcc-ccache" ] && _CMAKE_FLAGS+=( -DCUDA_NVCC_EXECUTABLE=/usr/lib/ccache/bin/nvcc-ccache )
+    if _cuda_gcc=$(basename "$(readlink /opt/cuda/bin/gcc)") ; then
+      [ -L "/usr/lib/ccache/bin/$_cuda_gcc" ] && _CMAKE_FLAGS+=( -DCUDA_HOST_COMPILER=/usr/lib/ccache/bin/"$_cuda_gcc" )
+    fi
+  fi
+
+  ((DISABLE_NINJA)) && generator="Unix Makefiles" || generator="Ninja"
+  cmake -G "$generator" -S "$srcdir/blender" -B "$srcdir/build" \
+        -C "${srcdir}/blender/build_files/cmake/config/blender_release.cmake" \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DWITH_INSTALL_PORTABLE=OFF \
+        -DWITH_PLAYER=OFF \
+        -DWITH_ALEMBIC=ON \
+        -DWITH_OPENCOLORIO=ON \
+        -DWITH_FFTW3=ON \
+        -DWITH_SYSTEM_GLEW=ON \
+        -DWITH_CODEC_FFMPEG=ON \
+        -DWITH_PYTHON_INSTALL=OFF \
+        -DPYTHON_VERSION="${_pyver}" \
+        -DWITH_MOD_OCEANSIM=ON \
+        -DWITH_CYCLES_OPENSUBDIV=ON \
+        -DWITH_CYCLES_OSL=ON \
+        -DWITH_LLVM=ON \
+        -DWITH_IMAGE_OPENEXR=ON \
+        -DWITH_OPENSUBDIV=ON \
+        -DWITH_OPENVDB=ON \
+        -DWITH_OPENVDB_BLOSC=ON \
+        -DWITH_OPENCOLLADA=ON \
+        "${_CMAKE_FLAGS[@]}"
+  export NINJA_STATUS="[%p | %f<%r<%u | %cbps ] "
+# shellcheck disable=SC2086 # allow MAKEFLAGS to split when multiple flags provided.
+  if ((DISABLE_NINJA)); then make -C "$srcdir/build" ; else ninja -C "$srcdir/build" ${MAKEFLAGS:--j1}; fi
+}

@@ -1,0 +1,33 @@
+build() {
+	cd "$srcdir/$opkgname-$pkgver"
+	mkdir -p build
+	cd build
+
+	cmake ../ -DCMAKE_INSTALL_PREFIX="/" \
+		-DCMAKE_INSTALL_BINDIR="/usr/bin" \
+		-DCMAKE_INSTALL_SBINDIR="/usr/bin" \
+		-DCMAKE_INSTALL_SYSCONFDIR="/etc/hiawatha" \
+		-DCMAKE_INSTALL_LIBDIR="/usr/lib" \
+		-DCMAKE_INSTALL_MANDIR="/usr/share/man" \
+		-DCONFIG_DIR="/etc/hiawatha" \
+		-DLOG_DIR="/var/log/hiawatha" \
+		-DPID_DIR="/run" \
+		-DENABLE_TLS=ON \
+		-DUSE_SYSTEM_MBEDTLS=ON \
+		-DENABLE_MONITOR=ON \
+		-DENABLE_TOMAHAWK=ON \
+		-DWEBROOT_DIR="/srv/http/hiawatha" \
+		-DWORK_DIR="/var/lib/hiawatha"
+
+	make
+
+	# Features enabled by default
+	# -DENABLE_CACHE
+	# -DENABLE_IPV6
+	# -DENABLE_RPROXY
+	# -DENABLE_TOOLKIT
+	# -DENABLE_XSLT
+
+	# Features disabled by default
+	# -DENABLE_DEBUG
+}

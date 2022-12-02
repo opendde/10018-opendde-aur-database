@@ -1,0 +1,11 @@
+package() {
+
+	# Install files
+	install -Dm600 ${srcdir}/config.chrysalis-comnet.toml ${pkgdir}/etc/bee/config.chrysalis-comnet.toml
+	install -Dm600 ${srcdir}/config.chrysalis-mainnet.toml ${pkgdir}/etc/bee/config.chrysalis-mainnet.toml
+	
+	install -D ${srcdir}/bee/target/release/bee ${pkgdir}/usr/bin/bee
+	
+	# Install systemd service
+	install -D ${srcdir}/bee.service ${pkgdir}/usr/lib/systemd/system/bee.service
+}

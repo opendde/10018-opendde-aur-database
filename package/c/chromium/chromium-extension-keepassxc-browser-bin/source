@@ -1,0 +1,1 @@
+("$url/releases/download/$pkgver/${pkgname%-*}-$pkgver-$pkgrel-any.pkg.tar.zst")

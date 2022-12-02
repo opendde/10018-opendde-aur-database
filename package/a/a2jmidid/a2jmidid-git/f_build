@@ -1,0 +1,26 @@
+build() {
+  cd "${srcdir}"
+  msg "Connecting to GIT server...."
+
+  if [ -d ${_gitname} ] ; then
+    cd ${_gitname} && git pull origin
+    msg "The local files are updated."
+  else
+    git clone ${_gitroot} ${_gitname}
+  fi
+
+  msg "GIT checkout done or server timeout"
+  msg "Starting make..."
+
+  rm -rf "${srcdir}/${_gitname}-build"
+  git clone "${srcdir}/${_gitname}" "${srcdir}/${_gitname}-build"
+  cd "${srcdir}/${_gitname}-build"
+
+  #
+  # BUILD HERE
+  #
+  
+  sed -i 's|python|python2|' a2j_control
+  python2 ./waf configure --prefix=/usr
+  python2 ./waf
+}

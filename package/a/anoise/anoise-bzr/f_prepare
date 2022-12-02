@@ -1,0 +1,5 @@
+prepare() {
+  cd "${srcdir}/${_pkgname}"
+  patch -uNp2 -r- -i ../remove_webkit.patch
+  patch -uNp2 -r- -i ../remove_deprecated_method.patch
+}  

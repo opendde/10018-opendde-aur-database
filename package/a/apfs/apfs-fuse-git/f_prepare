@@ -1,0 +1,7 @@
+prepare() {
+  cd "${pkgname%-git}"
+  git submodule init
+  git config submodule.3rdparty/lzfse.url "$srcdir/lzfse"
+  git submodule update
+  mkdir -p build
+}

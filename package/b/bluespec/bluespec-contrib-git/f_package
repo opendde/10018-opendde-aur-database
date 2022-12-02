@@ -1,0 +1,7 @@
+package() {
+	cd "$srcdir/bsc-contrib"
+	install -d "${pkgdir}/opt/bluespec"
+	cp -dr --preserve=mode,timestamp ./inst/* "${pkgdir}/opt/bluespec"
+	install -d "${pkgdir}/usr/share/licenses/${pkgname}"
+	cp -dr --preserve=mode,timestamp ./LICENSES/* "${pkgdir}/usr/share/licenses/${pkgname}"
+}

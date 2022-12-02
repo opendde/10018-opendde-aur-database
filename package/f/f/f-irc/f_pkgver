@@ -1,0 +1,4 @@
+pkgver() {
+  cd ${pkgname}
+  svnversion | egrep -o "[0-9]+"
+}

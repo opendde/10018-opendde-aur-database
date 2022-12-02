@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}.tar.gz::https://sourceforge.net/projects/daetools/files/daetools/${pkgver}/daetools-${pkgver}-gnu_linux-x86_64.tar.gz/download")

@@ -1,0 +1,7 @@
+build() {
+  cd "automake"
+
+  ./bootstrap
+  ./configure --prefix="/usr"
+  make
+}

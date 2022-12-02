@@ -1,0 +1,5 @@
+package() {
+  cd ${pkgname}-${pkgver}
+  install -d ${pkgdir}/usr/share/javascript/${pkgname}
+  cp -a ./dist/* ${pkgdir}/usr/share/javascript/${pkgname}/
+}

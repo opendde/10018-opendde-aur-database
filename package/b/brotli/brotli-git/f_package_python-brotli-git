@@ -1,0 +1,12 @@
+package_python-brotli-git() {
+  depends=('python')
+  provides=('python-brotli')
+  conflicts=('python-brotli')
+
+  cd "brotli"
+
+  python "setup.py" install \
+    --optimize 1 \
+    --skip-build \
+    --root "$pkgdir"
+}

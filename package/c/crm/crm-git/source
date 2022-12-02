@@ -1,0 +1,1 @@
+("${pkgname%-git}::git+https://ghproxy.com/https://github.com//wtklbm/crm.git")

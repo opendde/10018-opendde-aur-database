@@ -1,0 +1,4 @@
+build() {
+    cd bore
+    make build_client
+}

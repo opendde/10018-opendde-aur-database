@@ -1,0 +1,1 @@
+("anitya-${pkgver}.tar.gz::https://github.com/${_github}/${pkgname}/archive/${pkgver}.tar.gz")

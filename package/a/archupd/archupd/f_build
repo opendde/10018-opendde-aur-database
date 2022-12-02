@@ -1,0 +1,4 @@
+build() {
+  cd "$pkgname-$pkgver"
+  go build -buildmode=pie -trimpath -ldflags "-linkmode external -extldflags '$LDFLAGS'"
+}

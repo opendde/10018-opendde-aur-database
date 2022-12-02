@@ -1,0 +1,7 @@
+package() {
+   cd $srcdir/imms/imms
+   mkdir -p "$pkgdir/usr/bin"
+   make prefix="$pkgdir/usr" DESTDIR="$pkgdir/usr/lib/xmms" \
+        BMPDESTDIR="$pkgdir/usr/lib/bmp" \
+        AUDACIOUSDESTDIR="$pkgdir/usr/lib/audacious" install
+}

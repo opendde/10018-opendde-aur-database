@@ -1,0 +1,13 @@
+build() {
+  cd "$srcdir/${PROJECT_DIR_NAME:-$_reponame}"
+  cmake \
+    -G Ninja \
+    -DCMAKE_BUILD_TYPE:STRING='Release' \
+    -DCMAKE_INSTALL_PREFIX:PATH='/usr' \
+    -DCONFIGURATION_NAME:STRING='git' \
+    -DCONFIGURATION_PACKAGE_SUFFIX:STRING='-git' \
+    -DCONFIGURATION_TARGET_SUFFIX:STRING='git' \
+    -DBUILD_SHARED_LIBS:BOOL=ON \
+    .
+  ninja
+}

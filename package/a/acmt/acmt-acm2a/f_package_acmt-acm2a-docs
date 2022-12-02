@@ -1,0 +1,4 @@
+package_acmt-acm2a-docs () {
+	pkgdesc="ACM-2A Program EQ (Documentation)"
+	install -Dm644 ${srcdir}/ACM-2A/manual.pdf ${pkgdir}/usr/share/doc/${pkgbase}/manual.pdf
+}

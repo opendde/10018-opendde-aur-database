@@ -1,0 +1,10 @@
+package() {
+  install -d "$pkgdir/$_installdir"
+
+  cd "$srcdir/Alcarys_Complex_Trial"
+  mv assets runner "$pkgdir/$_installdir"
+  install -D Alcarys_Complex_Trial.desktop "$pkgdir/usr/share/applications/alcarys-complex-trial.desktop"
+
+  install -d "$pkgdir/usr/bin"
+  ln -s "$_installdir/runner" "$pkgdir/usr/bin/$pkgname"
+}

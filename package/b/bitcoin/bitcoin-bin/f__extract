@@ -1,0 +1,5 @@
+_extract() {
+  local extract_dir="${srcdir}/${1}"
+  mkdir -p "$extract_dir"
+  tar -C "$extract_dir" --strip-components=1 -xzf "${startdir}/${1}.tar.gz"
+}

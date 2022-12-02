@@ -1,0 +1,5 @@
+package() {
+	cd "${srcdir}/${pkgname}"
+	install -D -m644 "./aria2.conf"     	"${pkgdir}/etc/conf.d/aria2.conf"
+	install -D -m644 "./aria2d.service" 	"${pkgdir}/usr/lib/systemd/system/aria2d.service"
+}

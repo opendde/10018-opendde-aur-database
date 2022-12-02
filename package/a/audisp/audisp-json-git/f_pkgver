@@ -1,0 +1,8 @@
+pkgver() {
+    cd "${srcdir}/${pkgname}"
+    GITTAG="$(git describe --abbrev=0 --tags 2>/dev/null)"
+    printf '%s.r%s.%s' \
+        "${GITTAG}" \
+        "$(git rev-list --count ${GITTAG}..)" \
+        "$(git rev-parse --short HEAD)"
+}

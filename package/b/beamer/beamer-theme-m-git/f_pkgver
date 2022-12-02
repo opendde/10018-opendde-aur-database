@@ -1,0 +1,5 @@
+pkgver() {
+    # Identify latest version.
+    cd "$srcdir/mtheme"
+    git log -1 --format="%cd" --date=short | sed 's|-||g'
+}

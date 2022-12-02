@@ -1,0 +1,13 @@
+build() {
+	cd "${srcdir}/${pkgbase}"
+	rm -rf build
+	mkdir build
+	cd build
+
+	# The python version is irrelevant at this stage
+	cmake -DREVISION="${pkgver}" \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=/usr/lib ..
+
+	make
+}

@@ -1,0 +1,10 @@
+package() {
+  cd "$_gitname"
+
+  _installdir="$pkgdir/usr/share/anura-git/modules/argentum-age"
+  install -DT -m644 module.cfg "$_installdir/module.cfg"
+  install -DT -m644 master-config.cfg "$_installdir/master-config.cfg"
+  mv data images sounds music "$_installdir"
+  install -D -m755 "$srcdir/argentum-age-git.sh" "$pkgdir/usr/bin/argentum-age-git"
+  install -DT -m644 LICENSE "$pkgdir/usr/share/licenses/argentum-age-git/LICENSE"
+}

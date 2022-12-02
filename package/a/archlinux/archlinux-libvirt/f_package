@@ -1,0 +1,7 @@
+package() {
+  local _dest="${pkgdir}/etc/libvirt/qemu"
+  install -dm755 "${_dest}"
+  install -dm755 "${_dest}/storage"
+  install -Dm644 "${_pkg}-template.xml" "${_dest}/${_distro}.xml"
+  install -Dm644 "${_pkg}-storage-template.xml" "${_dest}/storage/${_distro}.xml"
+}

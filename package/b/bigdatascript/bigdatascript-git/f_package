@@ -1,0 +1,8 @@
+package() {
+  cd "$srcdir"/bds_home
+  install -Dm0755 bds "${pkgdir}/usr/bin/bds"
+  install -d "${pkgdir}/usr/local/bds"
+  for file in $(find include -type f -name *.bds); do
+      install -m 644 -D ${file} ${pkgdir}/usr/local/bds/${file#include}
+  done
+}

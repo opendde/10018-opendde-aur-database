@@ -1,0 +1,39 @@
+package() {
+  cd "${srcdir}"
+
+  cd "out/arsdk-native/staging"
+
+  to_clean=(
+    "native-wrapper.sh"
+    "etc/build.prop"
+
+    "usr/bin/openssl"
+    "usr/bin/curl"
+    "usr/bin/curl-config"
+    "usr/include/json"
+    "usr/include/json-c"
+    "usr/include/curl"
+    "usr/include/tar.h"
+    "usr/include/libtar.h"
+    "usr/include/libtar_listhash.h"
+    "usr/include/openssl"
+
+    "usr/lib/libcrypto.so"
+    "usr/lib/libcurl.so"
+    "usr/lib/libjson-c.so"
+    "usr/lib/libssl.so"
+    "usr/lib/libtar.so"
+    "usr/lib/pkgconfig/json-c.pc"
+    "usr/lib/pkgconfig/libcrypto.pc"
+    "usr/lib/pkgconfig/libcurl.pc"
+    "usr/lib/pkgconfig/libssl.pc"
+    "usr/lib/pkgconfig/openssl.pc"
+    "usr/share/aclocal/libcurl.m4"
+    "usr/share/man"
+
+  )
+  rm -rf "${to_clean[@]}"
+
+  cp -R . "${pkgdir}"
+
+}

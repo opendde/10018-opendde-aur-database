@@ -1,0 +1,4 @@
+build() {
+  cd "$srcdir/$_src"
+  cargo build --all --release --locked
+}

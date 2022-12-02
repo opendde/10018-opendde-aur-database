@@ -1,0 +1,6 @@
+package() {
+  for _file in usr/{bin/*,lib/eddie-ui/*,share/{applications/*,doc/eddie-ui/*,eddie-ui/{*.pem,*.png,*.json,lang/*},pixmaps/*,polkit-1/actions/*}}; do
+    _octal=$(stat -c "%a" "$_file")
+    install -Dm"${_octal}" "$_file" "${pkgdir}/$_file"
+  done
+}

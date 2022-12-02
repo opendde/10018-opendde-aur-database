@@ -1,0 +1,6 @@
+package_arc-orange-solid-gtk-theme-git() {
+    pkgdesc="A flat theme for GTK 3, GTK 2 and Gnome-Shell (without transparency)"
+
+    cd ${_pkgname}-solid
+    make DESTDIR="${pkgdir}" install
+}

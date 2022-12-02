@@ -1,0 +1,4 @@
+package() {
+  install -Dm755 "${srcdir}/battery" "${pkgdir}/usr/bin/battery"
+  install -Dm644 "${srcdir}/LICENSE_1_0.txt" "${pkgdir}/usr/share/licenses/$pkgname/LICENSE"
+}

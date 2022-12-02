@@ -1,0 +1,3 @@
+package() {
+    install -Dm755 "$srcdir/$_pkgname/annotatego" "$pkgdir/usr/bin/annotatego"
+}

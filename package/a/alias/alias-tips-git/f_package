@@ -1,0 +1,5 @@
+package() {
+	cd "${srcdir}/${_name}"
+	install -d "${pkgdir}/usr/share/zsh/plugins/${_name}"
+	cp -a --no-preserve=ownership *.py *.zsh "${pkgdir}/usr/share/zsh/plugins/${_name}"
+}

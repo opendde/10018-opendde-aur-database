@@ -1,0 +1,10 @@
+package() {
+    cd "$srcdir"/bzip2-$pkgver
+    source android-env ${_android_arch}
+
+    install -m755 -d "${pkgdir}"/${ANDROID_PREFIX_INCLUDE}
+    install -m644 bzlib.h "${pkgdir}"/${ANDROID_PREFIX_INCLUDE}/
+    install -m755 -d "${pkgdir}"/${ANDROID_PREFIX_LIB}
+    install -m644 libbz2.a "${pkgdir}"/${ANDROID_PREFIX_LIB}/
+    ${ANDROID_STRIP} -g "$pkgdir"/${ANDROID_PREFIX_LIB}/*.a
+}

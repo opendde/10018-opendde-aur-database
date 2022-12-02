@@ -1,0 +1,11 @@
+pkgver() {
+  cd "$startdir/$_pkgname"
+
+  cmakelists_arangodb=$(git ls-tree HEAD | grep CMakeLists.txt | sed 's/^\S* \S* \(\S*\)\s.*$/\1/')
+  arangodb_revision=$(git cat-file blob $cmakelists_arangodb | grep ARANGODB_VERSION | head -n 3 | sed 's/^.*"\(.\)".*$/\1/' | tr '\n' '.')
+
+  commit_date="$(date -d "$(git log -n1 --pretty='format:%ci')" --utc +%Y%m%d_%H%M)"
+  commit="$(git rev-parse --short HEAD)"
+
+  printf "%sd%s.%s" "$arangodb_revision" "$commit_date" "$commit"
+}

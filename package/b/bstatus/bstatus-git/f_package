@@ -1,0 +1,5 @@
+package() {
+    cd "$srcdir/bstatus"
+    mkdir -p "$pkgdir/usr/bin"
+    cp bstatus.js "$pkgdir/usr/bin/bstatus"
+}

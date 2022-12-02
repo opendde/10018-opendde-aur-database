@@ -1,0 +1,4 @@
+pkgver() {
+	cd "$srcdir/boinc-manager"
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}

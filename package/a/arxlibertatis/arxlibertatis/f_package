@@ -1,0 +1,14 @@
+package() {
+  cd $_archivefolder
+  
+  make DESTDIR="$pkgdir" install
+  
+  install -Dm644 README.md \
+          "$pkgdir/usr/share/doc/$pkgname/README.md"
+  install -Dm644 CHANGELOG \
+          "$pkgdir/usr/share/doc/$pkgname/CHANGELOG"
+  install -Dm644 AUTHORS \
+          "$pkgdir/usr/share/doc/$pkgname/AUTHORS"
+  install -Dm644 ARX_PUBLIC_LICENSE.txt \
+          "$pkgdir/usr/share/licenses/$pkgname/ARX_PUBLIC_LICENSE.txt"
+}

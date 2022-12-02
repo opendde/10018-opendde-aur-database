@@ -1,0 +1,6 @@
+build() {
+  cd "$srcdir/${pkgname%-git}"
+  ./autogen.sh --prefix=/usr
+  ./configure
+  make
+}

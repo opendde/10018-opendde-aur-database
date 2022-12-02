@@ -1,0 +1,12 @@
+package_akonadi-qt4() {
+  depends=(libakonadi-qt4 boost-libs mariadb)
+  optdepends=('postgresql: PostgreSQL backend')
+  conflicts=(akonadi)
+  replaces=('akonadi<15')
+
+  cd build
+  make DESTDIR="$pkgdir" install
+
+# provided by libakonadi-qt4
+  rm -r "$pkgdir"/usr/{lib,include}
+}

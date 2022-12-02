@@ -1,0 +1,5 @@
+package() {
+  cd -- "$srcdir/$_pkgname"
+  install -Dm755 "aha" "$pkgdir/usr/bin/aha"
+  install -Dm644 "aha.1" "$pkgdir/usr/share/man/man1/aha.1"
+}

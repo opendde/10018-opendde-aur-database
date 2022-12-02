@@ -1,0 +1,5 @@
+pkgver() {
+  cd bamf
+
+  echo "r$(bzr revno)"
+}

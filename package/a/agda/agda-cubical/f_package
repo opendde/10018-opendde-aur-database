@@ -1,0 +1,14 @@
+package() {
+    install -Dm644 cubical.agda-lib.in "$pkgdir"/usr/share/agda/lib/cubical.agda-lib
+
+    cd cubical-$pkgver
+
+    install -dm755 "$pkgdir"/usr/share/agda/lib/cubical
+    cp -pr Cubical "$pkgdir"/usr/share/agda/lib/cubical/
+
+    # Symlink to avoid writing to this place when agda-lib is present
+    install -dm755 "$pkgdir"/usr/share/agda/lib/_build/$_agdaver/agda
+    ln -s ../../../cubical "$pkgdir"/usr/share/agda/lib/_build/$_agdaver/agda/
+
+    install -D -m644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}

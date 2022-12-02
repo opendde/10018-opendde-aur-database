@@ -1,0 +1,4 @@
+prepare() {
+  cd $pkgbase-$pkgver
+  AUTOPOINT="intltoolize" autoreconf -fvi
+}

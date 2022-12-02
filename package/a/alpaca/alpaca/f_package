@@ -1,0 +1,14 @@
+package() {
+        cd "$pkgname-$pkgver"
+
+    local basedir="${pkgdir}/usr/local/lib/alpaca"
+
+    mkdir -p "${basedir}/beams"
+    mkdir -p "${basedir}/src"
+
+    install -D README.md "${basedir}/README.md"
+    install -D Tour.md   "${basedir}/Tour.md"
+    install -D code_of_conduct.md "${basedir}/code_of_conduct.md"
+    install -D _build/default/lib/alpaca/ebin/*.beam "${basedir}/beams"
+    install -D src/*    "${basedir}/src"
+}

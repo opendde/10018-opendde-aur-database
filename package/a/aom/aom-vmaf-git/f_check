@@ -1,0 +1,5 @@
+check() {
+  cd "aom/_build"
+
+  #make runtests
+}

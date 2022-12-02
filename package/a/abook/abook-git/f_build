@@ -1,0 +1,6 @@
+build() {
+  cd "$srcdir/${pkgname%-git}"
+  autoreconf --force --install --symlink
+  ./configure --prefix=/usr
+  make
+}

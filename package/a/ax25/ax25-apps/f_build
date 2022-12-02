@@ -1,0 +1,7 @@
+build() {
+	cd $srcdir/$pkgname-$_pkgver
+	./configure --prefix=/usr --sysconfdir=/etc \
+	--localstatedir=/var/cache --sbindir=/usr/bin
+	make clean
+	make
+}

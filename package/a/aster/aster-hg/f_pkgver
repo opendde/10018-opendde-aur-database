@@ -1,0 +1,4 @@
+pkgver() {
+  cd "${srcdir}"/aster
+  hg identify -n
+}

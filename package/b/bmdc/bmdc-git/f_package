@@ -1,0 +1,4 @@
+package() {
+    cd "$srcdir/$_pkgname"
+    scons PREFIX=/usr/ LIBDIR=/usr/share install FAKE_ROOT=$pkgdir/
+}

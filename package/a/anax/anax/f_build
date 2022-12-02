@@ -1,0 +1,8 @@
+build() {
+  cd "$srcdir/$pkgname"
+# Run cmake here
+  rm -fr build
+  mkdir build 
+  cd build
+  cmake .. -DBUILD_SHARED_LIBS=false -DBUILD_DOCS=true -DCMAKE_INSTALL_PREFIX=/usr
+}

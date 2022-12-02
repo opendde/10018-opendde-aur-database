@@ -1,0 +1,13 @@
+build () {
+	# LibreSSL
+	cd "${srcdir}/libressl-${_libressl_ver}"
+	./configure --disable-shared --enable-static --prefix=/usr --sysconfdir=/etc
+	make install DESTDIR="$(pwd)/prefix"
+
+	cd "${srcdir}/${pkgname}-portable-${pkgver}"
+	local wwwdir='-DWWW_DIR=\""/srv/http/acme\""'
+	make PREFIX=/usr \
+		CFLAGS="${CFLAGS} -pthread" \
+		CPPFLAGS="${CPPFLAGS} -I${srcdir}/libressl-${_libressl_ver}/prefix/usr/include ${wwwdir}" \
+		LDFLAGS="${LDFLAGS} -L${srcdir}/libressl-${_libressl_ver}/prefix/usr/lib -pthread"
+}

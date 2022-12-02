@@ -1,0 +1,6 @@
+prepare() {
+  mkdir -p "$srcdir/$pkgname-$pkgver"
+  cd "$srcdir/$pkgname-$pkgver"
+
+  #patch -p1 -i "$srcdir/$pkgname-$pkgver.patch"
+}

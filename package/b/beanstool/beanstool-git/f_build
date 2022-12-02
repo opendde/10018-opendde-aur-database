@@ -1,0 +1,7 @@
+build() {
+  cd "$srcdir/beanstool"
+  mkdir -p "$srcdir/go"
+  export  GOPATH="$srcdir/go"
+  go get gopkg.in/check.v1
+  make build
+}

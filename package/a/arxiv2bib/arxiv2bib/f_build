@@ -1,0 +1,4 @@
+build() {
+  cd arxiv2bib-$pkgver
+  python setup.py build
+}

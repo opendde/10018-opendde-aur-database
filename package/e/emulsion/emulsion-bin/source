@@ -1,0 +1,1 @@
+("$_name-$pkgver.deb::https://github.com/arturkovacs/emulsion/releases/download/v$pkgver/Emulsion-Linux.deb-v$pkgver.deb")

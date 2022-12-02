@@ -1,0 +1,8 @@
+pkgver() {
+	cd "$srcdir/bootterm"
+
+	local ver="$(git describe --tags)"
+	ver="${ver#v}"
+	ver="${ver%-*}"
+	echo "${ver//-/+}"
+}

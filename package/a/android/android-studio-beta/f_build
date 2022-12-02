@@ -1,0 +1,10 @@
+build() {
+  cd "${_pkgname}"
+
+  # Change the product name to produce a unique WM_CLASS attribute
+  mkdir -p idea
+  unzip -p lib/resources.jar idea/AndroidStudioApplicationInfo.xml \
+      | sed "s/\"Studio\"/\"Studio Beta\"/" > idea/AndroidStudioApplicationInfo.xml
+  zip -r lib/resources.jar idea
+  rm -r idea
+}

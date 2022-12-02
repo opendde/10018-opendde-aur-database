@@ -1,0 +1,7 @@
+package() {
+    cd $srcdir/
+    mkdir -p $pkgdir/usr/bin/
+    mkdir -p $pkgdir/usr/lib/systemd/system/
+    install -m 0755 $srcdir/amdfand $pkgdir/usr/bin
+    install -m 0755 $srcdir/amdfand.service "$pkgdir/usr/lib/systemd/system/amdfand.service"
+}

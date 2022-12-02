@@ -1,0 +1,4 @@
+prepare() {
+  sed -i -e '75c\my $basedir = "/opt/brother/Printers/DCPL2530DW";' \
+    ${srcdir}/opt/brother/Printers/DCPL2530DW/cupswrapper/lpdwrapper
+}

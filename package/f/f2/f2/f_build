@@ -1,0 +1,8 @@
+build () {
+          cd $pkgname-$pkgname-$pkgver
+          make \
+            DESTDIR=$pkgdir \
+            MANDIR=/usr/local/man \
+            E2_GROUP=$(id -gn) \
+            all
+}

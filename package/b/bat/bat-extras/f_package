@@ -1,0 +1,16 @@
+package() {
+  cd "$pkgname"
+  ./build.sh \
+    --minify=none \
+    --no-verify \
+    --prefix="$pkgdir/usr" \
+    --install
+
+  # documentation
+  install -vDm644 -t "$pkgdir/usr/share/doc/$pkgname" \
+    CONTRIBUTING.md README.md doc/*
+  install -vDm644 -t "$pkgdir/usr/share/man/man1" man/*
+
+  # license
+  install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE.md
+}

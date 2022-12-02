@@ -1,0 +1,1 @@
+("$pkgname-v$pkgver.tar.gz::https://github.com/joshdk/aws-saml/archive/refs/tags/v$_releasever.tar.gz")

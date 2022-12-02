@@ -1,0 +1,10 @@
+pkgver() {
+	cd edb-debugger
+
+	if git_version=$( git describe --long --tags 2>/dev/null ); then
+		IFS='-' read last_tag tag_rev commit <<< "$git_version"
+		printf '%s.r%s.%s' "$last_tag" "$tag_rev" "$commit"
+	else
+		printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+	fi
+}

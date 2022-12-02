@@ -1,0 +1,11 @@
+prepare() {
+	mkdir deb
+	for _p in "${_pkgs[@]}"; do
+		ar p "$_p.deb" data.tar.xz | tar xJC deb
+	done
+	ln -sfr deb/lib/libxcrypt.so.1 deb/lib/libxcrypt.so
+
+	cd "$pkgname-$pkgver"
+	patch -Nup1 -i "$srcdir/libxcrypt.patch"
+	patch -Nup1 -i "$srcdir/fixtimeout.patch"
+}

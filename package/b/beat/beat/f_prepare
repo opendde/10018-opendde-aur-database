@@ -1,0 +1,3 @@
+prepare() {
+  gendesk -n --pkgname 'beat' --pkgdesc "${pkgdesc}" --name='beat' --exec='beat'
+}

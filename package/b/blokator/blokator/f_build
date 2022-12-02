@@ -1,0 +1,9 @@
+build() {
+  cd "$srcdir/blokator"
+  # Prepare man page
+  cp man-pages/blokator man-pages/blokator.1
+  gzip man-pages/blokator.1
+
+  # Build
+  cargo build --release
+}

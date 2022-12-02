@@ -1,0 +1,7 @@
+prepare() {
+    mkdir -p "$_builddir"
+    cd "$_builddir"
+    cmake "../$pkgname-$pkgver" \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX=/usr
+}

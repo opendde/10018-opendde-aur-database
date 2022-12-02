@@ -1,0 +1,5 @@
+prepare() {
+    cd "${srcdir}"
+    7z x "${srcdir}/$_pkgname-$pkgver-linux.AppImage" $_upkgname.desktop usr/share/icons/hicolor/512x512/apps/$_upkgname.png LICENSE.electron.txt LICENSES.chromium.html
+    sed -i "s/Exec=AppRun/Exec=\/usr\/bin\/$_upkgname/" $_upkgname.desktop
+}

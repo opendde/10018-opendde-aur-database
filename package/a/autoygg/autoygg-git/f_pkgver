@@ -1,0 +1,4 @@
+pkgver() {
+	cd "$srcdir/$_pkgname"
+	./version-at-commit.sh
+}

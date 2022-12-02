@@ -1,0 +1,5 @@
+build() {
+  cd build
+  qmake PREFIX=/usr "../${_pkgname}/src/bullycpp.pro" CONFIG+=release
+  make 
+}

@@ -1,0 +1,7 @@
+package() {
+	cd "$srcdir/$_cvsmod-build"
+
+	make DESTDIR="$pkgdir" install || return 1
+
+	rm -rf "$srcdir/$_cvsmod-build"
+}

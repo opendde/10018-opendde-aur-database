@@ -1,0 +1,5 @@
+build() {
+  cd "${srcdir}"/f77
+  g77 -o advf4-11 -finit-local-zero advf4-11.f advsup.f
+  g77 -o advf4-31 -finit-local-zero advf4-31.f advsup.f
+}

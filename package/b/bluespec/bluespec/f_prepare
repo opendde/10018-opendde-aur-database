@@ -1,0 +1,5 @@
+prepare() {
+	cat <<EOF > bluespec-home.sh
+export BLUESPECDIR="/opt/bluespec"
+EOF
+}

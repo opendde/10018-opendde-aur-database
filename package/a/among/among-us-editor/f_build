@@ -1,0 +1,7 @@
+build() {
+	cd "$srcdir"
+
+	#Create shell script to launch the application
+	echo "#!/bin/sh" > AUE.sh
+	echo "_JAVA_AWT_WM_NONREPARENTING=1 exec /usr/bin/java -jar '/usr/share/java/$pkgname/AUE.jar' '$@'" >> AUE.sh
+}

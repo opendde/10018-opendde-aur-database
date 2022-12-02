@@ -1,0 +1,10 @@
+build() {
+  cd "${_pkgname}-${pkgver}"
+  HOME="$srcdir/.electron-gyp" npm install
+  #HOME="$srcdir/.electron-gyp" npm run linuxbuild
+  HOME="$srcdir/.electron-gyp" npm run build:linux
+  # Documentation
+  cd docs
+  make man html
+  cd ..
+}

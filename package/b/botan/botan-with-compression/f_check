@@ -1,0 +1,5 @@
+check() {
+  cd "${_pkgname^}-$pkgver"
+
+  ./botan-test
+}

@@ -1,0 +1,8 @@
+package() {
+    # Install AppImage
+    install -Dm755 "${srcdir}/Allusion-${gitver}.AppImage" "${pkgdir}/opt/${pkgname}/Allusion-${pkgver}.AppImage"
+
+    # Symlink executable
+    mkdir -p "${pkgdir}/usr/bin"
+    ln -s "/opt/${pkgname}/Allusion-${pkgver}.AppImage" "${pkgdir}/usr/bin/allusion"
+}

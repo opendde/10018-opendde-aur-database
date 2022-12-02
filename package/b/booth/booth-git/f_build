@@ -1,0 +1,10 @@
+build() {
+  cd $pkgname
+  ./configure \
+    --sbindir=/usr/bin \
+    --sysconfdir=/etc \
+    --libdir=/usr/lib \
+    --libexecdir=/usr/lib \
+    --localstatedir=/var
+  make V=0
+}

@@ -1,0 +1,4 @@
+package() {
+	cd $_pkgname
+	install -D -m755 "$srcdir/$_pkgname/target/release/bootimage" "$pkgdir/usr/bin/bootimage"
+}

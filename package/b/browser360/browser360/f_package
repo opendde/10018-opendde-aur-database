@@ -1,0 +1,11 @@
+package() {
+  tar -xf "$srcdir/data.tar.xz" -C "$pkgdir/"
+
+  rm -rf "$pkgdir/etc/"
+
+  for i in 16x16 24x24 32x32 48x48 64x64 128x128 256x256; do
+    install -Dm644 "$pkgdir/opt/browser360/product_logo_${i/x*}.png" \
+                  "$pkgdir/usr/share/icons/hicolor/$i/apps/$pkgname-cn.png"
+    rm "$pkgdir/opt/browser360/product_logo_${i/x*}.png"
+  done
+}

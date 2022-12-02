@@ -1,0 +1,8 @@
+package() {
+
+  mkdir -p $pkgdir/usr
+
+  cp -rp $srcdir/$_gitname/tmphome/.local/lib $pkgdir/usr/
+  cp -rp $srcdir/$_gitname/tmphome/.local/bin $pkgdir/usr/
+  chmod -R 755 $pkgdir/usr/lib
+}

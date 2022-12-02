@@ -1,0 +1,6 @@
+prepare() {
+    export GOPATH="$srcdir/gopath"
+    export GO111MODULE=on
+
+    go clean -modcache
+}

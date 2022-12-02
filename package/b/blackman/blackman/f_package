@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir/blackman-$pkgver"
+
+  install -Dm755 blackman "$pkgdir/usr/bin/blackman"
+  install -Dm644 -t "$pkgdir/usr/share/doc/blackman/" README.md TODO
+}

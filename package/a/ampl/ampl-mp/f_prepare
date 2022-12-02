@@ -1,0 +1,4 @@
+prepare() {
+  # https://github.com/fmtlib/fmt/issues/398#issue-183946005
+  sed -i -- 's/CHAR_WIDTH/CHAR_SIZE/g' "mp-${pkgver}/include/mp/format.h"
+}

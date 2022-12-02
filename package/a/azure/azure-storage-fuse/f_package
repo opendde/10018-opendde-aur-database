@@ -1,0 +1,9 @@
+package() {
+  cd "$pkgname-blobfuse-$pkgver" || return
+
+  make -C build DESTDIR="$pkgdir/" install
+  install -d "$pkgdir/usr/share/doc/$pkgname/"
+  install -d "$pkgdir/usr/share/licenses/$pkgname/"
+  install README.md "$pkgdir/usr/share/doc/$pkgname/"
+  install LICENSE "$pkgdir/usr/share/licenses/$pkgname/"
+}

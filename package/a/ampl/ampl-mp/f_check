@@ -1,0 +1,3 @@
+check() {
+  cmake --build build --target test
+}

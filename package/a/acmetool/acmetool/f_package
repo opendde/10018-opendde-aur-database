@@ -1,0 +1,15 @@
+package() {
+    # copy binary
+    install -Dm0755 "${srcdir}/build/bin/acmetool" "${pkgdir}/usr/bin/acmetool"
+    # copy systemd units (service and timer)
+    install -Dm644 -t "${pkgdir}/usr/lib/systemd/system" \
+                        ${srcdir}/acmetool.service \
+                        ${srcdir}/acmetool.timer
+    # copy acmetool.tmpfiles
+    install -Dm644 -t "${pkgdir}/usr/lib/tmpfiles.d/" ${srcdir}/acmetool.conf
+
+    # copy README.md and other documentation
+    install -Dm644 -t "${pkgdir}/usr/share/doc/${pkgname}" "${srcdir}/build/src/github.com/hlandau/acme/README.md" "${srcdir}/build/src/github.com/hlandau/acme/_doc/"*
+    # copy the license
+    install -Dm644  "${srcdir}/LICENSE" "${pkgdir}/usr/share/licenses/acmetool/LICENSE"
+}

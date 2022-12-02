@@ -1,0 +1,6 @@
+check() {
+  cd "$pkgname-$pkgver"
+  for pkg in $(go list ./... | grep -v /vendor/); do
+    go test "$pkg"
+  done
+}

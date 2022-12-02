@@ -1,0 +1,6 @@
+package() {
+  cd ${srcdir}/${pkgname}-${pkgver}
+
+  make install DESTDIR=${pkgdir}/usr
+  mv ${pkgdir}/usr/sbin ${pkgdir}/usr/bin
+}

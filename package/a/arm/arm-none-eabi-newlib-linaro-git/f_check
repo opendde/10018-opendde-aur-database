@@ -1,0 +1,4 @@
+check() {
+  cd "$srcdir/${_libname}/"
+  make -j5 check
+}

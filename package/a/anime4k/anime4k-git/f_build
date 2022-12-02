@@ -1,0 +1,5 @@
+build() {
+  cd "${srcdir}"
+  go-md2man -in anime4k/md/GLSL_Instructions_Linux.md -out glsl.man
+  go-md2man -in anime4k/md/GLSL_Instructions_Advanced.md -out glsladv.man
+}

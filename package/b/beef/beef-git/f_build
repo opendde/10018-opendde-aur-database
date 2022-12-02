@@ -1,0 +1,11 @@
+build() {
+  cd "${srcdir}/${pkgname}"
+
+  # Print beef logo
+  if [ -f core/main/console/beef.ascii ]; then
+    cat core/main/console/beef.ascii
+    echo
+  fi
+
+  bundle install --without test development --path vendor/bundle
+}

@@ -1,0 +1,5 @@
+package() {
+    cd "$srcdir/$_fullname-$_fullver"
+    cd build
+    make DESTDIR=$pkgdir LIBDIR=$pkgdir/usr/lib install
+}

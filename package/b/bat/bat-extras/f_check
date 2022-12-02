@@ -1,0 +1,4 @@
+check() {
+  cd "$pkgname"
+  ./test.sh --verbose --strict --snapshot:show
+}

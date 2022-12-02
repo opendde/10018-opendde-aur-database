@@ -1,0 +1,4 @@
+package() {
+	cd aws-logs
+	install -Dm755 "build/libs/awstail" "${pkgdir}/usr/bin/awstail"
+}

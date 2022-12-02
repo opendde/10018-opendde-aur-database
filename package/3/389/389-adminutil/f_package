@@ -1,0 +1,6 @@
+package() {
+  cd $pkgname-$pkgver
+
+  msg2 "Running make install..."
+  make install DESTDIR="$pkgdir"
+}

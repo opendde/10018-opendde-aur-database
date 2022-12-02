@@ -1,0 +1,7 @@
+build() {
+    cd $pkgname-$pkgver
+    go build \
+        -trimpath \
+        -ldflags "-X github.com/armory-io/arm/cmd.enableVersionCheck=offbydefault -X github.com/armory-io/arm/cmd.currentVersion=$PKGVER -extldflags ${LDFLAGS}" \
+        -o $pkgname .
+}

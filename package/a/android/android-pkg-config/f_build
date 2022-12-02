@@ -1,0 +1,5 @@
+build() {
+    for _arch in ${_architectures}; do
+        sed "s|@TRIPLE@|${_arch}|g" android-pkgconfig.sh > android-${_arch}-pkg-config
+    done
+}

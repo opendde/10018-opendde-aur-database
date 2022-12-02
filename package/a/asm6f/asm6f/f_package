@@ -1,0 +1,6 @@
+package() {
+  cd "${srcdir}/${_srcdirname}"
+  install -m755 -D asm6f "${pkgdir}/usr/bin/asm6f"
+  install -m644 -D readme.txt "${pkgdir}/usr/share/doc/${pkgname}/readme.txt"
+  install -m644 -D readme-original.txt "${pkgdir}/usr/share/doc/${pkgname}/readme-original.txt"
+}

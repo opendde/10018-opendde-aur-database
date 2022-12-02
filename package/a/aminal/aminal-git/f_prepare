@@ -1,0 +1,13 @@
+prepare() {
+	cd "${srcdir}/${pkgname}"
+
+	install -m755 -d "${srcdir}/go/src/github.com/liamg/"
+	ln -sf "${srcdir}/${pkgname}" "${srcdir}/go/src/github.com/liamg/aminal"
+
+	cd "${srcdir}/go/src/github.com/liamg/aminal"
+
+	export GOPATH="${srcdir}/go"
+	export GO111MODULE=auto
+
+	go get -v ./...
+}

@@ -1,0 +1,10 @@
+build() {
+	cd "${_basename}-${pkgver}"
+
+    patch -p1 < ../0001-buspirate-remove-compound-literals-fixes-GCC-9.patch
+    ./configure --mandir=/usr/share/man \
+		    --prefix=/usr \
+		    --sysconfdir=/etc \
+		    --enable-linuxgpio
+    make
+}

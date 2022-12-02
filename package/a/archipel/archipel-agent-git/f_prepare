@@ -1,0 +1,8 @@
+prepare() {
+  cd "$srcdir"/Archipel
+  git submodule init
+  git config submodule.ArchipelAgent/archipel-core/archipelcore/xmpp.url "$srcdir"/xmpppy
+#  git config submodule.ArchipelAgent/ANSOS.url "$srcdir"/Node
+  git submodule update "$srcdir"/Archipel/ArchipelAgent/archipel-core/archipelcore/xmpp
+#  git submodule update "$srcdir"/Archipel/ArchipelAgent/ANSOS
+}

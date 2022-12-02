@@ -1,0 +1,6 @@
+build() {
+	cd "$srcdir/${_pkgname}"
+	yarn install
+	asar pack . app.asar
+	mv app.asar ../"app-${pkgver}.asar"
+}

@@ -1,0 +1,30 @@
+package() {
+    cd "${srcdir}/${pkgname}-${pkgver}"
+
+    mkdir -p "${pkgdir}/opt"
+    cp -Rl data/all "${pkgdir}/opt/${pkgname}"
+    install -m644 "data/SmileLogo.png" "${pkgdir}/opt/${pkgname}/"
+
+    # Use symlinks instead of copies
+    pushd "${pkgdir}/opt/${pkgname}/hge_lib"
+    ln -sf "liballegro_dialog.so.5.0.9" "liballegro_dialog.so"
+    ln -sf "liballegro_dialog.so.5.0.9" "liballegro_dialog.so.5.0"
+    ln -sf "liballegro_image.so.5.0.9" "liballegro_image.so"
+    ln -sf "liballegro_image.so.5.0.9" "liballegro_image.so.5.0"
+    ln -sf "liballegro_memfile.so.5.0.9" "liballegro_memfile.so"
+    ln -sf "liballegro_memfile.so.5.0.9" "liballegro_memfile.so.5.0"
+    ln -sf "liballegro.so.5.0.9" "liballegro.so"
+    ln -sf "liballegro.so.5.0.9" "liballegro.so.5.0"
+    popd
+
+    # Use system-provided libraries
+    rm "${pkgdir}/opt/${pkgname}/hge_lib/libjpeg.so"
+    rm "${pkgdir}/opt/${pkgname}/hge_lib/libjpeg.so.8"
+    rm "${pkgdir}/opt/${pkgname}/hge_lib/libjpeg.so.8.0.2"
+    rm "${pkgdir}/opt/${pkgname}/hge_lib/libpng12.so.0"
+    rm "${pkgdir}/opt/${pkgname}/hge_lib/libpng12.so.0.46.0"
+
+    install -Dm644 "${srcdir}/${pkgname}.desktop" \
+        "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+    install -Dm755 "${srcdir}/${pkgname}.sh" "${pkgdir}/usr/bin/${pkgname}"
+}

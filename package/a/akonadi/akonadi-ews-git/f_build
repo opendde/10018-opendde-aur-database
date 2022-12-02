@@ -1,0 +1,4 @@
+build() {
+  cd build
+  cmake ../$_gitname -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=RELEASE
+}

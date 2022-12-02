@@ -1,0 +1,21 @@
+package() {
+	cd "livecd-encryption-main"
+	mkdir -p "$pkgdir/usr/bin/"
+	cp mkarchiso "$pkgdir/usr/bin/mkarchiso-encrypted"
+	mkdir -p "$pkgdir/usr/lib/initcpio/hooks/"
+	cp archiso-encrypted "$pkgdir/usr/lib/initcpio/hooks"
+
+	mkdir -p "$pkgdir/usr/share/archiso/configs/"
+	cp -r /usr/share/archiso/configs/baseline/ "$pkgdir/usr/share/archiso/configs/"
+	mv "$pkgdir/usr/share/archiso/configs/baseline/" "$pkgdir/usr/share/archiso/configs/encryption/"
+	cp mkinitcpio.conf "$pkgdir/usr/share/archiso/configs/encryption/airootfs/etc/mkinitcpio.conf"
+
+    mkdir -p "$pkgdir/usr/lib/initcpio/install"
+    cp /usr/lib/initcpio/install/archiso "$pkgdir/usr/lib/initcpio/install/archiso-encrypted"
+    
+    mkdir -p "$pkgdir/usr/share/archiso/configs/encryption/airootfs/usr/lib/initcpio/hooks"
+    cp archiso-encrypted "$pkgdir/usr/share/archiso/configs/encryption/airootfs/usr/lib/initcpio/hooks/"
+
+    mkdir -p "$pkgdir/usr/share/archiso/configs/encryption/airootfs/usr/lib/initcpio/install"
+    cp /usr/lib/initcpio/install/archiso "$pkgdir/usr/share/archiso/configs/encryption/airootfs/usr/lib/initcpio/install/archiso-encrypted"
+}

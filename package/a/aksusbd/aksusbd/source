@@ -1,0 +1,1 @@
+("${_tarballname}-${pkgver}.tar.gz::https://fdsext.gemalto.com/filesSN/Index/$_dl_hash?sid=$_dl_id"

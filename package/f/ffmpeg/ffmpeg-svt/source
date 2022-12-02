@@ -1,0 +1,1 @@
+(ffmpeg::git+https://git.ffmpeg.org/ffmpeg.git#tag=n${pkgver}

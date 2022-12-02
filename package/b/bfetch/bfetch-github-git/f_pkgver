@@ -1,0 +1,4 @@
+pkgver() {
+  cd $_gitname
+  git log | head -1 | cut -d ' ' -f2
+}

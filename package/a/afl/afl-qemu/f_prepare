@@ -1,0 +1,14 @@
+prepare() {
+	cd "${srcdir}/afl-${pkgver}/qemu_mode"
+	rm -rf "qemu-${qemu_version}"
+	mv "${srcdir}/qemu-${qemu_version}" .
+
+	cd "qemu-${qemu_version}"
+	for p in ../patches/*.diff; do
+		patch -p1 < "$p"
+	done
+
+	patch -p1 < "${srcdir}/memfd.diff"
+	patch -p1 < "${srcdir}/glfs_truncate.diff"
+	patch -p1 < "${srcdir}/glfs_io_cbk.diff"
+}

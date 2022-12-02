@@ -1,0 +1,7 @@
+build() {
+  rm -rf "$srcdir/$_pkgname-build"
+  mkdir "$srcdir/$_pkgname-build"
+  cd "$srcdir/$_pkgname-build"
+  cmake "$srcdir/$_pkgname" -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=None
+  make
+}

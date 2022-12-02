@@ -1,0 +1,5 @@
+package() {
+   cd "$srcdir/animecheck"
+   mkdir -p $pkgdir/usr/bin
+   install -m 0755 animecheck.py $pkgdir/usr/bin/
+}

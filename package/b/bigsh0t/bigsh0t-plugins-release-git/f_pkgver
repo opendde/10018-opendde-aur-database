@@ -1,0 +1,4 @@
+pkgver() {
+	cd "$_srcname"
+	printf '%s' "$(git describe --tags --long | sed 's/\([^-]*-g\)/r\1/;s/-/./g;s/^v//')"
+}

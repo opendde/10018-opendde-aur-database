@@ -1,0 +1,23 @@
+build() {
+  cd ${srcdir}
+
+  if [ -d ${srcdir}/$_gitname ]; then
+    cd $_gitname && git pull origin
+    msg "The local files are up-to-date now."
+  else
+    git clone --depth 1 $_gitroot $_gitname
+  fi
+
+  msg "GIT checkout done or server timeout"
+  msg "Starting make..."
+
+  if [ -d ${srcdir}/$_gitname-build ]; then
+    rm -rf ${srcdir}/$_gitname-build
+  fi
+
+  cp -r ${srcdir}/$_gitname ${srcdir}/$_gitname-build || return 1
+  cd ${srcdir}/$_gitname-build
+  ./autogen.sh
+  ./configure --prefix=/usr
+  make || return 1
+}

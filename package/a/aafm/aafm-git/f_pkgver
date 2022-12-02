@@ -1,0 +1,4 @@
+pkgver() {
+  cd "$pkgname"
+  git log -1 --pretty=format:%cd --date=short | sed 's/-//g'
+}

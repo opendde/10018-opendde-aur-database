@@ -1,0 +1,1 @@
+("${_pkgname}-${pkgver}-README.md::${url}/raw/${pkgver}/README.md"

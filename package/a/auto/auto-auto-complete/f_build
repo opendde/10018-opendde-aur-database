@@ -1,0 +1,4 @@
+build() {
+  cd "auto-auto-complete-${pkgver}"
+  make
+}

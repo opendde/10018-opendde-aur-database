@@ -1,0 +1,14 @@
+package() {
+	cd "$opkgnm-$opkgnm-$pkgver"
+	make -C build DESTDIR="$pkgdir" install
+
+	# rename generic utils
+	local _prog _baseprog
+	for _prog in "$pkgdir"/usr/bin/*; do
+		_baseprog=$(basename "$_prog")
+		mv -v "$_prog" "${_prog//$_baseprog/mbedtls_$_baseprog}"
+	done
+
+	# fixup static lib permissions
+	chmod 644 "$pkgdir"/usr/lib/*.a
+}

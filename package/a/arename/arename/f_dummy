@@ -1,0 +1,6 @@
+dummy() {
+	$(RM) "$pkgdir"/usr/share/doc/arename/CHANGES
+	$(RM) "$pkgdir"/usr/share/doc/arename/LICENCE
+	$(RM) "$pkgdir"/usr/share/doc/arename/README
+	$(RM) "$pkgdir"/usr/share/doc/arename/*.html
+}

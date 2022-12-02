@@ -1,0 +1,15 @@
+prepare() {
+  cd "${srcdir}/${_gitname}"
+
+  # Fix compilation errors
+  sed -i "s|#include <atomic>|#include <atomic>\n#include <functional>|" \
+    libstuff/libstuff.h
+
+  sed -i "s|/mbedtls/include -Werror -Wno-unu|/mbedtls/include -Wno-unu|" \
+    Makefile
+
+  if [[ $CARCH == "armv7h" ]]; then
+    sed -i 's|"Timestamp"), 1ul)|"Timestamp"), 1ull)|' \
+      libstuff/STCPNode.cpp
+  fi
+}

@@ -1,0 +1,6 @@
+package() {
+  cd "${srcdir}/${pkgname}"
+  install -Dm755 btrfs-heatmap-systemd.bash "${pkgdir}/usr/local/bin/btrfs-heatmap-systemd"
+  install -Dm755 btrfs-heatmap@.service     "${pkgdir}/etc/systemd/system/btrfs-heatmap@.service"
+  install -Dm755 btrfs-heatmap@.timer       "${pkgdir}/etc/systemd/system/btrfs-heatmap@.timer"
+}

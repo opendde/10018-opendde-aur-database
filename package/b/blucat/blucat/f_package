@@ -1,0 +1,7 @@
+package() {
+    install -d -m755 ${pkgdir}/usr/share/java/${pkgname}
+    install -d -m755 ${pkgdir}/usr/bin
+    install    -m644 ${pkgname}/lib/bluecove-2.1.1-SNAPSHOT.jar "${pkgdir}/usr/share/java/${pkgname}/"    
+    install    -m644 ${pkgname}/build/${pkgname}.jar            "${pkgdir}/usr/share/java/${pkgname}/"    
+    install -T -m755 blucat.sh "${pkgdir}/usr/bin/blucat"
+}

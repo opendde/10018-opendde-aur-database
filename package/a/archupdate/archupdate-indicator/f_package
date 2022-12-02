@@ -1,0 +1,6 @@
+package() {
+	cd "$pkgname-$pkgver"
+	install -Dm755 ./archupdate-indicator.py -t "$pkgdir/usr/bin/"
+	install -Dm644 ./img/*.png -t "$pkgdir/usr/share/pixmaps/$pkgname/"
+	install -Dm644 ./LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
+}

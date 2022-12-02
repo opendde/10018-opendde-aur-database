@@ -1,0 +1,52 @@
+package_avidemux-core-git() {
+  pkgdesc="Core libs for Avidemux. (GIT version)"
+  depends=('a52dec'
+           'libaom.so'
+           'aften'
+           'dcaenc'
+           'libfaac.so'
+           'libfaad.so'
+           'fribidi'
+           'jack'
+           'lame'
+           'libass.so'
+           'libfdk-aac.so'
+           'libmad'
+           'libmp4v2'
+           'libdca'
+           'libpulse.so'
+           'libva.so'
+           'libvdpau'
+           'libvpx.so'
+           'libvorbis.so'
+           'libopencore-amrnb.so'
+           'libopencore-amrwb.so'
+           'libtwolame.so'
+           'libxvidcore.so'
+           'libx264.so'
+           'libx265.so'
+           )
+  optdepends=('avidemux-qt5-git: a Qt5 GUI for Avidemux'
+              'avidemux-qt6-git: a Qt6 GUI for Avidemux'
+              'avidemux-cli-git: a CLI frontend for Avidemux'
+              'wine: AVSload (Load Avisynth scripts on Avidemux)'
+              'vapoursynth: vsProxy (Load Vapoursynth scripts on Avidemux)'
+              'cuda: Nvidia hw encoder'
+              'libva-intel-driver: Intel hw encoder'
+              'libva-mesa-driver: Mesa hw encoder'
+              )
+  provides=('avidemux-core')
+  conflicts=('avidemux-core')
+
+  DESTDIR="${pkgdir}" cmake --install build_core
+  DESTDIR="${pkgdir}" cmake --install build_core_plugins
+  DESTDIR="${pkgdir}" cmake --install build_core_plugins_settings
+
+  install -Dm755 fakeroot/usr/lib/ADM_plugins6/videoEncoders/libADM_ve_x264_other.so "${pkgdir}/usr/lib/ADM_plugins6/videoEncoders/libADM_ve_x264_other.so"
+  install -Dm755 fakeroot/usr/lib/ADM_plugins6/videoEncoders/libADM_ve_x265_other.so "${pkgdir}/usr/lib/ADM_plugins6/videoEncoders/libADM_ve_x265_other.so"
+  install -Dm755 fakeroot/usr/lib/ADM_plugins6/shaderDemo/1/zigzag.shader "${pkgdir}/usr/lib/ADM_plugins6/shaderDemo/1/zigzag.shader"
+  install -Dm755 fakeroot/usr/lib/ADM_plugins6/shaderDemo/1/ripple.shader "${pkgdir}/usr/lib/ADM_plugins6/shaderDemo/1/ripple.shader"
+  install -Dm755 fakeroot/usr/lib/ADM_plugins6/shaderDemo/1/lightning.shader "${pkgdir}/usr/lib/ADM_plugins6/shaderDemo/1/lightning.shader"
+  install -Dm755 fakeroot/usr/lib/ADM_plugins6/shaderDemo/1/bump.shader "${pkgdir}/usr/lib/ADM_plugins6/shaderDemo/1/bump.shader"
+
+}

@@ -1,0 +1,6 @@
+prepare() {
+    mkdir "${srcdir}/workdir"
+    cd "${srcdir}/workdir"
+    cp "${srcdir}/"{alx.h,ethtool.c,hw.c,hw.h,main.c,reg.h} .
+    patch -p6 < ../000-enable-alx-wol.patch
+}

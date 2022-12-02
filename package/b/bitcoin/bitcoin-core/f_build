@@ -1,0 +1,19 @@
+build() {
+  cd "$srcdir/${pkgname%-core}-$pkgver"
+
+  msg2 'Building...'
+  ./autogen.sh
+  ./configure \
+    --prefix=/usr \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/bitcoin \
+    --sysconfdir=/etc \
+    --sharedstatedir=/usr/share/bitcoin \
+    --localstatedir=/var/lib/bitcoin \
+    --enable-hardening \
+    --with-gui=no \
+    --disable-wallet \
+    --without-miniupnpc \
+    --with-gnu-ld
+  make -j$_nproc
+}

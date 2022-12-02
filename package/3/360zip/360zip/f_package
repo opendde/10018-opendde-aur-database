@@ -1,0 +1,16 @@
+package() {
+    tar -xf "$srcdir/data.tar.xz" -C "$pkgdir/"
+
+    mkdir -p "$pkgdir/usr/share"
+    mv "$pkgdir/usr/local/share/360zip" "$pkgdir/usr/share/360zip"
+    mv "$pkgdir/usr/local/share/applications" "$pkgdir/usr/share/applications"
+
+    mkdir -p "$pkgdir/usr/share/icons"
+    ln -s "$pkgdir/usr/local/share/360zip.png" "$pkgdir/usr/share/icons/360zip.png"
+
+    mv "$pkgdir/usr/lib/x86_64-linux-gnu/dde-file-manager" "$pkgdir/usr/lib/dde-file-manager"
+    rmdir "$pkgdir/usr/lib/x86_64-linux-gnu"
+
+    mkdir -p "$pkgdir/usr/bin"
+    ln -s /usr/share/360zip/360zip.sh "$pkgdir/usr/bin/360zip"
+}

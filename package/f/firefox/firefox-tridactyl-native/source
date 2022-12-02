@@ -1,0 +1,1 @@
+("$pkgname-$pkgver.tar.gz::https://github.com/tridactyl/native_messenger/archive/refs/tags/$_nativever.tar.gz")

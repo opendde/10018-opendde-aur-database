@@ -1,0 +1,8 @@
+build() {
+  cd $_pkgname
+
+  make -C lib
+  for prog in "${_progs[@]}" ; do
+    make -C $prog
+  done
+}

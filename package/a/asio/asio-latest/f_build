@@ -1,0 +1,7 @@
+build() {
+  cd "${srcdir}/${_pkgname}/${_pkgname}"
+
+  ./autogen.sh
+  ./configure --prefix=/usr
+  make
+}

@@ -1,0 +1,4 @@
+package() {
+        cd "$pkgname-master"
+        install -Dm0755 $pkgname "$pkgdir/usr/bin/$pkgname"
+}

@@ -1,0 +1,25 @@
+build() {
+	cd "${pkgname}-${pkgver}"
+
+	# Apply select patches to Alpine
+	# https://alpineapp.email/alpine/
+	# Maildir patch
+	patch -p1 -i "${srcdir}/fancy-${pkgver}.patch"
+	# Fancy Thread Interface
+	patch -p1 -i "${srcdir}/maildir-${pkgver}.patch"
+	# Justify paragraphs that contain more than one level of quoting
+	patch -p1 -i "${srcdir}/fillpara-${pkgver}.patch"
+	# Add new subcommands to the compose command
+	patch -p1 -i "${srcdir}/compose-${pkgver}.patch"
+	# Recognize multiline URLs
+	patch -p1 -i "${srcdir}/longurl-${pkgver}.patch"
+
+	# Configure Alpine
+	LIBS+="-lpam -lkrb5 -lcrypto" ./configure --prefix=/usr \
+	--with-passfile=.alpine.passfile --without-tcl --disable-shared \
+	--with-system-pinerc=/etc/${pkgname}.d/pine.conf \
+	--with-system-fixed-pinerc=/etc/${pkgname}.d/pine.conf.fixed
+
+	# Build Alpine
+	make
+}

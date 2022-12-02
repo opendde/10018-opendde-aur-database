@@ -1,0 +1,4 @@
+package() {
+  cd "${srcdir}/aspell6-ar-${pkgver}-0"
+  make DESTDIR="$pkgdir" install
+}

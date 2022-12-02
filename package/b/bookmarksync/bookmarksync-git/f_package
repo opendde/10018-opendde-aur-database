@@ -1,0 +1,4 @@
+package() {
+    install -D ${pkgname%-git}/src/bookmarksync "${pkgdir}/usr/bin/bookmarksync"
+    install -D ${pkgname%-git}/bookmarksync.desktop "${pkgdir}/usr/share/applications/bookmarksync.desktop"
+}

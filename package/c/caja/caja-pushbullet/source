@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}.tar.xz::${url}/+sourcefiles/${pkgname}/${pkgver}-${_ubuntur}/${pkgname}_${pkgver}-${_ubuntur}.tar.xz")

@@ -1,0 +1,20 @@
+prepare() {
+  rm -fr "$pkgname-$pkgver"	
+  mv "map_gen-$pkgver" "$pkgname-$pkgver"
+  cd "$pkgname-$pkgver"
+
+# Convert Windows text format to unix style
+  find .        -type f -print0 | xargs -0 dos2unix -k -q 
+  find doc      -type f -print0 | xargs -0 dos2unix -k -q 
+  find examples -type f -print0 | xargs -0 dos2unix -k -q 
+  cd src
+
+# ‘area_dist’ defined but not used
+  sed -i '80,88d'              map_gen/scn_fjor.c
+  
+# Use LDFLAGS for RELRO  
+  sed -i 's/cc/cc ${LDFLAGS}/' map_gen/build 
+  
+# echo text merges with other output!  
+  sed -i 's/echo/#/'           map_gen/build 
+}

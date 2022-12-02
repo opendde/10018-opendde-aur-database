@@ -1,0 +1,4 @@
+prepare() {
+    cd "${srcdir}"/l-smash-${pkgver}
+    patch -Np1 -i ../clang.patch
+}

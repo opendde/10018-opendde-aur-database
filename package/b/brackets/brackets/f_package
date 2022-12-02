@@ -1,0 +1,26 @@
+package() {
+	cd ${srcdir}/brackets-shell
+	install -Dm755 installer/linux/debian/brackets "${pkgdir}/opt/brackets/brackets"
+	install -dm755 "${pkgdir}/usr/bin"
+	ln -s /opt/brackets/brackets "$pkgdir/usr/bin/brackets"
+
+	install -dm755 "${pkgdir}/usr/share"
+	install -Dm644 installer/linux/debian/brackets.desktop "${pkgdir}/usr/share/applications/brackets.desktop"
+	install -Dm644 installer/linux/debian/package-root/usr/share/icons/hicolor/scalable/apps/brackets.svg "${pkgdir}/usr/share/icons/hicolor/scalable/apps/brackets.svg"
+	for size in 32 48 128 256; do
+		install -Dm644 "out/Release/files/appshell${size}.png" "${pkgdir}/usr/share/icons/hicolor/${size}x${size}/apps/brackets.png"
+	done
+
+	cd out/Release
+	install -dm755 "${pkgdir}/opt/brackets"
+	cp -R {files,locales,node-core} "${pkgdir}/opt/brackets/"
+	find . -maxdepth 1 -type f -exec \
+	cp {} ${pkgdir}/opt/brackets/{} \;
+	cp ${srcdir}/opt/brackets/Brackets ${pkgdir}/opt/brackets/
+	chmod 4755 ${pkgdir}/opt/brackets/chrome-sandbox
+
+	cd ${srcdir}/${pkgname}
+	cp -R "samples" "${pkgdir}/opt/brackets/samples"
+	cp -R "dist" "${pkgdir}/opt/brackets/www"
+	cp -R "node_modules" "${pkgdir}/opt/brackets/www"
+}

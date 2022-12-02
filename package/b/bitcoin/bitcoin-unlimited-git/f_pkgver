@@ -1,0 +1,7 @@
+pkgver() {
+	cd "$srcdir/BitcoinUnlimited"
+
+  # The latest version was not tagged, so throw away the version we get
+  # from the top-most tag, but keep,the revision height and commit hash
+  git describe --long | sed "s/^v[^-]\+-\([0-9]\+\)/$pkgver.r\1/;s/-/./g"
+}

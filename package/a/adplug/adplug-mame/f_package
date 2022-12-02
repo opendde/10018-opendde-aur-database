@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir/adplug-$pkgver"
+  make DESTDIR="$pkgdir" install
+  rm "$pkgdir/usr/share/info/dir"
+}

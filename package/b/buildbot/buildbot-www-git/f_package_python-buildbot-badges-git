@@ -1,0 +1,9 @@
+package_python-buildbot-badges-git() {
+  pkgdesc="Buildbot badges"
+  depends=('buildbot-git' 'python-klein' 'python-cairosvg' 'python-cairocffi' 'python-jinja')
+  provides=("python-buildbot-badges=$pkgver")
+  conflicts=('python-buildbot-badges')
+
+  cd buildbot/www/badges
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+}

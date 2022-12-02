@@ -1,0 +1,1 @@
+(${_base}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz)

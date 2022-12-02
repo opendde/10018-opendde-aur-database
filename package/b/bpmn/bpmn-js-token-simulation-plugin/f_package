@@ -1,0 +1,4 @@
+package() {
+    mkdir -p $pkgdir/opt/camunda-modeler/resources/plugins/$pkgname
+    cp -a $srcdir/$pkgbase-$pkgver/* $pkgdir/opt/camunda-modeler/resources/plugins/$pkgname
+}

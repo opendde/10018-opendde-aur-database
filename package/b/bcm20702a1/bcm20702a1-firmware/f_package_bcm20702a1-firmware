@@ -1,0 +1,11 @@
+package_bcm20702a1-firmware() {
+  pkgdesc="Broadcom bluetooth firmware for BCM20702A1 based devices."
+  conflicts=('bt-dw1560-firmware')
+
+  cd "${srcdir}"
+  mkdir -p ${pkgdir}/usr/lib/firmware/brcm
+  
+  for i in BCM20702A1-*.hcd; do
+    install -m644 "${srcdir}/$i" "${pkgdir}/usr/lib/firmware/brcm/$i"
+  done
+}

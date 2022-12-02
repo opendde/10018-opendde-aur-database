@@ -1,0 +1,4 @@
+package() {
+  cd "$srcdir"
+  install -D -m0644 amd-ucode.img "${pkgdir}"/boot/amd-ucode.img
+}

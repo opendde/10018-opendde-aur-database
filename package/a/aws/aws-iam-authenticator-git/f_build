@@ -1,0 +1,11 @@
+build() {
+  cd "$srcdir/$_pkgname"
+
+  go build \
+    -trimpath \
+    -buildmode=pie \
+    -mod=readonly \
+    -modcacherw \
+    -ldflags "-linkmode external -extldflags \"${LDFLAGS}\"" \
+    ./cmd/aws-iam-authenticator
+}

@@ -1,0 +1,5 @@
+build() {
+    cd "${srcdir}/beagle-logic/kernel"
+
+    make beaglelogic-00A0.dtbo
+}

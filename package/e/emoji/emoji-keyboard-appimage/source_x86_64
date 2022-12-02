@@ -1,0 +1,1 @@
+("${_appimage}::https://github.com/OzymandiasTheGreat/emoji-keyboard/releases/download/${pkgver}/${_appimage}")

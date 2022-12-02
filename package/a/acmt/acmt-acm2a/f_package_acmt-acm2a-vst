@@ -1,0 +1,5 @@
+package_acmt-acm2a-vst() {
+	pkgdesc="ACM-2A Program EQ (VST)"
+	groups=('pro-audio' 'vst-plugins')
+	install -Dm755 ${srcdir}/plugin-binaries/VST/ACM-2A.so ${pkgdir}/usr/lib/vst/ACM-2A.so
+}

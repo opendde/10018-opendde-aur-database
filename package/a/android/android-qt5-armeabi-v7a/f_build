@@ -1,0 +1,71 @@
+build() {
+    cd ${_pkgfqn}
+
+    unset CC
+    unset CXX
+    unset CFLAGS
+    unset CXXFLAGS
+    unset LDFLAGS
+    unset CHOST
+    unset QMAKESPEC
+    unset QTDIR
+    unset CARCH
+
+    if [ -z "${ANDROID_BUILD_TOOLS_REVISION}" ]; then
+        export ANDROID_BUILD_TOOLS_REVISION=$(get_last ${ANDROID_SDK_ROOT}/build-tools)
+    fi
+
+    if [ -z "${ANDROID_API_VERSION}" ]; then
+        export ANDROID_API_VERSION=android-$ANDROID_MINIMUM_PLATFORM
+    fi
+
+    export PYTHON=/usr/bin/python2
+
+    if [ -z "${ANDROID_NDK_PLATFORM}" ]; then
+        export ANDROID_NDK_PLATFORM=android-$ANDROID_MINIMUM_PLATFORM
+    fi
+
+    configue_opts="
+        -confirm-license
+        -opensource
+        -silent
+        -prefix ${_pref}
+        -archdatadir ${_pref}/lib/qt
+        -datadir ${_pref}/share/qt
+        -examplesdir ${_pref}/share/qt/examples
+        -testsdir ${_pref}/share/qt/tests
+        -xplatform android-clang
+        -nomake tests
+        -nomake examples
+        -android-ndk ${ANDROID_NDK_ROOT}
+        -android-sdk ${ANDROID_SDK_ROOT}
+        -android-ndk-host linux-x86_64
+        -android-toolchain-version 4.9
+        -skip qttranslations
+        -skip qtserialport
+        -no-warnings-are-errors
+        -no-pkg-config
+        -qt-zlib
+        -qt-freetype
+        -android-arch ${_android_arch}
+        -android-ndk-platform ${ANDROID_NDK_PLATFORM}"
+
+    [[ $ANDROID_DEBUG_BUILD ]] \
+        && configue_opts+=' -debug-and-release' \
+        || configue_opts+=' -release'
+
+    # Platform specific patches
+    case "$_android_arch" in
+        x86*)
+             configue_opts+="
+                 -no-sql-mysql
+                 -no-sql-psql"
+            ;;
+        *)
+            ;;
+    esac
+
+    ./configure ${configue_opts}
+
+    make $MAKEFLAGS
+}

@@ -1,0 +1,5 @@
+package() {
+  cd "BlinkenLib"
+
+  make DEF_PREFIX="$pkgdir/usr" install
+}

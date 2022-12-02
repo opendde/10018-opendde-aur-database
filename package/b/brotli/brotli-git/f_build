@@ -1,0 +1,13 @@
+build() {
+  cd "brotli"
+
+  python "setup.py" build
+
+  cmake \
+    -B "_build" \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX="/usr" \
+    -DCMAKE_INSTALL_LIBDIR="lib" \
+    ./
+  make -C "_build"
+}

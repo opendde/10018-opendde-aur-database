@@ -1,0 +1,9 @@
+prepare() {
+  cd "$pkgname-$pkgver"
+
+  # create directory for build output
+  mkdir build
+
+  # download dependencies
+  go mod vendor
+}

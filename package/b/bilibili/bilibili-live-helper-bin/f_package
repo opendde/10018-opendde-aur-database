@@ -1,0 +1,9 @@
+package() {
+	mkdir -p "$pkgdir/opt/"
+	cp -r "$srcdir/$_dirname" "$pkgdir/opt/$_pkgname"
+	install -Dm755 ./"$_entryname.desktop" "$pkgdir/usr/share/applications/$_entryname.desktop"
+	install -Dm444 ./"$_pkgname.ico" "$pkgdir/usr/share/icons/hicolor/128x128/$_pkgname.ico"
+
+    mkdir -p "$pkgdir/usr/bin/"
+    ln -s ../../opt/bilibili-live-helper/bilibili-live-helper "$pkgdir/usr/bin/bilibili-live-helper"
+}

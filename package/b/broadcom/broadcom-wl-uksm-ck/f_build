@@ -1,0 +1,3 @@
+build() {
+    make -C /usr/lib/modules/"${_kernver}"/build M=`pwd`
+}

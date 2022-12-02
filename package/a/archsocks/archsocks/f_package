@@ -1,0 +1,14 @@
+package() {
+  _pyver=$(python -c 'import sys; print("%d.%d" % sys.version_info[:2])')
+  cd "$srcdir/archsocks-files/lib"
+
+  mkdir -p "$pkgdir/usr/lib/python$_pyver/site-packages"
+  cp -r archsocks_client_updater "$pkgdir/usr/lib/python$_pyver/site-packages"
+  cp -r archsocks_common "$pkgdir/usr/lib/python$_pyver/site-packages"
+  python3 -m compileall "$pkgdir/usr/lib/python$_pyver/site-packages"
+
+  cd "$srcdir"
+  install -Dm755 archsocks "$pkgdir/usr/bin/archsocks"
+  install -Dm644 archsocks.service "$pkgdir/usr/lib/systemd/system/archsocks.service"
+  install -dm750 "$pkgdir/var/lib/archsocks"
+}

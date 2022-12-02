@@ -1,0 +1,7 @@
+package() {
+  cd ${pkgname%-git}
+  make DESTDIR="$pkgdir" install
+  #repair
+  install -Dm755 "$pkgdir"/bin/art "$pkgdir"/usr/bin/art
+  rm -r "$pkgdir"/bin
+}

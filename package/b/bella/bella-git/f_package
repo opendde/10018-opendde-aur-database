@@ -1,0 +1,4 @@
+package() {
+  install -Dm755 "${srcdir}/${_pkgname}/${_pkgname}" ${pkgdir}/usr/bin/${pkgname}
+  install -Dm644 "${srcdir}/${_pkgname}/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

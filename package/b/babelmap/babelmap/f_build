@@ -1,0 +1,4 @@
+build() {
+  wrestool -x -n 131 BabelMap.exe > babelmap.ico 2>/dev/null
+  convert babelmap.ico babelmap.png
+}

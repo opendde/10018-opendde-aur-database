@@ -1,0 +1,5 @@
+build() {
+  cd "$srcdir/adplug-$pkgver"
+  ./configure --prefix=/usr
+  make
+}

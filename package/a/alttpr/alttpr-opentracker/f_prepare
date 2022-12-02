@@ -1,0 +1,10 @@
+prepare() {
+	gendesk -n -f --pkgname "$pkgname" \
+	  --pkgdesc "$pkgdesc" \
+	  --name "$_name" \
+	  --genericname "$_genericname" \
+	  --comment "$pkgdesc" \
+	  --exec "$_exec" \
+	  --categories "$_categories" \
+	  --icon "$pkgname"
+}

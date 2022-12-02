@@ -1,0 +1,15 @@
+package() {
+    # create the desitination folder
+    mkdir -p "${pkgdir}${_instdir}"
+
+    # copy over the linux 64 bit files
+    cp --recursive ${_prefix}/usr/local/AstroCrop/* "${pkgdir}${_instdir}"
+
+    # copy usr share
+    mkdir -p "${pkgdir}/usr/share/"
+    cp -r ${_prefix}/usr/share/* "${pkgdir}/usr/share/"
+
+    # create a profile file to add an alias for astrodmx
+    mkdir -p "${pkgdir}/etc/profile.d"
+    echo "alias astrocrop=\"${_instdir}/bin/launcher.sh\"" > "${pkgdir}/etc/profile.d/${pkgname}.sh"
+}

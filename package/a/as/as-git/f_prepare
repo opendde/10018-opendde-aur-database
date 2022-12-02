@@ -1,0 +1,8 @@
+prepare() {
+  cd "$srcdir/as"
+
+  if (pacman -Qi doxygen >/dev/null && pacman -Qi graphvix >/dev/null); then
+    doxygen Doxyfile
+    _doc_built=1
+  fi
+}

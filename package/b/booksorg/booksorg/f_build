@@ -1,0 +1,8 @@
+build() {
+	cd "$srcdir/$pkgname-$pkgver"
+	qmake "booksorganizer.pro" \
+    PREFIX=/usr \
+    QMAKE_CFLAGS_RELEASE="${CFLAGS}"\
+    QMAKE_CXXFLAGS_RELEASE="${CXXFLAGS}"
+	make
+}

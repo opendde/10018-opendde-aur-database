@@ -1,0 +1,12 @@
+build() {
+  cd "$_pkgname-$pkgver"
+  ./configure \
+      --prefix=/usr \
+      --sysconfdir=/etc \
+      --localstatedir=/var \
+      --sbindir=/usr/bin \
+      --with-pjproject-bundled=yes
+  make menuselect.makeopts
+  ./menuselect/menuselect --disable BUILD_NATIVE
+  make
+}

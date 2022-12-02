@@ -1,0 +1,20 @@
+package() {
+	cd "$_pkgname"
+
+	install -Dm644 \
+		LICENSE AUTHORS.md CODEOWNERS theme-var-template.lua \
+		-t "$pkgdir/usr/share/doc/$pkgname/"
+
+	find . \
+		-type f \
+		\( -iname '*.lua' -or -path './icons/*' ! -iname theme-var-template \) \
+		-exec install -Dm644 {} "$pkgdir/usr/share/awesome/lib/$_pkgname/{}" \;
+
+	(
+		cd docs
+		find . \
+			-type f \
+			\( ! -iname .nojekyll ! -iname _sidebar.md \) \
+			-exec install -Dm644 {} "$pkgdir/usr/share/doc/$pkgname/{}" \;
+	)
+}

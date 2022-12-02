@@ -1,0 +1,5 @@
+package_alterlinux-live-tools() {
+    pkgdesc="Scripts required for live environment (meta package)"
+    depends+=("${_pkgname[@]}")
+    install_license
+}

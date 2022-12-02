@@ -1,0 +1,5 @@
+prepare() {
+	cd "$pkgname"
+
+	sed -i "s/^ExecStart=.*$/ExecStart=\/usr\/bin\/acts/g" contrib/systemd/acts.service
+}

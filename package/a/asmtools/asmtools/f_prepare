@@ -1,0 +1,4 @@
+prepare() {
+  cd ${srcdir}/${pkgname}-${_tag}
+  JAVA_HOME=/usr/lib/jvm/java-8-openjdk ant -f build/build.xml clean
+}

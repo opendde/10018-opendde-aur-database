@@ -1,0 +1,4 @@
+build() {
+    cd "bagh-chal-$pkgver"
+    make "build/main_minimalist_sdl"
+}

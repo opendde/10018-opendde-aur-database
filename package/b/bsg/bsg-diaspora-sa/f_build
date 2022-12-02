@@ -1,0 +1,25 @@
+build() {
+
+  local SOURCE="$srcdir/Diaspora_R1_Linux/Diaspora/"
+
+  # (1) Build the game engine (fs2_open)
+  msg "Building..."
+  cd $SOURCE/fs2_open
+	# LDFLAGS="-l:liblua.so.5.1 $LDFLAGS" CXXFLAGS="-I/usr/include/lua5.1 $CXXFLAGS" ./autogen.sh --enable-speech
+
+  env LUA_CFLAGS="$(pkg-config --cflags lua51)" \
+      LUA_LIBS="$(pkg-config --libs lua51)"     \
+      ./autogen.sh
+
+  make
+
+  # (2) Set up the Diaspora launcher profile (for wxlauncher)
+  cd $SOURCE
+  sed "s@^folder=.*\$@folder=/opt/$pkgname@;s@pro00099.template.ini@@" pro00099.template.ini > pro00099.ini
+
+
+  # Grab command-line options from pro00099.ini for our runner script.
+  cd $srcdir
+  FS2_OPTS="$(sed -n 's@^flags=\(.*\)$@\1@p' $SOURCE/pro00099.ini | tr -d '\r\n')"
+  sed -i "s@\\(FS2OPTS=\\).*@\\1\"$FS2_OPTS\"@" $srcdir/bsg-diaspora-sa.conf
+}

@@ -1,0 +1,4 @@
+package() {
+	mkdir $pkgdir/opt/
+	cp -ar $srcdir/sparc-unknown-linux-gnu $pkgdir/opt/
+}

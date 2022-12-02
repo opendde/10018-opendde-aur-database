@@ -1,0 +1,7 @@
+check() {
+    export GOPATH="$srcdir"/gopath
+    export GO111MODULE=on
+
+    cd "$srcdir"/$pkgname-$pkgver
+    make test
+}

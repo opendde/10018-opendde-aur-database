@@ -1,0 +1,14 @@
+prepare() {
+	cd "${srcdir}/${_srcdir}"
+
+	# Patch gem versions as arch has a pretty new ruby
+	sed -i \
+		-e 's/eventmachine (1.0.3)/eventmachine (1.2.0)/g' \
+		-e 's/kgio .*$/kgio (2.10.0)/g' \
+		-e 's/raindrops .*$/raindrops (0.17.0)/g' \
+		Gemfile.lock
+
+	# Configure sidekiq
+	echo ':pidfile: /run/asciinema/sidekiq.pid' >> config/sidekiq.yml
+	echo ':logfile: /var/log/asciinema/sidekiq_production.log' >> config/sidekiq.yml
+}

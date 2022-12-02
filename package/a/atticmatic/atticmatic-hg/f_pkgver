@@ -1,0 +1,4 @@
+pkgver() {
+  cd "$srcdir/$pkgname"
+  hg log -r tip --template '{latesttag}.r{latesttagdistance}_{node|short}\n'
+}

@@ -1,0 +1,6 @@
+package_otf-backout() {
+    provides=("$pkgbase")
+    cd "$_name-$_sha"
+    install -Dm644 -t "$pkgdir/usr/share/fonts/OTF/" fonts/*.otf
+    install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname/" LICENSE.txt
+}

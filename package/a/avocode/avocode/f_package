@@ -1,0 +1,17 @@
+package() {
+	install -d "$pkgdir"/opt
+	
+	cp -R "$srcdir"/ "$pkgdir"/opt/avocode
+	
+	find "$pkgdir"/opt/avocode/ -type f -exec chmod 644 {} \;
+	
+	rm "${pkgdir}/opt/avocode/Avocode.desktop" "${pkgdir}/opt/avocode/avocode-app-icon.png" "${pkgdir}"/opt/avocode/avocode-*.zip
+	
+	chmod 755 "$pkgdir"/opt/avocode/avocode
+
+	install -d "$pkgdir"/usr/bin
+	ln -s ../../opt/avocode/avocode "$pkgdir"/usr/bin/avocode
+
+    install -D -m644 "Avocode.desktop"           "${pkgdir}/usr/share/applications/Avocode.desktop"
+    install -D -m644 "avocode-app-icon.png"      "${pkgdir}/usr/share/pixmaps/avocode-app-icon.png"
+}

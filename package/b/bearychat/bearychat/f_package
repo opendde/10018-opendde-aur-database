@@ -1,0 +1,12 @@
+package() {
+        cd "$srcdir"
+        mkdir -p "$pkgdir/opt"
+        mv BearyChat-linux-x64 "$pkgdir/opt/$pkgname"
+        # license
+        mkdir -p $pkgdir/usr/share/licenses/$pkgname
+        install -Dm644 license $pkgdir/usr/share/licenses/$pkgname/
+
+        install -Dm755 bearychat.sh "$pkgdir/usr/bin/bearychat"
+        install -Dm644 bearychat.desktop "$pkgdir/usr/share/applications/bearychat.desktop"
+        install -Dm644 bearychat.png "$pkgdir/usr/share/icons/hicolor/128x128/apps/bearychat.png"
+}

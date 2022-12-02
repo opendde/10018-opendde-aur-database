@@ -1,0 +1,11 @@
+package() {
+  mkdir -p "${pkgdir}/opt/${pkgname}"
+  mv "${srcdir}/basemarkgpu-${pkgver}/"* "${pkgdir}/opt/${pkgname}"
+
+  chmod +x "${pkgdir}/opt/${pkgname}/basemarkgpu"
+
+  install -m644 -D "${srcdir}/license.txt" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  install -m644 -D "${srcdir}/${pkgname}.png" "${pkgdir}/usr/share/icons/${pkgname}.png"
+  install -m644 -D "${srcdir}/${pkgname}.desktop" "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+  install -m755 -D "${srcdir}/${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+}

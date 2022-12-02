@@ -1,0 +1,4 @@
+package() {
+    cd "AleePlayer-master"
+    make install INSTALL_ROOT=$pkgdir
+}

@@ -1,0 +1,4 @@
+prepare() {
+  cd $pkgname-release-v$pkgver
+  sed -i "s:/env python:/python3:g" bin/$pkgname
+}

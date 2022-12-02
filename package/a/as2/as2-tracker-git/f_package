@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir/AS2_Tracker_Python"
+  mkdir -p "$pkgdir/usr/bin"
+  chmod +x "tracker.py"
+  mv "tracker.py" "$pkgdir/usr/bin/as2-tracker"
+}

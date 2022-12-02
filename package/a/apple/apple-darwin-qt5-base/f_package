@@ -1,0 +1,28 @@
+package() {
+  init_osxcross
+
+  for _arch in ${_architectures}; do
+    cd "$srcdir/${_pkgfqn}"
+    make install -C ../build-${_arch} INSTALL_ROOT="${pkgdir}"
+
+    # Create symlinks for tools
+    mkdir -p "${pkgdir}/${_osxcrossprefix}/bin"
+    for tool in qmake moc rcc uic qdbuscpp2xml qdbusxml2cpp qdoc syncqt.pl; do
+      ln -s "../${_arch}/lib/qt/bin/${tool}" "${pkgdir}/${_osxcrossprefix}/bin/${_arch}-${tool}-qt5"
+    done
+
+    # Remove doc
+    rm -rf "${pkgdir}/${_osxcrossprefix}/${_arch}/share"
+
+    # Strip the binaries, remove debug libraries
+    strip --strip-all "${pkgdir}/${_osxcrossprefix}/${_arch}/lib/qt/bin/"*[!.pl]
+    strip -g "${pkgdir}/${_osxcrossprefix}/${_arch}/lib/libQt5Bootstrap.a"
+    # TODO: Still not sure which kind of binaries (shared/static lib, application) should be stripped how
+    find "${pkgdir}/${_osxcrossprefix}" -name "*.dylib" -a -not -iname '*_debug*' -exec ${_osxcrossprefix}/bin/${_arch}-strip -S -x {} \;
+    find "${pkgdir}/${_osxcrossprefix}" -name '*.a' -a -not -iname '*_debug.a' -a -not -iname '*DevTools.a' -a -not -iname '*Bootstrap.a' -exec ${_osxcrossprefix}/bin/${_arch}-strip -S -x {} \;
+    [[ $APPLE_DARWIN_QT_DEBUG_BUILD ]] || find "${pkgdir}/${_osxcrossprefix}" -iname '*_debug*' -exec rm {} \;
+  done
+
+  # Drop QMAKE_PRL_BUILD_DIR because reference the build dir
+  find "$pkgdir/${_osxcrossprefix}" -type f -name '*.prl' -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
+}

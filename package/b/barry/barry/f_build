@@ -1,0 +1,10 @@
+build() {
+  cd ${srcdir}/${pkgname}-${pkgver}
+
+  export CXXFLAGS="-std=c++11"
+  export CPPFLAGS="-Wno-error"
+
+  ./configure --prefix=/usr --libexec=/usr/lib --sbindir=/usr/bin --enable-gui
+
+  make
+}

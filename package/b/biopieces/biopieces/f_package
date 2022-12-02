@@ -1,0 +1,8 @@
+package() {
+  cd "${srcdir}"/"${pkgname}"-"${pkgver}"
+
+  for script in bin/*; do
+    if [[ "${script}" =~ README ]]; then continue; fi
+    install -Dm755 "${script}" "${pkgdir}"/opt/"${pkgname}"/"${pkgname}"-"$( basename "${script}" )"
+  done
+}

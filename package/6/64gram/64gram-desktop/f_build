@@ -1,0 +1,13 @@
+build() {
+    cd "${srcdir}/$_pkgname-$pkgver-full"
+    export PKG_CONFIG_PATH='/usr/lib/ffmpeg4.4/pkgconfig'
+    cmake \
+        -B build \
+        -G Ninja \
+        -DCMAKE_INSTALL_PREFIX="/usr" \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DDESKTOP_APP_DISABLE_AUTOUPDATE=ON \
+        -DTDESKTOP_API_TEST=ON
+    sed -i '/LINK_LIBRARIES/s/$/ \/usr\/lib\/liblzma.so/' build/build.ninja
+    ninja -C build
+}

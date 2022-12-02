@@ -1,0 +1,6 @@
+package() {
+  local latexdist='usr/share/texmf-dist/tex/latex/beamer/themes/color'
+  local themefile=${pkgname%-git}/${pkgname%-git}.sty
+
+  install -Dm644 -t$pkgdir/$latexdist $srcdir/$themefile
+}

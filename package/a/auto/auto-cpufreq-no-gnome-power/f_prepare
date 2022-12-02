@@ -1,0 +1,6 @@
+prepare() {
+    cd "$srcdir/auto-cpufreq"
+    git fetch
+    git checkout non-systemd-gnome-power
+    sed -i 's|usr/local|usr|g' "scripts/auto-cpufreq.service" auto_cpufreq/core.py
+}

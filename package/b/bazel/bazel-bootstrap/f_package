@@ -1,0 +1,8 @@
+package() {
+  mkdir -p "${pkgdir}/opt/bazel-bootstrap/bin"
+  install -Dm755 "${srcdir}/scripts/packages/bazel.sh" "${pkgdir}/opt/bazel-bootstrap/bin/bazel"
+  install -Dm755 "${srcdir}/output/bazel" "${pkgdir}/opt/bazel-bootstrap/bin/bazel-real"
+  for d in examples third_party tools; do
+    cp -r "${srcdir}/${d}" "${pkgdir}/opt/bazel-bootstrap/"
+  done
+}

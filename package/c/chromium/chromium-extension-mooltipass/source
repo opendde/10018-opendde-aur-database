@@ -1,0 +1,1 @@
+("${_extension_name}-${pkgver}-${pkgrel}.crx::${_store_base_url}${_extension_id}%26installsource%3Dondemand%26uc"

@@ -1,0 +1,4 @@
+package() {
+  cd ${srcdir}/ambulant-2.6
+  make install DESTDIR=${pkgdir}
+}

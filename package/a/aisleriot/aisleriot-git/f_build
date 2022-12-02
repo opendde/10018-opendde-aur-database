@@ -1,0 +1,10 @@
+build() {
+  cd ${pkgname%-git}
+  [[ -d builddir ]] || mkdir builddir
+  meson . builddir --prefix=/usr \
+	--libexecdir=/usr/lib \
+	-D theme_kde=false \
+	-D guile=3.0 \
+	--buildtype=plain
+  ninja -C builddir
+}

@@ -1,0 +1,12 @@
+package() {
+
+  tar -xf data.tar.xz
+  cp -r usr $pkgdir
+  cp -r opt $pkgdir
+
+   install -Dm755 /dev/stdin "$pkgdir"/usr/bin/$pkgname <<END
+     #!/usr/bin/bash
+    /opt/bterm/bterm
+END
+  
+}

@@ -1,0 +1,11 @@
+package() {
+  install -Ddm755 "${pkgdir}/opt/android-sdk/extras/google/"
+  cp -dr --no-preserve=ownership "${srcdir}/google_market_apk_expansion" \
+      "${pkgdir}/opt/android-sdk/extras/google/play_apk_expansion"
+
+  install -Ddm755 "${pkgdir}/usr/share/licenses/${pkgname}/"
+  install -Dm644 "${srcdir}/google_market_apk_expansion/LICENSE.txt" \
+      "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.txt"
+
+  chmod -R ugo+rX "${pkgdir}/opt"
+}

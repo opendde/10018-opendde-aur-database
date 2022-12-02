@@ -1,0 +1,68 @@
+package() {
+    export LC_CTYPE="zh_CN.UTF-8"
+    install -dm0755 "${pkgdir}/opt/bouffalolab/${pkgname%-bin}/"
+
+    bsdtar xf "${srcdir}/${pkgname%-bin}-${pkgver}.zip" --strip-components=1 -C  "${pkgdir}/opt/bouffalolab/${pkgname%-bin}"
+    rm -rf "${pkgdir}"/opt/bouffalolab/${pkgname%-bin}/*.exe
+    rm -rf "${pkgdir}"/opt/bouffalolab/${pkgname%-bin}/*-macos
+    rm -rf "${pkgdir}"/opt/bouffalolab/${pkgname%-bin}/*/*/*.exe
+    rm -rf "${pkgdir}"/opt/bouffalolab/${pkgname%-bin}/*/*/*.dll
+    rm -rf "${pkgdir}"/opt/bouffalolab/${pkgname%-bin}/utils/jlink
+
+    ln -sf "/opt/SEGGER/JLink" "${pkgdir}"/opt/bouffalolab/${pkgname%-bin}/utils/jlink
+    ln -sf "/usr/bin/openocd" "${pkgdir}"/opt/bouffalolab/${pkgname%-bin}/utils/openocd/openocd
+
+    # desktop entry
+    install -Dm0644 /dev/stdin ${pkgdir}/usr/share/applications/${pkgname%-bin}.desktop <<EOF
+[Desktop Entry]
+Name=${pkgname%-bin}
+Name[zh_CN]=${pkgname%-bin}
+Comment=${pkgdesc}
+#MimeType=application/x-${pkgname%-bin};
+Exec=${pkgname%-bin} %f
+Type=Application
+Categories=Development;Tool;
+Terminal=false
+Icon=${pkgname%-bin}.png
+Version=1.0
+EOF
+
+    install -Dm0644 /dev/stdin ${pkgdir}/usr/share/applications/bflb-iot-tool.desktop <<EOF
+[Desktop Entry]
+Name=bflb-iot-tool
+Name[zh_CN]=bflb-iot-tool
+Comment=${pkgdesc}
+#MimeType=application/x-bflb-iot-tool;
+Exec=bflb-iot-tool %f
+Type=Application
+Categories=Development;Tool;
+Terminal=false
+Icon=bflb-iot-tool.png
+Version=1.0
+EOF
+
+    _path=/opt/bouffalolab/
+    install -Dm0755 /dev/stdin "${pkgdir}/usr/bin/${pkgname%-bin}" << EOF
+#!/bin/bash
+export LC_CTYPE="zh_CN.UTF-8"
+
+if [ ! -d "$HOME"/.local/share/${pkgname%-bin} ] ; then
+    cp -a /${_path}/${pkgname%-bin}/ "$HOME"/.local/share/ || exit 1
+    ln -sf  "$HOME"/.local/share/${pkgname%-bin}/BLDevCube-ubuntu "$HOME"/.local/share/${pkgname%-bin}/${pkgname%-bin} || exit 1
+fi
+
+/"$HOME"/.local/share/${pkgname%-bin}/${pkgname%-bin} "\$@"
+EOF
+
+    install -Dm0755 /dev/stdin "${pkgdir}/usr/bin/bflb-iot-tool" << EOF
+#!/bin/bash
+export LC_CTYPE="zh_CN.UTF-8"
+
+if [ ! -d "$HOME"/.local/share/${pkgname%-bin} ] ; then
+    cp -a /${_path}/${pkgname%-bin}/ "$HOME"/.local/share/ || exit 1
+    ln -sf  "$HOME"/.local/share/${pkgname%-bin}/bflb_iot_tool-ubuntu "$HOME"/.local/share/${pkgname%-bin}/bflb-iot-tool || exit 1
+fi
+
+/"$HOME"/.local/share/${pkgname%-bin}/bflb-iot-tool "\$@"
+EOF
+}

@@ -1,0 +1,8 @@
+prepare() {
+    tar -xpf data.tar.xz
+
+    find . -type d -exec chmod 755 {} \;
+
+    mkdir var/bricsys/{Components,RenderMaterials/UserMaterials}
+    chmod 777 var/bricsys/{Components,RenderMaterials/UserMaterials}
+}

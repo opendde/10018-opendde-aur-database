@@ -1,0 +1,17 @@
+package() {
+  # Binary Executable
+  install -Dm755 -t "${pkgdir}/usr/bin" \
+    "${pkgname}/target/release/${pkgname}"
+
+  # Package License
+  install -Dm644 -t "${pkgdir}/usr/share/licenses/${pkgname}" \
+    "${pkgname}/LICENSE"
+
+  # Documentation (README)
+  install -Dm644 -t "${pkgdir}/usr/share/doc/${pkgname}" \
+    "${pkgname}/README.md"
+
+  # Systemd Service
+  install -Dm644 -t "${pkgdir}/usr/lib/systemd/system" \
+    "${pkgname}.service"
+}

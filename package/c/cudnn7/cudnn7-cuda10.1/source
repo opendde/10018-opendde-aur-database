@@ -1,0 +1,1 @@
+("https://developer.download.nvidia.com/compute/redist/cudnn/v${_pkgver}/cudnn-${_cudaver}-linux-x64-v${pkgver}.tgz"

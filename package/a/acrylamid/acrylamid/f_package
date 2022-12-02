@@ -1,0 +1,5 @@
+package() {
+  cd $srcdir/${pkgname#python-}-$pkgver
+
+  LANG=en_US.UTF-8 python setup.py install --root="$pkgdir" --optimize=1
+}

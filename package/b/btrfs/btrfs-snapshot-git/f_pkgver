@@ -1,0 +1,4 @@
+pkgver() {
+    cd "${_srcname}"
+    git describe --long | sed -r 's/([^-]*-g)/r\1/;s/-/./g'
+}

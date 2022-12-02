@@ -1,0 +1,8 @@
+package() {
+	cd "$_pkgname"
+	desktop-file-install -m 644 --dir "$pkgdir/usr/share/applications/" "$srcdir/abstreet.desktop"
+	install -D -m644 "data/system/assets/pregame/icon.png" "$pkgdir/usr/share/icons/hicolor/32x32/apps/$_pkgname.png"
+	install -D -m755 "target/release/game" "$pkgdir/usr/share/$_pkgname/game/game"
+	install -d m644 "$pkgdir/usr/share/$_pkgname/data"
+	cp -dpr --no-preserve=ownership data/system "$pkgdir/usr/share/$_pkgname/data/system"
+}

@@ -1,0 +1,14 @@
+package() {
+    ## Install Preset and Default Libraries
+    mkdir -p "$pkgdir/opt/Audio Assault/Blacksun" "$pkgdir/usr/bin" "$pkgdir/usr/share/applications"
+    cp -rf "$srcdir/Blacksun Linux/Blacksun"/{IRs,Presets} "$pkgdir/opt/Audio Assault/Blacksun"
+    cp -rf $srcdir/BStarA412\ FREE\ IR\ PACK "$pkgdir/opt/Audio Assault/Blacksun/IRs"
+
+    ## Install VST Plugin
+    install -Dm755 "$srcdir/Blacksun Linux/Blacksunvst2.so" "$pkgdir/usr/lib/vst/Blacksun.so"
+
+    ## Install Standalone Binary
+    cp "$srcdir/Blacksun Linux/Blacksun Standalone" "$pkgdir/usr/bin/Blacksun Standalone"
+    chmod +x "$pkgdir/usr/bin/Blacksun Standalone"
+    install -Dm644 "$srcdir/Blacksun Amp.desktop" "$pkgdir/usr/share/applications/Blacksun Amp.desktop"
+}

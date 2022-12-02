@@ -1,0 +1,8 @@
+main() {
+    for _pkgname in "${pkgname[@]}"; do
+        eval "package_${_pkgname}() {
+            model="$(echo ${_pkgname%-*} | sed "s/${_pkgbase}-//" | awk -F '-' '{print $1}')"
+            _package
+        }"
+    done
+}

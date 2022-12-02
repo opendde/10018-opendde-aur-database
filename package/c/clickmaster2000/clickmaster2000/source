@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}.tar.gz::https://github.com/EuracBiomedicalResearch/clickmaster2000/archive/v${pkgver}.tar.gz"

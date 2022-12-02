@@ -1,0 +1,102 @@
+package() {
+    msg2 "Extracting the .bin"
+    rm -rf ${_pkgname}1.${_major}.0_${_minor}
+    sh $_pkgname-$pkgver-linux-i586.bin &>/dev/null
+
+    cd ${_pkgname}1.${_major}.0_${_minor}
+
+    msg2 "Creating directory structure..."
+    install -d "$pkgdir"/etc/.java/.systemPrefs
+    install -d "$pkgdir"/usr/lib32/jvm/java32-$_major-$_pkgname/jre/bin
+    install -d "$pkgdir"/usr/lib32/mozilla/plugins
+    install -d "$pkgdir"/usr/share/licenses/java${_major}-${_pkgname}32
+
+    msg2 "Removing redundancies..."
+    rm -r lib/desktop/icons/HighContrast
+    rm -r lib/desktop/icons/HighContrastInverse
+    rm -r lib/desktop/icons/LowContrast
+    rm    lib/fontconfig.*.bfc
+    rm    lib/fontconfig.*.properties.src
+    rm    man/ja
+    rm -r plugin/
+
+    msg2 "Moving contents..."
+    mv * "$pkgdir"/$_jvmdir
+
+    # Cd to the new playground
+    cd "$pkgdir"/$_jvmdir
+
+    msg2 "Moving stuff in place"
+    # javaws-launcher
+    install -m644 "$srcdir"/javaws-launcher bin/
+
+    msg2 "Fixing directory structure..."
+    # Suffix .desktops + icons (sun-java.png -> sun-java32-$_jname.png)
+    for i in $(find lib/desktop/ -type f); do
+        rename -- "." "32-$_jname." $i
+    done
+
+    # Fix .desktop's
+    sed -e '/JavaWS/!s|Name=Java|Name=Java '"$_major"'|' \
+        -e "s|Name=JavaWS|Name=JavaWS $_major|" \
+        -e "s|Name=.*|& (32-bit)|" \
+        -e "s|Comment=Java|Comment=Java $_major|" \
+        -e "s|Comment=.*|& (32-bit)|" \
+        -e "s|Exec=|Exec=$_jvmdir/bin/|" \
+        -e "s|.png|32-$_jname.png|" \
+    -i lib/desktop/applications/*
+
+    # Move .desktops + icons to /usr/share
+    mv lib/desktop/* "$pkgdir"/usr/share/
+    install -m644 "$srcdir"/*.desktop "$pkgdir"/usr/share/applications/
+
+    # Move confs to /etc and link back to /usr: /usr/lib32/jvm/java32-$_jname/lib -> /etc
+    for new_etc_path in ${backup[@]}; do
+        # Old location
+        old_usr_path="lib/${new_etc_path#*$_jname/}"
+
+        # Move
+        install -Dm644 "$old_usr_path" "$pkgdir/$new_etc_path"
+        ln -sf "/$new_etc_path" "$old_usr_path"
+    done
+
+    # Link NPAPI plugin
+    ln -sf $_jvmdir/lib/i386/libnpjp2.so "$pkgdir"/usr/lib32/mozilla/plugins/libnpjp2-$_jname.so
+
+    # Replace JKS keystore with 'ca-certificates-java'
+    ln -sf /etc/ssl/certs/java/cacerts lib/security/cacerts
+
+    # Suffix man pages
+    for i in $(find man/ -type f); do
+        mv "$i" "${i/.1}32-$_jname.1"
+    done
+
+    # Move man pages
+    mv man/ja_JP.eucJP/ man/ja
+    mv man/ "$pkgdir"/usr/share
+
+    # Move/link licenses
+    mv COPYRIGHT LICENSE README *.txt "$pkgdir"/usr/share/licenses/java${_major}-${_pkgname}32/
+    ln -sf /usr/share/licenses/java${_major}-${_pkgname}32/ "$pkgdir"/usr/share/licenses/$pkgname
+
+    msg2 "Installing Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files..."
+    # Replace default "strong", but limited, cryptography to get an "unlimited strength" one for
+    # things like 256-bit AES. Enabled by default in OpenJDK:
+    # - http://suhothayan.blogspot.com/2012/05/how-to-install-java-cryptography.html
+    # - http://www.eyrie.org/~eagle/notes/debian/jce-policy.html
+    install -m644 "$srcdir"/jce/*.jar lib/security/
+    install -Dm644 "$srcdir"/jce/README.txt \
+                   "$pkgdir"/usr/share/doc/$pkgname/README_-_Java_JCE_Unlimited_Strength.txt
+
+    msg2 "Enabling copy+paste in unsigned applets..."
+    # Copy/paste from system clipboard to unsigned Java applets has been disabled since 6u24:
+    # - https://blogs.oracle.com/kyle/entry/copy_and_paste_in_java
+    # - http://slightlyrandombrokenthoughts.blogspot.com/2011/03/oracle-java-applet-clipboard-injection.html
+    _line=$(awk '/permission/{a=NR}; END{print a}' "$pkgdir"/etc/java32-$_jname/security/java.policy)
+    sed "$_line a\\\\n \
+        // (AUR) Allow unsigned applets to read system clipboard, see:\n \
+        // - https://blogs.oracle.com/kyle/entry/copy_and_paste_in_java\n \
+        // - http://slightlyrandombrokenthoughts.blogspot.com/2011/03/oracle-java-applet-clipboard-injection.html\n \
+        permission java.awt.AWTPermission \"accessClipboard\";" \
+    -i "$pkgdir"/etc/java32-$_jname/security/java.policy
+}

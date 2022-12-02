@@ -1,0 +1,5 @@
+package() {
+  cd ${pkgname%-hg}/${pkgname%-hg}-current
+  make DESTDIR="$pkgdir" install
+  sed -i 's+.png++' "$pkgdir"/usr/share/applications/amide.desktop
+}

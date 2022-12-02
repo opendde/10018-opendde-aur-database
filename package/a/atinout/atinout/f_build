@@ -1,0 +1,10 @@
+build() {
+    cd ${srcdir}/atinout-$pkgver
+    patch -p0  < "${srcdir}/Makefile.patch"
+    make
+ }
+
+package() {
+    cd ${srcdir}/atinout-$pkgver
+    install -Dm 755 atinout $pkgdir/usr/bin/atinout
+}

@@ -1,0 +1,1 @@
+("${_snapshot}.tar.gz::${url}/archive/${pkgver}.tar.gz")

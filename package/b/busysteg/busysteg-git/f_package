@@ -1,0 +1,5 @@
+package() {
+	install -D -m644 license.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+        cd "${srcdir}/${pkgname}"
+	install -D -m755 busysteg "$pkgdir/usr/bin/busysteg"
+}

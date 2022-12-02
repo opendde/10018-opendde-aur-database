@@ -1,0 +1,5 @@
+package() {
+	cd "$srcdir/$pkgname"
+	install -Dm644 "bootsplash-manjaro-splash" "$pkgdir/usr/lib/firmware/bootsplash-themes/manjaro-splash/bootsplash"
+	install -Dm644 "bootsplash-manjaro-splash.initcpio_install" "$pkgdir/usr/lib/initcpio/install/bootsplash-manjaro-splash"
+}

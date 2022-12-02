@@ -1,0 +1,4 @@
+build() {
+    cd "$srcdir/bandit-$pkgver"
+    python2 setup.py build
+}

@@ -1,0 +1,16 @@
+package() {
+  cd glibc-build
+
+  make install_root="$pkgdir/usr/$_target" install
+
+  mkdir -p "$pkgdir/usr/$_target/usr"
+  ln -s ../{include,lib} "$pkgdir/usr/$_target/usr"
+
+  # Remove unneeded for compilation files
+  rm -rf "$pkgdir/usr/$_target/"{bin,sbin,etc,share,var}
+
+  # Provide tracing probes to libstdc++ for exceptions, possibly for other
+  # libraries too. Useful for gdb's catch command.
+  install -Dm644 "$srcdir/sdt.h" "$pkgdir/usr/$_target/include/sys/sdt.h"
+  install -Dm644 "$srcdir/sdt-config.h" "$pkgdir/usr/$_target/include/sys/sdt-config.h"
+}

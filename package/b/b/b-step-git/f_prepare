@@ -1,0 +1,4 @@
+prepare() {
+  cd "$srcdir/${pkgname%-git}"
+  git submodule update --init --recursive
+}

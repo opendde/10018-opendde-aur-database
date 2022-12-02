@@ -1,0 +1,1 @@
+("$pkgname"::git+https://github.com/L2Program/FlintPlusPlus.git)

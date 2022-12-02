@@ -1,0 +1,15 @@
+build() {
+  cd $pkgname-$pkgver
+
+  [[ $CARCH = x86_64 ]] && export USE_64=1
+  
+  msg2 "Running configure..."
+  ./configure --prefix=/usr \
+              --sysconfdir=/etc \
+              --disable-rpath \
+	      --with-openldap \
+	      --with-systemdsystemunitdir=/usr/lib/systemd/system
+
+  msg2 "Running make..."
+  make
+}

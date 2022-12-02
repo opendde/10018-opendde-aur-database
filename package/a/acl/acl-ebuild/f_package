@@ -1,0 +1,8 @@
+package() {
+
+	# Change directory to source directory
+	cd $pkgoname-$pkgver
+
+	# Install files
+	make DESTDIR=$pkgdir install
+}

@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir/$_gitname"
+  mkdir -p "${pkgdir}"/usr/bin
+  install -m 0755 "${srcdir}/$_gitname/scripts/linux/apktool" "${pkgdir}"/usr/bin
+  install -m 0644 "${srcdir}/$_gitname/brut.apktool/apktool-cli/build/libs/apktool"*"small.jar" "${pkgdir}"/usr/bin/apktool.jar
+}

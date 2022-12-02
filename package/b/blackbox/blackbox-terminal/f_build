@@ -1,0 +1,5 @@
+build() {
+  cd ${pkgname%-terminal}-v${pkgver}
+  arch-meson build
+  meson compile -C build
+}

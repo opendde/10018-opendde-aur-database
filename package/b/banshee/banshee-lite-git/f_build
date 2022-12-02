@@ -1,0 +1,28 @@
+build() {
+  cd "$srcdir/${pkgname/-lite-git/}"
+
+  ./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --enable-docs \
+    --enable-gst-native \
+    --enable-user-help \
+    --disable-gst_sharp \
+    --disable-static \
+    --disable-scrollkeeper \
+    --disable-schemas-install \
+    --disable-youtube \
+    --disable-gio-hardware \
+    --disable-upnp \
+    --disable-clutter \
+    --disable-daap \
+    --disable-appledevice \
+    --disable-mtp \
+    --disable-gio \
+    --disable-torrent \
+    --disable-remote-audio \
+    --disable-ubuntuone \
+    --with-vendor-build-id=ArchLinux
+  make
+}

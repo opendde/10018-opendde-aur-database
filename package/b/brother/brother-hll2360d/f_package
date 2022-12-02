@@ -1,0 +1,9 @@
+package() {
+  install -d "$pkgdir/usr/lib/cups/filter/"
+  install -d "$pkgdir/usr/share/cups/model/"
+
+  cp -R "$srcdir/opt/brother" "$pkgdir/usr/share/brother"
+
+  ln -s "/usr/share/brother/Printers/HLL2360D/cupswrapper/brother_lpdwrapper_HLL2360D" "$pkgdir/usr/lib/cups/filter/"
+  ln -s "/usr/share/brother/Printers/HLL2360D/cupswrapper/brother-HLL2360D-cups-en.ppd" "$pkgdir/usr/share/cups/model/"
+}

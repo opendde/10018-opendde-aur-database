@@ -1,0 +1,5 @@
+package() {
+	cd "${srcdir}/albert/build"
+
+	make DESTDIR="${pkgdir}" install
+}

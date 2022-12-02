@@ -1,0 +1,9 @@
+build() {
+  cd "$srcdir/${pkgname}-${pkgver}"
+  patch -p1 -i ../16.patch
+  patch -p0 -i ../dep_gtk3-3.22.patch
+  mkdir -p build
+  cd "${srcdir}/${pkgname}-${pkgver}/build"
+  meson --prefix /usr --buildtype=plain ..
+  ninja
+}

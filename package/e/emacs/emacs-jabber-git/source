@@ -1,0 +1,1 @@
+("git://${pkgname%-git}.git.sourceforge.net/gitroot/${pkgname%-git}/${pkgname%-git}")

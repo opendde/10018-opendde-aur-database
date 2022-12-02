@@ -1,0 +1,10 @@
+package() {
+  install -Dm755 "${srcdir}/BabelMap.exe" "${pkgdir}/usr/share/babelmap/BabelMap.exe"
+  install -Dm755 "${srcdir}/babelmap" "${pkgdir}/usr/bin/babelmap"
+  install -Dm644 "${srcdir}/babelmap.desktop" "${pkgdir}/usr/share/applications/babelmap.desktop"
+  install -Dm644 "${srcdir}/LICENSE" "${pkgdir}/usr/share/licenses/babelmap/LICENSE"
+
+  install -Dm644 "${srcdir}/babelmap-1.png" "${pkgdir}/usr/share/icons/hicolor/16x16/apps/babelmap.png"
+  install -Dm644 "${srcdir}/babelmap-0.png" "${pkgdir}/usr/share/icons/hicolor/32x32/apps/babelmap.png"
+  install -Dm644 "${srcdir}/babelmap-2.png" "${pkgdir}/usr/share/icons/hicolor/48x48/apps/babelmap.png"
+}

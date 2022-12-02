@@ -1,0 +1,6 @@
+package() {
+  cd $srcdir/buddhasay-$pkgver
+  install -Dm755 target/release/buddhasay "$pkgdir/usr/bin/buddhasay"
+  install -d "$pkgdir/usr/share/buddhasay"
+  install -Dm755 resources/buddhasay.toml "$pkgdir/usr/share/buddhasay/buddhasay.toml"
+}

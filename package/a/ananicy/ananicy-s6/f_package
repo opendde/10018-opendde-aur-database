@@ -1,0 +1,7 @@
+package() {
+  mkdir -p "$pkgdir/etc/s6/sv/ananicy"
+  cp ananicy.run $pkgdir/etc/s6/sv/ananicy/run
+  cp ananicy.type $pkgdir/etc/s6/sv/ananicy/type
+  cp ananicy.finish $pkgdir/etc/s6/sv/ananicy/finish
+  install=ananicy-s6.install
+}

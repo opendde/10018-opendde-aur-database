@@ -1,0 +1,5 @@
+package() {
+    mkdir -p "$pkgdir/usr/lib"
+    cp -r "$srcdir/$pkgname-$pkgver" "$pkgdir/usr/lib/$pkgname"
+    install -Dt "$pkgdir/usr/bin" "$srcdir/$pkgname"
+}

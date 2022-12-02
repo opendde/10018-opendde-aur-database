@@ -1,0 +1,33 @@
+build() {
+  cd "$srcdir"/$_reponame
+  LDLAGS='-lX11' ./configure \
+    --prefix=/usr \
+    --enable-libraries \
+    --enable-unicode \
+    --enable-shared \
+    --enable-dynamic-client-linkage \
+    --enable-client \
+    --enable-manager \
+    --disable-static \
+    --with-ssl \
+    --with-x \
+    --with-wxdir=/usr/lib \
+    --with-wx-config=$(which wx-config)
+  make
+
+  # Build boinc-nox
+  cd ${srcdir}/${_reponame}-nox
+  PKG_CONFIG=/usr/bin/pkg-config ./configure \
+    --prefix=/usr \
+    --enable-libraries \
+    --enable-unicode \
+    --enable-shared \
+    --enable-dynamic-client-linkage \
+    --enable-client \
+    --disable-static \
+    --disable-manager \
+    --with-ssl \
+    --without-wxdir \
+    --without-x
+  make
+}

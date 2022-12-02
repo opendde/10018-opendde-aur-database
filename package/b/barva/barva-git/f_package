@@ -1,0 +1,11 @@
+package() {
+    cd "${srcdir}/${_pkgname}"
+    install -Dm755 barva "${pkgdir}/usr/bin/barva"
+    install -Dm644 README.rst "${pkgdir}/usr/share/doc/${_pkgname}/README.rst"
+
+    cd scripts
+    for _SCRIPT in *; do
+        install -Dm755 "$_SCRIPT" "${pkgdir}/usr/share/${_pkgname}/${_SCRIPT}"
+    done
+
+}

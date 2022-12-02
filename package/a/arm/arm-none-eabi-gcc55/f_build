@@ -1,0 +1,12 @@
+build() {
+  cd $srcdir/build-gcc
+  export CFLAGS_FOR_TARGET='-g -Os -ffunction-sections -fdata-sections'
+  export CXXFLAGS_FOR_TARGET='-g -Os -ffunction-sections -fdata-sections'
+  _build_gcc
+
+  # Build libstdc++ without exceptions support (the 'nano' variant)
+  cd $srcdir/build-gcc-nano
+  export CFLAGS_FOR_TARGET='-g -Os -ffunction-sections -fdata-sections -fno-exceptions'
+  export CXXFLAGS_FOR_TARGET='-g -Os -ffunction-sections -fdata-sections -fno-exceptions'  
+  _build_gcc
+}

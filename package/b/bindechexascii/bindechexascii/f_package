@@ -1,0 +1,4 @@
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  install -Dm 755 ${pkgname} "$pkgdir/usr/bin/${pkgname}"
+}

@@ -1,0 +1,1 @@
+("${pkgname}::https://github.com/hacdias/filemanager/releases/download/v${pkgver}/linux-arm-filemanager")

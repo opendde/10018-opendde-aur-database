@@ -1,0 +1,4 @@
+prepare() {
+    cd "${srcdir}"
+    7z x "${srcdir}/$_pkgname-$arch.AppImage" usr/share/applications/$_upkgname.desktop usr/share/icons/hicolor/512x512/apps/$_upkgname.png
+}

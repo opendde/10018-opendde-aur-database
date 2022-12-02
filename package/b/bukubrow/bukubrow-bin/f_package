@@ -1,0 +1,3 @@
+package() {
+    install -Dm755 "$srcdir/bukubrow-linux-amd64" "$pkgdir/usr/bin/$_pkgname"
+}

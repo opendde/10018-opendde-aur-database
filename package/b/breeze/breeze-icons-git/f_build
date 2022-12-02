@@ -1,0 +1,10 @@
+build() {
+  cd build
+  cmake ../breeze-icons \
+    -DCMAKE_BUILD_TYPE=None \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DBUILD_TESTING=OFF \
+    -DBINARY_ICONS_RESOURCE=ON
+
+  make
+}

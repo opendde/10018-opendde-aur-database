@@ -1,0 +1,3 @@
+prepare() {
+        patch -p1 -d $srcdir/8188eu/ < 209.patch
+}

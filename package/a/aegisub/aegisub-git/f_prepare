@@ -1,0 +1,21 @@
+prepare() {
+  cd aegisub
+
+  # boost 1.69
+  #sed 's|gil/gil_all.hpp|gil.hpp|g' -i src/*.cpp
+
+  #sed 's/$(LIBS_BOOST) $(LIBS_ICU)/$(LIBS_BOOST) $(LIBS_ICU) -pthread/' -i tools/Makefile
+
+  # https://github.com/Aegisub/Aegisub/issues/171
+  patch -p1 -i ../0001-Use-target-name-without-directory-in-_OBJ-macro.patch
+
+  # Fix build with wxWidgets 3.0
+  patch -p1 -i ../0001-Restrict-the-usage-of-undocumented-wxBitmap-ctor-to-.patch
+
+  # Fix runtime warning "The second argument passed to StartStyling should be 0"
+  patch -p1 -i ../Remove-second-argument-to-StartStyling.patch
+
+  cp -f /usr/share/aclocal/ax_boost_{chrono,filesystem,locale,regex,system,thread}.m4 m4macros/
+
+  ./autogen.sh
+}

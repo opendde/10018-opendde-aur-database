@@ -1,0 +1,6 @@
+prepare() {
+  cd bed-v$pkgver
+  sed -i -e "s#/tmp/python3#/usr/bin/python3#" python/bed.py
+  sed -i -e "s#/tmp/pdflatex#pdflatex#" python/settings.py
+  sed -i 's#/local##g' launcher/bed.desktop
+}

@@ -1,0 +1,1 @@
+("https://download.edrawsoft.com/archives/${pkgname%-bin}_${pkgver}_en_${arch}.deb")

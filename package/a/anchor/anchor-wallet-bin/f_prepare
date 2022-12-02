@@ -1,0 +1,3 @@
+prepare() {
+  bsdtar xf data.tar.xz
+}

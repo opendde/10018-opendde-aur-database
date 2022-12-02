@@ -1,0 +1,4 @@
+prepare() {
+  cd "${pkgname%-git}"
+  [[ -d build ]] || mkdir build
+}

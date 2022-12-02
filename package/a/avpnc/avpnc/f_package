@@ -1,0 +1,3 @@
+package() {
+  install -Dm755 ${srcdir}/avpnc-${pkgver}/avpnc ${pkgdir}/usr/bin/avpnc
+}

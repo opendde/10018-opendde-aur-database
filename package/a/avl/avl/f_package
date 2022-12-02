@@ -1,0 +1,10 @@
+package() {
+  install -d "$pkgdir/usr/bin/"
+  install -m 0755 "${srcdir}/Avl/bin/avl" "$pkgdir/usr/bin/"
+  install -d "$pkgdir/usr/share/avl/"
+  install -m 0644 "${srcdir}/Avl/README" "$pkgdir/usr/share/avl/"
+  install -m 0644 "${srcdir}/Avl/version_notes.txt" "$pkgdir/usr/share/avl/"
+  install -m 0644 "${srcdir}/Avl/avl_doc.txt" "$pkgdir/usr/share/avl/"
+  install -m 0644 "${srcdir}/Avl/session1.txt" "$pkgdir/usr/share/avl/"
+  install -m 0644 "${srcdir}/Avl/session2.txt" "$pkgdir/usr/share/avl/"
+}

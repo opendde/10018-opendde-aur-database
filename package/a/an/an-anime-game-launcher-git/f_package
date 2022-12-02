@@ -1,0 +1,13 @@
+package() {
+  cd "${_pkgname}"
+
+  install -Dm755 "${srcdir}/an-anime-game-launcher.sh" "${pkgdir}/usr/bin/${_pkgname}"
+  install -Dm644 "${srcdir}/an-anime-game-launcher.desktop" -t "${pkgdir}/usr/share/applications"
+  install -Dm644 "dist/${_pkgname}/public/icons/256x256.png" "${pkgdir}/usr/share/pixmaps/${_pkgname}.png"
+
+  install -Dm644 "dist/${_pkgname}/resources.neu" "${pkgdir}/usr/share/${_pkgname}/resources.neu"
+  install -Dm755 "dist/${_pkgname}/${_pkgname}-linux_x64" "${pkgdir}/usr/share/${_pkgname}/${_pkgname}"
+
+  cd "dist/${_pkgname}/public"
+  find * -type f -exec install -Dm 755 {} "${pkgdir}/usr/share/${_pkgname}/public/"{} \;
+}

@@ -1,0 +1,1 @@
+("https://github.com/giga300/4NXCI-linux/releases/download/${pkgver}/${pkgname%-bin}")

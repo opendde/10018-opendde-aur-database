@@ -1,0 +1,6 @@
+build() {
+  cd "${srcdir}/abootimg"
+
+  make
+  gzip -f debian/abootimg.1
+}

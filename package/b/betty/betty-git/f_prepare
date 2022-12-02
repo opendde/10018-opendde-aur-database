@@ -1,0 +1,8 @@
+prepare() {
+  cd "${srcdir}/${_gitname}"
+
+  # Set absolute paths for static files
+  sed -i "s^File.dirname(__FILE__) + '/lib^'/usr/lib/${_gitname}^g" main.rb
+  sed -i "s^ENV\['HOME'\] + '/.^'/etc/${_gitname}/^g" lib/config.rb
+  sed -i "s^ENV\['HOME'\] + '/.^'/var/log/${_gitname}/^g" main.rb
+}

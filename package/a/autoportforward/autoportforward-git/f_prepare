@@ -1,0 +1,5 @@
+prepare() {
+  # Strictly here to remove build path from binary
+  # and eliminate the makepkg message "WARNING: Package contains reference to $srcdir"
+  sed -E -i 's/go build/go build -trimpath/g' "$srcdir/$_pkgbase/build.sh"
+}

@@ -1,0 +1,6 @@
+check() {
+  cd "$srcdir/${pkgname%%-*}-$pkgver"
+
+  msg2 'Testing...'
+  make -j$_nproc check
+}

@@ -1,0 +1,4 @@
+build() {
+    cd $srcdir/archvyrt-$pkgver
+    python setup.py build
+}

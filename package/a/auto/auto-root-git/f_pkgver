@@ -1,0 +1,4 @@
+pkgver() {
+  cd "${srcdir}/${_name}"
+  printf "1.0.%s" "$(git rev-list --count HEAD)"
+}

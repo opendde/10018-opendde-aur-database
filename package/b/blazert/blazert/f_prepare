@@ -1,0 +1,3 @@
+prepare() {
+    tar -xzf "20.2.1.tar.gz" 
+}

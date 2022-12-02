@@ -1,0 +1,9 @@
+prepare() {
+	cd "${srcdir}/${pkgname}"
+
+	for PATCH in $(< debian/patches/series); do
+		patch -Np1 < debian/patches/${PATCH}
+	done
+
+	sed -i '/_PATH_MASTER_RC/s|mail.rc|bsd-mailx.rc|' pathnames.h
+}

@@ -1,0 +1,30 @@
+package() {
+    cd "${srcdir}/burg"
+
+    ## Fix bootloader write permissions
+    sed -i '92s/o /w /g' 1*
+
+    make DESTDIR="${pkgdir}/" install
+
+    ## Delete deprecated burg-mkconfig helper file
+    rm -f "${pkgdir}/usr/lib/burg/update-burg_lib" || true
+    rm -rf "${pkgdir}/usr/share/burg" || true
+
+  if [[ $_mk_burg_emu == y ]] ; then
+    msg "Building burg-emu...."
+    _build_dir emu
+    _build_common
+    configopts="$configopts --with-platform=emu --disable-grub-emu-usb"
+    CC="gcc-4.7" ./configure $configopts
+    CC="gcc-4.7" make -j1
+    install -D -m0755 grub-emu "$pkgdir/bin/burg-emu"
+    [[ $_rm_bld_dirs == y ]] && _build_dir -r emu
+  fi
+
+  # install /etc/default/burg (needed config file)
+  install -D -m0644 "$srcdir/burg.default" "$pkgdir/etc/default/burg"
+  # install update-burg script
+  install -D -m0755 "$srcdir/update-burg" "$pkgdir/usr/bin/update-burg"
+  # install memtest config detection
+  install -D -m0755 "$srcdir/60_memtest86+" "$pkgdir/etc/burg.d/60_memtest86+"
+}

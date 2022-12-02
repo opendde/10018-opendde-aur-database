@@ -1,0 +1,7 @@
+build() {
+  # LDFLAGS into the GOFLAGS env variable.
+  export GOFLAGS="-gcflags=all=-trimpath=${PWD} -asmflags=all=-trimpath=${PWD} -ldflags=-extldflags=-zrelro -ldflags=-extldflags=-znow"
+
+  cd "$srcdir/$pkgname"
+  make build
+}

@@ -1,0 +1,7 @@
+prepare() {
+    # Create launch script
+    echo -e '#!/usr/bin/sh\n'\
+            "cd $_target\n"\
+            'exec ./Braid.bin.x86 "$@"'\
+          > "$srcdir"/launcher.sh
+}

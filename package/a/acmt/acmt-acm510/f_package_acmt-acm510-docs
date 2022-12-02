@@ -1,0 +1,4 @@
+package_acmt-acm510-docs () {
+	pkgdesc="ACM510 Channel Compressor (Documentation)"
+	install -Dm644 ${srcdir}/ACM510/manual.pdf ${pkgdir}/usr/share/doc/${pkgbase}/manual.pdf
+}

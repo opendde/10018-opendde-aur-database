@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir/go-any-proxy"
+
+  #Install binaries
+  install -Dm755 any_proxy "$pkgdir/usr/bin/anyproxy"
+}

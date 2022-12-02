@@ -1,0 +1,11 @@
+package() {
+
+    install -dm755 "$pkgdir"/usr
+    install -dm755 "$pkgdir"/usr/bin
+    install -dm755 "$pkgdir"/usr/lib
+    install -dm755 "$pkgdir"/usr/lib/aps
+    install -dm755 "$pkgdir"/usr/lib/aps/lib
+
+    install -m 0755 usr/lib/aps/lib/*   "$pkgdir"/usr/lib/aps/lib/
+    install -m 0755 usr/bin/*           "$pkgdir"/usr/bin
+}

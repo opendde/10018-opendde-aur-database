@@ -1,0 +1,4 @@
+check() {
+	cd $_pkgname-$pkgver
+	cargo test --release
+}

@@ -1,0 +1,5 @@
+pkgver() {
+  cd "${srcdir}/${_pkgname}"
+  printf "r%s.%s" "$(grep '^VERSION=' src/Makefile.ProjectInfo | cut -d = -f 2)" "$(git rev-parse --short HEAD)"
+ 
+}

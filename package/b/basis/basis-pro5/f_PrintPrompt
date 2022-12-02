@@ -1,0 +1,4 @@
+PrintPrompt() {
+  :
+  #echo "Prompt Stuff"
+}

@@ -1,0 +1,4 @@
+prepare() {
+  cd $srcdir/$pkgname
+  sed -i 's|#JAVA_HOME=|. /etc/conf.d/bgerp|' setenv.sh 
+}

@@ -1,0 +1,5 @@
+package() {
+    cd "$srcdir/$pkgname-$pkgver"
+    python setup.py install --root="$pkgdir"
+    install -Dm644 UNLICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

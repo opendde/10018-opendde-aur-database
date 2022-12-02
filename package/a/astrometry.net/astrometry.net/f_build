@@ -1,0 +1,7 @@
+build() {
+    cd ${pkgname}-${pkgver}
+    make -C util config
+    make SYSTEM_GSL=yes all
+    make SYSTEM_GSL=yes py
+    make SYSTEM_GSL=yes extra
+}

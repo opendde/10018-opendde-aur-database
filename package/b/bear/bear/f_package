@@ -1,0 +1,4 @@
+package() {
+    cd "${srcdir}/${_pkgname}-${pkgver}"
+    DESTDIR="${pkgdir}" make install
+}

@@ -1,0 +1,4 @@
+build() {
+  cd "${srcdir}/arc-theme-${pkgver}"
+  ./autogen.sh --prefix=/usr --with-gnome=${_gnomever}
+}

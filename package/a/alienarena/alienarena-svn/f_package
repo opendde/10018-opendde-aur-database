@@ -1,0 +1,7 @@
+ package() {
+	cd trunk
+
+	make DESTDIR=$pkgdir install
+
+	install -D -m755 $srcdir/alienarena.desktop $pkgdir/usr/share/applications/alienarena.desktop
+}

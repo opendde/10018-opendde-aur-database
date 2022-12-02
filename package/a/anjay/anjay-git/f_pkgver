@@ -1,0 +1,4 @@
+pkgver() {
+	cd "Anjay"
+	git describe --tags | sed 's|-|.|g'
+}

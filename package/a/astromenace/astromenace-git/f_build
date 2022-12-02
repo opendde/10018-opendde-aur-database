@@ -1,0 +1,8 @@
+build() {
+  cd "$srcdir/$_pkgname"
+  
+  [[ -d build ]] && rm -r build
+    mkdir build && cd build
+    cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DDATADIR=/usr/share/astromenace
+    make
+}

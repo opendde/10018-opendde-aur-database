@@ -1,0 +1,12 @@
+package() {
+  cd "${srcdir}/${_pkgname}-${pkgver}"
+  install -dm755 ${pkgdir}/usr/share/astroML/examples/{algorithms,datasets,learning}
+  install -D -m644 examples/algorithms/* \
+    ${pkgdir}/usr/share/astroML/examples/algorithms
+  install -D -m644 examples/datasets/* \
+    ${pkgdir}/usr/share/astroML/examples/datasets
+  install -D -m644 examples/learning/* \
+    ${pkgdir}/usr/share/astroML/examples/learning
+  install -D -m644 examples/README.rst ${pkgdir}/usr/share/astroML/examples
+
+}

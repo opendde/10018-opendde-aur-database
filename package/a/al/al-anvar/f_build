@@ -1,0 +1,6 @@
+build() {
+  tar xf src-${_upstream}-${_pkgver}.tar.gz
+  cd src-${_upstream}-${_pkgver}
+  qmake-qt4
+  make
+}

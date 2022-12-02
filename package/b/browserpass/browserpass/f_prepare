@@ -1,0 +1,7 @@
+prepare() {
+    cd "$pkgname"
+
+    _host_file='/usr/bin/browserpass'
+    sed -i -e "s|%%replace%%|$_host_file|" chrome-host.json
+    sed -i -e "s|%%replace%%|$_host_file|" firefox-host.json
+}

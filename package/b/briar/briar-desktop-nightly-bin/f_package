@@ -1,0 +1,27 @@
+package() {
+    install -dm755 "$pkgdir/usr/bin/"
+    cat << EOF > "$pkgdir/usr/bin/${_app_nightly_name}"
+#!/bin/sh
+exec /usr/bin/env java -jar '/usr/share/java/briar-desktop-nightly.jar' "\$@"
+EOF
+    chmod +x "$pkgdir/usr/bin/${_app_nightly_name}"
+
+    install -m 644 -D "${_app_nightly_name}.jar" "$pkgdir/usr/share/java/${_app_nightly_name}.jar"
+
+    install -C -Dm644 "${srcdir}/${_app_name}.svg" "$pkgdir/usr/share/icons/hicolor/scalable/apps/${_app_nightly_name}.svg"
+
+    # Taken from briar-desktop-bin/briar-desktop-git
+    # generated with inkscape from the svg
+    # just seemed unreasonable to require inkscape as a makedep
+    # for size in 16 32 48 64 128 192; do
+    # inkscape --export-background-opacity=0 \
+    #     --export-width=${size} --export-type=png \
+    #     --export-filename=${size}.png briar-desktop.svg
+    # done
+
+    for i in 16 32 48 64 128 192; do
+        install -C -Dm644 "${srcdir}/briar${i}.png" "$pkgdir/usr/share/icons/hicolor/${i}x${i}/apps/${_app_nightly_name}.png"
+    done
+
+    install -Dm644 "${srcdir}/${_app_nightly_name}.desktop" "$pkgdir/usr/share/applications/${_app_nightly_name}.desktop"
+}

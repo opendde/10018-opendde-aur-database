@@ -1,0 +1,8 @@
+build() {
+    cd "astra-git"
+    git submodule init
+    git config submodule.'external/libxiv'.url "$srcdir/libxiv-git"
+    git submodule update
+    cmake -DCMAKE_BUILD_TYPE=RelWithDebugInfo -DUSE_OWN_LIBRARIES=OFF ./
+    cmake --build ./
+}

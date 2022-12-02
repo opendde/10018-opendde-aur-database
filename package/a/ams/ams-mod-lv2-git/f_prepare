@@ -1,0 +1,4 @@
+prepare() {
+  cd "${srcdir}/ams-lv2"
+  ./waf configure --prefix=/usr
+}

@@ -1,0 +1,5 @@
+build() {
+    cd "${pkgname}-${pkgver}+${_launchpad_rel}"
+    arch-meson build --prefix=/usr --libdir=/usr/lib
+    ninja -C build
+}

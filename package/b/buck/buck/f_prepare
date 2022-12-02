@@ -1,0 +1,4 @@
+prepare() {
+  # Make sure the build version is set correctly for `buck --version`
+  echo "v${pkgver}" > "${srcdir}/${pkgname}-${pkgver}/.buckrelease"
+}

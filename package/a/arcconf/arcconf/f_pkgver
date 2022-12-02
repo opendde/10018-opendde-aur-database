@@ -1,0 +1,4 @@
+pkgver() {
+  _ver=`echo ${_ver} | sed -e 's:v::' -e 's/_/./g'`
+  echo -e "${_ver}_${_rel}"
+}

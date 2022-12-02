@@ -1,0 +1,4 @@
+package() {
+ cd "$srcdir/bim"
+ make DESTDIR="${pkgdir}" install
+}

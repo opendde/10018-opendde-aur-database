@@ -1,0 +1,5 @@
+package() {
+    bsdtar -xJf data.tar.xz -C "$pkgdir"
+    mkdir -p $pkgdir/usr/bin
+    ln -sf /opt/Binance/binance $pkgdir/usr/bin/binance
+}

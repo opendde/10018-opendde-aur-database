@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  install -D -m 755 an "$pkgdir/usr/bin/an"
+  install -D -m 644 an.6 "$pkgdir/usr/share/man/man6/an.6"
+}

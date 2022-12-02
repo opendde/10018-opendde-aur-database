@@ -1,0 +1,5 @@
+build() {
+  cd "bazelisk-${pkgver}"
+  "${srcdir}/${source[1]%%::*}" build //:bazelisk
+  "${srcdir}/${source[1]%%::*}" shutdown
+}

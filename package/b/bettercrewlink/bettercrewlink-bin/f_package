@@ -1,0 +1,11 @@
+package() {
+	cd "$srcdir"
+	
+	install -Dm 755 "Better-CrewLink-$pkgver.AppImage" "$pkgdir/opt/BetterCrewlink/BetterCrewlink-Linux.AppImage"
+	
+	mkdir -p "$pkgdir/usr/bin"
+	ln -s /opt/BetterCrewlink/BetterCrewlink-Linux.AppImage "$pkgdir/usr/bin/bettercrewlink"
+	
+	install -Dm 644 bettercrewlink.desktop "$pkgdir/usr/share/applications/bettercrewlink.desktop"
+	install -Dm 644 BCL-AppIcon.png "$pkgdir/usr/share/pixmaps/bettercrewlink.png"
+}

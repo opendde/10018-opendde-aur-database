@@ -1,0 +1,11 @@
+package() {
+	pushd "$pkgbase/build/src"
+	make DESTDIR="$pkgdir/usr" install
+	popd
+	cd "$pkgbase/build/examples"
+	make DESTDIR="$pkgdir/usr" install
+	install -Dm644 '../../include/ankidrive.h' "${pkgdir}/usr/include/ankidrive.h"
+	install -dm755 "$pkgdir/usr/include/ankidrive"
+	cp -a ../../include/ankidrive/*.h "$pkgdir/usr/include/ankidrive/."
+	install -Dm644 "../../LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

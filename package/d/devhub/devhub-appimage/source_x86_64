@@ -1,0 +1,1 @@
+("${_appimage}::https://github.com/devhubapp/devhub/releases/download/v${pkgver}/DevHub-${pkgver}.AppImage")

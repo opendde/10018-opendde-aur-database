@@ -1,0 +1,9 @@
+build() {
+  cd bubbros-$pkgver
+  # build extensions and man pages
+  make all docs
+  # generate images with different colors from palette
+  python2 bubbob/images/buildcolors.py
+  # generate bonuses documentation
+  cd bubbob/doc && python2 bonus-doc.py
+}

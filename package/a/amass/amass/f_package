@@ -1,0 +1,10 @@
+package() {
+  cd "Amass-$pkgver"
+
+  install -dm 755 "${pkgdir}/usr/share/${pkgname}"
+  install -Dm 755 "bin/${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+
+  cp -a --no-preserve=ownership "examples/" "${pkgdir}/usr/share/${pkgname}"
+  find "${pkgdir}/usr/share/${pkgname}/examples" -type d -exec chmod 755 {} \;
+  find "${pkgdir}/usr/share/${pkgname}/examples" -type f -exec chmod 644 {} \;
+}

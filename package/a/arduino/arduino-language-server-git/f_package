@@ -1,0 +1,4 @@
+package() {
+  cd "${pkgname%-git}"
+  install -Dm 755 arduino-language-server -t "$pkgdir"/usr/bin
+}

@@ -1,0 +1,4 @@
+prepare() {
+  cd "${pkgname}-${pkgver}"
+  patch -uNp2 -r- -i ../Makefile_fix.patch
+}

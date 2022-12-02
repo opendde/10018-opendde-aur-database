@@ -1,0 +1,9 @@
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+
+  #make DESTDIR="$pkgdir/" install
+  install -vDm 0755 ../manual-tracker-add.sh "$pkgdir/usr/bin/manual-tracker-add.sh"
+  install -vDm 0755 ../tracker-add-auto.sh "$pkgdir/usr/bin/tracker-add-auto.sh"
+  install -vDm 0755 ../tracker-add-auto-router.sh "$pkgdir/usr/bin/tracker-add-auto-router.sh"
+  install -vDm 0644 ../transmission-tracker-add.service "$pkgdir/usr/lib/systemd/user/transmission-tracker-add.service"
+}

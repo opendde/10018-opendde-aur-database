@@ -1,0 +1,52 @@
+package() {
+    cd ${pkgname}-${pkgver}
+
+    appdir=/usr/lib/${pkgname}
+
+    install -d "${pkgdir}"${appdir}
+    cp -r * "${pkgdir}"${appdir}
+
+    install -dm755  "${pkgdir}"/usr/share/icons/hicolor/256x256/apps
+    mv "${pkgdir}"${appdir}/build/icon.png \
+        "${pkgdir}"/usr/share/icons/hicolor/256x256/apps/${pkgname}.png
+    rm "${pkgdir}"${appdir}/build/icon.{icns,ico}
+    rmdir "${pkgdir}"${appdir}/build
+
+    install -Dm755 "${srcdir}"/${pkgname}.js "${pkgdir}"/usr/bin/${pkgname}
+    install -Dm644 "${srcdir}"/${pkgname}.desktop \
+            "${pkgdir}"/usr/share/applications/${pkgname}.desktop
+
+    install -dm755 "${pkgdir}"/usr/share/licenses/${pkgname}
+    ln -s $(realpath -m --relative-to=/usr/share/licenses/${pkgname} ${appdir}/LICENSE) \
+        "${pkgdir}"/usr/share/licenses/${pkgname}
+
+    # Clean up
+    rm -r "${pkgdir}"${appdir}/{housekeeping,src}
+    find "${pkgdir}"${appdir} \
+        -name "package.json" \
+            -exec sed -e "s|${srcdir}/${pkgname}-${pkgver}|${appdir}|" \
+                -i {} \; \
+        -or -name ".*" -prune -exec rm -r '{}' \; \
+        -or -name "*.mk" -exec rm '{}' \; \
+        -or -path "*/promise/src" -prune -exec rm -r '{}' \; \
+        -or -path "*/pty.js/src" -prune -exec rm -r '{}' \; \
+        -or -name "*.yml" -exec rm '{}' \; \
+        -or -name "benchmark" -prune -exec rm -r '{}' \; \
+        -or -name "bin" -prune -exec rm -r '{}' \; \
+        -or -name "bin.js" -exec rm '{}' \; \
+        -or -name "binding.gyp" -exec rm '{}' \; \
+        -or -name "binding.Makefile" -exec rm '{}' \; \
+        -or -name "bower.json" -exec rm '{}' \; \
+        -or -name "cli.js" -exec rm '{}' \; \
+        -or -name "config.gypi" -exec rm '{}' \; \
+        -or -name "deps" -prune -exec rm -r '{}' \; \
+        -or -name "doc" -prune -exec rm -r '{}' \; \
+        -or -name "docs" -prune -exec rm -r '{}' \; \
+        -or -name "example" -prune -exec rm -r '{}' \; \
+        -or -name "Makefile" -exec rm '{}' \; \
+        -or -name "obj.target" -prune -exec rm -r '{}' \; \
+        -or -name "test" -prune -exec rm -r '{}' \; \
+        -or -name "tests" -prune -exec rm -r '{}' \; \
+        -or -name "tools" -prune -exec rm -r '{}' \; \
+        -or -name "wscript" -prune -exec rm -r '{}' \;
+}

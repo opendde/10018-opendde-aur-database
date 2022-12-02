@@ -1,0 +1,5 @@
+package() {
+  install -Dm755 "default.script" "${pkgdir}/usr/share/udhcpc/default.script"
+  install -d "${pkgdir}/usr/bin"
+  ln -sf "/usr/bin/busybox" "${pkgdir}/usr/bin/udhcpc"
+}

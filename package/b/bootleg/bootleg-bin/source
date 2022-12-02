@@ -1,0 +1,1 @@
+("https://github.com/retrogradeorbit/bootleg/releases/download/v${pkgver}/${pkgname/\-bin/}-${pkgver}-linux-amd64.tgz")

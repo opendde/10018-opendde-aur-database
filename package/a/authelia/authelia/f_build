@@ -1,0 +1,16 @@
+build() {
+  export GOPATH="$srcdir/gopath" PATH="$PATH:$srcdir/gopath/bin" _pkgver="v${pkgver}"
+  cd "$srcdir/$pkgname-$pkgver/web"
+
+  COMMIT=$(curl -s https://api.github.com/repos/authelia/authelia/tags | jq -r '.[] | select(.name==env._pkgver) | .commit.sha')
+  TAG=v${pkgver}
+  STATE="tagged clean"
+  DATE=$(date +"%a, %d %b %Y %R:%S %z")
+  XOPTIONS="-X 'github.com/authelia/authelia/v4/internal/utils.BuildBranch=v${pkgver}' -X 'github.com/authelia/authelia/v4/internal/utils.BuildTag=${TAG}' -X 'github.com/authelia/authelia/v4/internal/utils.BuildCommit=${COMMIT}' -X 'github.com/authelia/authelia/v4/internal/utils.BuildDate=${DATE}' -X 'github.com/authelia/authelia/v4/internal/utils.BuildState=${STATE}' -X 'github.com/authelia/authelia/v4/internal/utils.BuildNumber=AUR'"
+
+  yarn install --frozen-lockfile --ignore-scripts
+  yarn build
+  cd ..
+  cp -R api internal/server/public_html/
+  go build -ldflags "-w ${XOPTIONS}" -trimpath -o authelia cmd/authelia/*.go
+}

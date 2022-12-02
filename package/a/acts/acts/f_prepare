@@ -1,0 +1,4 @@
+prepare() {
+	cd "$pkgname-$pkgver"
+	sed -i '/ExecStart/s|local/||' contrib/systemd/acts.service
+}

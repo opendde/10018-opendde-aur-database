@@ -1,0 +1,10 @@
+build() {
+
+	_COPTS="--enable-openblas --with-openblas-incdir=/usr/include"
+	#export CFLAGS="-fcommon"
+
+	cd $srcdir/${_pkgname}-${pkgver}
+	sh autogen.sh
+	./configure --prefix=/usr $_COPTS
+	make
+}

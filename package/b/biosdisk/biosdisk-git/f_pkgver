@@ -1,0 +1,4 @@
+pkgver() {
+    cd "${srcdir}/${gitname}"
+    git describe --tags | sed 's|-|\.|g'
+}

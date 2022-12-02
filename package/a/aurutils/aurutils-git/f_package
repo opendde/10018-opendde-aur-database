@@ -1,0 +1,4 @@
+package() {
+    cd aurutils
+    make DESTDIR="$pkgdir" install
+}

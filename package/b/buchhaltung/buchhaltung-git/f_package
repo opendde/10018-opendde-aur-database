@@ -1,0 +1,8 @@
+package() {
+  cd "$srcdir/$_pkgname"
+  stack --local-bin-path "$pkgdir/usr/bin" install
+
+  install -Dm 644 LICENSE -t "$pkgdir/usr/share/licenses/buchhaltung"
+
+  find "$pkgdir" -type f -name .gitignore -delete
+}

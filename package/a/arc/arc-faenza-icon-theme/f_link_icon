@@ -1,0 +1,14 @@
+link_icon() {
+	icon_source="$1"
+	icon_target="$2"
+	filename=${icon_target%.png}
+	svg="${filename}.svg"
+	rm -f "$icon_target" "$svg"
+	ln -s "$icon_source" "$icon_target"
+	if [ "$size" == "22" ]; then
+		cd "../../panel/${size}/"
+		rm -f "$icon_target" "$svg"
+		ln -s "../../status/${size}/$icon_source" "$icon_target"
+		cd "../../status/${size}/"
+	fi
+}

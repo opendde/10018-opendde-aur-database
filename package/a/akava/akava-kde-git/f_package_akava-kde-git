@@ -1,0 +1,12 @@
+package_akava-kde-git() {
+    provides=('akava-kde')
+    optdepends=('breeze-blurred-git: Matching window decoration'
+             'akava-konsole: Matching konsole colors theme'
+             'akava-colors: Matching KDE color theme'
+             'kvantum-theme-akava: Matching kvantum theme')
+
+    cd $_pkgname
+    install -d "${pkgdir}/usr/share"
+    mkdir -p "${pkgdir}/usr/share/plasma/desktoptheme"
+    cp -r Akava "${pkgdir}/usr/share/plasma/desktoptheme"
+}

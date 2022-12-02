@@ -1,0 +1,11 @@
+build() {
+	cd atftp/
+
+	./autogen.sh
+	./configure --prefix=/usr \
+		--mandir=/usr/share/man \
+		--sbindir=/usr/bin \
+		--enable-libreadline \
+		--disable-libwrap
+	make
+}

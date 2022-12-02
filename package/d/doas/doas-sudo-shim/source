@@ -1,0 +1,1 @@
+("$pkgname-$pkgver.tar.gz::https://github.com/jirutka/doas-sudo-shim/archive/v$pkgver.tar.gz")

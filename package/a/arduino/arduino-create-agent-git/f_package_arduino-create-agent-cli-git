@@ -1,0 +1,6 @@
+package_arduino-create-agent-cli-git() {
+  pkgdesc='The Arduino Create Multi Platform Agent CLI'
+
+  _package
+  install -Dm644 "${srcdir}"/${_gitname}.service "${pkgdir}"/usr/lib/systemd/user/${_gitname}.service
+}

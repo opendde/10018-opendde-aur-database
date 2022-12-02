@@ -1,0 +1,10 @@
+package() {
+  cd binutils-build
+  make DESTDIR="$pkgdir" install
+
+  # Remove unwanted files
+  rm -rf "$pkgdir/usr/share"
+  rm -rf "$pkgdir/usr/include"
+  rm -rf "$pkgdir/usr/lib"
+  rm -f "$pkgdir/usr/bin/"{ar,as,ld,nm,objdump,ranlib,readelf,strip,objcopy}
+}

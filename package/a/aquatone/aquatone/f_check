@@ -1,0 +1,6 @@
+check() {
+  export GOPATH="${srcdir}/gopath"
+  cd "${GOPATH}/src/github.com/michenriksen/${pkgname}"
+
+  go test ./...
+}

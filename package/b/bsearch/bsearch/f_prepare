@@ -1,0 +1,8 @@
+prepare() {
+	cd "$pkgname-$pkgver"
+    export GOPATH="${srcdir}/fakegopath"
+
+    mkdir -p "${GOPATH}/src/github.com/jamesridgway/bsearch/"
+    cp -R "${srcdir}/${pkgname}-${pkgver}/"* "${GOPATH}/src/github.com/jamesridgway/bsearch/"
+    
+}

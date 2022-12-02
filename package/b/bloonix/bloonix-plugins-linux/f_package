@@ -1,0 +1,11 @@
+package() {
+	cd "$srcdir"/$pkgname-$pkgver
+    make DESTDIR="$pkgdir" install
+
+    mkdir $pkgdir/etc
+    mkdir -p $pkgdir/etc/bloonix/agent/conf.d
+    chmod 750 $pkgdir/usr/lib/bloonix/etc/sudoers.d
+    cp $pkgdir/usr/lib/bloonix/etc/sudoers.d $pkgdir/etc -r
+    cp $pkgdir/usr/lib/bloonix/etc/conf.d/* $pkgdir/etc/bloonix/agent/conf.d -r
+
+}

@@ -1,0 +1,13 @@
+package() {
+    
+    mkdir -p "${pkgdir}/etc/skel/.config"
+    cp -rf "${scrdir}archlabs-compiz-compatibility/compiz" "${pkgdir}/etc/skel/.config"
+    cp -rf "${scrdir}archlabs-compiz-compatibility/compiz-1" "${pkgdir}/etc/skel/.config"
+    mkdir -p "${pkgdir}/usr/share/xsessions"
+    cp "${scrdir}archlabs-compiz-compatibility/compiz.desktop" "${pkgdir}/usr/share/xsessions"
+    mkdir -p "${pkgdir}/usr/bin"
+    cp "${scrdir}archlabs-compiz-compatibility/compiz-session-start.sh" "${pkgdir}/usr/bin"
+    cp "${scrdir}archlabs-compiz-compatibility/compiz-autostart" "${pkgdir}/usr/bin"
+    
+
+}

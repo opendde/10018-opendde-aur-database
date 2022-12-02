@@ -1,0 +1,4 @@
+prepare() {
+  cd ${pkgname}-${pkgver}
+  patch < ../commons.patch
+}

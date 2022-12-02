@@ -1,0 +1,6 @@
+build () {
+    cd "$srcdir/evtc/ArcdpsLogManager.Gtk"
+    dotnet build --configuration Release
+    convert "$srcdir/evtc/ArcdpsLogManager/Images/program_icon.ico" \
+        "$srcdir/icon.png"
+}

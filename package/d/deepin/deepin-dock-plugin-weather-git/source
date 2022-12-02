@@ -1,0 +1,1 @@
+("${pkgname}-${gitver}.tar.gz::https://github.com/sonichy/WEATHER_DDE_DOCK/archive/${gitver}.tar.gz")

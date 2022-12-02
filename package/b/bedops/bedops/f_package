@@ -1,0 +1,6 @@
+package() {
+    cd "$srcdir"/$pkgname-$pkgver
+    make install
+    mkdir -p "$pkgdir"/usr/bin
+    cp -r bin/* $pkgdir/usr/
+}

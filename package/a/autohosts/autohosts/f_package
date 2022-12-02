@@ -1,0 +1,4 @@
+package() {
+  tar xvf data.tar.xz -C "${pkgdir}/"
+  rm "${pkgdir}/usr/share/doc/autohosts/copyright"
+}

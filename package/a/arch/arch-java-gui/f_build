@@ -1,0 +1,4 @@
+build() {
+	cd "$pkgname-$pkgver"
+	cargo build --release --bin arch-java-gui --target-dir .
+}

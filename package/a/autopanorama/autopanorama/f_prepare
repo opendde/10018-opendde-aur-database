@@ -1,0 +1,7 @@
+prepare() {
+    cd "$pkgname-$pkgver"
+    gendesk -f -n --pkgname "$pkgname" --pkgdesc "$pkgdesc" --categories "Graphics"
+    git submodule init
+    git submodule update --depth=1
+    ./scripts/compile_opencv.sh
+}

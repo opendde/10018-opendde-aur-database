@@ -1,0 +1,4 @@
+package() {
+  cd ${pkgname}-${pkgver}
+  install -Dm 755 barify ${pkgdir}/usr/bin/barify
+}

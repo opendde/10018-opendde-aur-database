@@ -1,0 +1,31 @@
+build() {
+  cd $srcdir/bareos
+  QMAKE="/usr/bin/qmake-qt4" ./configure \
+    --prefix=/usr \
+    --sbindir=/usr/bin \
+    --sysconfdir=/etc \
+    --localstatedir=/ \
+    --libdir=/usr/lib/bareos \
+    --disable-conio \
+    --enable-traymonitor  \
+    --with-x \
+    --enable-client-only \
+    --with-python \
+    --with-openssl \
+    --disable-rpath \
+    --with-logdir=/var/log/bareos \
+    --with-fd-user=root \
+    --with-pid-dir=/run/bareos \
+    --with-fd-group=root \
+    --with-configtemplatedir=/usr/share/bareos/config \
+    --with-working-dir=/var/lib/bareos \
+    --with-plugindir=/usr/lib/bareos/plugins \
+    --with-scriptdir=/usr/lib/bareos/scripts \
+    --with-backenddir=/usr/lib/bareos/backends \
+    --with-archivedir=/var/lib/bareos/storage \
+    --with-bsrdir=/var/lib/bareos \
+    --with-subsys-dir=/run/bareos \
+    --with-systemd && make
+
+    make DESTDIR="$srcdir/install" install install-autostart
+}

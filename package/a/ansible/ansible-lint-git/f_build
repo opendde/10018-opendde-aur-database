@@ -1,0 +1,4 @@
+build() {
+  cd "${srcdir}/${_pkgname}"
+  python -m build --wheel --no-isolation
+}

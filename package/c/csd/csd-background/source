@@ -1,0 +1,1 @@
+("${_realname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz"

@@ -1,0 +1,4 @@
+build() {
+    cd box-installer
+    make
+}

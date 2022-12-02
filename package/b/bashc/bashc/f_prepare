@@ -1,0 +1,7 @@
+prepare() {
+  set -u
+  cd "${srcdir}/${_pkgname}"
+  ./configure --prefix='/usr' --sysconfdir="/etc/${pkgname}" --with-curses --enable-readline
+  sed -i -e 's:$(DESTDIR)$(prefix)/etc/:$(DESTDIR)/etc/:g' 'Makefile'
+  set +u
+}

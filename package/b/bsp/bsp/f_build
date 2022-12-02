@@ -1,0 +1,5 @@
+build() {
+  cd $srcdir/$pkgname-$pkgver
+  ./configure --prefix=/usr --mandir=/usr/share/man
+  make || return 1
+}

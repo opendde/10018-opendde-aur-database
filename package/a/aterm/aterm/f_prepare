@@ -1,0 +1,5 @@
+prepare() {
+  cd ${pkgname}-${pkgver}
+  sed -i 's%<sys/stropts.h>%<sys/ioctl.h>%;s%I_PUSH,%TIOCPKT,%' src/command.c
+
+}

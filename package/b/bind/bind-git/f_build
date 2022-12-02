@@ -1,0 +1,24 @@
+build() {
+  cd "${srcdir}/${reponame}"
+  export CFLAGS
+  # support to chase DNSSEC signature chains
+  CFLAGS+=' -DDIG_SIGCHASE'
+  # compile with gcc10, https://gcc.gnu.org/gcc-10/porting_to.html
+  CFLAGS+=' -fcommon'
+  autoreconf -fiv
+  ./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --sbindir=/usr/bin \
+    --localstatedir=/var \
+    --disable-static \
+    --enable-fixed-rrset \
+    --enable-full-report \
+    --with-maxminddb \
+    --with-openssl \
+    --with-libidn2 \
+    --with-json-c \
+    --with-libxml2 \
+    --with-lmdb
+  make
+}

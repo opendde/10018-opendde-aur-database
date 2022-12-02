@@ -1,0 +1,1 @@
+("${_gitname}::git+https://github.com/mickelson/${_gitname}.git#branch=${_gitbranch}"

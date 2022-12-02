@@ -1,0 +1,6 @@
+package() {
+    cd "${srcdir}/roms-${pkgver}"
+    install -d "$pkgdir/usr/share/86Box/roms"
+    cp -R [a-z]* "$pkgdir/usr/share/86Box/roms"
+    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

@@ -1,0 +1,12 @@
+prepare() {
+    # Generate .desktop
+    gendesk --pkgname "Amulet Map Editor" --pkgdesc "${pkgdesc}" --icon ${pkgname} --exec "/usr/bin/${pkgname}" --terminal "true" -n -f
+    cd ${srcdir}
+    mv Amulet\ Map\ Editor.desktop ${pkgname}.desktop
+
+    # make executable
+    cd "${srcdir}/Amulet/"
+    wget "https://pastebin.com/raw/Ec8QabtF" -O "amuletlaunch.sh" | dos2unix
+    dos2unix ./amuletlaunch.sh
+
+}

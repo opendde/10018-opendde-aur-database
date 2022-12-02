@@ -1,0 +1,13 @@
+package() {
+  make -C $pkgname-$_basever DESTDIR="$pkgdir" install
+  ln -s bash "$pkgdir/usr/bin/sh"
+
+  install -dm755 "$pkgdir/etc/bash"
+
+  install -Dm644 bashrc "$pkgdir/etc/bash/bashrc"
+  install -Dm644 bash_logout "$pkgdir/etc/bash/bash_logout"
+
+  install -dm755 "$pkgdir/etc/skel/.config/bash"
+  install -dm755 "$pkgdir/etc/skel/.cache/bash"
+  install -dm755 "$pkgdir/etc/skel/.cache/sh"
+}

@@ -1,0 +1,5 @@
+package() {
+  cd "$pkgname-$pkgver"
+  install -Dm755 "target/release/amp" "$pkgdir/usr/bin/amp"
+  install -Dm644 "LICENSE" "$pkgdir/usr/share/licenses/${pkgname}/LICENSE"
+}

@@ -1,0 +1,6 @@
+package() {
+    cd "${srcdir}/${_dirname}"
+    install -m755 -d "${pkgdir}/usr/share/themes"
+    
+    cp -r Arc-Darkest-3.38 "${pkgdir}/usr/share/themes/Arc-Darkest"
+}

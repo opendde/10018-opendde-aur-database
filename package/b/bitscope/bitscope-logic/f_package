@@ -1,0 +1,3 @@
+package() {
+   tar -xzf "${srcdir}/data.tar.gz" -C "${pkgdir}"
+}

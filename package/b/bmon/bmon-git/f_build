@@ -1,0 +1,7 @@
+build() {
+  cd "${pkgname%-*}"
+
+  ./autogen.sh
+  ./configure --prefix=/usr --sysconfdir=/etc --disable-asound
+  make
+}

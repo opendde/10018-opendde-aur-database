@@ -1,0 +1,4 @@
+build() {
+	arch-meson "${_reponame}" build
+	meson compile -C build
+}

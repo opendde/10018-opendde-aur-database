@@ -1,0 +1,11 @@
+package_bcm4350c5-firmware() {
+  pkgdesc="Broadcom bluetooth firmware for BCM4350C5 based devices."
+  conflicts=('bcm4350-firmware')
+
+  cd "${srcdir}"
+  mkdir -p ${pkgdir}/usr/lib/firmware/brcm
+  
+  for i in BCM4350C5-*.hcd; do
+    install -m644 "${srcdir}/$i" "${pkgdir}/usr/lib/firmware/brcm/$i"
+  done
+}

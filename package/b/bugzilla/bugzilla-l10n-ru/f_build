@@ -1,0 +1,7 @@
+build() {
+  mkdir -p $pkgdir/srv/http
+  cp -a $srcdir/bugzilla-$pkgver.ru $pkgdir/srv/http/bugzilla
+  find $pkgdir/srv/http/bugzilla -type f -exec chmod 0644 {} \;
+  find $pkgdir/srv/http/bugzilla -type d -exec chmod 0755 {} \;
+  mv $pkgdir/srv/http/bugzilla/template/ru-RU $pkgdir/srv/http/bugzilla/template/ru
+}

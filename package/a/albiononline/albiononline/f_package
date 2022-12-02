@@ -1,0 +1,11 @@
+package() {
+  mkdir -p "${pkgdir}/opt"
+  cp -a "${srcdir}/data" "${pkgdir}/opt/${pkgname}"
+  
+  # link exe
+  mkdir -p ${pkgdir}/usr/bin
+  ln -s "/opt/$pkgname/Albion-Online" "${pkgdir}/usr/bin/${pkgname}"
+
+  # install .desktop file
+  install -m755 -D ${srcdir}/albiononline.desktop -t ${pkgdir}/usr/share/applications
+}

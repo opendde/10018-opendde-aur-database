@@ -1,0 +1,51 @@
+package() {
+    # We are in the source directory ./src/
+    # Please note the source of the driver are in a subfolder:
+    # i.e.: src/AX88772C_772B_772A_760_772_178_Linux_Driver_v<version>_Source/
+    installDir="${pkgdir}/usr/src/${_modname}-dkms-${pkgver}"
+    install -dm755 "${installDir}"
+
+    # The kernel from kernel.org does provide an outdated module ax88179_178a.
+    # Arch Linux packages that module in their default kernel (normal + lts).
+    # We need to blacklist this module. This makes sure it is not loaded as
+    # ours will be conflicting with the default module.
+    install -dm755 "${pkgdir}/etc/modprobe.d"
+    install -m644 /dev/null \
+        "${pkgdir}/etc/modprobe.d/blacklist-${_modname}.conf"
+    printf "blacklist ${_modname}\n" \
+        > "${pkgdir}/etc/modprobe.d/blacklist-${_modname}.conf"
+
+    # Load ax88179_178a-dkms automatically at boot
+    install -dm755 "${pkgdir}/etc/modules-load.d"
+    install -m644 /dev/null \
+        "${pkgdir}/etc/modules-load.d/${_modname}-dkms.conf"
+    printf "${_modname}-dkms\n" \
+        > "${pkgdir}/etc/modules-load.d/${_modname}-dkms.conf"
+
+    # Patch dkms file and rename it to the mandatory dkms.conf filename.
+    install -m644 "${pkgname}.conf" "${installDir}/dkms.conf"
+    sed -e "s/@PKGVER@/${pkgver}/" \
+        -i "${installDir}/dkms.conf"
+
+    # Install module sources
+    cd "${srcdir}/${_filename}"
+
+    # 'cp' would have the same effect as 'install' here, because, even if we
+    # had defined a custom umask in our shell startup scripts, makepkg is
+    # redefining his own umask value 0022.
+    # src.: https://git.archlinux.org/pacman.git/tree/scripts/makepkg.sh.in?id=4f2fea240d3039294f6614003206a3dd1f67cfc5#n1255
+    # Also, if we were using a simple 'cp', we would have to rely on upstream
+    # providing the correct rights for us. While this is technically the case
+    # for now, using 'install' ensures we are using the correct rights even if
+    # upstream weren't.
+    # We are using a 'while' loop with 'read' and process substitution in order to harden this
+    # script in the event special chars were to be used.
+    # src.: http://mywiki.wooledge.org/BashPitfalls#line-92
+    while IFS= read -r -d '' directory; do
+        install -dm755 "${installDir}/${directory}"
+    done < <(find . -type d -print0)
+
+    while IFS= read -r -d '' file; do
+        install -m644  "${srcdir}/${_filename}/${file}" "${installDir}/${file}"
+    done < <(find . -type f -print0)
+}

@@ -1,0 +1,23 @@
+package() {
+	install -d ${pkgdir}/usr/share
+	cp -R usr/bin ${pkgdir}/usr
+	cp -R usr/local/Brother ${pkgdir}/usr/share/Brother
+
+	echo 'Fixing paths...'
+	find ${pkgdir} -type f -exec sed -i s#/usr/local/Brother#/usr/share/Brother#g {} \;
+
+	echo 'Installing PPD.'
+	mkdir -p ${pkgdir}/usr/share/cups/model/
+
+	PKGDIR=${pkgdir} SRCDIR=${srcdir} DESTDIR=${pkgdir} DRIVER_PREFIX=/usr/share/Brother \
+	usr/local/Brother/Printer/hl4140cn/cupswrapper/cupswrapperhl4140cn -s
+
+	rm ${pkgdir}/usr/share/Brother/Printer/hl4140cn/cupswrapper/cupswrapperhl4140cn 
+	rm ${pkgdir}/usr/share/Brother/Printer/hl4140cn/inf/setupPrintcapij
+
+	chown root:lp ${pkgdir}/usr/share/Brother/Printer/hl4140cn/inf
+	chmod 775 ${pkgdir}/usr/share/Brother/Printer/hl4140cn/inf
+	chown daemon:lp ${pkgdir}/usr/share/Brother/Printer/hl4140cn/inf/brhl4140cnrc
+	chmod 664 ${pkgdir}/usr/share/Brother/Printer/hl4140cn/inf/brhl4140cnrc
+	install -Dm644 Brother.license ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
+}

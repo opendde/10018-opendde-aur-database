@@ -1,0 +1,12 @@
+build() {
+    cd "Arduino-master-${pkgver}/build"
+
+    # Compile with java8
+    export PATH=/usr/lib/jvm/default/bin/:"$PATH"
+
+    # Do not include their avr-core + tools and no docs. We build them seperately
+    ant clean dist -Dversion="${pkgver}" build -Dlight_bundle=true \
+                                             -Dno_docs=true \
+                                             -Dlocal_sources=true \
+                                             -Dno_arduino_builder=true
+}

@@ -1,0 +1,5 @@
+build() {
+  cd "$_pkgname"
+  git checkout develop
+  make CARGOFLAGS="--release --locked"
+}

@@ -1,0 +1,6 @@
+build() {
+  cmake -B build -S "$_pkgname" \
+    -DCMAKE_INSTALL_PREFIX='/usr'
+
+  make -C build
+}

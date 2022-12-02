@@ -1,0 +1,7 @@
+package() {
+  cd "$srcdir/OTF"
+
+  install -dm755 "$pkgdir/usr/share/fonts/adobe-source-han-serif"
+  install -Dm644 *.otf "$pkgdir/usr/share/fonts/adobe-source-han-serif/"
+  install -Dm644 ../LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

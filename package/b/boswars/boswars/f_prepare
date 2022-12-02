@@ -1,0 +1,13 @@
+prepare() {
+  cd $pkgname-$pkgver-src
+
+  # use python2 in doc generator scripts
+  sed 's|env python$|&2|' -i doc/scripts/*.py
+  # fix 'zlib too far back error' of png images (needed for libpng>=1.6)
+  msg2 "Fixing PNG images…"
+  for _f in {maps/antarticum.map/terrain,graphics/ui/ui_*,units/{radar/*,tree*/tree0?}}.png
+  do
+    pngfix -e -w --out=$_f.fixed $_f || : # ignore exit code
+    mv $_f.fixed $_f
+  done
+}

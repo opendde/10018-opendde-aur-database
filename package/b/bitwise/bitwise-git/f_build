@@ -1,0 +1,6 @@
+build() {
+  cd "$srcdir/$pkgname"
+  ./bootstrap.sh
+  ./configure --prefix=/usr
+  make
+}

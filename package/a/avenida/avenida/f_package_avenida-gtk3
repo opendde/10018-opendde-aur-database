@@ -1,0 +1,9 @@
+package_avenida-gtk3() {
+    pkgdesc+=' (GTK3 version [EXPERIMENTAL])'
+    groups=('mate-gtk3')
+    conflicts=("${pkgbase}")
+    depends=('dconf' 'gtk3' 'startup-notification')
+
+    cd "${srcdir}/${pkgbase}-gtk3"
+    make DESTDIR="${pkgdir}" install
+}

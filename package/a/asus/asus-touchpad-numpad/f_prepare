@@ -1,0 +1,6 @@
+prepare() {
+	echo "[!]Prepare install you need to configure the layout of your keyboard and your touchpad"
+	echo "Don't forget to enable and start the service asus_touchpad_numpad after installation"
+	echo "to enable : sudo systemctl enable asus_touchpad_numpad"
+	echo "to start : sudo systemctl start asus_touchpad_numpad"
+}

@@ -1,0 +1,6 @@
+package() {
+	cd "${srcdir}/${_name}"
+	python -m installer --destdir="$pkgdir" target/wheels/*.whl
+	install -Dm644 "${srcdir}/${_name}.desktop" "$pkgdir/usr/share/applications/${_name}.desktop"
+	install -Dm644 "${srcdir}/${_name}.png" "$pkgdir/usr/share/pixmaps/${_name}.png"
+}

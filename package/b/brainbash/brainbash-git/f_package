@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir/brainbash"
+  install -Dm755 -t "$pkgdir/usr/bin" brainbash
+  install -Dm644 -t "$pkgdir/usr/share/doc/$pkgname" README.md
+  install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
+}

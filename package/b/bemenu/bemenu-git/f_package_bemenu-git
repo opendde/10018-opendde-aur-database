@@ -1,0 +1,8 @@
+package_bemenu-git() {
+	depends=(bemenu-renderer-git)
+	provides=(libbemenu-git bemenu)
+	conflicts=('bemenu')
+
+	cd "$_pkgbase"
+	make DESTDIR="$pkgdir" PREFIX=/usr install-base install-docs
+}

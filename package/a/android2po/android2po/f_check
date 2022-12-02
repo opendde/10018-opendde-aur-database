@@ -1,0 +1,10 @@
+check() {
+  cd "${_tarname}"
+  (
+    export PYTHONPATH="${PWD}/build/lib:${PYTHONPATH}"
+    nosetests \
+      --detailed-errors \
+      --no-byte-compile \
+      --verbose
+  )
+}

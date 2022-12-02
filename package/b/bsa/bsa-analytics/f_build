@@ -1,0 +1,23 @@
+build() {
+  cd $srcdir
+  msg "Connecting to the GIT server..."
+  if [[ -d $srcdir/$_gitname ]] ; then
+    cd $_gitname
+    git pull origin
+    msg "The local files are updated."
+  else
+    git clone $_gitroot
+  fi
+
+  msg "GIT checkout done"
+  msg "Starting make"
+  if [[ -d ${srcdir}/BSA-Analytics/build ]]; then
+    msg "Cleaning previous build directory..."
+    rm -rf ${srcdir}/BSA-Analytics/build
+  fi
+
+  mkdir ${srcdir}/BSA-Analytics/build
+  cd ${srcdir}/BSA-Analytics/build
+  qmake-qt5 ../src
+  make -j2
+}

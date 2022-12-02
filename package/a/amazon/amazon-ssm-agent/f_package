@@ -1,0 +1,13 @@
+package() {
+  local debdir="$srcdir/$pkgname-$pkgver/bin/debian_amd64/debian"
+
+  install -dm755 "$pkgdir"/usr/
+  cp -R "${debdir}"/usr/ "$pkgdir"
+
+  install -dm755 "$pkgdir"/etc/amazon/
+  cp -R "${debdir}"/etc/amazon/ "$pkgdir/etc/"
+
+  install -Dm644 \
+      "$debdir"/lib/systemd/system/amazon-ssm-agent.service \
+      "$pkgdir"/usr/lib/systemd/system/amazon-ssm-agent.service
+}

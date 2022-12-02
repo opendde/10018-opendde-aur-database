@@ -1,0 +1,14 @@
+package() {
+  cd "$srcdir/$pkgname"
+
+  install -d "$pkgdir/opt/pret/agbcc/bin"
+  install -d "$pkgdir/opt/pret/agbcc/include"
+  install -d "$pkgdir/opt/pret/agbcc/lib"
+  install -s -m755 "$srcdir/agbcc.elf" "$pkgdir/opt/pret/agbcc/bin/agbcc"
+  install -m644 "$srcdir/libgcc.a" "$pkgdir/opt/pret/agbcc/lib/libgcc.a"
+  install -m644 "$srcdir/libc.a" "$pkgdir/opt/pret/agbcc/lib/libc.a"
+  mv "$srcdir/$pkgname/ginclude" "$srcdir/$pkgname/include"
+  cp -r "$srcdir/$pkgname/include" "$pkgdir/opt/pret/agbcc/"
+  cp -r "$srcdir/$pkgname/libc/include" "$pkgdir/opt/pret/agbcc/"
+  find "$pkgdir/opt/pret/agbcc/include" -type f -exec chmod 644 {} \;
+}

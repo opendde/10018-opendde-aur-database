@@ -1,0 +1,14 @@
+build() {
+  # configure
+  cd ${srcdir}/${pkgname}
+
+  ./configure \
+    --prefix=/usr \
+    --with-tcl=/usr/lib \
+    --with-x --x-includes=/usr/include \
+    --x-libraries=/usr/lib \
+    --mandir=/usr/share/man
+
+  # Compile
+  make CFLAGS="$CFLAGS" CXXFLAGS="$XXCFLAGS"
+}

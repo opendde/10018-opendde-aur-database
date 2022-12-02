@@ -1,0 +1,4 @@
+package() {
+    cd "${startdir}/build/active-data"
+    make DESTDIR="${pkgdir}" install
+}

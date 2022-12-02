@@ -1,0 +1,1 @@
+("fluidsynth-$pkgver.tar.gz::https://github.com/fluidsynth/fluidsynth/archive/v$pkgver.tar.gz")

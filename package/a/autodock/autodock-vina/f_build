@@ -1,0 +1,4 @@
+build() {
+  cd "$srcdir"/AutoDock-Vina-$pkgver/build/linux/release
+  make
+}

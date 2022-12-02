@@ -1,0 +1,14 @@
+build() {
+  cd build
+
+  CXXFLAGS+=" $(pkg-config --cflags avisynth)"
+
+  cmake "../${_plug}/src" \
+   -DCMAKE_BUILD_TYPE=Release \
+   -DCMAKE_INSTALL_PREFIX=/usr \
+
+  make
+
+  cd ..
+  make -C "${srcdir}/${_plug}/RetrieveRanges"
+}

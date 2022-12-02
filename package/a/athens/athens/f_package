@@ -1,0 +1,6 @@
+package() {
+  install -Dm755 "${srcdir}/${pkgname}-${pkgver}/cmd/proxy/proxy" "${pkgdir}/usr/bin/${pkgname}"
+  install -Dm644 "${srcdir}/${pkgname}-${pkgver}/config.dev.toml" "${pkgdir}/etc/${pkgname}/config.toml"
+  install -Dm644 "${srcdir}/${pkgname}-${pkgver}/LICENSE" "${pkgdir}/usr/share/licenses/athens/LICENSE"
+  install -Dm644 "${srcdir}/athens.service" "$pkgdir/usr/lib/systemd/system/athens.service"
+}

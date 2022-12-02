@@ -1,0 +1,6 @@
+build() {
+  cd "${srcdir}/${_distname}-${pkgver//_/-}"
+  
+  ./configure
+  make
+}

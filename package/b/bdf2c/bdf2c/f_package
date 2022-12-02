@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir/$pkgname"
+  mkdir -p $pkgdir/usr/bin
+  cp bdf2c $pkgdir/usr/bin
+}

@@ -1,0 +1,4 @@
+prepare() {
+	cd "${srcdir}/avr-libc-${_avrlibcver}/include/avr"
+	patch -i "${srcdir}/io.h.patch"
+}

@@ -1,0 +1,7 @@
+pkgver() {
+    cd "$_pkgname"
+    # cutting off 'v' prefix that presents in the git tag
+    # but also use the last tag actually describing a version, which is the latest
+    # tag starting with v (for now)
+    git describe --match v\* --long | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}

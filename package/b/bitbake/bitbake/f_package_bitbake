@@ -1,0 +1,22 @@
+package_bitbake() {
+    depends=(python python-beautifulsoup4 python-ply python-codegen
+             python-progressbar python-pyinotify python-simplediff
+             cpio diffstat)
+    install=bitbake.install
+
+    _pythonver=$(python --version | awk '{print $2}' | awk -F. '{print $1"."$2}')
+    cd "${pkgbase}-${pkgver}"
+
+    find . -iname "*.log" -delete
+    install -d "${pkgdir}/usr/bin"
+    install bin/bitbake* "${pkgdir}/usr/bin"
+
+    install -d "${pkgdir}/usr/lib/python${_pythonver}/site-packages"
+    cp -Ra lib/bb "${pkgdir}/usr/lib/python${_pythonver}/site-packages"
+    cp -Ra lib/prserv "${pkgdir}/usr/lib/python${_pythonver}/site-packages"
+    cp -Ra lib/hashserv "${pkgdir}/usr/lib/python${_pythonver}/site-packages"
+    cp -Ra lib/bb/pysh "${pkgdir}/usr/lib/python${_pythonver}/site-packages"
+
+    install -d "${pkgdir}/usr/share/man/man1"
+    install doc/bitbake.1 "${pkgdir}/usr/share/man/man1"
+}

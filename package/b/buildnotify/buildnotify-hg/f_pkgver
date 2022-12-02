@@ -1,0 +1,12 @@
+pkgver() {
+  _installmodule > /dev/null 2>&1
+
+  version=$(PYTHONPATH="${srcdir}/buildnotify/" /usr/bin/python2 <<EOF
+import pkg_resources
+print pkg_resources.require('buildnotify')[0].version
+EOF
+  )
+
+  cd "${srcdir}/buildnotify"
+  printf "%s.r%s.%s" "$version" "$(hg identify -n)" "$(hg identify -i)"
+}

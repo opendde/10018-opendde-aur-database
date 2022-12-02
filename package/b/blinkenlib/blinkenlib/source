@@ -1,0 +1,1 @@
+("git+http://git.blinkenarea.org/projects/BlinkenLib#tag=v${pkgver}")

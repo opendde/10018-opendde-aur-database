@@ -1,0 +1,6 @@
+package() {
+  cd $_gitname
+  install -d -m0755 "$pkgdir/usr/lib/antievilmaid"
+  install -m0755 antievilmaid_install "$pkgdir/usr/lib/antievilmaid/"
+  install -m0644 README "$pkgdir/usr/lib/antievilmaid/"
+}

@@ -1,0 +1,4 @@
+prepare() {
+	chmod +x "${_appimage}"
+	./"${_appimage}" --appimage-extract
+}

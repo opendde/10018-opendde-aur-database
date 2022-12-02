@@ -1,0 +1,15 @@
+package() {
+  mv "${srcdir}/opt" "${pkgdir}"
+
+  chmod +x "${pkgdir}/opt/albion-online-launcher-bin/game_x64/Albion-Online"
+
+  mkdir -p "${pkgdir}/usr/bin"
+  echo "#!/bin/sh" > "${pkgdir}/usr/bin/albion-online-live"
+  echo 'sed -i -e "/Screenmanager Resolution Height/d" "$HOME/.config/unity3d/Sandbox Interactive GmbH/Albion Online Client/prefs"' >> "${pkgdir}/usr/bin/albion-online-live"
+  echo 'sed -i -e "/Screenmanager Resolution Width/d" "$HOME/.config/unity3d/Sandbox Interactive GmbH/Albion Online Client/prefs"' >> "${pkgdir}/usr/bin/albion-online-live"
+  echo "LD_PRELOAD=/opt/albion-online-launcher-bin/game_x64/Albion-Online_Data/Plugins/x86_64/libSDL2-2.0.so.0 /opt/albion-online-launcher-bin/game_x64/Albion-Online" >> "${pkgdir}/usr/bin/albion-online-live"
+  chmod +x "${pkgdir}/usr/bin/albion-online-live"
+
+  # install .desktop file
+  install -m755 -D "${srcdir}/albion-online-live.desktop" -t "${pkgdir}/usr/share/applications"
+}

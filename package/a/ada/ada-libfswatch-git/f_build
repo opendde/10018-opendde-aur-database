@@ -1,0 +1,9 @@
+build() {
+    cd "$srcdir/ada_libfswatch"
+
+    ADA_FLAGS="$CFLAGS"
+    ADA_FLAGS="${ADA_FLAGS//-Wformat}"
+    ADA_FLAGS="${ADA_FLAGS//-Werror=format-security}"
+
+    make GPRBUILD_FLAGS="-vh -R -cargs $ADA_FLAGS -largs $LDFLAGS -gargs"
+}

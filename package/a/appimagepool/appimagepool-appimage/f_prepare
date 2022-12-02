@@ -1,0 +1,8 @@
+prepare() {
+	mv "${_filename}" "$_appimage"
+	chmod +x "$_appimage"
+	"./$_appimage" --appimage-extract
+
+  # Fix the desktop file
+  sed -i -E "s:Exec=appimagepool %u:Exec=/opt/${_pkgname}/${_appimage}:" "squashfs-root/${_pkgname}.desktop"
+}

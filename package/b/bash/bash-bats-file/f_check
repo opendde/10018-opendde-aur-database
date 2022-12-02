@@ -1,0 +1,5 @@
+check() {
+   cd "${srcdir}/bats-file-${pkgver}"
+   echo "tests contains sudo invocation, will avoid to run them"
+   #TEST_DEPS_DIR="/usr/lib/" bats test
+}

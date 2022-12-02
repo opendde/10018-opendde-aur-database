@@ -1,0 +1,17 @@
+package() {
+	# Copy release files to /opt/bloom
+    install -d "${pkgdir}/opt/bloom/"
+    cp -r "${srcdir}/${pkgname}/release/bin/" "${pkgdir}/opt/bloom/"
+    # use native Arch libraries
+    rm -rf "${pkgdir}/opt/bloom/bin/lib"
+    cp -r "${srcdir}/${pkgname}/release/resources/" "${pkgdir}/opt/bloom/"
+    chmod u=rwx,g=rwx,o=rx -R "${pkgdir}/opt/bloom/"
+
+	# Create symlink in /usr/bin
+    install -d "${pkgdir}/usr/bin/"
+    ln -s -r "${pkgdir}/opt/bloom/bin/bloom" "${pkgdir}/usr/bin/bloom"
+
+	# Install udev rules
+	install -d "${pkgdir}/etc/udev/rules.d"
+	cp "${srcdir}/${pkgname}/resources/udevrules/99-bloom.rules" "${pkgdir}/etc/udev/rules.d/99-bloom.rules"
+}

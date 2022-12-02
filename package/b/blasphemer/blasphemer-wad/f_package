@@ -1,0 +1,4 @@
+package() {
+    install "$srcdir"/blasphem-${pkgver}.wad "$pkgdir"/usr/share/doom/blasphem.wad -D -m 644
+    install "$srcdir"/COPYING.md -t "$pkgdir"/usr/share/licenses/$pkgname -D -m 644
+}

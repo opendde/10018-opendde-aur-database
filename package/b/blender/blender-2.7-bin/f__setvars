@@ -1,0 +1,9 @@
+_setvars() {
+	cd "$srcdir"
+	local regex="blender-(2.7[^-]*)-([^-]+)-linux-([^-]+)-$CARCH.tar.bz2" && [[ $(cat download$_inc) =~ $regex ]]
+	_full=${BASH_REMATCH[0]}
+	_upstreamversion=${BASH_REMATCH[1]}
+	_commit=${BASH_REMATCH[2]}
+	local regex="$_full\".* ([0-9]+-[A-Za-z]+-[0-9]+ [0-9]+:[0-9]+)" && [[ $(cat download$_inc) =~ $regex ]]
+	_date=$(date --date="${BASH_REMATCH[1]}" "+%y%m%d")
+}

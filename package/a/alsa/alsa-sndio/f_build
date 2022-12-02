@@ -1,0 +1,7 @@
+build() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+
+	sed -i 's?/usr/local?/usr?g' Makefile
+
+	make
+}

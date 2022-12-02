@@ -1,0 +1,4 @@
+build() {
+    cd "$srcdir"/$pkgname/
+    g++ $pkgname.cpp -o $pkgname -Wall
+}

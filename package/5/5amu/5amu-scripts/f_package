@@ -1,0 +1,5 @@
+package() {
+    cd $srcdir/scripts-$pkgver
+    mkdir -p $pkgdir/usr/bin
+    install -Dm755 sh/* $pkgdir/usr/bin/
+}

@@ -1,0 +1,8 @@
+package() {
+	cd "${srcdir}"/"${_pkgname}"
+	install -Dm644 "LICENSE.md" "${pkgdir}/usr/share/licenses/${_pkgname}/LICENSE"
+	install -Dm755 "album_splitter.sh" "${pkgdir}/opt/${_pkgname}/album_splitter.sh"
+	install -Dm644 "format_titles.awk" "${pkgdir}/opt/${_pkgname}/format_titles.awk"
+	install -Dm644 "split_audio.awk" "${pkgdir}/opt/${_pkgname}/split_audio.awk"
+	install -Dm755 "${startdir}/album_splitter.sh" "${pkgdir}/usr/bin/album_splitter"
+}

@@ -1,0 +1,33 @@
+package() {
+  cd "${pkgname}/"
+  install -dm755 "$pkgdir/usr/bin/"
+  cat << EOF > "$pkgdir/usr/bin/$pkgname"
+#!/bin/sh
+exec /usr/lib/jvm/java-17-openjdk/bin/java -jar '/usr/share/java/briar-desktop.jar' "\$@"
+EOF
+  chmod +x "$pkgdir/usr/bin/$pkgname"
+
+  install -m 644 -D "${srcdir}/${pkgname}/${pkgname}/build/compose/jars/Briar-linux-${_gradle_arch}-${_bin_ver}-${_build_type}.jar" "$pkgdir/usr/share/java/$pkgname.jar"
+
+  install -Dm644 ${srcdir}/${pkgname}/${pkgname}/src/main/resources/images/logo_circle.svg \
+    "$pkgdir/usr/share/icons/hicolor/scalable/apps/$pkgname.svg"
+
+  # generated with inkscape from the svg
+  # just seemed unreasonable to require inkscape as a makedep
+  # for size in 16 32 48 64 128 192; do
+  # inkscape --export-background-opacity=0 \
+  #     --export-width=${size} --export-type=png \
+  #     --export-filename=${size}.png briar-desktop.svg
+  # done
+
+  for i in 16 32 48 64 128 192; do
+    install -Dm644 ${srcdir}/briar${i}.png \
+      "$pkgdir/usr/share/icons/hicolor/${i}x${i}/apps/$pkgname.png"
+  done
+
+  install -Dm644 ${srcdir}/$pkgname.desktop \
+    "$pkgdir/usr/share/applications/$pkgname.desktop"
+
+  install -Dm644 ${srcdir}/${pkgname}/${pkgname}/src/appResources/linux/org.briarproject.Briar.metainfo.xml \
+    "$pkgdir/usr/share/metainfo/org.briarproject.Briar.metainfo.xml"
+}

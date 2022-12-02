@@ -1,0 +1,4 @@
+package() {
+    cd "$pkgname-$pkgver"
+    make -C build DESTDIR="$pkgdir" install
+}

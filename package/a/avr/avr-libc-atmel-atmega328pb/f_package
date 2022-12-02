@@ -1,0 +1,5 @@
+package() {
+  install -Dm644 gcc/dev/atmega328pb/avr5/crtatmega328pb.o "$pkgdir/usr/avr/lib/avr5/crtatmega328pb.o"
+  install -Dm644 gcc/dev/atmega328pb/avr5/libatmega328pb.a "$pkgdir/usr/avr/lib/avr5/libatmega328pb.a"
+  install -Dm644 include/avr/iom328pb.h "$pkgdir/usr/avr/include/avr/iom328pb.h"
+}

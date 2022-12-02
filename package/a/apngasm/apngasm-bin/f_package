@@ -1,0 +1,4 @@
+package() {
+  install -Dm755 apngasm -t "${pkgdir}/usr/bin"
+  install -Dm644 readme.txt -t "${pkgdir}/usr/share/doc/${pkgname}"
+}

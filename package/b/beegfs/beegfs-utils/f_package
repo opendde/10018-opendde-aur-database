@@ -1,0 +1,14 @@
+package() {
+    cd "$srcdir/$pkgname-$pkgver/$_srcname/scripts"
+    install -D --mode=0644 etc/bash_completion.d/beegfs-ctl "${pkgdir}/etc/bash_completion.d/beegfs-ctl"
+    install -D --mode=0755 beegfs-check-servers "${pkgdir}/usr/bin/beegfs-check-servers"
+    install -D --mode=0755 beegfs-df "${pkgdir}/usr/bin/beegfs-df"
+    install -D --mode=0755 beegfs-net "${pkgdir}/usr/bin/beegfs-net"
+
+    cd "$srcdir/$pkgname-$pkgver"
+    install -D --mode=0755 ctl/build/beegfs-ctl "${pkgdir}/usr/bin/beegfs-ctl"
+    install -D --mode=0644 ctl/build/libCtl.a "${pkgdir}/usr/lib/beegfs/libCtl.a"
+    install -D --mode=0755 fsck/build/beegfs-fsck "${pkgdir}/usr/bin/beegfs-fsck"
+    install -D --mode=0644 fsck/build/libFsck.a "${pkgdir}/usr/lib/beegfs/libFsck.a"
+    install -D --mode=0644 LICENSE.txt "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.txt"
+}

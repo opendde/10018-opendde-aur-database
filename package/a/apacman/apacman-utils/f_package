@@ -1,0 +1,12 @@
+package() {
+  cd "${srcdir}/apacman-utils-master"
+
+  # Install scripts
+  mkdir -p "$pkgdir/usr/bin"
+  install -m755 apac-migrate "$pkgdir/usr/bin/apac-migrate"
+  install -m755 aurpush "$pkgdir/usr/bin/aurpush"
+
+  # Install license
+  mkdir -p "${pkgdir}/usr/share/licenses/apacman-utils"
+  install -m644 LICENSE ${pkgdir}/usr/share/licenses/apacman-utils/LICENSE
+}

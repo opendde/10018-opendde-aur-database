@@ -1,0 +1,6 @@
+package() {
+	cd "${srcdir}/brltty-${pkgver}"
+	make INSTALL_ROOT="$pkgdir" install
+	install -Dm644 Documents/brltty.conf "$pkgdir/etc/brltty.conf"
+	install -Dm644 ../brltty.service "$pkgdir/usr/lib/systemd/system/brltty.service"
+}

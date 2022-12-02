@@ -1,0 +1,9 @@
+package() {
+  bsdtar -xf data.tar.xz -C "$pkgdir"
+  cd "${pkgdir}"
+  #install -Dm644 "${srcdir}"/LICENSE usr/share/licenses/electron-lark-bin/LICENSE
+  #chmod 755 opt/
+  #chmod 755 usr/
+  #chmod 755 usr/share/
+  #chmod 755 usr/share/applications/
+}

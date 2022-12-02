@@ -1,0 +1,4 @@
+pkgver() {
+    cd airtime
+    git describe --long --tags | cut -c 9- | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}

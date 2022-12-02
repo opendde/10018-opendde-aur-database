@@ -1,0 +1,5 @@
+package() {
+	mkdir -p $pkgdir/usr/bin
+	cd "$srcdir/$pkgname-$pkgver"
+	make DESTDIR=$pkgdir/usr/bin install
+}

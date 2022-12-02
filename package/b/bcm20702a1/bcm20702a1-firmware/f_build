@@ -1,0 +1,11 @@
+build() {
+  cd "${srcdir}"
+
+  while read p; do
+    filename=$(echo $p|awk -F':' '{print $3}'|sed 's% %%g')
+    bcm=$(echo $filename|awk -F'_' '{print $1}')
+    vid=$(echo $p|awk -F':' '{print tolower($1)}')
+    pid=$(echo $p|awk -F':' '{print tolower($2)}')
+    hex2hcd "$srcdir/Win10_USB-BT400_DRIVERS/Win10_USB-BT400_Driver_Package/64/$filename" -o "$bcm-$vid-$pid.hcd"
+  done < "${srcdir}/filelist.txt"
+}

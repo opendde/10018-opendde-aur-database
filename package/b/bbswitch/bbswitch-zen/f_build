@@ -1,0 +1,4 @@
+build() {
+  cd bbswitch-${pkgver}
+  make -C /usr/lib/modules/${_kernname}/build M=$(pwd) modules
+}

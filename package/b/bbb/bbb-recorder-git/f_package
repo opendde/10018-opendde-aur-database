@@ -1,0 +1,25 @@
+package() {
+    install -Dm755 bbb-recorder-export.sh    "$pkgdir"/usr/bin/bbb-recorder
+
+    # AFAICT the other scripts are only usable if you adminstrate the BBB server too.
+    # install -Dm755 bbb-recorder-livejoin.sh  "$pkgdir"/usr/bin/bbb-recorder-livejoin
+    # install -Dm755 bbb-recorder-broadcast.sh "$pkgdir"/usr/bin/bbb-recorder-broadcast
+
+    # Storing it together with the node modules in /opt, so that the node modules do not need to be installed globally.
+    install -Dm644 "$srcdir"/bbb-recorder/.env.example -t "$pkgdir"/opt/bbb-recorder/
+    cp -a "$srcdir"/bbb-recorder/* "$pkgdir"/opt/bbb-recorder/
+
+    # Did that already by listing them as package dependencies.
+    rm "$pkgdir"/opt/bbb-recorder/dependencies_check.sh
+
+    # Need to do that differently (like in the bbb-recorder.install script).
+    # It even seems that the namespaceing for users is not needed.
+    rm "$pkgdir"/opt/bbb-recorder/namespace_checker.sh
+
+    # Example script for usage with docker-compose, should not be used without it.
+    chmod 644 "$pkgdir"/opt/bbb-recorder/start_stream.sh
+    mv "$pkgdir"/opt/bbb-recorder/start_stream.sh "$pkgdir"/opt/bbb-recorder/docker-compose.start_stream.sh
+
+    install -dm755 "$pkgdir"/usr/share/licenses/$pkgname/
+    mv "$pkgdir"/opt/bbb-recorder/LICENSE "$pkgdir"/usr/share/licenses/$pkgname/
+}

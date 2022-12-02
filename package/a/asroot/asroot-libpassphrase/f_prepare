@@ -1,0 +1,5 @@
+prepare() {
+  cd "${srcdir}/asroot"
+  sed '/CPPFLAGS/s/$/ -DWITH_LIBPASSPHRASE/' < config.mk > config.mk.tmp
+  sed '/LDFLAGS/s/$/ -lpassphrase/' < config.mk.tmp > config.mk
+}

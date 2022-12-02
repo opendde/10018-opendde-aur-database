@@ -1,0 +1,3 @@
+package() {
+	sudo ./install.sh
+}

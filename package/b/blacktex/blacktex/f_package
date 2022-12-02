@@ -1,0 +1,3 @@
+package() {
+	PYTHONHASHSEED=0 python -m installer --destdir="$pkgdir/" *.whl
+}

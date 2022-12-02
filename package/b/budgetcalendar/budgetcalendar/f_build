@@ -1,0 +1,7 @@
+build() {
+	cd "${srcdir}"
+
+	msg "Extracting package..."
+	mkdir "${srcdir}/${pkgname}-${pkgver}"
+	echo "y" | sh ./BudgetCalendar.sh -i -u "${srcdir}/${pkgname}-${pkgver}" >/dev/null 2>&1
+}

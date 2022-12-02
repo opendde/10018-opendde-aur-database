@@ -1,0 +1,3 @@
+package() {
+    install -Dm0755 ${srcdir}/arm-$pkgver-linux-amd64 "$pkgdir/usr/local/bin/arm"
+}

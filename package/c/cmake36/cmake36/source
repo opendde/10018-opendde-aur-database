@@ -1,0 +1,1 @@
+("https://www.cmake.org/files/v${pkgver%.*}/${_pkgname}-${pkgver}.tar.gz")

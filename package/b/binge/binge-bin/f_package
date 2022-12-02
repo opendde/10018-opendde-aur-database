@@ -1,0 +1,18 @@
+package() {
+    for dir in Binge-linux-*/ ; do mv "${dir}" "$_pkgname" ;done
+    cd $_pkgname
+    install -dm755 "$pkgdir/opt/Binge"
+    install -dm755 "$pkgdir/usr/share/pixmaps"    
+    cp -r ./ "$pkgdir/opt/Binge"
+    cp -r "$pkgdir/opt/Binge/binge.svg" "$pkgdir/usr/share/pixmaps"  
+
+
+    # Link to binary
+    install -dm755 "$pkgdir/usr/bin"
+    ln -s "/opt/Binge/binge" "$pkgdir/usr/bin/binge"
+
+    # Desktop Entry
+    install -Dm644 "$srcdir/$_pkgname/Binge.desktop" \
+        "$pkgdir/usr/share/applications/Binge.desktop"
+    sed -i s%/usr/share%/opt% "$pkgdir/usr/share/applications/Binge.desktop"
+}

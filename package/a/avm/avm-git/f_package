@@ -1,0 +1,6 @@
+package() {
+  cd "avm"
+
+  make -C "_build" DESTDIR="$pkgdir" install
+  install -Dm644 {LICENSE,PATENTS} -t "$pkgdir/usr/share/licenses/avm"
+}

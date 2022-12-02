@@ -1,0 +1,14 @@
+package() {
+  cd "$pkgdir"
+
+  # Install the profile.d file to extend the PATH
+  install -Dm755 "$srcdir/cmgui.sh" "$pkgdir/etc/profile.d/cmgui.sh"
+
+  # Install the desktop file
+  install -Dm644 "$srcdir/cmgui.desktop" "$pkgdir/usr/share/applications/cmgui.desktop"
+
+  # Extract the archive
+  msg2 "Extracting archive"
+  install -d "$pkgdir/opt/BrightCMGUI"
+  bsdtar --strip-components 1 -xjf "$srcdir/${_pkgname}-${_ver}.tar.bz2" -C "$pkgdir/opt/BrightCMGUI"
+}

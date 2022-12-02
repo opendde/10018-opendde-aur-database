@@ -1,0 +1,4 @@
+check() {
+  cd $_pkgname
+  lv2lint -Mpack -I "$_name.lv2" "$_plugin_uri"
+}

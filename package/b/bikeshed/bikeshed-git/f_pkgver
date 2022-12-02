@@ -1,0 +1,5 @@
+pkgver() {
+  cd "bikeshed"
+
+  printf "%s.%s" "$(cat semver.txt)" "$(git rev-parse --short HEAD)"
+}

@@ -1,0 +1,9 @@
+build() {
+  cd "bash-completion"
+
+  autoreconf -fi
+  ./configure \
+    --prefix="/usr" \
+    --sysconfdir="/etc"
+  make
+}

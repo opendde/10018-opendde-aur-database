@@ -1,0 +1,4 @@
+pkgver() {
+  cd autopano-sift-C
+  echo $(hg identify -n).$(hg identify -i)
+}

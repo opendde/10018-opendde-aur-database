@@ -1,0 +1,6 @@
+build() {
+  cd "$srcdir/$pkgname"
+  python setup.py build
+  cd "$srcdir/$pkgname/doc"
+  docbook2man --sgml autotrash.sgml
+}

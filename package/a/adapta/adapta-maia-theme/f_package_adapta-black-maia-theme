@@ -1,0 +1,46 @@
+package_adapta-black-maia-theme() {
+pkgdesc="An adaptive Gtk+ theme based on Material Design Guidelines.Build with Manjaro Maia color Black version"
+    build_black-maia-theme
+    #cd "adapta-maia-theme-${pkgver}"
+    make install
+
+    install -dm 755 "${pkgdir}"/usr/share/plank/themes
+    ln -s /usr/share/themes/Adapta-Black-Maia/plank "${pkgdir}"/usr/share/plank/themes/Adapta-Black-Maia
+    install -Dm 644 LICENSE_CC_BY_SA4 -t "${pkgdir}"/usr/share/licenses/adapta-black-maia-theme/
+
+    # Move the file into another folder to match with name
+    cd "$pkgdir/usr/share/themes"
+    mv Adapta Adapta-Black-Maia
+    mv Adapta-Nokto Adapta-Black-Nokto-Maia
+    mv Adapta-Eta Adapta-Black-Eta-Maia
+    mv Adapta-Nokto-Eta Adapta-Black-Nokto-Eta-Maia
+
+    # Modify the index theme
+    sed -i -e 's,.*Adapta.*,Adapta-Black-Maia,' $pkgdir/usr/share/themes/Adapta-Black-Maia/index.theme
+    sed -i -e 's,.*Adapta-Nokto.*,Adapta-Black-Nokto-Maia,' $pkgdir/usr/share/themes/Adapta-Black-Nokto-Maia/index.theme
+    sed -i -e 's,.*Adapta-Eta.*,Adapta-Black-Eta-Maia,' $pkgdir/usr/share/themes/Adapta-Black-Eta-Maia/index.theme
+    sed -i -e 's,.*Adapta-Nokto-Eta.*,Adapta-Black-Nokto-Eta-Maia,' $pkgdir/usr/share/themes/Adapta-Black-Nokto-Eta-Maia/index.theme
+
+    # New symlink
+    cd "$pkgdir/usr/share/themes/Adapta-Black-Nokto-Maia"
+    ln -sf /usr/share/themes/Adapta-Black-Maia/xfwm4 xfwm4
+    ln -sf /usr/share/themes/Adapta-Black-Maia/xfce-notify-4.0 xfce-notify-4.0
+    ln -sf /usr/share/themes/Adapta-Black-Maia/plank plank
+    ln -sf /usr/share/themes/Adapta-Black-Maia/gedit gedit
+    ln -sf /usr/share/themes/Adapta-Black-Maia/metacity-1 metacity-1
+    ln -sf /usr/share/themes/Adapta-Black-Maia/gtk-3.22 gtk-3.22
+    ln -sf /usr/share/themes/Adapta-Black-Maia/gtk-3.0 gtk-3.0
+
+    cd "$pkgdir/usr/share/themes/Adapta-Black-Eta-Maia"
+    ln -sf /usr/share/themes/Adapta-Black-Maia/xfce-notify-4.0 xfce-notify-4.0
+    ln -sf /usr/share/themes/Adapta-Black-Maia/plank plank
+    ln -sf /usr/share/themes/Adapta-Black-Maia/telegram telegram
+    ln -sf /usr/share/themes/Adapta-Black-Maia/metacity-1 metacity-1
+
+    cd "$pkgdir/usr/share/themes/Adapta-Black-Nokto-Eta-Maia"
+    ln -sf /usr/share/themes/Adapta-Black-Eta-Maia/gtk-3.22 gtk-3.22
+    ln -sf /usr/share/themes/Adapta-Black-Maia/metacity-1 metacity-1
+    ln -sf /usr/share/themes/Adapta-Black-Maia/plank plank
+    ln -sf /usr/share/themes/Adapta-Black-Nokto-Maia/telegram telegram
+    ln -sf /usr/share/themes/Adapta-Black-Maia/xfce-notify-4.0 xfce-notify-4.0
+}

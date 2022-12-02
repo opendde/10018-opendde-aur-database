@@ -1,0 +1,9 @@
+prepare() {
+  cd ${srcdir}/${pkgname}
+
+  msg2 'Replacing python shebang by python2 shebang...'
+  find . -name ".*" -prune -o -type f -exec sed -i \
+    -e '1s|^#!/usr/bin/env python$|#!/usr/bin/env python2|' \
+    -e '1s|^#!/usr/bin/python$|#!/usr/bin/env python2|' \
+    "{}" \;
+}

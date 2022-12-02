@@ -1,0 +1,4 @@
+build() {
+  cd ${srcdir}/beets
+  python setup.py build sdist
+}

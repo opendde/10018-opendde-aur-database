@@ -1,0 +1,4 @@
+build() {
+  cd ${_SRC_DIR}/build
+	make -j $(nproc --all)
+}

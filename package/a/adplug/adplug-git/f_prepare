@@ -1,0 +1,5 @@
+prepare() {
+  cd "$srcdir/adplug"
+
+  autoreconf -fis
+}

@@ -1,0 +1,14 @@
+prepare() {
+  cd $_basedir
+
+  # link isl for in-tree builds
+  ln -sf ../isl-$_islver isl
+
+  echo $pkgver > gcc/BASE-VER
+
+  # hack! - some configure tests for header files using "$CPP $CPPFLAGS"
+  sed -i "/ac_cpp=/s/\$CPPFLAGS/\$CPPFLAGS -O2/" "$srcdir"/$_basedir/{libiberty,gcc}/configure
+
+  rm -rf $srcdir/gcc-build
+  mkdir $srcdir/gcc-build
+}

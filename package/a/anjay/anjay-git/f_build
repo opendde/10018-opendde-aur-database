@@ -1,0 +1,10 @@
+build() {
+	cd "Anjay"
+	git submodule update --init
+	cmake .\
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DWITH_DEMO=false \
+		-DDTLS_BACKEND="mbedtls"
+	make -j
+}

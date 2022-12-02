@@ -1,0 +1,140 @@
+package () {
+  set -u
+  local _httpdir='/usr/share/webapps'
+
+  # systemd timer (from the HylaFAX PKGBUILD). No need to install cron.
+  #install -dm755 "${pkgdir}/usr/lib/systemd/system/multi-user.target.wants"
+  local _i
+  for _i in avantfax*.{timer,service}; do
+    install -Dm644 "${_i}" "${pkgdir}/usr/lib/systemd/system/${_i}"
+    case "${_i}" in
+    # If you're going to do this, it's better to systemctl enable in the install.
+    #*.timer) ln -s "../${_i}" "${pkgdir}/usr/lib/systemd/system/multi-user.target.wants/${_i}";;
+    *.service) sed -e "s:/var/www/avantfax:${_httpdir}/${_pkgnick}:g" -i "${pkgdir}/usr/lib/systemd/system/${_i}";;
+    esac
+  done
+
+  cd "${pkgname}-${pkgver}"
+
+  # Install the main advantfax folder
+  install -dm755 "${pkgdir}${_httpdir}"
+  cp -pr 'avantfax' "${pkgdir}${_httpdir}/${_pkgnick}"
+  install -dm755 "${pkgdir}${_httpdir}/${_pkgnick}/tmp"
+
+  # Install the SQL scripts
+  install -dm755 "${pkgdir}/usr/lib/${_pkgnick}"
+  install -Dm644 *.sql -t "${pkgdir}/usr/lib/${_pkgnick}/"
+
+  # Branding. Too bad this can't be better.
+  sed -e 's/\(:: AvantFAX LOGIN\) \(::\)/\1 for Arch Linux \2/g' \
+    -i "${pkgdir}${_httpdir}/${_pkgnick}/includes/templates/main_theme/templates/index.tpl"
+
+  # Create our bin dir so we can adhere to open_basedir restrictions
+  # The installer will place hard links in here.
+  local _bindir="${_httpdir}/${_pkgnick}-bin"
+  install -dm755 "${pkgdir}${_bindir}"
+
+  # Enable debug
+  if [ "${_opt_DEBUG_PHP}" -ne 0 ]; then
+    sed -e "s:^\(\s\+\)\(//\s\+DATABASE\sSETTINGS\$\):\1ini_set('display_errors', true); \2:g" \
+      -i "${pkgdir}${_httpdir}/${_pkgnick}/includes/local_config-example.php"
+    sed -e "s:^\(\s\+\)\(require_once '\.\./includes/classes\.php';\)\$:\1ini_set('display_errors', true);\n\1\2:g" \
+      -i "${pkgdir}${_httpdir}/${_pkgnick}/index.php"
+    sed -e "s:^\(\s\+\)\(require_once '\.\./includes/classes\.php';\)\$:\1ini_set('display_errors', true);\n\1\2:g" \
+      -i "${pkgdir}${_httpdir}/${_pkgnick}/admin/index.php"
+  fi
+
+  # patch php scripts with our bin dir to comply with php open_basedir
+  # Set page size
+  sed -e 's:/usr/local/bin/:'"${_bindir}/:g" \
+      -e 's:/usr/bin:'"${_bindir}:g" \
+      -e "s:^\(\s\+\$HYLAFAX_PREFIX\s*=\s*'\)[^']\+\(';\):\1${_bindir}\2:g" \
+      -e "s:^\(\s\+\$PAPERSIZE\s*=\s*'\)[^']\+\(';\):\1${_opt_pagesize}\2:g" \
+    -i "${pkgdir}${_httpdir}/${_pkgnick}/includes/local_config-example.php"
+
+  # The original technique for HYLA being in bin and sbin is hostile to our bin folder
+  # Besides, sbin must go
+  sed -e "s:'sbin':'bin':g" \
+      -e 's:\($HYLAFAX_PREFIX.DIRECTORY_SEPARATOR.\)'"'bin'.DIRECTORY_SEPARATOR.:\1:g" \
+      -e '#s:^\(\s\+error_reporting(E_ALL\)\();\)$:\1 \& ~E_DEPRECATED\2:g' \
+    -i "${pkgdir}${_httpdir}/${_pkgnick}/includes/config.php"
+
+  # Install Apache vhosts file. It's similar to phpMyAdmin and Adminer.
+  local _phpxpath=''
+  if [ "${_opt_phpver}" != 'php' ]; then
+    _phpxpath=":/usr/share/${_opt_phpver}/pear/"
+  fi
+  install -Dm644 <(cat <<EOF
+# Installed by ${pkgname}-${pkgver} PKGBUILD from Arch Linux AUR
+# https://aur.archlinux.org/
+Alias /${_pkgnick} "${_httpdir}/${_pkgnick}"
+<Directory "${_httpdir}/${_pkgnick}">
+  AllowOverride All
+  Options FollowSymlinks
+  Require all granted
+    php_admin_value open_basedir "/tmp/${_phpxpath}:/usr/share/pear/:${_httpdir}/${_pkgnick}/:${_httpdir}/${_pkgnick}-bin/"
+# The AvantFAX installer avantfaxsetup.sh will tack the HylaFAX+ spool folder onto the end
+</Directory>
+EOF
+  ) "${pkgdir}/etc/webapps/${_pkgnick}/apache.example.conf"
+  install -Dpm644 "${pkgdir}/etc/webapps/${_pkgnick}/apache.example.conf" "${pkgdir}/etc/httpd/conf/extra/httpd-${_pkgnick}.conf"
+
+  # Install, patch, source, and run our setup script
+  local _shellfile="${pkgdir}/usr/bin/avantfaxsetup.sh"
+  install -d "${pkgdir}/usr/bin"
+  install -Dpm755 "${srcdir}/avantfaxsetup.sh" "${_shellfile}"
+  # Arch Linux uses bash as sh which allows bashishms through. For strict POSIX shell compliance we use dash.
+  sed -e 's:^\(_opt_HTTP_DIR\)=.*$'":\1='${_httpdir}':g" \
+      -e 's:^\(_opt_VHOSTS\)=.*$'":\1=0:g" \
+      -e 's:^\(_opt_AUTO_START_HTTP\)=.*$'":\1=${_opt_AUTO_START_HTTP}:g" \
+      -e 's:^\(_opt_AVANTFAX_SERVERNAME\)=.*$'":\1='${_pkgnick}':g" \
+      -e 's:^#!/bin/sh$:#!/usr/bin/dash:g' \
+    -i "${_shellfile}"
+
+  # Install php mysql extension
+  local _opt_SOURCEONLY=1; . "${_shellfile}"; unset _opt_SOURCEONLY
+  install -Dm644 <(cat << EOF
+; Installed by ${pkgname}-${pkgver} PKGBUILD from Arch Linux AUR
+; https://aur.archlinux.org/
+extension=mysql.so
+EOF
+  ) "${pkgdir}/etc/${_opt_phpver}/conf.d/${_pkgnick}.ini"
+
+  # Fix timers to run as user
+  sed -e 's:^#\(User\)=.*$'":\1=${_opt_WWWUSER}:g" \
+      -e 's:^#\(Group\)=.*$'":\1=${_opt_WWWGROUP}:g" \
+    -i "${pkgdir}/usr/lib/systemd/system/"*.service
+
+  # Install sudo config
+  install -dm750 "${pkgdir}/etc/sudoers.d"
+  install -Dm644 <(cat << EOF
+# Installed by ${pkgname}-${pkgver} PKGBUILD from Arch Linux AUR
+# https://aur.archlinux.org/
+${_opt_SUDO_LINE} -u * -p * *  ${_opt_AVANT_CMTTAG}
+EOF
+  ) "${pkgdir}/etc/sudoers.d/${_pkgnick}.sudo"
+
+  # We run the shell script modified with pkgdir
+  _opt_DESTDIR="${pkgdir}" \
+  "${_shellfile}" 0 'package' # package ignores the flag
+
+  # pacman hook for automatic update on HylaFax Upgrade
+  install -Dm644 <(cat << EOF
+# Automatically generated by ${pkgname}-${pkgver} PKGBUILD from Arch Linux AUR
+# https://aur.archlinux.org/
+
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = hylafax
+Target = hylafaxplus
+
+[Action]
+Description = AvantFAX: Update with HylaFax+
+When = PostTransaction
+Exec = /usr/bin/bash /usr/bin/${_shellfile##*/} 2 install
+EOF
+  ) "${pkgdir}/usr/share/libalpm/hooks/avantfax-hylafax.hook"
+
+  set +u
+}

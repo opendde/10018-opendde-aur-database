@@ -1,0 +1,5 @@
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  mkdir -p "${pkgdir}/usr/bin"
+  cp ./avm/target/release/alan "${pkgdir}/usr/bin/alan"
+}

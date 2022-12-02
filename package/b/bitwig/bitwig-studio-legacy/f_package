@@ -1,0 +1,7 @@
+package() {
+  # Unpack package contents
+  bsdtar -xf ${srcdir}/data.tar.gz -C ${pkgdir}/
+
+  # Install license
+  install -D -m644 ${pkgdir}/opt/bitwig-studio/EULA.rtf ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
+}

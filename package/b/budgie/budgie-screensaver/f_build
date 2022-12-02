@@ -1,0 +1,7 @@
+build() {
+  cd "${pkgname}"
+  CFLAGS+=" -Wno-error=return-type"
+  ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --libexecdir=/usr/lib/$_pkgname \
+              --with-mit-ext --without-console-kit --with-systemd
+  make
+}

@@ -1,0 +1,5 @@
+prepare() {
+  cd "$pkgname"
+  patch --forward --strip=1 --input="${srcdir}/remove-gtk-csds.patch"
+  cargo fetch --locked --target "$CARCH-unknown-linux-gnu"
+}

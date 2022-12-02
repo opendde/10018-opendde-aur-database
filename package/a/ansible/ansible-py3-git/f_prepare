@@ -1,0 +1,6 @@
+prepare() {
+  # Convert Python 2 to Python 3, concurrently
+  local procs=`grep processor /proc/cpuinfo | wc -l`
+  local np=`echo $procs+1 | bc`
+  2to3 "$pkgname" -w -n --no-diff -j $np
+}

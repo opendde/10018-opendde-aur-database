@@ -1,0 +1,19 @@
+package() {
+#cd "$name"
+install -d "$pkgdir/usr/bin"
+install -d "$pkgdir/usr/lib/asp.net"
+cp -ra "$_name" "$pkgdir/usr/lib/asp.net/"
+
+#TODO: find out how to best create something in /usr/bin so that dnu --runtime active can be resolved
+#echo '#!/usr/bin/bash
+#cd /usr/lib/asp.net/'$_name/bin'
+#./dnu $@' > "$pkgdir/usr/bin/dnu"
+#echo '#!/usr/bin/bash
+#cd /usr/lib/asp.net/'$_name/bin'
+#./dnx $@' > "$pkgdir/usr/bin/dnx"
+#chmod a+x "$pkgdir/usr/bin/"*
+
+#ln -s /usr/lib/asp.net/bin/dnu "$pkgdir/usr/bin"
+#ln -s /usr/lib/asp.net/bin/dnx "$pkgdir/usr/bin"
+
+}

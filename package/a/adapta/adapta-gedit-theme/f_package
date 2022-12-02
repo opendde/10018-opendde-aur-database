@@ -1,0 +1,5 @@
+package() {
+	cd "${srcdir}"
+	install -d "${pkgdir}"/usr/share/gtksourceview-3.0/styles
+	install -m644 *.xml "${pkgdir}"/usr/share/gtksourceview-3.0/styles
+}

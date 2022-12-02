@@ -1,0 +1,15 @@
+_ephemeral_signature_info() {
+  local _locale_code LANG Timezone
+  eval "$(timedatectl show | grep Timezone)"
+  eval "$(localectl status | grep LANG | awk '{print $3}')"
+  locale_code="${LANG%%.*}"
+  sig_country="${locale_code##*_}"
+  sig_city="${Timezone##*/}"
+  sig_state="${sig_city}"
+  sig_org="${distro}"
+  sig_unit="Release Engineering"
+  sig_domain="${_domain}"
+  sig_email="arch-releng@lists.${sig_domain}"
+  sig_comment="Ephemeral Signing Key"
+  sig_sender="${sig_unit} (${sig_comment}) <${sig_email}>"
+}

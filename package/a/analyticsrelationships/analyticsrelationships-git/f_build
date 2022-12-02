@@ -1,0 +1,10 @@
+build() {
+    cd "${pkgname}"
+    go build \
+        -trimpath \
+        -buildmode=pie \
+        -mod=readonly \
+        -modcacherw \
+        -ldflags "-s -w -linkmode external -extldflags \"${LDFLAGS}\"" \
+        .
+}

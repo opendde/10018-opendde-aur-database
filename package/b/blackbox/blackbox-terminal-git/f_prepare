@@ -1,0 +1,11 @@
+prepare() {
+  cd blackbox
+
+  # Rename icons
+  # Avoid install failed when extension-manager is installed
+  patch -p1 < ../rename_icons.diff
+
+  # Fix launch issue of blackbox & cresh when open context menu
+  # see: https://github.com/mitchmindtree/blackbox.nix/issues/2
+  patch -p1 < ../launch_fix.diff
+}

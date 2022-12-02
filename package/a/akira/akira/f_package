@@ -1,0 +1,5 @@
+package() {
+	meson install -C build --destdir "$pkgdir"
+	pushd "$pkgdir/usr/bin"
+	ln -s com.github.akiraux.akira akira
+}

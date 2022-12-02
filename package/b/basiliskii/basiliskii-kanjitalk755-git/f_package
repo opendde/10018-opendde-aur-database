@@ -1,0 +1,4 @@
+package() {
+  cd kanjitalk755-macemu/BasiliskII/src/Unix
+  make DESTDIR="${pkgdir}" install
+}

@@ -1,0 +1,5 @@
+package() {
+  cd $srcdir/$_pkgname-$pkgver
+  mkdir -p $pkgdir/usr/{lib,include,bin}
+  make prefix=$pkgdir/usr install
+}

@@ -1,0 +1,4 @@
+build() {
+  cd "$srcdir/6SV1.1/"
+  make
+}

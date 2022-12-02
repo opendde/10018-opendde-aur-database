@@ -1,0 +1,4 @@
+build () {
+	arch-meson "${srcdir}/build" "${srcdir}/${pkgname}"
+	ninja -C "${srcdir}/build"
+}

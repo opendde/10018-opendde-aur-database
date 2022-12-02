@@ -1,0 +1,10 @@
+build() {
+  cd "aspell"
+
+  PERL_USE_UNSAFE_INC=1 ./autogen
+  ./configure \
+    --prefix="/usr" \
+    --sysconfdir="/etc" \
+    --enable-static
+  make
+}

@@ -1,0 +1,10 @@
+prepare() {
+  cd "$pkgname"
+  git submodule init
+  git config submodule.Pomme.url ../Pomme
+  git submodule update
+  cmake -S . -B build \
+    -DCMAKE_BUILD_TYPE=None \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -Wno-dev
+}

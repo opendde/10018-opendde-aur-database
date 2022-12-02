@@ -1,0 +1,6 @@
+package() {
+	cd "$srcdir/${pkgname%-git}"
+
+	install -Dm 644 COPYING "$pkgdir/usr/share/licenses/${pkgname%-git}/LICENSE"
+	make DESTDIR="$pkgdir/" install
+}

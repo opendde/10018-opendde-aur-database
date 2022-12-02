@@ -1,0 +1,4 @@
+build () {
+	arch-meson "$srcdir/$pkgname" build -Dversion_display="AUR-git $pkgver"
+	ninja -C build
+}

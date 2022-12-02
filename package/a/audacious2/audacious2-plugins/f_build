@@ -1,0 +1,25 @@
+build() {
+  cd "$srcdir/$_pkg-$pkgver"
+
+  patch -Np1 -i "$srcdir/libcdio.patch"
+  # Patch to let this coexist with audacious-plugins
+  sed -i "s|\"Audacious2\"|\"Audacious-2\"|" `grep -rl Audacious2 .`
+  for _i in acious core gui tag tool; do
+    msg "Processing aud$_i .."
+    sed -i "s|\([aA]\)\(ud${_i}2\{0,1\}\)|\1ud${_i}2|g" `grep -rl "[aA]ud$_i" .`
+    for _d in `find . -depth -type d -name "*[aA]ud$_i*"`; do
+      _n="$(echo $_d | sed "s|\([aA]\)\(ud${_i}2\{0,1\}\)|\1ud${_i}2|g")"
+      msg "Moving $_d -> $_n" && mv "$_d" "$_n"
+    done
+    for _f in `find . -depth -type f -name "*[aA]ud$_i*"`; do
+      _n="$(echo $_f | sed "s|\([aA]\)\(ud${_i}2\{0,1\}\)|\1ud${_i}2|g")"
+      msg "Renaming $_f -> $_n" && mv "$_f" "$_n"
+    done
+  done
+
+  ./configure --prefix=/usr \
+              --enable-amidiplug \
+              --disable-adplug \
+              --disable-gtk3
+  make
+}

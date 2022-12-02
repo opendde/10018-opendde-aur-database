@@ -1,0 +1,14 @@
+build() {
+  cd "${_pkgname}-${pkgver}"
+
+  mkdir -p "${srcdir}"/gradle
+  export GRADLE_USER_HOME=${srcdir}/gradle
+
+  export JAVA_HOME=$(archlinux-java-run -a 11 -f jdk -j)
+  echo "Using JDK from $JAVA_HOME to build AppleCommander."
+
+  # ./gradlew \
+  /usr/bin/gradle \
+    --no-daemon \
+    assemble
+}

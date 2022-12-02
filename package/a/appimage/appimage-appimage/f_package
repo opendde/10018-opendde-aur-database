@@ -1,0 +1,5 @@
+package() {
+    install -Dm755 "${srcdir}/appimagetool" "${pkgdir}/usr/bin/appimagetool"
+    install -Dm755 "${srcdir}/AppRun" "${pkgdir}/usr/share/appimage/AppRun"
+    install -Dm755 "${srcdir}/runtime" "${pkgdir}/usr/share/appimage/runtime"
+}

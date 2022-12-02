@@ -1,0 +1,17 @@
+package() {
+    cd $pkgname-$_srcver
+    ./install.sh
+    mkdir -p "$pkgdir/opt/blastem"
+    install -d -g games "$pkgdir/opt/blastem"
+    install -m 755 -g games -D to_install/* "$pkgdir/opt/blastem"
+    install -m 666 -g games -D default.cfg "$pkgdir/opt/blastem"
+    install -m 666 -g games rom.db gamecontrollerdb.txt "$pkgdir/opt/blastem"
+    install -m 644 -g games -d "$pkgdir/opt/blastem/shaders"
+    install -m 644 -g games -D shaders/* "$pkgdir/opt/blastem/shaders"
+    chmod 755 "$pkgdir/opt/blastem/blastem"
+    chown root:games "$pkgdir/opt/blastem"
+    chown root:games "$pkgdir/opt/blastem/shaders"
+    chmod 755 "$pkgdir/opt/blastem/shaders"
+    mkdir -p "$pkgdir/usr/bin"
+    ln -s "/opt/blastem/blastem" "$pkgdir/usr/bin/blastem"
+}

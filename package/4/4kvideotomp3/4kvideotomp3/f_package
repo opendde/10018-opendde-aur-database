@@ -1,0 +1,18 @@
+package() {
+  # Install desktop file
+  install -m 755 -d "${pkgdir}/usr/share/applications"
+  install -m 755 -t "${pkgdir}/usr/share/applications" "${pkgname}.desktop"
+  # Install icon file
+  install -m 755 -d "${pkgdir}/usr/share/pixmaps"
+  install -m 644 -t "${pkgdir}/usr/share/pixmaps" "${pkgname}.svg"
+  # Install files
+  install -m 755 -d "${pkgdir}/usr/lib"
+  cp -r "${pkgname}" "${pkgdir}/usr/lib"
+  chown root.root "${pkgdir}/usr/lib/${pkgname}"
+  # Install launcher file
+  install -m 755 -d "${pkgdir}/usr/bin"
+  ln -s "/usr/lib/${pkgname}/${pkgname}.sh" "${pkgdir}/usr/bin/${pkgname}"
+  # Install license file
+  install -m 755 -d "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -m 644 -t "${pkgdir}/usr/share/licenses/${pkgname}" "${pkgname}/doc/eula"
+}

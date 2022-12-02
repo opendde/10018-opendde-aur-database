@@ -1,0 +1,9 @@
+build() {
+  cd "${srcdir}"/${pkgname}-${pkgver}
+  patch -Np1 -i "${srcdir}"/crop-fixes.patch
+  patch -Np1 -i "${srcdir}"/xvidencopts.patch
+
+  # install module in vendor directories.
+  perl Makefile.PL INSTALLDIRS=vendor INSTALLVENDORSCRIPT=/usr/bin
+  make
+}

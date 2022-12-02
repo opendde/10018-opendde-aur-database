@@ -1,0 +1,13 @@
+build() {
+  cd $pkgname-$pkgver
+
+  make PREFIX=/usr DESTDIR="$pkgdir" TO=share/angrydd install
+
+  sed -i -e "s|env python$|env python2|" ${pkgdir}/usr/share/angrydd/angrydd.py
+
+  mv -f "$pkgdir"/usr/games/ "$pkgdir"/usr/bin/
+
+  install -Dm644 $pkgname.png "$pkgdir"/usr/share/pixmaps/$pkgname.png
+  install -Dm644 ../$pkgname.desktop "$pkgdir"/usr/share/applications/$pkgname.desktop
+  install -Dm644 ../LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}

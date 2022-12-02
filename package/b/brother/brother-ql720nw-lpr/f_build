@@ -1,0 +1,5 @@
+build() {
+        cd $srcdir
+        rpmextract.sh "ql720nwlpr-$pkgver-$pkgrel.i386.rpm" || return 1
+        rm "ql720nwlpr-$pkgver-$pkgrel.i386.rpm"
+}

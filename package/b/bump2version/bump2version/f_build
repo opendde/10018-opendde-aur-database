@@ -1,0 +1,4 @@
+build() {
+    cd "${srcdir}/bump2version-${pkgver}"
+    python setup.py build
+}

@@ -1,0 +1,7 @@
+package() {
+	cd "${srcdir}/${pkgname}-v${pkgver}"
+	make \
+		bindir="${pkgdir}/usr/bin" \
+		docdir="${pkgdir}/usr/share/apdtool" \
+		install
+}

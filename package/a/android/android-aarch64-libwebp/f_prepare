@@ -1,0 +1,6 @@
+prepare() {
+    cd "$srcdir/libwebp-${pkgver}"
+    source android-env ${_android_arch}
+
+    NOCONFIGURE=1 ./autogen.sh
+}

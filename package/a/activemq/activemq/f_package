@@ -1,0 +1,8 @@
+package() {
+    install -dm0755 "${pkgdir}/opt/${pkgname}"
+    install -dm0755 "${pkgdir}/usr/lib/sysusers.d"
+    install -D -m0644 sysusers "${pkgdir}/usr/lib/sysusers.d/activemq.conf"
+    install -D -m0644 service "${pkgdir}/usr/lib/systemd/system/activemq.service"
+    mv apache-${pkgname}-${pkgver} "${pkgdir}/opt/${pkgname}/"
+    ln -s /opt/activemq/apache-${pkgname}-${pkgver} ${pkgdir}/opt/${pkgname}/current
+}

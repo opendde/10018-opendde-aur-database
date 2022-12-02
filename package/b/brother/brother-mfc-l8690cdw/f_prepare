@@ -1,0 +1,4 @@
+prepare() {
+  cd ${srcdir}/opt/brother/Printers/mfcl8690cdw/inf
+  patch < ${srcdir}/setupPrintcapij.patch
+}

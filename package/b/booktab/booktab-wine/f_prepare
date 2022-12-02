@@ -1,0 +1,4 @@
+prepare() {
+    innoextract -s "BooktabSetup64.exe"
+    icotool -x -o . app/BooktabZ.ico
+}

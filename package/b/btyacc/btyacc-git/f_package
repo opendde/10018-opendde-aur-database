@@ -1,0 +1,10 @@
+package() {
+  cd "$srcdir/$pkgname"
+  install -D -m755 btyacc $pkgdir/usr/bin/btyacc
+  install -D -m644 manpage $pkgdir/usr/share/man/man1/btyacc.1
+  install -Dm644 README $pkgdir/usr/share/doc/${pkgname%-*}/README
+  install -Dm644 README.BYACC $pkgdir/usr/share/doc/${pkgname%-*}/README.BYACC
+  install -Dm644 CHANGELOG $pkgdir/usr/share/doc/${pkgname%-*}/CHANGELOG
+  sed '64,$!d' README > LICENSE
+  install -Dm644 LICENSE $pkgdir/usr/share/licenses/${pkgname%-*}/LICENSE
+}

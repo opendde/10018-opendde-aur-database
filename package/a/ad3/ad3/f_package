@@ -1,0 +1,6 @@
+package() {
+	cd "$srcdir/AD3-$pkgver"
+    install -v -Dm755 ad3_multi "$pkgdir/usr/bin/ad3_multi"
+    install -v -Dm644 -t "$pkgdir/usr/lib/" ad3/libad3.a 
+    install -v -Dm644 -t "$pkgdir/usr/include/ad3" ad3/*.h
+}

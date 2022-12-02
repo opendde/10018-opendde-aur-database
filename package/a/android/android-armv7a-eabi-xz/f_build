@@ -1,0 +1,15 @@
+build() {
+    cd "${srcdir}"/xz-${pkgver}
+    source android-env ${_android_arch}
+
+    android-${_android_arch}-configure \
+        --disable-xz \
+        --disable-xzdec \
+        --disable-lzmadec \
+        --disable-lzmainfo \
+        --disable-lzma-links \
+        --disable-scripts \
+        --disable-doc
+
+    make $MAKEFLAGS
+}

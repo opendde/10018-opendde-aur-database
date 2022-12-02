@@ -1,0 +1,5 @@
+package() {
+	cd $_pkgname-$pkgver
+	install -D target/release/$_pkgname -t "$pkgdir"/usr/bin
+	install -Dm 644 README.md -t "$pkgdir"/usr/share/doc/$pkgname
+}

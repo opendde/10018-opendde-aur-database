@@ -1,0 +1,7 @@
+prepare() {
+  rm -rf ../AdunanzA-2012.1
+  cd "${srcdir}/AdunanzA-2012.1"
+
+  mkdir -p build
+  ./autogen.sh
+}

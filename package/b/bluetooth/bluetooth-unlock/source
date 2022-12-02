@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}.tar.gz::https://github.com/LethalEthan/Bluetooth-Unlock/archive/${_pkgver}.tar.gz")

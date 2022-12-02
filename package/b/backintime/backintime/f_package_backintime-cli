@@ -1,0 +1,11 @@
+package_backintime-cli() {
+  pkgdesc="Simple backup system inspired from the Flyback Project and TimeVault. CLI version."
+  depends=('cron' 'fuse2' 'openssh' 'python-dbus' 'python-keyring' 'rsync')
+  optdepends=('backintime: QT5 GUI version'
+  'encfs: encrypted filesystem in user-space'
+  'pm-utils: for laptops allows an option to not snapshot on battery'
+  'sshfs: FUSE client based on the ssh file transfer protocol')
+
+  cd "$_pkgname-$pkgver/common"
+  make DESTDIR="$pkgdir" install
+}

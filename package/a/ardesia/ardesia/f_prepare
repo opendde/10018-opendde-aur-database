@@ -1,0 +1,3 @@
+prepare() {
+    patch -d "${pkgname}-${pkgver}" -Np1 -i "${srcdir}/010-ardesia-gcc10-fix.patch"
+}

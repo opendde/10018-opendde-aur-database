@@ -1,0 +1,8 @@
+package() {
+	mkdir -p "${pkgdir}/var/lib/battctl"
+	mkdir -p "${pkgdir}/etc/battctl"
+
+	install -Dm644 ${srcdir}/${pkgname}/dist/battctl.service ${pkgdir}/usr/lib/systemd/system/battctl.service
+	install -Dm644 ${srcdir}/${pkgname}/dist/conf.yaml ${pkgdir}/etc/battctl/conf.yaml
+	install -Dm755 ${srcdir}/${pkgname}/battctl ${pkgdir}/usr/bin/battctl
+}

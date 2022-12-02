@@ -1,0 +1,13 @@
+package() {
+  cd "${pkgname%-git}"
+  BINPATH=$(./bin/buck targets --show_output buck | cut -d' ' -f2)
+  install -Dm 755 "${BINPATH}" "${pkgdir}"/usr/bin/buck
+  install -Dm644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  ./bin/buck kill
+
+  # Remove package srcdir from watchman watch list.
+  if command -v watchman > /dev/null
+  then
+    watchman --no-spawn --no-local watch-del "${srcdir}/${pkgname%-git}" > /dev/null 2>&1 || true
+  fi
+}

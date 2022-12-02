@@ -1,0 +1,1 @@
+("https://github.com/aws/aws-lambda-runtime-interface-emulator/releases/download/v${pkgver}/aws-lambda-rie")

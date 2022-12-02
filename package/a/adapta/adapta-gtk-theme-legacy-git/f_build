@@ -1,0 +1,12 @@
+build() {
+  cd adapta-gtk-theme-legacy
+ 
+  ./autogen.sh \
+    --prefix='/usr' \
+    --enable-parallel \
+    --enable-chrome \
+    --enable-plank \
+    --enable-telegram \
+    --disable-unity
+  make
+}

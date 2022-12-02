@@ -1,0 +1,5 @@
+build () {
+  cd ${srcdir}/BertiniSource_v${pkgver/./}
+  ./configure --prefix=/usr --includedir=/usr/include/bertini
+  make
+}

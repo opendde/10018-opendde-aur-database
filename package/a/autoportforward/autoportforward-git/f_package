@@ -1,0 +1,4 @@
+package() {
+  cd "$srcdir/$_pkgbase"
+  install -Dm755 apf "$pkgdir/usr/bin/apf"
+}

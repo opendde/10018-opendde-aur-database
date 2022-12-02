@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir/$pkgname"
+
+  install -Dsm755 "$srcdir/$pkgname/bin2c" "$pkgdir/usr/bin/$pkgname"
+}

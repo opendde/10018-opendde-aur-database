@@ -1,0 +1,8 @@
+package_ant-git-doc() {
+  pkgdesc='Apache Ant build tool documentation'
+  provices=('apache-ant-doc' 'ant-doc')
+  conflicts=('apache-ant-doc' 'ant-doc')
+
+  install -d "${pkgdir}/usr/share/doc/ant"
+  cp -r "${_gitname}/apache-ant-${pkgver}/manual/"* "${pkgdir}/usr/share/doc/ant"
+}

@@ -1,0 +1,7 @@
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  python setup.py install --prefix=/usr --root="${pkgdir}" --optimize=1 --skip-build
+  install -Dm644 2ping.service "${pkgdir}/usr/lib/systemd/system/2ping.service"
+  install -Dm644 2ping.bash_completion "${pkgdir}/usr/share/bash-completion/completions/2ping"
+  install -Dm644 COPYING.md "${pkgdir}/usr/share/licenses/2ping/COPYING.md"
+}

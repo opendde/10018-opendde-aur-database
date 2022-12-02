@@ -1,0 +1,12 @@
+build() {
+  cd "${srcdir}/${pkgname}/"
+
+  cp common/arm-linux-gnueabihf/platform.h common/platform.h
+  cd abiocard
+
+  make -f abiocardserver.mk clean
+  make -f abiocardtime.mk clean
+
+  make -f abiocardserver.mk
+  make -f abiocardtime.mk
+}

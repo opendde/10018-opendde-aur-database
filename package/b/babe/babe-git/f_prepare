@@ -1,0 +1,9 @@
+prepare () {
+  cd "$srcdir/$pkgname-$pkgver"
+  patch -p1 < "$srcdir/boost-fs3-v2.patch"
+  patch -p0 -i ../logging.patch
+  patch -p0 -i ../sysmacros_h.patch
+  patch -p1 -i ../cmake_boost.patch
+  patch -p0 -i ../cmake.patch
+  patch -p1 -i ../build.patch
+}

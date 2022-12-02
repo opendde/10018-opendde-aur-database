@@ -1,0 +1,7 @@
+build() {
+	cd ${_pkgname}-${pkgver}
+
+	# expat is required to open subtitle files
+	./configure --prefix=/usr --enable-as-02 --with-expat
+	make
+}

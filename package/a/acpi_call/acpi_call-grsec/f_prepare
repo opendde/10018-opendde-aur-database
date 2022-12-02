@@ -1,0 +1,19 @@
+prepare() {
+  cd acpi_call-${pkgver}
+
+  # Fix build with Linux >= 3.17
+  sed -i 's|acpi/acpi.h|linux/acpi.h|' acpi_call.c
+
+  # notify user about gcc restrictions with grsec
+  echo -en "\n\n--------------------------------------------------------\n"
+  echo -en "|                   ! ATTENTION !                      |\n"
+  echo -en "|                                                      |\n"
+  echo -en "| Please note that building this module will only      |\n"
+  echo -en "| succeed using the same gcc version used to build     |\n"
+  echo -en "| linux-grsec!                                         |\n"
+  echo -en "|                                                      |\n"
+  echo -en "| See link below for detailed information.             |\n"
+  echo -en "|                                                      |\n"
+  echo -en "--------------------------------------------------------\n\n\n"
+  echo -en "https://wiki.archlinux.org/index.php/Grsecurity#Out-of-tree_kernel_module_compilation_failure\n\n\n"
+}

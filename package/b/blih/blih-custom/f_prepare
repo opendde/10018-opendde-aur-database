@@ -1,0 +1,3 @@
+prepare() {
+	sed -i s/python3.3/python/ "${pkgname}/${pkgname}.py"
+}

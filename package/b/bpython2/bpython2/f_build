@@ -1,0 +1,4 @@
+build() {
+  cd "$srcdir/bpython-$pkgver"
+  python2 setup.py build
+}

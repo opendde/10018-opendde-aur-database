@@ -1,0 +1,9 @@
+package() {
+  # shellcheck disable=SC2154
+ 
+  local _profile="${_pkgbase}/${_profile}"
+  cd "${_profile}" || exit
+
+  bash build_repo.sh fakepkg
+  # pkexec mkarchiso -v "./" # ${_profile}"
+}

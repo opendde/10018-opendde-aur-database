@@ -1,0 +1,6 @@
+package() {
+  cd c-${pkgname}-${pkgver}
+
+  DESTDIR="$pkgdir" ninja -C "_build" install
+  install -Dm644 "LICENSE.txt" -t "$pkgdir/usr/share/licenses/blosc2"
+}

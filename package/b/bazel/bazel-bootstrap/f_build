@@ -1,0 +1,5 @@
+build() {
+  env EXTRA_BAZEL_ARGS="--host_javabase=@local_jdk//:jdk" ./compile.sh
+  cd output
+  ./bazel shutdown
+}

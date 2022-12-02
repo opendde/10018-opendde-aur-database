@@ -1,0 +1,3 @@
+get_debs_vulkan32() {
+         bash ./GET-DEBS-VULKAN32.sh
+}

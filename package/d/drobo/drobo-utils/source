@@ -1,0 +1,1 @@
+(http://downloads.sourceforge.net/project/${pkgname}/${pkgname}/r${_pkgver//./_}/${pkgname}-${pkgver}.tgz)

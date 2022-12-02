@@ -1,0 +1,6 @@
+package() {
+	${_prefix}gcc --print-multi-lib |
+	while IFS=';' read dir opts; do
+		cmake --install "build/$dir" --prefix "$pkgdir/usr/arm-none-eabi/"
+	done
+}

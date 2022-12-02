@@ -1,0 +1,10 @@
+build() {
+  cd arcanefortune/arcane_fortune
+
+  # build ncurses binary
+  cargo build --release --locked
+  # rename built binary
+  mv target/release/arcane_fortune target/release/arcane_fortune_ncurses
+  # build sdl binary
+  cargo build --release --features sdl --locked
+}

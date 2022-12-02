@@ -1,0 +1,1 @@
+("https://launchpad.net/${_name}/${pkgver:0:6}/${pkgver}/+download/${_name}-${pkgver}.tar.xz"

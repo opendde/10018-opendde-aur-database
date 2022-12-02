@@ -1,0 +1,9 @@
+build() {
+  cd $_basename
+  ./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --enable-maemo-plugin \
+    --enable-maemo-resource-manager
+  make
+}

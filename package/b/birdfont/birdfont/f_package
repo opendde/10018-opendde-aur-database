@@ -1,0 +1,4 @@
+package() {
+	cd "$pkgname-$pkgver"
+	./install.py -d "$pkgdir" -n /share/man/man1 -l /lib
+}

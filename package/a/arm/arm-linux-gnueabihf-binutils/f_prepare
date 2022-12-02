@@ -1,0 +1,14 @@
+prepare() {
+  mkdir -p binutils-build
+
+  #cd binutils-gdb
+  cd binutils-$pkgver
+
+  # Turn off development mode (-Werror, gas run-time checks, date in sonames)
+  sed -i '/^development=/s/true/false/' bfd/development.sh
+
+  # hack! - libiberty configure tests for header files using "$CPP $CPPFLAGS"
+  sed -i "/ac_cpp=/s/\$CPPFLAGS/\$CPPFLAGS -O2/" libiberty/configure
+
+  #patch -Np1 -i ../binutils-cb5f6a3e146cc70bc2d864989386df80acec5d3e.patch
+}

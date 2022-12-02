@@ -1,0 +1,21 @@
+package_bitcoin-cli-bin() {
+  local binname=bitcoin-cli
+
+  pkgdesc="A peer-to-peer network based digital currency - RPC client"
+  depends=(gcc-libs)
+  provides=('bitcoin-cli')
+  conflicts=('bitcoin-cli')
+
+  (
+    cd "$_bindirbase"
+    _package "$binname"
+  )
+
+  (
+    cd "$_srcdirbase"
+
+    _maybe_install_completion "$binname"
+
+    install -Dm644 COPYING "$pkgdir/usr/share/licenses/$pkgname/COPYING"
+  )
+}

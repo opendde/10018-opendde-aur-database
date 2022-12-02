@@ -1,0 +1,6 @@
+package() {
+  cd "${srcdir}/${_gitname}"
+
+  install -Dm644 LICENSE -t "${pkgdir}/usr/share/licenses/${_gitname}"
+  python setup.py install --prefix=/usr --root="${pkgdir}" --optimize=1
+}

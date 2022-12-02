@@ -1,0 +1,9 @@
+package() {
+  # install udev rules
+  install -dm 755 "${pkgdir}/usr/lib/udev/rules.d"
+  cp "$srcdir"/*.rules "$pkgdir/usr/lib/udev/rules.d/"
+
+  # install systemd services
+  install -dm 755 "${pkgdir}/usr/lib/systemd/system"
+  cp "$srcdir"/*.service "$pkgdir/usr/lib/systemd/system"
+}

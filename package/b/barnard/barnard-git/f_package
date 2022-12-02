@@ -1,0 +1,12 @@
+package() {
+  mkdir -p "$pkgdir/usr/bin"
+  mkdir -p "$pkgdir/usr/share/barnard"
+  mkdir -p "$pkgdir/usr/share/doc/barnard"
+  install -p -m755 "$srcdir/gopath/bin/barnard" "$pkgdir/usr/bin"
+  install -p -m755 "$srcdir/barnard/barnard-ui" "$pkgdir/usr/bin"
+  install -p -m755 "$srcdir/barnard/extras/barnard-sound.sh" "$pkgdir/usr/share/barnard/barnard-sound.sh"
+  install -p -m644 "$srcdir/barnard/README.md" "$pkgdir/usr/share/doc/barnard"
+                                                                                                                                                                
+  #mkdir -p "$pkgdir/$GOPATH"
+  #cp -Rv --preserve=timestamps "$srcdir/"{src,pkg} "$pkgdir/$GOPATH"
+}

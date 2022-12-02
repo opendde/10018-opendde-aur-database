@@ -1,0 +1,9 @@
+package() {
+  cd $srcdir
+  tar xvf data.tar.xz
+  cp -r usr $pkgdir
+  rm $pkgdir/usr/share/pixmaps/*.png
+  rm $pkgdir/usr/share/applications/*.desktop
+  install -vDm644 $srcdir/$pkgname.desktop $pkgdir/usr/share/applications/$pkgname.desktop
+  install -vDm644 $srcdir/$pkgname.png $pkgdir/usr/share/pixmaps/$pkgname.png
+}

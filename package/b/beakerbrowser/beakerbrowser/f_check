@@ -1,0 +1,27 @@
+check() {
+	if [[ -d "$srcdir/$_pkgname" ]]; then
+
+		cd "${srcdir}/$_pkgname"
+
+		if [ -d "node_modules" ]; then
+			echo "OK node modules"
+		fi
+
+		cd "${srcdir}"
+
+		if [ -f "${pkgname}" ]; then
+			echo "OK bin file"
+		fi
+
+		if [ -f "${pkgname}.desktop" ]; then
+			echo "OK launcher"
+		fi
+
+		if [ -f "LICENSE" ]; then
+			echo "OK launcher"
+		fi
+
+		#return 1
+	fi
+
+}

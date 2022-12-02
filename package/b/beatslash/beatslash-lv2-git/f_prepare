@@ -1,0 +1,11 @@
+prepare() {
+  cd "${srcdir}/${_pkgname}"
+  sed -i -e 's/lvtk-plugin-1/lvtk-plugin-2/' \
+    -e 's/lvtk-ui-1/lvtk-ui-2/' \
+    -e 's/lvtk-gtkui-1/lvtk-gtkui-2/' \
+    wscript
+
+  for src in src/*.{cpp,hpp}; do
+    sed -i -e 's/lvtk-1/lvtk-2/g' "$src"
+  done
+}

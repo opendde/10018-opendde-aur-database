@@ -1,0 +1,5 @@
+build() {
+    cd "${srcdir}/${pkgname}/"
+    nuget restore Source/Boogie.sln
+    xbuild Source/Boogie.sln
+}

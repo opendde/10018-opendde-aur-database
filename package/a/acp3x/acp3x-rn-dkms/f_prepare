@@ -1,0 +1,3 @@
+prepare() {
+	bsdtar -xf "linux-$_upstreamver.tar.gz" "linux-$_upstreamver/sound/soc/amd/renoir"
+}

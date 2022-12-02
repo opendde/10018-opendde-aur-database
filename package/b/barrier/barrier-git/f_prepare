@@ -1,0 +1,9 @@
+prepare() {
+    cd $pkgname
+
+    for patch in "${srcdir?}"/*.patch; do
+        if [ -f "${patch?}" ]; then
+            patch -Np1 -i "${patch?}"
+        fi
+    done
+}

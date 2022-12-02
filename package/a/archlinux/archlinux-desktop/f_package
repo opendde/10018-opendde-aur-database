@@ -1,0 +1,14 @@
+package() {
+  local _dest="${pkgdir}/usr/share/${_distro}"
+  local _profile="${srcdir}/${_pkgbase}/${profile}"
+  local _build_repo="${srcdir}/${_pkgbase}/.gitlab/ci/build_repo.sh"
+  cp -r "/usr/share/archiso-profiles/${profile}" "${_profile}"
+  cd "${_profile}" || exit
+  mkdir -p work
+  "${_build_repo} fakepkg"
+  install -d -m 0755 -- "${_dest}"
+  pkexec mkarchiso -v \
+	           -o "${_dest}" \
+		   -w "${_profile}/work" \
+                      "${_profile}"
+}

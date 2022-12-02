@@ -1,0 +1,9 @@
+prepare() {
+  msg2 'Updating gradle build config for newest gradle version'
+  sed -i "s/compile(/implementation(/g" "$srcdir/$pkgname/build.gradle"
+  sed -i "s/runtime(/runtimeOnly(/g" "$srcdir/$pkgname/build.gradle"
+  sed -i "s/testCompile(/testImplementation(/g" "$srcdir/$pkgname/build.gradle"
+
+  msg2 'Quickfix for javadoc'
+  sed -i "s/XmlJavaTypeAdapter;/XmlJavaTypeAdapter;\nimport org.audiveris.omr.sig.relation.Containment;/g" "$srcdir/$pkgname/src/main/org/audiveris/omr/sig/inter/SentenceInter.java"
+}

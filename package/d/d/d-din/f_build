@@ -1,0 +1,8 @@
+build() {
+  cd ${_pkgname}-${pkgver}
+
+  ./configure-gtk2 --prefix=/usr \
+              --disable-rpath \
+              --disable-static
+  make
+}

@@ -1,0 +1,10 @@
+package() {
+  bsdtar -xf "${srcdir}/ao/dist/${_pkgname}_${_pkgver}_amd64.deb" \
+    -C "${srcdir}" --include data.tar.xz
+  tar xfJ ${srcdir}/data.tar.xz -C ${pkgdir}
+  install -d ${pkgdir}/usr/bin/
+  ln -s /opt/Ao/ao ${pkgdir}/usr/bin/${_pkgname}
+  install -Dm 644 "${pkgdir}/usr/share/icons/hicolor/0x0/apps/ao.png" \
+    "${pkgdir}/usr/share/pixmaps/${_pkgname}.png"
+  rm -rfv "${pkgdir}/usr/share/icons/hicolor"
+}

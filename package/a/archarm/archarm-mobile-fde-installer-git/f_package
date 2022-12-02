@@ -1,0 +1,4 @@
+package() {
+  cd "archarm-mobile-fde-installer/"
+  install -m 755 -D installer.sh "${pkgdir}/usr/bin/archarm-mobile-fde-installer"
+}

@@ -1,0 +1,33 @@
+package_avidemux-qt6-git() {
+  pkgdesc="Qt6 GUI for Avidemux. (GIT version)"
+  depends=("avidemux-core-git=${pkgver}"
+           'qt6-base'
+           'libxv'
+           'glu'
+           'desktop-file-utils'
+           'hicolor-icon-theme'
+           )
+  provides=('avidemux-qt6')
+  conflicts=('avidemux-qt6'
+             'avidemux-qt'
+             )
+
+  DESTDIR="${pkgdir}" cmake --install build_qt6
+  DESTDIR="${pkgdir}" cmake --install build_qt6_plugins
+
+  rm -fr "${pkgdir}/usr/lib/ADM_plugins6/shaderDemo"
+
+  mv "${pkgdir}/usr/share/applications/org.avidemux.Avidemux.desktop" "${pkgdir}/usr/share/applications/org.avidemux.Avidemux_qt6.desktop"
+  mv "${pkgdir}/usr/share/icons/hicolor/128x128/apps/org.avidemux.Avidemux.png" "${pkgdir}/usr/share/icons/hicolor/128x128/apps/org.avidemux.Avidemux_qt6.png"
+  mv "${pkgdir}/usr/share/metainfo/org.avidemux.Avidemux.appdata.xml" "${pkgdir}/usr/share/metainfo/org.avidemux.Avidemux_qt6.appdata.xml"
+
+  setconf "${pkgdir}/usr/share/applications/org.avidemux.Avidemux_qt6.desktop" Name="Avidemux Qt6"
+  setconf "${pkgdir}/usr/share/applications/org.avidemux.Avidemux_qt6.desktop" Icon=org.avidemux.Avidemux_qt6
+
+  sed -e 's|org.avidemux.Avidemux|&_qt6|g' \
+      -e 's|<name>Avidemux|& Qt6|g' \
+      -i "${pkgdir}/usr/share/metainfo/org.avidemux.Avidemux_qt6.appdata.xml"
+  sed 's|qt5|qt6|g' \
+    -i "${pkgdir}/usr/share/applications/org.avidemux.Avidemux_qt6.desktop" \
+    -i "${pkgdir}/usr/share/metainfo/org.avidemux.Avidemux_qt6.appdata.xml"
+}

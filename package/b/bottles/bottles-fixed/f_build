@@ -1,0 +1,9 @@
+build() {
+	if [[ -d Bottles ]]; then
+		rm -rf Bottles
+	fi;
+	mv Bottles*/ Bottles/
+	cd "Bottles"
+	meson --prefix='/usr' build
+	ninja -C build
+}

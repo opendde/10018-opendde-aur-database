@@ -1,0 +1,5 @@
+package() {
+    cd "$pkgname-$_pkgver"
+    install -Dm755 -t "$pkgdir/usr/bin/" age age-keygen
+    install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname/" LICENSE
+}

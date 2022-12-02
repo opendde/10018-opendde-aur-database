@@ -1,0 +1,1 @@
+("https://github.com/resin-io/etcher/releases/download/v${_realver}/balena-etcher-cli-${_realver}-linux-x64.tar.gz")

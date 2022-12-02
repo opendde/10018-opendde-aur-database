@@ -1,0 +1,1 @@
+("git+https://github.com/NikolasK-source/bitwise_invert.git#tag=v${pkgver}")

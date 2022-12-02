@@ -1,0 +1,6 @@
+build() {
+  cd build
+  cmake ../babe \
+    -DCMAKE_INSTALL_PREFIX=/usr
+  make
+}

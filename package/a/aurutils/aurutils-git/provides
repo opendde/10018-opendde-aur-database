@@ -1,0 +1,1 @@
+("aurutils=${pkgver%%.r*}")

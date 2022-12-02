@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}.tar.gz::https://github.com/markphelps/flipt/releases/download/v${pkgver}/flipt_${pkgver}_linux_x86_64.tar.gz")

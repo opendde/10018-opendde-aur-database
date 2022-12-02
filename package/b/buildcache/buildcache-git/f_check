@@ -1,0 +1,5 @@
+check() {
+  cd "buildcache"
+
+  make -C "_build" test
+}

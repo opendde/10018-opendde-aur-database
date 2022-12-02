@@ -1,0 +1,6 @@
+package() {
+    cd "${srcdir}"
+    mkdir -p "${pkgdir}/usr/bin"
+    
+    install --owner=root --group=root --mode=755 "${srcdir}/alink" "${pkgdir}/usr/bin"
+}

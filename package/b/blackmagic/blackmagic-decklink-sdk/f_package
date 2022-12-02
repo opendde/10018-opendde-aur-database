@@ -1,0 +1,16 @@
+package() {
+    # directories creation
+    mkdir -p "${pkgdir}/usr/include"
+    mkdir -p "${pkgdir}/usr/share/doc/${pkgname}"
+    
+    # headers
+    cd "${srcdir}/Blackmagic DeckLink SDK ${pkgver}/Linux/include"
+    install -D -m644 * "${pkgdir}/usr/include"
+    
+    # documentation
+    cd "${srcdir}/Blackmagic DeckLink SDK ${pkgver}"
+    install -D -m644 *.pdf "${pkgdir}/usr/share/doc/${pkgname}"
+    
+    # license
+    install -D -m644 "${srcdir}/LICENSE" -t "${pkgdir}/usr/share/licenses/${pkgname}"
+}

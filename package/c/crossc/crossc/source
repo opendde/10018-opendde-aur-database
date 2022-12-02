@@ -1,0 +1,1 @@
+("git+https://github.com/rossy/crossc.git#tag=v${pkgver}"

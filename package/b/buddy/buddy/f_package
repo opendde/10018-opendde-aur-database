@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  make DESTDIR="$pkgdir/" install
+  install -d "$pkgdir/usr/share/licenses/$pkgname"
+  install -m 444 README "$pkgdir/usr/share/licenses/$pkgname"
+}

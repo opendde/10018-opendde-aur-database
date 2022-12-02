@@ -1,0 +1,6 @@
+package() {
+	cd "$pkgname-$pkgver"
+	PYTHONHASHSEED=0 python -m installer --destdir="$pkgdir" dist/*.whl
+	install -Dvm644 "$srcdir/LICENSE" -t "$pkgdir/usr/share/licenses/$pkgname/"
+	install -Dvm644 "pkg/$pkgname.conf" -t "$pkgdir/etc/$pkgname/"
+}

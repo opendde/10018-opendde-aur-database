@@ -1,0 +1,11 @@
+package() {
+	cd ${srcdir}/blink1/commandline/
+
+	# binary
+	install -D -m0755 blink1-tool ${pkgdir}/usr/bin/blink1-tool
+
+	cd ${srcdir}/blink1/linux/
+
+	# udev rule
+	install -D -m0644 51-blink1.rules ${pkgdir}/usr/lib/udev/rules.d/51-blink1.rules
+}

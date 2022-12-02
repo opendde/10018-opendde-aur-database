@@ -1,0 +1,22 @@
+package() {
+
+    _prefix='/usr'
+    _etcdir='/etc/3proxy'
+
+    install -d -m 0755 ${pkgdir}/usr/etc/init.d
+
+    cd "${srcdir}/${_pkgname}"
+    make='make -f Makefile.Linux INSTALL=/usr/bin/install'
+    ${make} prefix="${_prefix}" ETCDIR="${_etcdir}"
+    ${make} prefix="${_prefix}" install DESTDIR="${pkgdir}" ETCDIR="${pkgdir}${_etcdir}"
+    ( cd ${pkgdir}${_prefix}/bin && mv proxy 3proxy-proxy ) || return 1
+    rm -f ${pkgdir}${_etcdir}/counters ${pkgdir}${_etcdir}/passwd ${pkgdir}${_etcdir}/bandlimiters
+    install -d -m0755 ${pkgdir}/var/lib/3proxy
+    install -D -m0644 ${srcdir}/${_pkgname}/copying ${pkgdir}${_prefix}/share/licenses/$pkgname/copying
+    install -D -m0644 ${srcdir}/${_pkgname}/cfg/3proxy.cfg.sample ${pkgdir}${_etcdir}/3proxy.cfg.sample
+    install -D -m0644 ${srcdir}/${_pkgname}/cfg/counters.sample ${pkgdir}${_etcdir}/counters.sample
+    install -d -m0755 "${pkgdir}/usr/lib/systemd/system/"
+    install -D -m0644 "${srcdir}/3proxy@.service" "${pkgdir}/usr/lib/systemd/system/"
+
+    rm -rf ${pkgdir}/usr/etc/init.d
+}

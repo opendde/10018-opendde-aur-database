@@ -1,0 +1,10 @@
+build_bibtex2website-gui() {
+    cd "$srcdir/build-gui"
+
+    cmake -DCMAKE_INSTALL_PREFIX:PATH="/usr" \
+        -DCMAKE_BUILD_TYPE=Release \
+	-DENABLE_QT_GUI=ON \
+	"../bibtex2website-${pkgver}"
+
+    make
+}

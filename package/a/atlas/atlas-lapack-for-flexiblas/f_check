@@ -1,0 +1,10 @@
+check() {
+   cd "$srcdir/ATLAS/build"
+   unset MAKE
+
+   msg 'Checking ATLAS'
+
+   make check
+   make ptcheck
+   make time
+}

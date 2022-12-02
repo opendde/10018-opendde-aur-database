@@ -1,0 +1,15 @@
+package_python-buildbot-www-git() {
+  pkgdesc="Buildbot UI"
+  depends=('buildbot-git')
+  provides=("python-buildbot-www=$pkgver")
+  conflicts=('python-buildbot-www')
+  optdepends=(
+    'python-buildbot-waterfall-view'
+    'python-buildbot-console-view'
+    'python-buildbot-grid-view'
+    'python-buildbot-badges'
+  )
+
+  cd buildbot/www/base
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+}

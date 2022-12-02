@@ -1,0 +1,5 @@
+package() {
+    install -Dm755 usr/bin/{auto,autoCleanInstall,autoInstall,autoPart} -t "${pkgdir}/usr/bin"
+    install -Dm644 usr/share/licenses/${pkgname}/LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    install -Dm644 usr/share/doc/${pkgname}/README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
+}

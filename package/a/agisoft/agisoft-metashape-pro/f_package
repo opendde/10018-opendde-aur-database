@@ -1,0 +1,56 @@
+package() {
+    # Move extracted folder to opt
+    cd "$pkgdir"
+    mkdir -p "opt/agisoft"
+    mv "${srcdir}/${_pkgname}" "${pkgdir}/opt/agisoft/"
+
+    # Install licenses
+    cd opt/agisoft/${_pkgname}
+    install -Dm644 eula.txt "$pkgdir/usr/share/licenses/$pkgname/eula.txt"
+    mv licenses "$pkgdir/usr/share/licenses/$pkgname"
+    rm eula.txt
+
+    # Move desktop entries
+    mkdir -p "${pkgdir}/usr/share/applications/"
+    mv "${srcdir}/agisoft-metashape-pro.desktop" "${pkgdir}/usr/share/applications/"
+    mv "${srcdir}/agisoft-network-monitor.desktop" "${pkgdir}/usr/share/applications/"
+    mv "${srcdir}/agisoft-viewer.desktop" "${pkgdir}/usr/share/applications/"
+
+    # Create MIME type
+    mkdir -p "${pkgdir}/usr/share/mime/packages"
+    mv "${srcdir}/${pkgname}-mime.xml" "${pkgdir}/usr/share/mime/packages"
+
+    # Move icons
+    for _res in 16x16 32x32 48x48 64x64 128x128; do
+        mkdir -p "${pkgdir}/usr/share/icons/hicolor/${_res}/apps/"
+        mkdir -p "${pkgdir}/usr/share/icons/hicolor/${_res}/mimetypes/"
+        mv "$srcdir/agisoft-metashape-pro_${_res/x*}.png" "${pkgdir}/usr/share/icons/hicolor/${_res}/apps/agisoft-metashape-pro.png"
+        mv "$srcdir/agisoft-network-monitor_${_res/x*}.png" "${pkgdir}/usr/share/icons/hicolor/${_res}/apps/agisoft-network-monitor.png"
+        cp "$srcdir/agisoft-viewer_${_res/x*}.png" "${pkgdir}/usr/share/icons/hicolor/${_res}/mimetypes/application-agisoft-viewer-vpz.png"
+        mv "$srcdir/agisoft-viewer_${_res/x*}.png" "${pkgdir}/usr/share/icons/hicolor/${_res}/apps/agisoft-viewer.png"
+        mv "$srcdir/application-agisoft-psx_${_res/x*}.png" "${pkgdir}/usr/share/icons/hicolor/${_res}/mimetypes/application-agisoft-pro-psx.png"
+        mv "$srcdir/application-agisoft-psz_${_res/x*}.png" "${pkgdir}/usr/share/icons/hicolor/${_res}/mimetypes/application-agisoft-pro-psz.png"
+        mv "$srcdir/application-agisoft-3dv_${_res/x*}.png" "${pkgdir}/usr/share/icons/hicolor/${_res}/mimetypes/application-agisoft-viewer-3dv.png"
+    done
+    
+    # Create executables in /usr/bin
+    install -Dm755 "$srcdir/agisoft-metashape-pro" "$pkgdir/usr/bin/agisoft-metashape-pro"
+    install -Dm755 "$srcdir/agisoft-network-monitor" "$pkgdir/usr/bin/agisoft-network-monitor"
+    install -Dm755 "$srcdir/agisoft-viewer" "$pkgdir/usr/bin/agisoft-viewer"
+
+    # Set the rehostable directory and environment variables in executables for activation
+    mkdir -p "${pkgdir}/opt/agisoft/${_pkgname}/rehostable"
+    sed -i '/export LD_LIBRARY_PATH/a\\nAGISOFT_REHOST_PATH=\$dirname/rehostable\nexport AGISOFT_REHOST_PATH' "${pkgdir}/opt/agisoft/${_pkgname}/metashape.sh"
+    sed -i '/export LD_LIBRARY_PATH/a\\nAGISOFT_REHOST_PATH=\$dirname/rehostable\nexport AGISOFT_REHOST_PATH' "${pkgdir}/opt/agisoft/${_pkgname}/viewer.sh"
+    sed -i '/export LD_LIBRARY_PATH/a\\nAGISOFT_REHOST_PATH=\$dirname/rehostable\nexport AGISOFT_REHOST_PATH' "${pkgdir}/opt/agisoft/${_pkgname}/monitor.sh"
+
+    # Set correct permission
+    chmod -R g=u "$pkgdir/opt/agisoft/${_pkgname}"
+    chmod -R o=u "$pkgdir/opt/agisoft/${_pkgname}"
+    chmod -R g-w "$pkgdir/opt/agisoft/${_pkgname}"
+    chmod -R o-w "$pkgdir/opt/agisoft/${_pkgname}"
+    chmod -R g=u "$pkgdir/usr/share/licenses/$pkgname/licenses"
+    chmod -R o=u "$pkgdir/usr/share/licenses/$pkgname/licenses"
+    chmod -R g-w "$pkgdir/usr/share/licenses/$pkgname/licenses"
+    chmod -R o-w "$pkgdir/usr/share/licenses/$pkgname/licenses"
+}

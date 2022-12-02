@@ -1,0 +1,13 @@
+build() {
+	cd "${pkgname}"
+
+	# Pull in submodules (fish-n-chips)
+	git submodule init
+	git submodule update
+
+	# Create manpage
+	ronn -r --manual=${pkgname} --organization="Florian Albertz" "README.md"
+
+	# Install sx dependency
+	npm install sx
+}

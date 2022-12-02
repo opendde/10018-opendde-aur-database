@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir/$_svnmod-build"
+
+  make DESTDIR=${pkgdir} install
+}

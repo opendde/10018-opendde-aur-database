@@ -1,0 +1,5 @@
+_replace_lib() {
+  # explicitly call rm to ensure we replace instead of add
+  rm "$2"
+  ln -s "$1" "$2"
+}

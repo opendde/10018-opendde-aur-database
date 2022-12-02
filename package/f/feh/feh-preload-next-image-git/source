@@ -1,0 +1,1 @@
+("${_pkgname}::git+https://github.com/RagnarGrootKoerkamp/${_pkgname}.git#branch=preload-next-image")

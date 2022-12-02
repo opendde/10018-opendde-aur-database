@@ -1,0 +1,3 @@
+package() {
+	cd baph/ && make DESTDIR="$pkgdir" PREFIX="/usr" install
+}

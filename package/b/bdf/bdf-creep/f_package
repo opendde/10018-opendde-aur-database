@@ -1,0 +1,5 @@
+package() {
+	cd "$srcdir/creep"
+	install -D -m644 creep-16.bdf "$pkgdir/usr/share/fonts/misc/creep-16.bdf"
+	install -D -m644 LICENSE      "$pkgdir/usr/share/licenses/bdf-creep/LICENSE"
+}

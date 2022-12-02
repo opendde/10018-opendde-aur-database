@@ -1,0 +1,13 @@
+package() {
+    cd "AntTweakBar"
+
+    install -dm755 "$pkgdir"/usr/{share/licenses/$pkgname,include,lib}
+
+    install -m644 License.txt "$pkgdir/usr/share/licenses/$pkgname/License.txt"
+    install -m644 include/AntTweakBar.h "$pkgdir/usr/include/AntTweakBar.h"
+    install -m755 lib/libAntTweakBar.so "$pkgdir/usr/lib/libAntTweakBar.so.$pkgver"
+    install -m644 lib/libAntTweakBar.a "$pkgdir/usr/lib/libAntTweakBar.a"
+
+    ln -s "libAntTweakBar.so.$pkgver" "$pkgdir/usr/lib/libAntTweakBar.so"
+    ln -s "libAntTweakBar.so.$pkgver" "$pkgdir/usr/lib/libAntTweakBar.so.1"
+}

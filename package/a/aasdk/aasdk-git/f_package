@@ -1,0 +1,8 @@
+package() {
+  cd $pkgname
+  install -D -m755 lib/libaasdk.so "$pkgdir/usr/lib/libaasdk.so"
+  install -d "$pkgdir/usr/include/aasdk_proto"
+  install -D aasdk_build/aasdk_proto/*.h "$pkgdir/usr/include/aasdk_proto"
+  install -D -m644 "lib/libaasdk_proto.so" "$pkgdir/usr/lib/libaasdk_proto.so"
+  cp -Rv include/f1x/ "$pkgdir/usr/include/"
+}

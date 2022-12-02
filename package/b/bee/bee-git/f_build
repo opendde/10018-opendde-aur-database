@@ -1,0 +1,22 @@
+build() {
+	cd ${srcdir}/bee/bee-node
+
+	# Check/update rust toolchain
+	if ! rustup show | grep 'stable\|nightly' > /dev/null 2>&1; then
+		printf	"#########################################\
+			\n# NO RUST TOOLCHAIN FOUND. PLEASE RUN   #\
+			\n# rustup toolchain install stable FIRST #\
+			\n#########################################\n"
+		exit
+	else
+		rustup update
+	fi
+        
+        # Build with Dashboard
+        git submodule update --init
+        cd src/plugins/dashboard/frontend
+        npm install
+        npm run build-bee
+        cd ../../../../
+        cargo build --release --features dashboard
+}

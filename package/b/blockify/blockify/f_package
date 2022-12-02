@@ -1,0 +1,5 @@
+package() {
+    cd "$srcdir"/${pkgname}-${pkgver}
+
+    python3 setup.py install --root="${pkgdir}"
+}

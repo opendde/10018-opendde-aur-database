@@ -1,0 +1,1 @@
+("${pkgname}::https://github.com/ddo/fast/releases/download/v${pkgver}/fast_linux_amd64")

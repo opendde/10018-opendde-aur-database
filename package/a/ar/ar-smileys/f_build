@@ -1,0 +1,5 @@
+build() {
+  cd "${srcdir}/${_pkgname}-${_pkgver}"
+
+  sed -i "s/^Name=ar-smiles/Name=${pkgname}/" theme
+}

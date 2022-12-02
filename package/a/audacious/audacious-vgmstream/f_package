@@ -1,0 +1,7 @@
+package () {
+  cd $gitdir
+
+  make DESTDIR="$pkgdir" install -f Makefile.unix
+  mkdir -p "${pkgdir}/usr/share/licenses/vgmstream-git/"
+  install -Dm644 COPYING "${pkgdir}/usr/share/licenses/vgmstream-git/LICENSE"
+}

@@ -1,0 +1,8 @@
+prepare() {
+    cd "$pkgname"
+
+    # Put translations in place.
+    #ln -sf "$srcdir"/ankitects-anki-core-i18n-*/ rslib/ftl/repo
+    #ln -sf "$srcdir"/ankitects-anki-desktop-ftl-*/ qt/ftl/repo
+    #ln -sf "$srcdir"/ankitects-anki-desktop-i18n-*/ qt/po/repo
+}

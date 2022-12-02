@@ -1,0 +1,5 @@
+package() {
+  cd ${_pkgname}
+  install -D -m644 "COPYING" "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
+  make DESTDIR=${pkgdir} install
+}

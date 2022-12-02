@@ -1,0 +1,3 @@
+build() {
+    rm -f Sparki_Library_${pkgver}.zip
+}

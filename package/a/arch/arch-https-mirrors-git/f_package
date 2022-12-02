@@ -1,0 +1,4 @@
+package() {
+	install -d -m755 "${pkgdir}/etc/pacman.d"
+	install -D -m644 "${srcdir}/${gitname}/mirrorlist.https-only" "${pkgdir}/etc/pacman.d/"
+}

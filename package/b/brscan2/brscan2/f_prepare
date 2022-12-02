@@ -1,0 +1,21 @@
+prepare() {
+
+  # adjust use of lib64 to habits on Arch Linux x86_64
+
+  if [ "$CARCH" == x86_64 ] ; then
+
+    # path
+    mv usr/lib64 usr/lib
+
+    # symbolic links
+    cd usr/lib
+    ln -sf /usr/lib/libbrcolm2.so.1         libbrcolm2.so
+    ln -sf /usr/lib/libbrcolm2.so.1.0.1     libbrcolm2.so.1
+    ln -sf /usr/lib/libbrscandec2.so.1      libbrscandec2.so
+    ln -sf /usr/lib/libbrscandec2.so.1.0.0  libbrscandec2.so.1
+    cd sane
+    ln -sf /usr/lib/sane/libsane-brother2.so.1      libsane-brother2.so
+    ln -sf /usr/lib/sane/libsane-brother2.so.1.0.7  libsane-brother2.so.1
+
+  fi
+}

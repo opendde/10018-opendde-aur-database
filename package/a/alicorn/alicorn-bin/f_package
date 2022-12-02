@@ -1,0 +1,8 @@
+package() {
+  install -d "${pkgdir}/usr/share/${pkgname}"
+  cp -r "Alicorn-linux-x64/"* "${pkgdir}/usr/share/${pkgname}/" -R
+  install -Dm644 "alicorn.png" "${pkgdir}/usr/share/${pkgname}/alicorn.png"
+  install -Dm755 "alicorn-launch-script" "${pkgdir}/usr/bin/${pkgname}"
+  install -Dm644 "alicorn.desktop" "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+  install -Dm644 "LICENSE" "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}

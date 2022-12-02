@@ -1,0 +1,14 @@
+package() {
+	mkdir -p "$pkgdir"/usr/bin/
+	mkdir -p "$pkgdir"/usr/share/applications/
+	mkdir -p "$pkgdir"/usr/share/icons
+	cp -R "$srcdir"/usr/bin/* "$pkgdir"/usr/bin/
+	cp -R "$srcdir"/usr/share/applications/* "$pkgdir"/usr/share/applications/
+	cp -R "$srcdir"/usr/share/icons/* "$pkgdir"/usr/share/icons/
+	mkdir -p "$pkgdir"/usr/lib/bouml
+	if [ "$CARCH" = "x86_64" ]; then
+		cp -R "$srcdir"/usr/lib64/bouml/* "$pkgdir"/usr/lib/bouml/
+	else
+		cp -R "$srcdir"/usr/lib/bouml/* "$pkgdir"/usr/lib/bouml/
+	fi
+}

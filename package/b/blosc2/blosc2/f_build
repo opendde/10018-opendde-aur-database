@@ -1,0 +1,14 @@
+build() {
+  cd c-${pkgname}-${pkgver}
+
+  cmake \
+    -B "_build" \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX="/usr" \
+    -DPREFER_EXTERNAL_LZ4="ON" \
+    -DPREFER_EXTERNAL_ZLIB="ON" \
+    -DPREFER_EXTERNAL_ZSTD="ON" \
+    -GNinja \
+    ./
+  ninja -C "_build"
+}

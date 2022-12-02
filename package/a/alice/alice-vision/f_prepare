@@ -1,0 +1,27 @@
+prepare() {
+  cd "${srcdir}"/AliceVision-${pkgver}
+  rm -rf src/dependencies/{MeshSDFilter,nanoflann}
+  cp -r "${srcdir}"/MeshSDFilter src/dependencies/MeshSDFilter
+  cp -r "${srcdir}"/nanoflann src/dependencies/nanoflann
+# fix missing submodule warning.
+  mkdir src/dependencies/osi_clp/CoinUtils
+  patch -Np1 -i"${srcdir}"/cmake_cxx_std_14.patch
+# fix FindOpenEXR.cmake against openexr:3
+  patch -Np1 -i"${srcdir}"/openexr3.patch
+# fix header relocation against openexr:3
+  grep -lR "#include.*OpenEXR/half.h"|xargs sed -i 's|OpenEXR/half|Imath/half|'
+# fix gcc:11 headers regression
+  grep -lR "std::numeric_limits"|xargs sed -i '1 i\#include <limits>'
+# fix doc build
+  ((BUILD_DOXYGEN)) && sed -i '/^ *install.*doc/s/doc/htmlDoc/' src/CMakeLists.txt || true
+# fix CMAKE_FIND_PACKAGE_PREFER_CONFIG=ON preserve target name capitalisation
+  sed 's/OPENEXR_FOUND/OpenEXR_FOUND/g' -i "${srcdir}"/AliceVision-${pkgver}/src/CMakeLists.txt
+# fix openimageio:2 target library
+  sed 's/${OPENIMAGEIO_LIBRARIES};dl/OpenImageIO::OpenImageIO/g' -i "${srcdir}"/AliceVision-${pkgver}/src/CMakeLists.txt
+# fix [io]fstream(path) initializer
+  sed '1 i#include <fstream>' -i $(grep -Rl std::[io]fstream "${srcdir}"/AliceVision-${pkgver}/src)
+# fix missing <iomanip> header (setw,setfill,etc.)
+  git apply -v "${srcdir}"/iomanip.patch
+# fix missing isnormal() from std namespace
+  git apply -v "${srcdir}"/isnormal.patch
+}

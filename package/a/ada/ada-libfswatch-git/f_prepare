@@ -1,0 +1,6 @@
+prepare() {
+	cd "$srcdir/ada_libfswatch"
+	patch -p1 < "$srcdir/0001-Use-system-libfswatch-install.patch"
+	patch -p1 < "$srcdir/0002-Build-dynamic-library.patch"
+	patch -p1 < "$srcdir/0003-Makefile-allow-passing-custom-flags-to-gprbuild.patch"
+}

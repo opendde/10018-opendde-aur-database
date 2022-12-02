@@ -1,0 +1,5 @@
+build() {
+  cd $srcdir/${pkgname%%-svn}
+  patch -Np1 -i $srcdir/blackshades.patch
+  make
+}

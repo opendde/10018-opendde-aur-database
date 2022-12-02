@@ -1,0 +1,8 @@
+build() {
+    builddir="${pkgname}-${pkgver}-build"
+    srcdir="napi-${pkgver}"
+    mkdir -p "$builddir"
+    cd "$builddir"
+    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="${pkgdir}/usr" ../${srcdir}
+    make
+}

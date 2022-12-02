@@ -1,0 +1,16 @@
+pkgver() {
+  cd "${srcdir}/${_pkgname}"
+
+  _ver="$(grep 'Hisilicon Balong, V' balong-nvtool.c  | head -n1 | sed -E 's|.*V([^[:space:]]*)\%i.*|\1|' | sed 's|.$||')"
+  _buildno="$(<build)"
+  _rev="$(git rev-list --count HEAD)"
+  _date="$(git log -1 --date=format:"%Y%m%d" --format="%ad")"
+  _hash="$(git rev-parse --short HEAD)"
+
+  if [ -z "${_ver}" ]; then
+    error "Version could not be determined."
+    return 1
+  else
+    printf '%s' "${_ver}+${_buildno}.r${_rev}.${_date}.${_hash}"
+  fi
+}

@@ -1,0 +1,11 @@
+package() {
+    # header
+    install -D -m644 AVbin/include/avbin.h -t "${pkgdir}/usr/include"
+    
+    # library
+    install -D -m755 "AVbin/dist/linux-x86-64/libavbin.so.${pkgver}" -t "${pkgdir}/usr/lib"
+    ln -s "libavbin.so.${pkgver}" "${pkgdir}/usr/lib/libavbin.so"
+    
+    # pkgconfig
+    install -D -m644 avbin.pc -t "${pkgdir}/usr/lib/pkgconfig"
+}

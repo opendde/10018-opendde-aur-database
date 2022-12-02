@@ -1,0 +1,3 @@
+prepare() {
+	ar x accountable2you*.deb
+}

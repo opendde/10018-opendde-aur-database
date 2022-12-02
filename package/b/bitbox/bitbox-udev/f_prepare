@@ -1,0 +1,5 @@
+prepare() {
+  sed -i -r 's/\/etc\/udev\/rules.d\///' ${srcdir}/deb-afterinstall.sh
+  sed -i -r 's/udevadm control --reload//' ${srcdir}/deb-afterinstall.sh
+  sed -i -r 's/udevadm trigger//' ${srcdir}/deb-afterinstall.sh
+}

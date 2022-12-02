@@ -1,0 +1,8 @@
+package() {
+	[ -d "$FULLNAME_PKG/usr" ] && cp -rv "$FULLNAME_PKG/usr" "$pkgdir"
+	[ -d "$FULLNAME_PKG/lib" ] && cp -rv "$FULLNAME_PKG/lib" "$pkgdir"
+	[ -d "$FULLNAME_PKG/var" ] && cp -rv "$FULLNAME_PKG/var" "$pkgdir"
+	[ -d "$FULLNAME_PKG/opt" ] && cp -rv "$FULLNAME_PKG/opt" "$pkgdir"
+	[ -d "$FULLNAME_PKG/bin" ] && cp -rv "$FULLNAME_PKG/bin" "$pkgdir"
+	echo 'finished'
+}

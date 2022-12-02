@@ -1,0 +1,18 @@
+package() {
+    cd "${srcdir}/${_pkgname}-${pkgver}"
+
+	# Install Java file
+    install -Dm644 "${_pkgname}-${pkgver}-executable.jar" "${pkgdir}"/usr/share/java/"${_pkgname}/${_pkgname}.jar"
+
+    # Fix `adb` executable path and install app.properties
+    adb_path=$(which adb)
+    echo "ADB executable was located at: $adb_path"
+    echo "Fixing 'app.properties' file ..."
+	sed -i "s#./adb#$adb_path#" app.properties
+	install -Dm644 "app.properties" "${pkgdir}/usr/share/java/${_pkgname}/app.properties"
+	echo "'app.properties' file will be installed to /usr/share/java/${_pkgname}/app.properties"
+
+	# Install launcher
+    cd "${srcdir}"
+    install -Dm755 "${_pkgname}" "${pkgdir}/usr/bin/${_pkgname}"
+}

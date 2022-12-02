@@ -1,0 +1,22 @@
+package() {
+  mkdir -p $pkgdir/opt/
+  mkdir -p $pkgdir/usr/bin/
+
+  cp -r $srcdir/BOOLR-linux-x64/ $pkgdir/opt/boolr
+  chmod -R a+rw $pkgdir/opt/boolr/resources/app/saves
+  chmod -R a+rw $pkgdir/opt/boolr/resources/app/data
+
+  local _icon_dir="usr/share/icons/hicolor"
+  install -D $srcdir/BOOLR-linux-x64/resources/app/build/icon.png $pkgdir/$_icon_dir/128x128/apps/boolr.png
+
+  install -D $srcdir/boolr.desktop $pkgdir/usr/share/applications/$_pkgname.desktop
+
+  install -Dm644 $srcdir/BOOLR-linux-x64/resources/app/app/LINCENCE $pkgdir/usr/share/licenses/$pkgname/LICENSE
+  install -Dm644 $srcdir/BOOLR-linux-x64/LICENSES.chromium.html $pkgdir/usr/share/licenses/$pkgname/LICENSES.chromium.html
+
+  mkdir $pkgdir/opt/boolr/lib/
+  ln -s /opt/pango-legacy/usr/lib/libpango-1.0.so.0    $pkgdir/opt/boolr/lib/
+  ln -s /opt/pango-legacy/usr/lib/libpangoft2-1.0.so.0 $pkgdir/opt/boolr/lib/
+
+  ln -s /opt/boolr/BOOLR $pkgdir/usr/bin/$pkgname
+}

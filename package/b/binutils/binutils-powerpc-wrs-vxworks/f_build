@@ -1,0 +1,15 @@
+build() {
+  source /etc/profile.d/wind_base.sh
+  cd $srcdir
+  mkdir -p build && cd build
+  ../binutils-$pkgver/configure \
+    --prefix=/usr \
+    --target=powerpc-wrs-vxworks \
+    --disable-nls \
+    --disable-libiberty-install \
+    --enable-ld=default \
+    --enable-gold \
+    --enable-plugins \
+    --disable-werror
+  make || return 1
+}

@@ -1,0 +1,5 @@
+pkgver() {
+  #Something consistent, there are traces of version numbering in firmware file names
+  cd "$srcdir/${pkgbase%-git}"
+  git show -s --format=format:%cd_%h --date=short | tr -d '-'
+}

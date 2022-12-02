@@ -1,0 +1,5 @@
+pkgver() {
+  update_git
+  cd "${srcdir}/${_gitname}"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}

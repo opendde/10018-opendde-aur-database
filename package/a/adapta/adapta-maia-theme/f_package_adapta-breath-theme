@@ -1,0 +1,49 @@
+package_adapta-breath-theme() {
+pkgdesc="An adaptive Gtk+ theme based on Material Design Guidelines.Build with Manjaro Breath color"
+conflicts=('adapta-breath-theme-dev')
+replaces=('adapta-breath-theme-dev')
+    build_breath-theme
+    #cd "adapta-breath-theme-${pkgver}"
+    make install
+
+    install -dm 755 "${pkgdir}"/usr/share/plank/themes
+    ln -s /usr/share/themes/Adapta-Breath/plank "${pkgdir}"/usr/share/plank/themes/Adapta-Breath
+
+    install -Dm 644 LICENSE_CC_BY_SA4 -t "${pkgdir}"/usr/share/licenses/adapta-breath-theme/
+
+    # Move the file into another folder to match with name
+    cd "$pkgdir/usr/share/themes"
+    mv Adapta Adapta-Breath
+    mv Adapta-Nokto Adapta-Nokto-Breath
+    mv Adapta-Eta Adapta-Eta-Breath
+    mv Adapta-Nokto-Eta Adapta-Nokto-Eta-Breath
+
+    # Modify the index theme
+    sed -i -e 's,.*Adapta.*,Adapta-Breath,' $pkgdir/usr/share/themes/Adapta-Breath/index.theme
+    sed -i -e 's,.*Adapta-Nokto.*,Adapta-Nokto-Breath,' $pkgdir/usr/share/themes/Adapta-Nokto-Breath/index.theme
+    sed -i -e 's,.*Adapta-Eta.*,Adapta-Eta-Breath,' $pkgdir/usr/share/themes/Adapta-Eta-Breath/index.theme
+    sed -i -e 's,.*Adapta-Nokto-Eta.*,Adapta-Nokto-Eta-Breath,' $pkgdir/usr/share/themes/Adapta-Nokto-Eta-Breath/index.theme
+
+    # New symlink
+    cd "$pkgdir/usr/share/themes/Adapta-Nokto-Breath"
+    ln -sf /usr/share/themes/Adapta-Breath/xfwm4 xfwm4
+    ln -sf /usr/share/themes/Adapta-Breath/xfce-notify-4.0 xfce-notify-4.0
+    ln -sf /usr/share/themes/Adapta-Breath/plank plank
+    ln -sf /usr/share/themes/Adapta-Breath/gedit gedit
+    ln -sf /usr/share/themes/Adapta-Breath/metacity-1 metacity-1
+    ln -sf /usr/share/themes/Adapta-Breath/gtk-3.22 gtk-3.22
+    ln -sf /usr/share/themes/Adapta-Breath/gtk-3.0 gtk-3.0
+
+    cd "$pkgdir/usr/share/themes/Adapta-Eta-Breath"
+    ln -sf /usr/share/themes/Adapta-Breath/xfce-notify-4.0 xfce-notify-4.0
+    ln -sf /usr/share/themes/Adapta-Breath/plank plank
+    ln -sf /usr/share/themes/Adapta-Breath/telegram telegram
+    ln -sf /usr/share/themes/Adapta-Breath/metacity-1 metacity-1
+
+    cd "$pkgdir/usr/share/themes/Adapta-Nokto-Eta-Breath"
+    ln -sf /usr/share/themes/Adapta-Eta-Breath/gtk-3.22 gtk-3.22
+    ln -sf /usr/share/themes/Adapta-Breath/metacity-1 metacity-1
+    ln -sf /usr/share/themes/Adapta-Breath/plank plank
+    ln -sf /usr/share/themes/Adapta-Nokto-Breath/telegram telegram
+    ln -sf /usr/share/themes/Adapta-Breath/xfce-notify-4.0 xfce-notify-4.0
+}

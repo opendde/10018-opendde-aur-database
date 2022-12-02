@@ -1,0 +1,4 @@
+build() {
+	arch-meson "$_archive" build
+	ninja -C build
+}

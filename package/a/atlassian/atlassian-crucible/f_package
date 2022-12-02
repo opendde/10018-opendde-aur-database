@@ -1,0 +1,12 @@
+package() {
+  mkdir -p "$pkgdir/opt/atlassian-crucible/"
+  cp -r "$srcdir/fecru-$pkgver/"* "$pkgdir/opt/atlassian-crucible/"
+  # remove unneeded Windows files
+  find "$pkgdir/opt/atlassian-crucible/bin" -name '*.bat' -type f -exec rm "{}" \;
+  find "$pkgdir/opt/atlassian-crucible/bin" -name '*.exe' -type f -exec rm "{}" \;
+
+  # setup systemd service
+  install -dm755 "$pkgdir/usr/lib/systemd/system"
+  install -Dm644 "$srcdir/crucible.service" "$pkgdir/usr/lib/systemd/system"
+  install -Dm644 "$srcdir/crucible.conf.d" "$pkgdir/etc/conf.d/crucible"
+}

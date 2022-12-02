@@ -1,0 +1,14 @@
+package_bacula-console() {
+  pkgdesc+="(management CLI)"
+  backup=("etc/${pkgbase}/bconsole.conf")
+  depends=("${pkgbase}-common=${pkgver}" readline)
+
+  cd "${srcdir}/install"
+  cp --parents -a usr/bin/bconsole "${pkgdir}"
+  cp --parents -a usr/bin/bbconsjson "${pkgdir}"
+  cp --parents -a etc/${pkgbase}/bconsole.conf "${pkgdir}"
+  cp --parents -a usr/share/man/man8/bconsole.8.gz "${pkgdir}"
+
+  chmod 755 "${pkgdir}/etc/${pkgbase}" "${pkgdir}/usr/bin/bconsole"
+  chmod 644 "${pkgdir}/etc/${pkgbase}/bconsole.conf"
+}

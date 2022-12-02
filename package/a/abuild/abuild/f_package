@@ -1,0 +1,9 @@
+package() {
+	cd "$srcdir/$pkgname-$_ver"
+	make install VERSION="$pkgver-r$pkgrel" DESTDIR="$pkgdir"
+	for bin in "$pkgdir"/usr/bin/*; do
+		sed -e "1s|#!/bin/ash|#!/bin/busybox ash|" -i "$bin"
+	done
+	install -m 644 abuild.conf "$pkgdir"/etc/abuild.conf
+	install -d -m 775 -o nobody -g nobody "$pkgdir"/var/cache/distfiles
+}

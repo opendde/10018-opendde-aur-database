@@ -1,0 +1,4 @@
+check() {
+    # print marker with id 0 of the default dictionary
+    "$_builddir"/utils/aruco_print_marker 0 out.png
+}

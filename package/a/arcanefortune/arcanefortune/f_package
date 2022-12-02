@@ -1,0 +1,24 @@
+package() {
+  _destdir="${pkgdir}/opt/${pkgname}"
+  # create directory tree
+  install -Ddm755 "${_destdir}/game"
+  # install helper script
+  install -Dm755 arcane_fortune "${pkgdir}/usr/bin/arcane_fortune"
+  # install binaries (using same naming convention as upstream precompiled binaries for compatibility)
+  install -Dm755 ${pkgname}/arcane_fortune/target/release/arcane_fortune_ncurses "${_destdir}/game/arcane_fortune_linux_ncurses"
+  install -Dm755 ${pkgname}/arcane_fortune/target/release/arcane_fortune "${_destdir}/game/arcane_fortune_linux"
+
+  # copy config dir
+  cp -r arcanefortune/arcane_fortune/src/config "${_destdir}/game/config"
+  
+  # copy fonts dir
+  cp -r arcanefortune/arcane_fortune/src/fonts "${_destdir}/game/fonts"
+  
+  # install icon
+  install -Dm644 arcanefortune/arcane_fortune/src/icon.ico "${_destdir}/game/icon.ico"
+
+  # copy neural net weights
+  cp -r "arcane_fortune_v${pkgver//./_}/game/nn" "${_destdir}/game/nn"
+
+  install -Dm644 "arcanefortune/license.txt" "${pkgdir}/usr/share/licenses/${pkgname}/license.txt"
+}

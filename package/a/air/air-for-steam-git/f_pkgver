@@ -1,0 +1,3 @@
+pkgver() {
+    git -C "Air-for-Steam" describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/_/;s/-/./g;s/^v//'
+}

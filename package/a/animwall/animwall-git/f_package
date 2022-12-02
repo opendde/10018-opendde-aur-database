@@ -1,0 +1,10 @@
+package() {
+  cd "$srcdir/$_gitname" || {
+        msg "Error couldn't cd into $srcdir/$_gitname"
+        return 1
+  }
+
+  chmod 755 animwall
+  mkdir -p "${pkgdir}/usr/bin"
+  cp animwall "${pkgdir}/usr/bin/animwall"
+}

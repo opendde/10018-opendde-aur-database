@@ -1,0 +1,23 @@
+build() {
+  cd build
+
+  # note: needs workaround for https://gitlab.kitware.com/cmake/cmake/issues/18739 (currently provided outside of the PKGBUILD itself)
+
+  cmake ../$_pkgname-$pkgver \
+    -DCMAKE_SYSTEM_NAME=Android \
+    -DCMAKE_SYSTEM_VERSION=$_android_platform \
+    -DANDROID_ABI=$_android_arch \
+    -DCMAKE_ANDROID_ARCH_ABI=$_android_arch \
+    -DCMAKE_ANDROID_NDK=/opt/android-ndk \
+    -DCMAKE_ANDROID_SDK=/opt/android-sdk \
+    -DCMAKE_ANDROID_STL_TYPE=c++_shared \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX="$_prefix" \
+    -DCMAKE_EXE_LINKER_FLAGS="-Wl,-rpath-link,$_prefix/lib" \
+    -DCMAKE_FIND_ROOT_PATH="/opt/android-ndk/sysroot;$_prefix" \
+    -DECM_DIR=/usr/share/ECM/cmake \
+    -DBUILD_EXAMPLES=OFF \
+    -DBUILD_TESTING=OFF \
+    -DBUILD_QCH=OFF
+  make VERBOSE=1
+}

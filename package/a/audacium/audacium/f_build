@@ -1,0 +1,12 @@
+build() {
+	cd "$_archive"
+	cmake \
+		-G 'Unix Makefiles' \
+		-Daudacity_use_ffmpeg=loaded \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_BUILD_TYPE=Release \
+		-B build \
+		-S . \
+		..
+	make -C build
+}

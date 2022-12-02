@@ -1,0 +1,4 @@
+package() {
+  install -Dm644 "${srcdir}/asus-n551-hda-fix.conf" "${pkgdir}/etc/modprobe.d/asus-n551-hda-fix.conf"
+  install -Dm644 "${srcdir}/asus-n551-hda-fix.fw" "${pkgdir}/usr/lib/firmware/asus-n551-hda-fix.fw"
+}

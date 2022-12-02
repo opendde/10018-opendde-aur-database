@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}.tar.xz::https://github.com/dftd4/dftd4/releases/download/v$pkgver/dftd4-$pkgver-source.tar.xz")

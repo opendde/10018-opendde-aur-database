@@ -1,0 +1,1 @@
+("ftp://dicom.offis.de/pub/dicom/offis/software/dcmtk/dcmtk${_pkgver}/${pkgname%363}-${pkgver}.tar.gz")

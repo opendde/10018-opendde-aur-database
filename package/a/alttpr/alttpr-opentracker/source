@@ -1,0 +1,1 @@
+("${pkgname}::git+https://github.com/trippsc2/OpenTracker#tag=${pkgver}")

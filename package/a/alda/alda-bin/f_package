@@ -1,0 +1,5 @@
+package() {
+	install -D "alda-$pkgver-$CARCH" "$pkgdir/usr/bin/alda"
+	install -D "alda-player-$pkgver" "$pkgdir/usr/bin/alda-player"
+  install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
+}

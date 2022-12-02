@@ -1,0 +1,5 @@
+check() {
+  cd "avm"
+
+  #make -C "_build" test
+}

@@ -1,0 +1,6 @@
+package_arc-gtk-theme-git() {
+  conflicts=('arc-gtk-theme')
+
+  cd "${_pkgname}"
+  DESTDIR="$pkgdir" meson install -C build
+}

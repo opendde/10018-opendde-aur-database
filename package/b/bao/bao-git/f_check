@@ -1,0 +1,6 @@
+check() {
+  cd "bao"
+
+  cargo test \
+    --release
+}

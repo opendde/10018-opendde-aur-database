@@ -1,0 +1,15 @@
+package() {
+  # Install executable.
+  install -D -m755 "bitsquare.sh" "${pkgdir}/usr/bin/bitsquare"
+  install -D -m644 "${srcdir}/${pkgname}/gui/target/shaded.jar" "${pkgdir}/usr/share/java/bitsquare/shaded.jar"
+
+  # Install desktop launcher.
+  install -Dm644 bitsquare.desktop "${pkgdir}/usr/share/applications/bitsquare.desktop"
+  install -Dm644 "${srcdir}/${pkgname}/package/linux/icon.png" "${pkgdir}/usr/share/pixmaps/bitsquare.png"
+
+  # Install BouncyCastleProvider
+  # https://github.com/bitsquare/bitsquare/blob/master/doc/build.md#3-copy-the-bountycastle-provider-jar-file
+  local mvn_repo="$srcdir/mvn-repository"
+  install -Dm644 "$mvn_repo/org/bouncycastle/bcprov-jdk15on/1.53/bcprov-jdk15on-1.53.jar" \
+    "${pkgdir}/usr/lib/jvm/java-8-openjdk/jre/lib/ext/bcprov-jdk15on-1.53.jar"
+}

@@ -1,0 +1,6 @@
+pkgver() {
+    cd "$srcdir/bitcoin/"
+    git checkout segwit2x > /dev/null 2>&1
+    git reset --hard HEAD > /dev/null 2>&1
+    git describe --long | sed 's/-/./g'
+}

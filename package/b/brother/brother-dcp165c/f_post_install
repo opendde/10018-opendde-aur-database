@@ -1,0 +1,3 @@
+post_install() {
+    /usr/local/Brother/Printer/dcp165c/cupswrapper/cupswrapperdcp165c
+}

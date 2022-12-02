@@ -1,0 +1,4 @@
+prepare() {
+  install -d $srcdir/usr/share/cups/model
+  install -d $srcdir/usr/lib/cups/filter
+}

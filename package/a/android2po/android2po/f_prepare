@@ -1,0 +1,8 @@
+prepare() {
+  cd "${_tarname}"
+
+  printf "Changing hashbangs in *.py files to refer to '/usr/bin/env python'... "
+  sed -e '1s|#![ ]*/[a-zA-Z0-9./_ ]*python.*|#!/usr/bin/env python|' \
+      -i $(find . -name '*.py')
+  echo 'done'
+}

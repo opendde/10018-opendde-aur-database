@@ -1,0 +1,13 @@
+package() {
+  cd "${pkgname/-git}"
+
+  make install DESTDIR="$pkgdir"
+  install -d "$pkgdir/usr/share/doc/$pkgname"
+  cp -r samples "$pkgdir/usr/share/doc/$pkgname/"
+  cp -r samples64 "$pkgdir/usr/share/doc/$pkgname/"
+  cp -r samples32 "$pkgdir/usr/share/doc/$pkgname/"
+  cp -r samples16 "$pkgdir/usr/share/doc/$pkgname/"
+  cp -r helloworld "$pkgdir/usr/share/doc/$pkgname/"
+  install -Dm644 tutorial.md "$pkgdir/usr/share/doc/$pkgname/tutorial.md"
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

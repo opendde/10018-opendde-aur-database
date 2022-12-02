@@ -1,0 +1,7 @@
+package_d-spy() {
+	depends=('libadwaita' 'libdspy')
+
+	meson install -C build --destdir "$pkgdir"
+	cd "$pkgdir"
+	_pick library usr/include usr/lib
+}

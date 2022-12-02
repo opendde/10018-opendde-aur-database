@@ -1,0 +1,6 @@
+package() {
+	cd build
+	install -Dm644 "$srcdir"/brunsli/LICENSE "$pkgdir"/usr/share/licenses/"$pkgname"/LICENSE
+	install -Dm755 cbrunsli "$pkgdir"/usr/bin/cbrunsli
+	install -Dm755 dbrunsli "$pkgdir"/usr/bin/dbrunsli
+}

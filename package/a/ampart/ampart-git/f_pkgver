@@ -1,0 +1,4 @@
+pkgver() {
+    cd "${srcdir}"/ampart
+    printf "%s" "$(git describe --tags | sed 's/^v//;s/\([^-]*-\)g/r\1/;s/-/./g')"
+}

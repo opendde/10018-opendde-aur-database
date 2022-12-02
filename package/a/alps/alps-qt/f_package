@@ -1,0 +1,7 @@
+package() {
+  install -Dm644 alps-qt.desktop "$pkgdir"/usr/share/applications/alps.desktop
+  cd "$srcdir/$pkgname"
+  install -Dm755 src/qt/alps-qt "$pkgdir"/usr/bin/alps-qt
+  install -Dm644 share/pixmaps/alps256.png "$pkgdir"/usr/share/pixmaps/alps256.png
+  install -Dm644 COPYING "$pkgdir/usr/share/licenses/$pkgname/COPYING"
+}

@@ -1,0 +1,6 @@
+build() {
+  cd $_srcdir
+
+  make -f Makefile-libbz2_so CC="$_target-gcc $CFLAGS $LDFLAGS"
+  make bzip2 bzip2recover CC="$_target-gcc $CFLAGS $LDFLAGS"
+}

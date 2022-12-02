@@ -1,0 +1,5 @@
+prepare() {
+  cd ${srcdir}
+  # remove useless chromium versions
+  zip -d ${pkgname}-${pkgver}.jar 'chromium-macosx*.zip' 'chromium-win*.zip'
+}

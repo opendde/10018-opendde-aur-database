@@ -1,0 +1,6 @@
+package() {
+  mkdir -p "${pkgdir}/opt/android-sdk/system-images/android-${_sdkint}/"
+  mv "${srcdir}/armeabi-v7a" "${pkgdir}/opt/android-sdk/system-images/android-${_sdkint}/armeabi-v7a"
+
+  chmod -R ugo+rX "${pkgdir}/opt"
+}

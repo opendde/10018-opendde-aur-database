@@ -1,0 +1,6 @@
+package() {
+	cd "$srcdir/$pkgname"
+	install -Dm755 drawterm $pkgdir/usr/bin/9front-drawterm
+	install -Dm644 drawterm.1 $pkgdir/usr/share/man/man1/9front-drawterm.1
+	install -Dm644 LICENSE $pkgdir/usr/share/licenses/${pkgname%-*}/LICENSE
+}

@@ -1,0 +1,4 @@
+prepare() {
+  cd ${srcdir}/acpi_call
+  sed -i 's%#include <acpi/acpi.h>%#include <linux/acpi.h>%' acpi_call.c
+}

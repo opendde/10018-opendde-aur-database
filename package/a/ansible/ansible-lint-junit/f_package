@@ -1,0 +1,4 @@
+package() {
+  cd "${srcdir}/${pkgbase}-${pkgver}"
+  python setup.py install -O1 --root="${pkgdir}"
+}

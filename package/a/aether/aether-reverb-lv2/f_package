@@ -1,0 +1,4 @@
+package() {
+	mkdir -p "${pkgdir}/usr/lib/lv2"
+	cp -r "${srcdir}/${pkgname}/Aether/build/aether.lv2" "${pkgdir}/usr/lib/lv2/aether.lv2"
+}

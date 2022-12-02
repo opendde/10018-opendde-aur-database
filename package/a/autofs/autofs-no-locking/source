@@ -1,0 +1,1 @@
+("https://www.kernel.org/pub/linux/daemons/${_pkgbase}/v5/${_pkgbase}-${pkgver}.tar."{xz,sign})

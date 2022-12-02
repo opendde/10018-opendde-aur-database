@@ -1,0 +1,1 @@
+("adwaita-extended-git::git+${url}.git#branch=master")

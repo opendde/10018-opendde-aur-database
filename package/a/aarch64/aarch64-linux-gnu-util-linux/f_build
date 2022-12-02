@@ -1,0 +1,17 @@
+build() {
+  cd $_srcdir
+
+  mkdir -p build-$_target && pushd build-$_target
+  $_target-configure \
+    --enable-fs-paths-default=/usr/$_target/bin \
+    --enable-usrdir-path \
+    --enable-raw \
+    --enable-vipw \
+    --enable-newgrp \
+    --enable-write \
+    --enable-mesg \
+    --disable-hardlink
+
+  make
+  popd
+}

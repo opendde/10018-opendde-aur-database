@@ -1,0 +1,15 @@
+package() {
+  cd "$srcdir"
+
+  npm install \
+    --global \
+    --prefix "$pkgdir/usr" \
+    --cache npm-cache \
+    "$pkgname-$pkgver.tgz"
+
+  # npm gives ownership of ALL FILES to build user
+  # https://bugs.archlinux.org/task/63396
+  chown -R root:root "$pkgdir"
+
+  install -Dm 644 "$pkgdir/usr/lib/node_modules/all-contributors-cli/LICENSE.md" "$pkgdir/usr/share/licenses/$pkgname/LICENSE.md"
+}

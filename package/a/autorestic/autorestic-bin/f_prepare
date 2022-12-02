@@ -1,0 +1,4 @@
+prepare() {
+  bzip2 -fdc ${pkgname%-bin}-${pkgver}-$CARCH.bz2 > autorestic
+  chmod +x autorestic
+}

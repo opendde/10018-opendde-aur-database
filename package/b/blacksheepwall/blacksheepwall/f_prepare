@@ -1,0 +1,5 @@
+prepare() {
+  cd "${pkgname}-${pkgver}"
+  go mod init "${url#https://}"
+  go mod tidy
+}

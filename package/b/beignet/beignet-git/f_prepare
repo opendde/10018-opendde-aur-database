@@ -1,0 +1,25 @@
+prepare() {
+    cd beignet
+
+    # Remove implementation of cl_intel_device_side_avc_motion_estimation
+    # (conflicts with the implemention in Clang 8)
+    # git revert -n 9b7ca443cf7b d61933205874 a4257c7475e7 5a288032ab23 9cb7ff4c285d
+
+    # Static linking leads to build failure due to the gbe compiler still using shared libs
+    git revert -n 1bd0d252d733
+
+    # Fix undefined behavior
+    # See:
+    #  * https://github.com/intel/beignet/pull/16
+    #  * https://gitlab.freedesktop.org/beignet/beignet/issues/12
+    # A similar fix is included in llvm8.patch
+    patch -Np1 -i ../GBE-let-GenRegister-reg-never-return-uninitialized-m.patch
+
+    # Patches from FreeBSD + Debian to build with newer LLVM
+    # patch -Np1 -i ../llvm8.patch
+    # patch -Np1 -i ../llvm9.patch
+
+    # https://lists.freedesktop.org/archives/beignet/2020-January/009251.html
+    # https://github.com/intel/opencl-clang/commit/77ae1114c7bf79d724f5129461
+    # patch -Np1 -i ../llvm10.patch
+}

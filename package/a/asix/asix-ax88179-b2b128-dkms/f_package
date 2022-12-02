@@ -1,0 +1,28 @@
+package() {
+  # Install files
+	installdir="${pkgdir}/usr/src/${_modname}-dkms-${pkgver}"
+	
+	install -dm755 "${installdir}"
+	install -m644 "${srcdir}/dkms.conf" "${installdir}"
+
+	install -dm755 "${pkgdir}/etc/modprobe.d"
+	install -m644 "${srcdir}/blacklist-${_modname}.conf" \
+    "${pkgdir}/etc/modprobe.d/blacklist-${_modname}.conf"
+
+	install -dm755 "${pkgdir}/etc/modules-load.d"
+	install -m644 "${srcdir}/${_modname}-dkms.conf" \
+    "${pkgdir}/etc/modules-load.d/${_modname}-dkms.conf"
+
+  sed -e "s/@VERSION@/${pkgver}/" "${srcdir}/dkms.conf" > "${installdir}/dkms.conf"
+
+  # Install module source
+	cd "$srcdir/$_dirname"
+ 	
+ 	for d in `find . -type d`; do
+		install -dm755 "${installdir}/$d"
+	done
+	
+	for f in `find . -type f`; do
+	  install -m644  "${srcdir}/${_dirname}/$f" "${installdir}/$f"
+	done
+}

@@ -1,0 +1,6 @@
+prepare() {
+    cd "${srcdir}/btsync-deb-${pkgname}-${pkgver}-${_pkgupd}/${pkgname}"
+    # Arch Linux compatibility patches
+    sed -i 's|env python|env python2|' ${pkgname}
+    sed -i 's|/usr/lib/btsync-common/btsync-core|/usr/bin/btsync|' btsyncagent.py
+}

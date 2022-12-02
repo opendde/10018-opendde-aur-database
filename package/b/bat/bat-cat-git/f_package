@@ -1,0 +1,5 @@
+package() {
+  cd "${srcdir}/${_pkgname}"
+  cargo build --release
+  install -D ./target/release/${_pkgname} "${pkgdir}/usr/bin/${_pkgname}"
+}

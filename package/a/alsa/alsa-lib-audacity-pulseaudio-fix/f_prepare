@@ -1,0 +1,4 @@
+prepare() {
+  patch -d $_pkgbase-$pkgver -Np1 < b420056604f06117c967b65d43d01536c5ffcbc9.patch
+  
+}

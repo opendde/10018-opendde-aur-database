@@ -1,0 +1,6 @@
+build() {
+    cd "$srcdir/brisk-menu"
+    meson --buildtype plain build --prefix=/usr --libexecdir=/usr/lib/${_pkgname}
+
+    ninja -C build -j$(($(getconf _NPROCESSORS_ONLN)+1))
+}

@@ -1,0 +1,19 @@
+pkgver() {
+	cd ${pkgname}
+
+	GIT_LAST_COMMIT=$(git log -n 1 --date=local --pretty=format:'%ct')
+	DATE=$(date -u --date=@${GIT_LAST_COMMIT} +%Y%0m%0d%0H%0M%0S)
+	HASH=$(git log -n 1 --pretty=format:'%h' --abbrev=12)
+	TAG=$(git describe --abbrev=0 --tags || echo "")
+
+	if [[ "${TAG}" == "" ]]; then
+		TAG="0.0.0"
+	else
+		TAG=$(echo ${TAG} | sed 's/v//')
+		IFS=. read MAJOR MINOR PATCH <<<"${TAG}"
+		PATCH=$((PATCH+1))
+		TAG=${MAJOR}.${MINOR}.${PATCH}
+	fi
+
+	echo ${TAG}.${DATE}.${HASH}
+}

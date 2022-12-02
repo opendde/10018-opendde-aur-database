@@ -1,0 +1,3 @@
+package() {
+    install -Dm 755 "${srcdir}/ant/ant" "${pkgdir}/usr/bin/ant_mw"
+}

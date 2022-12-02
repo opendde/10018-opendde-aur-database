@@ -1,0 +1,8 @@
+package() {
+	cd "$pkgname-v${_pkgver}"
+
+	export DESTDIR="$pkgdir"
+	cmake --install build --component Runtime
+
+	install -m755 -d "$pkgdir/etc/ananicy.d"
+}

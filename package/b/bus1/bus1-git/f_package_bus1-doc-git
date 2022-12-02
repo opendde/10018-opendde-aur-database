@@ -1,0 +1,9 @@
+package_bus1-doc-git() {
+  provides=('bus1-doc')
+  conflicts=('bus1-doc')
+
+  cd "${_pkgbase}"
+
+  install -dm 0755 "${pkgdir}"/usr/share/man/man7/
+  install -m 0644 Documentation/bus1/bus1*.7 "${pkgdir}"/usr/share/man/man7/
+}

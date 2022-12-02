@@ -1,0 +1,3 @@
+check() {
+  "$srcdir/bitcoinclassic/src/test/test_bitcoin"
+}

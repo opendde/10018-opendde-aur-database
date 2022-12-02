@@ -1,0 +1,3 @@
+prepare() {
+  sed -i 's/\r//; $s/$/\n/' readme.txt
+}

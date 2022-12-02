@@ -1,0 +1,5 @@
+prepare() {
+  cd "$srcdir/$pkgname-$pkgver_"
+  # Update for Python2
+  sed -i 's/python/python2/g' setup.py
+}

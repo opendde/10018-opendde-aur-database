@@ -1,0 +1,6 @@
+build() {
+  cd build
+  cmake ../$pkgname-game-$pkgver \
+    -DCMAKE_INSTALL_PREFIX=/usr
+  make
+}

@@ -1,0 +1,4 @@
+build() {
+  cd ${pkgname}-${pkgver}
+  gem build bettercap.gemspec
+}

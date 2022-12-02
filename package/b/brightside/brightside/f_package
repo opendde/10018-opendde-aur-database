@@ -1,0 +1,4 @@
+package() {
+  cd "$pkgname-$pkgver.orig"
+  make GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 DESTDIR="$pkgdir" install
+}

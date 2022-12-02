@@ -1,0 +1,4 @@
+prepare() {
+	cd "rover-$pkgver"
+	cargo fetch --locked --target "$CARCH-unknown-linux-gnu"
+}

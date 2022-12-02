@@ -1,0 +1,6 @@
+build() {
+	cat > "${srcdir}/${pkgname}" << EOF
+#!/bin/sh
+/usr/share/java/APPGclnt/bin/${pkgname}
+EOF
+}

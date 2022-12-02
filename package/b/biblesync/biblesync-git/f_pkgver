@@ -1,0 +1,4 @@
+pkgver() {
+  cd "${pkgname%-git}"
+  git describe --tags --abbrev=7 HEAD | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}

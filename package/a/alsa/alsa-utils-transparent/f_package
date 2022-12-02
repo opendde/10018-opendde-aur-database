@@ -1,0 +1,12 @@
+package() {
+  cd ${srcdir}/${_pkgname}-${pkgver}
+  make DESTDIR=${pkgdir} install
+  install -D -m755 ../90alsa ${pkgdir}/etc/pm/sleep.d/90alsa
+
+  # install alsa udev rule file
+  install -D -m644 alsactl/90-alsa-restore.rules \
+          ${pkgdir}/usr/lib/udev/rules.d/90-alsa-restore.rules
+
+  # dir where to save ALSA state
+  install -d ${pkgdir}/var/lib/alsa
+}

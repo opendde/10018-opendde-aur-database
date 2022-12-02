@@ -1,0 +1,5 @@
+package() {
+    cd "$srcdir/$pkgname-$pkgver"
+    python3 setup.py install --root="$pkgdir/" --prefix=/usr --optimize=1 --skip-build
+    install -D -m644 bracelet-generator.sharedmimeinfo  "${pkgdir}/usr/share/mime/packages/bracelet-generator.xml"
+}

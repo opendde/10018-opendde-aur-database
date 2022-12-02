@@ -1,0 +1,12 @@
+package() {
+  cd "$srcdir/${_pkgname}-${pkgver}"
+
+  install -dm755 "$pkgdir/usr/share/$_pkgname"
+
+  # copy over all the IRC/tracker files
+  cp -r "AutodlIrssi" "$pkgdir/usr/share/$_pkgname/"
+  chmod 755 "$pkgdir/usr/share/$_pkgname/AutodlIrssi"
+
+  install -Dm644 "autodl-irssi.pl" "$pkgdir/usr/share/$_pkgname"
+  install -Dm644 "README.md" "$pkgdir/usr/share/$_pkgname"
+}

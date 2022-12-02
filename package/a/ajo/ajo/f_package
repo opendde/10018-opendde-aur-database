@@ -1,0 +1,8 @@
+package() {
+	cd hpc/ajo*
+	install -dm755 $pkgdir/usr/lib/ruby/site_ruby/ajo
+	cp libhpc.rb $pkgdir/usr/lib/ruby/site_ruby/	
+	cp ajo $pkgdir/usr/lib/ruby/site_ruby/ajo
+	install -Dm755 config.rb $pkgdir/etc/ajo/config.rb
+	install -Dm755 $srcdir/ajo.sh $pkgdir/usr/bin/ajo	
+}

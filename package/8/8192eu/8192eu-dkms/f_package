@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir/$_pkgbase"
+  install -dm755 "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}
+  cp -r ${srcdir}/${_pkgbase}/* "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}/
+}

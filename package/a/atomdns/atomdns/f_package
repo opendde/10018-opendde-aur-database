@@ -1,0 +1,12 @@
+package() {
+  # Install binary
+  install -Dm755 "$srcdir/$pkgname-${pkgver}/atomdns" "$pkgdir/usr/bin/atomdns"
+  # Install systemd service
+  install -Dm644 "$srcdir/atomdns.service" "$pkgdir/usr/lib/systemd/system/atomdns.service"
+  # Install atomdns sysusers
+  install -Dm644 "$srcdir/atomdns-sysusers.conf" "$pkgdir/usr/lib/sysusers.d/atomdns.conf"
+  # Install atomdns tmpfiles
+  install -Dm644 "$srcdir/atomdns-tmpfiles.conf" "$pkgdir/usr/lib/tmpfiles.d/atomdns.conf"
+  # Install default atomdns config
+  install -Dm644 atomdns.hcl "$pkgdir/etc/atomdns/atomdns.hcl"
+}

@@ -1,0 +1,3 @@
+prepare() {
+  mkdir -p "${pkgname}-${pkgver}/build"
+}

@@ -1,0 +1,4 @@
+check() {
+  cd "${srcdir}/backward-cpp-${pkgver}/build"
+  make test
+}

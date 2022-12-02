@@ -1,0 +1,4 @@
+build() {
+	cd "$srcdir/$pkgname-$_ver"
+	make VERSION="$pkgver-r$pkgrel"
+}

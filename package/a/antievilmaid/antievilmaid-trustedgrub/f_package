@@ -1,0 +1,7 @@
+package() {
+  cd "$srcdir/$_pkgname-$pkgver/$_pkgname-$pkgver"
+  install -d "$pkgdir/usr/lib/antievilmaid/trustedgrub"
+  install -m0644 stage1/stage1 "$pkgdir/usr/lib/antievilmaid/trustedgrub/"
+  install -m0644 stage2/stage2 "$pkgdir/usr/lib/antievilmaid/trustedgrub/"
+  install -m0755 grub/grub "$pkgdir/usr/lib/antievilmaid/trustedgrub/"
+}

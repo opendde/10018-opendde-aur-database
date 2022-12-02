@@ -1,0 +1,5 @@
+package() {
+
+ sudo cp ./archibold /usr/bin/
+ sudo chmod +x /usr/bin/archibold
+}

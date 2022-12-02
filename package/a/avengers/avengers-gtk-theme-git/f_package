@@ -1,0 +1,5 @@
+package() {
+    cd "${srcdir}/${_pkgname}"
+    install -m755 -d "${pkgdir}/usr/share/themes"
+    DEST_DIR="${pkgdir}/usr/share/themes" ./Install
+}

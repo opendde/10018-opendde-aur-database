@@ -1,0 +1,15 @@
+package() {
+  cd "${srcdir}"/bsnes-plus/
+  install -dm 755 "${pkgdir}"/usr/{bin,lib,share/{applications,pixmaps}}
+  install -m 755 ../bsnes "${pkgdir}"/usr/bin/
+  install -m 644 bsnes/data/bsnes.desktop "${pkgdir}"/usr/share/applications/
+  install -m 644 bsnes/data/bsnes.png "${pkgdir}"/usr/share/pixmaps/
+  install -m 644 snesfilter/libsnesfilter.so "${pkgdir}"/usr/lib/
+  install -m 644 snesmusic/libsnesmusic.so "${pkgdir}"/usr/lib/
+  install -m 644 snesreader/libsnesreader.so "${pkgdir}"/usr/lib/
+  install -m 644 supergameboy/libsupergameboy.so "${pkgdir}"/usr/lib/
+
+  for p in {accuracy,compatibility}; do
+    install -m 755 bsnes/out/bsnes-$p "${pkgdir}"/usr/bin/
+  done
+}

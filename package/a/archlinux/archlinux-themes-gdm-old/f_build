@@ -1,0 +1,6 @@
+build() {
+	cd ${srcdir}/archlinux-themes-gdm-${pkgver}
+	mkdir -p ${pkgdir}/usr/share/gdm/themes
+
+	mv ${srcdir}/archlinux-themes-gdm-1.4/* ${pkgdir}/usr/share/gdm/themes
+}

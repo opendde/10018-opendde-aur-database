@@ -1,0 +1,10 @@
+package() {
+  cd ${srcdir}/binutils-build
+  make prefix=${pkgdir}/usr tooldir=${pkgdir}/usr install
+
+  # Remove unwanted files
+  rm ${pkgdir}/usr/share/man/man1/{dlltool,nlmconv,windres,windmc}*
+
+  # No shared linking to these files outside binutils
+  rm ${pkgdir}/usr/lib/lib{bfd,opcodes}.so
+}

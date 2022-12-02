@@ -1,0 +1,5 @@
+build() {
+	cd $_svnname
+	cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr .
+	make
+}

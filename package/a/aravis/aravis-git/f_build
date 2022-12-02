@@ -1,0 +1,4 @@
+build() {
+	arch-meson $_srcname build
+	ninja -C build
+}

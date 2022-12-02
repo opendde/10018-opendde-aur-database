@@ -1,0 +1,5 @@
+build() {
+  cd "$pkgname-$pkgver"
+  cargo build --release
+  icotool "resources/windows/ajour.ico" -x
+}

@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir/${_bpn}"
+  local _d="$pkgdir/etc/asciidoc/filters/plantuml"
+  mkdir -p "${_d}"
+  cp source/acplantuml.py source/plantuml-filter.conf "${_d}"
+}

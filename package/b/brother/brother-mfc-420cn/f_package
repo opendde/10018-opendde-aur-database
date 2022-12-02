@@ -1,0 +1,26 @@
+package() {
+  set -u
+
+  local _dir
+  # /var/spool is not used anywhere in this package. Maybe it's needed for non cups lprng.
+  for _dir in 'usr' 'opt'; do # 'var'
+    if [ -d "${srcdir}/${_dir}" ]; then
+      cp -pR "${srcdir}/${_dir}" "${pkgdir}"
+    fi
+  done
+
+  if [ "${_conflict}" != 'brother' ]; then
+    _fn_libconflict
+  fi
+
+  # Ensure we got a ppd and a filter for CUPS
+  test ! -z "$(find "${pkgdir}/usr/share/cups/model" -type 'f' -name '*.ppd')" || echo "${}"
+  test ! -z "$(find "${pkgdir}/usr/lib/cups/filter/" '(' -type 'f' -o -type 'l' ')')" || echo "${}"
+
+  # Ensure there are no forbidden paths
+  ! grep -alqr "/sbin" "${pkgdir}" || echo "${}"
+  ! grep -alqr "/usr/tmp" "${pkgdir}" || echo "${}"
+
+  install -Dpm644 'cupswrapper-license.txt' 'lpr-license.txt' -t "${pkgdir}/usr/share/licenses/${pkgname}/"
+  set +u
+}

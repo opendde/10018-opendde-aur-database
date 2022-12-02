@@ -1,0 +1,4 @@
+prepare() {
+  echo '#!/bin/sh' > "$srcdir/amm"
+  cat "ammonite-repl-${pkgver}" >> "$srcdir/amm"
+}

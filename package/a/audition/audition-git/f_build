@@ -1,0 +1,5 @@
+build() {
+  cd "$_name"
+  shards
+  shards build --release
+}

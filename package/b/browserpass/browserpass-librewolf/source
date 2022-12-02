@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}.xpi::https://addons.mozilla.org/firefox/downloads/file/3711209/browserpass-${pkgver}-fx.xpi"

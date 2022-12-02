@@ -1,0 +1,4 @@
+pre_remove() {
+	/opt/brother/Printers/${_pkgname}/inf/setupPrintcapij ${_pkgname} -e
+	/opt/brother/Printers/${_pkgname}/cupswrapper/cupswrapper${_pkgname} -e
+}

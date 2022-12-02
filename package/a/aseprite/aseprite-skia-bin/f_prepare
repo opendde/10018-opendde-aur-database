@@ -1,0 +1,15 @@
+prepare() {
+	mkdir -p aseprite skia
+	bsdtar -xf ${noextract[0]} -C aseprite
+	bsdtar -xf ${noextract[1]} -C skia
+
+	# Fix up Aseprite's desktop integration
+	env -C aseprite patch -tp1 <desktop.patch
+	# Allow using more shared libs
+	env -C aseprite patch -tp1 <shared-libarchive.patch
+	env -C aseprite patch -tp1 <shared-libwebp.patch
+	env -C aseprite patch -tp1 <optional-pixman.patch
+	# Their "FindSkia" module forcefully tries to use Skia's FreeType and HarfBuzz,
+	# but we don't clone those because we use the shared ones. Avoid overwriting the settings instead.
+	env -C aseprite patch -tp1 <shared-skia-deps.patch
+}

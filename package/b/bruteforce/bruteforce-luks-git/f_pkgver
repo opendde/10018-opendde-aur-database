@@ -1,0 +1,4 @@
+pkgver() {
+	cd "$srcdir/bruteforce-luks"
+	printf "1.0.r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}

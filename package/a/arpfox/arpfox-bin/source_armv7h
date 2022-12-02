@@ -1,0 +1,1 @@
+("${url}/releases/download/v${pkgver}/${_pkgname}_linux_armv7.gz"

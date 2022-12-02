@@ -1,0 +1,4 @@
+package() {
+	mkdir -p $pkgdir/usr/share/applications/
+	install $srcdir/mount-archive.desktop $pkgdir/usr/share/applications/
+}

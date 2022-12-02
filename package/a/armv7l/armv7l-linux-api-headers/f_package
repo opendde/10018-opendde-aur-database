@@ -1,0 +1,7 @@
+package() {
+  cd linux-$pkgver
+  make INSTALL_HDR_PATH="$pkgdir/usr/$_target/sys-root/usr" ARCH=$_kernel_arch V=0 headers_install
+
+  # clean-up unnecessary files generated during install
+  find "$pkgdir" \( -name .install -or -name ..install.cmd \) -delete
+}

@@ -1,0 +1,7 @@
+build() {
+  cd "$srcdir"
+  mv "$pkgname-release/"$(ls "$pkgname-release") "$pkgname-$pkgver"
+  rm -rf "$pkgname-release"
+  cd "$srcdir/$pkgname-$pkgver"
+  make all
+}

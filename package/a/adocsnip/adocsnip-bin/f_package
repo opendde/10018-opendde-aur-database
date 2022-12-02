@@ -1,0 +1,6 @@
+package() {
+  # bin
+  install -Dm755 "./adocsnip" "${pkgdir}/usr/bin/adocsnip"
+  # license
+  install -Dm644 "./LICENSE" "${pkgdir}/usr/share/licenses/adocsnip/LICENSE"
+}

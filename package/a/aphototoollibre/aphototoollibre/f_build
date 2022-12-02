@@ -1,0 +1,5 @@
+build() {
+	cd "$srcdir/A-Photo-Tool-Libre-$pkgver-$pkgrel"
+	qmake
+	make
+}

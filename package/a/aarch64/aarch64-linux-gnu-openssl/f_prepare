@@ -1,0 +1,6 @@
+prepare() {
+	cd "${srcdir}/${_pkgname}-${_ver}"
+
+	# set ca dir to /etc/ssl by default
+	patch -p0 -i "${srcdir}/ca-dir.patch"
+}

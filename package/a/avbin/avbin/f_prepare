@@ -1,0 +1,9 @@
+prepare() {
+    git -C AVbin submodule init
+    git -C AVbin config --local "submodule.libav.url" "${srcdir}/libav-avbin"
+    git -C AVbin -c protocol.file.allow='always' submodule update
+    
+    patch -d AVbin -Np1 -i "${srcdir}/0001-avbin-remove-unwanted-optimization.patch"
+    patch -d AVbin -Np1 -i "${srcdir}/0002-avbin-fix-link-and-add-full-relro.patch"
+    patch -d AVbin -Np1 -i "${srcdir}/0003-avbin-faster-build.patch"
+}

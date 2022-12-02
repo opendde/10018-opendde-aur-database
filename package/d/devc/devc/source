@@ -1,0 +1,1 @@
+("$pkgname-v$pkgver.tar.gz::https://github.com/nikaro/$pkgname/archive/refs/tags/v$_pkgver.tar.gz")

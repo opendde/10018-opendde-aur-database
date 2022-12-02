@@ -1,0 +1,6 @@
+build() {
+  mkdir -p Cura/build
+  cd Cura/build
+  cmake -DCMAKE_INSTALL_PREFIX=/usr -DURANIUM_SCRIPTS_DIR=/usr/share/uranium/scripts ..
+  make
+}

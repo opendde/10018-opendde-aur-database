@@ -1,0 +1,5 @@
+prepare() {
+  cd $pkgname
+  sed -i 's/inline int sign/int sign/' apricots/all.cpp
+  autoreconf -fvi
+}

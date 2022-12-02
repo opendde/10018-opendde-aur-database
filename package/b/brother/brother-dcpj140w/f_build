@@ -1,0 +1,4 @@
+build() {
+   cd "$srcdir"
+   patch -Np0 < fix_lp.patch
+}

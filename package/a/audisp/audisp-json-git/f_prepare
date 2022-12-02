@@ -1,0 +1,4 @@
+prepare() {
+    cd "${srcdir}/${pkgname}"
+    patch -p1 < ${srcdir}/audisp-json.patch
+}

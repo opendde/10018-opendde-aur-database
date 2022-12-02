@@ -1,0 +1,16 @@
+package_bcompare-kde4() {
+  pkgdesc="KDE 4 service menus for Beyond Compare 4"
+  depends=('bcompare')
+  replaces=('bcompare-kde')
+  conflicts=('bcompare-kde')
+
+   msg2 "Packaging KDE 4 service menus..."
+  _install_dir="${srcdir}/install"
+  # Set up service menus
+  mkdir -p "${pkgdir}/usr/lib"
+  mkdir -p "${pkgdir}/usr/share"
+
+  mv "${_install_dir}/usr/lib/kde4" "${pkgdir}/usr/lib/"
+  mv "${_install_dir}/usr/share/kde4" "${pkgdir}/usr/share"
+  msg2 "Done!"
+}

@@ -1,0 +1,10 @@
+package() {
+    tar xf ${srcdir}/data.tar.xz -C ${pkgdir}
+    install -dm0755 "${pkgdir}/usr/bin" \
+                    "${pkgdir}/usr/share/applications" \
+                    "${pkgdir}/usr/share/icons/hicolor/scalable/apps"
+
+    ln -sf "/opt/apps/com.appimage-installer/files/appimage-installer" "${pkgdir}/usr/bin/appimage-installer"
+    ln -sf "/opt/apps/com.appimage-installer/entries/applications/com.appimage-installer.desktop" "${pkgdir}/usr/share/applications/com.appimage-installer.desktop"
+    ln -sf "/opt/apps/com.appimage-installer/entries/icons/hicolor/scalable/apps/appimage-installer.svg" "${pkgdir}/usr/share/icons/hicolor/scalable/apps/appimage-installer.svg"
+}

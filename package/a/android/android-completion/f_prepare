@@ -1,0 +1,7 @@
+prepare() {
+	cd "$srcdir"
+	for i in adb fastboot; do
+		base64 -d $i.bash.b64 > $i.bash
+		sed -i 's/check_type/type -t/g' $i.bash
+	done
+}

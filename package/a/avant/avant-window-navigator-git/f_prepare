@@ -1,0 +1,9 @@
+prepare() {
+  cd "$srcdir/$_pkg"
+
+  # Python2 fix
+  sed -i 's@^#!.*python$@#!/usr/bin/python2@' awn-settings/awn_settings{.py,_helper.py,_launcher.py.in}
+  sed -i 's/with("python"/with("python2"/' applet-activation/main.cc
+
+  patch -uNp2 -r- -i ../0001_fix_missing_declaration.patch
+}

@@ -1,0 +1,24 @@
+package() {
+
+    # remame file properly
+    mv -f AM2RLauncher/AM2RLauncher/AM2RLauncher.Gtk/bin/release/net6.0/ubuntu.18.04-x64/publish/AM2RLauncher.Gtk AM2RLauncher/AM2RLauncher/AM2RLauncher.Gtk/bin/release/net6.0/ubuntu.18.04-x64/publish/AM2RLauncher
+
+    mkdir -p "$pkgdir/usr/bin/"
+    mkdir -p "$pkgdir/opt/am2rlauncher/"
+    
+    cp -Rf AM2RLauncher/AM2RLauncher/AM2RLauncher.Gtk/bin/release/net6.0/ubuntu.18.04-x64/publish/* "$pkgdir/opt/am2rlauncher/"
+    cp -f "AM2RLauncher/AM2RLauncher/AM2RLauncher.Gtk/icon64.ico" "$pkgdir/opt/am2rlauncher/AM2RLauncher.ico"
+    ln -sf "/opt/am2rlauncher/AM2RLauncher" "$pkgdir/usr/bin/AM2RLauncher"
+
+    # Adding desktop entry
+    mkdir -p "$pkgdir/usr/share/applications/"
+    echo "[Desktop Entry]
+Type=Application
+Categories=Game
+Encoding=UTF-8
+Name=AM2RLauncher
+Comment=A front-end application that simplifies installing the latest AM2R-Community-Updates, creating APKs for Android use, as well as Mods for AM2R.
+Exec=AM2RLauncher
+Icon=/opt/am2rlauncher/AM2RLauncher.ico
+Terminal=false" > "$pkgdir/usr/share/applications/am2rlauncher.desktop"
+}

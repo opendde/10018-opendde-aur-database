@@ -1,0 +1,20 @@
+package_avast() {
+    pkgdesc='Avast antivirus scanner provides a scan command line tool and unix domain sockets which are used by other services.'
+    depends=('tar' 'file' 'curl' 'ca-certificates' 'glibc>=2.34' 'libcurl-gnutls>=7.16.2' 'util-linux-libs>=2.16' 'openssl>=1.1.0')
+    install=${pkgname}.install
+    backup=('etc/avast/avast.conf' 'etc/avast/vps.conf' 'etc/avast/whitelist')
+
+    # uncompress base packages
+    bsdtar -xf avast_${pkgver}-${_pkgverbuild}_amd64.deb
+    bsdtar -xf data.tar.xz -C ${pkgdir}/
+
+    # install deb post/pre scripts
+    [ ! -d "${pkgdir}/usr/share/${pkgname}/pkgscripts" ] && mkdir -p ${pkgdir}/usr/share/${pkgname}/pkgscripts
+    bsdtar -xf control.tar.gz -C ${pkgdir}/usr/share/${pkgname}/pkgscripts
+    chmod -R 755 ${pkgdir}/usr/share/${pkgname}/pkgscripts
+
+    chmod 700 $pkgdir/var/lib/avast/submit-data/
+
+    mkdir -p $pkgdir/usr/share/licenses/$pkgname/
+    install -Dm644 $pkgdir/usr/share/doc/avast/LICENSE $pkgdir/usr/share/licenses/$pkgname/
+}

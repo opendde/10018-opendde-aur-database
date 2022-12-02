@@ -1,0 +1,6 @@
+package() {
+  cd "animation_nodes"
+  _blender_version=$(blender --version | grep -Po 'Blender \K[0-9]\...')
+  mkdir -p $pkgdir/usr/share/blender/$_blender_version/scripts/addons
+  python setup.py build --force --copy --noversioncheck
+}

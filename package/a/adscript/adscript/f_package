@@ -1,0 +1,4 @@
+package() {
+  cd "$upname-$pkgname-$pkgver"
+  sudo make install PREFIX=/usr
+}

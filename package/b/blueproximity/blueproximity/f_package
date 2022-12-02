@@ -1,0 +1,15 @@
+package() {
+  mkdir -p $pkgdir/usr/bin
+  mkdir -p $pkgdir/usr/share/applications
+  mkdir -p $pkgdir/usr/share/$pkgname
+  mkdir -p $pkgdir/usr/share/pixmaps
+
+  install -D -m755 $srcdir/$pkgname-$pkgver.orig/proximity.py $pkgdir/usr/bin/
+  install -D -m755 $srcdir/$pkgname-$pkgver.orig/start_proximity.sh $pkgdir/usr/bin/
+  install -D -m644 $srcdir/blueproximity.desktop $pkgdir/usr/share/applications/
+  install -D -m644 $srcdir/blueproximity.xpm $pkgdir/usr/share/pixmaps/
+  cp -r $srcdir/$pkgname-$pkgver.orig/* $pkgdir/usr/share/$pkgname/
+  chmod -R 644 $pkgdir/usr/share/$pkgname/*
+
+  sed -i -e "s|dist_path = './'|dist_path = '/usr/share/blueproximity/'|g" $pkgdir/usr/bin/proximity.py
+}

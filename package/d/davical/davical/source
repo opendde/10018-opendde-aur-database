@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}.tar.bz2::https://gitlab.com/davical-project/${pkgname}/-/archive/r${pkgver}/${pkgname}-r${pkgver}.tar.bz2"

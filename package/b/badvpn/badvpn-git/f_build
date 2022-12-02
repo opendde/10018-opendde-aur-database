@@ -1,0 +1,31 @@
+build() {
+
+  cd ${pkgname%-git}
+
+  # cmake -B build -S .
+  cmake -B build -S . \
+    \
+    -DBUILD_CLIENT=ON \
+    -DBUILD_DOSTEST=ON \
+    -DBUILD_EXAMPLES=ON \
+    -DBUILD_FLOODER=ON \
+    -DBUILD_NCD=ON \
+    -DBUILD_SERVER=ON \
+    -DBUILD_TESTS=ON \
+    -DBUILD_TUN2SOCKS=ON \
+    -DBUILD_UDPGW=ON \
+    \
+    -DCMAKE_BUILD_TYPE=None \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DWITH_PLUGIN_LIBS=ON \
+    \
+    -DCMAKE_INSTALL_LIBEXECDIR="lib/${pkgname%-git}/" \
+    -DCMAKE_INSTALL_SBINDIR=bin
+
+  # ccmake -B build -S .
+  # echo; pwd; echo; return 1
+
+  # /usr/bin/time --format="\n  wall clock time - %E\n" \
+  make -C build
+
+}

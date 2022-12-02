@@ -1,0 +1,6 @@
+prepare() {
+  cd "${srcdir}/${_pkgname}-${pkgver}"
+
+  sed -i -e 's|/etc/auto.misc|/etc/autofs/auto.misc|' \
+         -e 's|/etc/auto.master.d|/etc/autofs/auto.master.d|' samples/auto.master
+}

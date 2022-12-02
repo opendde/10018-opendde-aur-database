@@ -1,0 +1,8 @@
+prepare() {
+  patch -p1 -i license.patch
+  patch -p1 -i wl_linux.c.patch
+  patch -p1 -i grsec.patch
+
+  sed -e "/BRCM_WLAN_IFNAME/s:eth:wlan:" \
+      -i src/wl/sys/wl_linux.c
+}

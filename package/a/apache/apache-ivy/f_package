@@ -1,0 +1,12 @@
+package() {
+	mkdir -p ${pkgdir}/usr/{bin,share/java/apache-ivy,share/java/apache-ant}
+	#mkdir -p ${pkgdir}/usr/share/licenses/apache-ant
+
+	cd ${srcdir}
+
+	install -m 644 ${pkgname}-${pkgver//_/-}/ivy-${pkgver//_/-}.jar $pkgdir/usr/share/java/apache-ivy
+	install -m 755 ivy.sh $pkgdir/usr/bin/ivy
+
+	ln -s ivy-${pkgver//_/-}.jar ${pkgdir}/usr/share/java/apache-ivy/ivy.jar
+	ln -s ../apache-ivy/ivy-${pkgver//_/-}.jar ${pkgdir}/usr/share/java/apache-ant/ivy.jar
+}

@@ -1,0 +1,28 @@
+package() {
+  cd "arduino-${pkgver}"
+
+  mkdir -p "${pkgdir}/usr/bin"
+  mkdir -p "${pkgdir}/usr/share/"{doc,applications,mime/packages}
+
+  # copy the whole SDK to /usr/share/arduino10/
+  cp -a . "${pkgdir}/usr/share/arduino10"
+
+  # use system's RXTX library
+  ln -sf /usr/lib/librxtxSerial.so "${pkgdir}/usr/share/arduino10/lib/librxtxSerial.so"
+  ln -sf /usr/lib/librxtxSerial.so "${pkgdir}/usr/share/arduino10/lib/librxtxSerial64.so"
+  ln -sf /usr/share/java/rxtx/RXTXcomm.jar "${pkgdir}/usr/share/arduino10/lib/RXTXcomm.jar"
+
+  # at least support the FHS a little bit
+  ln -s /usr/share/arduino10/arduino "${pkgdir}/usr/bin/arduino10"
+  ln -s /usr/share/arduino10/reference "${pkgdir}/usr/share/doc/arduino10"
+
+  # desktop icon
+  for size in 16 32 48 256; do
+    install -Dm644 ../arduino_icon_*_${size}x${size}x32.png \
+      "${pkgdir}/usr/share/icons/hicolor/${size}x${size}/apps/arduino10.png"
+  done
+
+  # desktop and mimetype files
+  install -m644 "${srcdir}/arduino10.desktop" "${pkgdir}/usr/share/applications/"
+  install -m644 "${srcdir}/arduino10.xml" "${pkgdir}/usr/share/mime/packages/"
+}

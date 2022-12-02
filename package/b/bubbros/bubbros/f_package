@@ -1,0 +1,27 @@
+package() {
+  cd bubbros-$pkgver
+  # data and libs
+  install -d "$pkgdir"/usr/{bin,lib/bubbros,share/man/man1}
+  install -Dm755 BubBob.py "$pkgdir"/usr/share/bubbros/BubBob.py
+  cp -r bubbob common display java http2 metaserver "$pkgdir"/usr/share/bubbros
+  mv "$pkgdir"/usr/share/bubbros/{display/xshm.so,bubbob/statesaver.so} "$pkgdir"/usr/lib/bubbros
+  chmod 755 "$pkgdir"/usr/share/bubbros/display/Client.py
+  # symlinks
+  ln -s /usr/share/bubbros/BubBob.py "$pkgdir"/usr/bin/bubbros
+  ln -s /usr/share/bubbros/display/Client.py "$pkgdir"/usr/bin/bubnbros-client
+  ln -s /usr/share/bubbros/bubbob/bb.py "$pkgdir"/usr/bin/bubnbros-server
+  ln -s /usr/lib/bubbros/xshm.so "$pkgdir"/usr/share/bubbros/display/xshm.so
+  ln -s /usr/lib/bubbros/statesaver.so "$pkgdir"/usr/share/bubbros/bubbob/statesaver.so
+  # manual, license, desktop entry
+  install -m644 doc/*.gz "$pkgdir"/usr/share/man/man1
+  install -Dm644 LICENSE.txt "$pkgdir"/usr/share/licenses/bubbros/LICENSE
+  install -Dm644 artistic.txt "$pkgdir"/usr/share/licenses/bubbros/artistic.txt
+  install -Dm644 ../bubbros.desktop "$pkgdir"/usr/share/applications/bubbros.desktop
+  install -Dm644 http2/data/bob.png "$pkgdir"/usr/share/pixmaps/bubbros.png
+  # remove not needed stuff
+  cd "$pkgdir"/usr/share/bubbros
+  find . \( -type d -and \( -name build -or -name CVS \) \) -exec rm -r {} \+
+  find . \( -type f -and \( -name .cvsignore -or -name Makefile -or -name "*.c" \) \) -delete
+  rm -r "$pkgdir"/usr/share/bubbros/display/{windows,dpy_windows.py,snd_windows.py,setup.py}
+  rm "$pkgdir"/usr/share/bubbros/bubbob/{images/buildcolors.py,doc/bonus-doc.py,setup.py}
+}

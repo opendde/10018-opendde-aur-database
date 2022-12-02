@@ -1,0 +1,5 @@
+package() {
+  cd "${pkgname}-${pkgver}"
+
+  scons2 PREFIX="/usr" DESTDIR="$pkgdir" install
+}

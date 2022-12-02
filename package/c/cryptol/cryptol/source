@@ -1,0 +1,1 @@
+("https://github.com/GaloisInc/cryptol/releases/download/$pkgver/cryptol-${pkgver}-CentOS6-$_MYARCH.tar.gz")

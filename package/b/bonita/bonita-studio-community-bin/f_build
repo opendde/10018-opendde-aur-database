@@ -1,0 +1,36 @@
+build() {
+
+  chmod +x *.run
+  # FIXME a hack to kill the process, because it waits for user input indefinitely
+  #  https://github.com/bonitasoft/bonita-studio/issues/397
+  [ -e '/tmp/bitrock_installer.log' ] && first_run=yes
+  ./*.run --mode unattended --prefix "$_prefix/$_basenamever" &
+  pid=$!
+  while sleep 1; do
+    grep 'Installation completed' \
+        "/tmp/bitrock_installer${first_run:+_$pid}.log" >/dev/null && {
+      kill "$pid"
+      break
+    }
+
+    [ $((x)) -gt $((60*3)) ] && {
+      printf 'ERR Waited too long for the installation to finish.\n' >&2
+      false
+      break
+    }
+    x=$((x +1))
+  done
+
+  # fix permissions
+  find "$_prefix/$_basenamever/jre/" -name '*.so' -execdir chmod a+x '{}' \;
+  chmod a+x \
+      "$_prefix/$_basenamever/jre/lib/jexec" \
+      "$_prefix/$_basenamever/jre/bin/"*
+
+  # fix "...does not have the world readable bit set"
+  rm "$_prefix/$_basenamever/uninstall"*
+
+  # "disable" immediate auto-close of the whole program after launch
+  printf '%s\n' '-Dorg.eclipse.swt.browser.DefaultType=mozilla' >> \
+      "$_prefix/$_basenamever/"*.ini
+}

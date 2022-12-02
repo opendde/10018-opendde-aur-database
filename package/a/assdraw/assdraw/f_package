@@ -1,0 +1,24 @@
+package() {
+    cd "${pkgname}"
+    make DESTDIR="${pkgdir}" install
+    
+    cd src
+    install -Dm644 tsukasa.ico "$pkgdir/usr/share/icons/assdraw.ico"
+    
+    echo "[Desktop Entry]
+Version=1.0
+Type=Application
+
+Name=ASSDraw3
+Name[zh_CN]=ASSDraw3
+Comment=Tool to produce ASSA-format vector drawings
+Comment[zh_CN]=生成ASSA格式矢量图形的工具
+
+Exec=assdraw %f
+TryExec=assdraw
+StartupNotify=true
+Icon=/usr/share/icons/assdraw.ico
+Terminal=false
+Categories=Graphics;VectorGraphics;GTK;" > "$srcdir/assdraw.desktop"
+	install -Dm644 "$srcdir/assdraw.desktop" "$pkgdir/usr/share/applications/assdraw.desktop"
+}

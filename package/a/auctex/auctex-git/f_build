@@ -1,0 +1,6 @@
+build() {
+  cd ${pkgname%-git}
+  ./autogen.sh
+  ./configure --prefix=/usr --localstatedir=/var --with-texmf-dir=/usr/share/texmf
+  make
+}

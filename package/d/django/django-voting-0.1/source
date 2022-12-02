@@ -1,0 +1,1 @@
+("https://pypi.python.org/packages/source/${_pythonname::1}/${_pythonname}/${_pythonname}-${pkgver}.tar.gz")

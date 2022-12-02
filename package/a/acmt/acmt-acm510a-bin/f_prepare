@@ -1,0 +1,6 @@
+prepare() {
+	_archive="`xdg-user-dir DOWNLOAD`/acm-plugins-ACM510A.tar.gz"
+	ln -srf "${_archive}" "$srcdir/`basename "${_archive}"`"
+	tar -xvzf "${srcdir}/acm-plugins-ACM510A.tar.gz"
+	tar -xvzf "${srcdir}/ACM510A/x86-64/plugin-binaries.tar.gz"
+}

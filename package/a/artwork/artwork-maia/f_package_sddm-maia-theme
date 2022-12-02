@@ -1,0 +1,12 @@
+package_sddm-maia-theme() {
+  pkgdesc="Maia theme for SDDM"
+  cd build
+  make DESTDIR="${pkgdir}" install
+
+  rm -rf "${pkgdir}/usr/share/color-schemes"
+  rm -rf "${pkgdir}/usr/share/icons"
+  rm -rf "${pkgdir}/usr/share/kservices5"
+  rm -rf "${pkgdir}/usr/share/plasma"
+  rm -rf "${pkgdir}/usr/share/wallpapers"
+  rm -rf "${pkgdir}/usr/share/metainfo"
+}

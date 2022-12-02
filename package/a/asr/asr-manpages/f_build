@@ -1,0 +1,12 @@
+build() {
+    cd $srcdir
+
+    # Apply the patch
+    patch -p0 -i ${pkgname}_$pkgver-6.diff || return 1
+
+    # Rename the manpages to man6
+    cd $pkgname-$pkgver.orig
+    for f in *.[0-57-9]fun ; do
+        mv $f ${f/.?fun/.6fun}
+    done
+}

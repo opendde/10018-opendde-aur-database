@@ -1,0 +1,6 @@
+prepare() {
+  cd "${pkgname}"
+  git submodule init
+  git config submodule.scripts/resin.url "${srcdir}/scripts"
+  git submodule update
+}

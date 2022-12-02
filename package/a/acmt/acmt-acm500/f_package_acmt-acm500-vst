@@ -1,0 +1,5 @@
+package_acmt-acm500-vst() {
+	groups=('pro-audio' 'vst-plugins')
+	pkgdesc="ACM500 Channel EQ (VST)"
+	install -Dm755 ${srcdir}/plugin-binaries/VST/ACM500.so ${pkgdir}/usr/lib/vst/ACM500.so
+}

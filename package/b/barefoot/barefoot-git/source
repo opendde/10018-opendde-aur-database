@@ -1,0 +1,1 @@
+($pkgname::git+https://gitlab.com/notklaatu/${pkgname%-git})

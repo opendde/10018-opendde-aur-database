@@ -1,0 +1,12 @@
+package() {
+  mkdir -p ${pkgdir}/usr/share/texmf-dist/tex/latex/beamer/themes/{color,font,inner,outer,theme}
+  mkdir -p ${pkgdir}/usr/share/texmf-dist/tex/latex/beamer/art/images
+  cd ${srcdir}
+
+  install -m644 beamerthemeprogressbar.sty $pkgdir/usr/share/texmf-dist/tex/latex/beamer/themes/theme/
+  install -m644 beamercolorthemeprogressbar.sty $pkgdir/usr/share/texmf-dist/tex/latex/beamer/themes/color/
+  install -m644 beamerfontthemeprogressbar.sty $pkgdir/usr/share/texmf-dist/tex/latex/beamer/themes/font/
+  install -m644 beamerouterthemeprogressbar.sty $pkgdir/usr/share/texmf-dist/tex/latex/beamer/themes/outer/
+  install -m644 beamerinnerthemeprogressbar.sty $pkgdir/usr/share/texmf-dist/tex/latex/beamer/themes/inner/
+  install -m644 images/tree04.jpg $pkgdir/usr/share/texmf-dist/tex/latex/beamer/art/images/
+}

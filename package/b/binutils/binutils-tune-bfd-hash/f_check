@@ -1,0 +1,6 @@
+check() {
+  cd ${srcdir}/binutils-build
+
+  # do not abort on errors - manually check log files
+  make -k -j1 check || true
+}

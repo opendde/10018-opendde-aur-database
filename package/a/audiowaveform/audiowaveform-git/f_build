@@ -1,0 +1,5 @@
+build() {
+	cd "$_gitname"
+	cmake -DENABLE_TESTS=0 -DCMAKE_INSTALL_PREFIX=/usr
+	make
+}

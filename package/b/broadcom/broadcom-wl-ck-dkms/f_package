@@ -1,0 +1,15 @@
+package() {
+  local dest="$pkgdir/usr/src/${pkgname/-dkms/}-$pkgver"
+  install -Dm644 Makefile "$dest/Makefile"
+  install -Dm644 dkms.conf "$dest/dkms.conf"
+  install -Dm644 -t "$dest/patches" *.patch
+  cp -a src "$dest"
+
+  install -Dm644 lib/wlc_hybrid.o_shipped \
+    "$pkgdir/usr/lib/$pkgname/wlc_hybrid.o_shipped"
+  install -Dm644 broadcom-wl-ck-dkms.conf \
+    "$pkgdir/usr/lib/modprobe.d/broadcom-wl-ck-dkms.conf"
+
+  install -Dm644 lib/LICENSE.txt \
+    "$pkgdir/usr/share/licenses/$pkgname/LICENSE.shipped"
+}

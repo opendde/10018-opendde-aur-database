@@ -1,0 +1,31 @@
+package_amdapp-sdk-nocatalyst() {
+pkgdesc="AMD Accelerated Parallel Processing (APP) SDK, 3.0 with OpenCL 2.0 support. Libs and ICD for non-catalyst users."
+install=amdapp-sdk-nocatalyst.install
+depends=('amdapp-sdk')
+conflicts=('catalyst-utils')
+
+  #LDCONF
+  install -m755 -d ${pkgdir}/etc/ld.so.conf.d
+  install -m755 ${srcdir}/amdapp-sdk.conf ${pkgdir}/etc/ld.so.conf.d
+  sed -i -e "s|PATH|${_ipath}|" ${pkgdir}/etc/ld.so.conf.d/amdapp-sdk.conf
+
+  #Register ICD
+  install -m755 -d ${pkgdir}/etc/OpenCL/vendors
+  if [ "$CARCH" = 'i686' ]; then
+    install -m755 ${srcdir}/amd_i686.icd ${pkgdir}/etc/OpenCL/vendors/amd.icd
+  else
+    install -m755 ${srcdir}/amd.icd ${pkgdir}/etc/OpenCL/vendors
+  fi
+  sed -i -e "s|PATH|${_ipath}|" ${pkgdir}/etc/OpenCL/vendors/amd.icd
+  sed -i -e "s|BITS|${_bits}|" ${pkgdir}/etc/OpenCL/vendors/amd.icd
+  # The OpenCL ICD specifications: http://www.khronos.org/registry/cl/extensions/khr/cl_khr_icd.txt
+  
+  #Place libs
+  install -m755 -d ${pkgdir}/${_ipath}/lib
+  cp -r ${srcdir}/${_subdir}/lib/${_arch}/* ${pkgdir}/${_ipath}/lib
+  chmod 755 ${pkgdir}/${_ipath}/lib/*
+
+  #License
+  install -m755 -d ${pkgdir}/usr/share/licenses
+  ln -s amdapp-sdk ${pkgdir}/usr/share/licenses/${pkgname}
+}

@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}.tar.gz::https://ghproxy.com/https://github.com//wtklbm/crm/archive/refs/tags/v${pkgver}.tar.gz")

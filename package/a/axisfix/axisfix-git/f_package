@@ -1,0 +1,4 @@
+package() {
+  install -Dm755 "${srcdir}/${pkgname}/axisfix" "${pkgdir}/usr/bin/axisfix"
+  install -Dm644 "${srcdir}/${pkgname}/README.md" "${pkgdir}/usr/share/doc/axisfix/README.md"
+}

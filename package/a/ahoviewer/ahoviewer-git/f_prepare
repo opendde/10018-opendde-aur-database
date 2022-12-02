@@ -1,0 +1,4 @@
+prepare() {
+    cd $srcdir/ahoviewer
+    sh version.sh
+}

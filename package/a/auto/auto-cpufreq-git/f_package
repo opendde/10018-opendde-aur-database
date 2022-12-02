@@ -1,0 +1,8 @@
+package() {
+    cd "$srcdir/${pkgname%-git}"
+    python setup.py install --root="${pkgdir}" --optimize=1 --skip-build
+    install -Dm644 LICENSE "$pkgdir/usr/share/licenses/${pkgname%-git}/LICENSE"
+    install -Dm644 README.md "$pkgdir/usr/share/doc/${pkgname%-git}/README"
+    install -Dm755 scripts/cpufreqctl.sh -t "$pkgdir/usr/share/${pkgname%-git}/scripts"
+    install -Dm644 "$srcdir/${pkgname%-git}.service" -t "$pkgdir/usr/lib/systemd/system"
+}

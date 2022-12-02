@@ -1,0 +1,5 @@
+prepare() {
+  cd "${srcdir}"
+  mv */ "${pkgname}"
+  patch -d "${pkgname}/alphaplot/src/future/table" -i "${srcdir}/qpainterpath.patch"
+}

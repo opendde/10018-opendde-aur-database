@@ -1,0 +1,3 @@
+build() {
+    "${pkgname}-${pkgver}/make.sh" --prefix="${srcdir}/build"
+}

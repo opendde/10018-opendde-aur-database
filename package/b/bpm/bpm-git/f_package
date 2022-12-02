@@ -1,0 +1,5 @@
+package() {
+  cd bpm
+  install -D -m755 bin/bpm "$pkgdir/usr/bin/bpm"
+  install -D -m644 bpm.desktop "$pkgdir/usr/share/applications/bpm.desktop"
+}

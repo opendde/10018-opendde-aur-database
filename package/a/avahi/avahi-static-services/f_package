@@ -1,0 +1,5 @@
+package() {
+  for f in *.service; do
+    install -D -m 644 "$f" "$pkgdir/etc/avahi/services/$f"
+  done
+}

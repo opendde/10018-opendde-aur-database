@@ -1,0 +1,5 @@
+package() {
+	cd $srcdir/$pkgname-$pkgver/
+	install -D -m 0755 asus-kbd-backlight "$pkgdir/usr/bin/asus-kbd-backlight"
+	install -D -m 0644 asus-kbd-backlight.service "$pkgdir/usr/lib/systemd/system/asus-kbd-backlight.service"
+}

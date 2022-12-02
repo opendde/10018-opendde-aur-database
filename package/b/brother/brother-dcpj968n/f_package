@@ -1,0 +1,10 @@
+package() {
+    # Licenses
+    install -Dm644 ${srcdir}/eula.txt ${pkgdir}/usr/share/licenses/${pkgname}/eula.txt
+	ln -s /usr/share/licenses/GPL2/license.txt ${pkgdir}/usr/share/licenses/${pkgname}/cupswrapper-license.txt
+
+    install -d $pkgdir/usr/bin
+    install -d $pkgdir/var/spool/lpd
+    install -Dm755 "$srcdir"/usr/bin/brprintconf_dcpj968n "$pkgdir"/usr/bin/
+    cp -R $srcdir/opt $pkgdir/opt
+}

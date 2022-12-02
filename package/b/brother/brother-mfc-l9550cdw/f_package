@@ -1,0 +1,13 @@
+package() {
+  install -d ${pkgdir}/usr/share/cups/model/Brother
+  install -d ${pkgdir}/usr/share/ppd/Brother
+  install -d ${pkgdir}/usr/lib/cups/filter
+
+  install -Dm755 ${srcdir}/usr/bin/brprintconf_mfc${_model} ${pkgdir}/usr/bin/brprintconf_mfc${_model}
+  install -Dm644 ${srcdir}/opt/brother/Printers/mfc${_model}/cupswrapper/brother_mfc${_model}_printer_en.ppd ${pkgdir}/usr/share/cups/model/Brother
+  install -Dm644 ${srcdir}/opt/brother/Printers/mfc${_model}/cupswrapper/brother_mfc${_model}_printer_en.ppd ${pkgdir}/usr/share/ppd/Brother
+
+  ln -s /opt/brother/Printers/mfc${_model}/cupswrapper/cupswrappermfc${_model} ${pkgdir}/usr/lib/cups/filter/brother_lpdwrapper_mfc${_model}
+
+  cp -r ${srcdir}/opt ${pkgdir}/opt
+}

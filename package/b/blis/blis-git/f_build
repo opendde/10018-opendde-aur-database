@@ -1,0 +1,8 @@
+build() {
+  cd "${pkgname%-git}"
+  CFLAGS+=" -fPIC" ./configure --prefix=/usr \
+	 --enable-static \
+	 --enable-shared \
+	 --enable-threading=openmp auto
+  make BLIS_ENABLE_DYNAMIC_BUILD:=yes
+}

@@ -1,0 +1,3 @@
+post_install() {
+	/opt/brother/Printers/dcpt500w/cupswrapper/cupswrapperdcpt500w
+}

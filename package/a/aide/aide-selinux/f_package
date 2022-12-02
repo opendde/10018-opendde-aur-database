@@ -1,0 +1,7 @@
+package() {
+	cd $srcdir/$_srcname-$pkgver
+	make DESTDIR=$pkgdir install
+
+	install -D -m644 $srcdir/aide.conf $pkgdir/etc/aide.conf
+	mkdir -p $pkgdir/var/{log,lib}/aide/
+}

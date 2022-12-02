@@ -1,0 +1,4 @@
+package_bacula-dir-mysql() {
+  pkgdesc+="(transition package)"
+  depends=("${pkgbase}-dir-mariadb")
+}

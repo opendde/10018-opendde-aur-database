@@ -1,0 +1,16 @@
+package() {
+  cd $_gitname
+
+  waf --destdir="$pkgdir" install
+
+  # Install icons to correct location.
+  local icondir="$pkgdir/usr/share/icons/hicolor"
+  install -Dm644 -t "$icondir/scalable/apps" data/abraca.svg
+  find data -regex '.*/abraca-[0-9]*\.png' -print0 | \
+    while read -d $'' file; do
+      width=${file##*-}
+      width=${width%.png}
+      install -Dm644 "$file" "$icondir/${width}x${width}/apps/abraca.png"
+  done
+  rm "$icondir"/../abraca*
+}

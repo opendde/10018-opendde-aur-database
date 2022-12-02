@@ -1,0 +1,5 @@
+prepare() {
+    cd "${_snapshot}"
+    patch -i "${srcdir}/${source[1]}"
+    patch -i "${srcdir}/${source[2]}"
+}

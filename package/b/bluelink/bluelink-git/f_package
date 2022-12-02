@@ -1,0 +1,4 @@
+package() {
+    mkdir -p $pkgdir/usr/bin/
+    cp "$srcdir/bluelink/bluelink" $pkgdir/usr/bin/
+}

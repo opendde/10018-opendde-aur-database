@@ -1,0 +1,5 @@
+check() {
+  cd bees
+
+  make BEES_VERSION="${pkgver}" test
+}

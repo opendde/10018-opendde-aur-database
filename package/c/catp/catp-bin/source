@@ -1,0 +1,1 @@
+("v${pkgver}-${_pkgname}-${arch}-unknown-linux-gnu.zip::https://github.com/rapiz1/catp/releases/download/v${pkgver}/${_pkgname}-${arch}-unknown-linux-gnu.zip")

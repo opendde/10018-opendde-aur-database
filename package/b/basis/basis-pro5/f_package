@@ -1,0 +1,99 @@
+package() {
+  set -u
+  cd "${srcdir}"
+
+  install -d "${pkgdir}${_basedir}"
+
+  local _basis_pkg
+  for _basis_pkg in *; do
+    if [ ! -h "${_basis_pkg}" ]; then
+      mv "${_basis_pkg}" "${pkgdir}${_basedir}/"
+    fi
+  done
+  unset _basis_pkg
+
+  # The source folders are gone so let's move
+  cd "${pkgdir}${_basedir}"
+
+  # The BLMGR gets used a lot so it needs to be installed with a helper script
+  install -pm644 "${srcdir}/${_blmjar}" -t 'blmgr'
+  install -m744 <(cat << EOF
+#!/usr/bin/bash
+
+# This executes the BLM and makes the necessary changes to apply any new licenses
+
+# Automatically added by ${pkgname}-${pkgver} PKGBUILD from Arch Linux AUR
+# https://aur.archlinux.org/
+
+cd "\$(dirname "\$0")" # guarantee that chown works on the right folder
+set -u
+shopt -s nullglob
+list1=(*.lic*)
+
+# Can't use openjdk even if present. Use the highest version of jdk
+pushd '/usr/lib/jvm' > /dev/null
+wantjdk=''
+wantjdkbin=''
+for jdk in java-[78]-j[dr][ke]/; do
+  jdk="\${jdk%/}"
+  case "\${jdk}" in
+  *-jre) jdkbin="\${jdk}/jre/bin/java";;
+  *-jdk) jdkbin="\${jdk}/bin/java";;
+  esac
+  if [ -x "\${jdkbin}" ]; then
+    if [ -z "\${wantjdk}" ] || [ "\$(vercmp "\${jdk%-j*}" "\${wantjdk%-j*}")" -gt 0 ]; then
+      wantjdkbin="\${jdkbin}"
+      wantjdk="\${jdk}"
+    fi
+  fi
+done
+popd > /dev/null
+unset jdk jdkbin wantjdk
+
+echo "Using java \${wantjdkbin}"
+echo
+echo 'Exit when you see: Configure BLM Startup'
+
+# findHome only works when basis_lmgrd is already running.
+# This makes it work on the first run
+cat > 'ps' << EOR
+#!/bin/sh
+echo '2 1 ./basis_lmgrd -c /usr/local/basis/blmgr'
+EOR
+chmod 755 'ps'
+PATH="${_basedir}/blmgr/:\${PATH}" \
+/usr/lib/jvm/\${wantjdkbin} -jar '${_blmjar}' # -p '/usr/local/basis/blmgr/BLM/Install.properties'
+rm 'ps'
+chown -R '${_opt_blmgr_user}:${_opt_blmgr_group}' *
+list2=(*.lic*)
+if [ "\${#list1[@]}" -ne "\${#list2[@]}" ] && systemctl -q is-enabled '${_servicefile}'; then
+  systemctl restart '${_servicefile}'
+  echo 'License manager restarted'
+fi
+EOF
+  ) 'blmgr/BLMrun'
+  touch -r "${srcdir}/${_blmjar}" 'blmgr/BLMrun'
+
+  # Provide a minimal configuration
+  install -m644 <(cat << EOF
+# Automatically added by ${pkgname}-${pkgver} PKGBUILD from Arch Linux AUR
+# https://aur.archlinux.org/
+
+ALIAS T0 /dev/tty xterm
+prefix '${_basedir}/pro5/std/' '${_basedir}/pro5/ext/' '${_basedir}/pro5/graphics/'
+EOF
+) 'pro5/config.bbx'
+
+  # Perform the BLM CREATE step, auto-Install the BasisRunLM
+  local _outfile='scripts/BasisLicManager'
+  cp -p "${_outfile}" "${_outfile}.Arch"
+  sed -e '# disable all the pauses' \
+      -e 's/ read / funcread /g' \
+      -e '# fix a cosmetic script bug.' \
+      -e 's/License Manager not found: ${lmgrdcom}/License Manager not found: \\${lmgrdcom}/g' \
+    -i "${_outfile}.Arch"
+cat >> "${_outfile}.Arch" << EOF
+PrintFile() {
+  :
+  #echo "Print Stuff"
+}

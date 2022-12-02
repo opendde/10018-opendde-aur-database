@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir/birch"
+  install -Dm755 -t "$pkgdir/usr/bin" birch
+  install -Dm644 -t "$pkgdir/usr/share/doc/birch" README.md
+  install -Dm644 -t "$pkgdir/usr/share/licenses/birch" LICENSE.md
+}

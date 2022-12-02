@@ -1,0 +1,5 @@
+package() {
+  cd $_gitname
+  mkdir -p "$pkgdir/usr/local/bin"
+  DESTDIR="$pkgdir" make install
+}

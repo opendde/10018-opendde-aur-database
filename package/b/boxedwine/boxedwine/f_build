@@ -1,0 +1,7 @@
+build() {
+  cd Boxedwine-$pkgver
+
+  pushd project/linux
+  sh build.sh
+  popd
+}

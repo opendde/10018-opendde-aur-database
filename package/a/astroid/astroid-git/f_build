@@ -1,0 +1,9 @@
+build() {
+  cd "$_pkgname"
+  mkdir -p build
+  cd build
+
+  # We ship the manpage to avoid an AUR dependency
+  cmake .. -GNinja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DDISABLE_DOCS=ON
+  ninja
+}

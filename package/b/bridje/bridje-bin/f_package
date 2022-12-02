@@ -1,0 +1,7 @@
+package() {
+    mkdir -p "$pkgdir/usr/lib/jvm/java-11-graalvm/bin"
+    cp -a -t "$pkgdir/usr/lib/jvm/java-11-graalvm/" languages/ lib/
+
+    chmod +x "$pkgdir/usr/lib/jvm/java-11-graalvm/languages/brj/bin/brj"
+    ln -s "../languages/brj/bin/brj" "$pkgdir/usr/lib/jvm/java-11-graalvm/bin/brj"
+}

@@ -1,0 +1,4 @@
+check() {
+  cd atf-atf-$pkgver
+  make check
+}

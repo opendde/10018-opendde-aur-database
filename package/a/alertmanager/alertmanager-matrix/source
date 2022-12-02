@@ -1,0 +1,1 @@
+("alertmanager_matrix-$pkgver.tar.gz::https://github.com/dkess/alertmanager_matrix/archive/v${pkgver}.tar.gz"

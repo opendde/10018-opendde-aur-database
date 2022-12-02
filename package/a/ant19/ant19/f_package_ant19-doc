@@ -1,0 +1,8 @@
+package_ant19-doc() {
+  pkgdesc='Apache Ant build tool documentation'
+  conflicts=('ant-doc')
+
+  install -d "${pkgdir}/usr/share/doc/ant"
+  cp -r apache-${_pkgbase}-${pkgver}/apache-${_pkgbase}-${pkgver}/manual/* \
+    "${pkgdir}/usr/share/doc/ant"
+}

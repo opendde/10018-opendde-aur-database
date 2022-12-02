@@ -1,0 +1,5 @@
+package() {
+    mkdir -p "${pkgdir}/usr/bin"
+    cp "${srcdir}/openstack_inventory.py" "${pkgdir}/usr/bin/${pkgname}"
+    chmod +x "${pkgdir}/usr/bin/${pkgname}"
+}

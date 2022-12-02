@@ -1,0 +1,6 @@
+package() {
+    # Install files
+    install -Dm 755 "$srcdir/archnews.sh" "$pkgdir/usr/bin/archnews"
+    install -Dm 644 "$srcdir/show-archnews.desktop" "$pkgdir/usr/share/applications/show-archnews.desktop"
+    install -Dm 755 "${srcdir}/fasbashlib.sh" "$pkgdir/usr/lib/archnews.sh"
+}

@@ -1,0 +1,13 @@
+build() {
+     cd "$srcdir/$_pkgver"
+
+     ./bootstrap.sh
+
+     ./configure --prefix=/usr \
+        --sysconfdir=/etc \
+        --mandir=/usr/share/man \
+        --disable-games \
+        --enable-automakedefaults \
+        --disable-uninstall
+     make
+}

@@ -1,0 +1,8 @@
+build() {
+  cmake \
+    -G Ninja \
+    -D CMAKE_BUILD_TYPE=Release \
+    -D CMAKE_INSTALL_PREFIX=/usr \
+    -S altrace -B build
+  ninja -C build
+}

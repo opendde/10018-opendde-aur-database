@@ -1,0 +1,5 @@
+build() {
+	install -t $srcdir/opt/$pkgname $pkgname.exe asimtool.exe 68kasm.exe simple.cfg
+	install -t $srcdir/usr/share/applications $srcdir/ce5c23a704c2254533663245465e713b-$_gistver/$pkgname.desktop
+	install -t $srcdir/usr/bin $srcdir/ce5c23a704c2254533663245465e713b-$_gistver/$pkgname
+}

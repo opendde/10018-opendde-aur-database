@@ -1,0 +1,4 @@
+prepare() {
+    cd $srcdir
+    patch --forward --strip=1 --input="${srcdir}/bcn3dcura.patch"
+}

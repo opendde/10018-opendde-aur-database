@@ -1,0 +1,13 @@
+build() {
+  cd "$pkgname-$pkgver"
+  go build -v \
+    -buildmode=pie \
+    -trimpath \
+    -mod=readonly \
+    -modcacherw \
+    -ldflags "-linkmode external -extldflags ${LDFLAGS} \
+    -X main.Version=${pkgver} \
+    -X main.Revision=${pkgver}-${pkgrel} \
+    -X main.BuildDate=$(date -d@"$SOURCE_DATE_EPOCH" +%Y%m%d-%H:%M:%S)" \
+    -o build "./cmd/${pkgname}"
+}

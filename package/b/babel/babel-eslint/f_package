@@ -1,0 +1,9 @@
+package() {
+	npm install -g --user root --prefix "$pkgdir/usr" "$srcdir/$pkgname-$pkgver.tgz"
+
+	# Fix permissions
+	find "$pkgdir/usr" -type d -exec chmod 755 '{}' +
+
+	mkdir -p "${pkgdir}/usr/share/licenses/${pkgname}"
+	ln -s "/usr/lib/node_modules/${pkgname}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/"
+}

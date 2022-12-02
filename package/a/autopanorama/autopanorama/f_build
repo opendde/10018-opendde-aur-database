@@ -1,0 +1,8 @@
+build() {
+    CORES=`nproc --all`
+    cd "$pkgname-$pkgver"
+    mkdir -p build/$pkgname
+    cd build/$pkgname
+    qmake ../../AutoPanorama.pro
+    make -j$CORES
+}

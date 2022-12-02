@@ -1,0 +1,16 @@
+build() {
+  cd binutils-$pkgver
+  ./configure --target=$_target \
+              --program-prefix=$_target- \
+              --prefix=/usr \
+              --enable-shared \
+              --disable-multilib \
+              --disable-nls \
+              --with-lib-path=/usr/lib/binutils/$_target \
+              --with-local-prefix=/usr/lib/$_target \
+              --with-sysroot=/usr/$_target \
+              --disable-werror
+
+  make configure-host
+  make
+}

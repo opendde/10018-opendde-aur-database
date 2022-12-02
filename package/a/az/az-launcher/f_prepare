@@ -1,0 +1,5 @@
+prepare() {
+    #extract the appimage (tar extracted automatically)
+    chmod +x "${_folder}/${_appimage}"
+    ./"${_folder}/${_appimage}" --appimage-extract
+}

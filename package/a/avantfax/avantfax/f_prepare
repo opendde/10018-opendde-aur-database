@@ -1,0 +1,47 @@
+prepare() {
+  set -u
+  cd "${pkgname}-${pkgver}"
+  # chmod 755 *.sh
+  # All of the .php files marked as executable need to be executable.
+  # find avantfax -executable -type f -name "*.php" -exec chmod 644 {} \;
+
+  if [ "$(vercmp "${pkgver}" '3.3.4')" -le 0 ]; then
+    # http://forum.joomla.org/viewtopic.php?t=618315
+    # Strict Standards patch, remove & from =&
+    sed -e 's|^\(\s\+$this->db =\)&\( MDB2::singleton\)|\1\2|g' \
+        -e 's|^\(\s\+$res =\)&\( $this->db->query\)|\1\2|g' \
+        -e 's|^\(\s\+$this->result =\)&\( $this->db->query\)|\1\2|g' \
+        -e 's|^\(\s\+$aff =\)&\( $this->db->exec\)|\1\2|g' \
+      -i "${pkgname}/includes/SQL.php"
+    #exit 1
+  fi
+
+  if [ "$(vercmp "${pkgver}" '3.3.3')" -le 0 ]; then
+    # Patch to bring avantfax into compliance with php5
+    # http://sourceforge.net/p/avantfax/discussion/542402/thread/bfe70151/?limit=25
+    local _file
+    for _file in 'AFUserAccount.php' 'FormRules.php'; do
+      sed -e 's:^\(\s\+\)private \(function __unset.\+\)$:\1public \2:g' \
+          -e 's:^\(\s\+\)private \(function __isset.\+\)$:\1public \2:g' \
+          -e 's:^\(\s\+\)private \(function __get.\+\)$:\1public \2:g' \
+          -e 's:^\(\s\+\)private \(function __set.\+\)$:\1public \2:g' \
+        -i "${pkgname}/includes/${_file}"
+    done
+
+    # This PEAR bug will never be fixed but is also unlikely to be deprecated so we'll supress it.
+    # http://pear.php.net/bugs/bug.php?id=17987
+    for _file in 'SQL.php' 'MDBO.php'; do
+      sed -e 's|(\(PEAR::isError\)|(@\1|g' -i "${pkgname}/includes/${_file}"
+    done
+
+    # I don't see a fast way to fix this one so I'll just suppress the warning for now.
+    sed -e 's|\(^\s\+$source_content = \)\(preg_replace\)|\1@\2|g' \
+      -i "${pkgname}/includes/Smarty/Smarty_Compiler.class.php"
+  fi
+
+  # All executables run under the special version of php
+  if [ "${_opt_phpver}" != 'php' ]; then
+    sed -e "s:/usr/bin/php:/usr/bin/${_opt_phpver}:g" -i $(grep --include='*.php' -lr -e '#!/usr/bin')
+  fi
+  set +u
+}

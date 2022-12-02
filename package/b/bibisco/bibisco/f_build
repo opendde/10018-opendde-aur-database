@@ -1,0 +1,4 @@
+build() {
+        cd "$srcdir"/bibisco/bibisco/app
+        npm install
+}

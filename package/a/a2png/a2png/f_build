@@ -1,0 +1,7 @@
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr \
+	      --with-cairo-include=/usr/include/cairo \
+	      --with-cairo-lib=/usr/lib/
+  make
+}

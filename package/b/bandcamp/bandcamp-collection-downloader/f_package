@@ -1,0 +1,5 @@
+package() {
+  cd bandcamp-collection-downloader
+  install -D build/libs/bandcamp-collection-downloader.jar -t "${pkgdir}/usr/share/java/bandcamp-collection-downloader/"
+  install -D ../bandcamp-collection-downloader.sh "${pkgdir}/usr/bin/bandcamp-collection-downloader"
+}

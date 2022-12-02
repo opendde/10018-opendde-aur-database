@@ -1,0 +1,1 @@
+("${pkgname}"-"${pkgver}".tar.gz::https://github.com/sanger-pathogens/Artemis/releases/download/v${pkgver}/artemis-unix-release-${pkgver}.tar.gz)

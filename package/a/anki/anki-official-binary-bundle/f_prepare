@@ -1,0 +1,4 @@
+prepare() {
+	cd "$srcdir"/"$topdirname"
+	patch install.sh ../install_sh.patch
+}

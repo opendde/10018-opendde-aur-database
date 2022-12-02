@@ -1,0 +1,12 @@
+package() {
+	install -dm755 ${pkgdir}/opt/alchemy
+        cp -r -t ${pkgdir}/opt/alchemy Alchemy/*
+	install -dm755 ${pkgdir}/usr/bin
+	echo -e "#!/bin/sh\nexec /opt/alchemy/Alchemy" > ${pkgdir}/usr/bin/alchemy
+	echo -e "#!/bin/sh\nexec /opt/alchemy/AlchemyOpenGL" > ${pkgdir}/usr/bin/alchemy-opengl
+	chmod +x ${pkgdir}/usr/bin/*
+	jar xvf Alchemy/Alchemy.jar org/alchemy/data/alchemy-logo64.png
+	install -Dm644 "org/alchemy/data/alchemy-logo64.png" "${pkgdir}/usr/share/pixmaps/alchemy.png"
+	install -Dm644 "org/alchemy/data/alchemy-logo64.png" "${pkgdir}/usr/share/icons/hicolor/64x64/apps/alchemy.png"
+	install -Dm644 "alchemy.desktop" "${pkgdir}/usr/share/applications/alchemy.desktop"
+}

@@ -1,0 +1,6 @@
+package_bitbake-vim() {
+    cd "${pkgbase}-${pkgver}"
+
+    install -d "${pkgdir}/usr/share"
+    cp -Ra contrib/vim "${pkgdir}/usr/share"
+}

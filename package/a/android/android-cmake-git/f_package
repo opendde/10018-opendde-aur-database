@@ -1,0 +1,7 @@
+package() {
+    cd "$srcdir/$_pkgname"
+    install -dDm755 "${pkgdir}/opt/$_pkgname"
+    install -Dm644 AndroidNdkGdb.cmake "${pkgdir}/opt/$_pkgname/AndroidNdkGdb.cmake"
+    install -Dm644 AndroidNdkModules.cmake "${pkgdir}/opt/$_pkgname/AndroidNdkModules.cmake"
+    install -Dm644 android.toolchain.cmake "${pkgdir}/opt/$_pkgname/android.toolchain.cmake"
+}

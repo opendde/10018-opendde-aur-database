@@ -1,0 +1,5 @@
+package() {
+    cd "$pkgname"
+    install -Dt "$pkgdir"/usr/share/alacritty/colors colors/*
+    install -Dt "$pkgdir"/usr/share/licenses/"$pkgname"/ LICENSE
+}

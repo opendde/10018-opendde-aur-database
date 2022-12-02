@@ -1,0 +1,7 @@
+package() {
+  mkdir -p "${pkgdir}/opt/${_pkgname}"
+  mkdir -p "${pkgdir}/usr/bin"
+  cp -r --preserve=all "${srcdir}/BLHeliSuite32xl/." "${pkgdir}/opt/${_pkgname}"
+  install -m 777 -d "${pkgdir}/opt/${_pkgname}/Settings/"
+  ln -s "/opt/${_pkgname}/BLHeliSuite32xl" "$pkgdir/usr/bin/${_pkgname}"
+}

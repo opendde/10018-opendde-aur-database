@@ -1,0 +1,16 @@
+build() {
+	cw=$(pwd)
+	export GOPATH=$cw/go
+	interfacer="${GOPATH}/src/github.com/browsh-org/${pkgname}/interfacer"
+	cd "$interfacer"
+	echo Build ${pkgname}...
+	local webextension="src/browsh/browsh.xpi"
+	go build	-x -modcacherw \
+				-gcflags "all=-trimpath=${GOPATH}"\
+				-asmflags "all=-trimpath=${GOPATH}"\
+				 -o "${srcdir}/${pkgname}" ./cmd/browsh 
+	strip --strip-all "${srcdir}/${pkgname}"
+	if [ $(which upx 2>/dev/null) ]; then
+		echo Compressing ${pkgname} with UPX...
+		upx "${srcdir}/${pkgname}"; fi
+}

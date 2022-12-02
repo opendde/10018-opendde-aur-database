@@ -1,0 +1,4 @@
+build() {
+  cd BuildStream-$pkgver
+  python setup.py build
+}

@@ -1,0 +1,6 @@
+package() {
+    cd "${_pkgname}"
+
+    install -m755 -D "aura" "$pkgdir/usr/bin/aura"
+    install -m644 -D "LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

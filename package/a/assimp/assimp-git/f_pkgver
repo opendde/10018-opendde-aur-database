@@ -1,0 +1,7 @@
+pkgver() {
+  cd $_gitname
+  printf "%s.r%s.g%s" \
+  "$(grep -oP '^PROJECT\(Assimp VERSION \K[0-9.]*' CMakeLists.txt)" \
+  "$(git rev-list --count HEAD)" \
+  "$(git rev-parse --short HEAD)"
+}

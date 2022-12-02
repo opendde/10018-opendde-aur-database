@@ -1,0 +1,7 @@
+package() {
+	cd "$pkgname-$pkgver"
+	install -Dm 755 acts -t "$pkgdir/usr/bin/"
+	install -Dm 644 acts.conf.sample -t "$pkgdir/usr/share/$pkgname/"
+	install -Dm 644 contrib/systemd/acts.{service,timer} -t "$pkgdir/usr/lib/systemd/system/"
+	install -Dm 644 README.md -t "$pkgdir/usr/share/doc/$pkgname/"
+}

@@ -1,0 +1,8 @@
+package() {
+    cd "${srcdir}/$pkgname-v$pkgver"
+
+    install -D -m 0644 resources/* -t "${pkgdir}/usr/share/${pkgname}"
+    install -D -m 0755 alpm-html.py "${pkgdir}/usr/bin/alpm-html"
+    install -D -m 0644 CHANGELOG.md "${pkgdir}/usr/share/doc/${pkgname}"
+    install -D -m 0644 -t "${pkgdir}/usr/share/man/man1/" alpm-html.1
+}

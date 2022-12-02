@@ -1,0 +1,7 @@
+package() {
+	_kernver="$(cat /usr/lib/modules/$_extramodules/version)"
+	cd "dkms/accel-ppp-ipoe/$pkgver/$_kernver/$CARCH/module"
+	install -dm0755 "$pkgdir/usr/lib/modules/$_extramodules"
+	install -Dm0644 ipoe.ko "$pkgdir/usr/lib/modules/$_extramodules/"
+	find "$pkgdir" -name '*.ko' -exec gzip -9 {} +
+}

@@ -1,0 +1,6 @@
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  ./autogen.sh
+  ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --sbindir=/usr/bin --with-bcg729 --with-asterisk130
+  make
+}

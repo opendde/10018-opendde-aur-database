@@ -1,0 +1,5 @@
+package() {
+cd "${srcdir}"
+install -Dm755 browservice-v${pkgver}-x86_64.AppImage "${pkgdir}/usr/bin/browservice"
+echo "Be sure to run browservice --install-verdana for optimal GUI performance."
+}

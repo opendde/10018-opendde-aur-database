@@ -1,0 +1,5 @@
+package() {
+  cd $srcdir/$pkgname-$pkgver
+  install -d ${pkgdir}/etc/cron.daily
+  ./install-sh -fc ${pkgdir}/usr ${pkgdir}/usr/bin ${pkgdir}/etc
+}

@@ -1,0 +1,18 @@
+build() {
+    cd "${srcdir}/${pkgbase}-${pkgver}"
+
+    ./configure \
+        --prefix=/usr \
+        --enable-onlyeibd \
+        --enable-usb \
+        --enable-ft12 \
+        --enable-eibnetip \
+        --enable-eibnetipserver \
+        --enable-eibnetiptunnel
+
+    cd "${srcdir}/${pkgbase}-${pkgver}/common"
+    make
+
+    cd "${srcdir}/${pkgbase}-${pkgver}/eibd"
+    make
+}

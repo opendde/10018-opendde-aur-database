@@ -1,0 +1,7 @@
+prepare() {
+  _blender=$(blender -v | head -n1 | cut -f2 -d ' ' | sed 's/\.0$//')
+  sed "s:/usr/share/blender/%v/:/usr/share/blender/$_blender/:g" -i *.service
+
+  cd "${_pkgname}-${pkgver}"
+  patch -Np1 -i ${srcdir}/cuda.patch
+}

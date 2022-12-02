@@ -1,0 +1,12 @@
+package() {
+  cd "$pkgdir"
+
+  install -dm0755 opt/$_pkgname usr/bin usr/share/applications/
+  cp -a "$srcdir"/$_pkgname/* opt/$_pkgname/
+
+  ln -sf /opt/$_pkgname/$_pkgname usr/bin/$_pkgname
+  ln -sf /opt/$_pkgname/$_pkgname usr/bin/$pkgname
+
+  install -Dm644 "$srcdir"/apachedirectorystudio.desktop "$pkgdir"/usr/share/applications/apachedirectorystudio.desktop
+  install -Dm644 "$srcdir"/apachedirectorystudio.png "$pkgdir"/usr/share/pixmaps/apachedirectorystudio.png
+}

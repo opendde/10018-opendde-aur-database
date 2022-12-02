@@ -1,0 +1,6 @@
+package() {
+        cd "$srcdir"
+
+        install -Dm644 bin.service "$pkgdir/usr/lib/systemd/system/bin.service"
+        install -Dm755 bin "$pkgdir/usr/bin/bin"
+}

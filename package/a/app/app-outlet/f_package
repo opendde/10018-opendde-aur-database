@@ -1,0 +1,8 @@
+package() {
+  install -Dm644 ${pkgname}.desktop -t "${pkgdir}/usr/share/applications"
+  cd ${pkgname}-${pkgver}
+  install -Dm644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -Dm644 "dist/favicon.512x512.png" "${pkgdir}/usr/share/pixmaps/${pkgname}.png"
+  install -d "${pkgdir}/opt/${pkgname}"
+  cp -r "dist/linux-unpacked/." "$pkgdir/opt/${pkgname}"
+}

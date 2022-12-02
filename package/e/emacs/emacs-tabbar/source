@@ -1,0 +1,1 @@
+("${pkgname#emacs-}-$pkgver.tar.gz::https://github.com/dholm/tabbar/archive/v$pkgver.tar.gz")

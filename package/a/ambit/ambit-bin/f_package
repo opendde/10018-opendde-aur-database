@@ -1,0 +1,3 @@
+package() {
+    install -Dm755 ambit -t "$pkgdir/usr/bin/"
+}

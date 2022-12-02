@@ -1,0 +1,27 @@
+package() {
+msg2 'Installing btcd...'
+btcdbin="$srcdir"/go/bin
+potentialnameconflicts=$( ls --ignore=btc* --ignore=bitcoin* "$btcdbin")
+cd $btcdbin
+for i in $potentialnameconflicts; do
+mv $btcdbin/$i $btcdbin/btc$i
+done
+btcdbins=$( ls "$btcdbin" )
+for i in $btcdbins; do
+install -Dm 755 "$srcdir/go/bin/$i" "$pkgdir/usr/bin/$i"
+done
+
+install -Dm 644 "$srcdir/$pkgname1/LICENSE" \
+-t "$pkgdir/usr/share/licenses/btcd"
+
+for _doc in CHANGES README.md sample-btcd.conf; do
+install -Dm 644 "$srcdir/$pkgname1/$_doc" \
+-t "$pkgdir/usr/share/doc/btcd"
+done
+cp -dpr --no-preserve=ownership "$srcdir/$pkgname1/docs" \
+"$pkgdir/usr/share/doc/btcd"
+
+msg2 'Cleaning up pkgdir...'
+find "$pkgdir" -type d -name .git -exec rm -r '{}' +
+find "$pkgdir" -type f -name .gitignore -exec rm -r '{}' +
+}

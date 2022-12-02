@@ -1,0 +1,8 @@
+prepare() {
+  cd "${_pkgname}-${pkgver}"
+  mv -vTf "${srcdir}"/dlnap-master dlnap
+  patch -Np1 -i "${srcdir}/0001-upgrade-requirements.patch"
+  pip install -r requirements.txt
+  pip install pyinstaller
+  export PATH=${HOME}/.local/bin:${PATH}
+}

@@ -1,0 +1,8 @@
+build () {
+  cd "${pkgname}"
+
+  if [[ ! -d _build ]]; then
+    meson _build --prefix /usr --buildtype release
+  fi
+  ninja -C _build
+}

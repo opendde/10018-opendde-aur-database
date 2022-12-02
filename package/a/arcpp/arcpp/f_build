@@ -1,0 +1,4 @@
+build() {
+  cd ${pkgname/a/A}-${pkgver}
+  make readline
+}

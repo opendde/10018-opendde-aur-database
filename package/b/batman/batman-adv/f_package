@@ -1,0 +1,6 @@
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  install -D -m644 net/batman-adv/batman-adv.ko "${pkgdir}/usr/lib/modules/$(uname -r)/updates/net/batman-adv/batman_adv.ko"
+  install -Dm 644 -t "$pkgdir/usr/share/doc/$pkgname/" README.external.rst \
+    CHANGELOG.rst MAINTAINERS
+}

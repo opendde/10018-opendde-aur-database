@@ -1,0 +1,7 @@
+package() {
+  cd "${srcdir}/$pkgname"
+
+  install -Dm755 $pkgname "${pkgdir}"/usr/bin/$pkgname
+  install -Dm644 img/$pkgname.png "${pkgdir}"/usr/share/pixmaps/$pkgname.png
+  install -Dm644 "${srcdir}"/$pkgname.desktop "${pkgdir}"/usr/share/applications/$pkgname.desktop
+}

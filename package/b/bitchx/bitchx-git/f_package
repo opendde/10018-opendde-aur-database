@@ -1,0 +1,5 @@
+package() {
+  cd $srcdir/$pkgname
+  make DESTDIR="$pkgdir/" install
+  install -Dm644 COPYRIGHT $pkgdir/usr/share/doc/${pkgname%-*}/COPYRIGHT
+}

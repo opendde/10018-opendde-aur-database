@@ -1,0 +1,5 @@
+check() {
+  cd "audiofile"
+
+  make check
+}

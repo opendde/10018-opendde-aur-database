@@ -1,0 +1,11 @@
+package() {
+    cd "${srcdir}/${_pkgname}"
+    make DESTDIR="${pkgdir}" install
+    install -D -m 644 "desktop/${_pkgname}-armagetronad.desktop" "${pkgdir}/usr/share/applications/${_pkgname}-armagetronad.desktop"
+    for directory in 16x16 32x32 48x48; do
+       ln -s /usr/share/armagetronad/desktop/icons/${directory}/armagetronad.png "$pkgdir/usr/share/icons/hicolor/${directory}/apps/armagetronad.png"
+    done
+    mv "${pkgdir}/usr/bin/armagetronad" "${pkgdir}/usr/bin/armagetronad_bin"
+    printf "#!/bin/bash\n/usr/bin/armagetronad_bin --configdir /etc/armagetronad --datadir /usr/share/armagetronad" > "${pkgdir}/usr/bin/armagetronad"
+    chmod +x "${pkgdir}/usr/bin/armagetronad"
+}

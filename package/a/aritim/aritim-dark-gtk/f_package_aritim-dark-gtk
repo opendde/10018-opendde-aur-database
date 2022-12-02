@@ -1,0 +1,10 @@
+package_aritim-dark-gtk() {
+    provides=('aritim-dark-gtk')
+    optdepends=('aritim-dark-kde: Matching KDE theme')
+
+    cd $_pkgname
+
+    mkdir -p "${pkgdir}/usr/share/themes/Aritim-Dark"
+
+    cp -r GTK/* ${pkgdir}/usr/share/themes/Aritim-Dark
+}

@@ -1,0 +1,6 @@
+prepare() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+
+  # Clean out the bundled binaries.
+  make clean
+}

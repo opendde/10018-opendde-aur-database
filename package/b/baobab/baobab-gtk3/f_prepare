@@ -1,0 +1,6 @@
+prepare() {
+  cd "${_pkgname}-${pkgver}"
+
+  # https://bugs.archlinux.org/task/31861
+  patch -Np1 -i ../no-mimetype.diff
+}

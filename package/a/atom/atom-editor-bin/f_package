@@ -1,0 +1,8 @@
+package() {
+  # Recursively remove group's write permission before moving to package directory
+  chmod -R g-w usr
+  mv usr "${pkgdir}"
+ 
+  # Add LICENSE
+  install -Dm644 -t "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE
+}

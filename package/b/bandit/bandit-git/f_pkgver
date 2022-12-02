@@ -1,0 +1,4 @@
+pkgver() {
+  cd 'bandit'
+  git describe | sed 's/-/./g'
+}

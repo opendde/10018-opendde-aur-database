@@ -1,0 +1,10 @@
+package() {
+
+  cd "${srcdir}/aMule-AdunanzA-${pkgver}-${_amulever}"
+
+  make DESTDIR="${pkgdir}" install
+
+  install -D -m644 "${srcdir}/amuled.systemd" "${pkgdir}/usr/lib/systemd/system/amuled.service"
+  install -D -m644 "${srcdir}/amuleweb.systemd" "${pkgdir}/usr/lib/systemd/system/amuleweb.service"
+
+}

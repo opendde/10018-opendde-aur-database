@@ -1,0 +1,3 @@
+prepare() {
+  patch -d $pkgname-$_pkgver-beta -p1 < basket-libgit2-0.99.patch # Fix build with libgit 0.99
+}

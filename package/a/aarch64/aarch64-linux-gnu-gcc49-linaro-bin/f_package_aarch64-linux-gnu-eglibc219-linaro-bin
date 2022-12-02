@@ -1,0 +1,15 @@
+package_aarch64-linux-gnu-eglibc219-linaro-bin() {
+
+	provides=("${_target}-glibc")
+	conflicts=("${_target}-glibc")
+	depends=("${_target}-gcc49-linaro-bin=${_reldate}")
+# 	pkgver="2.19_${_reldate}"
+	pkgdesc="Embedded C Library ARM64 target"
+
+	cd ${pkgdir}
+
+	mkdir -p opt/$pkgbase/${_target}
+
+	# 
+	mv ${srcdir}/${_path}/${_target}/libc opt/$pkgbase/${_target}/
+}

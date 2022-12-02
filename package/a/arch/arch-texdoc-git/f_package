@@ -1,0 +1,5 @@
+package() {
+  cd "${pkgname}"
+
+  install -Dm755 arch-texdoc.py "${pkgdir}/usr/bin/arch-texdoc"
+}

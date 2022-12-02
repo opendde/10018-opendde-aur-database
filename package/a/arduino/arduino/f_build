@@ -1,0 +1,9 @@
+build() {
+    cd "Arduino-${pkgver}/build"
+
+    # Compile with java8
+    export PATH=/usr/lib/jvm/java-8-openjdk/jre/bin/:$PATH
+
+    # Do not include their avr-core + tools and no docs. We build them seperately
+    ant clean dist -Dversion=${pkgver} build -Dlight_bundle=true -Dno_docs=true -Dlocal_sources=true
+}

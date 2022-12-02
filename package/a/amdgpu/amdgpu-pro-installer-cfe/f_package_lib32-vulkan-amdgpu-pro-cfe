@@ -1,0 +1,19 @@
+package_lib32-vulkan-amdgpu-pro-cfe () {
+    pkgdesc="AMDGPU Pro Vulkan driver (32-bit)"
+    license=('custom: AMDGPU-PRO EULA')
+    provides=('lib32-vulkan-driver')
+    depends=()
+    conflicts=("lib32-vulkan-amdgpu-pro")
+
+    get_debs_vulkan32
+    extract_deb "${srcdir}"/amdgpu-pro-${major}-${minor}-ubuntu-${ubuntu_ver}/vulkan-amdgpu-pro_${major}-${minor}_i386.deb
+    move_libdir "opt/amdgpu-pro/lib/i386-linux-gnu" "usr/lib32"
+    move_copyright
+
+    # extra_commands:
+    mkdir -p "${pkgdir}"/usr/share/vulkan/icd.d/
+    mv "${pkgdir}"/opt/amdgpu-pro/etc/vulkan/icd.d/amd_icd32.json "${pkgdir}"/usr/share/vulkan/icd.d/amd_pro_icd32.json
+    mv "${pkgdir}"/usr/lib32/amdvlk32.so "${pkgdir}"/usr/lib32/amdvlkpro32.so
+    sed -i "s#/opt/amdgpu-pro/lib/i386-linux-gnu/amdvlk32.so#/usr/lib32/amdvlkpro32.so#" "${pkgdir}"/usr/share/vulkan/icd.d/amd_pro_icd32.json
+    find ${pkgdir} -type d -empty -delete
+}

@@ -1,0 +1,6 @@
+package() {
+  mkdir -p "${pkgdir}/opt/android-sdk/add-ons/"
+  cp -dpr --no-preserve=ownership "${srcdir}/google_phone_armv7-${_build}-mac-x86" "${pkgdir}/opt/android-sdk/add-ons/addon-google_apis-google-${_sdkint}"
+  chmod -R ugo+rX "${pkgdir}/opt"
+  install -m644 "${srcdir}/source.properties" "${pkgdir}/opt/android-sdk/add-ons/addon-google_apis-google-${_sdkint}/source.properties"
+}

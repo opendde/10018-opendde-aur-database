@@ -1,0 +1,4 @@
+prepare() {
+    cd "abchr-java"
+    patch -i "${srcdir}/clicodecs.cfg.patch" clicodecs.cfg
+}

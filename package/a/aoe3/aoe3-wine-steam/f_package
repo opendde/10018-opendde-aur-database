@@ -1,0 +1,18 @@
+package() {
+    mkdir -p $pkgdir/opt/${_pkgname}
+
+    # Move required files to pkgdir
+    cp -r $srcdir/${_pkgname}/bin/* $pkgdir/opt/${_pkgname}/
+    
+    # Install desktop file.
+    install -D -m 644 $srcdir/${_pkgname}.desktop \
+             $pkgdir/usr/share/applications/${_pkgname}.desktop
+
+    # Install icon file.
+    install -D -m 644 $srcdir/${_pkgname}.png \
+             $pkgdir/usr/share/pixmaps/${_pkgname}.png
+
+    # Install bash startup script.
+    install -D -m 755 $srcdir/${_pkgname}.sh \
+             $pkgdir/usr/bin/${_pkgname}
+}

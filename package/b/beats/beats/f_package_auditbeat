@@ -1,0 +1,8 @@
+package_auditbeat() {
+    pkgdesc='Audit the activities of users and processes on your system'
+    depends=('audit')
+    install='auditbeat.install'
+
+    _do_package_beat
+    install -D module/auditd/_meta/audit.rules.d/sample-rules-linux-64bit.conf "$pkgdir"/etc/$_pkgname/audit.rules.d/sample-rules.conf.disabled
+}

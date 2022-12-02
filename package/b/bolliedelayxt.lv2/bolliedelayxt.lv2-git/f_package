@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir/${pkgname%-git}"
+  mkdir -p "${pkgdir}/usr/lib/lv2/"
+  cp -r build/bolliedelayxt.lv2/ "${pkgdir}/usr/lib/lv2/"
+}

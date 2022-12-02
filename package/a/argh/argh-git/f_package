@@ -1,0 +1,5 @@
+package() {
+  cd "${pkgname%-git}/build"
+  make DESTDIR="${pkgdir}" install
+  install -D ../LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+}

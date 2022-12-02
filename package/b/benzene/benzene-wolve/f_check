@@ -1,0 +1,4 @@
+check() {
+  cd $srcdir/benzene-$pkgver
+  make check
+}

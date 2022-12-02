@@ -1,0 +1,4 @@
+build() {
+	cd "$srcdir/bfind"
+	make PREFIX=/usr
+}

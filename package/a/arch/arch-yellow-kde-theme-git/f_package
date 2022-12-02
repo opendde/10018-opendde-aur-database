@@ -1,0 +1,5 @@
+package() {
+	cd "ArchYellow"
+	mkdir -p "$pkgdir/usr/share"
+	cp -drf color-schemes plasma "$pkgdir/usr/share/"
+}

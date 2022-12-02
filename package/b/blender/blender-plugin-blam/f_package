@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir/blam-0.6/src/"
+  mkdir -p "$pkgdir/usr/share/blender/$_blender/scripts/addons/"
+  cp * "$pkgdir/usr/share/blender/$_blender/scripts/addons/"
+}

@@ -1,0 +1,12 @@
+package() {
+  install -dm0755 "${pkgdir}/opt/"
+
+  cp -r "${srcdir}/AudioBookConverter" "${pkgdir}/opt/audiobookconverter"
+
+  install -dm0755 "${pkgdir}/usr/bin"
+  ln -sf "/opt/audiobookconverter/bin/AudioBookConverter" "${pkgdir}/usr/bin/audiobookconverter"
+
+  cp -dpr --no-preserve=ownership "${pkgdir}/opt/audiobookconverter/lib" "${pkgdir}/usr/lib"
+
+  install -Dm644 "${srcdir}/audiobookconverter-AudioBookConverter.desktop" "${pkgdir}/usr/share/applications/audiobookconverter.desktop"
+}

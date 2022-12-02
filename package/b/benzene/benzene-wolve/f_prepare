@@ -1,0 +1,6 @@
+prepare() {
+  cd $srcdir/benzene-$pkgver/
+  patch -p1 -i $srcdir/wolve-paths.patch
+  mv share/ice-patterns.txt share/wolve-ice-patterns.txt
+  mv share/vc-captured-set.txt share/wolve-vc-captured-set.txt
+}

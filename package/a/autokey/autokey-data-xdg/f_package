@@ -1,0 +1,8 @@
+package() {
+    cd "${srcdir}/${_name}-${pkgver}"
+    python2 setup.py install --root=${pkgdir} --optimize=1
+    # remove GUI stuff
+    rm -rf ${pkgdir}/usr/lib/python2.7/site-packages/${_name}/{gtk,qt}*
+    rm -rf ${pkgdir}/usr/share/{kde4,applications}
+    rm -f ${pkgdir}/usr/{bin,share/man/man1}/${_name}-{gtk,qt}*
+}

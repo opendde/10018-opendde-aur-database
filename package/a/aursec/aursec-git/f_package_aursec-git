@@ -1,0 +1,7 @@
+package_aursec-git() {
+    install=aursec-git.install
+    optdepends=("aursec-tui: to manually inspect the blockchain.")
+
+    cd "${pkgname%-git}/aursec"
+    make PREFIX="/usr" DESTDIR="$pkgdir/" install
+}

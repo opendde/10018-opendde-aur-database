@@ -1,0 +1,12 @@
+check() {
+    cd ${pkgname}
+
+    # Tests require python2
+    mkdir "${srcdir}/python"
+    ln -s /usr/bin/python2 "${srcdir}/python/python"
+    export PATH="${srcdir}/python:${PATH}"
+
+    ./zcutil/fetch-params.sh --testnet
+    # ./qa/zcash/full_test_suite.py
+    # ./qa/pull-tester/rpc-tests.sh
+}

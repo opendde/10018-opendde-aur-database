@@ -1,0 +1,8 @@
+prepare() {
+  mkdir -p gopath/src/github.com/Vivena
+  ln -rTsf $_pkgname gopath/src/github.com/Vivena/$_pkgname
+  export GOPATH="$srcdir"/gopath
+
+  cd gopath/src/github.com/Vivena/$_pkgname
+  go get -v github.com/Vivena/babelweb2
+}

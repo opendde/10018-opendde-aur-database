@@ -1,0 +1,4 @@
+package() {
+	cd "$srcdir/${pkgname%-kian-git}"
+	make DESTDIR="$pkgdir/" PREFIX=/usr install
+}

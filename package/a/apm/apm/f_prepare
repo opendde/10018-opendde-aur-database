@@ -1,0 +1,20 @@
+prepare() {
+  ! test -d "$srcdir"/apm-build
+  cd "$_archive"
+
+  # Use custom launcher
+  rm bin/apm{,.cmd} bin/npm{,.cmd}
+  rm src/cli.coffee
+  install -m0755 "$srcdir/apm.js" bin/apm
+  sed -i -e "s/@ELECTRON@/$_electron/" bin/apm
+
+  # Don't download binary Node
+  patch -Np1 -i "$srcdir/no-scripts.patch"
+  rm BUNDLED_NODE_VERSION script/*
+
+  sed -i -e '/git-utils/s/5.7.2/5.7.3/' package.json
+
+  npm install --cache "$srcdir/npm-cache"
+  # pushd node_modules/git-utils
+  # patch -Np1 -i "$srcdir/git-utils.patch"
+}

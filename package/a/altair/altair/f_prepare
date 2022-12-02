@@ -1,0 +1,10 @@
+prepare() {
+  # mark as executable so we can extract
+  chmod +x "${srcdir}/${pkgname}-${pkgver}.AppImage"
+
+  # extract the AppImage
+  "${srcdir}/${pkgname}-${pkgver}.AppImage" --appimage-extract
+
+  # remove execution bit after extraction
+  chmod -x "${srcdir}/${pkgname}-${pkgver}.AppImage"
+}

@@ -1,0 +1,6 @@
+build() {
+  cd $_pkgname
+  lrelease-qt5 arteFetcher_*.ts
+  qmake-qt5 PREFIX=$pkgdir/usr/bin
+  make
+} 

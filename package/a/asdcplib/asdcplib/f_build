@@ -1,0 +1,5 @@
+build() {
+  cd ${pkgname}-rel_${_pkgver}
+  make
+  make dist
+}

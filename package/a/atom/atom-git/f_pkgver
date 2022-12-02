@@ -1,0 +1,4 @@
+pkgver () {
+  cd "${srcdir}/${pkgname}"
+  git describe --tags | sed -e 's?[[:alpha:]]\+??g' -e 's?-.*??'
+}

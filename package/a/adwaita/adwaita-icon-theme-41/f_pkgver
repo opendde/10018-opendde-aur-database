@@ -1,0 +1,4 @@
+pkgver() {
+  cd $basename
+  git describe --tags | sed 's/\.rc/rc/;s/-/+/g'
+}

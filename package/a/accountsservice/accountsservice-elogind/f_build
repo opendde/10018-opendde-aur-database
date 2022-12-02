@@ -1,0 +1,14 @@
+build() {
+    cd $_pkgname
+    ./configure \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --localstatedir=/var \
+        --libexecdir=/usr/lib/$_pkgname \
+        --disable-static \
+        --enable-elogind \
+        --enable-admin-group="wheel" \
+        --disable-systemd \
+        --enable-gtk-doc
+    make
+}

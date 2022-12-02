@@ -1,0 +1,5 @@
+prepare() {
+  cd "$srcdir/BOSSA-$pkgver"
+  patch -p1 < "$srcdir/0001-makefile-allow-for-version-override.patch"
+  patch -p1 < "$srcdir/0002_update_wxversion_for_wxwidget3_switchover.patch"
+}

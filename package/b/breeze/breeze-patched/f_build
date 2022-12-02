@@ -1,0 +1,5 @@
+build() {
+  cmake -B build -S breeze-5.20.5 \
+    -DBUILD_TESTING=OFF
+  cmake --build build
+}

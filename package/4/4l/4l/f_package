@@ -1,0 +1,10 @@
+package() {
+  cd $srcdir
+  mkdir -p $pkgdir/{opt,usr/bin}
+  cp -R usr/4L $pkgdir/opt
+  ln -s /opt/4L/4L-cli ${pkgdir}/usr/bin/4L-cli
+  ln -s /opt/4L/4L-gui ${pkgdir}/usr/bin/4L-gui
+  find $pkgdir/opt -type d -exec chmod 755 {} \;
+  chmod -x $pkgdir/opt/4L/*/*
+  chmod +s $pkgdir/opt/4L/4L-cli
+}

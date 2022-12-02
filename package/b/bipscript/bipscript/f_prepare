@@ -1,0 +1,4 @@
+prepare() {
+        cd "$pkgname-v$pkgver"
+        patch -p2 -i "$srcdir/$pkgname-v$pkgver.patch"
+}

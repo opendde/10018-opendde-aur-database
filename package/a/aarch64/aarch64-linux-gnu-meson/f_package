@@ -1,0 +1,4 @@
+package() {
+  install -m 755 -D meson.sh "$pkgdir"/usr/bin/aarch64-linux-gnu-meson
+  install -m 755 -D toolchain.meson "$pkgdir"/usr/share/aarch64/toolchain.meson
+}

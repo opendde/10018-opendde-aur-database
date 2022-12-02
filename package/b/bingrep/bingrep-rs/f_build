@@ -1,0 +1,4 @@
+build() {
+  cd "$srcdir/$_pkgname-$pkgver"
+  cargo build --release --locked
+}

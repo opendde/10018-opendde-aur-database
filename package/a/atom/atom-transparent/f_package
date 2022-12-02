@@ -1,0 +1,45 @@
+package() {
+  cd "${srcdir}/atom"
+
+  install -d -m 755 "${pkgdir}"/usr/lib
+  cp -r out/app "${pkgdir}"/usr/lib/atom
+  install -m 644 out/startup.js "${pkgdir}"/usr/lib/atom
+  install -m 755 "${srcdir}/atom.js" "${pkgdir}"/usr/lib/atom/atom
+
+  ln -sf /usr/bin/rg "${pkgdir}/usr/lib/atom/node_modules/vscode-ripgrep/bin/rg"
+
+  install -d -m 755 "${pkgdir}/usr/share/applications"
+  sed -e "s|<%= appName %>|Atom|" \
+      -e "s/<%= description %>/${pkgdesc}/" \
+      -e "s|<%= installDir %>|/usr|" \
+      -e "s|<%= appFileName %>|atom|" \
+      -e "s|<%= iconPath %>|atom|" \
+      resources/linux/atom.desktop.in > "${pkgdir}/usr/share/applications/atom.desktop"
+
+  for size in 16 24 32 48 64 128 256 512 1024; do
+    install -D -m 644 resources/app-icons/stable/png/${size}.png \
+            "${pkgdir}"/usr/share/icons/hicolor/${size}x${size}/apps/atom.png
+  done
+  ln -sf ../../../share/icons/hicolor/1024x1024/apps/atom.png \
+      "${pkgdir}"/usr/lib/atom/resources/atom.png
+
+  install -D -m 755 atom.sh "${pkgdir}/usr/bin/atom"
+
+  install -d -m 755 "${pkgdir}/usr/share/licenses/${pkgname}"
+  node -e "require('./script/lib/get-license-text')().then((licenseText) => require('fs').writeFileSync('${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.md', licenseText))"
+
+  # Remove useless stuff
+  find "${pkgdir}"/usr/lib/atom/node_modules \
+      -name "*.a" -exec rm '{}' \; \
+      -or -name "*.bat" -exec rm '{}' \; \
+      -or -name "*.c" -exec rm '{}' \; \
+      -or -name "*.cpp" -exec rm '{}' \; \
+      -or -name "*.node" -exec chmod a-x '{}' \; \
+      -or -name "benchmark" -prune -exec rm -r '{}' \; \
+      -or -name "doc" -prune -exec rm -r '{}' \; \
+      -or -name "html" -prune -exec rm -r '{}' \; \
+      -or -name "man" -prune -exec rm -r '{}' \; \
+      -or -name "scripts" -prune -exec rm -r '{}' \; \
+      -or -path "*/less/gradle" -prune -exec rm -r '{}' \; \
+      -or -path "*/task-lists/src" -prune -exec rm -r '{}' \;
+}

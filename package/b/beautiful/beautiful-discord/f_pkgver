@@ -1,0 +1,4 @@
+pkgver() {
+    cd "$srcdir/$_pkgbase"
+    echo "git~$(git rev-parse --short HEAD)"
+}

@@ -1,0 +1,6 @@
+package() {
+	cd "$srcdir/bulk"
+
+	mkdir -p "$pkgdir/usr/bin"
+	install "$srcdir/bulk/bulk.sh" "$pkgdir/usr/bin/bulk"
+}

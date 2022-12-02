@@ -1,0 +1,6 @@
+package() {
+  cd "${pkgname%-git}/build"
+  for binary in apfs-dump apfs-dump-quick apfs-fuse ; do
+    install -Dm755 $binary "$pkgdir/usr/bin/$binary"
+  done
+}

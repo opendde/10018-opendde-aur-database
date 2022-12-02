@@ -1,0 +1,7 @@
+pkgver() {
+  cd "binaryen"
+
+  _rev=$(git rev-list --count --all)
+  _hash=$(git rev-parse --short HEAD)
+  printf "r%s.g%s" "$_rev" "$_hash"
+}

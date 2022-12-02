@@ -1,0 +1,6 @@
+prepare() {
+  mkdir -p go
+  export GOPATH="${srcdir}/go"
+
+  go get -d -x "${_gourl}"
+}

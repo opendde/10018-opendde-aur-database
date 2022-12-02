@@ -1,0 +1,4 @@
+prepare() {
+  sed -i 's|#JAVA_HOME=|JAVA_HOME=/usr/lib/jvm/java-8-jdk|' \
+  "./${_pkgname}/setenv.sh"
+}

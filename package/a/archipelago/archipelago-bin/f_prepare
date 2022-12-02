@@ -1,0 +1,5 @@
+prepare() {
+  cd $srcdir
+
+  tar -xf data.tar.xz
+}

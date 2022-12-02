@@ -1,0 +1,6 @@
+build() {
+    cd $srcdir/$_upstreamname-$pkgver
+    patch -p1 -i ../$pkgname.patch
+    ./configure --prefix=/usr
+    make
+}

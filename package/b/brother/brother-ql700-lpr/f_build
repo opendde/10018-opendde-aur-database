@@ -1,0 +1,5 @@
+build() {
+        cd $srcdir
+        rpmextract.sh "ql700lpr-$pkgver-$_brotherrel.i386.rpm" || return 1
+        rm "ql700lpr-$pkgver-$_brotherrel.i386.rpm"
+}

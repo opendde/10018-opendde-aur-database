@@ -1,0 +1,5 @@
+package() {
+  cd "${srcdir}"
+  install -Dm755 arch-wiki.sh "$pkgdir"/usr/bin/arch-wiki
+  install -Dm644 arch-wiki.desktop "$pkgdir"/usr/share/applications/arch-wiki.desktop
+}

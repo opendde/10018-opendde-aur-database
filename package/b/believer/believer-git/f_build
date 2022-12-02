@@ -1,0 +1,4 @@
+build() {
+  cd "$_pkgbase"
+  go build believer.go
+}

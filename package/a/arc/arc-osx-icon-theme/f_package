@@ -1,0 +1,6 @@
+package() {
+    cd "${_pkgname}-${pkgver}"
+    install -d ${pkgdir}/usr/share/{icons,licenses/${pkgname}}
+    cp -a src/* "${pkgdir}/usr/share/icons/"
+    install -D -m644 ./{LICENSE,COPYING} "${pkgdir}/usr/share/licenses/${pkgname}/"
+}

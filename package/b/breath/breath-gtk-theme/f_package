@@ -1,0 +1,4 @@
+package() {
+  cd $srcdir/breath-gtk-$_gitcommit/build
+  make DESTDIR="${pkgdir}" install
+}

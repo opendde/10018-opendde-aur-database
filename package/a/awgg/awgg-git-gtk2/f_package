@@ -1,0 +1,24 @@
+package() {
+
+  cd $_gitname
+
+  install -Dm755 awgg "$pkgdir/usr/bin/awgg"
+
+  install -Dm644 awgg.png "$pkgdir/usr/share/pixmaps/awgg.png"
+
+  mkdir -p "$pkgdir/usr/share/awgg/languages"
+
+  install -Dm644 languages/* "$pkgdir/usr/share/awgg/languages"
+
+  install -Dm644 LICENSE "$pkgdir/usr/share/awgg/LICENSE"
+
+  mkdir -p "$pkgdir/usr/share/doc/awgg"
+
+  cp -R docs/* "$pkgdir/usr/share/doc/awgg"
+
+  cp *.wav "$pkgdir/usr/share/awgg/"
+
+  cd ../..
+
+  install -Dm644 "awgg.desktop" "$pkgdir/usr/share/applications/awgg.desktop"
+}

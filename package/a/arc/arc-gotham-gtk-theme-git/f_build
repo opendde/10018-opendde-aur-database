@@ -1,0 +1,4 @@
+build() {
+	cd "$_pkgname"
+	./autogen.sh --prefix=/usr
+}

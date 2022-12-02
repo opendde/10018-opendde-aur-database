@@ -1,0 +1,4 @@
+prepare() {
+  cd $_pkgname-$pkgver
+  sed -i "s|/usr/local/bin|/usr/bin|" Makefile
+}

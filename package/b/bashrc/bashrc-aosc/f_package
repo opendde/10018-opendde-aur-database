@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir/$_gitname"
+  install -Dm644  bashrc "$pkgdir/etc/bash.bashrc"
+  install -Dm644 -d bashrc.d "$pkgdir/etc/bashrc.d/"
+}

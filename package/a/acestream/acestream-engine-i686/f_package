@@ -1,0 +1,7 @@
+package() {
+  cd "$srcdir/acestream_${pkgver}_ubuntu_${_ubuntuver}_$CARCH"
+  install -Dm755 acestreamengine "$pkgdir/usr/bin/acestreamengine"
+  install -d "$pkgdir/usr/share/acestream/"
+  cp -a data lib "$pkgdir/usr/share/acestream/"
+  install -Dm644 "$srcdir/acestream-engine.service" "$pkgdir/usr/lib/systemd/system/acestream-engine.service"
+}

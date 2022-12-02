@@ -1,0 +1,7 @@
+build() {
+  cd $pkgname-$pkgver
+  go build \
+    --trimpath \
+    --ldflags "-X main.version=$pkgver" \
+    ./cmd/aws-iam-authenticator
+}

@@ -1,0 +1,39 @@
+package() {
+    cd "$pkgdir"
+
+    install -dm755 "usr/bin"
+    install -dm755 "opt/i2p"
+
+    cp -r "$srcdir/$pkgname-$pkgver"/pkg-temp/* "opt/i2p"
+
+    install -Dm644 "$srcdir/i2prouter.service" "usr/lib/systemd/system/i2prouter.service"
+    install -Dm644 "$srcdir/i2p.tmpfiles"      "usr/lib/tmpfiles.d/i2p.conf"
+    echo 'u i2p - "I2P Router" /opt/i2p /bin/sh' |
+    install -Dm644 /dev/stdin                  "usr/lib/sysusers.d/i2p.conf"
+
+    install -Dm644 "$srcdir/router.config"     "opt/i2p/router.config"
+    install -Dm644 "$srcdir/wrapper.config"    "opt/i2p/wrapper.config"
+    install -Dm754 "$srcdir/i2prouter.sh"      "opt/i2p/i2prouter"
+    install -Dm755 "$srcdir/chromium-i2p.sh"   "opt/i2p/scripts/chromium-i2p"
+
+    install -Dm644 "$srcdir/i2prouter.bash"    "usr/share/bash-completion/completions/i2prouter"
+    install -Dm644 "$srcdir/$pkgname-$pkgver/installer/resources/bash-completion/eepget" \
+                                               "usr/share/bash-completion/completions/eepget"
+
+    install -Dm644 "opt/i2p/man/eepget.1"      "usr/share/man/man1/eepget.1"
+    install -Dm644 "opt/i2p/LICENSE.txt"       "usr/share/licenses/i2p/LICENSE"
+    mv opt/i2p/licenses/*                      "usr/share/licenses/i2p/"
+
+    ln -s /opt/i2p/{eepget,i2prouter} "usr/bin/"
+    chmod +x opt/i2p/eepget
+
+    sed -i opt/i2p/eepget \
+        -e 's:%INSTALL_PATH:/opt/i2p:g'
+
+    # dont automatically start the webserver(3) or open a webbrowser(4)
+    sed -i opt/i2p/clients.config \
+        -e "s:clientApp.3.startOnLoad=.*:clientApp.3.startOnLoad=false:" \
+        -e "s:clientApp.4.startOnLoad=.*:clientApp.4.startOnLoad=false:"
+
+    rm -r opt/i2p/{osid,postinstall.sh,runplain.sh,INSTALL-headless.txt,LICENSE.txt,licenses,man,lib/wrapper*}
+}

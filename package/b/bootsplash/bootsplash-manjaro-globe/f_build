@@ -1,0 +1,4 @@
+build() {
+	cd "$srcdir/$pkgname"
+	sh ./bootsplash-manjaro-globe.sh
+}

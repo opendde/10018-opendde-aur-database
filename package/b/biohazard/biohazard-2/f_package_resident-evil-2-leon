@@ -1,0 +1,5 @@
+package_resident-evil-2-leon() {
+  local uuid="${_uuid_leon["fallback"]}"
+  _prepare_variant "${_app_id}" "Leon" "${uuid}" "${title}"
+  _package_common "$(_app_id_variant "${app_id}" "Leon")" "${pkgbase}"
+}

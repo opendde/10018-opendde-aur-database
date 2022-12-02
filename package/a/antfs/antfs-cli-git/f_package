@@ -1,0 +1,15 @@
+package() {
+  cd "$srcdir/${_gitname}"
+
+  python setup.py install --root="$pkgdir/"
+
+  install -Dm644 README.md ${pkgdir}/usr/share/${_gitname}/README
+  install -Dm644 SCRIPTING.md ${pkgdir}/usr/share/${_gitname}/SCRIPTING.md
+
+  sed -i 's|fittotcx = "/path/to/FIT-to-TCX/fittotcx.py"|fittotcx= "/usr/bin/fittotcx"|' scripts/40-convert_to_tcx.py
+  sed -i 's|gupload = "/path/to/bin/gupload.py"|gupload= "/usr/bin/gupload.py"|' scripts/40-upload_to_garmin_connect.py
+  install -Dm644 scripts/40-convert_to_tcx.py ${pkgdir}/usr/share/${_gitname}/scripts/40-convert_to_tcx.py
+  install -Dm644 scripts/40-upload_to_garmin_connect.py ${pkgdir}/usr/share/${_gitname}/scripts/40-upload_to_garmin_connect.py
+
+  install -Dm644 LICENCE ${pkgdir}/usr/share/licenses/${_gitname}/LICENSE
+}

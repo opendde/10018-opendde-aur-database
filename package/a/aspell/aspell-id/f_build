@@ -1,0 +1,5 @@
+build() {
+  cd "$srcdir/aspell5-id-$pkgver-0"
+  ./configure
+  make
+}

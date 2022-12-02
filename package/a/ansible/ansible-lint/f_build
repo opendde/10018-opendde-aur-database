@@ -1,0 +1,4 @@
+build() {
+    cd $srcdir/ansible-lint-${pkgver}
+    python2 setup.py build
+}

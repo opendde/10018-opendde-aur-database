@@ -1,0 +1,4 @@
+prepare() {
+  cd "${srcdir}"
+  unzip -q "Ayat-v${pkgver}_linux.zip"
+}

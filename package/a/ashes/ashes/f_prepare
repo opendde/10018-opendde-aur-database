@@ -1,0 +1,4 @@
+prepare() {
+    cd 'Ashes'
+    git submodule update --init
+}

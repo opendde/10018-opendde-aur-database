@@ -1,0 +1,7 @@
+package() {
+    install --directory --mode 755 "${pkgdir}/usr/lib/python3.5/boostNode"
+    cp --recursive --force "${srcdir}/boostNode/*.py" \
+        "${pkgdir}/usr/lib/python3.5/boostNode"
+    cp --recursive --force "${srcdir}/boostNode/**/*.py" \
+        "${pkgdir}/usr/lib/python3.5/boostNode"
+}

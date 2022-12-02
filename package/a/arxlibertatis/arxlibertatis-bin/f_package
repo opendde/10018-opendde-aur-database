@@ -1,0 +1,3 @@
+package() {
+	bsdtar -C $pkgdir -xf $srcdir/$_pkgname-$pkgver-*.rpm 
+}

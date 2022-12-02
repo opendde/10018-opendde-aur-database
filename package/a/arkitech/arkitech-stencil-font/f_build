@@ -1,0 +1,3 @@
+build() {
+	hq article text < font-licenses.html > FFPU.txt
+}

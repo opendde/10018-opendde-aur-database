@@ -1,0 +1,1 @@
+("https://artifacts.elastic.co/downloads/elasticsearch-plugins/${plugin}/${plugin}-${pkgver}.zip")

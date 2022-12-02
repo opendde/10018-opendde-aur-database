@@ -1,0 +1,13 @@
+build() {
+	cd "${srcdir}/afl-unicorn"
+	make PREFIX=/usr
+	make -C llvm_mode PREFIX=/usr
+
+	cd "unicorn_mode/unicorn-${unicorn_version}"
+	make UNICORN_QEMU_FLAGS="--python=/usr/bin/python2"
+
+	cd "bindings"
+	python const_generator.py python
+	cd "python"
+	python setup.py build
+}

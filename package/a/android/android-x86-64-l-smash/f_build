@@ -1,0 +1,14 @@
+build() {
+    cd "${srcdir}"/l-smash-${pkgver}
+    source android-env ${_android_arch}
+
+    ./configure \
+        --prefix=${ANDROID_PREFIX} \
+        --cc=${ANDROID_CC} \
+        --cross-prefix=${ANDROID_TOOLS_PREFIX} \
+        --sysroot=${ANDROID_SYSROOT} \
+        --enable-shared \
+        --extra-cflags="$CFLAGS" \
+        --extra-ldflags="$LDFLAGS"
+    make $MAKEFLAGS
+}

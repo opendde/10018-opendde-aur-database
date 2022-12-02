@@ -1,0 +1,5 @@
+build() {
+  cd "spec-${pkgver}"
+  ./build.sh
+  strip bin/*
+}

@@ -1,0 +1,8 @@
+package_python-buildbot-www() {
+  python="python"
+  depends=('buildbot')
+  pkgdesc="Buildbot UI"
+  _name=${_names[1]}
+  extraver="-py2.py3"
+  install_whl
+}

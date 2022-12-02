@@ -1,0 +1,7 @@
+prepare() {
+  cd "$srcdir/$pkgname-$pkgver"
+
+  # Change priority of default output. players.h was last touched in 2006,
+  # before PulseAudio became the default on everyone's desktops.
+  patch -Np0 -i "$srcdir/default-players.patch"
+}

@@ -1,0 +1,15 @@
+package() {
+  install -d "$pkgdir"/usr/bin \
+    "$pkgdir"/usr/share/$pkgname/bumblebee_status/{core,util} \
+    "$pkgdir"/usr/share/$pkgname/bumblebee_status/modules/{core,contrib} \
+    "$pkgdir"/usr/share/$pkgname/themes/icons
+  ln -s /usr/share/$pkgname/$pkgname "$pkgdir"/usr/bin/$pkgname
+  ln -s /usr/share/$pkgname/bumblebee-ctl "$pkgdir"/usr/bin/bumblebee-ctl
+
+  cd $pkgname-$pkgver
+  cp -a --parents $pkgname bumblebee_status/{,core/,util/,modules/core/,modules/contrib/}*.py \
+    themes/{,icons/}*.json $pkgdir/usr/share/$pkgname
+  cp -r bin $pkgdir/usr/share/$pkgname/
+
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}

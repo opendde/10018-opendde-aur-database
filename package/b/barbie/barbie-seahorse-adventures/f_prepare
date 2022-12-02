@@ -1,0 +1,5 @@
+prepare() {
+  cd barbie-$pkgver
+  sed -i 's/python/python2/' run_game.py
+  gendesk -f -n --pkgname=barbie --pkgdesc="$pkgdesc" --categories="Application;Game"
+}

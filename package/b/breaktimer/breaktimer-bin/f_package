@@ -1,0 +1,3 @@
+package() {
+  tar xvf data.tar.xz -C "${pkgdir}"
+}

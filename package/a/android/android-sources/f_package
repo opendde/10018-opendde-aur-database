@@ -1,0 +1,8 @@
+package() {
+    # Install files
+    mkdir -p "${pkgdir}/opt/android-sdk/sources/"
+    cp -dpr --no-preserve=ownership "${srcdir}/src" "${pkgdir}/opt/android-sdk/sources/android-${_sdkint}"
+    chmod -R ugo+rX "${pkgdir}/opt"
+    # Install license
+    install -D -m 644 "package.xml" "${pkgdir}/usr/share/licenses/${pkgname}/package.xml"
+}

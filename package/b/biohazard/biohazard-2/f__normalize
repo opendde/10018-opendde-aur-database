@@ -1,0 +1,9 @@
+_normalize() {
+  local _bin="${1}"
+  local _cue="${2}"
+  local _uuid="${3}"
+  mv "${_bin} (Track 1).bin" "${_uuid} (Track 1).bin"
+  mv "${_bin} (Track 2).bin" "${_uuid} (Track 2).bin"
+  cp "${_cue}.cue" "${_uuid}.cue"
+  sed -i -e "s/${_bin}/${_uuid}.bin/g" "${_uuid}.cue"
+}

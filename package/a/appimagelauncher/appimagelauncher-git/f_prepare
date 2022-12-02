@@ -1,0 +1,34 @@
+prepare() {
+  cd "$srcdir/${pkgname%-git}"
+
+  git submodule init
+  git config submodule.lib/AppImageUpdate.url "${srcdir}/AppImageUpdate"
+  git config submodule.lib/libappimage.url "${srcdir}/libappimage"
+  git submodule update 
+
+  cd "$srcdir/${pkgname%-git}/lib/AppImageUpdate"
+  git submodule init
+  git config submodule.lib/zsync2.url "${srcdir}/zsync2"
+  git config submodule.lib/fltk.url "${srcdir}/fltk-1.3.4"
+  git config submodule.lib/libdesktopenvironments.url  "${srcdir}/libdesktopenvironments"
+  git config submodule.lib/sanitizers-cmake.url "${srcdir}/sanitizers-cmake"
+  git config submodule.lib/libappimage.url "${srcdir}/libappimage"
+  git submodule update
+
+  cd "$srcdir/${pkgname%-git}/lib/AppImageUpdate/lib/libappimage"
+  git submodule init
+  git config submodule.lib/gtest.url "${srcdir}/googletest"
+  git submodule update
+
+  cd "$srcdir/${pkgname%-git}/lib/AppImageUpdate/lib/zsync2"
+  git submodule init
+  git config submodule.lib/cpr.url "${srcdir}/cpr"
+  git config submodule.lib/args.url "${srcdir}/args"
+  git config submodule.lib/gtest.url "${srcdir}/googletest"
+  git submodule update
+
+  cd "${srcdir}/${pkgname%-git}/lib/libappimage"
+  git submodule init
+  git config submodule.lib/gtest.url "${srcdir}/googletest"
+  git submodule update
+}

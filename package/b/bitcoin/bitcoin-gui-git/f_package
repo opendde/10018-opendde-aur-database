@@ -1,0 +1,11 @@
+package() {
+	cd "$srcdir/bitcoin"
+  make -j$(nproc) install DESTDIR="$pkgdir"
+  install -Dm644 "$srcdir/bitcoin/share/pixmaps/bitcoin128.png"\
+								 "$pkgdir/usr/share/pixmaps/bitcoin128.png"
+  install -Dm644 COPYING "$pkgdir/usr/share/licenses/$pkgname/COPYING"
+	cp "$srcdir/packaging/debian/bitcoin-qt.desktop" "$srcdir/bitcoin/bitcoin.desktop"
+	desktop-file-install -m 644 --dir="$pkgdir/usr/share/applications/" "bitcoin.desktop"
+  install -Dm644 "$srcdir/packaging/debian/examples/bitcoin.conf"\
+								 "$pkgdir/usr/share/doc/$pkgname/examples/bitcoin.conf"
+}

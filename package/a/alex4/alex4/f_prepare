@@ -1,0 +1,3 @@
+prepare() {
+  patch -d $pkgname-$pkgver -Np1 < $pkgname-gcc10.patch
+}

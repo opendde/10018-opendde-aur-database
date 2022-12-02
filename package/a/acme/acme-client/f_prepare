@@ -1,0 +1,5 @@
+prepare () {
+	cd "${srcdir}/${pkgname}-portable-${pkgver}"
+	# Remove this definition, we'll pass a value below.
+	sed -i -e '/^#define[[:space:]]\+WWW_DIR\b/d' main.c
+}

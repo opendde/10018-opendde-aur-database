@@ -1,0 +1,9 @@
+package() {
+	cd "$srcdir/${pkgname}"
+	install -d "${pkgdir}/usr/share/battery-monitor"
+	cp -a src/. "${pkgdir}/usr/share/battery-monitor"
+	mkdir -p "${pkgdir}/usr/bin/battery-monitor"
+	install -Dm755 battery-monitor "${pkgdir}/usr/bin/battery-monitor"
+	install -Dm755 battery-monitor-autostart.desktop "${pkgdir}/etc/xdg/autostart/battery-monitor-autostart.desktop"
+	install -Dm755 battery-monitor.desktop "${pkgdir}/usr/share/applications/battery-monitor.desktop"
+}

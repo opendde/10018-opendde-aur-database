@@ -1,0 +1,9 @@
+build() {
+  cd ${pkgname}-${pkgver}
+
+  autoconf
+  ./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc
+  make
+}

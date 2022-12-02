@@ -1,0 +1,10 @@
+build() {
+  mkdir -p "${srcdir}/go/src/github.com/gcash"
+  export GOPATH="${srcdir}/go"
+  export GOBIN="$GOPATH/bin"
+
+  mv "$pkgname-$pkgver" "$GOPATH/src/github.com/gcash/bchd"
+  cd "$GOPATH/src/github.com/gcash/bchd"
+
+  make
+}

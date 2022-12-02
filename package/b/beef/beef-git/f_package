@@ -1,0 +1,22 @@
+package() {
+  # cp -r src/beef-git/* pkg/usr/share/beef
+  install -d "${pkgdir}/usr/share/${_pkgname}"
+  cp -r "${srcdir}/${pkgname}"/* "${pkgdir}/usr/share/${_pkgname}"
+
+  # update vendor path
+  install -d "${pkgdir}/usr/share/${_pkgname}/.bundle"
+  install -Dm644 "${srcdir}/${pkgname}/.bundle/config" "${pkgdir}/usr/share/${_pkgname}/.bundle/config"
+
+  install -Dm755 "${pkgname}.sh" "${pkgdir}/usr/bin/beef"
+
+  # install GeoIP database to /opt/GeoIP
+  install -d "${pkgdir}/opt/GeoIP"
+  install -Dm644 "${srcdir}"/GeoLite2-City*/* "${pkgdir}/opt/GeoIP/"
+
+  # update LICENSE
+  install -d "${pkgdir}/usr/share/licenses/GeoIP"
+  install -Dm644 "${pkgdir}/opt/GeoIP"/LICENSE.txt "${pkgdir}/usr/share/licenses/GeoIP/LICENSE"
+  install -Dm644 "${pkgdir}/opt/GeoIP"/COPYRIGHT.txt "${pkgdir}/usr/share/licenses/GeoIP/COPYRIGHT"
+  install -d "${pkgdir}/usr/share/licenses/${_pkgname}"
+  install -Dm644 "${srcdir}/${pkgname}/doc"/* "${pkgdir}/usr/share/licenses/${_pkgname}/"
+}

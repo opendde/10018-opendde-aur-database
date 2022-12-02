@@ -1,0 +1,5 @@
+package() {
+	install -d "$pkgdir"/usr/bin
+	ln -s /usr/bin/bemenu "$pkgdir"/usr/bin/dmenu-wl
+	ln -s /usr/bin/bemenu-run "$pkgdir"/usr/bin/dmenu-wl_run
+}

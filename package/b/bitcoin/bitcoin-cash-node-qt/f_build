@@ -1,0 +1,17 @@
+build() {
+  cd "$srcdir/bitcoin-cash-node-$pkgver"
+
+  msg2 'Building...'
+  mkdir -p build
+  pushd build
+
+  cmake -GNinja .. \
+    -DENABLE_CLANG_TIDY=OFF \
+    -DCLIENT_VERSION_IS_RELEASE=ON \
+    -DENABLE_REDUCE_EXPORTS=ON \
+    -DENABLE_STATIC_LIBSTDCXX=ON \
+    -DCMAKE_INSTALL_PREFIX=$pkgdir/usr
+
+  ninja
+  popd
+}

@@ -1,0 +1,4 @@
+prepare() {
+  cd "$_pkgname"
+  patch -p0 -i "$srcdir/prevent_srcdir_references.patch"
+}

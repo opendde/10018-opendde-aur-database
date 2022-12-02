@@ -1,0 +1,13 @@
+prepare() {
+    [[ -e "$srcdir/build" ]] && rm -r "$srcdir/build"
+    mkdir "$srcdir/build"
+
+    [[ -e "$srcdir/build-lib" ]] && rm -r "$srcdir/build-lib"
+    mkdir "$srcdir/build-lib"
+
+    [[ -e "$srcdir/build-gui" ]] && rm -r "$srcdir/build-gui"
+    mkdir "$srcdir/build-gui"
+
+    rm -r "$srcdir/bibtex2website-$pkgver/3rdparty/liblogcpp"
+    cp -r "$srcdir/liblogcpp-$_logcppver" "$srcdir/bibtex2website-$pkgver/3rdparty/liblogcpp"
+}

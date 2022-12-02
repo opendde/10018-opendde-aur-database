@@ -1,0 +1,20 @@
+package_bacula-bat() {
+  pkgdesc+="(management GUI)"
+  backup=("etc/${pkgbase}/bat.conf")
+  depends=("${pkgbase}-common=${pkgver}" qt5-base)
+
+  cd "${srcdir}/install"
+  cp --parents -a usr/bin/bat "${pkgdir}"
+  cp --parents -a usr/bin/bacula-tray-monitor "${pkgdir}"
+  cp --parents -a etc/${pkgbase}/bat.conf "${pkgdir}"
+  cp --parents -a etc/${pkgbase}/bacula-tray-monitor.conf "${pkgdir}"
+  cp --parents -a usr/share/man/man1/bat.1.gz "${pkgdir}"
+
+  chmod 755 "${pkgdir}/etc/${pkgbase}" "${pkgdir}/usr/bin/bat" "${pkgdir}/usr/bin/bacula-tray-monitor"
+  chmod 644 "${pkgdir}/etc/${pkgbase}/bat.conf" "${pkgdir}/etc/${pkgbase}/bacula-tray-monitor.conf"
+
+  mkdir -p "${pkgdir}/usr/share/applications" "${pkgdir}/usr/share/pixmaps"
+  cp -a "${srcdir}/${pkgbase}-${pkgver}/scripts/bat.desktop" "${pkgdir}/usr/share/applications/"
+  cp -a "${srcdir}/${pkgbase}-${pkgver}/scripts/bacula-tray-monitor.desktop" "${pkgdir}/usr/share/applications/"
+  cp -a "${srcdir}/${pkgbase}-${pkgver}/src/qt-console/images/bat_icon.png" "${pkgdir}/usr/share/pixmaps/"
+}

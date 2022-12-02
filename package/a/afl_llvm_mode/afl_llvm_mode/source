@@ -1,0 +1,1 @@
+(afl-${pkgver}.tgz::http://lcamtuf.coredump.cx/${pkgname}/releases/${pkgname}-${pkgver}.tgz)

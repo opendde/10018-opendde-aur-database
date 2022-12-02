@@ -1,0 +1,4 @@
+prepare() {
+	patch "${srcdir}/desktop/inp.c" < "${startdir}/inp.c.patch"
+	patch "${srcdir}/desktop/inp.h" < "${startdir}/inp.h.patch"
+}

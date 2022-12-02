@@ -1,0 +1,7 @@
+build() {
+  cd build
+  cmake ../baloo-widgets-${pkgver} \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr
+  make
+}

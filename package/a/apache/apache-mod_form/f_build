@@ -1,0 +1,5 @@
+build() {
+  cd "$srcdir"/$pkgname-$pkgversion
+
+  apxs -c mod_form.c
+}

@@ -1,0 +1,4 @@
+build() {
+  cd "$srcdir/ASCO-$pkgver"
+  make
+}

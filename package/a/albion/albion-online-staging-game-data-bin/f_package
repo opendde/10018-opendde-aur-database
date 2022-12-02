@@ -1,0 +1,13 @@
+package() {
+  mkdir -p "${pkgdir}/opt/albion-online-launcher-bin/staging_x64"
+  bsdtar --verbose --extract --directory "${pkgdir}/opt/albion-online-launcher-bin/staging_x64" --file "albiononline-linux-full-${pkgver}.zip"
+  chmod +x "${pkgdir}/opt/albion-online-launcher-bin/staging_x64/Albion-Online"
+
+  mkdir -p "${pkgdir}/usr/bin"
+  echo "#!/bin/sh" > "${pkgdir}/usr/bin/albion-online-staging"
+  echo "/opt/albion-online-launcher-bin/staging_x64/Albion-Online" >> "${pkgdir}/usr/bin/albion-online-staging"
+  chmod +x "${pkgdir}/usr/bin/albion-online-staging"
+
+  # install .desktop file
+  install -m755 -D "${srcdir}/albion-online-staging.desktop" -t "${pkgdir}/usr/share/applications"
+}

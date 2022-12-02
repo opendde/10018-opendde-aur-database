@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}.tar.gz::https://www.${_pkgname}.org/downloads/download.php?file=/technology/epp/downloads/release/${_releasemonth}/R/${pkgname%-bin}-${_releasemonth}-R-linux-gtk-${CARCH}.tar.gz&r=1"

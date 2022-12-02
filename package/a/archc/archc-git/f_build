@@ -1,0 +1,6 @@
+build() {
+  cd ArchC
+  ./autogen.sh
+  ./configure --prefix=/usr --sysconfdir=/etc
+  make
+}

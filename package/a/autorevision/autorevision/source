@@ -1,0 +1,1 @@
+(https://github.com/Autorevision/autorevision/releases/download/v%2F${pkgver}/${pkgname}-${pkgver}.tgz{,.sig})

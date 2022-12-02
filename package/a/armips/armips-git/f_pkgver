@@ -1,0 +1,4 @@
+pkgver() {
+    cd "$srcdir"/armips
+    git describe --tags | sed 's/^v//;s/-/.r/;s/-/./'
+}

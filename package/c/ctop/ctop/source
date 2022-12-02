@@ -1,0 +1,1 @@
+("${_url}/releases/download/v$pkgver/${pkgname}-$pkgver-linux-amd64"

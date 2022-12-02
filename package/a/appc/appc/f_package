@@ -1,0 +1,8 @@
+package() {
+  cd "spec-${pkgver}"
+  install -Dm755 bin/ace-validator "$pkgdir/usr/bin/ace-validator"
+  install -Dm755 bin/actool "$pkgdir/usr/bin/actool"
+  install --directory "$pkgdir/usr/share/doc/${pkgname}/examples"
+  install *.md "$pkgdir/usr/share/doc/${pkgname}"
+  install examples/* "$pkgdir/usr/share/doc/${pkgname}/examples"
+}

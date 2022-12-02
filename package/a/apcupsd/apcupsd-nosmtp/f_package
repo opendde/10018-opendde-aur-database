@@ -1,0 +1,19 @@
+package() {
+    cd "$srcdir/$_pkgname_origin-$pkgver"
+
+    make DESTDIR="$pkgdir" install
+
+    sed -i 's#^LOCKFILE .*$#LOCKFILE /run/apcupsd#' "$pkgdir/etc/apcupsd/apcupsd.conf"
+
+    install -Dm644 "$srcdir/apcupsd.service" "$pkgdir/usr/lib/systemd/system/apcupsd.service"
+    install -Dm644 "$srcdir/apcupsd-tmpfiles.conf" "$pkgdir/usr/lib/tmpfiles.d/apcupsd.conf"
+    install -Dm755 "$srcdir/apcupsd_shutdown" "$pkgdir/usr/lib/systemd/system-shutdown/apcupsd_shutdown"
+
+    chmod 755 "$pkgdir"/usr/bin/*
+
+    install -dm755 "$pkgdir/usr/lib/$_pkgname_origin/cgi-bin"
+    mv "$pkgdir"/etc/apcupsd/*.cgi "$pkgdir/usr/lib/$_pkgname_origin/cgi-bin"
+
+    rm -rf "$pkgdir/usr/share/hal"
+    rm -f "$pkgdir/usr/bin/smtp"
+}

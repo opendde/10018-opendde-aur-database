@@ -1,0 +1,10 @@
+build() {
+	cd "$srcdir/libressl-${_sslver}"
+	./configure --disable-shared --enable-static
+	make
+
+	cd "$srcdir/$pkgname"
+	make \
+		CPPFLAGS="-I../libressl-${_sslver}/include -pthread" \
+		LDFLAGS="-L../libressl-${_sslver}/{tls,ssl,crypto}/.libs -pthread"
+}

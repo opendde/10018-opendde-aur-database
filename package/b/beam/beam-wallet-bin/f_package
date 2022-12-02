@@ -1,0 +1,9 @@
+package() {
+	install -D beam-wallet.sh "$pkgdir/usr/bin/beam-wallet"
+	cd squashfs-root
+	install -Dm644 beam.png -t "$pkgdir/usr/share/icons/hicolor/256x256/apps/"
+	install -Dm644 BeamWallet.desktop "$pkgdir/usr/share/applications/beam-wallet.desktop"
+	install -d "$pkgdir/opt/$pkgname/"
+	rm -rf usr/share
+	cp -a --no-preserve=ownership * "$pkgdir/opt/$pkgname/"
+}

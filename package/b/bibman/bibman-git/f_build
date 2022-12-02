@@ -1,0 +1,5 @@
+build() {
+	cd bibman
+        perl Makefile.PL
+	make
+}

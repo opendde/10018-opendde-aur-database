@@ -1,0 +1,1 @@
+("https://github.com/hashicorp/damon/releases/download/${pkgrelease}/damon_${pkgver}-dev_linux_amd64.zip")

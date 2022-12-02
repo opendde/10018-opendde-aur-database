@@ -1,0 +1,4 @@
+package() {
+    install -d -m 755 "${pkgdir}/usr/bin"
+    install -m 755 "${srcdir}/${_reponame}/archisomod" "${pkgdir}/usr/bin/archisomod"
+}

@@ -1,0 +1,5 @@
+package() {
+	install -d -m0755 "${pkgdir}/opt/toolchains"
+	cp -a "${srcdir}/arm-eabi-4.8" "${pkgdir}/opt/toolchains/"
+	rm -r "${pkgdir}/opt/toolchains/arm-eabi-4.8/.git"
+}

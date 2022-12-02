@@ -1,0 +1,11 @@
+package() {
+    ar x mfcl3710cwpdrv-1.0.2-0.i386.deb && tar xzvf data.tar.gz
+
+    # Patch filenames to work on Arch
+    cd opt/brother/Printers/mfcl3710cw
+    perl -i -pe 's#/etc/init.d#/etc/rc.d#g' ./cupswrapper/cupswrappermfcl3710cw
+    perl -i -pe 's#printcap\.local#printcap#g' ./inf/setupPrintcapij
+
+    cp -rf $srcdir/usr/ $pkgdir/
+    cp -rf $srcdir/opt/ $pkgdir/
+}

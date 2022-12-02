@@ -1,0 +1,7 @@
+package() {
+    install -dm775 -ggames "${pkgdir}/opt/ankama-launcher"
+    install -Dm775 -ggames "ankama-launcher.AppImage" "${pkgdir}/opt/ankama-launcher/ankama-launcher.AppImage"
+    install -Dm755 "ankama-launcher"                  "${pkgdir}/usr/bin/ankama-launcher"
+    install -Dm644 "ankama-launcher.desktop"          "${pkgdir}/usr/share/applications/ankama-launcher.desktop"
+    install -Dm644 "ankama-launcher.png"              "${pkgdir}/usr/share/pixmaps/ankama-launcher.png"
+}

@@ -1,0 +1,4 @@
+build() {
+  cd "$pkgname-$pkgver"
+  RUSTUP_TOOLCHAIN=stable cargo build --release --locked --target-dir=target
+}

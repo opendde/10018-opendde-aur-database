@@ -1,0 +1,5 @@
+package() {
+    cd "batterymon"
+    install -Dm755 batterymon $pkgdir/usr/bin/batterymon
+    install -Dm644 batterymon.1 $pkgdir/usr/share/man/man1/batterymon.1
+}

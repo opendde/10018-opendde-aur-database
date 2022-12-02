@@ -1,0 +1,6 @@
+package() {
+	cp -R "$srcdir/usr" "$pkgdir"
+	[ -d "$srcdir/opt" ] && cp -R "$srcdir/opt" "$pkgdir"
+	install -m 644 -D cupswrapper-license.txt "$pkgdir/usr/share/licenses/${pkgname}/cupswrapper-licence.txt"
+	install -m 644 -D lpr-license.txt "$pkgdir/usr/share/licenses/${pkgname}/lpr-licence.txt"
+}

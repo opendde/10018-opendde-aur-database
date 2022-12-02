@@ -1,0 +1,10 @@
+package() {
+  cd "${pkgname%-qfix}-${pkgver}"
+
+  install -Dm644 LICENSE.txt "${pkgdir}"/usr/share/licenses/${pkgname%-qfix}/LICENSE
+
+  DESTDIR="${pkgdir}/" ninja -C build install
+
+# quick fix for miss capitalization of `imath` package
+  sed '/find_dependency(IMath)/s|IMath|Imath|' -i "${pkgdir}"/usr/lib/cmake/Alembic/AlembicConfig.cmake
+}

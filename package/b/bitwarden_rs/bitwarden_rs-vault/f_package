@@ -1,0 +1,5 @@
+package() {
+	# install vault files
+	install -d "$pkgdir/usr/share/bitwarden_rs"
+	cp -r "$srcdir/web-$pkgver/build" "$pkgdir/usr/share/bitwarden_rs/vault"
+}

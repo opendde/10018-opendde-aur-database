@@ -1,0 +1,3 @@
+package() {
+ install -Dm755 act_mirred.ko.gz $pkgdir/usr/lib/modules/${_extramodules}/act_mirred.ko.gz
+}

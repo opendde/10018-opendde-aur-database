@@ -1,0 +1,20 @@
+build() {
+    cd "${srcdir}/${_pkgbase}-${pkgver}"
+    ./configure \
+        --prefix=/usr \
+        --libexecdir=/usr/lib/${_pkgbase} \
+        --with-gtk=2.0 \
+        --enable-djvu \
+        --enable-dvi \
+        --enable-epub \
+        --enable-t1lib \
+        --enable-pixbuf \
+        --enable-comics \
+        --enable-xps \
+        --enable-introspection
+
+    #https://bugzilla.gnome.org/show_bug.cgi?id=656231
+    sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+
+    make
+}

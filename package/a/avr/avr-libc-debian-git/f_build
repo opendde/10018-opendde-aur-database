@@ -1,0 +1,10 @@
+build() {
+    cd "$srcdir/avr-libc/libc/avr-libc"
+    unset CFLAGS
+    unset CXXFLAGS
+    unset LDFLAGS
+
+    ./bootstrap
+    ./configure --build=$(./config.guess) --host=avr --prefix=/usr
+    make
+}

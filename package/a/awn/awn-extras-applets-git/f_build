@@ -1,0 +1,11 @@
+build() {
+  cd "${srcdir}/${_pkgname}"
+
+  ./autogen.sh --prefix=/usr --sysconfdir=/etc \
+              --disable-static \
+              --disable-pymod-checks \
+              --with-gconf \
+              --enable-indicator-applet \
+              PYTHON=/usr/bin/python2
+  make
+}

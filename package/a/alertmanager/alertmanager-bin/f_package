@@ -1,0 +1,29 @@
+package() {
+    case "$CARCH" in
+        'x86_64') ARCH='amd64';;
+        'arm') ARCH='armv5';;
+        'armv6h') ARCH='armv6';;
+        'armv7h') ARCH='armv7';;
+        'aarch64') ARCH='arm64';;
+    esac
+    cd "${srcdir}/alertmanager-${pkgver}.linux-${ARCH}"
+
+    # Install Binary
+    install -D -m0755 alertmanager \
+        "${pkgdir}/usr/bin/alertmanager"
+
+    # Install Amtool Binary
+    install -D -m0755 amtool \
+        "${pkgdir}/usr/bin/amtool"
+
+    # Install Config File
+    install -D -m0755 alertmanager.yml \
+        "${pkgdir}/etc/alertmanager/alertmanager.yml"
+
+    # Create Notifications Template Directory
+    install -d -m0755 "${pkgdir}/etc/alertmanager/template/"
+
+    # Install SystemD Service File
+    install -D -m0644 "${srcdir}/alertmanager.service" \
+        "${pkgdir}/usr/lib/systemd/system/alertmanager.service"
+}

@@ -1,0 +1,3 @@
+package() {
+	install -D "${srcdir}/albert-extensions/pass.py" "${pkgdir}/usr/share/albert/org.albert.extension.externalextensions/extensions/pass.py"
+}

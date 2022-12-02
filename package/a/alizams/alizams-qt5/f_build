@@ -1,0 +1,9 @@
+build() {
+  cd AlizaMS/build
+  cmake .. -Wno-dev \
+    -DCMAKE_BUILD_TYPE=None \
+    -DALIZA_QT_VERSION:STRING=5 \
+    -DCMAKE_INSTALL_PREFIX=/usr
+
+  make
+}

@@ -1,0 +1,6 @@
+build() {
+    mkdir -pv "$srcdir/build"
+    cd "$srcdir/build"
+    cmake ../aqsis -DCMAKE_INSTALL_PREFIX=/usr
+    make
+}

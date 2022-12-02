@@ -1,0 +1,5 @@
+package_anti-ad-dnsmasq-git() {
+    pkgdesc="Configuration for adblocking via Dnsmasq"
+    depends=('dnsmasq')
+    install -Dm644 anti-AD/adblock-for-dnsmasq.conf "$pkgdir/etc/dnsmasq.d/adblock-for-dnsmasq.conf"
+}

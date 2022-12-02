@@ -1,0 +1,1 @@
+("https://github.com/Chia-Network/${_name}/releases/download/${pkgver}/${_name}_${pkgver}_amd64.deb")

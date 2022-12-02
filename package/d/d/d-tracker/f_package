@@ -1,0 +1,8 @@
+package() {
+  cd $srcdir/b43-tools-b43-fwcutter-$pkgver/debug/; python2 install.py install --root "$pkgdir/"; cd ..
+
+  make -C assembler PREFIX="$pkgdir/usr/" install
+  make -C disassembler PREFIX="$pkgdir/usr/" install
+  make -C fwcutter PREFIX="$pkgdir/usr/" install
+  make -C ssb_sprom PREFIX="$pkgdir/usr/" install
+} 

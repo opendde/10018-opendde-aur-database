@@ -1,0 +1,7 @@
+package() {
+	cd "${srcdir}/${pkgname}-v${pkgver}/build/"
+	# HACK Original Makefile tries to update mimeinfo.cache and icon-theme.cache.
+	# These files should be updated after installation.
+	sed -i '/^\s*update_icon$/d' install.sh
+	DESTDIR="${pkgdir}" ninja install
+}

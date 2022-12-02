@@ -1,0 +1,1 @@
+(dcrd-release-v$pkgver.tar.gz::https://github.com/decred/dcrd/archive/refs/tags/release-v$pkgver.tar.gz

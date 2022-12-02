@@ -1,0 +1,6 @@
+build() {
+	cd "$srcdir/$pkgname-$pkgver"
+	patch -Np0 -i "${srcdir}"/aa3d.string.header.patch
+	make clean
+	make
+}

@@ -1,0 +1,5 @@
+package() {
+    cd "$srcdir/$_pkgname"
+    install -Dm755 adept.sh "$pkgdir/usr/bin/adept"
+    install -Dm644 "$srcdir/LICENSE.md" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

@@ -1,0 +1,5 @@
+check() {
+  cd "$srcdir/bash-3.2"
+
+  make check
+}

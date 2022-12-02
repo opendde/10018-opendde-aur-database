@@ -1,0 +1,21 @@
+build() {
+  cd "${srcdir}/${_gitname}/tools/fiptool"
+  sed -i '/-Werror/d' ./Makefile
+  make
+  cd "${srcdir}/${_gitname}"
+  for _atfdev in sdmmc emmc; do
+    _ATFBUILDARGS="PLAT=mt7622 BOOT_DEVICE=$_atfdev DDR3_FLYBY=1 LOG_LEVEL=40"
+     sed -i 's/.*entry = get_partition_entry.*/\tentry = get_partition_entry("bpir64-'${_atfdev}'-fip");/' \
+           plat/mediatek/mt7622/bl2_boot_mmc.c
+    _makeatf="make $_ATFBUILDARGS USE_MKIMAGE=1 MKIMAGE=$(which bpir64-mkimage) DEVICE_HEADER_OFFSET=0"
+    touch plat/mediatek/mt7622/platform.mk
+    unset LDFLAGS
+    unset CFLAGS
+    # PRELOADED_BL33_BASE is not being used in mt7622 atf code, so we use it as binairy flags:
+    # 0b0001 : incbin BL31.bin inside of BL2 image, disable it during BL31 build because of common code!
+    $_makeatf PRELOADED_BL33_BASE=0b0000 bl31
+    $_makeatf PRELOADED_BL33_BASE=0b0001 bl2 ${srcdir}/${_gitname}/build/mt7622/release/bl2.img
+    dd of=build/mt7622/release/bpir64-atf-${_atfdev}-header.bin bs=1 count=440 if=build/mt7622/release/bl2.img
+    dd of=build/mt7622/release/bpir64-atf-${_atfdev}-atf.bin         skip=34   if=build/mt7622/release/bl2.img
+  done
+}

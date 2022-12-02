@@ -1,0 +1,4 @@
+build() {
+  mkdir -p include/linux/platform_data/
+  mv bcm2079x.h include/linux/platform_data/
+}

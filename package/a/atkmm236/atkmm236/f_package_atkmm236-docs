@@ -1,0 +1,7 @@
+package_atkmm236-docs() {
+  pkgdesc+=" (documentation)"
+  depends=()
+  options=(!strip)
+
+  mv docs/* "$pkgdir"
+}

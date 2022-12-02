@@ -1,0 +1,5 @@
+check() {
+  cd $pkgname-$pkgver
+  export GUILE_LOAD_PATH=$GUILE_LOAD_PATH:.
+  guile -c '(display (@ (artanis artanis) artanis-version))'
+}

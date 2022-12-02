@@ -1,0 +1,23 @@
+package() {
+  cd "${srcdir}"/opt/Adobe/Reader8
+  install -D -m644 Resource/Support/AdobeReader.desktop \
+    "${pkgdir}"/usr/share/applications/AdobeReader.desktop
+  sed -i 's/AdobeReader8.png/AdobeReader.png/' \
+    "${pkgdir}"/usr/share/applications/AdobeReader.desktop
+  install -D -m644 Resource/Icons/64x64/AdobeReader8.png \
+    "${pkgdir}"/usr/share/pixmaps/AdobeReader.png
+  
+  install -d "${pkgdir}"/opt/acrobat
+  cp -r Reader "${pkgdir}"/opt/acrobat/
+  cp -r Resource "${pkgdir}"/opt/acrobat/
+
+  install -D -m755 bin/acroread "${pkgdir}"/opt/acrobat/bin/acroread
+  install -d "${pkgdir}"/usr/bin
+  ln -sf /opt/acrobat/bin/acroread "${pkgdir}"/usr/bin/acroread
+
+  install -D -m755 Browser/intellinux/nppdf.so \
+    "${pkgdir}"/opt/mozilla/lib/plugins/nppdf.so
+
+  install -D -m644 Reader/Legal/en_US/License.txt \
+    "${pkgdir}"/usr/share/licenses/${pkgname}/License.txt
+}

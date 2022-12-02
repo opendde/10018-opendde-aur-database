@@ -1,0 +1,4 @@
+build() {
+	cd "$srcdir/auto-display-manager-cr"
+	./build.sh
+}

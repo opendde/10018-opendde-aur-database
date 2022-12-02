@@ -1,0 +1,6 @@
+prepare() {
+  cd "$_pkgname-$pkgver"
+  npm --prefix client ci
+  yarn --cwd client2 install
+  go mod download
+}

@@ -1,0 +1,6 @@
+build() {
+  cd $pkgname-$pkgver
+
+  msg2 'Building...'
+  PREFIX=/usr bmake
+}

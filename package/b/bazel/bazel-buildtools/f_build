@@ -1,0 +1,4 @@
+build() {
+  cd buildtools-$pkgver
+  PATH="/usr/lib/jvm/java-11-openjdk/bin/:$PATH" bazel build //buildifier //buildozer //unused_deps
+}

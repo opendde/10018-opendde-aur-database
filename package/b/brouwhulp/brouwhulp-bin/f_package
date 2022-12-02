@@ -1,0 +1,7 @@
+package() {
+	cd "${srcdir}"
+	ar x brouwhulp
+	xz -d "${srcdir}"/data.tar.xz
+	tar -xf "${srcdir}/data.tar"
+	cp -dr --no-preserve=ownership ${srcdir}/usr ${pkgdir}/usr
+}

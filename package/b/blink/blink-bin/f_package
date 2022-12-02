@@ -1,0 +1,12 @@
+package() {
+	install -d \
+		"$pkgdir/usr/bin" \
+		"$pkgdir/usr/share/icons/hicolor/128x128/" \
+		"$pkgdir/opt/$pkgname"
+	cp -a --no-preserve=ownership squashfs-root/usr "$pkgdir/opt/$pkgname/"
+	install -Dm644 squashfs-root/blink.desktop -t "$pkgdir/usr/share/applications/"
+	ln -s "/opt/$pkgname/usr/bin/blink" "$pkgdir/usr/bin/"
+	ln -s \
+		"/opt/$pkgname/usr/share/icons/hicolor/128x128/blink.png" \
+		"$pkgdir/usr/share/icons/hicolor/128x128/"
+}

@@ -1,0 +1,7 @@
+package_acarsdec-rtl-sdr() {
+  pkgdesc="Multi-channel ACARS decoder with rtl_sdr backend"
+  depends=('rtl-sdr')
+
+  cd "$pkgbase-$pkgbase-$pkgver"
+  install -Dm755 build-rtl/acarsdec "$pkgdir/usr/bin/acarsdec"
+}

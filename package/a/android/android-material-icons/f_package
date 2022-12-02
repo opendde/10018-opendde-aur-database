@@ -1,0 +1,8 @@
+package() {
+  install -d "${pkgdir}/opt/android-sdk/icons/material"
+  bsdtar \
+	-xf "${pkgname}-${pkgver}.tar.gz" \
+	-C "${pkgdir}/opt/android-sdk/icons/material" \
+	--strip-components 2 \
+	"material-design-icons-${pkgver}/android/"
+}

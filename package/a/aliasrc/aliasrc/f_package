@@ -1,0 +1,7 @@
+package() {
+	cd "$srcdir/aliasrc-$pkgver"
+
+	install -d "$pkgdir/etc/aliasrc.d"
+	install aliasrc.d/*.aliasrc $pkgdir/etc/aliasrc.d
+	install aliasrc "$pkgdir/etc"
+}

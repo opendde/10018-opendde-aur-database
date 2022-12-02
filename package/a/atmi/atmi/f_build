@@ -1,0 +1,9 @@
+build() {
+  cmake \
+    -Wno-dev \
+    -B build \
+    -S "$_dirname/src" \
+    -DCMAKE_INSTALL_PREFIX=/opt/rocm/atmi \
+    -DROCM_VERSION="$pkgver"
+  cmake --build build
+}

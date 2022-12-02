@@ -1,0 +1,5 @@
+build() {
+  cd "$srcdir/akabeicore"
+  cmake . -DCMAKE_INSTALL_PREFIX=/usr 
+  make || return 1
+}

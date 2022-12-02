@@ -1,0 +1,5 @@
+package() {
+    cp -a usr $pkgdir
+    install -D -m644 $startdir/brother-eula.txt \
+      $pkgdir/usr/share/licenses/$pkgname/LICENSE
+}

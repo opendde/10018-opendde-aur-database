@@ -1,0 +1,4 @@
+pkgver() {
+  cd Archipel 
+  git describe --tags | sed 's/^@//; s/-/.r/; s/-/./'
+}

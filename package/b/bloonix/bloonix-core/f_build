@@ -1,0 +1,5 @@
+build() {
+    cd "$srcdir"/$pkgname-$pkgver
+    perl Build.PL
+    perl Build
+}

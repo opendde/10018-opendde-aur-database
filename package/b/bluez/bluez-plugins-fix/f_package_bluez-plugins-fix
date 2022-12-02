@@ -1,0 +1,9 @@
+package_bluez-plugins-fix() {
+  pkgdesc="bluez plugins (PS3 Sixaxis controller)"
+  depends=('systemd')
+  conflicts=('bluez-plugins')
+
+  cd bluez-${pkgver}
+  make DESTDIR="${pkgdir}" \
+       install-pluginLTLIBRARIES
+}

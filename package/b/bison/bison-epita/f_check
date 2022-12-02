@@ -1,0 +1,4 @@
+check() {
+  cd "${srcdir}/${realpkgname}"
+#  make -j1 check
+}

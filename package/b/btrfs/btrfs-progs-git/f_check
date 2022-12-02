@@ -1,0 +1,22 @@
+check() {
+  cd ${_gitname}
+
+  # Some fsck tests use sudo, remove/comment the next lines to enable them
+  rm -rf tests/fsck-tests/012-leaf-corruption \
+    tests/fsck-tests/013-extent-tree-rebuild \
+    tests/fsck-tests/024-clear-space-cache \
+    tests/fsck-tests/025-file-extents \
+    tests/fsck-tests/028-unaligned-super-dev-sizes \
+    tests/fsck-tests/031-metadatadump-check-data-csum \
+    tests/fsck-tests/033-lowmem-collission-dir-items \
+    tests/fsck-tests/037-freespacetree-repair \
+    tests/fsck-tests/052-init-csum-tree \
+    tests/fsck-tests/056-raid56-false-alerts \
+    tests/fsck-tests/057-seed-false-alerts \
+    tests/fsck-tests/059-shrunk-device
+
+  make test-fsck
+
+  # And now convert tests need sudo... uncomment to run them
+  #make test-convert
+}

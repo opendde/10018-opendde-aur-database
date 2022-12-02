@@ -1,0 +1,7 @@
+package() {
+  mkdir -p "$pkgdir/etc/runit/sv/ananicy"
+  cp "ananicy.finish" $pkgdir/etc/runit/sv/ananicy/finish
+  cp "ananicy.run" $pkgdir/etc/runit/sv/ananicy/run
+  cp "ananicy.start" $pkgdir/etc/runit/sv/ananicy/start
+  install=ananicy-runit.install
+}

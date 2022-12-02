@@ -1,0 +1,5 @@
+package() {
+	cd "$srcdir/bruteforce-luks"
+    mkdir -p $pkgdir/usr/bin
+    install -DT bruteforce-luks $pkgdir/usr/bin/bruteforce-luks
+}

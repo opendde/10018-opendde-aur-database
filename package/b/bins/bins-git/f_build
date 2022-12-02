@@ -1,0 +1,6 @@
+build() {
+  cd "$pkgname-$pkgver"
+  export RUSTUP_TOOLCHAIN=nightly-2019-09-25
+  export CARGO_TARGET_DIR=target
+  cargo build --frozen --release --no-default-features --features rustls,file_type_checking,clipboard_support
+}

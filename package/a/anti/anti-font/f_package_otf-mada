@@ -1,0 +1,6 @@
+package_otf-mada() {
+	cd "${_fname^}-${pkgver%00}"
+	install -Dm0644 -t "$pkgdir/usr/share/fonts/OTF" *.otf
+	install -Dm0644 -t "$pkgdir/usr/share/doc/$pkgname/" README.md
+	install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
+}

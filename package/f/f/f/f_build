@@ -1,0 +1,8 @@
+build() {
+  cd ${srcdir}/${pkgname}-${pkgver}
+  touch ${runname}
+  echo "#!/bin/sh" > ${runname}
+  echo export EAD_DB_PATH="/usr/share/$pkgname/eadditives.sqlite3" >> ${runname}
+  echo '/usr/bin/ead-cli.py ''"$@"' >> ${runname}
+  echo exit 0 >> ${runname}
+}

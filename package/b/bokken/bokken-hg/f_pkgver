@@ -1,0 +1,4 @@
+pkgver() {
+  cd ${pkgname}
+  hg log -r . --template '{latesttag}.{latesttagdistance}.{node|short}\n'
+}

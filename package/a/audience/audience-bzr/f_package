@@ -1,0 +1,5 @@
+package() {
+  cd audience/build
+
+  make DESTDIR="${pkgdir}" install
+}

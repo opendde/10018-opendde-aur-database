@@ -1,0 +1,10 @@
+package() {
+  cd "${srcdir}/abootimg-${pkgver}"
+
+  install                      -d "${pkgdir}/usr/bin"
+  install                      -d "${pkgdir}/usr/share/man/man1/"
+  install abootimg             -t "${pkgdir}/usr/bin"
+  install pack-initrd             "${pkgdir}/usr/bin/abootimg-pack-initrd"
+  install unpack-initrd           "${pkgdir}/usr/bin/abootimg-unpack-initrd"
+  install debian/abootimg.1.gz -t "${pkgdir}/usr/share/man/man1/"
+}

@@ -1,0 +1,4 @@
+pkgver() {
+  cd "${_name}"
+  git describe --always | sed 's|-|.|g'
+}

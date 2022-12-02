@@ -1,0 +1,5 @@
+check() {
+  cd "bc-$pkgver"
+
+  env LANG=C LC_ALL=C make check
+}

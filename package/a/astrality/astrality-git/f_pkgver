@@ -1,0 +1,4 @@
+pkgver() {
+    cd astrality
+    git describe --tags --long | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}

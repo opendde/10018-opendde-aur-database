@@ -1,0 +1,4 @@
+package() {
+	cd "${srcdir}/baamanga"
+	make DESTDIR=${pkgdir} install
+}

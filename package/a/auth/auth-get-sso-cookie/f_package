@@ -1,0 +1,4 @@
+package() {
+    cd "$srcdir"
+    python -m installer --destdir="$pkgdir" *.whl
+}

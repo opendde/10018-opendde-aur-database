@@ -1,0 +1,5 @@
+prepare() {
+  cd "$_gitname"
+  chmod +x 9-anime
+  mv 9-anime 9anime
+}

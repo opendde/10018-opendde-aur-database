@@ -1,0 +1,6 @@
+pkgver() {
+  cd amule
+
+  printf %s.r%s $(grep '#define VERSION' src/include/common/ClientVersion.h |
+    cut -d \" -f2) $(svnversion)
+}

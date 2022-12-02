@@ -1,0 +1,6 @@
+package() {
+	local site="$pkgdir/usr/lib/$(readlink /bin/python3)/site-packages"
+	mkdir -p "$site"
+	unzip "$_wheel" -d "$site"
+	install-wheel-scripts --prefix="$pkgdir/usr" "$_wheel"
+}

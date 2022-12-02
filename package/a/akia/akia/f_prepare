@@ -1,0 +1,6 @@
+prepare() {
+  ar x Akia_linux_${pkgver//./_}.deb
+  tar -zxf data.tar.gz -C "${srcdir}"
+  rm -rf "${srcdir}"/opt/Akia/jre
+  rm -rf "${srcdir}"/opt/Akia/*.pdf
+}

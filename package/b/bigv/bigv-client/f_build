@@ -1,0 +1,6 @@
+build() {
+  cd "$srcdir/bigv_0.9.2-1946"
+
+  ruby ./setup.rb config
+  ruby ./setup.rb setup
+}

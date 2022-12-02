@@ -1,0 +1,17 @@
+prepare() {
+	cd "$_pkgname"
+	git submodule update --init --recursive
+
+	# Merged by Mateo
+	#git checkout thirdparty/CMakeLists.txt
+	#git apply ../fix_basalt_passed_cxx_flags.patch
+
+	# Merged by Mateo
+	#git checkout CMakeLists.txt
+	#git apply ../disable-werror.patch
+
+	# https://github.com/stevenlovegrove/Pangolin/issues/657
+	cd thirdparty/Pangolin
+	git checkout include/pangolin/utils/picojson.h
+	git apply ../../../279c17d9c9eb9374c89489b449f92cb93350e8cd.patch
+}

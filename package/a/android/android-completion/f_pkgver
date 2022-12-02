@@ -1,0 +1,11 @@
+pkgver() {
+	head=$(curl -sSf 'https://android.googlesource.com/platform/system/core/+/HEAD?format=JSON' | sed 's/$/\\n/' | tr -d '\n')
+	commit=$(echo -e $head | grep -oP '^\s*"commit":\s*"\K[0-9a-f]+(?=",?)')
+	timestamp=$(echo -e $head | grep -A3 '^\s*"committer":\s*{' | grep -oP '^\s*"time":\s*"\K.+(?=",?)')
+	month=$(echo $timestamp | cut -d' ' -f2)
+	day=$(echo $timestamp | cut -d' ' -f3)
+	time=$(echo $timestamp | cut -d' ' -f4)
+	year=$(echo $timestamp | cut -d' ' -f5)
+	timezone=$(echo $timestamp | cut -d' ' -f6)
+	printf "%s.%s" $(date -d "$day $month $year $time $timezone" +%Y%m%d) ${commit:0:7}
+}

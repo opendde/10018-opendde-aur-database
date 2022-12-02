@@ -1,0 +1,6 @@
+package() {
+  cd awesome-$pkgver
+  make DESTDIR="$pkgdir" install
+  # install desktop file so you can start awesome from your login manager
+  install -Dm644 ../awesome.desktop "$pkgdir/usr/share/xsessions/awesome.desktop"
+}

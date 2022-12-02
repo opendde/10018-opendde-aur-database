@@ -1,0 +1,4 @@
+prepare() {
+  cd "$srcdir/beanstalkd"
+  patch -p0 < $srcdir/wno-error.patch
+}

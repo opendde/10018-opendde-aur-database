@@ -1,0 +1,11 @@
+build() {
+  cd "${srcdir}/burg"
+
+  msg "Building burg...."
+  # some random patches to facilitate automatic creation of grub.cfg
+  patch -Np1 -i "$srcdir/arch-burg.patch"
+  _build_common
+    _bios_configure_opts="${_common_configure_opts} --with-platform=pc --disable-grub-emu-usb"
+    CC="gcc-4.7" CFLAGS="-march=native -O2 -pipe" ./configure ${_bios_configure_opts}
+    CC="gcc-4.7" CFLAGS="-march=native -O2 -pipe" make -j1
+}

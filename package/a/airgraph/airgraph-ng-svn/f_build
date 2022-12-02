@@ -1,0 +1,14 @@
+build() {
+ 
+  msg "Starting make..."
+
+  if [ -d ${_svnmod}-build/ ]; then
+    msg "Build exists, cleaning it up... "
+    rm -rf ${_svnmod}-build
+  fi
+
+  msg "Creating build folder... "
+  svn export ${_svnmod} ${_svnmod}-build
+  
+  grep -rl python ${_svnmod}-build | xargs sed -i 's|python|python2|g'
+}

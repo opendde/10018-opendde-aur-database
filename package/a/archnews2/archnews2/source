@@ -1,0 +1,1 @@
+("https://github.com/mjiricka/${pkgname%2}/archive/v${pkgver}.tar.gz")

@@ -1,0 +1,4 @@
+build() {
+    #mkdir $pkgname
+    unzip -o ac-library.zip -d $pkgname
+}

@@ -1,0 +1,1 @@
+("https://github.com/clearly-broken-software/${pkgname}/releases/download/v${_pkgver}/${pkgname}_v${_pkgver}.tar.gz"

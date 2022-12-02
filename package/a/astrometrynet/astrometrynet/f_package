@@ -1,0 +1,15 @@
+package() {
+  cd astrometry.net-${pkgver}
+
+  make INSTALL_DIR="${pkgdir}/usr" \
+       ETC_INSTALL_DIR="${pkgdir}/etc" \
+       EXAMPLE_INSTALL_DIR="${pkgdir}/usr/share/astrometry/examples" \
+       DATA_INSTALL_DIR="${pkgdir}/usr/share/astrometry/data" \
+       PY_BASE_INSTALL_DIR="${pkgdir}/usr/lib/python2.7/astrometry" \
+       PY_BASE_LINK_DIR="../lib/python2.7/astrometry" \
+       install
+
+  cd ${pkgdir}; grep -r -l "/usr/bin/env python" . | xargs sed -i 's|/usr/bin/env python|/usr/bin/env python2|'
+  sed -e "s|${pkgdir}/usr/data|/usr/share/astrometry/data|" -i ${pkgdir}/etc/astrometry.cfg
+  rm ${pkgdir}/usr/doc/report.txt
+}

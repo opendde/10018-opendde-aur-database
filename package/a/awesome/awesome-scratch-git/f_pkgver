@@ -1,0 +1,5 @@
+pkgver() {
+  cd "${pkgname}"
+# git describe --always | sed 's|-|.|g'
+  git describe --always | sed 's|^[^0-9]*||;s|\.g[a-f0-9]*$||;s|-|.|g'
+}

@@ -1,0 +1,4 @@
+package() {
+  make -C asp32 PREFIX=/usr DESTDIR="$pkgdir" install
+  install -Dm644 asp32/LICENSE "$pkgdir/usr/share/licenses/asp/LICENSE"
+}

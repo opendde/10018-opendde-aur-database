@@ -1,0 +1,9 @@
+build() {
+
+  rm -rf "${srcdir}/${pkgname}-${pkgver}-build"
+  cp -r "$srcdir/${pkgname}-${pkgver}" "${pkgname}-${pkgver}-build"
+  cd "${pkgname}-${pkgver}-build"
+
+  sed 's@/usr/local@/usr@' -i Makefile
+  make
+}

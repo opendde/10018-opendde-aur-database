@@ -1,0 +1,4 @@
+package() {
+  cd "${srcdir}/brillo-v${pkgver}"
+  make install install.apparmor install.polkit DESTDIR="${pkgdir}/"
+}

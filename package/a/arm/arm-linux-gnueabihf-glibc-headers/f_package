@@ -1,0 +1,25 @@
+package() {
+  cd glibc-build
+
+  make install_root="$pkgdir/usr/$_target" install-headers \
+    install-bootstrap-headers=yes
+
+  # glibc doesn't support eglibc's install-bootstrap-headers
+  # Luckily a blank gnu/stubs.h is all we need
+  touch "$pkgdir/usr/$_target/include/gnu/stubs.h"
+
+  mkdir -p "$pkgdir/usr/$_target/lib"
+  cp csu/crt1.o csu/crti.o csu/crtn.o "$pkgdir/usr/$_target/lib"
+
+  # create stub lib
+  ${_target}-gcc -nostdlib -nostartfiles -shared -x c /dev/null \
+    -o "$pkgdir/usr/$_target/lib/libc.so"
+
+  mkdir -p "$pkgdir/usr/$_target/usr"
+  ln -s ../{include,lib} "$pkgdir/usr/$_target/usr"
+
+  # Provide tracing probes to libstdc++ for exceptions, possibly for other
+  # libraries too. Useful for gdb's catch command.
+  install -Dm644 "$srcdir/sdt.h" "$pkgdir/usr/$_target/include/sys/sdt.h"
+  install -Dm644 "$srcdir/sdt-config.h" "$pkgdir/usr/$_target/include/sys/sdt-config.h"
+}

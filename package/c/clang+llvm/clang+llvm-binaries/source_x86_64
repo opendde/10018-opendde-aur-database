@@ -1,0 +1,1 @@
+("https://github.com/llvm/llvm-project/releases/download/llvmorg-${pkgver}/clang+llvm-${pkgver}-x86_64-linux-gnu-ubuntu-20.10.tar.xz")

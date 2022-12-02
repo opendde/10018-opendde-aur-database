@@ -1,0 +1,4 @@
+package() {
+  cd buildbot/worker
+  python setup.py install --root="$pkgdir" --optimize=1
+}

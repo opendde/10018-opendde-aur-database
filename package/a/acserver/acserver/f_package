@@ -1,0 +1,7 @@
+package() {
+    install -D -m644 $pkgname.service     "$pkgdir/usr/lib/systemd/system/$pkgname.service"
+    cd "$pkgname"
+    install -D -m755 bin/$pkgname         "$pkgdir/usr/bin/$pkgname"
+    install -d -m755                      "$pkgdir/var/aci/store"
+    install -D -m644 templates/index.html "$pkgdir/var/aci/templates/index.html"
+}

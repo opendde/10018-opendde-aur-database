@@ -1,0 +1,3 @@
+package() {
+	install -Dm644 btusb.ko "$pkgdir/usr/lib/modules/$_kernver/updates/btusb.ko"
+}

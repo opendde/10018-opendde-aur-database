@@ -1,0 +1,7 @@
+prepare() {
+
+	# Extract
+	mkdir ${srcdir}/acml
+	gzip -dc "${srcdir}/contents-acml-5-3-1-ifort-64bit.tgz" | tar oxvf - -C "${srcdir}/acml"
+
+}

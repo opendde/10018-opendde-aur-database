@@ -1,0 +1,39 @@
+prepare() {
+    # patch for system ffmpeg
+    cd $srcdir/${pkgname}-${pkgver}
+
+    # system ffmpeg
+    sed -i "s#^export const FFMPEG_BINARY.*#export const FFMPEG_BINARY = '/usr/bin/ffmpeg';#g" \
+        src/main/environment.js
+    # set electron in script
+    sed -i "s|_ELECTRON_|${_electron}|g" ${srcdir}/${pkgname}.sh
+
+    cd $srcdir/${pkgname}-${pkgver}
+    export HOME=$srcdir
+    # system electron
+    local electronDist="/usr/lib/${_electron}"
+	local electronVersion="$(< $electronDist/version)"
+	jq ".devDependencies.electron = \"$electronVersion\"" package.json | sponge package.json
+	jq ".build.electronDist = \"$electronDist\"" package.json | sponge package.json
+	jq ".build.electronVersion = \"$electronVersion\"" package.json | sponge package.json
+
+    # disable in-app update
+    sed -i 's|"autoUpdate": true,|"autoUpdate": false,|g' src/config/app.json
+    sed -i 's|"checkForUpdates": true,|"checkForUpdates": false,|g' src/config/app.json
+
+    # fix entry
+    jq ".version = \"$pkgver\"" package.json | sponge package.json
+    jq '.main = "main.js"' package.json | sponge package.json
+
+
+    yarn install --prod
+    yarn add webpack
+    yarn run  build-main  && yarn run build-prod
+
+    cp package.json app/
+
+    rm app/*.map
+    mv app/dev-app-update.yml app/app-update.yml
+    asar pack app/ ${pkgname}.asar
+
+}

@@ -1,0 +1,1 @@
+("http://deb.debian.org/debian/pool/main/c/$pkgname/${pkgname}_${pkgver//_/-}.tar.xz")

@@ -1,0 +1,4 @@
+package() {
+	tar -xf data.tar.gz -C "${pkgdir}"
+	chown -R cups:cups "${pkgdir}/usr/local/Brother/Printer/dcp385c/inf"
+}

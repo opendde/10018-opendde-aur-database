@@ -1,0 +1,4 @@
+package() {
+  bin=$srcdir/$pkgname_pkgver/bin/linux/amd64
+  install -Dm 755 $bin/$_pkgname -t $pkgdir/usr/bin
+}

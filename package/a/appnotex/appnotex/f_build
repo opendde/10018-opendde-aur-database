@@ -1,0 +1,8 @@
+build() {
+	cd AppNotEx
+	git submodule init && git submodule update
+	make builddir
+	cd build
+	cmake ..
+	make appnotex
+}

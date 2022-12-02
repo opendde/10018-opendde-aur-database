@@ -1,0 +1,8 @@
+package() {
+    cd ${srcdir}/${pkgname}-${pkgver}
+    make DESTDIR=${pkgdir} install
+    cd ${pkgdir}
+    mkdir -p usr/bin/
+    cp usr/local/bin/* usr/bin
+    rm -rf usr/local
+}

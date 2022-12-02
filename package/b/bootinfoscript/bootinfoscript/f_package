@@ -1,0 +1,5 @@
+package() {
+	cd $srcdir/$pkgname-$pkgver
+	install -D -m644 bootinfoscript  $pkgdir/usr/bin/bootinfoscript
+	chmod +x $pkgdir/usr/bin/bootinfoscript
+}

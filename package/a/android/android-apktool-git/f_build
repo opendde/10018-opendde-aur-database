@@ -1,0 +1,11 @@
+build() {
+  pacman -Qs openjdk &> /dev/null && printf "\033[31;1mWarning, there has been issues in the past with OpenJDK and apktool. Please install Oracle's JDK before marking the package as broken.\n\033[0m\n"
+
+  # aapt cannot be found without this line
+  PATH="/opt/android-sdk/build-tools/$(ls -1 /opt/android-sdk/build-tools/ | head -1):$PATH"
+
+  cd "$srcdir/$_gitname"
+
+  # Build (OpenJDK sometimes fails to find aapt)
+  gradle build proguard --no-daemon
+}

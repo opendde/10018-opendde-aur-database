@@ -1,0 +1,5 @@
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  meson --buildtype=release --prefix=/usr --sysconfdir=/etc build/
+  ninja -C build/ all
+}

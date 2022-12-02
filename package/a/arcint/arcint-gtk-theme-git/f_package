@@ -1,0 +1,3 @@
+package() {
+    mv "${srcdir}/build" "${pkgdir}/usr"
+}

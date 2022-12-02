@@ -1,0 +1,4 @@
+prepare() {
+	cd "$pkgname"
+	patch -p1 < ../beesat_boost.patch
+}

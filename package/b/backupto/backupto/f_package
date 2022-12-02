@@ -1,0 +1,8 @@
+package() {
+    cd "$srcdir/$_name"
+  install -D -m755 $_name ${pkgdir}/usr/bin/$pkgname
+  install -Dm644 $srcdir/$_name/$_name.png "$pkgdir/usr/share/pixmaps/qtcreator_logo.png"
+  install -D -m644 ${srcdir}/$_name.desktop ${pkgdir}/usr/share/applications/$_name.desktop
+  #make
+  #make INSTALL_ROOT=${pkgdir} install
+}

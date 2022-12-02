@@ -1,0 +1,5 @@
+package() {
+  cp -dr --no-preserve=ownership usr "$pkgdir/"
+  rm -rf "$pkgdir/usr/lib/602filler/"{bin,lib,share} "$pkgdir/usr/lib/602filler/.wine/lib"
+  install -Dm755 "$srcdir/filler.sh" "$pkgdir/usr/bin/filler.sh"
+}

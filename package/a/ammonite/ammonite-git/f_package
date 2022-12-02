@@ -1,0 +1,4 @@
+package() {
+  install -Dm755 "$srcdir"/$_pkgname/out/amm/$_scalaversion/assembly/dest/out.jar "$pkgdir"/usr/bin/amm
+  install -Dm644 "$srcdir"/$_pkgname/LICENSE "$pkgdir"/usr/share/licenses/$_pkgname/LICENSE
+}

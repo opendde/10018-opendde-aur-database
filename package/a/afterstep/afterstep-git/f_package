@@ -1,0 +1,8 @@
+package() {
+  cd $_pkgname
+  make DESTDIR="$pkgdir" install
+  install -Dm644 $_name.desktop.final "$pkgdir/usr/share/xsessions/$_name.desktop"
+  
+  # fix permission
+  chmod 644 "$pkgdir"/usr/lib/*.a
+}

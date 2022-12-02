@@ -1,0 +1,6 @@
+package() {
+  mkdir -p $pkgdir/usr
+  cd $srcdir/gcc-*/
+  cp -a * $pkgdir/usr
+  rm -f $pkgdir/usr/lib/libcc1.so*
+}

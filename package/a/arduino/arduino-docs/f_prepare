@@ -1,0 +1,7 @@
+prepare() {
+    # Delete all links to source .zip files
+    find "${srcdir}" -maxdepth 1 -type l -exec rm -f {} \;
+
+    # Fix folder permissions of downloads
+    find "${srcdir}" -type d -exec chmod 755 {} \;
+}

@@ -1,0 +1,7 @@
+package() {
+  install -Dm644 glow-udev.rules "${pkgdir}/usr/lib/udev/rules.d/40-antumbra-glow.rules"
+
+	cd "${srcdir}/${pkgname}"
+  install -Dm755 libantumbra.so "${pkgdir}/usr/lib/libantumbra.so"
+  install -Dm755 antumbratool "${pkgdir}/usr/bin/antumbratool"
+}

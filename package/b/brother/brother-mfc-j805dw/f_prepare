@@ -1,0 +1,27 @@
+prepare() {
+	tar -xf data.tar.gz -C "$srcdir"
+  install -d $srcdir/usr/share/cups/model
+	install -d $srcdir/usr/lib/cups/filter
+
+ cd `find . -type d -name 'cupswrapper'`
+	if [ -f cupswrapper* ]; then
+		_wrapper_source=`ls cupswrapper*`
+	fi
+
+
+	if [ ! -z $_wrapper_source ];then
+		sed -i '/^\/etc\/init.d\/cups/d' $_wrapper_source
+		sed -i '/^sleep/d' $_wrapper_source
+		sed -i '/^lpadmin/d' $_wrapper_source
+		sed -i 's|/usr|$srcdir/usr|g' $_wrapper_source
+		sed -i 's|/opt|$srcdir/opt|g' $_wrapper_source
+		sed -i 's|lpinfo|echo|g' $_wrapper_source
+		export srcdir=$srcdir
+		./$_wrapper_source
+		sed -i 's|$srcdir||' $srcdir/usr/lib/cups/filter/*lpdwrapper*
+		sed -i "s|$srcdir||" $srcdir/usr/lib/cups/filter/*lpdwrapper*
+		rm $_wrapper_source
+	fi
+
+
+}

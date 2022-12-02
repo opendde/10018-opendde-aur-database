@@ -1,0 +1,4 @@
+package() {
+  install  -Dm0755 atool-desktop "${pkgdir}/usr/bin/atool-desktop"
+  install  -Dm0644 atool-desktop.desktop "${pkgdir}/usr/share/applications/atool-desktop.desktop"
+}

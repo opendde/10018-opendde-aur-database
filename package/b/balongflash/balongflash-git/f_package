@@ -1,0 +1,8 @@
+package() {
+  cd "${srcdir}/${_pkgname}"
+  install -D -v -m755 'balong_flash' "${pkgdir}/usr/bin/balong_flash"
+  ln -svr "${pkgdir}/usr/bin/balong_flash" "${pkgdir}/usr/bin/balongflash"
+
+  install -D -v -m644 "README.md" "${pkgdir}/usr/share/doc/${_pkgname}/README.md"
+  install -D -v -m644 "${srcdir}/helpmessages_english.txt" "${pkgdir}/usr/share/doc/${_pkgname}/helpmessages_english.txt"
+}

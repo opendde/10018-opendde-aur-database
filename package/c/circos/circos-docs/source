@@ -1,0 +1,1 @@
+(http://circos.ca/distribution/${pkgname%-*}-tutorials-$pkgver.tgz)

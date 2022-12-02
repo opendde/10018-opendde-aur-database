@@ -1,0 +1,11 @@
+package() {
+  cd "$srcdir/$_pkgname/build"
+  make DESTDIR="$pkgdir/" install
+
+  # deleting init script
+  rm -r "$pkgdir/etc/init.d"
+
+  # installing systemd arango service
+  install -Dm644 "$srcdir/arangodb.service" \
+                 "$pkgdir/usr/lib/systemd/system/arangodb.service"
+}

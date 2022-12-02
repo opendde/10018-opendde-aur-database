@@ -1,0 +1,4 @@
+prepare() {
+  cd Boop-GTK
+  git submodule update --init --recursive
+}

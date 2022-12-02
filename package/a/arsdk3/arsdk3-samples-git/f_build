@@ -1,0 +1,10 @@
+build() {
+	cd "$srcdir/arsdk-samples/Unix/BebopDroneDecodeStream"
+	make
+	cd "$srcdir/arsdk-samples/Unix/BebopDroneReceiveStream"
+	make
+	cd "$srcdir/arsdk-samples/Unix/BebopPilotingNewAPI"
+	make
+	cd "$srcdir/arsdk-samples/Unix/JSPilotingNewAPI"
+	make
+}

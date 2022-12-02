@@ -1,0 +1,17 @@
+package_bareos-filedaemon-ldap-python-plugin() {
+  pkgdesc="${pkgdesc} - LDAP Python plugin for Bareos File daemon"
+  depends=("bareos-filedaemon=${pkgver}"
+           "bareos-filedaemon-python3-plugin=${pkgver}"
+           'python-ldap')
+  #backup=("etc/bareos/bareos-dir.d/plugin-python-ldap.conf")
+
+  for f in \
+     usr/lib/bareos/plugins/bareos-fd-ldap.py* \
+     usr/lib/bareos/plugins/BareosFdPluginLDAP.py* \
+     usr/share/bareos/config/bareos-dir.d/fileset/plugin-ldap.conf.example \
+     usr/share/bareos/config/bareos-dir.d/job/backup-ldap.conf.example \
+     usr/share/bareos/config/bareos-dir.d/job/restore-ldap.conf.example \
+  ; do
+    cp_pkgdir "$f" "$srcdir/install/"
+  done
+}

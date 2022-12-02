@@ -1,0 +1,6 @@
+package() {
+    mkdir -p "${pkgdir}/opt"
+    mkdir -p "${pkgdir}/usr/local/share/applications"
+    sed -i 's;alchemy-viewer\.desktop;'"${pkgname}\.desktop"';' "${pkgname}/build-linux-64/newview/packaged/etc/refresh_desktop_app_entry.sh"
+    mv "${pkgname}/build-linux-64/newview/packaged" "${pkgdir}/opt/${pkgname}"
+}

@@ -1,0 +1,14 @@
+package() {
+    # CONTENT
+    cd "${srcdir}"
+
+    # Install contents
+    /usr/bin/install -D -m644 "${srcdir}/91-amdgpu-experimental.hook" \
+    	"${pkgdir}/usr/share/libalpm/hooks/91-amdgpu-experimental.hook"
+								
+    /usr/bin/install -D -m644 "${srcdir}/91-amdgpu.deep_color.conf" \
+        "${pkgdir}/usr/lib/modprobe.d/91-amdgpu.deep_color.conf"
+    	
+    /usr/bin/install -D -m644 "${srcdir}/91-amdgpu.exp_hw_support.conf" \
+        "${pkgdir}/usr/lib/modprobe.d/91-amdgpu.exp_hw_support.conf"
+}

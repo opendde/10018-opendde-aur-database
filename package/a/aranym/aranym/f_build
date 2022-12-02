@@ -1,0 +1,16 @@
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+
+  ./configure --prefix=/usr --disable-sdl2 --enable-usbhost --mandir=/usr/share/man --disable-nat-debug --enable-jit-compiler --enable-nfjpeg
+  make
+  mv aranym aranym-jit
+  make clean
+
+  ./configure --prefix=/usr --disable-sdl2 --enable-usbhost --mandir=/usr/share/man --disable-nat-debug --enable-fullmmu --enable-lilo --enable-fixedvideoram --enable-nfjpeg
+  make
+  mv aranym aranym-mmu
+  make clean
+
+  ./configure --prefix=/usr --disable-sdl2 --enable-usbhost --mandir=/usr/share/man --disable-nat-debug --disable-nat-debug --enable-nfjpeg
+  make
+}

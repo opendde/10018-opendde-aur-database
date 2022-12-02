@@ -1,0 +1,7 @@
+build() {
+    rm -rf ${srcdir}/${_pkgname}-dist
+    cp -R ${srcdir}/${_pkgname} ${srcdir}/${_pkgname}-dist
+    rm ${srcdir}/${_pkgname}-dist/closure-compiler.jar
+    rm -rf ${srcdir}/${_pkgname}-dist/.git
+    asar pack ${srcdir}/${_pkgname}-dist ${srcdir}/${_pkgname}.asar
+}

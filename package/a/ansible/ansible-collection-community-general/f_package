@@ -1,0 +1,6 @@
+package() {
+    cd "${_repo_name}-${pkgver}"
+    ansible-galaxy collection install -n -p \
+        "${pkgdir}/usr/share/ansible/collections" \
+        "${_collection_namespace}-${_collection_name}-${pkgver}.tar.gz"
+}

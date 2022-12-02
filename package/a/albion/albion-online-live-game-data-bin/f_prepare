@@ -1,0 +1,6 @@
+prepare() {
+  msg2 "Fetching game files..."
+  while read_dom; do
+    parse_dom
+  done < "${srcdir}/toc-${pkgver}.xml"
+}

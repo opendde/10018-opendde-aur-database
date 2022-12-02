@@ -1,0 +1,9 @@
+build() {
+    cd ${_gitname}
+    git checkout origin/feature-linux-native-port
+    cp Makefile.linux Makefile
+    make
+    mkdir -p opt/bongocat-osu
+    cp -r img opt/bongocat-osu
+    cp bin/bongo opt/bongocat-osu/bongocat
+}

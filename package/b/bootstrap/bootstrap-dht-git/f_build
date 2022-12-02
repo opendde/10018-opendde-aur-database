@@ -1,0 +1,9 @@
+build() {
+  cd "bootstrap-dht"
+
+  b2 \
+    cflags="$CFLAGS" \
+    cxxflags="$CXXFLAGS" \
+    linkflags="$LDFLAGS" \
+    release
+}

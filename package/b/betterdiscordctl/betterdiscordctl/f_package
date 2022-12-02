@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  install -Dm755 betterdiscordctl "$pkgdir/usr/bin/betterdiscordctl"
+  install -Dm644 LICENSE.md "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

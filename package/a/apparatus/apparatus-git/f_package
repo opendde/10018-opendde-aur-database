@@ -1,0 +1,10 @@
+package() {
+	install -Dm755 "apparatus" "${pkgdir}/usr/bin/${_basename}"
+	install -Dm644 "apparatus.desktop" "${pkgdir}/usr/share/applications/${_basename}.desktop"
+
+	cd "${pkgname}"
+	install -Dm644 index.html "${pkgdir}/usr/share/${_basename}/index.html"
+	cp -a vendor "${pkgdir}/usr/share/${_basename}/"
+	cp -a dist "${pkgdir}/usr/share/${_basename}/"
+	install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

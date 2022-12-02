@@ -1,0 +1,7 @@
+package() {
+  cd beat
+
+  install -dm 755 "${pkgdir}"/usr/{bin,share/applications}
+  install -m 755 beat "${pkgdir}"/usr/bin/beat
+  install -m 644 ../beat.desktop "${pkgdir}"/usr/share/applications/beat.desktop
+}

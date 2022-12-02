@@ -1,0 +1,5 @@
+package() {
+  cd $pkgname-${pkgver}
+  unset PERL5LIB PERL_MM_OPT PERL_LOCAL_LIB_ROOT
+  make INSTALLDIRS=vendor DESTDIR="$pkgdir" install
+}

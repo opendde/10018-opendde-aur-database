@@ -1,0 +1,7 @@
+package() {
+  #desktop file and icon
+  install -Dm644 "$srcdir/app_icon.png" "$pkgdir/usr/share/pixmaps/box0-studio.png"
+  install -Dm644 box0-studio.desktop "$pkgdir/usr/share/applications/box0-studio.desktop"
+
+  make -C "$srcdir/$_pkgname/build" DESTDIR="${pkgdir}" install
+}

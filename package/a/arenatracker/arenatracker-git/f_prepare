@@ -1,0 +1,7 @@
+prepare() {
+    cd Arena-Tracker
+    if [[ -d build ]]; then
+        rm -rf build
+    fi
+    mkdir build
+}

@@ -1,0 +1,14 @@
+build() {
+    rm -rf build
+    mkdir -p build
+    cd build
+    cmake "../amarok" -Wno-dev \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR:STRING=/usr/lib \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DKDE4_BUILD_TESTS=OFF \
+        -DWITH_NepomukCore=OFF \
+        -DWITH_Soprano=OFF
+
+    make
+}

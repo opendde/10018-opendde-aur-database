@@ -1,0 +1,3 @@
+prepare() {
+  7z x "Bridge_Designer_2016_Installation_Image.dmg"
+}

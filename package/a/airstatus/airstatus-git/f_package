@@ -1,0 +1,7 @@
+package() {
+  install -Dm644 airstatus.service -t "${pkgdir}/usr/lib/systemd/system"
+
+  cd AirStatus
+  install -Dm644 main.py "${pkgdir}/usr/lib/airstatus.py"
+  install -Dm644 LICENSE -t "${pkgdir}/usr/share/licenses/airstatus"
+}

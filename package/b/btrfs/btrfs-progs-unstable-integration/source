@@ -1,0 +1,1 @@
+($_gitname::git+"http://repo.or.cz/r/btrfs-progs-unstable/devel.git#branch=integration-${pkgver/./-}"

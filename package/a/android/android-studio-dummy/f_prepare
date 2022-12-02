@@ -1,0 +1,5 @@
+prepare() {
+  # Extract the application icon
+  msg "Please extract Android Studio to /opt/${_pkgname}/ before building this package"
+  unzip -qo "/opt/${_pkgname}/lib/resources.jar" 'artwork/icon_AS_128.png'
+}

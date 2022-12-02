@@ -1,0 +1,4 @@
+pkgver() {
+  cd "$srcdir/boxfs2"
+  printf "0.r%s.g%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}

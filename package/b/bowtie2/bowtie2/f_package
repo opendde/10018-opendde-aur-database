@@ -1,0 +1,7 @@
+package() {
+    cd "${srcdir}/${pkgname}-${pkgver}"
+    make PREFIX=/usr DESTDIR="${pkgdir}" install
+
+    install -dm755 "${pkgdir}/usr/share/doc/${pkgname}"
+    cp -a "${srcdir}/bowtie2-${pkgver}/doc" "${pkgdir}/usr/share/doc/${pkgname}"
+}

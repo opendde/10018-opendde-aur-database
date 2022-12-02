@@ -1,0 +1,12 @@
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+
+  export GO11MODULE=on
+  export CGO_LDFLAGS="${LDFLAGS}"
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export GOPATH="$srcdir"
+  export GOFLAGS="-buildmode=pie -ldflags=-linkmode=external -trimpath -mod=readonly -modcacherw"
+  go build -o aptly_build
+}

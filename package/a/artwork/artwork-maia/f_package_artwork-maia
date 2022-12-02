@@ -1,0 +1,13 @@
+package_artwork-maia() {
+  pkgdesc="Maia artwork meta-package"
+  depends=('maia-icon-theme' 'maia-wallpaper' 'plasma5-themes-maia' 'sddm-maia-theme')
+  cd build
+  make DESTDIR="${pkgdir}" install
+
+  rm -rf "${pkgdir}/usr/share/icons"
+  rm -rf "${pkgdir}/usr/share/color-schemes"
+  rm -rf "${pkgdir}/usr/share/kservices5"
+  rm -rf "${pkgdir}/usr/share/plasma"
+  rm -rf "${pkgdir}/usr/share/sddm"
+  rm -rf "${pkgdir}/usr/share/wallpapers"
+}

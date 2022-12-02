@@ -1,0 +1,14 @@
+package_perl-rna-barrier() {
+  depends=('perl' 'perl-rna')
+  provides=('fix_bar.pl'
+            'saddle.pl')
+  cd "${srcdir}/Barriers-${pkgver}"
+  cd perl
+  make DESTDIR="${pkgdir}" install
+
+  # remove any perl scripts not belonging to this package
+  for perlscript in crossrates.pl saddle2dot.pl saddle2gml.pl treeplot.pl ; do
+    rm "${pkgdir}/usr/bin/${perlscript}"
+  done
+  cd ..
+}

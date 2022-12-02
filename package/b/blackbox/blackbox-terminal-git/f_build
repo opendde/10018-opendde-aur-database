@@ -1,0 +1,4 @@
+build() {
+  arch-meson blackbox build
+  meson compile -C build
+}

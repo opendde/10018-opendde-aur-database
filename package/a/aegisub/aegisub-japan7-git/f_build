@@ -1,0 +1,5 @@
+build() {
+  cd aegisub
+
+  ninja -C builddir
+}

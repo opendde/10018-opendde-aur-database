@@ -1,0 +1,6 @@
+package() {
+  cd "${srcdir}"
+
+  install -dm755 "${pkgdir}/usr/share/aurorae/themes"
+  cp -r Sweet-Dark Sweet-Dark-transparent "${pkgdir}/usr/share/aurorae/themes/"
+}

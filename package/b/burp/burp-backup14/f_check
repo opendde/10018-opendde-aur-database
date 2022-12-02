@@ -1,0 +1,6 @@
+check() {
+
+  cd $_pkgname-$pkgver
+  make test
+
+}

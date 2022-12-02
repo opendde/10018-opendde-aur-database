@@ -1,0 +1,15 @@
+package() {
+  npm install -g --prefix "${pkgdir}/usr" --cache "${srcdir}/npm-cache" "${srcdir}/$_npmname-$_npmver.tgz"
+  # Non-deterministic race in npm gives 777 permissions to random directories.
+  # See https://github.com/npm/cli/issues/1103 for details.
+  find "${pkgdir}/usr" -type d -exec chmod 755 {} +
+
+  # npm gives ownership of ALL FILES to build user
+  # https://bugs.archlinux.org/task/63396
+  chown -R root:root "${pkgdir}"
+  
+  install -Dm640 ${pkgname}.default "${pkgdir}/etc/default/${pkgname}"
+  install -Dm644 ${pkgname}.service "${pkgdir}/usr/lib/systemd/system/${pkgname}.service"
+  echo "u ${pkgname} - - /var/lib/${pkgname}" | install -Dm644 /dev/stdin "${pkgdir}"/usr/lib/sysusers.d/"${pkgname}".conf
+  echo "d /var/lib/${pkgname} 0750 ${pkgname} ${pkgname} -" | install -Dm644 /dev/stdin "${pkgdir}/usr/lib/tmpfiles.d/${pkgname}.conf"
+}

@@ -1,0 +1,5 @@
+package() {
+	install -Dm644 "${_pkgname}/docs/brickstrap.1.gz" "${pkgdir}/usr/share/man/man1/brickstrap.1.gz"
+	install -Dm644 "${_pkgname}/COPYING.MIT" "${pkgdir}/usr/share/licenses/${pkgname}/COPYING.MIT"
+	install -Dm755 "${_pkgname}/src/brickstrap.sh" "${pkgdir}/usr/bin/brickstrap"
+}

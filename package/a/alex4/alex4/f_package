@@ -1,0 +1,7 @@
+package() {
+  cd $pkgname-$pkgver
+
+  make PREFIX=/usr DESTDIR="$pkgdir/" install
+  # config
+  install -Dm0644 alex4.ini "$pkgdir"/usr/share/alex4/alex4.ini
+}

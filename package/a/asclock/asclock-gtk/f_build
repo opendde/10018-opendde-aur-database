@@ -1,0 +1,5 @@
+build() {
+  cd "$srcdir/$pkgname"
+  CFLAGS+=" -fcommon"
+  make CFLAGS="$CFLAGS" asclock
+}

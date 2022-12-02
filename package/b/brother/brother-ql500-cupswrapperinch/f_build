@@ -1,0 +1,13 @@
+build() {
+        cd $srcdir
+        rpmextract.sh "${_pkgname}-${pkgver}-1.redhat.i386.rpm"
+
+        rm -f ${_pkgname}-${pkgver}-1.redhat.i386.rpm
+
+        mkdir -p usr/share/ || return 1
+        rm -rf usr/share/brother 
+        mv usr/local/Brother usr/share/brother || return 1
+        rmdir usr/local || return 1
+
+        sed -i 's|/usr/local/Brother|/usr/share/brother|g' `grep -lr '/usr/local/Brother' ./` || return 1
+}

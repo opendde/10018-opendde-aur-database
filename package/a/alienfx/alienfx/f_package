@@ -1,0 +1,8 @@
+package() {
+  cd "${srcdir}/${pkgbase}-${pkgver}"
+  python setup.py clean
+  python setup.py install --root="${pkgdir}"
+
+  install -Dm755 ${pkgbase}/data/etc/udev/rules.d/10-alienfx.rules  ${pkgdir}/etc/udev/rules.d/10-alienfx.rules
+  chmod a+x ${pkgdir}/usr/share/applications/alienfx.desktop
+}

@@ -1,0 +1,9 @@
+package() {
+  cd "$_gitname"
+
+  mkdir -p ${pkgdir}/usr/share/20kly
+  cp -r audio data code manual lightyears ${pkgdir}/usr/share/20kly
+
+  mkdir -p ${pkgdir}/usr/bin
+  ln -s /usr/share/20kly/lightyears ${pkgdir}/usr/bin/20kly
+}

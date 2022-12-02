@@ -1,0 +1,4 @@
+prepare() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  git clone https://github.com/base16-project/base16-schemes.git schemes
+}

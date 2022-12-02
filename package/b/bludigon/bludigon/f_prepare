@@ -1,0 +1,6 @@
+prepare() {
+  cd "${pkgname}-${pkgver}"
+
+  patch -p1 -i "${srcdir}/compile-dynamically.patch"
+  cp "${srcdir}/Setup.hs" "./"
+}

@@ -1,0 +1,5 @@
+package() {
+    cd "$srcdir"/armips-0.11.0
+    install -Dm755 build/armips "$pkgdir"/usr/bin/armips
+    install -Dm644 LICENSE.txt "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}

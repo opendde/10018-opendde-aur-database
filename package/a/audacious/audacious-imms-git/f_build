@@ -1,0 +1,10 @@
+build() {
+   cd $srcdir/imms/imms
+
+   autoheader
+   aclocal
+   autoconf
+   ./configure --prefix=/usr --disable-immsremote
+
+   make
+}

@@ -1,0 +1,8 @@
+prepare() {
+    cd "${srcdir}/${_pkgname}"
+
+    git submodule init
+    git config submodule.breeze.url "${srcdir}/breeze"
+    git config submodule.rofi.url "${srcdir}/rofi"
+    git submodule update
+}

@@ -1,0 +1,3 @@
+post_install() {
+  /opt/brother/Printers/dcpj132w/cupswrapper/cupswrapperdcpj132w
+}

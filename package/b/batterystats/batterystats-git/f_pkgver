@@ -1,0 +1,4 @@
+pkgver() {
+  cd "$srcdir/src/github.com/solarnz/batterystats"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}

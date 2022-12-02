@@ -1,0 +1,6 @@
+prepare() {
+    cd "$srcdir/$_pkgname"
+
+    # Make adept use MozJPEG's cjpeg binary directly rather requiring "mozjpeg" be symlinked to it.
+    sed -i 's~\(JPEGCOMPRESSION_COMMAND\) mozjpeg~\1 cjpeg~' adept.sh
+}

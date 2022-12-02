@@ -1,0 +1,4 @@
+package() {
+    cd "BayesElo"
+	install -Dm 755 bayeselo $pkgdir/usr/bin/bayeselo
+}

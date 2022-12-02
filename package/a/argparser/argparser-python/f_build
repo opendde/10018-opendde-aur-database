@@ -1,0 +1,5 @@
+build() {
+	cd "${srcdir}/argparser-${pkgver}"
+	make DESTDIR="$pkgdir" PKGNAME="$pkgname" PY3VERSION="$(python -V | cut -d ' ' -f 2 | cut -d . -f 1,2)" \
+		python
+}

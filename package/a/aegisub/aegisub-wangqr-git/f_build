@@ -1,0 +1,11 @@
+build() {
+  cd build
+
+  cmake \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DwxWidgets_CONFIG_EXECUTABLE=/usr/bin/wx-config \
+    -DWITH_STARTUPLOG=OFF \
+    -DWITH_{PORTAUDIO,OPENAL,OSS}=OFF \
+    ../Aegisub
+  # TODO: Build translations
+}

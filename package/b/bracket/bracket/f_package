@@ -1,0 +1,16 @@
+package() {
+  cd "$srcdir"
+  install -d -m755 "$pkgdir"/opt/$pkgname
+  bsdtar -C "$pkgdir"/opt/$pkgname -xf $SRCDEST/bracket.tgz
+
+  install -D -m755 bracket.sh "$pkgdir"/usr/bin/bracket
+  install -D -m755 bracket.desktop "$pkgdir"/usr/share/applications/bracket.desktop
+
+  # fix permissions
+  find "$pkgdir"/opt/$pkgname -type d -exec chmod 755 '{}' '+'
+  find "$pkgdir"/opt/$pkgname -type f -exec chmod 644 '{}' '+'
+  chmod 755 "$pkgdir"/opt/$pkgname/bracket
+
+  # install license taken from the homepage (it's in the footer)
+  install -D -m644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}

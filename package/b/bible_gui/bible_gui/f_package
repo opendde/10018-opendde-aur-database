@@ -1,0 +1,6 @@
+package() {
+  cd $srcdir/$pkgname
+  meson build --prefix /usr/
+  cd build
+  meson install --destdir $pkgdir
+}

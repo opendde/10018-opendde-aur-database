@@ -1,0 +1,8 @@
+prepare() {
+    cd "$srcdir/acquisitionplus-${pkgver}"
+    qmake
+    sed -i Makefile \
+        -e "s:CFLAGS .*=.*:CFLAGS = $CFLAGS -D_REENTRANT -fPIC -std=c11 \$(DEFINES):" \
+        -e "s:CXXFLAGS .*=.*:CXXFLAGS = $CXXFLAGS -D_REENTRANT -fPIC -std=c++11 \$(DEFINES):" \
+        -e "s:LFLAGS .*=.*:LFLAGS = $LDFLAGS:"
+}

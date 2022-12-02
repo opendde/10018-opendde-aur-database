@@ -1,0 +1,40 @@
+package() {
+cp -R "$srcdir/usr" "$pkgdir"
+install -m 644 -D scanner-license.txt "${pkgdir}/usr/share/licenses/${pkgname}/scanner-licence.txt"
+# On x86_64, install in "/usr/lib" instead of "/usr/lib64"
+cd "$pkgdir/usr/"
+if	[ "$CARCH" == "x86_64" ]; then
+	mv "$pkgdir/usr/lib64" "$pkgdir/usr/lib"
+# some links are wrong now - recreate them
+	for fn in 	lib/libbrcolm.so.1.0.1 \
+			lib/libbrscandec.so.1.0.0 \
+			lib/sane/libsane-brother.so.1.0.7
+	do
+# break, if file does not exist
+		if [ ! -f $fn ] ; then
+			echo "ERROR: $fn does not exist"
+			return 1
+		fi
+		base=`echo $fn | cut -d. -f1`.so
+		major=`echo $fn | cut -d. -f3`
+		ln -sf `basename $fn` $base
+		ln -sf `basename $fn` $base.$major
+	done
+else
+# some links are wrong now - recreate them
+	for fn in 	lib/libbrcolm.so.1.0.0 \
+			lib/libbrscandec.so.1.0.0 \
+			lib/sane/libsane-brother.so.1.0.7
+	do
+# break, if file does not exist
+		if [ ! -f $fn ] ; then
+			echo "ERROR: $fn does not exist"
+			return 1
+		fi
+		base=`echo $fn | cut -d. -f1`.so
+		major=`echo $fn | cut -d. -f3`
+		ln -sf `basename $fn` $base
+		ln -sf `basename $fn` $base.$major
+	done
+fi
+}

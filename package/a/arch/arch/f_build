@@ -1,0 +1,8 @@
+build() {
+  cd "${srcdir}/tla-${pkgver}"
+
+  mkdir build
+  cd build
+  ../src/configure --prefix /usr
+  make
+}

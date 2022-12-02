@@ -1,0 +1,4 @@
+build() {
+  cd budgie-desktop-view-${pkgver}
+  ninja -C build
+}

@@ -1,0 +1,4 @@
+package	() {
+  cd "$srcdir"
+  install -D -m 0755 albumbler "$pkgdir/usr/bin/albumbler"
+}

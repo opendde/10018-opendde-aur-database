@@ -1,0 +1,8 @@
+package() {
+	mkdir -p "$pkgdir/opt"
+	mkdir -p "$pkgdir/usr/share/applications"
+
+	mv "${pkgname}/build-linux-64/newview/packaged" "$pkgdir/opt/alchemy-next"
+
+	install -Dm644 "alchemy-next.desktop" "$pkgdir/usr/share/applications/alchemy-next.desktop"
+}

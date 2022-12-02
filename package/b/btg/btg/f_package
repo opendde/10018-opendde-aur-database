@@ -1,0 +1,5 @@
+package() {
+  cd ${pkgname}-2.0.0
+
+  make DESTDIR=${pkgdir} install
+}

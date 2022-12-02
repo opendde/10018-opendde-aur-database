@@ -1,0 +1,4 @@
+prepare() {
+  cd "$srcdir"/$pkgname-${pkgver}
+  find . -name Makefile.in -exec sed -i 's|$(INSTALLPATH)/sbin|$(INSTALLPATH)/bin|g' {} \;
+}

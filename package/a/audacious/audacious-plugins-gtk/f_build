@@ -1,0 +1,11 @@
+build() {
+  cd "$srcdir/$_pkgname-4.1"
+if [ "$_use_meson" = 1 ]; then
+    arch-meson build
+    meson compile -C build
+  else
+    ./autogen.sh
+    ./configure --prefix=/usr
+    make
+ fi
+}

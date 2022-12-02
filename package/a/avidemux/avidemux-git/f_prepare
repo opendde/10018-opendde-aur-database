@@ -1,0 +1,14 @@
+prepare() {
+  cd avidemux
+
+  git config submodule.i18n.url "${srcdir}/avidemux2_i18n"
+  git submodule update --init
+
+  # http://avidemux.org/smif/index.php/topic,16301.0.html
+  patch -p1 -i "${srcdir}/fix_verbose.patch"
+
+  # add SETTINGS to MESSAGE(FATAL_ERROR in avidemux_plugins/CMakeLists.txt
+  patch -p1 -i "${srcdir}/add_settings_pluginui_message_error.patch"
+
+  patch --binary -p1 -i "${srcdir}/opus_check.patch"
+}

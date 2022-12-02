@@ -1,0 +1,7 @@
+package() {
+  cd "BIR-${pkgver}/build"
+  make INSTALL_ROOT="${pkgdir}" install
+  install -Dm644 ../bir.png -t "${pkgdir}/usr/share/pixmaps"
+  install -Dm644 ../bir.desktop -t "${pkgdir}/usr/share/applications"
+  install -Dm644 ../README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+}

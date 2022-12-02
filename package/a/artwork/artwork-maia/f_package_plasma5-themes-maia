@@ -1,0 +1,11 @@
+package_plasma5-themes-maia() {
+  pkgdesc='Maia theme for KDE Plasma 5'
+  depends=('breeze' 'maia-icon-theme')
+  replaces=('maia-themes')
+  cd build
+  make DESTDIR="${pkgdir}" install
+
+  rm -rf "${pkgdir}/usr/share/sddm"
+  rm -rf "${pkgdir}/usr/share/icons"
+  rm -rf "${pkgdir}/usr/share/metainfo"
+}

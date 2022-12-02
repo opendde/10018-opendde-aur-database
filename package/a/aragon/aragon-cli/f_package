@@ -1,0 +1,11 @@
+package() {
+    HUSKY_SKIP_INSTALL=1 npm install --global --user root --prefix "${pkgdir}/usr" "${_npmname}-${pkgver}.tgz"
+
+    # -> https://wiki.archlinux.org/index.php/Node.js_package_guidelines
+    # Non-deterministic race in npm gives 777 permissions to random directories.
+    # See https://github.com/npm/npm/issues/9359 for details.
+    find "${pkgdir}"/usr -type d -exec chmod 755 {} +
+    # npm gives ownership of ALL FILES to build user
+    # https://bugs.archlinux.org/task/63396
+    chown -R root:root "$pkgdir"
+}

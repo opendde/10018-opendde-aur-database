@@ -1,0 +1,9 @@
+package_bluez-plugins-ps3() {
+  pkgdesc="bluez plugins ( add support for non shanwan fake ps3 controllers )"
+  depends=('systemd')
+  conflicts=('bluez-plugins')
+
+  cd bluez-${pkgver}
+  make DESTDIR="${pkgdir}" \
+       install-pluginLTLIBRARIES
+}

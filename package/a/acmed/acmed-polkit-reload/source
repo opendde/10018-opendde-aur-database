@@ -1,0 +1,1 @@
+("10-acmed_${pkgver}.rules::https://raw.githubusercontent.com/breard-r/${_pkgname}/v${pkgver}/contrib/polkit/10-acmed.rules"

@@ -1,0 +1,8 @@
+build() {
+	cd "${pkgname}-${pkgver}"
+	go build \
+		-trimpath \
+		-buildmode=pie \
+		-mod=readonly \
+		./cmd/asmfmt
+}

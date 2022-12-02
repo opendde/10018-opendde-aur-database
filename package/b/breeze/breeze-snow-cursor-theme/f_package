@@ -1,0 +1,8 @@
+package() {
+    cd $srcdir/Breeze_Snow
+    install -d $pkgdir/usr/share/icons/Breeze_Snow
+    cp -rf *   $pkgdir/usr/share/icons/Breeze_Snow
+    chmod -R 644 $pkgdir/usr/share/icons/Breeze_Snow/*
+    chmod 755 $pkgdir/usr/share/icons/Breeze_Snow
+    chmod 755 $pkgdir/usr/share/icons/Breeze_Snow/cursors
+}

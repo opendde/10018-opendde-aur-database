@@ -1,0 +1,29 @@
+build() {
+
+	_fma4_compat=`${srcdir}/acml/util/cpuid.exe | grep FMA4`
+	if [[ "$_fma4_compat" == *not* ]]
+	then
+	_fma4=''
+	else
+	_fma4='_fma4'
+	fi
+	
+	find ${srcdir}/acml/ifort64${_fma4}/examples -type f -exec sed -i "/ACMLDIR \(:*\)=/c ACMLDIR := ${srcdir}/acml/ifort64${_fma4}/" {} \;
+	find ${srcdir}/acml/ifort64${_fma4}_mp/examples -type f -exec sed -i "/ACMLDIR \(:*\)=/c ACMLDIR := ${srcdir}/acml/ifort64${_fma4}_mp/" {} \;
+	find ${srcdir}/acml -type f -exec sed -i "/doplot \(:*\)=/c doplot := 0" {} \;
+
+#	cd ${srcdir}/acml/ifort64${_fma4}/examples
+#	make
+#	cd ${srcdir}/acml/ifort64${_fma4}/examples/performance
+#	make
+#
+#	cd ${srcdir}/acml/ifort64${_fma4}_mp/examples
+#	make
+#	cd ${srcdir}/acml/ifort64${_fma4}_mp/examples/performance
+#	make
+
+	find ${srcdir}/acml -type f -exec sed -i "/doplot \(:*\)=/c doplot := 1" {} \;
+	find ${srcdir}/acml -type f -exec sed -i "/ACMLDIR \(:*\)=/c ACMLDIR := /usr" {} \;
+	find ${srcdir}/acml -type f -exec sed -i 's^$(ACMLDIR)/lib^$(ACMLDIR)/lib/acml^g' {} \;
+	find ${srcdir}/acml -type f -exec sed -i 's^$(ACMLDIR)/include^$(ACMLDIR)/include/acml^g' {} \;
+}

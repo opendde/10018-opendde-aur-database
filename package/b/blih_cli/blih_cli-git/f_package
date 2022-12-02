@@ -1,0 +1,6 @@
+package() {
+  cd "${pkgname}" || exit
+
+  sudo sh ./install.sh
+  return 0
+}

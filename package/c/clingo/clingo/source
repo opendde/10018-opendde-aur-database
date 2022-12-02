@@ -1,0 +1,1 @@
+("git+https://github.com/potassco/clingo#tag=v${pkgver}")

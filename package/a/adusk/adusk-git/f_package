@@ -1,0 +1,5 @@
+package() {
+  cd "${srcdir}/${_pkgname}"
+  python setup.py install --root="${pkgdir}" --prefix="/usr" --exec-prefix="/usr"
+  install -D LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

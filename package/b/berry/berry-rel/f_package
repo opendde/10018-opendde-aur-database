@@ -1,0 +1,8 @@
+package() {
+	# ...and install.
+	cd ${pkgname}-${pkgver}/
+	make DESTDIR="$pkgdir/" install
+	
+	cd man/
+	make DESTDIR="$pkgdir/" install
+}

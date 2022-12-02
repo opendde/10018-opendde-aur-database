@@ -1,0 +1,4 @@
+build() {
+  cd "$pkgname"
+  RUSTUP_TOOLCHAIN=stable cargo build --release --target-dir=target
+}

@@ -1,0 +1,12 @@
+package_backintime-cli-bzr() {
+  pkgdesc="Simple backup/snapshot system inspired by Flyback and TimeVault. CLI version."
+  depends=('rsync' 'cron' 'openssh' 'python-dbus' 'python-keyring')
+  optdepends=('encfs: encrypted filesystems'
+              'pm-utils: power management status check'
+              'sshfs: remote filesystems')
+  provides=($_pkgname-cli)
+  conflicts=($_pkgname-cli)
+
+  cd $_pkgname/common
+  make DESTDIR="$pkgdir" install 
+}

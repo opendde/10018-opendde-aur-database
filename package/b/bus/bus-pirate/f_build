@@ -1,0 +1,15 @@
+build() {
+  msg2 "building QT5 GUI"
+  cd "${srcdir}/Bus_Pirate-${pkgver}/scripts/BusPirateGUI"
+  make
+  cp build/BusPirateGui .
+  make distclean
+  
+  msg2 "building firmware flasher"
+  cd "${srcdir}/Bus_Pirate-${pkgver}/package/BPv4-firmware/pirate-loader-v4-source"
+  bash build-unix.sh
+
+  msg2 "building SPI sniffer"
+  cd "${srcdir}/Bus_Pirate-${pkgver}/scripts/powertools/SPISniffer/linux-version"
+  make
+}

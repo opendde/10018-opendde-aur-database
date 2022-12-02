@@ -1,0 +1,4 @@
+package_ttf-arkitech() {
+    install -Dm644 -t "$pkgdir/usr/share/fonts/TTF/" *.ttf
+    install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname/" FFPU.txt
+}

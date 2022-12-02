@@ -1,0 +1,4 @@
+check() {
+  cd "$cratename-$pkgver"
+  cargo test --frozen
+}

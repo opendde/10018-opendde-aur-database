@@ -1,0 +1,4 @@
+pkgver() {
+    cd "$srcdir/external"
+    printf "%s" "$(git describe --long | sed 's/\([^-]*-\)g/r\1/;s/-/./g')"
+}

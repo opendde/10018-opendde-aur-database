@@ -1,0 +1,5 @@
+prepare() {
+  cd $srcdir/$pkgname-$pkgver
+  sed -i "s/ncursesw\///" owl.h
+  sed -i "s/ncursesw\///" tester.c
+}

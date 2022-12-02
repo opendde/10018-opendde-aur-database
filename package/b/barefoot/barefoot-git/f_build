@@ -1,0 +1,5 @@
+build() {
+  cd $pkgname
+  g++ -I /usr/include/boost/ ${pkgname%-git}.cpp \
+    -o ${pkgname%-git} -L /usr/lib/ -lboost_regex
+}

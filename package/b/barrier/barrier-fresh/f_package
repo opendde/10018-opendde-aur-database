@@ -1,0 +1,17 @@
+package() {
+    # Install binaries:
+    cd barrier/build
+    DESTDIR="${pkgdir?}" make install
+
+    # Install the license:
+    cd ..
+    install -m 644 -D LICENSE "${pkgdir?}/usr/share/licenses/barrier/LICENSE"
+
+    # Install the manpages:
+    mkdir -p "${pkgdir?}/usr/share/man/man1"
+    install -m 644 doc/*.1 "${pkgdir?}/usr/share/man/man1"
+
+    # Install the examples:
+    mkdir -p "${pkgdir?}/usr/share/doc/barrier"
+    install -m 644 doc/barrier.conf* "${pkgdir?}/usr/share/doc/barrier"
+}

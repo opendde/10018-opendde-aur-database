@@ -1,0 +1,1 @@
+("$pkgname::git+https://github.com/bradharding/doomretro.git#commit=$_commit")

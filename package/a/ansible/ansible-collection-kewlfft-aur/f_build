@@ -1,0 +1,4 @@
+build() {
+    cd "${_repo_name}-${pkgver}"
+    ansible-galaxy collection build
+}

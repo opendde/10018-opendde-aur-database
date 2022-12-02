@@ -1,0 +1,6 @@
+package() {
+  cd 8cc
+
+  install -Dm755 8cc "$pkgdir/usr/bin/8cc"
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

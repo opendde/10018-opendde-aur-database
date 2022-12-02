@@ -1,0 +1,5 @@
+package() {
+  cd ${srcdir}/braus/build
+  ninja
+  DESTDIR="$pkgdir" ninja install
+}

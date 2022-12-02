@@ -1,0 +1,18 @@
+prepare() {
+  cd "$pkgname"
+
+  # fix sources path
+  sed -i "s|\/\.\.\/|\/|g" CMakeLists.txt
+
+  # fix etc/ path
+  git apply "$srcdir/etc.patch"
+
+  # fix includes
+  git apply "$srcdir/limits.patch"
+
+  # fix tests
+  cp "$srcdir/catch.hpp" tests/test_support/catch.h
+
+  # disable failing tests
+  git apply "$srcdir/failing_tests.patch"
+}

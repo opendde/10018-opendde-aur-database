@@ -1,0 +1,5 @@
+check() {
+  cd bluez-$pkgver
+  # tests segfault and hang
+#  make check || /bin/true # https://bugzilla.kernel.org/show_bug.cgi?id=196621
+}

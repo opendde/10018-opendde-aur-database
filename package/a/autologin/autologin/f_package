@@ -1,0 +1,9 @@
+package() {
+  DESTDIR="$pkgdir" ninja -C build install
+
+  install -Dm644 "$srcdir/$pkgname-$pkgver/autologin.service" \
+    "$pkgdir/usr/lib/systemd/system/autologin.service"
+
+  install -Dm644 "$srcdir/autologin.pam" \
+    "$pkgdir/etc/pam.d/autologin"
+}

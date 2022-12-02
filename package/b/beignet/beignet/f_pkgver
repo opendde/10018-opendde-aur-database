@@ -1,0 +1,4 @@
+pkgver() {
+  cd $pkgname
+  printf "1.3.2.r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}

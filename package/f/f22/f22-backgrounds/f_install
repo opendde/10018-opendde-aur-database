@@ -1,0 +1,3 @@
+install() {
+  ${_DOWNLOADS_DIR}/${_pkg_file_name}
+}

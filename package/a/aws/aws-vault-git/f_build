@@ -1,0 +1,12 @@
+build() {
+	msg2 'building aws-vault'
+	pushd "${srcdir}/${pkgname}" >/dev/null
+	{
+		CGO_ENABLED=0 go build \
+			-trimpath \
+			-ldflags "-extldflags $LDFLAGS" \
+			-ldflags="-X main.Version=v$pkgver" \
+			-o $pkgname .
+	}
+	popd >/dev/null
+}

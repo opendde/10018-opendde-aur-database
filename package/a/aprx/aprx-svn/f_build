@@ -1,0 +1,7 @@
+build() {
+# For a small memory system without writeable /tmp add --with-embedded   
+#  cd "$srcdir/$_svnmod-build"
+   cd "aprx-2.08.svn593"
+  ./configure --prefix=/usr 
+  make
+}

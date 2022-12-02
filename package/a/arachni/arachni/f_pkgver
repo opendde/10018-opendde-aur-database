@@ -1,0 +1,5 @@
+pkgver() {
+  cd arachni
+
+  git describe --always | sed 's|-|.|g' | sed 's/^v//'
+}

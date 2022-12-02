@@ -1,0 +1,6 @@
+package() {
+	cd "$srcdir/$_pkgname"
+	mkdir -p $pkgdir/usr/bin
+	mkdir -p $pkgdir/usr/share
+	./install.sh
+}

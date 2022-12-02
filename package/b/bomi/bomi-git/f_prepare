@@ -1,0 +1,5 @@
+prepare() {
+    cd "$srcdir/$_pkgbase"
+
+    PKG_CONFIG_PATH="/usr/lib/ffmpeg4.4/pkgconfig" ./configure --prefix=/usr
+}

@@ -1,0 +1,4 @@
+package() {
+    install -dm755 "$pkgdir/usr/share/webapps/drush/commands"
+    cp -R "${srcdir}/provision_tasks_extra" "$pkgdir/usr/share/webapps/drush/commands"
+}

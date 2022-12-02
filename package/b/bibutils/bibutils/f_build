@@ -1,0 +1,5 @@
+build() {
+  cd "${pkgname}_${pkgver}"
+  ./configure --dynamic --install-dir "$pkgdir"/usr/bin --install-lib "$pkgdir"/usr/lib
+  make
+}

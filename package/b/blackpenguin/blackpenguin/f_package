@@ -1,0 +1,13 @@
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+
+  # Install game files
+  install -Dm755 src/${pkgname} "${pkgdir}/usr/bin/${pkgname}"
+
+  # Install a desktop entry
+  install -Dm644 ../${pkgname}.png "${pkgdir}/usr/share/pixmaps/${pkgname}.png"
+  install -Dm644 ../${pkgname}.desktop "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+
+  # Install a readme file
+  install -Dm644 doc/README "${pkgdir}/usr/share/${pkgname}/README"
+}

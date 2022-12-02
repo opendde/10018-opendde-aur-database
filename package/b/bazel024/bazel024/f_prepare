@@ -1,0 +1,8 @@
+prepare () {
+  # https://github.com/bazelbuild/bazel/issues/9391
+  curl -L https://github.com/bazelbuild/bazel/commit/b8e1bb18fae89898b0d28535c6355e67b7d4239e.patch | patch -p1
+  curl -L https://github.com/bazelbuild/bazel/pull/9394.patch | patch -p1
+
+  # https://github.com/bazelbuild/bazel/issues/8666
+  pushd third_party/grpc && patch -p0 -i "$srcdir/grpc_rename_gettid.patch"
+}

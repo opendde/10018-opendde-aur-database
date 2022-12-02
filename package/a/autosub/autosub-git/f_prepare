@@ -1,0 +1,6 @@
+prepare() {
+  cd ${srcdir}/autosub
+  sed -i 's|auditok==|auditok>=|' setup.py
+  sed -i 's|except DistributionNotFound|except|' autosub/constants.py
+  sed -i 's|sample_width=asource.get_sample_width(),|sample_width=2,channels=1,|' autosub/core.py
+}

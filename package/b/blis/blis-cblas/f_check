@@ -1,0 +1,7 @@
+check() {
+    cd "${pkgname%-cblas}-${pkgver}"
+    
+    export BLIS_NUM_THREADS=`nproc`
+    export nt_use=1
+    make check
+}

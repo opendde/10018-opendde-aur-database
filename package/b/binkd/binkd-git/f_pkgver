@@ -1,0 +1,4 @@
+pkgver() {
+  cd "$srcdir/binkd"
+  printf "%s.r%s.%s" "$(grep Version "$srcdir/binkd/mkfls/unix/binkd.spec" | awk '{ print $2 }')" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}

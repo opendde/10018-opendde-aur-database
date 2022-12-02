@@ -1,0 +1,17 @@
+prepare() {
+  mkdir -p ./usr/share/cups/model
+  mkdir -p ./usr/lib/cups/filter
+  _wrapper=./usr/local/Brother/Printer/*/cupswrapper/cupswrapper*
+  sed -i \
+    -e '/stop\|restart\|sleep\|lpadmin/s/^/: /' \
+    -e 's@/usr@./usr@g' \
+    -e 's/lpinfo/echo/g' \
+    -e 's/"`/"\\`/g' \
+    -e 's/`"/\\`"/g' \
+    $_wrapper
+  $_wrapper
+  rm $_wrapper
+  find . -type f -name 'setupPrintcap*' -delete
+  sed -i 's@\./@/@' ./usr/lib/cups/filter/*lpdwrapper*
+  sed -i 's@/usr/local/@/usr/share/@g' $(grep -lr '/usr/local/Brother' ./)
+}

@@ -1,0 +1,12 @@
+package() {
+  cd amethyst
+  install -Dm 644 COPYING.txt -t "${pkgdir}"/usr/share/licenses/amethyst
+  install -Dm 644 COPYING.LIB.txt -t "${pkgdir}"/usr/share/licenses/amethyst
+
+  cd amethyst
+  install -Dm 755 out/amethyst -t "${pkgdir}"/usr/bin
+  install -Dm 644 data/amethyst.desktop -t "${pkgdir}"/usr/share/applications
+  install -Dm 644 data/amethyst.svg -t "${pkgdir}"/usr/share/icons
+  install -Dm 644 data/mimetypes.bml -t "${pkgdir}"/usr/share/amethyst
+  install -Dm 644 data/settings.bml -t "${pkgdir}"/usr/share/amethyst
+}

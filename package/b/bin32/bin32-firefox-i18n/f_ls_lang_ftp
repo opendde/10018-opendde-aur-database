@@ -1,0 +1,9 @@
+ls_lang_ftp () {
+{  ftp -in ftp.mozilla.org <<EOF
+user anonymous secrets
+cd pub
+cd mozilla.org/firefox/releases/${pkgver}/linux-i686/xpi/
+ls
+EOF
+[ "$?" != 0 ] && error "FTP connection failed" && exit 1
+} | grep 'ftp.*ftp.*\.xpi$' | awk -F'[. ]'  '{print $(NF-1)}' | tr '\n' ' '

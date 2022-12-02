@@ -1,0 +1,6 @@
+package() {
+	cd bpfmon-${pkgver}
+	sed -i 's/sbin/bin/g' Makefile
+	make PREFIX=/usr INSTALL=install DESTDIR="${pkgdir}" V=1 install
+	install -Dm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+}

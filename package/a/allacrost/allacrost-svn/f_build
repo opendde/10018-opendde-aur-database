@@ -1,0 +1,15 @@
+build() {
+  cd "$srcdir/allacrost"
+
+  # Build
+  autoreconf -i
+  ./configure --prefix=/usr
+
+  sed -i 's|bindir = ${prefix}/games|bindir = ${prefix}/bin|' Makefile
+  sed -i 's|datarootdir = ${prefix}/share/games|datarootdir = ${prefix}/share|' Makefile
+  make
+
+  # Extract icon
+  icotool -x img/logos/program_icon.ico
+  mv program_icon_*.png allacrost.png
+}

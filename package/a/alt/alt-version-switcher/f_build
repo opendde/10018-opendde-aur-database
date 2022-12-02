@@ -1,0 +1,4 @@
+build() {
+  cd "$_pkgname-$pkgver"
+  /usr/bin/cargo build --release
+}

@@ -1,0 +1,8 @@
+package() {
+  cd util-macros-${pkgver}
+  make DESTDIR="${pkgdir}" install
+  install -m755 -d "${pkgdir}/usr/$_target/lib"
+  mv "${pkgdir}/usr/$_target/share/pkgconfig" "${pkgdir}/usr/$_target/lib/"
+  install -m755 -d "${pkgdir}/usr/$_target/share/licenses/${pkgname}"
+  install -m644 COPYING "${pkgdir}/usr/$_target/share/licenses/${pkgname}/"
+}

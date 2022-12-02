@@ -1,0 +1,5 @@
+package() {
+    cd "astra-git"
+    cmake -DCMAKE_INSTALL_PREFIX="$pkgdir/usr"
+    make install
+}

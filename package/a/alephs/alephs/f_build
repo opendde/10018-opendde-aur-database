@@ -1,0 +1,7 @@
+build() {
+    echo "BUILDING..."
+    cd "$srcdir/$pkgname-$pkgver/pip/"
+    python setup.py build
+    
+    echo -e '#!/bin/sh\n\nexec python -m alephs.alephs "$@"' > _alephs
+}

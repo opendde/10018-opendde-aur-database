@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+
+  msg2 'Installing...'
+  make DESTDIR="$pkgdir" install
+}

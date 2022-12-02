@@ -1,0 +1,7 @@
+prepare() {
+  cd "$srcdir/opt/" || return 1
+  patch -p1 < ../brother-hl3152cdw.patch
+
+  cd "$srcdir" || return 1
+  "$srcdir/opt/brother/Printers/hl3152cdw/cupswrapper/cupswrapperhl3152cdw"
+}

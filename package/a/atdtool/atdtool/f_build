@@ -1,0 +1,4 @@
+build() {
+  cd "${srcdir}/${pkgname}-upstream-${pkgver}"
+  python2 setup.py build
+}

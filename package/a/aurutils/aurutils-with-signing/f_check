@@ -1,0 +1,6 @@
+check() {
+    cd "aurutils-with-signing-${pkgver}/bin"
+    # Make errors with C locale visible
+    LANG=C shellcheck -x aurbuild aurchain aurgrab aursearch aursift aursplit aurstranger aursync repofind
+    LANG=C shellcheck -e 2016 -x aurqueue
+}

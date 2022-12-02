@@ -1,0 +1,1 @@
+("arcolinux-betterlockscreen-${_pkgver}.tar.gz::https://github.com/arcolinux/arcolinux-betterlockscreen/archive/refs/tags/${_pkgver}.tar.gz")

@@ -1,0 +1,6 @@
+package() {
+  cd "${srcdir}/${pkgname}"
+  mkdir -p ${pkgdir}/usr/include/
+  cp -r ${srcdir}/${pkgname}/include/* ${pkgdir}/usr/include/
+  chmod 755 ${pkgdir}/usr/include/
+}

@@ -1,0 +1,5 @@
+build() {
+    cd "$srcdir/${_pkgname}"
+    cp config.mk.template config.mk
+    make
+}

@@ -1,0 +1,1 @@
+("${pkgname}.git::git+https://github.com/p5n/archlinux-stuff.git")

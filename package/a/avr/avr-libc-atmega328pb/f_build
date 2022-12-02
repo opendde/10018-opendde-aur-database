@@ -1,0 +1,6 @@
+build() {
+  cd avr-libc-$_avrlibcver
+  ./bootstrap
+  ./configure --build=$(./config.guess) --host=avr --prefix=/usr
+  make
+}

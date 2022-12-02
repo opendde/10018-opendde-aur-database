@@ -1,0 +1,4 @@
+prepare() {
+	cd "$srcdir/${pkgname%-git}"
+	git apply --reject $srcdir/ada_language_server.patch
+}

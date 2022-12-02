@@ -1,0 +1,15 @@
+build() {
+    cd "${srcdir}"/pcre-${pkgver}
+    source android-env ${_android_arch}
+
+    export LIBS="-L${ANDROID_PREFIX_LIB}"
+    export CPPFLAGS="-I${ANDROID_PREFIX_INCLUDE}"
+
+    android-${_android_arch}-configure \
+      --enable-jit \
+      --enable-pcre16 \
+      --enable-pcre32 \
+      --enable-pcregrep-libz \
+      --enable-pcregrep-libbz2
+    make $MAKEFLAGS
+}

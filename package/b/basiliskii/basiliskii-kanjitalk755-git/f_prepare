@@ -1,0 +1,6 @@
+prepare() {
+  cd kanjitalk755-macemu
+
+  cd BasiliskII/src/Unix
+  NO_CONFIGURE=1 ./autogen.sh
+}

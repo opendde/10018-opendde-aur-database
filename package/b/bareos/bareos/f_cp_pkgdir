@@ -1,0 +1,27 @@
+cp_pkgdir() {
+  if [ "${1:0:1}" = "-" ] ; then
+     return
+  elif [ "${1:0:1}" = "+" ] ; then
+     dir_name=$pkgdir/`echo "$1" | sed "s|+||"`
+     mkdir -p "$dir_name"
+     return
+  fi
+  for n in $2$1 \
+  ; do
+    if [ -f "$n" ]; then
+       dir_name=$pkgdir/$(dirname "$n" | sed "s|$2||")
+    else
+       dir_name=$pkgdir/`echo "$n" | sed "s|$2||"`
+    fi
+    if [ "${dir_name:0:1}" == "." ]; then
+        return
+    else
+       mkdir -p "$dir_name"
+    fi
+    if [ -f "$n" ]; then
+       cp -a "$n" "$dir_name"
+    elif [ -d "$n" ]; then
+       cp -aR "$n" "$(dirname $dir_name)"
+    fi
+  done
+}

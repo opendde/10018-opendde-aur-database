@@ -1,0 +1,15 @@
+prepare() {
+  cd $srcdir/core
+  patch -p1 < ../fix_build_core.patch
+
+  cd $srcdir/selinux
+  patch -p1 < ../fix_build_selinux.patch
+
+  cd $srcdir/e2fsprogs
+  patch -p1 < ../fix_build_e2fsprogs.patch
+
+  cd $srcdir/avb
+  sed -i 's|/usr/bin/env python$|/usr/bin/env python2|g' avbtool
+
+  mkdir -p $srcdir/boringssl/build
+}

@@ -1,0 +1,4 @@
+package() {
+  cd $(ls ${srcdir} | grep arch-nemesis)
+  python setup.py install --root="$pkgdir/" --optimize=1
+}

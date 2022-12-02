@@ -1,0 +1,18 @@
+build() {
+  cd "${srcdir}/${pkgname%-*}"
+
+  # rollback any change posterior to the release tag. There is probably a better way.
+  git reset --hard ${pkgver}
+  
+  # configure and build as usual.
+  python2 waf configure --prefix=/usr \
+                        --configdir=/etc \
+                        --with-backends=jack,alsa,dummy \
+                        --libjack=weak \
+                        --optimize \
+                        --docs \
+                        --cxx11 \
+                        --no-phone-home
+
+  python2 waf build $MAKEFLAGS
+}

@@ -1,0 +1,6 @@
+build() {
+  cd "$srcdir/$_gitname"
+
+  npm install
+  npm run make-linux dir --dir
+}

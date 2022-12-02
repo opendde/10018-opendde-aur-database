@@ -1,0 +1,4 @@
+prepare() {
+  cd "${srcdir}/${pkgname%-patched}-${pkgver}"
+  patch -p1 < ../openssl-nosslv3.patch
+}

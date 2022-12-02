@@ -1,0 +1,4 @@
+prepare() {
+  cd "${pkgname%-git}"
+  patch -Np1 -i "$srcdir/adlmidi-git.patch"
+}

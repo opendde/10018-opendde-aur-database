@@ -1,0 +1,10 @@
+package() {
+  cd $pkgname
+  make DESTDIR="${pkgdir}" install
+  # add missing toosl FS#41132, FS#41687, FS#42716
+  for f in `find tools/ -type f -perm -755`; do
+    install -Dm755 "$f" "${pkgdir}/usr/bin/$(basename $f)"
+  done
+  install -Dm644 src/main.conf        "${pkgdir}/etc/bluetooth/main.conf"
+  install -Dm644 ${srcdir}/bluetooth.modprobe "${pkgdir}/usr/lib/modprobe.d/bluetooth-usb.conf"
+}

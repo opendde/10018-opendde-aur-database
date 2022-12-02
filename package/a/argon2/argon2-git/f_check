@@ -1,0 +1,4 @@
+check() {
+    cd "$_gitname"
+    make test
+}

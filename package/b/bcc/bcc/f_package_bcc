@@ -1,0 +1,22 @@
+package_bcc() {
+	pkgdesc='BPF Compiler Collection - C library and examples'
+	depends=('clang>=3.7.0' 'libelf')
+	optdepends=('linux-headers: build modules against the Arch kernel'
+		'linux-lts-headers: build modules against the LTS kernel'
+		'linux-zen-headers: build modules against the ZEN kernel'
+		'linux-hardened-headers: build modules against the HARDENED kernel'
+		'bcc-tools: Python utilites using the BCC library'
+		'python-bcc: Python 3 bindings for BCC')
+	provides=('bcc' 'libbcc')
+
+	cd "${srcdir}/${pkgbase}/build"
+
+	# Install the kitchen sink
+	make DESTDIR="${pkgdir}" install
+
+	# These go in a split package python*-bcc
+	rm -rf "${pkgdir}"/usr/lib/python*
+
+	# These go in a split package bcc-tools
+	rm -rf "${pkgdir}"/usr/share/bcc/{tools,man}
+}

@@ -1,0 +1,7 @@
+build() {
+    cd "$srcdir/$pkgname-$pkgver"
+    autoheader
+    autoconf
+    ./configure --prefix=/usr --sbindir=/usr/bin
+    make
+}

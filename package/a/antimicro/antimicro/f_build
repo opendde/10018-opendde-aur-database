@@ -1,0 +1,13 @@
+build() {
+  cd "${srcdir}/${pkgname}X-${pkgver}"
+
+  cmake . \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+    -DUSE_SDL_2=ON \
+    -DAPPDATA=ON \
+    -DWITH_UINPUT=ON \
+    -DWITH_X11=ON \
+    -DWITH_XTEST=ON
+  make
+}

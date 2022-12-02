@@ -1,0 +1,5 @@
+build() {
+    cd "$srcdir/${_pkgname}"
+    armorcore/Kinc/make --from armorcore -g opengl --compiler clang --compile
+    strip armorcore/Deployment/ArmorPaint
+}

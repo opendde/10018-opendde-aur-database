@@ -1,0 +1,47 @@
+package_bareos-director() {
+  pkgdesc="${pkgdesc} - Director daemon"
+  depends=("bareos-common=${pkgver}" 'openssl' 'bash' 'jansson')
+  install=bareos-director.install
+  for f in \
+     etc/logrotate.d/bareos-dir \
+     usr/lib/bareos/scripts/delete_catalog_backup \
+     usr/lib/bareos/scripts/make_catalog_backup \
+     usr/lib/bareos/scripts/make_catalog_backup.pl \
+     usr/lib/bareos/scripts/query.sql \
+     usr/share/bareos/config/bareos-dir.d/catalog/MyCatalog.conf \
+     usr/share/bareos/config/bareos-dir.d/client/bareos-fd.conf \
+     usr/share/bareos/config/bareos-dir.d/console/bareos-mon.conf \
+     usr/share/bareos/config/bareos-dir.d/director/bareos-dir.conf \
+     usr/share/bareos/config/bareos-dir.d/fileset/Catalog.conf \
+     usr/share/bareos/config/bareos-dir.d/fileset/LinuxAll.conf \
+     usr/share/bareos/config/bareos-dir.d/fileset/SelfTest.conf \
+     usr/share/bareos/config/bareos-dir.d/fileset/Windows?All?Drives.conf \
+     usr/share/bareos/config/bareos-dir.d/job/backup-bareos-fd.conf \
+     usr/share/bareos/config/bareos-dir.d/job/BackupCatalog.conf \
+     usr/share/bareos/config/bareos-dir.d/job/RestoreFiles.conf \
+     usr/share/bareos/config/bareos-dir.d/jobdefs/DefaultJob.conf \
+     usr/share/bareos/config/bareos-dir.d/messages/Daemon.conf \
+     usr/share/bareos/config/bareos-dir.d/messages/Standard.conf \
+     usr/share/bareos/config/bareos-dir.d/pool/Differential.conf \
+     usr/share/bareos/config/bareos-dir.d/pool/Full.conf \
+     usr/share/bareos/config/bareos-dir.d/pool/Incremental.conf \
+     usr/share/bareos/config/bareos-dir.d/pool/Scratch.conf \
+     usr/share/bareos/config/bareos-dir.d/profile/operator.conf \
+     usr/share/bareos/config/bareos-dir.d/schedule/WeeklyCycleAfterBackup.conf \
+     usr/share/bareos/config/bareos-dir.d/schedule/WeeklyCycle.conf \
+     usr/share/bareos/config/bareos-dir.d/storage/File.conf \
+     usr/share/bareos/config/bareos-dir.d/user \
+     usr/share/bareos/config/tray-monitor.d/director/Director-local*.conf \
+     usr/bin/bareos-dir \
+     usr/share/man/man8/bareos-dir.8* \
+     usr/share/man/man8/bareos.8* \
+     usr/lib/systemd/system/bareos-dir.service \
+  ; do
+    # pacman LINT tool currently does not like spaces
+    #space_removal=`echo $f | tr ' ' '_'`
+    cp_pkgdir "$f" "$srcdir/install/"
+  done
+
+  # Currently upstream systemd file does not automatically create run directory
+  sed -i '/\[Service\]/a RuntimeDirectory=bareos' ${pkgdir}/usr/lib/systemd/system/bareos-dir.service
+}

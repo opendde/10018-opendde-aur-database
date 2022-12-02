@@ -1,0 +1,1 @@
+("https://download.esa.int/step/snap/${pkgver:0:3}/installers/${pkgname/-bin/}_all_unix_${pkgver//./_}.sh"

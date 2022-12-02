@@ -1,0 +1,17 @@
+package() {
+	# Fix platform.txt for arch arduino-ctags
+	#cd "${srcdir}/build/src/github.com/arduino/arduino-builder/hardware"
+	#sed -i 's#^tools.ctags.path=.*#tools.ctags.path=/usr/bin#' platform.txt
+	#sed -i 's#^tools.ctags.cmd.path=.*#tools.ctags.cmd.path={path}/arduino-ctags#' platform.txt
+
+	cd "$GOPATH"/src/github.com/arduino/arduino-builder
+
+	# Install main tool
+	install -Dm755 "arduino-builder" "${pkgdir}/usr/bin/arduino-builder"
+
+	# Install platform.txt files
+	#install -Dm644 -t "${pkgdir}/usr/share/arduino/hardware/" "${srcdir}"/build/src/github.com/arduino/arduino-builder/hardware/*
+
+	# Add documentation
+	install -Dm644 -t "${pkgdir}/usr/share/doc/${pkgname//-rc}" "${srcdir}/${pkgname//-rc}-${pkgver}/README.md"
+}

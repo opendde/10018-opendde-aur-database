@@ -1,0 +1,8 @@
+package_metricbeat() {
+    pkgdesc='Server monitoring agent that sends metrics to Elasticsearch'
+    conflicts=('topbeat')
+    replaces=('topbeat')
+
+    _do_package_beat
+    cp -R modules.d "$pkgdir"/etc/$_pkgname/
+}

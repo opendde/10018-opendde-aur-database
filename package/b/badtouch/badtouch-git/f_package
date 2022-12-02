@@ -1,0 +1,7 @@
+package() {
+  cd "${_gitname}"
+  install -Dm755 "target/release/${_gitname}" -t "${pkgdir}/usr/bin"
+  install -Dm644 docs/badtouch.1 -t "${pkgdir}/usr/share/man/man1"
+  install -Dm644 scripts/* -t "${pkgdir}/usr/share/doc/${pkgname}/examples"
+  install -Dm644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+}

@@ -1,0 +1,5 @@
+prepare() {
+  cd "$pkgname-$pkgver"
+  mkdir -p third_party/SDL_GameControllerDB/assets/input/
+  cp ../third_party/SDL_GameControllerDB/assets/input/* third_party/SDL_GameControllerDB/assets/input/
+}

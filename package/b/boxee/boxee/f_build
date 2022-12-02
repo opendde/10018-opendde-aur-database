@@ -1,0 +1,16 @@
+build() {
+	pushd ${_src} || return 1
+		#if anyone wants pulseaudio, simply remove "--disable-pulse"
+		patch -p0 < ../config.patch
+		patch -p0 < ../gcc4.6_soname.patch
+		patch -p0 < ../sparse_boxee_make.patch
+		patch -p0 < ../libpng.patch
+		patch -p0 < ../samba.patch
+		patch -p0 < ../libjpeg_cflags.patch
+		./bootstrap
+		./configure --prefix=/opt/boxee --enable-mid --disable-debug --disable-pulse --enable-xrandr --disable-ccache --enable-vdpau --enable-faac --disable-ss-rsxs --disable-boxee-hal
+		cp ../smbno.h xbmc/cores/paplayer/MACDll/Source/MACLib/.
+		make
+	popd
+
+}

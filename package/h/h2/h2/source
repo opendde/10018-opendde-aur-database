@@ -1,0 +1,1 @@
+("https://github.com/h2database/h2database/releases/download/version-${pkgver}/h2-${_releasever}.zip")

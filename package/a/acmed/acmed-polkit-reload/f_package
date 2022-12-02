@@ -1,0 +1,6 @@
+package() {
+  install -Dm644 "${srcdir}/10-acmed_${pkgver}.rules" "${pkgdir}/usr/share/polkit-1/rules.d/10-acmed.rules"
+  chmod 750 "${pkgdir}/usr/share/polkit-1/rules.d"
+  install -Dm644 "${srcdir}/LICENSE-APACHE-2.0.txt" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE-APACHE-2.0.txt"
+  install -Dm644 "${srcdir}/LICENSE-MIT.txt" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE-MIT.txt"
+}

@@ -1,0 +1,20 @@
+prepare() {
+  cd "${srcdir}/bgfx.cmake"
+
+  git config --file=.gitmodules submodule.bx.url $srcdir/bx
+  git config --file=.gitmodules submodule.bimg.url $srcdir/bimg
+  git config --file=.gitmodules submodule.bgfx.url $srcdir/bgfx
+  git submodule sync
+  # From git 2.38.1-1, "git submodule" in PKGBUILD does not work
+  # unless we change the git config "protocol.file.allow" [1,2].
+  # [1] https://bugs.archlinux.org/task/76255
+  # [2] https://bbs.archlinux.org/viewtopic.php?pid=2063104#p2063104
+  git -c protocol.file.allow=always submodule update --init
+
+  # prepend bgfx to bin names to avoid naming conflicts
+  for BIN in geometryc geometryv shaderc texturec texturev
+  do
+    echo "" >> cmake/tools/$BIN.cmake
+    echo "set_target_properties( $BIN PROPERTIES OUTPUT_NAME bgfx-$BIN )" >> cmake/tools/$BIN.cmake
+  done
+}

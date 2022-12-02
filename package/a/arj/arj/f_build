@@ -1,0 +1,8 @@
+build() {
+  cd ${pkgname}-${pkgver}/gnu
+  ./configure --prefix=/usr
+
+  cd ..
+  make prepare
+  make
+}

@@ -1,0 +1,5 @@
+package() {
+  cd "${pkgname}-${pkgver}"
+  install -D -m 0755 "zig-out/bin/brightnessztl" "${pkgdir}/usr/bin/brightnessztl"
+  install -D -m 0644 "LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

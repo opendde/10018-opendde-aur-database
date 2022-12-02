@@ -1,0 +1,5 @@
+package() {
+	  DESTDIR="$pkgdir" meson install -C build
+  }
+
+# vim:set ts=2 sw=2 et:

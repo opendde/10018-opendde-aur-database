@@ -1,0 +1,8 @@
+package() {
+	cd "$srcdir/${pkgname%-git}"
+	make PREFIX="$pkgdir/usr/avr/" install
+
+	# TODO: Fix this in avrm upstream.
+	mkdir "$pkgdir/usr/avr/share"
+	mv "$pkgdir/usr/avr/Makefile" "$pkgdir/usr/avr/share/Makefile"
+}

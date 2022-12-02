@@ -1,0 +1,4 @@
+build() {
+  cd bluez-${pkgver}/tools
+  gcc hciconfig.c parser/{csr,parser,lmp}.c ../src/textfile.c -lbluetooth -o hciconfig -DVERSION=\"$pkgver\" -I..
+}

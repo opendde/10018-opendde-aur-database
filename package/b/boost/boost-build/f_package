@@ -1,0 +1,13 @@
+package() {
+  cd ${srcdir}/build-${pkgver}/
+
+  echo ${pkgdir}
+
+  ./b2 install --prefix=${pkgdir}/usr
+
+  # Removing b2 and bjam, already installed by boost
+  msg2 "Removing /usr/bin/b2 and /usr/bin/bjam files, already installed by boost"
+  rm -rf ${pkgdir}/usr/bin/
+
+  install -Dm644 ${srcdir}/LICENSE_1_0.txt "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

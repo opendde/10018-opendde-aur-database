@@ -1,0 +1,5 @@
+build() {
+    cd "barchart-${pkgver}"
+
+    RUSTUP_TOOLCHAIN=stable cargo build --release --locked --all-features --target-dir=target
+}

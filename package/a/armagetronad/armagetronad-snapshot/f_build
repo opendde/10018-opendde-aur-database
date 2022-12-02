@@ -1,0 +1,14 @@
+build() {
+     cd "$srcdir/armagetronad-experimental-$pkgver"
+
+     # python2 fix
+     sed -i 's_#!/usr/bin/python_#!/usr/bin/python2_' language/update.py
+
+     ./configure --prefix=/usr \
+        --sysconfdir=/etc \
+        --mandir=/usr/share/man \
+        --disable-games \
+        --enable-automakedefaults \
+        --disable-uninstall
+     make
+}

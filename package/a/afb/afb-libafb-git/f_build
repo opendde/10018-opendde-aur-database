@@ -1,0 +1,9 @@
+build() {
+    cmake \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=lib \
+		-DWITH_LIBUUID=NO \
+		-DWITHOUT_CYNAGORA=YES \
+		"$srcdir/${pkgname%-git}"
+    make -j
+}

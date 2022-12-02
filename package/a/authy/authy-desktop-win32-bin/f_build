@@ -1,0 +1,6 @@
+build() {
+	cd "$srcdir"
+
+	unzip -o -j "authy-$pkgver-full.nupkg" lib/net45/resources/app.asar
+	asar extract-file lib/net45/resources/app.asar img/logos/icon128.png
+}

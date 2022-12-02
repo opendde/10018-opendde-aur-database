@@ -1,0 +1,1 @@
+("${pkgbase}-${pkgver}.tar.gz::https://github.com/froyotam/Fantasma/archive/refs/tags/${pkgver}.tar.gz")

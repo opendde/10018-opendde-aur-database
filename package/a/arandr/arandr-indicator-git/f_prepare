@@ -1,0 +1,5 @@
+prepare() {
+  cd "${srcdir}/${_pkgname}"
+  msg2 "Extract copyright information, building license.txt ..."
+  cat arandr-indicator.py | tr -d '\a' | tr '\n' '\a' | sed 's|^.*\(# Copyright.*$\)|\1|g' | sed 's|\a[^#][^\a]*.*$|\a|g' | tr '\a' '\n' > "${srcdir}/license.txt"
+}

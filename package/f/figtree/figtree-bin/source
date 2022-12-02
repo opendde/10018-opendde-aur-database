@@ -1,0 +1,1 @@
+("$_pkgname-$pkgver.tar.gz::https://github.com/rambaut/$_pkgname/releases/download/v$pkgver/FigTree_v$pkgver.tgz"

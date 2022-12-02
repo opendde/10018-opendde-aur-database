@@ -1,0 +1,4 @@
+package() {
+	install -d "${pkgdir}"/usr "${pkgdir}"/usr/bin
+	install -D -m755 "${srcdir}"/$pkgname.x86_64Centos5 "${pkgdir}"/usr/bin/$pkgname
+}

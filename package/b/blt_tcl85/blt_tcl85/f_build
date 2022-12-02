@@ -1,0 +1,19 @@
+build() {
+  # configure
+  cd ${srcdir}/${_pkgname}
+
+  ./configure \
+    --with-tcl=/usr/lib/tcl8.5 \
+    --with-tclincls=/usr/include/tcl8.5 \
+    --with-tcllibs=/usr/lib/tcl8.5 \
+    --with-tk=/usr/lib/tk8.5 \
+    --with-tkincls=/usr/include/tk8.5 \
+    --with-tklibs=/usr/lib/tk8.5 \
+    --with-x \
+    --x-includes=/usr/include \
+    --x-libraries=/usr/lib \
+    --mandir=/usr/share/man
+
+  # Compile
+  make -j 1 || return 1
+}

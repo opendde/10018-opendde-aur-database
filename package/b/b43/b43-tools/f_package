@@ -1,0 +1,11 @@
+package() {
+    install -Dm755 f1multiviewer-digiflag.sh "$pkgdir/usr/bin/$pkgname"
+    install -Dm644 f1multiviewer-digiflag.desktop "$pkgdir/usr/share/applications/$pkgname.desktop"
+
+    cd "F1MV-DigiFlag-linux-x64"
+    install -d "$pkgdir/usr/share/$pkgname"
+    cp -r resources/app/* "$pkgdir/usr/share/$pkgname/"
+
+    install -Dm644 resources/app/LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    install -Dm644 resources/app/icon.png "$pkgdir/usr/share/pixmaps/$pkgname.png"
+}

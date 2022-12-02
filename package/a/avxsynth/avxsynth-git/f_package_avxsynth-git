@@ -1,0 +1,13 @@
+package_avxsynth-git() {
+  pkgdesc="Linux Port of AviSynth. (Git version)"
+  depends=(${_ffms2}
+           'ffmpeg'
+           'log4cpp'
+           'pango'
+           )
+  provides=('avxsynth')
+  conflicts=('avxsynth')
+
+  make -C build DESTDIR="${pkgdir}" install
+  make -C build/apps/AVXEdit DESTDIR="${pkgdir}" uninstall
+}

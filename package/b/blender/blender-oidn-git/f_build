@@ -1,0 +1,20 @@
+build() {
+  mkdir -p "$srcdir/blender-build"
+  cd "$srcdir/blender-build"
+
+  cmake "$srcdir/blender" \
+        -DPYTHON_NUMPY_PATH=/usr/lib/python3.7/site-packages \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DWITH_INSTALL_PORTABLE=OFF \
+        -DWITH_GAMEENGINE=ON \
+        -DWITH_PLAYER=ON \
+        -DWITH_OPENCOLORIO=ON \
+        -DWITH_FFTW3=ON \
+        -DWITH_SYSTEM_GLEW=ON \
+        -DWITH_CODEC_FFMPEG=ON \
+        -DWITH_PYTHON_INSTALL=OFF \
+        -DPYTHON_VERSION=3.7m \
+        -DWITH_MOD_OCEANSIM=ON \
+        $_EXTRAOPTS
+  make
+}

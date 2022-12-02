@@ -1,0 +1,9 @@
+prepare() {
+  mkdir -p glibc-build
+
+  [[ -d glibc-$pkgver ]] && ln -s glibc-$pkgver glibc
+  cd glibc
+
+  # commit c3479fb7939898ec22c655c383454d6e8b982a67
+  patch -p1 -i "$srcdir/bz27343.patch"
+}

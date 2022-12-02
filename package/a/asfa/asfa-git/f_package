@@ -1,0 +1,10 @@
+package() {
+    cd "$_pkgname"
+    install -Dm755 "target/release/$_pkgname" \
+        -t "$pkgdir/usr/bin"
+    install -Dm644 LICENSE-MIT \
+        "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    find target/release/man/man1 -type f -print0 \
+        | xargs -0 install -Dm644 -t "$pkgdir/usr/share/man/man1"
+    find "$pkgdir/usr/share/man/man1" -type f -print0 | xargs -0 gzip
+}

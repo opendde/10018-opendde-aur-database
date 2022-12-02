@@ -1,0 +1,4 @@
+build() {
+  cd 8cc
+  make
+}

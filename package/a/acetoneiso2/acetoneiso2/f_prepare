@@ -1,0 +1,16 @@
+prepare() {
+  cd acetoneiso_${pkgver}/acetoneiso
+
+  sed -i 's#<Phonon/#<phonon/#' sources/*
+# Port to Qt5 https://www.mail-archive.com/debian-bugs-dist@lists.debian.org/msg1563802.html
+  sed -i 's/QtGui/QtWidgets/' sources/*
+  sed -i 's/getInteger/getInt/' sources/*
+  sed -i 's/WFlags/WindowFlags/' sources/*
+  sed -i 's/webkit/webkitwidgets/' acetoneiso.pro
+  sed -i 's/TARGET = /TARGET = acetoneiso/' acetoneiso.pro
+  sed -i 's/QT += phonon/LIBS += -lphonon4qt5/' acetoneiso.pro
+  sed -i 's@INCLUDEPATH.*$@& /usr/include/phonon4qt5@' acetoneiso.pro
+
+  # Remove malware from loading in the Updates tab, due to an expired domain being captured.
+  sed -i 's#http://www.acetoneteam.org/clients.html##' ui/acetoneiso.ui
+}

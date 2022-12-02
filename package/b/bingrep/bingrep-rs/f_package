@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir/$_pkgname-$pkgver"
+  install -Dm755 target/release/bingrep "$pkgdir"/usr/bin/bingrep
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}

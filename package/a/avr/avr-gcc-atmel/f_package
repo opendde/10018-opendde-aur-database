@@ -1,0 +1,30 @@
+package() {
+  cd ${srcdir}/gcc/${_builddir}
+
+  make -j1 DESTDIR=${pkgdir} install
+
+  # Strip debug symbols from libraries; without this, the package size
+  # balloons to ~500MB.
+  find ${pkgdir}/usr/lib -type f -name "*.a" \
+       -exec /usr/bin/avr-strip --strip-debug '{}' \;
+
+  (cd ${pkgdir}/usr/bin/ ; strip *)
+
+  (cd ${pkgdir}/usr/libexec/gcc/avr/${pkgver}/ ;
+   for binary in cc1 cc1plus collect2 lto-wrapper lto1 \
+                     install-tools/fixincl plugin/gengtype ; do
+     strip $binary
+   done
+  )
+
+  rm -rf ${pkgdir}/usr/share/man/man7
+
+  (cd ${pkgdir}/usr/share/info/ ;
+   for i in *.info ; do
+     mv "$i" "avr-$i"
+   done
+  )
+
+  install -Dm644 ${srcdir}/gcc/COPYING.RUNTIME \
+          ${pkgdir}/usr/share/licenses/${pkgname}/RUNTIME.LIBRARY.EXCEPTION
+}

@@ -1,0 +1,6 @@
+package() {
+	cd "$srcdir/build"
+	make install DESTDIR="$pkgdir"
+	install -m 644 -D -t "$pkgdir/usr/share/licenses/$pkgname" "$srcdir/$_dir/LICENSE"
+	install -m 644 -D -t "$pkgdir/usr/share/licenses/$pkgname" "$srcdir/$_dir/CONTRIBUTORS"
+}

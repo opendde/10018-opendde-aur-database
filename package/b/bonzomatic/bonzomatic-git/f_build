@@ -1,0 +1,6 @@
+build() {
+  cd "${_pkgname}/build"
+
+  cmake ..
+  make
+}

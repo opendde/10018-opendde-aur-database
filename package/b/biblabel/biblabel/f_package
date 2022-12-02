@@ -1,0 +1,11 @@
+package() {
+  cd $srcdir/$pkgname-$pkgver
+  mkdir -p $pkgdir/usr/{bin,share/man/man1,share/lib}  
+  make AWK='"gawk -c"' prefix=$pkgdir/usr MANDIR="${pkgdir}/usr/share/man/man1" CP='cp -p' install
+  #make AWK='"gawk -c"' prefix=$pkgdir/usr CP='cp -p' install
+  make AWK='"gawk -c"' LIBDIR=/usr/share/lib prefix=$pkgdir/usr MANDIR="${pkgdir}/usr/share/man"  install-exe-biblabel
+  unlink $pkgdir/usr/bin/biblabel
+  unlink $pkgdir/usr/bin/citesub
+  mv $pkgdir/usr/bin/biblabel-$pkgver $pkgdir/usr/bin/biblabel
+  mv $pkgdir/usr/bin/citesub-$pkgver $pkgdir/usr/bin/citesub
+}

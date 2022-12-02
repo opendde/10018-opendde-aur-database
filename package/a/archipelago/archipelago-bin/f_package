@@ -1,0 +1,11 @@
+package() {
+  cd $srcdir
+
+  cp -r {opt/,usr/} $pkgdir/
+  
+install -Dm755 /dev/stdin "$pkgdir"/usr/bin/archipelago <<END
+    #!/usr/bin/bash
+    /opt/Archipelago/archipelago
+END
+
+}

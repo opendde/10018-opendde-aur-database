@@ -1,0 +1,5 @@
+package() {
+    mkdir -p "$pkgdir/usr/share/themes"
+    rm *.tar 
+    cp -r * "$pkgdir/usr/share/themes"
+}

@@ -1,0 +1,3 @@
+build() {
+  GOPATH="$srcdir" go get -fix -v ${_gourl}
+}

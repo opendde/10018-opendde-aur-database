@@ -1,0 +1,4 @@
+build() {
+	cd AV-98
+	python3 setup.py build
+}

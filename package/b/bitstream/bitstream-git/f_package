@@ -1,0 +1,6 @@
+package() {
+  cd "bitstream"
+
+  make DESTDIR="$pkgdir" PREFIX="/usr" install
+  install -Dm644 "COPYING" "$pkgdir/usr/share/licenses/bitstream/COPYING"
+}

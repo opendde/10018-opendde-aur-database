@@ -1,0 +1,8 @@
+build() {
+	sed -i 's/python2/python3/g' $srcdir/patcher/scripts/powerline-fontpatcher
+	cd $srcdir
+	for font in ${srcdir}/*.otf
+	do
+	    ./patcher/scripts/powerline-fontpatcher $font
+	done
+}

@@ -1,0 +1,9 @@
+package() {
+  _suffix=${pkgver%%.r*}
+  DESTDIR="$pkgdir" ninja -C "$srcdir/build" install
+
+  if [[ -e "$pkgdir/usr/share/bforartists/${_suffix}/scripts/addons/cycles/lib/" ]] ; then
+    # make sure the cuda kernels are not stripped
+    chmod 444 "$pkgdir"/usr/share/bforartists/${_suffix}/scripts/addons/cycles/lib/*
+  fi
+}

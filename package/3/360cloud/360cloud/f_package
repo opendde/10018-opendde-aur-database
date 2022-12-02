@@ -1,0 +1,5 @@
+package() {
+    tar -xf "${srcdir}/data.tar.xz" -C "${pkgdir}/"
+
+    ln -sf "/opt/${pkgname}/${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+}

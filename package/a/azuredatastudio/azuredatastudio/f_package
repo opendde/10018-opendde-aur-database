@@ -1,0 +1,15 @@
+package() {
+  install -d "${pkgdir}/opt/${pkgname}"
+  cp -a "azuredatastudio-linux-x64/"* "${pkgdir}/opt/${pkgname}"
+
+  # Symlink the startup script in /usr/bin
+  install -d "${pkgdir}/usr/bin"
+  ln -s "/opt/${pkgname}/bin/azuredatastudio" "${pkgdir}/usr/bin/${pkgname}"
+
+  # Add the icon and desktop file
+  install -D -m644 "azuredatastudio-linux-x64/resources/app/resources/linux/code.png" "${pkgdir}/usr/share/icons/${pkgname}.png"
+  install -D -m644 "${pkgname}.desktop" "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+
+  # Install the license file
+  install -D -m644 "azuredatastudio-linux-x64/resources/app/LICENSE.txt" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

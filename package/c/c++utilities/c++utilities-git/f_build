@@ -1,0 +1,4 @@
+build() {
+  cd F-Engrave-${pkgver}_src/TTF2CXF_STREAM
+  make
+}

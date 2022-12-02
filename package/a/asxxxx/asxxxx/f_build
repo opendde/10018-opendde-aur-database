@@ -1,0 +1,4 @@
+build() {
+  cd "${srcdir}/asxv$(echo $pkgver | fold -w1 | head -n 1)pxx/asxmak/linux/build/"
+  make
+}

@@ -1,0 +1,11 @@
+prepare() {
+  cd "$srcdir/${pkgname%-git}"
+  git submodule init .test-framework
+  git config submodule.best.url "$srcdir/best"
+  git submodule update
+
+  cd .test-framework
+  git submodule init tests
+  git config submodule.best-tests.url "$srcdir/best-tests"
+  git submodule update
+}

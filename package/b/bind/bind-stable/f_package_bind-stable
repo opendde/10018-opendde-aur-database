@@ -1,0 +1,33 @@
+package_bind-stable() {
+  conflicts=('bind')
+  pkgdesc='The ISC DNS Server (stable release)'
+  provides=('dns-server')
+  depends=('glibc' 'libxml2' 'libcap' 'openssl' 'geoip' 'json-c' 'bind-stable-tools'
+           'zlib' 'lmdb')
+  backup=('etc/named.conf'
+          'var/named/127.0.0.zone'
+          'var/named/localhost.zone'
+          'var/named/localhost.ip6.zone'
+          'var/named/empty.zone')
+
+  cd "bind-$_pkgver"
+  install -dm755 "$pkgdir/usr/share/licenses/$pkgname/"
+  install -Dm644 LICENSE COPYRIGHT "$pkgdir/usr/share/licenses/$pkgname/"
+  for _d in bin/{check,named,rndc}; do
+    (cd "$_d" && make DESTDIR="$pkgdir" install)
+  done
+
+  cd "$srcdir"
+  install -D -m644 tmpfiles.conf "$pkgdir/usr/lib/tmpfiles.d/$pkgname.conf"
+  install -D -m644 sysusers.conf "$pkgdir/usr/lib/sysusers.d/$pkgname.conf"
+
+  install -D -m644 named.service "$pkgdir/usr/lib/systemd/system/named.service"
+  install -D -m640 -o 0 -g 40 named.conf "$pkgdir/etc/named.conf"
+
+  install -d -m770 -o 0 -g 40 "$pkgdir/var/named"
+  install    -m640 -o 0 -g 40 root.hint "$pkgdir/var/named"
+  install    -m640 -o 0 -g 40 localhost.zone "$pkgdir/var/named"
+  install    -m640 -o 0 -g 40 localhost.ip6.zone "$pkgdir/var/named"
+  install    -m640 -o 0 -g 40 127.0.0.zone "$pkgdir/var/named"
+  install    -m640 -o 0 -g 40 empty.zone "$pkgdir/var/named"
+}

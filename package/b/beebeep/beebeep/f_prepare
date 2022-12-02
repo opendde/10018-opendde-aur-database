@@ -1,0 +1,3 @@
+prepare() {
+  cd beebeep-code-${_pkgver}
+}

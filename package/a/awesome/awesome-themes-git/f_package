@@ -1,0 +1,12 @@
+package() {
+	cd "${_gitname}"
+
+	# Create installation directories
+	install -d -m755 "${pkgdir}/usr/share/awesome/themes/"
+
+	# Install the themes
+	cp -rf * "${pkgdir}/usr/share/awesome/themes/"
+
+	# Keep some scripts functional
+	find "$pkgdir" -type f -regex ".*\.sh$" -print0 | xargs -0 chmod 755
+}

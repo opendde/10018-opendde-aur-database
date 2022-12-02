@@ -1,0 +1,4 @@
+package_atoms-git() {
+  depends=('atoms-cli' 'atoms-core' 'servicectl')
+  meson install -C build --destdir "$pkgdir"
+}

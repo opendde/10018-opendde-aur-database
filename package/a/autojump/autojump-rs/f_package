@@ -1,0 +1,34 @@
+package() {
+    # we basically run the installer for autojump
+    # and then remove all the python bits and replace the bin file
+    cd "autojump-release-v${_autojump_version}"
+
+    SHELL=/bin/bash ./install.py --destdir "${pkgdir}" \
+        --prefix 'usr/' \
+        --zshshare 'usr/share/zsh/site-functions'
+
+    cd "${pkgdir}/usr/share/autojump"
+    for i in autojump.*
+        do ln -s "/usr/share/autojump/$i" "${pkgdir}/etc/profile.d/$i"
+    done
+
+    # autojump FS#49601
+    install -d "${pkgdir}"/usr/share/fish/vendor_conf.d/
+    mv "${pkgdir}"/etc/profile.d/autojump.fish "${pkgdir}"/usr/share/fish/vendor_conf.d/
+
+    # https://github.com/joelthelion/autojump/pull/339
+    sed -i "s:/usr/local/:/usr/:g" "${pkgdir}/etc/profile.d/autojump.sh"
+    sed -i "s:/build/autojump/pkg/autojump/:/:g" "${pkgdir}/etc/profile.d/autojump.sh"
+
+    # autojump FS#43762
+    sed -i '27,31d' "${pkgdir}/etc/profile.d/autojump.sh"
+
+    # remove the python bits
+    rm -r "${pkgdir}/usr/bin"
+
+    # remove the manpage, since it's not _quite_ accurate
+    rm -r "${pkgdir}/usr/share/man/"
+
+    # install the Rust binary
+    install -Dm755 "${srcdir}/autojump" "${pkgdir}/usr/bin/autojump"
+}

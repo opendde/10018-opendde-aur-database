@@ -1,0 +1,4 @@
+package() {
+  # binary
+  install -D -m0755 "${srcdir}/${pkgname}-tool/blink1-tool" "${pkgdir}/usr/bin/blink1-tool"
+}

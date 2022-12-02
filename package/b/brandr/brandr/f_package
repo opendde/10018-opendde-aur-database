@@ -1,0 +1,5 @@
+package () {
+	cd "$srcdir"
+        install -Dm755 "$srcdir/$pkgname/brandr" "$pkgdir/usr/bin/brandr"
+        install -Dm755 "$srcdir/$pkgname/autorandr.sh" "$pkgdir/usr/bin/autorandr.sh"
+}

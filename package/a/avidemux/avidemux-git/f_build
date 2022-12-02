@@ -1,0 +1,118 @@
+build() {
+  msg2 "Build Core Libs"
+  cmake -B build_core -S avidemux/avidemux_core \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DFAKEROOT="${srcdir}/fakeroot" \
+    -DAVIDEMUX_SOURCE_DIR="${srcdir}/avidemux"
+
+  cmake --build build_core
+  DESTDIR="${srcdir}/fakeroot" cmake --install build_core
+
+  msg2 "Build Core Plugins"
+  cmake -B build_core_plugins -S avidemux/avidemux_plugins \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DPLUGIN_UI=COMMON \
+    -DUSE_EXTERNAL_LIBA52=ON \
+    -DUSE_EXTERNAL_LIBASS=ON \
+    -DUSE_EXTERNAL_LIBMAD=ON \
+    -DUSE_EXTERNAL_MP4V2=ON \
+    -DFAKEROOT="${srcdir}/fakeroot"
+
+  cmake --build build_core_plugins
+  DESTDIR="${srcdir}/fakeroot" cmake --install build_core_plugins
+
+  msg2 "Build Qt5 GUI"
+  cmake -B build_qt5 -S avidemux/avidemux/qt4 \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DOpenGL_GL_PREFERENCE=GLVND \
+    -DENABLE_QT5=ON \
+    -DFAKEROOT="${srcdir}/fakeroot"
+
+  cmake --build build_qt5
+  DESTDIR="${srcdir}/fakeroot" cmake --install build_qt5
+
+  msg2 "Build Qt5 GUI Plugins"
+  cmake -B build_qt5_plugins -S avidemux/avidemux_plugins \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DOpenGL_GL_PREFERENCE=GLVND \
+    -DENABLE_QT5=ON \
+    -DPLUGIN_UI=QT4 \
+    -DUSE_EXTERNAL_LIBA52=ON \
+    -DUSE_EXTERNAL_LIBASS=ON \
+    -DUSE_EXTERNAL_LIBMAD=ON \
+    -DUSE_EXTERNAL_MP4V2=ON \
+    -DFAKEROOT="${srcdir}/fakeroot"
+
+  cmake --build build_qt5_plugins
+  DESTDIR="${srcdir}/fakeroot" cmake --install build_qt5_plugins
+
+  msg2 "Build Qt6 GUI"
+  CXXFLAGS+=" -fPIC" \
+  cmake -B build_qt6 -S avidemux/avidemux/qt4 \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DOpenGL_GL_PREFERENCE=GLVND \
+    -DENABLE_QT6=ON \
+    -DFAKEROOT="${srcdir}/fakeroot"
+
+  cmake --build build_qt6
+  DESTDIR="${srcdir}/fakeroot" cmake --install build_qt6
+
+  msg2 "Build Qt6 GUI Plugins"
+  CXXFLAGS+=" -fPIC" \
+  cmake -B build_qt6_plugins -S avidemux/avidemux_plugins \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DOpenGL_GL_PREFERENCE=GLVND \
+    -DENABLE_QT6=ON \
+    -DPLUGIN_UI=QT4 \
+    -DUSE_EXTERNAL_LIBA52=ON \
+    -DUSE_EXTERNAL_LIBASS=ON \
+    -DUSE_EXTERNAL_LIBMAD=ON \
+    -DUSE_EXTERNAL_MP4V2=ON \
+    -DFAKEROOT="${srcdir}/fakeroot"
+
+  cmake --build build_qt6_plugins
+  DESTDIR="${srcdir}/fakeroot" cmake --install build_qt6_plugins
+
+  msg2 "Build CLI frontend"
+  cmake -B build_cli -S avidemux/avidemux/cli \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DFAKEROOT="${srcdir}/fakeroot"
+
+  cmake --build build_cli
+  DESTDIR="${srcdir}/fakeroot" cmake --install build_cli
+
+  msg2 "Build CLI plugins"
+  cmake -B build_cli_plugins -S avidemux/avidemux_plugins \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DPLUGIN_UI=CLI \
+    -DUSE_EXTERNAL_LIBA52=ON \
+    -DUSE_EXTERNAL_LIBASS=ON \
+    -DUSE_EXTERNAL_LIBMAD=ON \
+    -DUSE_EXTERNAL_MP4V2=ON \
+    -DFAKEROOT="${srcdir}/fakeroot"
+
+  cmake --build build_cli_plugins
+  DESTDIR="${srcdir}/fakeroot" cmake --install build_cli_plugins
+
+  msg2 "Build Settings"
+  cmake -B build_core_plugins_settings -S avidemux/avidemux_plugins \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr  \
+    -DPLUGIN_UI=SETTINGS \
+    -DUSE_EXTERNAL_LIBA52=ON \
+    -DUSE_EXTERNAL_LIBASS=ON \
+    -DUSE_EXTERNAL_LIBMAD=ON \
+    -DUSE_EXTERNAL_MP4V2=ON \
+    -DFAKEROOT="${srcdir}/fakeroot"
+
+  cmake --build build_core_plugins_settings
+  DESTDIR="${srcdir}/fakeroot" cmake --install build_core_plugins_settings
+}

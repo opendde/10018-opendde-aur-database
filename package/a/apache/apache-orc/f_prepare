@@ -1,0 +1,4 @@
+prepare() {
+  cd orc-rel-release-$pkgver
+  patch -p1 < ../541.patch
+}

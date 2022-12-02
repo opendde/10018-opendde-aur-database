@@ -1,0 +1,8 @@
+build() {
+	cd "$srcdir/$_pkgname"
+	npm run-script build
+	cd builds
+	mv Bilibili直播弹幕库-linux-x64 ${_pkgname}
+	cd ${_pkgname}
+	mv Bilibili直播弹幕库 ${_pkgname}
+}

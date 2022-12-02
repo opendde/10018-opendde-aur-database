@@ -1,0 +1,19 @@
+build() {
+  cd ${srcdir}/${pkgname}-${pkgver}
+  rm -rf builddir
+  mkdir -p builddir
+
+  cd builddir
+
+  cmake .. -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DRUNDIR=/run \
+    -DACNG_CACHE_DIR=/var/cache/apt-cacher-ng \
+    -DACNG_LOG_DIR=/var/log/apt-cacher-ng \
+    -DEXTRA_LIBS_ACNG=pthread || return 1
+
+  make all || return 1
+
+  patch -Np0 -i "${srcdir}/acng.conf.patch"
+  patch -Np0 -i "${srcdir}/apt-cacher-ng.service.patch"
+}

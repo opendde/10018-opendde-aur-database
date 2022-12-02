@@ -1,0 +1,8 @@
+prepare() {
+  cd "${_pkgname%-git}"
+  git submodule init
+  git config submodule."atoms-cli".url "${srcdir}"/atoms-cli
+  git config submodule."atoms-core".url "${srcdir}"/atoms-core
+  git config submodule."servicectl".url "${srcdir}"/servicectl
+  git submodule update --init --recursive
+}

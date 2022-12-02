@@ -1,0 +1,4 @@
+package() {
+  install -Dm 755 "$srcdir/$pkgname/$pkgname.sh" \
+    "$pkgdir/etc/profile.d/bundlerexec.sh"
+}

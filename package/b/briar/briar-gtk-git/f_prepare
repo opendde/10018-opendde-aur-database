@@ -1,0 +1,6 @@
+prepare() {
+  cd ${_pkgname}
+  git submodule init
+  git config submodule.python-briar-wrapper.url "$srcdir/briar-wrapper"
+  git submodule update --init --recursive
+}

@@ -1,0 +1,14 @@
+package() {
+  install -Dm644 \
+    "${srcdir}"/bcl2fastq2-v"${_eula_ver}"-eula.pdf \
+    "${pkgdir}"/usr/share/licenses/bcl2fastq/bcl2fastq2-v"${_eula_ver}"-eula.pdf
+
+  install -Dm644 \
+    "${srcdir}"/bcl2fastq2_guide_"${_guide_ver}".pdf \
+    "${pkgdir}"/usr/share/doc/bcl2fastq/bcl2fastq2_guide_"${_guide_ver}".pdf
+
+  cd "${srcdir}"/"${pkgname}"-"${_pkg_ver}"
+  install -Dm644 usr/local/share/COPYRIGHT "${pkgdir}"/usr/share/licenses/bcl2fastq/COPYRIGHT
+  install -Dm644 usr/local/share/Changes "${pkgdir}"/usr/share/licenses/bcl2fastq/Changes
+  install -Dm755 usr/local/bin/bcl2fastq "${pkgdir}"/usr/bin/bcl2fastq
+}

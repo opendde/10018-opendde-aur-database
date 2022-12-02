@@ -1,0 +1,4 @@
+build() {
+  cd buildstream
+  python setup.py build
+}

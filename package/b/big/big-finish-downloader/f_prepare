@@ -1,0 +1,3 @@
+prepare() {
+    rm $srcdir/lib/libcurl.so
+}

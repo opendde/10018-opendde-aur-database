@@ -1,0 +1,8 @@
+build() {
+    cd "bitlbee-discord"
+    ./autogen.sh
+    # TODO: remove --with-bdatadir once a version of bitlbee with "ad66dcd6 Add
+    # datadir to pkgconfig file and config.h" is released
+    ./configure --with-bdatadir=/usr/share/bitlbee
+    make
+}

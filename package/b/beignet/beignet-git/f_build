@@ -1,0 +1,9 @@
+build() {
+    cmake -B build -S beignet -G Ninja \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+        -DCMAKE_BUILD_TYPE=RELEASE \
+        -DCMAKE_INSTALL_RPATH_USE_LINK_PATH=TRUE \
+        -DLLVM_INSTALL_DIR=/opt/llvm70/bin
+    ninja -C build
+}

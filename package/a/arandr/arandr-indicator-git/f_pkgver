@@ -1,0 +1,13 @@
+pkgver () {
+  cd "${srcdir}/${_pkgname}"
+  _rev="$(git rev-list --count HEAD)"
+  _date="$(git log -1 --date=format:"%Y%m%d" --format="%ad")"
+  _hash="$(git rev-parse --short HEAD)"
+
+  if [ -z "${_rev}" ]; then
+    error "Commit count could not be determined."
+    return 1
+  else
+    printf '%s' "r${_rev}.${_date}.${_hash}"
+  fi
+}

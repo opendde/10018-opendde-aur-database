@@ -1,0 +1,15 @@
+package() {
+  _plugin_dir="${pkgdir}/usr/lib/budgie-desktop/plugins/budgie-bluetooth-battery-applet"
+  _srcdir="${srcdir}/budgie-bluetooth-battery-applet"
+  install -d "${_plugin_dir}"
+  install -D -m644 "${_srcdir}/BudgieBluetoothBatteryApplet.plugin" "${_plugin_dir}/"
+  install -D -m644 "${_srcdir}/budgie_bluetooth_battery_applet.py" "${_plugin_dir}/"
+
+  _pixmaps_dir="${pkgdir}/usr/share/pixmaps"
+  install -d "${_pixmaps_dir}"
+  install -D -m644 "${_srcdir}/bluetooth-battery-applet-symbolic.svg" "${_pixmaps_dir}/bluetooth-battery-applet-symbolic.svg"
+
+  _schema_dir="${pkgdir}/usr/share/glib-2.0/schemas"
+  install -d "${_schema_dir}"
+  install -D -m644 "${_srcdir}/schema/de.galaxy102.budgie.bluetooth-battery.gschema.xml" "${_schema_dir}/de.galaxy102.budgie.bluetooth-battery.gschema.xml"
+}

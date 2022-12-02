@@ -1,0 +1,5 @@
+package() {
+  cd agg-$pkgver
+  install -Dm0755 target/release/agg "$pkgdir/usr/bin/agg"
+  install -Dm0644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
+}

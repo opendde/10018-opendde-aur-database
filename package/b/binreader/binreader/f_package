@@ -1,0 +1,10 @@
+package() {
+ if [[ $CARCH == 'x86_64' ]];
+ then
+	ar p ${srcdir}/${pkgname}_${pkgver}_amd64.deb data.tar.gz | tar xz
+ else
+	ar p ${srcdir}/${pkgname}_${pkgver}_i386.deb data.tar.gz | tar xz
+ fi
+  
+  cp -R ${srcdir}/usr ${pkgdir}/
+}

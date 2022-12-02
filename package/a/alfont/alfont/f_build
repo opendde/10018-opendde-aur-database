@@ -1,0 +1,7 @@
+build() {
+  cd alfont
+  # build instructions adapted from: http://pkgs.fedoraproject.org/cgit/alfont.git/tree/alfont.spec
+  gcc $CFLAGS -fPIC $(freetype-config --cflags) -Iinclude -c src/alfont.c -o src/alfont.o
+  gcc -shared $LDFLAGS -Wl,--no-as-needed,-soname,libalfont.so.${pkgver%%.*} \
+    $(allegro-config --libs) $(freetype-config --libs) src/alfont.o -o libalfont.so.$pkgver
+}

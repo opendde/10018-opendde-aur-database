@@ -1,0 +1,4 @@
+build() {
+    cd "${pkgname}-${pkgver}"
+    go build -ldflags="-s -w" -o build/${pkgname} github.com/wneessen/apg-go/cmd/apg
+}

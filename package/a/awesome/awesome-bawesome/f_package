@@ -1,0 +1,30 @@
+package() {
+	cd "$_pkgname-v$pkgver"
+
+	(
+		cd assets
+		find . \
+			-type f \
+			\( -iname '*.svg' -or -iname '*.png' \) \
+			-exec install -Dm644 {} "$pkgdir/usr/share/awesome/theme/$_pkgname/{}" \;
+	)
+
+	(
+		cd src/bawesome
+		find . \
+			-type f \
+			\( -iname '*.lua' ! -iname '*_spec.lua' \) \
+			-exec install -Dm644 {} "$pkgdir/usr/share/awesome/lib/$_pkgname/{}" \;
+	)
+
+	install -Dm644 \
+		README.md \
+		-t "$pkgdir/usr/share/doc/$pkgname/"
+
+	(
+		cd doc
+		find . \
+			-type f \
+			-exec install -Dm644 {} "$pkgdir/usr/share/doc/$pkgname/{}" \;
+	)
+}

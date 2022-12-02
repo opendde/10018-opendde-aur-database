@@ -1,0 +1,4 @@
+package() {
+  cd "$srcdir/akabeicore"
+  make DESTDIR="$pkgdir" install
+}

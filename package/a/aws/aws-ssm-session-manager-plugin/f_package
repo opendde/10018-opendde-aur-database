@@ -1,0 +1,20 @@
+package() {
+
+	### Extract the deb
+	ar xv session-manager-plugin-$pkgver-$pkgrel.deb
+
+	### Extract the data
+	bsdtar xfz data.tar.gz
+
+	chmod -R g-w etc
+	mv etc "${pkgdir}"
+
+	chmod -R g-w usr
+  mkdir -p usr/bin
+  ln -s /usr/local/sessionmanagerplugin/bin/session-manager-plugin usr/bin/session-manager-plugin
+	mv usr "${pkgdir}"
+
+	chmod -R g-w lib
+	mv lib "${pkgdir}/usr/lib"
+
+}

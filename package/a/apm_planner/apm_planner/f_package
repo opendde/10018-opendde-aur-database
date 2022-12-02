@@ -1,0 +1,4 @@
+package() {
+  make INSTALL_ROOT="$pkgdir" install
+  install -D -m644 "$srcdir/$pkgname-$pkgver/license.txt" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

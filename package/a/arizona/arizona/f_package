@@ -1,0 +1,6 @@
+package() {
+	mkdir -p "$pkgdir/usr/local/bin"
+	mkdir -p "$pkgdir/etc"
+	cd "$srcdir/$pkgname-$_hash/src"
+	make DESTDIR="$pkgdir/usr/local/bin" CONFDIR="$pkgdir/etc" install
+}

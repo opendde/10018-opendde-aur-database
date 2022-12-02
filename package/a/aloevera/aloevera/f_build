@@ -1,0 +1,5 @@
+build() {
+  cd "$pkgname-$pkgver"
+
+  cargo build --release --locked --all-features
+}

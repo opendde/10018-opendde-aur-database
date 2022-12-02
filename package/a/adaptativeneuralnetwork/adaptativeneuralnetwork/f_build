@@ -1,0 +1,10 @@
+build() {
+    cd "$srcdir/$_fullname-$_fullver"
+    mkdir -p build
+    cd build
+    cmake -DCMAKE_BUILD_TYPE=RELEASE \
+        -DCMAKE_INSTALL_LIBDIR=lib \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        ..
+    make
+}

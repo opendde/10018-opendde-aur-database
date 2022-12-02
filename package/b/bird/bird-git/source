@@ -1,0 +1,1 @@
+("${_pkgname}::git+https://gitlab.nic.cz/labs/bird.git#branch=master"

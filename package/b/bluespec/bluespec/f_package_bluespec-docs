@@ -1,0 +1,6 @@
+package_bluespec-docs() {
+	cd "$srcdir/Bluespec-${pkgver}-centos7-amd64"
+	install -d "$pkgdir/usr/share/doc"
+	cp -r ./doc/* "$pkgdir/usr/share/doc/"
+
+}

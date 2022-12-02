@@ -1,0 +1,8 @@
+package() {
+    install -Dm644 "brutalv21.pk3" "$pkgdir/usr/share/games/$pkgname/brutal-doom.pk3"
+    install -m644 "doommetalvol5.wad" "$pkgdir/usr/share/games/$pkgname/doom-metal.wad"
+    install -Dm755 "brutal-doom" "$pkgdir/usr/bin/brutal-doom"
+    install -m644 "gzdoom.ini" "$pkgdir/usr/share/games/$pkgname/gzdoom.ini"
+    install -Dm644 "brutal-doom.png" "$pkgdir/usr/share/pixmaps/brutal-doom.png"
+    install -Dm644 "brutal-doom.desktop" "$pkgdir/usr/share/applications/brutal-doom.desktop"
+}

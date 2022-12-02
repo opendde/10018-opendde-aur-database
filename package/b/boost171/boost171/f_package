@@ -1,0 +1,7 @@
+package() {
+  cd "boost_1_71_0"
+  mkdir -p "$pkgdir/usr/include/"
+  mkdir -p "$pkgdir/usr/lib/"
+  cp -r boost "$pkgdir/usr/include/"
+  cp -r stage/lib/* "$pkgdir/usr/lib/"
+}

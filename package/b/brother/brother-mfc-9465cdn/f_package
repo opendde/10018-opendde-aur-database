@@ -1,0 +1,3 @@
+package() {
+    cp -rf $srcdir/mfc${_model}/usr/ $pkgdir/ || return 1
+}

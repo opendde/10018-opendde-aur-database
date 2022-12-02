@@ -1,0 +1,7 @@
+package_autovala() {
+  depends=('make' 'vte3' 'libgee'
+           'bash-completion')
+  DESTDIR="$pkgdir" meson install -C build
+  mv "$pkgdir/usr"{,/share}/appdata
+  rm -rf "$pkgdir"/usr/share/doc/autovala/CMakeLists.txt
+}

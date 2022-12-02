@@ -1,0 +1,3 @@
+package() {
+  install -Dm755 "${srcdir}/bee_${pkgver}_linux_amd64"/bee "${pkgdir}/usr/bin/bee"
+}

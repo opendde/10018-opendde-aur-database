@@ -1,0 +1,15 @@
+package() {
+	mkdir -p "$pkgdir/opt/"
+	mkdir -p "$pkgdir/usr/bin/"
+ 
+	cp -r "$srcdir/$pkgname-v$pkgver-linux-x64/" "$pkgdir/opt/$pkgname"
+	cp    "$srcdir/boram/build/Release/boram.node" "$pkgdir/opt/$pkgname/resources/app/libboram.so"
+ 
+	find "$pkgdir/opt/$pkgname" -type f -exec chmod 644 -- {} +
+	find "$pkgdir/opt/$pkgname" -type d -exec chmod 755 -- {} +
+  
+	chmod 655 "$pkgdir/opt/$pkgname/boram"
+	chmod 655 "$pkgdir/opt/$pkgname/resources/app/checklib"
+  
+	ln -s "/opt/$pkgname/boram" "$pkgdir/usr/bin/boram"
+}

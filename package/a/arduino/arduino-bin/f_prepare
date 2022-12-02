@@ -1,0 +1,4 @@
+prepare() {
+    # Remove the bundled java
+    rm -rf "arduino-${pkgver}/java"
+}

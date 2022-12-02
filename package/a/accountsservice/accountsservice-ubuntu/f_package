@@ -1,0 +1,5 @@
+package() {
+  cd "accountsservice-${pkgver}"
+
+  make DESTDIR="${pkgdir}" install
+}

@@ -1,0 +1,5 @@
+build() {
+    cd "${srcdir}"/ampart
+    make clean
+    make
+}

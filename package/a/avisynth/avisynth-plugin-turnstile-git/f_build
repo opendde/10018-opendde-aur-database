@@ -1,0 +1,10 @@
+build() {
+  cd build
+
+  cmake "../${_plug}" \
+   -DCMAKE_BUILD_TYPE=None \
+   -DCMAKE_INSTALL_PREFIX=/usr \
+   -DAVISYNTHPLUS_HDR=/usr/include/avisynth/avisynth.h
+
+  make
+}

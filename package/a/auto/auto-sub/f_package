@@ -1,0 +1,7 @@
+package() {
+	install -Dm 777 "${pkgname}_${pkgver}" "${pkgdir}/usr/bin/${pkgname}"
+
+	cd $pkgname
+	install -Dm644 "LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+	install -Dm644 README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
+}

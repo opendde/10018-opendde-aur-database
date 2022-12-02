@@ -1,0 +1,4 @@
+pkgver() {
+  cd ${pkgname%-hg}/${pkgname%-hg}-current
+  printf "1.0.6.r%s.%s" "$(hg identify -n| tr -d +)" "$(hg identify -i| tr -d +)"
+}

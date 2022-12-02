@@ -1,0 +1,52 @@
+prepare() {
+  cd "${srcdir}/backports-${_upver}"
+
+  # add bcma patches
+  patch -p1 -i "${srcdir}/bcma.patch"
+
+  # modprobe -l dropped in kmod
+  sed 's:modprobe -l \([^ )`]*\):find /usr/lib/modules/*/kernel -name "\1.ko*" | sed "s|.*/kernel||":' -i scripts/*
+  sed 's:\$(MODPROBE) -l \([^ )`]*\):find /usr/lib/modules/*/kernel -name "\1.ko*" | sed "s|.*/kernel||":' -i Makefile
+
+  # rfkill.h does not use compat-3.1.h # TODO : IS THIS RLY NEEDED ?
+  #echo '#define br_port_exists(dev) (dev->priv_flags & IFF_BRIDGE_PORT)' >> net/wireless/core.h
+
+  # Patch time!
+  # WARNING - PART BELOW IS UNTESTED: current format - 00-name for cfgfile (to export variables) and 12-3-name for patches (3 stands for -p3)
+  if [ -d "${_cfgdir}" ]; then
+    _CFGLIST=$(ls -1 "${_cfgdir}" | awk ' /^[0-9][0-9]-.*/ {print "source '${_cfgdir}'"$0";"}')
+    eval $_CFGLIST
+    unset _CFGLIST
+    if [ -d "${_patchdir}" ]; then
+      _PATCHLIST=$(ls -1 "${_patchdir}" | awk ' /^[0-9][0-9]-[0-9]-.*/ {print $0}')
+      for _patch in $_PATCHLIST; do
+        msg "Merging patch: ${_patch}"
+        patch -p${_patch:3:1} -i ${_patchdir}/${_patch}
+      done
+      unset _PATCHLIST
+    fi
+  fi
+
+  # Patch for sane install
+cd "${srcdir}/backports-${_upver}"
+patch -p0 <<'EOF'
+--- Makefile.real	2013-07-13 18:50:46.000000000 +0200
++++ Makefile.real.fixed	2013-07-28 01:52:51.922779881 +0200
+@@ -87,14 +87,6 @@
+ 	@$(MAKE) -C $(KLIB_BUILD) M=$(BACKPORT_PWD)			\
+ 		INSTALL_MOD_DIR=$(KMODDIR) $(KMODPATH_ARG)		\
+ 		modules_install
+-	@./scripts/blacklist.sh $(KLIB)/ $(KLIB)/$(KMODDIR)
+-	@./scripts/compress_modules.sh $(KLIB)/$(KMODDIR)
+-	@./scripts/check_depmod.sh
+-	@/sbin/depmod -a
+-	@./scripts/update-initramfs.sh $(KLIB)
+-	@echo
+-	@echo Your backported driver modules should be installed now.
+-	@echo Reboot.
+ 	@echo
+
+ .PHONY: modules_install
+EOF
+
+}

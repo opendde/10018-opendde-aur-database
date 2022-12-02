@@ -1,0 +1,7 @@
+package() {
+  cd "$_pkgname"
+
+  install -Dm0644 README.md "$pkgdir/usr/share/doc/${_pkgname}/README.md"
+  install -Dm0644 gsetting.py \
+    "$pkgdir/usr/share/ansible/plugins/modules/gsetting.py"
+}

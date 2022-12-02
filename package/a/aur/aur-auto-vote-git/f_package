@@ -1,0 +1,8 @@
+package() {
+    cd "$srcdir"
+
+    install -D -m644 "$_reponame/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    install -D -m755 "$_reponame/${_pkgname}" "$pkgdir/usr/bin/${_pkgname}"
+    install -D -m644 aur-auto-vote.service.skel  "$pkgdir/etc/systemd/system/aur-auto-vote.service.skel"
+    install -D -m644 aur-auto-vote.timer "$pkgdir/etc/systemd/system/aur-auto-vote.timer"
+}

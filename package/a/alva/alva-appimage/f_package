@@ -1,0 +1,6 @@
+package() {
+  sed -i "s/\${pkgver}/${pkgver}/" "${srcdir}/alva.sh"
+
+  install -D -m 755  "${srcdir}/Alva-${pkgver}.AppImage" "${pkgdir}/opt/appimages/Alva-${pkgver}.AppImage"
+  install -D -m 755  "${srcdir}/alva.sh" "${pkgdir}/usr/bin/alva"
+}

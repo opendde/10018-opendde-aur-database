@@ -1,0 +1,7 @@
+build() {
+    cd ${srcdir}/b2sync_src
+
+    # Backblaze fails to link with default LDFLAGS, hopefully backblaze will
+    # fix the Makefile headache.
+    LDFLAGS="" make
+}

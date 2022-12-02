@@ -1,0 +1,7 @@
+prepare() {
+  cd "$srcdir/usr/" || return 1
+  patch -p1 < ../brother-mfc240c.patch
+
+  cd "$srcdir" || return 1
+  "$srcdir/usr/local/Brother/Printer/mfc240c/cupswrapper/cupswrappermfc240c"
+}

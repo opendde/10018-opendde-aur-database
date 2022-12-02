@@ -1,0 +1,7 @@
+build() {
+  cmake -B build -S $_name \
+        -DCMAKE_BUILD_TYPE='Release' \
+        -DCMAKE_INSTALL_PREFIX='/usr' \
+        -Wno-dev
+  make -C build
+}

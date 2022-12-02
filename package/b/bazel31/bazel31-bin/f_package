@@ -1,0 +1,3 @@
+package() {
+    install -Dm755 bazel-${pkgver}-linux-x86_64 "${pkgdir}/usr/bin/bazel"
+}

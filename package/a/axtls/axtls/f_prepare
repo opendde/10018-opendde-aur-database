@@ -1,0 +1,5 @@
+prepare() {
+	cd "axtls-code"
+	cp "$srcdir/config.h" config/
+	cp "$srcdir/.config" config/
+}

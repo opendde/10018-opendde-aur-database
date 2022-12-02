@@ -1,0 +1,5 @@
+prepare() {
+	cd "$srcdir/$_crate-$pkgver"
+
+	cargo fetch --locked
+}

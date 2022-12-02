@@ -1,0 +1,8 @@
+package() {
+  cd $_srcdir
+
+  pushd build-$_target
+  make install DESTDIR=${pkgdir}
+  popd
+  install -D -m644 LICENSE ${pkgdir}/usr/$_target/share/licenses/zlib/LICENSE
+}

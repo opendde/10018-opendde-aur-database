@@ -1,0 +1,8 @@
+build() {
+	cd "${srcdir}/${pkgname}"
+	mkdir -p build
+	mkdir -p build/cmake-build-release && cd build/cmake-build-release
+    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=/usr/bin/g++ -DCMAKE_INSTALL_PREFIX=/usr ../../
+	cd "${srcdir}/${pkgname}"
+    cmake --build ./build/cmake-build-release --target Bloom
+}

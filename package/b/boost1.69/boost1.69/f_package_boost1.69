@@ -1,0 +1,17 @@
+package_boost1.69() {
+   pkgdesc+=' - development headers'
+   depends=("boost1.69-libs")
+   optdepends=('python: for python bindings')
+   options=('staticlibs')
+
+   install -dm755 "${pkgdir}"/opt/boost1.69
+   cp -a "${_stagedir}"/{bin,include,share} "${pkgdir}"/opt/boost1.69
+
+   install -d "${pkgdir}"/opt/boost1.69/lib
+   cp -a "${_stagedir}"/lib/*.a "${pkgdir}"/opt/boost1.69/lib/
+
+   install -Dm644 "${srcdir}/"boost_${_boostver}/LICENSE_1_0.txt \
+      "${pkgdir}"/opt/boost1.69/share/licenses/boost/LICENSE_1_0.txt
+
+   ln -s /opt/boost1.69/bin/b2 "$pkgdir"/opt/boost1.69/bin/bjam
+}

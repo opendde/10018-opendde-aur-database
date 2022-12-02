@@ -1,0 +1,9 @@
+package() {
+  cd gnome-shell-$pkgver
+
+  installdir=$pkgdir/usr/share/themes/Adwaita/gnome-shell
+  mkdir -p $installdir
+  cp -r ./data/theme/* $installdir
+
+  install -Dm644 COPYING "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

@@ -1,0 +1,1 @@
+("$pkgname"::"git://github.com/ceph/ceph-iscsi-cli.git#tag=${pkgver}")

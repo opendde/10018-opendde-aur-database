@@ -1,0 +1,17 @@
+_patch_brprint() {
+  # allow cooexist with AUR package brother-lpr-drivers-laser
+  local _f1='brprintconflsr2'
+  local _f2='brprint7040lsr2'
+  if [ ! -z "$1" ]; then
+    sed -e "s:${_f1}:${_f2}:g" -i "$1"
+  fi
+  sed -e "s:${_f1}:${_f2}:g" -i "${srcdir}/usr/bin/brprintconfiglpr2"
+  mv "${srcdir}/usr/bin/${_f1}" "${srcdir}/usr/bin/${_f2}"
+  local _g1='libbrcomplpr2.so'
+  local _g2='libbr7040lpr2.so'
+  mv "${srcdir}/usr/bin/brprintconfiglpr2" "${srcdir}/usr/bin/brprint7040iglpr2"
+  # Editing a binary file requires the search and replace string to be the same size
+  # This changes the soname without the need for patchelf
+  sed -e "s:${_g1}:${_g2}:g" -i "${srcdir}/usr/share/${_conflict}/lpd/rawtobr2"
+  mv "${srcdir}/usr/lib/${_g1}" "${srcdir}/usr/lib/${_g2}"
+}

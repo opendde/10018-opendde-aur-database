@@ -1,0 +1,11 @@
+package_backintime() {
+  pkgdesc="Simple backup system inspired from the Flyback Project and TimeVault. QT5 GUI version."
+  depends=("backintime-cli=$pkgver" 'libnotify' 'polkit' 'python-dbus' 'python-pyqt5' 'xorg-xdpyinfo')
+  # note users can optionally install EITHER kompare OR meld but not both!
+  optdepends=('kompare: diff/patch frontend'
+  'meld: diff/patch frontend'
+  'python-keyring: store and access passwords safely')
+
+  cd "$_pkgname-$pkgver/qt"
+  make DESTDIR="$pkgdir" install
+}

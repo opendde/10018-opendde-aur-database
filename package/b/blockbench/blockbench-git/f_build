@@ -1,0 +1,4 @@
+build() {
+  cd "$srcdir"/$_pkgname
+  npm run dist -- --linux --x64 --dir -c.electronDist=$_electronDist -c.electronVersion=$_electronVersion
+}

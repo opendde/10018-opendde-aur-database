@@ -1,0 +1,10 @@
+build() {
+    cd "${srcdir}"
+    cabextract Age2XTrial.exe
+
+    rm -f EULA.txt
+    catdoc EULAx.RTF > EULA
+
+    rm -f README
+    catdoc Readmex.rtf > README
+}

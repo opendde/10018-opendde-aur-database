@@ -1,0 +1,4 @@
+pkgver() {
+  cd "$srcdir/adplug"
+  git describe --tags | sed 's/^adplug-//g; s/^v//; s/-/./g'
+}

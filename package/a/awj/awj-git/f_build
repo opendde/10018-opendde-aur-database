@@ -1,0 +1,3 @@
+build() {
+    patch awj/awj ../PATCH
+}

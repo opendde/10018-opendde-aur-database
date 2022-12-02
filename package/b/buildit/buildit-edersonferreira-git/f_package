@@ -1,0 +1,7 @@
+package() {
+    cd buildit
+    mkdir -p ${pkgdir}/opt/${pkgname}
+    cp -rf * ${pkgdir}/opt/${pkgname}
+    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    install -Dm644 README.md "${pkgdir}/usr/share/doc/${pkgname}/README.org"
+}

@@ -1,0 +1,8 @@
+build() {
+   cd "${srcdir}/${pkgname}-${pkgver}"
+   echo 'import os' >> $pkgname/__init__.py
+   echo 'os.environ["LD_PRELOAD"] = "/usr/lib/libpython2.7.so"' >> $pkgname/__init__.py
+   python2 setup.py build || exit 1
+   chmod -R a+rX .
+   python2 setup.py install --root="${pkgdir}" --optimize=1 || exit 1
+}

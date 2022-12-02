@@ -1,0 +1,39 @@
+package() {
+  install -d -m0755 "${pkgdir}/usr/lib/${pkgname}/"{,swiftshader,locales,resources}
+
+  # Copy necessary release files
+  cd "brave-browser/src/out/Release"
+  cp -a --reflink=auto \
+    MEIPreload \
+    brave \
+    brave_*.pak \
+    chrome_*.pak \
+    resources.pak \
+    v8_context_snapshot.bin \
+    libGLESv2.so \
+    libEGL.so \
+    "${pkgdir}/usr/lib/${pkgname}/"
+  cp -a --reflink=auto \
+    swiftshader/libGLESv2.so \
+    swiftshader/libEGL.so \
+    "${pkgdir}/usr/lib/${pkgname}/swiftshader/"
+  cp -a --reflink=auto \
+    locales/*.pak \
+    "${pkgdir}/usr/lib/${pkgname}/locales/"
+  cp -a --reflink=auto \
+    resources/brave_extension \
+    resources/brave_rewards \
+    "${pkgdir}/usr/lib/${pkgname}/resources/"
+
+  if [ "$COMPONENT" != "4" ] || [[ -z ${_system_libs[icu]+set} ]]; then
+    cp -a --reflink=auto \
+      icudtl.dat \
+      "${pkgdir}/usr/lib/${pkgname}/"
+  fi
+
+  cd "${srcdir}"
+  install -Dm0755 brave-launcher "${pkgdir}/usr/bin/${pkgname}"
+  install -Dm0644 -t "${pkgdir}/usr/share/applications/" brave-browser.desktop
+  install -Dm0644 "brave-browser/src/brave/app/theme/brave/product_logo_128.png" "${pkgdir}/usr/share/pixmaps/${pkgname}.png"
+  install -Dm0644 -t "${pkgdir}/usr/share/licenses/${pkgname}" "brave-browser/LICENSE"
+}

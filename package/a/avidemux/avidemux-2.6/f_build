@@ -1,0 +1,19 @@
+build() {
+    cd $srcdir/"$_pkgname"_"$pkgver"
+    # Clang doesn't understand -fvar-tracking-assignments
+    # -Wno-reserved-user-defined-literal fixes some issues because it builds (old) ffmpeg with clang++, and not clang
+    export CXXFLAGS="${CXXFLAGS//-fvar-tracking-assignments} -Wno-reserved-user-defined-literal"
+    export CFLAGS="${CFLAGS//-fvar-tracking-assignments} -Wno-reserved-user-defined-literal"
+    sed -i -e 's/-j 2/-j 1/g' bootStrap.bash
+    sed -i -e 's/pow10f(x)/powf(10.0,x)/g' avidemux/common/ADM_audioFilter/src/audiofilter_normalize.cpp
+
+    for p in ../*.patch; do
+         patch -p1 -i "$p"
+    done
+
+    bash bootStrap.bash \
+        --with-system-libass --with-system-liba52 --with-system-libmad --with-system-libmp4v2 \
+        --with-clang # it has a lot of old "fixes"/hacks for gcc that doesn't work anymore, so just use clang
+    sed -i -e 's/avidemux2_gtk/avidemux3_qt5/g' "$_pkgname"2.desktop
+    sed -i -e 's/avidemux2/avidemux/g' "$_pkgname"2.desktop
+}

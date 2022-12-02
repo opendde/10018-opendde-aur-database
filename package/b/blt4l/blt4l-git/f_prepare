@@ -1,0 +1,5 @@
+prepare() {
+	cd "$srcdir/blt4l" || exit
+	git submodule init
+	git submodule update
+}

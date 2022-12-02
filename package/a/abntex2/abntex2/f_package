@@ -1,0 +1,8 @@
+package() {
+  install -dm755 "${pkgdir}/usr/share/texmf-dist/"
+
+  srcdir=("${pkgname}-2018-11-24-v${pkgver}-ctan")
+  for subdir in tex doc bibtex ; do
+    cp -r "${srcdir}/${subdir}" "${pkgdir}/usr/share/texmf-dist/"
+  done
+}

@@ -1,0 +1,15 @@
+package() {
+	set -x
+	DST="/usr/lib"
+	install -dDm 755 "$pkgdir$DST"
+	cp -r "$srcdir/${pkgname%-git}/" "$pkgdir$DST"
+	chmod -R 755 "$pkgdir$DST"
+
+	SHFILE="$srcdir/archivebox.sh"
+	echo "#!/usr/bin/sh
+OUTPUT_DIR=\"\${OUTPUT_DIR:=\$HOME/.archivebox}\" \"${DST}/${pkgname%-git}/bin/archivebox\" \$@" > "$SHFILE"
+	install -Dm 755 "$SHFILE" "$pkgdir/usr/bin/archivebox"
+	set +x
+
+	install -Dm644 "$srcdir/${pkgname%-git}/LICENSE" "$pkgdir/usr/share/licenses/${pkgname%-git}/LICENSE"
+}

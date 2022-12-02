@@ -1,0 +1,1 @@
+("${_pkgname}::git+https://gitlab.gnome.org/GNOME/evolution-etesync.git?tag=v$pkgver")

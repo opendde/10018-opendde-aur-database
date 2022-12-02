@@ -1,0 +1,5 @@
+prepare() {
+    cd "$pkgname-$pkgver"
+    #patch -Np1 -i ../upstream.patch ||true
+    #cp -f ../dbip-country-lite-$(date +%Y-%m).mmdb.gz installer/resources/GeoLite2-Country.mmdb.gz
+}

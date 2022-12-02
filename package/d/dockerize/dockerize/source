@@ -1,0 +1,1 @@
+("https://github.com/jwilder/dockerize/releases/download/v${pkgver}/${pkgname}-linux-amd64-v${pkgver}.tar.gz")

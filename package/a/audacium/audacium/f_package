@@ -1,0 +1,4 @@
+package() {
+	cd "$_archive/build"
+	make DESTDIR="$pkgdir/" install
+}

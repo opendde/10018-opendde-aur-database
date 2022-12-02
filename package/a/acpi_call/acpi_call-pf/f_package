@@ -1,0 +1,11 @@
+package() {
+  cd ${pkgname%-*}-${pkgver}
+
+  install -dm 755 "${pkgdir}"/usr/lib/{modules/${_extramodules},modules-load.d}
+  install -m 644 ${pkgname%-*}.ko "${pkgdir}"/usr/lib/modules/${_extramodules}/
+  gzip "${pkgdir}"/usr/lib/modules/${_extramodules}/${pkgname%-*}.ko
+  echo ${pkgname%-*} > "${pkgdir}"/usr/lib/modules-load.d/${pkgname}.conf
+
+  install -dm 755 "${pkgdir}"/usr/share/${pkgname}
+  cp -dr --no-preserve='ownership' {examples,support} "${pkgdir}"/usr/share/${pkgname}/
+}

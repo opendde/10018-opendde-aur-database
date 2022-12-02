@@ -1,0 +1,11 @@
+build() {
+  cd "$pkgname"
+  
+  # update cabal before we start
+  cabal update
+
+  mkdir build
+  cd build
+  cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+  make
+}

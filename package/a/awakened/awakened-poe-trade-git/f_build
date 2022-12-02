@@ -1,0 +1,24 @@
+build() {
+    cd "${srcdir}/awakened-poe-trade"
+    _ensure_local_nvm
+
+    cd "${srcdir}/awakened-poe-trade/renderer"
+    yarn --frozen-lockfile
+    yarn make-index-files
+    yarn build
+
+    cd "${srcdir}/awakened-poe-trade/main"
+    yarn --frozen-lockfile
+    yarn build
+    yarn package
+    }
+
+package() {
+    mkdir -p "${pkgdir}/usr/share/applications"
+    mkdir -p "${pkgdir}/usr/share/pixmaps"
+    mkdir -p "${pkgdir}/usr/bin"
+
+    cp ${srcdir}/awakened-poe-trade/main/dist/*.AppImage ${pkgdir}/usr/bin/awakened-poe-trade
+    cp ${srcdir}/awakened-poe-trade/main/build/icons/icon.ico ${pkgdir}/usr/share/pixmaps/awakened-poe-trade.ico
+    cp ${srcdir}/awakened-poe-trade.desktop ${pkgdir}/usr/share/applications/awakened-poe-trade.desktop
+}

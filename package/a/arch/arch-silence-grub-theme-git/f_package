@@ -1,0 +1,4 @@
+package() {
+  mkdir -p "${pkgdir}/boot/grub/themes/${_gitname}"
+  cp -TR "${srcdir}/${_gitname}/theme" "${pkgdir}/boot/grub/themes/${_gitname}"
+}

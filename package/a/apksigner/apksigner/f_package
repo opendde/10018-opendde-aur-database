@@ -1,0 +1,9 @@
+package() {
+	7z x "data.tar.xz"
+	7z x "data.tar" -o"${pkgdir}"
+
+	rm "${pkgdir}/usr/bin/apksigner"
+	install -Dm755 "${srcdir}/apksigner" "${pkgdir}/usr/bin/apksigner"
+
+	find "${pkgdir}" -type d -execdir chmod 755 {} +
+}

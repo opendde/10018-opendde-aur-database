@@ -1,0 +1,5 @@
+package() {
+	cd "$pkgname"
+	install -Dm755 ./bigen "$pkgdir/usr/bin/bigen"
+	install -Dm644 ./README.md "$pkgdir/usr/shar/doc/$pkgname"
+}

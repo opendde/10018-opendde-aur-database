@@ -1,0 +1,5 @@
+check() {
+  cd "$pkgname-$pkgver"
+
+  make -C "_build" test
+}

@@ -1,0 +1,5 @@
+package() {
+    cd "$srcdir/$pkgname-$pkgver/build"
+    DESTDIR="$pkgdir" ninja install
+    install -Dm644 ../README.md "$pkgdir/usr/share/licenses/$pkgname/README"
+}

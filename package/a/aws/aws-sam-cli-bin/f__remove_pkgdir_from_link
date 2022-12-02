@@ -1,0 +1,5 @@
+_remove_pkgdir_from_link() {
+  local current_target="$(readlink "$1")"
+  rm "$1"
+  ln -s "${current_target#"$pkgdir"}" "$1"
+}

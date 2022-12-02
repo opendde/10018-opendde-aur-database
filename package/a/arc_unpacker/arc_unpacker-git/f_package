@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir/$pkgname/"
+  install -D -m 755 ${_pkgname} ${pkgdir}/usr/bin/${_pkgname}
+  mkdir -p ${pkgdir}/usr/share/${_pkgname}
+  cp -r etc ${pkgdir}/usr/share/${_pkgname}
+}

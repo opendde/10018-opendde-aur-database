@@ -1,0 +1,5 @@
+package() {
+  cd "${srcdir}/avwow"
+  mkdir -p "$pkgdir/opt/"
+  cp -r avwow "$pkgdir/opt/"
+}

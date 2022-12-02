@@ -1,0 +1,4 @@
+prepare() {
+	cd ${srcdir}/${_hkgname}-${pkgver}
+	patch arbtt.cabal ${srcdir}/attoparsec-dep.patch
+}

@@ -1,0 +1,4 @@
+build() {
+	cd "$srcdir/${pkgname%-git}"
+	python2 setup.py build
+}

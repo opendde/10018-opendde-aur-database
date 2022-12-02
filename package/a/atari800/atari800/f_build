@@ -1,0 +1,22 @@
+build() {
+  set -u
+  cd "${_srcdir}"
+  if [ -s 'src/autogen.sh' ]; then
+    cd 'src'
+  fi
+  if [ ! -s 'configure' ]; then
+    sh -e -u 'autogen.sh'
+  fi
+  if [ ! -s 'Makefile' ]; then
+    local _copts=(
+      --prefix='/usr'
+      #--enable-riodevice        # The R: Network device, enabled as of 4.2
+      #--enable-seriosound       # SIO Sound for true retro feeling
+      #--enable-onscreenkeyboard # OnScreen Keyboard
+      --enable-linuxjoystick
+    )
+    ./configure "${_copts[@]}"
+  fi
+  make
+  set +u
+}

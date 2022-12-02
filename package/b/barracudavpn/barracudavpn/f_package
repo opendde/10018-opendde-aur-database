@@ -1,0 +1,11 @@
+package() {
+	msg "Creating folders..."
+	mkdir -p ${pkgdir}/opt/${pkgname}/icons
+  mkdir -p ${pkgdir}/usr/share/applications
+	mkdir -p ${pkgdir}/${bin_location}
+
+	msg "Installing files..."
+  install -Dm 4755 ${srcdir}/${pkgname}/${pkgname} ${pkgdir}/${bin_location}/${pkgname}
+	install -Dm 4755 ${srcdir}/${pkgname}/${pkgname}.png ${pkgdir}/opt/${pkgname}/icons/
+	install -Dm 4755 ${srcdir}/${pkgname}/${pkgname}.desktop ${pkgdir}/usr/share/applications/${pkgname}.desktop
+}

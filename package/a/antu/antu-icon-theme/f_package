@@ -1,0 +1,7 @@
+package() {
+    install -d "${pkgdir}"/usr/share/icons/Antu
+    install -d "${pkgdir}"/usr/share/licenses/${pkgname}
+    cp -r Antu-icons-${_commit}/* ${pkgdir}/usr/share/icons/Antu
+    mv "${pkgdir}"/usr/share/icons/Antu/LICENSE.md "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
+    rm "${pkgdir}"/usr/share/icons/Antu/README.md
+}

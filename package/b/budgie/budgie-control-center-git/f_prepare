@@ -1,0 +1,6 @@
+prepare() {
+    cd "$pkgname"
+    git submodule init
+    git config submodule.gvc.url "$srcdir/gvc"
+    git submodule update
+}

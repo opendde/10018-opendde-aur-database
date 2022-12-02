@@ -1,0 +1,3 @@
+package() {
+	install -D "${srcdir}/albert-extensions/mathematica_eval.py" "${pkgdir}/usr/share/albert/org.albert.extension.python/modules/mathematica_eval.py"
+}

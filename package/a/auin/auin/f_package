@@ -1,0 +1,9 @@
+package() {
+    mkdir -p "${HOME}/.auin"
+    install -d "${pkgdir}/usr/bin/"
+    rm ${srcdir}/$pkgname-$pkgver.tar.gz
+    cp -a ${srcdir}/* "${HOME}/.auin/"
+    install -m775 "${srcdir}/auin" "${HOME}/.auin/"
+    msg "Create a link to the executable file ...."
+    ln -sf "${HOME}/.auin/auin" "${pkgdir}/usr/bin/auin"
+}

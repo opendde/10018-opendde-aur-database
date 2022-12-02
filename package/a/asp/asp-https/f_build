@@ -1,0 +1,5 @@
+build() {
+	cd asp-https-$pkgver-https
+
+	make
+}

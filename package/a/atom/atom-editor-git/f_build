@@ -1,0 +1,40 @@
+build() {
+  cd ${_name}
+
+  ATOM_RESOURCE_PATH="${PWD}" \
+  npm_config_build_from_source=true \
+  npm_config_target=$(< /usr/lib/electron6/version) \
+  apm install
+
+  # Use system ctags
+  cd node_modules/symbols-view
+  patch -Np1 -i "${srcdir}"/symbols-view-use-system-ctags.patch
+  rm -r lib/ctags-config vendor
+  cd ../..
+
+  # Use system git
+  cd node_modules/dugite
+  patch -Np1 -i "${srcdir}"/dugite-use-system-git.patch
+  rm -r git
+  cd ../..
+
+  # Fix issue with:
+  # build/Release/git.node: undefined symbol: git_net_url_is_default_port
+  cd node_modules/git-utils
+  patch -Np1 -i "${srcdir}"/git-utils.patch
+  env \
+    npm_config_disturl=https://electronjs.org/headers \
+    npm_config_runtime=electron \
+    npm_config_target=$(< /usr/lib/electron6/version) \
+    node-gyp rebuild
+  cd ../..
+
+  cd script
+  npm install
+  # Set ELECTRON_VERSION (see use-system-electron.patch)
+  env \
+    ELECTRON_RUN_AS_NODE=1 \
+    ELECTRON_VERSION=$(< /usr/lib/electron6/version) \
+    electron6 \
+    build --no-bootstrap
+}

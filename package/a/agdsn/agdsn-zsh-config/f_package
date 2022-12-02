@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  install -Dm644 zshrc-home.zsh "$pkgdir/etc/skel/.zshrc"
+  install -Dm644 zshrc-base-hw.zsh "$pkgdir/etc/zsh/zshrc"
+  install -Dm644 profile-d-agdsn-zsh-config.sh "$pkgdir/etc/profile.d/agdsn-zsh-config.sh"
+}

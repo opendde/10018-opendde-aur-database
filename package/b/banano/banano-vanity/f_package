@@ -1,0 +1,5 @@
+package() {
+    #cd "${srcdir}/${pkgname}-${pkgver}"
+	cd "${srcdir}/${pkgname}-${pkgver}"
+    install -Dm 755 "target/release/${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+}

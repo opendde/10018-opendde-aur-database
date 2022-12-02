@@ -1,0 +1,3 @@
+build() {
+	sed -i -e 's$/etc/init.d/cups$/etc/rc.d/cupsd$g' -e 's$/etc/init.d$/etc/rc.d$g' "usr/local/Brother/Printer/DCP7070DW/cupswrapper/cupswrapperDCP7070DW-${pkgver%_*}"
+}

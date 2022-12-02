@@ -1,0 +1,4 @@
+build() {
+  cd buildbot/master
+  python setup.py build
+}

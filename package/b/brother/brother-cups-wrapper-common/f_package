@@ -1,0 +1,4 @@
+package() {
+ cd $pkgdir || return 1
+ tar -xvf ${srcdir}/data.tar.xz || return 1
+}

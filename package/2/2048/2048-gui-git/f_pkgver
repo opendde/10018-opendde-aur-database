@@ -1,0 +1,5 @@
+pkgver() {
+  cd "${pkgname}-source"
+  # Format: ${commit-count}.${last-commit-hash}
+  echo "$(git rev-list --all --count).$(git rev-parse --short HEAD)"
+}

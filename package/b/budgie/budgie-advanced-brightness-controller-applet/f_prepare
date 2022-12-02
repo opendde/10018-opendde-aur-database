@@ -1,0 +1,4 @@
+prepare() {
+  cd "${srcdir}/${_srcname}-${pkgver}/src/budgie-advanced-brightness-controller"
+  patch -p0 -i ../../../gsd-backlight-helper.patch
+}

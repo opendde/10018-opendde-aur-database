@@ -1,0 +1,5 @@
+package() {
+    cd "$pkgname-$pkgver"
+    cp -r opt ${pkgdir}
+    cp -r usr ${pkgdir}
+}

@@ -1,0 +1,25 @@
+package() {
+    cd "$srcdir/$pkgname-$pkgver"
+
+    mkdir -p "${pkgdir}/usr/share/webapps/agendav/web/config"
+    mkdir -p "${pkgdir}/etc/webapps/agendav"
+
+    install -Dm644 web/config/default.settings.php \
+        "${pkgdir}/etc/webapps/agendav/settings.php"
+
+    ln -s /etc/webapps/agendav/settings.php \
+        "${pkgdir}/usr/share/webapps/agendav/web/config/settings.php"
+
+    install -dm755 -o http -g http "${pkgdir}/var/log/agendav"
+
+    find . -type f -exec \
+        install -D -m644 {,"${pkgdir}/usr/share/webapps/agendav/"}{} \;
+
+    chmod +x "${pkgdir}/usr/share/webapps/agendav/agendavcli"
+
+    install -Dm644 "$srcdir/agendav.tmpfiles" \
+        "$pkgdir/usr/lib/tmpfiles.d/agendav.conf"
+    rm -r "${pkgdir}/usr/share/webapps/agendav/web/var"
+
+    install -Dm644 "$srcdir/php.ini" "$pkgdir/etc/php/conf.d/agendav.ini"
+}

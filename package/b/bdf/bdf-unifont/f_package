@@ -1,0 +1,6 @@
+package() {
+  gzip -d --force "$srcdir"/unifont-${pkgver}.bdf.gz
+  install -Dm644 "${srcdir}/unifont-${pkgver}.bdf" \
+    "${pkgdir}/usr/share/fonts/misc/unifont.bdf"
+  install -Dm644 "${srcdir}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

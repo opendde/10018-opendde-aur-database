@@ -1,0 +1,5 @@
+prepare() {
+  cd "${_pkgname}-${pkgver}"
+
+  patch -p1 < ../unicode.patch
+}

@@ -1,0 +1,3 @@
+prepare() {
+  patch $pkgname-$pkgver/asa.c asa-1.2-declare.patch
+}

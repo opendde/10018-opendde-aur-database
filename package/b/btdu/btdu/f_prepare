@@ -1,0 +1,9 @@
+prepare() {
+  ln -sfT ae-${_d_ae_ver} "${srcdir}/ae" # directory name must be "ae" for --rdmd
+  rm -rf "${srcdir}/_dub"
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  HOME="${srcdir}/_dub" dub add-local ../ae ${_d_ae_ver}
+  HOME="${srcdir}/_dub" dub add-local ../d-btrfs-${_d_btrfs_ver} ${_d_btrfs_ver}
+  HOME="${srcdir}/_dub" dub add-local ../ncurses-${_d_ncurses_ver} ${_d_ncurses_ver}
+  HOME="${srcdir}/_dub" dub add-local ../containers-${_d_emsi_containers_ver} ${_d_emsi_containers_ver}
+}

@@ -1,0 +1,5 @@
+package() {
+  install -d "$pkgdir/usr/share/doc/${pkgname%-*}"
+  install -m 0644 $srcdir/${pkgname%-*}/wiki/* "$pkgdir/usr/share/doc/${pkgname%-*}"
+  install -Dm 0755 $srcdir/${pkgname%-*}/arch-wiki "$pkgdir/usr/bin/arch-wiki"
+}

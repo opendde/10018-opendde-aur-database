@@ -1,0 +1,16 @@
+build() {
+	# Since video preview does not work with default release, we will have to build libboram.so by ourselves.
+
+	# First of all we will need nacl for the build
+	cd "$srcdir/nacl_sdk"
+	rm -f ./python
+	ln -s /usr/bin/python2 ./python	 #nacl needs python2 as python
+	export PATH="$(pwd):$PATH"
+
+	./naclsdk update
+	export NACL_SDK_ROOT="$(pwd)/pepper_49"
+
+	# Now we need to build boram with nody-gyp for the libboram.so, so that video preview would work
+	cd "$srcdir/boram"
+	node-gyp rebuild
+}

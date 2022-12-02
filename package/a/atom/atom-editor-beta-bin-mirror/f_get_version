@@ -1,0 +1,3 @@
+get_version() {
+   printf "%s" $(pkgver) | sed -e 's/\(.*\)\.beta/\1-beta/'
+}

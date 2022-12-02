@@ -1,0 +1,9 @@
+prepare() {
+  patch -d autovala -p1 < gedit40.patch
+  patch -d autovala -p1 < local.patch
+
+  ! grep 'goto_line' /usr/share/vala/vapi/gedit.vapi && \
+  patch -d autovala -p1 < tepl.patch
+
+  rm -rf build build-gedit
+}

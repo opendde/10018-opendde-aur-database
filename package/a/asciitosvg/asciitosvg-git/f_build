@@ -1,0 +1,11 @@
+build() {
+  mkdir -p gopath/src/github.com/asciitosvg
+  ln -rTsf asciitosvg gopath/src/github.com/asciitosvg/asciitosvg
+  export GOPATH="$srcdir/gopath"
+  cd "$GOPATH/src/github.com/asciitosvg/asciitosvg"
+  go install \
+    -gcflags "all=-trimpath=$GOPATH" \
+    -asmflags "all=-trimpath=$GOPATH" \
+    -ldflags "-extldflags $LDFLAGS" \
+    -v ./...
+}

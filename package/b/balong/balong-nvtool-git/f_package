@@ -1,0 +1,12 @@
+package() {
+  cd "${srcdir}/${_pkgname}"
+
+  for _binary in 'balong-nvtool' 'nvdload-combine' 'nvdload-split'; do
+    install -D -v -m755 "${_binary}" "${pkgdir}/usr/bin/${_binary}"
+  done
+
+  for _docfile in 'README.md' 'install.txt' "${srcdir}/helpmessages_english.md"; do
+    install -D -v -m644 "${_docfile}" "${pkgdir}/usr/share/doc/${_pkgname}/$(basename "${_docfile}")"
+  done
+  cp -av 'modem-bin' "${pkgdir}/usr/share/doc/${_pkgname}/modem-bin"
+}

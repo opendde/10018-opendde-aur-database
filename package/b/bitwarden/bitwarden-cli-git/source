@@ -1,0 +1,1 @@
+("${_pkgname}-git-repo::git+https://github.com/bitwarden/cli.git"

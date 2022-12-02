@@ -1,0 +1,16 @@
+package () {
+  cd "${srcdir}"
+
+  install -dm755 "${pkgdir}/opt/balsamiq"
+
+#  install -Dm644 BalsamiqEula.pdf "/usr/share/licenses/balsamiqmockups/BalsamiqEula.pdf"
+  cp -pr "${srcdir}/Balsamiq_Mockups_3/." "${pkgdir}/opt/balsamiq"
+  mv "${pkgdir}/opt/balsamiq/Balsamiq Mockups 3.exe" "${pkgdir}/opt/balsamiq/balsamiq.exe"
+  
+  install -dm755 "${pkgdir}/usr/bin"
+  echo "#!/bin/bash" > "${pkgdir}/usr/bin/balsamiqmockups"
+  echo "wine /opt/balsamiq/balsamiq.exe" >> "${pkgdir}/usr/bin/balsamiqmockups"
+  chmod 755 "${pkgdir}/usr/bin/balsamiqmockups"
+  
+  install -Dm644 ${pkgname}.desktop "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+}

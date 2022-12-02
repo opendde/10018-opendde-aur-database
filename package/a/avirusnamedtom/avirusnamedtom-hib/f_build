@@ -1,0 +1,3 @@
+build() {
+  convert "data/A Virus Named TOM.bmp" icon.png
+}

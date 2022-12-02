@@ -1,0 +1,7 @@
+package() {
+  cd blatSrc
+  _set_machtype
+  mkdir -p $pkgdir/usr/bin
+  make DESTDIR="$pkgdir/usr/" BINDIR=bin MACHTYPE=$_machtype 
+  install -Dm644 README ${pkgdir}/usr/share/licenses/${pkgname}/README
+}

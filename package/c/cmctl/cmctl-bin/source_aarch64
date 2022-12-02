@@ -1,0 +1,1 @@
+("$_pkgname-$pkgver.tar.gz::https://github.com/cert-manager/cert-manager/releases/download/v${pkgver}/${_pkgname}-linux-arm64.tar.gz")

@@ -1,0 +1,19 @@
+package() {
+    cd "${srcdir}"
+
+    # install application data
+    mv "usr" "${pkgdir}"
+    install -dm755 "${pkgdir}/usr/lib" "${pkgdir}/usr/share/licenses/${_pkgname}"
+    mv "opt/${_pkgname}" "${pkgdir}/usr/lib/${_pkgname}"
+#   install -Dm755 "${srcdir}/baidunetdisk-wrapper.sh" "${pkgdir}/usr/bin/baidunetdisk"
+
+    # fix promission
+    chmod 644 "${pkgdir}/usr/lib/${_pkgname}/"*.so
+    find ${pkgdir} -type d -exec chmod 755 {} \;
+
+    # install license
+    ln -s "/usr/lib/${_pkgname}/LICENSE.electron.txt" \
+        "${pkgdir}/usr/share/licenses/${_pkgname}/LICENSE.electron.txt"
+    ln -s "/usr/lib/${_pkgname}/LICENSES.chromium.html" \
+        "${pkgdir}/usr/share/licenses/${_pkgname}/LICENSES.chromium.html"
+}

@@ -1,0 +1,32 @@
+build() {
+  cd "${srcdir}"/amule
+  ./autogen.sh && ./configure \
+      --prefix=/usr \
+      --mandir=/usr/share/man \
+      --disable-monolithic \
+      --enable-amule-daemon \
+      --enable-amulecmd \
+      --disable-webserver \
+      --disable-amule-gui \
+      --disable-cas \
+      --disable-wxcas \
+      --enable-ed2k \
+      --disable-alc \
+      --enable-alcc \
+      --disable-xas \
+      --disable-fileview \
+      --disable-plasmamule \
+      --disable-static \
+      --disable-kde-in-home \
+      --disable-geoip \
+      --disable-upnp \
+      --disable-debug \
+      --disable-profile \
+      --enable-optimize \
+      --enable-mmap \
+      --disable-nls \
+      --disable-ccache \
+	  --with-boost \
+      --with-wx-config=/usr/bin/wx-config
+  make
+} 

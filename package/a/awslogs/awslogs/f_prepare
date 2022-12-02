@@ -1,0 +1,7 @@
+prepare() {
+  cd "$srcdir/$pkgname-$pkgver"
+  # See: https://github.com/jorgebastida/awslogs/pull/324
+  patch -Nfp1 < "$srcdir/exclude-tests.patch"
+  # See: https://github.com/jorgebastida/awslogs/pull/380
+  patch -Nfp1 < "$srcdir/support-jmespath-1x.patch"
+}

@@ -1,0 +1,12 @@
+build() {
+    cd "$pkgname"
+
+    npm install
+    npm install -C electron
+
+    # TODO: remove this once webpack supports new node crypto behaviour
+    # https://github.com/webpack/webpack/issues/14532
+    NODE_OPTIONS=--openssl-legacy-provider npm run build
+
+    sh ./tools/package-electron.sh linux
+}

@@ -1,0 +1,26 @@
+package_bluez-utils-noudev() {
+  pkgdesc="Development and debugging utilities for the bluetooth protocol stack"
+  depends=('dbus' 'glib2')
+  optdepends=('ell: for btpclient')
+  conflicts=('bluez-hcidump' 'bluez-utils')
+  provides=('bluez-hcidump' 'bluez-utils')
+  replaces=('bluez-hcidump' 'bluez<=4.101')
+
+  cd "${_pkgbase}"-${pkgver}
+  make DESTDIR="${pkgdir}" \
+       install-binPROGRAMS \
+       install-dist_zshcompletionDATA \
+       install-man1
+
+  # add missing tools FS#41132, FS#41687, FS#42716
+  for files in `find tools/ -type f -perm -755`; do
+    filename=$(basename $files)
+    install -Dm755 "${srcdir}"/"${_pkgbase}"-${pkgver}/tools/$filename "${pkgdir}"/usr/bin/$filename
+  done
+  
+  # libbluetooth.so* are part of libLTLIBRARIES and binPROGRAMS targets
+  #make DESTDIR=${pkgdir} uninstall-libLTLIBRARIES
+  #rmdir ${pkgdir}/usr/lib
+  rm -rf "${pkgdir}"/usr/lib
+  
+}

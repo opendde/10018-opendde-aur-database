@@ -1,0 +1,1 @@
+("$pkgname-$pkgver::git+https://salsa.debian.org/debian/debmake.git#tag=debian/$pkgver-$pkgrel")

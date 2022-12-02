@@ -1,0 +1,7 @@
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr
+#  msg 'patching the Makefile'
+#  sed -i "200 s/LDFLAGS = /& -Wl,--copy-dt-needed-entries /g" src/Makefile
+  make
+}

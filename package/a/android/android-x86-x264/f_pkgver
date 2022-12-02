@@ -1,0 +1,6 @@
+pkgver() {
+    cd "${srcdir}"/x264
+    local _ver=$(grep '#define X264_BUILD' x264.h | cut -d' ' -f3)
+    local _rev=$(git rev-parse --short HEAD)
+    echo ${_ver}.r${_rev}
+}

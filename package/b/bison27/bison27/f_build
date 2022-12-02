@@ -1,0 +1,5 @@
+build() {
+  cd "$_name-$pkgver"
+  ./configure --prefix=/usr --datadir=/usr/share
+  make
+}

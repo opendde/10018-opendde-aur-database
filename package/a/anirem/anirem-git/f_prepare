@@ -1,0 +1,8 @@
+prepare() {
+  mkdir -p build
+
+  cd "$_pkgfqn"
+  echo "INSTALL_HEADERS = /usr/include" > install.pri
+  echo "CONFIG += no_quick" >> install.pri
+  ln -s ../proxer-api-key.h
+}

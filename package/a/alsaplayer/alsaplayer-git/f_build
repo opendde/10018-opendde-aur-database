@@ -1,0 +1,6 @@
+build() {
+  cd ${srcdir}/${pkgname}
+  sh autogen.sh
+  ./configure --prefix=/usr --enable-audiofile
+  make
+}

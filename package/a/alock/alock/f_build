@@ -1,0 +1,19 @@
+build() {
+  cd "${pkgname}-${pkgver}"
+
+  # upstream bug: Configure ignores --prefix option
+  ./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --enable-passwd \
+    --enable-xcursor \
+    --enable-pam \
+    --enable-hash \
+    --enable-xrender \
+    --enable-imlib2 \
+    --enable-xpm \
+    --with-dunst \
+    --with-xbacklight
+
+  make V=0
+}

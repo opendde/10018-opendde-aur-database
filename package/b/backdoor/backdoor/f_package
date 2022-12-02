@@ -1,0 +1,9 @@
+package() {
+	mkdir -p "${pkgdir}/usr/bin/"
+	echo -e '#!/bin/bash\nlove /usr/share/backdoor/backdoor.love\n' > "$pkgdir/usr/bin/backdoor"
+	chmod +x "${pkgdir}/usr/bin/backdoor"
+
+	install -dm755 "${pkgdir}/usr/share/backdoor/"
+	install -Dm755 "${pkgname}-${pkgver}/bin/backdoor.love" "$pkgdir/usr/share/backdoor/"
+	install -Dm644 "${pkgname}-${pkgver}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

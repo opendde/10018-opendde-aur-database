@@ -1,0 +1,5 @@
+prepare() {
+  cd "Botan-$pkgver"
+
+  patch -Np1 < "$srcdir/sphinx-python3.diff"
+}

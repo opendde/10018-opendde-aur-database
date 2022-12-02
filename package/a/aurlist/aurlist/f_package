@@ -1,0 +1,17 @@
+package() {
+  cd "${srcdir}/aurlist-master"
+
+  # Install script
+  mkdir -p "$pkgdir/usr/bin"
+  install -m755 aurlist "$pkgdir/usr/bin/aurlist"
+
+  # Create list directory
+  mkdir -p "$pkgdir/usr/share/aurlist"
+  chmod 777 "$pkgdir/usr/share/aurlist"
+  install -m777 usr/share/aurlist/aurlist.txt "$pkgdir/usr/share/aurlist/aurlist.txt"
+  install -m777 usr/share/aurlist/aurlist.lst "$pkgdir/usr/share/aurlist/aurlist.lst"
+
+  # Install GPLv3
+  mkdir -p "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

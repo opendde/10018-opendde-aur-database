@@ -1,0 +1,18 @@
+package() {
+  cd $pkgname
+  install -Dm755 algernon "$pkgdir/usr/bin/algernon"
+  install -d "$pkgdir/usr/share/doc/$pkgname/samples"
+  cp -r samples "$pkgdir/usr/share/doc/$pkgname/samples"
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+
+  cd system
+  install -Dm644 logrotate "$pkgdir/etc/logrotate.d/algernon"
+  install -Dm644 serverconf.lua "$pkgdir/etc/algernon/serverconf.lua"
+  install -Dm644 algernon_dev.service "$pkgdir/usr/share/doc/$pkgname/algernon.service.example"
+
+  cd ../desktop
+  install -Dm755 mdview "$pkgdir/usr/bin/mdview"
+  install -Dm644 algernon.desktop "$pkgdir/usr/share/applications/algernon.desktop"
+  install -Dm644 algernon_md.desktop "$pkgdir/usr/share/applications/algernon_md.desktop"
+  install -Dm644 markdown.png "$pkgdir/usr/share/pixmaps/markdown.png"
+}

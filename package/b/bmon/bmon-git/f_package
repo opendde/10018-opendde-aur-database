@@ -1,0 +1,10 @@
+package() {
+  cd "${pkgname%-*}"
+
+  make DESTDIR="${pkgdir}" install
+
+  install -dm 755 "${pkgdir}/usr/share/doc/${pkgname%-*}"
+  install -m 644 ChangeLog LICENSE.MIT LICENSE.BSD "${pkgdir}/usr/share/doc/${pkgname%-*}/"
+  install -dm 755 "${pkgdir}/usr/share/licenses/${pkgname}"
+  ln -s "/usr/share/doc/${pkgname-*}/LICENSE."{MIT,BSD} "${pkgdir}/usr/share/licenses/${pkgname}/"
+}

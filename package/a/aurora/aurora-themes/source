@@ -1,0 +1,1 @@
+("meta::meta://dl.opendesktop.org/api/files/index?format=json&status=active&collection_content_id=${url##*/}")

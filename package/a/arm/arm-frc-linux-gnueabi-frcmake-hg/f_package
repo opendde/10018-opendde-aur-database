@@ -1,0 +1,4 @@
+package() {
+  cd "$srcdir/$_hgrepo/tools"
+  make -f frcmake-nix-makefile DESTDIR="$pkgdir" install || return 1
+}

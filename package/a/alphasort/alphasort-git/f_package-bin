@@ -1,0 +1,5 @@
+package-bin() {
+    BIN_DIR="$pkgdir"/usr/bin
+    mkdir -p $BIN_DIR
+    install bin/alphasort "$pkgdir/usr/bin/alphasort"
+}

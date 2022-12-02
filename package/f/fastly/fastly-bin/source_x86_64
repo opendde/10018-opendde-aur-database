@@ -1,0 +1,1 @@
+("${pkgname}_${pkgver}_x86_64.tar.gz::https://github.com/fastly/cli/releases/download/v4.4.0/fastly_v4.4.0_linux-amd64.tar.gz")

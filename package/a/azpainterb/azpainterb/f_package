@@ -1,0 +1,13 @@
+package() {
+	cd "${srcdir}/${pkgname}-v${pkgver}"
+	# HACK Original Makefile tries to update mimeinfo.cache and icon-theme.cache.
+	# These files should be updated after installation.
+	sed -i '/\@\$(update_cache)/d' Makefile
+	make \
+		prefix="${pkgdir}/usr" \
+		bindir="${pkgdir}/usr/bin" \
+		datarootdir="${pkgdir}/usr/share" \
+		datadir="${pkgdir}/usr/share/azpainterb" \
+		docdir="${pkgdir}/usr/share/doc/azpainterb" \
+		install
+}

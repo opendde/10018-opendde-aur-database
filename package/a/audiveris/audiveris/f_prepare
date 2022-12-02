@@ -1,0 +1,4 @@
+prepare() {
+  # Replacing git commit request with static commit hash
+  sed -i "s/git rev-parse --short HEAD/echo '${_gitcommit}'/g" "$srcdir/$pkgname-${pkgver/_/-}/build.gradle"
+}

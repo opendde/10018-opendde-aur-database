@@ -1,0 +1,6 @@
+build() {
+  set -u
+  cd "${_srcdir}"
+  make -j1
+  set +u
+}

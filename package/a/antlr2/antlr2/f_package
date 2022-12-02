@@ -1,0 +1,9 @@
+package() {
+  cd antlr-${pkgver}/lib/cpp
+  make prefix="${pkgdir}/usr" install
+
+  install -Dm644 ../../antlr/antlr.jar "${pkgdir}"/usr/share/java/antlr2.jar
+  install -Dm755 "${srcdir}"/runantlr2.sh "${pkgdir}"/usr/bin/runantlr2
+  install -Dm644 "${srcdir}"/antlr-${pkgver}/LICENSE.txt \
+    "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
+}

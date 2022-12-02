@@ -1,0 +1,6 @@
+package() {
+	cd "${srcdir}/bash.d-${pkgver}"
+	make PREFIX=/usr PKGNAME=bash.d DESTDIR="${pkgdir}" install
+	_dir="${pkgdir}/usr/share/licenses/${pkgname}"
+	ln -sf -- "/usr/share/licenses/common/GPL3" "${_dir}/LICENSE"
+}

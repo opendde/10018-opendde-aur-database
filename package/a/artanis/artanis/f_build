@@ -1,0 +1,6 @@
+build() {
+  cd $pkgname-$pkgver
+  GUILE_EFFECTIVE_VERSION=3.0 ./configure --prefix=/usr
+  make
+  make docs
+}

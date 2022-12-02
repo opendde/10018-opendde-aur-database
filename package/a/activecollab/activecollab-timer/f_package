@@ -1,0 +1,14 @@
+package() {
+    cd $srcdir/
+    unzip $pkgname-$pkgver.zip
+
+    cd activeCollabTimer3-64
+    mkdir -p $pkgdir/opt/activecollab-timer || return 1
+    cp -rf * $pkgdir/opt/activecollab-timer
+
+    mkdir -p ${pkgdir}/usr/bin/ || return 1
+    chmod +x $pkgdir/opt/activecollab-timer/activeCollabTimer3
+    chmod +x $pkgdir/opt/activecollab-timer/activeCollabTimer3.sh
+
+    ln -s $pkgdir/opt/activecollab-timer/activeCollabTimer3 "$pkgdir/usr/bin/activeCollabTimer3"
+}

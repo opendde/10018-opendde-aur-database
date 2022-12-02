@@ -1,0 +1,4 @@
+pkgver() {
+  cd "$pkgbase"
+  git describe --long --tags --match 'acarsdec-*' | sed 's/^acarsdec.//;s/\([^-]*-\)g/r\1/;s/-/./g'
+}

@@ -1,0 +1,8 @@
+_package() {
+  install -Dm755 {,"$pkgdir"/usr/}bin/"$1"
+  local _from_path=share/man/man1/"$1".1
+  local _to_path="$pkgdir"/usr/"$_from_path"
+  if [ -f "$_from_path" ]; then
+    install -Dm644 "$_from_path" "$_to_path"
+  fi
+}

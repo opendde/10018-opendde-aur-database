@@ -1,0 +1,8 @@
+package() {
+  cd "$srcdir"
+
+  # repack image
+  mksquashfs ./squashfs-root ./android.img -noappend -b 131072 -comp xz -Xbcj x86
+
+  install -Dm 644 ./android.img "$pkgdir/var/lib/anbox/android.img"
+}

@@ -1,0 +1,4 @@
+pkgver() {
+	cd "httpd"
+	printf "2.5.r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}

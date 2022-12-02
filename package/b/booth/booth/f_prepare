@@ -1,0 +1,6 @@
+prepare() {
+  cd $pkgname-$pkgver
+  patch -Np1 -b -z .orig <../pcs.patch
+  patch -Np2 -b -z .orig <../bufoverflow.patch
+  ./autogen.sh
+}

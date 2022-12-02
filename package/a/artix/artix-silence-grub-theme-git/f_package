@@ -1,0 +1,7 @@
+package() {
+	# Check if using doas or sudo
+	[ $(which doas) ] && rootcmd="doas" || rootcmd="sudo"
+
+	$rootcmd cp -TR "$srcdir/arch-silence/theme" /boot/grub/themes/arch-silence
+	$rootcmd grub-mkconfig -o /boot/grub/grub.cfg
+}

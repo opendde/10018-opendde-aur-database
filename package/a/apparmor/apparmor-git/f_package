@@ -1,0 +1,26 @@
+package() {
+	cd "${srcdir}/${pkgname%-git}"
+	make -C libraries/libapparmor DESTDIR="${pkgdir}" install
+	make -C changehat/pam_apparmor DESTDIR="${pkgdir}" SECDIR="${pkgdir}/usr/lib/security" install
+	make -C changehat/mod_apparmor DESTDIR="${pkgdir}" install
+	make -C binutils DESTDIR="${pkgdir}" SBINDIR="${pkgdir}/usr/bin" USR_SBINDIR="${pkgdir}/usr/bin" install
+	make -C parser -j1 DESTDIR="${pkgdir}" APPARMOR_BIN_PREFIX="${pkgdir}/usr/lib/apparmor" SBINDIR="${pkgdir}/usr/bin" USR_SBINDIR="${pkgdir}/usr/bin" install install-systemd
+	make -C profiles DESTDIR="${pkgdir}" install
+	make -C utils DESTDIR="${pkgdir}" BINDIR="${pkgdir}/usr/bin" SBINDIR="${pkgdir}/usr/bin" USR_SBINDIR="${pkgdir}/usr/bin" VIM_INSTALL_PATH="${pkgdir}/usr/share/vim/vimfiles/syntax" install
+
+	# set file mode to allow the perl library to be stripped:
+	# https://gitlab.com/apparmor/apparmor/issues/34
+	find "${pkgdir}/usr/lib/perl5/" -type f -iname "*.so" -exec chmod 755 {} \;
+
+	# removing empty core_perl directory:
+	# https://gitlab.com/apparmor/apparmor/issues/40
+	rm -rv "${pkgdir}/usr/lib/perl5/"*/core_perl
+	# move ruby bindings to vendor_ruby:
+	# https://gitlab.com/apparmor/apparmor/issues/35
+	mv -v "${pkgdir}/usr/lib/ruby/site_ruby/" "${pkgdir}/usr/lib/ruby/vendor_ruby/"
+	# adding files below /etc/apparmor.d to backup array
+	cd "${pkgdir}"
+	# trick extract_function_variable() in makepkg into not detecting the
+	# backup array modification and adding remaining configuration files
+	true && backup+=( $(find 'etc/apparmor.d/' -type f) )
+}

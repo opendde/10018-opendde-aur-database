@@ -1,0 +1,6 @@
+build() {
+
+	cd "$srcdir/bbk/src/cli"
+	make clean
+	make GNUTLS=1
+}

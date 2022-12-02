@@ -1,0 +1,5 @@
+package() {
+	cd $pkgdir
+	tar -xpf ${srcdir}/data.tar.xz
+	rm $pkgdir/usr/bin/apm
+}

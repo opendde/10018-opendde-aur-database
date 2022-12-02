@@ -1,0 +1,13 @@
+package() {
+  cd "$srcdir/$pkgname"
+  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+
+  # This file is included in anoise-gui
+  rm "$pkgdir/usr/share/$pkgname/$pkgname.ui"
+
+  # Files setup.py does not install
+  cp -r locale "$pkgdir/usr/share/locale"
+
+  install -Dm644 "build/share/applications/$pkgname.desktop" -t \
+    "$pkgdir/usr/share/applications"
+}

@@ -1,0 +1,4 @@
+pkgver() {
+  cd $pkgname
+  git describe --tags | sed 's/^ANJUTA_EXTRA_//;s/_/./g;s/-/+/g'
+}

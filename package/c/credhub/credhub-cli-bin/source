@@ -1,0 +1,1 @@
+("${_pkgname}-${pkgver}.tgz::${url}/releases/download/${pkgver}/${_pkgname%-*}-linux-${pkgver}.tgz"

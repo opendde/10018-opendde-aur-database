@@ -1,0 +1,21 @@
+package() {
+  mkdir -p "${pkgdir}/opt"
+  cp -a "${srcdir}/data" "${pkgdir}/opt/${pkgname}"
+  chmod 755 "$pkgdir/opt/${pkgname}"
+
+  mkdir -p "${pkgdir}/opt/${pkgname}/game_x64"
+  chmod 2775 "${pkgdir}/opt/${pkgname}/game_x64"
+
+  ## Give albion group permission to update the launcher
+  chmod 2775 "${pkgdir}/opt/${pkgname}/launcher"
+
+  # Link launcher to usr/system binaries directory
+  mkdir -p "${pkgdir}/usr/bin"
+  install -m755 -D "${srcdir}/albion-online" "${pkgdir}/usr/bin"
+
+  # Install .desktop file
+  install -m755 -D "${srcdir}/albion-online-launcher.desktop" -t "${pkgdir}/usr/share/applications"
+
+  # Move EULA to /usr/share licenses path
+  install -Dm644 "${srcdir}/data/eula.txt" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

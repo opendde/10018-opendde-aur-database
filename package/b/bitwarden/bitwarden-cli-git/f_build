@@ -1,0 +1,5 @@
+build() {
+  cd "${_pkgname}-git-repo"
+  npm install
+  npm run dist:lin
+}

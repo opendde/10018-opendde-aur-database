@@ -1,0 +1,6 @@
+check() {
+  cd "$pkgname"
+  # https://github.com/aria2/aria2/issues/1476
+  # Upstream states "I don't see any issues with aria2 code."
+  make check || echo "Ignoring test failures"
+}

@@ -1,0 +1,12 @@
+package() {
+  cp -R $srcdir/usr $pkgdir
+  cp -R $srcdir/opt $pkgdir
+
+  ln -s /opt/brother/Printers/hll3290cdw/cupswrapper/brother_hll3290cdw_printer_en.ppd $pkgdir/usr/share/cups/model/
+  ln -s /opt/brother/Printers/hll3290cdw/cupswrapper/brother_lpdwrapper_hll3290cdw $pkgdir/usr/lib/cups/filter/
+
+  install -m 644 -D cupswrapper-license.txt $pkgdir/usr/share/licenses/${pkgname}/cupswrapper-license.txt
+  install -m 644 -D lpr-license.txt $pkgdir/usr/share/licenses/${pkgname}/lpr-license.txt
+  ln -s /opt/brother/Printers/hll3290cdw/LICENSE_ENG.txt $pkgdir/usr/share/licenses/${pkgname}/
+  ln -s /opt/brother/Printers/hll3290cdw/LICENSE_JPN.txt $pkgdir/usr/share/licenses/${pkgname}/
+}

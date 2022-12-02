@@ -1,0 +1,6 @@
+prepare() {
+  cd ${_pkgname}
+  git submodule init
+  git config submodule.briar.url "$srcdir/briar"
+  git submodule update --init --recursive
+}

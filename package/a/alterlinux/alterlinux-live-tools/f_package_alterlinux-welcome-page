@@ -1,0 +1,11 @@
+package_alterlinux-welcome-page() {
+    pkgdesc="A simple script to open the official AlterLinux website"
+    optdepends=(
+            'chromium: To open the page'
+            'google-chrome: To open the page'
+            'firefox: To open the page'
+    )
+
+    install_files
+    install_license
+}

@@ -1,0 +1,4 @@
+package() {
+	cd "$_pkgname"
+	install -Dm 755 ./target/release/bday "$pkgdir/usr/bin/bday"
+}

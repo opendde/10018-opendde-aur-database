@@ -1,0 +1,3 @@
+package() {
+  install -Dm 755 "borg-backup/backup" -t "$pkgdir/usr/bin"
+}

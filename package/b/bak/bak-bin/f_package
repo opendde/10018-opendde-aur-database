@@ -1,0 +1,5 @@
+package() {
+	install -Dm775 "usr/bin/bak" "$pkgdir/usr/bin/bak"
+	install -Dm644 "usr/share/man/man1/bak.1" "$pkgdir/usr/share/man/man1/bak.1"
+	install -Dm644 "usr/share/licenses/bak/LICENSE" "$pkgdir/usr/share/licenses/bak/LICENSE"
+}

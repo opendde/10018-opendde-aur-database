@@ -1,0 +1,4 @@
+build() {
+  cd "$srcdir"/"bootsplash-theme-sakura"
+  sh ./bootsplash-sakura.sh
+}

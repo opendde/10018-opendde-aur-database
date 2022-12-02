@@ -1,0 +1,1 @@
+("${pkgname%-git}::git+ssh://git@codeberg.org/tristero/${pkgname%-git}.git#branch=master")

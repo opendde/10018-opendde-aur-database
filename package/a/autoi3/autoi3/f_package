@@ -1,0 +1,13 @@
+package() {
+  cd "$srcdir/$pkgname"
+
+  # actual program files
+  # TODO maybe rename or symlink .py files to their basename
+  install -D -t "$pkgdir"/usr/share/"$pkgname" *.py
+
+  # documentation
+  install -D -t "$pkgdir"/usr/share/doc/"$pkgname"/ README.md
+  
+  # license
+  install -D -t "$pkgdir"/usr/share/licenses/"$pkgname" LICENSE 
+}

@@ -1,0 +1,5 @@
+package() {
+    cd "${srcdir}/${_pkgname}-v${pkgver}"
+    install -Dm 755 "target/release/${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+    install -Dm 644 README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
+}

@@ -1,0 +1,1 @@
+("https://www.dragonframe.com/download/dragonframe${pkgver%%.*}_${pkgver}_amd64.deb")

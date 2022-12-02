@@ -1,0 +1,36 @@
+package() {
+	cd "${srcdir}/${_archive}"
+
+	_ver=$(cat package.json | grep version | sed 's/version//g' | sed 's/://g' | sed 's/ //g' |  sed 's/"//g' | sed 's/,//g')
+
+	[[ "${CARCH}" = "i686" ]] && _arch=i386 || _arch=amd64
+
+	install -dm755 ${pkgdir}/usr/bin
+	install -dm755 ${pkgdir}/usr/share/${_pkgname}-${_version}
+	install -dm755 ${pkgdir}/usr/share/applications
+	install -dm755 ${pkgdir}/usr/share/licenses/$pkgname
+	install -dm755 ${pkgdir}/usr/share/pixmaps
+
+	cp -r out/${_pkgname}-${_version}-${_ver}-${_arch}/*                    ${pkgdir}/usr/share/${_pkgname}-${_version}
+	install -Dm644 ${srcdir}/${_pkgname}-${_version}.desktop                ${pkgdir}/usr/share/applications/${_pkgname}-${_version}.desktop
+	mv ${pkgdir}/usr/share/${_pkgname}-${_version}/atom.png                 ${pkgdir}/usr/share/pixmaps/${_pkgname}-${_version}.png
+	mv ${pkgdir}/usr/share/${_pkgname}-${_version}/LICENSE                  ${pkgdir}/usr/share/licenses/$pkgname/LICENSE
+	mv ${pkgdir}/usr/share/${_pkgname}-${_version}/resources/app/atom.sh    ${pkgdir}/usr/bin/atom-beta
+	rm ${pkgdir}/usr/share/${_pkgname}-${_version}/resources/app.asar.unpacked/resources -rf
+	ln -sf "/usr/share/${_pkgname}-${_version}/resources/app/apm/node_modules/.bin/apm" "${pkgdir}/usr/bin/apm-${_version}"
+
+	find "${pkgdir}" \( \
+		    -name "*.a" \
+		-or -name "*.bat" \
+		-or -name "benchmark" \
+		-or -name "doc" \
+		-or -name "html" \
+		-or -name "man" \
+		-or -path "*/less/gradle" \
+		-or -path "*/task-lists/src" \
+		\) -prune -exec rm -r '{}' \;
+
+	find "${pkgdir}" \
+		-name "package.json" \
+		-exec sed -i -e "s|${srcdir}/atom-${_ver}/apm|/usr/share/${_pkgname}-${_version}/resources/app/apm|g" '{}' +
+}

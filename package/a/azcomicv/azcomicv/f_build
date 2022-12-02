@@ -1,0 +1,6 @@
+build() {
+	cd "${srcdir}/${pkgname}-v${pkgver}"
+	./configure --prefix=/usr
+	cd build/
+	ninja
+}

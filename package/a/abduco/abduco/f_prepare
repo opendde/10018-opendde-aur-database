@@ -1,0 +1,8 @@
+prepare () {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+
+	# Copy config file into build dir, if present
+	if [ -f "${srcdir}/config.h" ]; then
+		cp "${srcdir}/config.h" .
+	fi
+}

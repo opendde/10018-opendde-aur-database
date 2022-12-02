@@ -1,0 +1,12 @@
+package() {
+  cd "$srcdir"/BombSquad_Server_Linux_*_"$pkgver"
+
+  install -Dm755 bombsquad_server "$pkgdir"/usr/share/bombsquad-server/bombsquad_server
+  install -dm755 dist "$pkgdir"/usr/share/bombsquad-server/dist
+  install -Dm755 config.yaml "$pkgdir"/usr/share/bombsquad-server/config.yaml
+  cp -r dist "$pkgdir"/usr/share/bombsquad-server/
+
+  find "${pkgdir}/usr/share/bombsquad-server/dist/ba_data" -type f -exec chmod 644 {} \;
+
+  install -Dm 755 "$srcdir"/bombsquad-server.sh "$pkgdir"/usr/bin/$pkgname
+}

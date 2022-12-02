@@ -1,0 +1,4 @@
+package() {
+	cd "$_gitname"
+	DESTDIR="$pkgdir" make install
+}

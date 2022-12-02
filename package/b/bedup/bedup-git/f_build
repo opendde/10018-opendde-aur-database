@@ -1,0 +1,4 @@
+build() {
+  cd "${srcdir}/bedup.git"
+  python setup.py build
+}

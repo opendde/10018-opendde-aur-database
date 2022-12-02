@@ -1,0 +1,12 @@
+package() {
+    install -dm755 ${pkgdir}/${_bindir}
+    install -dm755 ${pkgdir}/${_appdir}
+    install -dm755 ${pkgdir}/${_docdir}
+    install -Dm755 ${srcdir}/${_pkg}/distributions/jballerina-${pkgver}/LICENSE ${pkgdir}/${_licensedir}/LICENSE
+    install -Dm644 ${srcdir}/${_pkg}/distributions/jballerina-${pkgver}/README.md ${pkgdir}/${_docdir}/README.md
+    cp -ar ${srcdir}/${_pkg}/distributions/jballerina-${pkgver}/docs/* ${pkgdir}/${_docdir}/
+    cp -ar ${srcdir}/${_pkg}/* ${pkgdir}/${_appdir}/
+    chmod -R a+r ${pkgdir}/${_appdir}/distributions/jballerina-${pkgver}/lib
+    ln -sf /${_appdir}/bin/ballerina ${pkgdir}/usr/bin/ballerina
+    ln -sf /usr/lib/jvm/java-8-openjdk/jre ${pkgdir}/${_appdir}/dependencies/jdk8u202-b08-jre
+}

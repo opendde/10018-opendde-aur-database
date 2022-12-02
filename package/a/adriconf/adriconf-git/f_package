@@ -1,0 +1,12 @@
+package() {
+  cd adriconf-build/adriconf
+  #make install
+  install -d "$pkgdir"/usr/bin
+  install -m755 adriconf "$pkgdir"/usr/bin
+
+  install -d "$pkgdir"/usr/share/applications
+  install "$srcdir"/adriconf.desktop "$pkgdir"/usr/share/applications
+
+  install -d "$pkgdir"/usr/share/icons
+  install "$srcdir"/adriconf-icon.png "$pkgdir"/usr/share/icons
+}

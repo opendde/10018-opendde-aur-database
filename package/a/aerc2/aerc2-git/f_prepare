@@ -1,0 +1,5 @@
+prepare() {
+    cd "$srcdir/$_pkgname"
+    # change filenames in example config to include package dirs
+    sed -i 's|contrib/\(.*\)|/usr/share/aerc2/\1|' config/aerc.conf
+}

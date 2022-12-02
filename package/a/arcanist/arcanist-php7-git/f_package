@@ -1,0 +1,12 @@
+package() {
+  cd "$srcdir/$_pkgname"
+  patch -Np1 < "../0001-php7-fix.patch"
+
+  grep -nrwe '^#!/usr/bin/env php$' "$srcdir/$_pkgname" | \
+    cut -d: -f1 | \
+    xargs -I {} sed 's/^\(#!\/usr\/bin\/env php\)$/\17/' -i {}
+
+  install -d "$pkgdir/usr/share/php7/$_pkgname/" "$pkgdir/usr/bin/"
+  cp -a * "$pkgdir/usr/share/php7/$_pkgname/"
+  ln -s "../share/php7/$_pkgname/bin/arc" "$pkgdir/usr/bin/arc"
+}

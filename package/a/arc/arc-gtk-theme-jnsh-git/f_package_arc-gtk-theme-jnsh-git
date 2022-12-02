@@ -1,0 +1,6 @@
+package_arc-gtk-theme-jnsh-git() {
+  conflicts=('arc-gtk-theme' 'arc-gtk-theme-git')
+
+  cd "${_pkgname}"
+  make DESTDIR="$pkgdir/" install
+}

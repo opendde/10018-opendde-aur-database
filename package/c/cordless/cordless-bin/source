@@ -1,0 +1,1 @@
+("$pkgname-$pkgver::https://github.com/Bios-Marcel/cordless/releases/download/${pkgver//_/-}/cordless_linux_64")

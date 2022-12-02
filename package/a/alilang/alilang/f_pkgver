@@ -1,0 +1,7 @@
+pkgver() {
+	cd "${srcdir}"
+
+	tar xzvf control.tar.gz -C "${srcdir}" 2>&1 >/dev/null
+
+	echo "$(sed -ne 's/^Version: \([^-]\+\).*/\1/p' ${srcdir}/control)"
+}

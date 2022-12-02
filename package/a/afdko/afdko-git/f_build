@@ -1,0 +1,4 @@
+build() {
+    cd "${pkgname%-git}"
+    python setup.py build
+}

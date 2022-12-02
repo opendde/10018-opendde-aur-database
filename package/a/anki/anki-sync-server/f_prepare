@@ -1,0 +1,4 @@
+prepare() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	patch -p0 -i "${srcdir}/ankiserverctl.py.patch"
+}

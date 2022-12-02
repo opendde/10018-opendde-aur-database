@@ -1,0 +1,5 @@
+prepare() {
+  cd "$_pkgname"
+  patch -Np1 < ../../archwiki-jp.patch
+  LANG=en_US.UTF-8 python arch-wiki-docs.py --output-directory "$srcdir/build_wiki" --clean --safe-filenames
+}

@@ -1,0 +1,3 @@
+package() {
+    cp -R "$srcdir/usr" "$pkgdir"
+}

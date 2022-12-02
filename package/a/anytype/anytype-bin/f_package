@@ -1,0 +1,7 @@
+package() {
+    install -Dm755 $_appimage "$pkgdir"/usr/bin/anytype
+    chmod +x "${pkgdir}/usr/bin/anytype"
+
+    install -Dm644 "anytype.desktop"                    "${pkgdir}/usr/share/applications/anytype.desktop"
+    install -Dm644 "anytype.png"                        "${pkgdir}/usr/share/icons/hicolor/128x128/apps/anytype.png"
+}

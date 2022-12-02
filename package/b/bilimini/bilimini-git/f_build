@@ -1,0 +1,17 @@
+build() {
+	cd "${srcdir}/${_pkgname}"
+	
+	export npm_config_target=$(tail /usr/lib/electron11/version)
+	export npm_config_arch=x64
+	export npm_config_target_arch=x64
+	export npm_config_disturl=https://electronjs.org/headers
+	export npm_config_runtime=electron
+	export npm_config_build_from_source=true
+	
+	HOME="${srcdir}/.electron-gyp" npm install
+
+	_ver="$(</usr/lib/electron11/version)"
+	yarn run electron-builder --linux --x64 --dir \
+		-c.electronDist=/usr/lib/electron11 \
+		-c.electronVersion="$_ver"
+}

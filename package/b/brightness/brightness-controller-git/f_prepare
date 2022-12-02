@@ -1,0 +1,4 @@
+prepare() {
+  cd "$srcdir/${pkgname%-git}/${pkgname%-git}-linux"
+  mv README.md readme.md
+}

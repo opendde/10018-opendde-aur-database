@@ -1,0 +1,4 @@
+package() {
+  cd $pkgname-beta_${pkgver/\./_}/bsnes
+  make prefix="$pkgdir/usr" install
+}

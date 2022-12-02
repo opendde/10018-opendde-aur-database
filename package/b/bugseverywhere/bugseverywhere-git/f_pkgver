@@ -1,0 +1,4 @@
+pkgver() {
+  cd "bebe-${_commit}"
+  echo "$(cat .be/version | sed 's/^.*v\([0-9\.]*\)/\1/').$(echo "$pkgver" | cut -d'.' -f3-4)"
+}

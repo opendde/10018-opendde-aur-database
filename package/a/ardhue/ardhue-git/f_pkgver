@@ -1,0 +1,4 @@
+pkgver() {
+  cd "$srcdir/ardhue"
+  git describe --always --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}

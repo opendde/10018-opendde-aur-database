@@ -1,0 +1,8 @@
+package () {
+  cd "$srcdir/$_pkgname"
+   install -Dm755 build/astromenace $pkgdir/usr/bin/astromenace
+   install -Dm644 build/gamedata.vfs $pkgdir/usr/share/astromenace/gamedata.vfs
+   install -Dm644 share/astromenace_128.png $pkgdir/usr/share/pixmaps/astromenace.png
+    install -Dm644 share/astromenace.desktop $pkgdir/usr/share/applications/astromenace.desktop
+    install -Dm644 share/astromenace.appdata.xml $pkgdir/usr/share/appdata/astromenace.appdata.xml
+}

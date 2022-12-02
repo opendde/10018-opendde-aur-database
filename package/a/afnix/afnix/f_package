@@ -1,0 +1,8 @@
+package() {
+  cd "${pkgname}-src-${pkgver}"
+
+  make install
+  install -d "${pkgdir}/usr/share/emacs/site-lisp"
+  install etc/unx/*.el -t "${pkgdir}/usr/share/emacs/site-lisp"
+  install -D doc/xml/eul/std-us-legal.xml "${pkgdir}/usr/share/licenses/afnix/LICENSE"
+}

@@ -1,0 +1,6 @@
+prepare() {
+    cd "${pkgname%-git}"
+    patch -Np1 <"../${pkgname%-git}.patch"
+    # clean up
+    rm -f sites/*/saved.{ip,usernames}.txt
+}

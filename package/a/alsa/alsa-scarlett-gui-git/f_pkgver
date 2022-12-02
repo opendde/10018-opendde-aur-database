@@ -1,0 +1,4 @@
+pkgver() {
+    cd "$_pkgname"
+    echo "$(git describe --abbrev=4 --always --tags | sed 's/-/./g')"
+}

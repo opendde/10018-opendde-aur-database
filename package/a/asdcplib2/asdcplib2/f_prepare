@@ -1,0 +1,4 @@
+prepare() {
+	# --as-needed seems to break compatibility with libexpat, and configure step does not detect libexpat
+	export LDFLAGS="${LDFLAGS//--as-needed,}"
+}

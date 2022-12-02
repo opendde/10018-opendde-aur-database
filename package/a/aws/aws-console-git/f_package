@@ -1,0 +1,6 @@
+package() {
+  cd "aws-console"
+
+  install -Dm755 aws-console "$pkgdir"/usr/bin/aws-console
+  install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

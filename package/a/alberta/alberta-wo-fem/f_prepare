@@ -1,0 +1,7 @@
+prepare() {
+    cd "${_pkgname}-${pkgver}"
+
+    # silence some warnings
+    sed -i 's;info = 2;// info = 2;g' alberta/src/Common/check.c
+    sed -i 's;WARNING;// WARNING;g' alberta/src/3d/macro_3d.c
+}

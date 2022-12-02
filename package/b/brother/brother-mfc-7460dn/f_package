@@ -1,0 +1,10 @@
+package() {
+    cp -a usr "$pkgdir/"
+    cp -a var "$pkgdir/"
+    install -Dm 644 'MFC7460DN.ppd' "$pkgdir/usr/share/cups/model/MFC7460DN.ppd"
+    install -Dm 755 'brlpdwrapperMFC7460DN' "$pkgdir/usr/lib/cups/filter/brlpdwrapperMFC7460DN"
+    chmod a+w "$pkgdir/usr/local/Brother/Printer/MFC7460DN/inf/brMFC7460DNrc"
+    chmod a+w "$pkgdir/usr/local/Brother/Printer/MFC7460DN/inf"
+    install -Dm 644 'LICENSE.cupswrapper' "$pkgdir/usr/share/licenses/$pkgname/LICENSE.cupswrapper"
+    install -Dm 644 'LICENSE.lpr' "$pkgdir/usr/share/licenses/$pkgname/LICENSE.lpr"
+}

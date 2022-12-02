@@ -1,0 +1,1 @@
+("${_package}::${url}/releases/download/v${pkgver}/${_package}")

@@ -1,0 +1,10 @@
+build() {
+  cd "${_pkgname}"
+  export PATH="/usr/lib/jvm/java-11-openjdk/bin/:$PATH"
+  # FIX: https://github.com/ctt-gob-es/clienteafirma/issues/222
+  #sed -i '76d' afirma-crypto-cades/src/main/java/es/gob/afirma/signers/cades/CAdESExtraParams.java
+  #sed -i '65d' afirma-crypto-cades/src/main/java/es/gob/afirma/signers/cades/CAdESExtraParams.java
+  # FIX: end 222
+  mvn clean install -Dmaven.test.skip=true
+  mvn clean install -Denv=install -Dmaven.test.skip=true
+}

@@ -1,0 +1,7 @@
+pkgver() {
+    cd "$srcdir/spark"
+    _author_ver=$(grep -oP '(?<=\<version\>).*(?=\</version\>)' pom.xml|head -n 2|tail -n 1|sed 's/-/./')
+    _last_commit_date=$(git log -1 --pretty='%cd' --date=short | tr -d '-')
+    _commit_count="$(git rev-list --count HEAD)"
+    echo $_author_ver.$_last_commit_date.$_commit_count
+}

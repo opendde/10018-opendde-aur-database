@@ -1,0 +1,20 @@
+package_bus1-dkms-git() {
+  depends=('dkms')
+  provides=('bus1' 'bus1-git')
+  conflicts=('bus1' 'bus1-git')
+
+  cd ${_pkgbase}
+
+  install -Dm0644 "${srcdir}"/dkms.conf "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}/dkms.conf
+
+  install -m0644 Makefile "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}
+
+  install -dm0755 "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}/ipc/bus1
+  cp -a ipc/bus1 "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}/ipc/
+
+  install -Dm0644 include/uapi/linux/bus1.h \
+    "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}/include/uapi/linux/bus1.h
+  install -dm0755 "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}/usr/include/linux
+  ln -s ../../../include/uapi/linux/bus1.h \
+    "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}/usr/include/linux
+}

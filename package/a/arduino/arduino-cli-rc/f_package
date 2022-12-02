@@ -1,0 +1,7 @@
+package() {
+  cd arduino-cli-${_tagver}
+  install -Dm 755 arduino-cli "$pkgdir"/usr/bin/arduino-cli
+
+  # Install
+  install -Dm644 -t "${pkgdir}/usr/share/arduino/hardware/" "legacy/builder/hardware/platform.keys.rewrite.txt"
+}

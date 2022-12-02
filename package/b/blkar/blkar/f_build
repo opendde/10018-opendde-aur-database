@@ -1,0 +1,4 @@
+build() {
+  cd "blockyarchive-$pkgver"
+  cargo build --release --locked
+}

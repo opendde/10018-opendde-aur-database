@@ -1,0 +1,7 @@
+build() {
+  cd "${pkgname}-${pkgver}"
+
+  qmake-qt5 -r PREFIX=/usr PKGCONFIG_OPENCV=opencv4
+  make
+  make locale_release
+}

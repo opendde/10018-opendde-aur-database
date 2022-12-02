@@ -1,0 +1,1 @@
+("$_pkgname-$pkgver.deb::https://github.com/pavlobu/$_pkgname/releases/download/v$pkgver/${_pkgname}_${pkgver}_amd64.deb"

@@ -1,0 +1,5 @@
+package() {
+	cd "$_pkgname"
+	install -Dm 755 ./target/release/bake "$pkgdir/usr/bin/bake"
+	install -Dm 644 ./docs/*.1 -t "$pkgdir/usr/share/man/man1/"
+}

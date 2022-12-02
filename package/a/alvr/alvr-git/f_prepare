@@ -1,0 +1,8 @@
+prepare() {
+	cd "$srcdir/${_pkgname}"
+
+	sed -i 's:../../../lib64/libalvr_vulkan_layer.so:libalvr_vulkan_layer.so:' alvr/vulkan_layer/layer/alvr_x86_64.json
+
+	cargo update
+	cargo fetch --locked --target "$CARCH-unknown-linux-gnu"
+}

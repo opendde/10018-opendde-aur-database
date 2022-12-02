@@ -1,0 +1,9 @@
+package_atoms-cli-git() {
+  pkgdesc='Atoms CLI allows you to create and manage your atoms via the command line.'
+  depends=('python-tabulate' 'atoms-core')
+  provides=("${pkgname%-git}")
+  conflicts=("${pkgname%-git}")
+
+  cd "${pkgbase%-git}-cli"
+  python setup.py install --root="$pkgdir" --optimize=1
+}

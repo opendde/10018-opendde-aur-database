@@ -1,0 +1,9 @@
+package() {
+  cd "${srcdir}"
+  install -m755 -vDt "$pkgdir/usr/bin" bpir64-writefip
+  install -Dt "${pkgdir}/usr/share/libalpm/hooks/" -m644 95-atf.hook
+  cd "${srcdir}/${_gitname}/tools/fiptool"
+  install -m755 -vDt "$pkgdir/usr/bin" fiptool
+  cd "${srcdir}/${_gitname}/build/mt7622/release"
+  install -Dt "$pkgdir/boot" -m644 bpir64-atf-*.bin
+}

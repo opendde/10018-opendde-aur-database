@@ -1,0 +1,5 @@
+build() {
+    cd "$srcdir/${pkgname%-sl}-$pkgver"
+    make
+    ./bake-bootstrap --configure install-directory="$pkgdir/"
+}

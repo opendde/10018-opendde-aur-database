@@ -1,0 +1,4 @@
+build() {
+  cd $srcdir/$pkgname_pkgver/proj/$pkgname/gcc
+  make all
+}

@@ -1,0 +1,4 @@
+package() {
+	cd "${pkgname}-v${pkgver}"
+	make DESTDIR="${pkgdir}/usr/bin" install
+}

@@ -1,0 +1,5 @@
+package() {
+  cd "${_pkgname}-${pkgver}"
+
+  DESTDIR="${pkgdir}" make install
+}

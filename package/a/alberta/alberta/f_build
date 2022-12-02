@@ -1,0 +1,21 @@
+build() {
+  cd "${srcdir}/${pkgname}3-releases"
+  autoreconf --install
+  # for usage within DUNE, add --disable-fem-toolbox to speed up compilation
+  ./configure \
+    CFLAGS="-I/usr/include/tirpc" \
+    LDFLAGS="-ldl -lm -ltirpc" \
+    --prefix=/usr \
+    --libexecdir=/usr/lib \
+    --disable-fem-toolbox \
+    --disable-graphics \
+    --disable-dependency-tracking \
+    --disable-debug \
+    --without-gpskca \
+    --without-gltools \
+    --without-OpenDX \
+    --without-grape \
+    --without-silo
+
+  make
+}

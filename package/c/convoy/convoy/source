@@ -1,0 +1,1 @@
+("convoy-$pkgver.tar.gz::https://github.com/rancher/$pkgname/releases/download/v${pkgver/rc?/}$_pkgver_rc/$pkgname.tar.gz")

@@ -1,0 +1,1 @@
+"${_releasename_underscored}_${pkgver//\./_}_x86_64"

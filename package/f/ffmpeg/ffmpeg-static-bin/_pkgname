@@ -1,0 +1,1 @@
+ffmpeg-${pkgver}-${_arch}-static

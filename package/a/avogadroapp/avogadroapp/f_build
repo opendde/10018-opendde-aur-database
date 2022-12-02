@@ -1,0 +1,9 @@
+build() {
+  mkdir -p "$srcdir/build"
+  cd $srcdir/build
+  cmake "$srcdir/$pkgname-$pkgver" \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DUSE_VTK=ON
+  make
+}

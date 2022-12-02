@@ -1,0 +1,5 @@
+package() {
+	install -D -m644 -t "${pkgdir}"/usr/share/color/icc */*/*.icc
+	install -D -m644 -t "${pkgdir}"/usr/share/doc/adobe-icc */*.pdf
+	install -D -m644 LICENSE "${pkgdir}"/usr/share/licenses/adobe-icc
+}

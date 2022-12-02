@@ -1,0 +1,3 @@
+package() {
+    mv usr "$pkgdir/"
+}

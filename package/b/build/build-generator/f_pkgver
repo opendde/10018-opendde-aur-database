@@ -1,0 +1,4 @@
+pkgver() {
+    cd "${srcdir}/build-generator"
+    printf "%s" "$(git describe --tags --long | sed 's/release-//;s/\([^-]*-\)g/\1/;s/-/./g')"
+}

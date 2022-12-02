@@ -1,0 +1,7 @@
+prepare() {
+    # Copy Makefiles
+    cp "$srcdir/BebopDroneDecodeStream-Makefile" "$srcdir/arsdk-samples/Unix/BebopDroneDecodeStream/Makefile"
+    cp "$srcdir/BebopDroneReceiveStream-Makefile" "$srcdir/arsdk-samples/Unix/BebopDroneReceiveStream/Makefile"
+    cp "$srcdir/BebopPilotingNewAPI-Makefile" "$srcdir/arsdk-samples/Unix/BebopPilotingNewAPI/Makefile"
+    cp "$srcdir/JSPilotingNewAPI-Makefile" "$srcdir/arsdk-samples/Unix/JSPilotingNewAPI/Makefile"
+}

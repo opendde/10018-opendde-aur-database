@@ -1,0 +1,5 @@
+package() {
+	mkdir -p "$pkgdir/usr/bin/"
+	cd "$srcdir/${pkgname}_src"
+	make PREFIX="$pkgdir/usr" install
+}

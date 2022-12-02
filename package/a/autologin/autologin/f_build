@@ -1,0 +1,5 @@
+build() {
+  mkdir -p build
+  arch-meson $pkgname-$pkgver build
+  ninja -C build
+}

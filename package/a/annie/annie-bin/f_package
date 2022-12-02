@@ -1,0 +1,6 @@
+package() {
+  install -Dm644 "$pkgname-$pkgver-LICENSE" "$pkgdir/usr/share/licenses/annie/LICENSE"
+  
+  cd "$pkgname-$pkgver-$CARCH"
+  install -Dm755 annie -t "$pkgdir/usr/bin"
+}

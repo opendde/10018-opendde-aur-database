@@ -1,0 +1,3 @@
+package_amber-bridge() {
+	DESTDIR="${pkgdir}" meson install --skip-subprojects -C build
+}

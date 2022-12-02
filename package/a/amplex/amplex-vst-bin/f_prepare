@@ -1,0 +1,9 @@
+prepare() {
+	cd "$srcdir"
+
+	## Amplex Guitar Amp
+	unzip "`xdg-user-dir DOWNLOAD`/Amplex_V${pkgver/./-}_VST_Linux_x64_Debian.zip"
+	
+	## Presets Archive
+	unzip "`xdg-user-dir DOWNLOAD`/Amplex_Presets_V29.zip"
+}

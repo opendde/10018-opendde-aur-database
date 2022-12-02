@@ -1,0 +1,7 @@
+package() {
+  cd "${srcdir}/${_pkgbase}-${pkgver}"
+
+  make INSTALLROOT="${pkgdir}" install install_samples
+
+  install -dm755 "$pkgdir/etc/autofs/auto.master.d"
+}

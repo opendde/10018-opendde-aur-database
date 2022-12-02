@@ -1,0 +1,4 @@
+package() {
+  install -Dm755 $srcdir/bin/azure-vhd-utils-for-go "$pkgdir/usr/bin/vhd"
+  install -Dm644 $srcdir/src/${_gourl}/LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"}
+}

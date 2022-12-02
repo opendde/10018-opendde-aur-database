@@ -1,0 +1,6 @@
+package() {
+	cd "$srcdir/$_pkgname"
+	install -Dvm644 "amdgpu-fancontrol.service" "$pkgdir/usr/lib/systemd/system/amdgpu-fancontrol.service"
+	install -Dvm644 "etc-amdgpu-fancontrol.cfg" "$pkgdir/etc/amdgpu-fancontrol.cfg"
+	install -Dvm755 "amdgpu-fancontrol" "$pkgdir/usr/bin/amdgpu-fancontrol"
+}

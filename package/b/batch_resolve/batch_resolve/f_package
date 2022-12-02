@@ -1,0 +1,10 @@
+package() {
+  mkdir -p $pkgdir/usr/bin/
+  mkdir -p $pkgdir/etc/
+  
+  install -m 755 $srcdir/usr/bin/batch_resolve $pkgdir/usr/bin/batch_resolve
+  install -m 755 $srcdir/etc/batch_resolve.toml $pkgdir/etc/batch_resolve.toml
+  
+  chmod +x $pkgdir/usr/bin/batch_resolve
+  chmod -x $pkgdir/etc/batch_resolve.toml
+}

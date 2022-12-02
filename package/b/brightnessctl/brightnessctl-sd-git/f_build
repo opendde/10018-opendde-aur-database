@@ -1,0 +1,4 @@
+build() {
+  cd "$srcdir/$_pkgname"
+  make PREFIX=/usr ENABLE_SYSTEMD=1
+}

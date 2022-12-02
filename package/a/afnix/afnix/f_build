@@ -1,0 +1,6 @@
+build() {
+  cd "${pkgname}-src-${pkgver}"
+
+  ./cnf/bin/afnix-setup -o --prefix="${pkgdir}/usr"
+  make
+}

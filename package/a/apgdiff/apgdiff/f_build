@@ -1,0 +1,8 @@
+build() {
+  cd "$pkgname-$pkgver"
+
+  export JAVA_HOME=/usr/lib/jvm/java-11-openjdk
+  export MAVEN_OPTS="-Dmaven.repo.local=$srcdir/.m2"
+
+  mvn package
+}

@@ -1,0 +1,13 @@
+build() {
+  mkdir audacity/build
+  cd audacity/build
+  CC=clang cmake \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DwxBUILD_TOOLKIT:STRING=gtk3 \
+    -Daudacity_use_wxwidgets=local \
+    audacity_use_ffmpeg:STRING=loaded \
+    ..
+  cmake --build .
+  make .
+}

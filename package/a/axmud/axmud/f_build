@@ -1,0 +1,6 @@
+build() {
+  cd "$srcdir/$_relpkg-$pkgver"
+
+  perl Makefile.PL INSTALLDIRS=vendor
+  make
+}

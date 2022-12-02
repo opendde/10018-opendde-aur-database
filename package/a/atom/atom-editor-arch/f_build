@@ -1,0 +1,5 @@
+build() {
+  cd "$srcdir/${_pkgname}-${_atomver}"
+  export PYTHON=/usr/bin/python2
+  until ./script/build; do :; done
+}

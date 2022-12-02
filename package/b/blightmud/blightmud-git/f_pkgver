@@ -1,0 +1,4 @@
+pkgver() {
+	cd $pkgname
+	echo $(grep '^version =' Cargo.toml|head -n1|cut -d\" -f2).$(git rev-list --count HEAD).g$(git describe --always)
+}

@@ -1,0 +1,4 @@
+package() {
+  install -dm 755 "$pkgdir"/usr/share/icons/Antu
+  cp -r ${srcdir}/${pkgname%}/* ${pkgdir}/usr/share/icons/Antu/
+}

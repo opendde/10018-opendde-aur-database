@@ -1,0 +1,4 @@
+build() {
+  cd agg-$pkgver
+  cargo build --release --locked
+}

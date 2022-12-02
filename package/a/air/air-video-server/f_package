@@ -1,0 +1,31 @@
+package() {
+  cd ${srcdir}
+
+  # core files  
+  install -m755 -d ${pkgdir}/usr/share/${pkgname}
+  install -m644 AirVideoServerLinux.jar ${pkgdir}/usr/share/${pkgname}
+  install -m644 ${pkgname}.properties ${pkgdir}/usr/share/${pkgname}
+  install -m755 libav/avconv ${pkgdir}/usr/share/${pkgname}
+  install -Dm755 mp4creator.sh ${pkgdir}/usr/share/${pkgname}/mp4creator
+  install -Dm755 ${pkgname}.sh ${pkgdir}/usr/bin/${pkgname}
+  install -Dm644 ${pkgname}.properties ${pkgdir}/etc/conf.d/${pkgname}
+
+  # rc.d
+  install -Dm755 ${pkgname}.rc ${pkgdir}/etc/rc.d/${pkgname}
+  
+  # autostart
+  install -Dm644 ${pkgname}.autostart ${pkgdir}/etc/xdg/autostart/${pkgname}.desktop
+  install -m644 ${pkgname}-enabled.autostart ${pkgdir}/usr/share/${pkgname}/${pkgname}.desktop
+
+  # avahi
+  install -Dm644 ${pkgname}.service ${pkgdir}/etc/avahi/services/${pkgname}.service
+
+  # systemd
+  install -Dm644 ${pkgname}-systemd.service ${pkgdir}/usr/lib/systemd/system/${pkgname}.service
+
+  # licenses
+  install -m755 -d ${pkgdir}/usr/share/licenses/${pkgname}
+  install -m644 LICENSE ${pkgdir}/usr/share/licenses/${pkgname}/
+  install -m755 -d ${pkgdir}/usr/share/licenses/${pkgname}/libav
+  install -m644 libav/{LICENSE,COPYING.*} ${pkgdir}/usr/share/licenses/${pkgname}/libav
+}

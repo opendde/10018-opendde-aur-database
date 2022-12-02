@@ -1,0 +1,5 @@
+build() {
+	cd "${srcdir}"
+	echo -e "$_apertium_caffeine_desktop" | tee ${pkgname}.desktop
+	echo "java -Xmx500m -jar /usr/share/apertium/${pkgname}.jar" > ${pkgname}
+}

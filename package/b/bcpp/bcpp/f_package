@@ -1,0 +1,7 @@
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  make DESTDIR="$pkgdir/" install
+  cp code/bcpp.cfg "$pkgdir/usr/bin"
+  mkdir -p "$pkgdir/usr/share/licenses/bcpp"
+  install -m644 COPYING "$pkgdir/usr/share/licenses/bcpp/"
+}

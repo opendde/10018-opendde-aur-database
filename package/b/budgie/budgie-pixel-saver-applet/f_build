@@ -1,0 +1,8 @@
+build() {
+  cd "$srcdir/${pkgname}-${pkgver}"
+  patch -p0 -i ../remove-meson-post-install.patch
+  mkdir -p build
+  cd "${srcdir}/${pkgname}-${pkgver}/build"
+  meson --prefix /usr --buildtype=plain ..
+  ninja
+}

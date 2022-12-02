@@ -1,0 +1,5 @@
+package() {
+    cd "$srcdir/$pkgname-$pkgver"
+
+    make BUILD_MODE=prod LIBRARY_TYPE=relocatable DESTDIR="$pkgdir/usr" install
+}

@@ -1,0 +1,5 @@
+package() {
+    cd "${_pkgname}"
+    install -m755 -d "${pkgdir}/usr/bin"
+    make PREFIX="${pkgdir}/usr" install
+}

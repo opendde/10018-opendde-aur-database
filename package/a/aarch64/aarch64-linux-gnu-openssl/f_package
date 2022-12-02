@@ -1,0 +1,9 @@
+package() {
+    pushd ${_pkgname}-build
+
+	make DESTDIR="${pkgdir}" MANDIR=/usr/${_target}/usr/share/man MANSUFFIX=ssl install_sw install_ssldirs install_man_docs
+
+	install -D -m644 ../${_pkgname}-${_ver}/LICENSE "${pkgdir}/usr/${_target}/usr/share/licenses/${_pkgname}/LICENSE"
+    popd
+    rm -rf ${_pkgname}-build
+}

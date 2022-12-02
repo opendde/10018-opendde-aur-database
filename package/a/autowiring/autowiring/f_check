@@ -1,0 +1,5 @@
+check() {
+  cd "${srcdir}/${pkgname}-${pkgver}/build"
+
+  ctest --output-on-failure --timeout 30
+}

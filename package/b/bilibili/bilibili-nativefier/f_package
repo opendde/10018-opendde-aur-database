@@ -1,0 +1,11 @@
+package() {
+  cd $srcdir
+  cd bilibili
+  cd */
+  install -dm755 "${pkgdir}/"{opt,usr/{bin,share/{applications,licenses/${pkgname}}}}
+  find . -type f -exec install -Dm755 "{}" "$pkgdir/opt/$pkgname/{}" \;
+  cd $srcdir
+  install -Dm644 "${pkgdir}/opt/${pkgname}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  install -Dm644 "$pkgname.desktop" "$pkgdir/usr/share/applications/"
+  ln -s "/opt/$pkgname/bilibili" "$pkgdir/usr/bin/$pkgname"
+}

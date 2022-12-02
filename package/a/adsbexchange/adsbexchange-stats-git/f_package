@@ -1,0 +1,5 @@
+package() {
+  install -D -m 755 "${srcdir}/${_gitname}/json-status" "${pkgdir}/usr/bin/adsbexchange-stats"
+  install -D -m 755 "${srcdir}/${_gitname}/adsbexchange-showurl" "${pkgdir}/usr/bin/adsbexchange-showurl"
+  install -D -m 644 adsbexchange-stats.service "${pkgdir}/usr/lib/systemd/system/adsbexchange-stats.service"
+}

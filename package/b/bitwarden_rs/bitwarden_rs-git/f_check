@@ -1,0 +1,4 @@
+check() {
+	cd "$srcdir/$_pkgbase"
+	cargo test --release --locked --features sqlite
+}

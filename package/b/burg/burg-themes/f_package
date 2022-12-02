@@ -1,0 +1,11 @@
+package() {
+   local tdir="${pkgdir}/boot/burg"
+
+   for foo in fonts themes
+   do
+      cd "${srcdir}"
+      find "${foo}" -type f -exec install -Dpm644 '{}' "${tdir}/{}" \;
+   done
+
+   install -pm644 "${srcdir}"/{burgenv,gui.cfg} "${tdir}"
+}

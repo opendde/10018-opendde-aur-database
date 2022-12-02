@@ -1,0 +1,4 @@
+prepare() {
+  cd "$srcdir/$pkgname-$pkgver"
+  sed -i 's/^DISABLE_SELF_UPGRADE=$/&yes/' betterdiscordctl
+}

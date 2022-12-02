@@ -1,0 +1,6 @@
+package() {
+  cd bios_extract
+  mkdir -p "$pkgdir"/usr/bin
+  install -t "$pkgdir"/usr/bin bios_extract bcpvpd ami_slab xfv/efidecomp
+  install -Dm644 COPYING "$pkgdir"/usr/share/licenses/$pkgname/COPYING
+}

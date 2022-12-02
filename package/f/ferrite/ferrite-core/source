@@ -1,0 +1,1 @@
+("${pkgbase}-${pkgver}.tar.gz::https://github.com/froyotam/ferrite-core/archive/${pkgver}.tar.gz")

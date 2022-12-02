@@ -1,0 +1,9 @@
+package() {
+	tar xf data.tar.xz --directory="$pkgdir"
+
+	install -d "${pkgdir}/usr/bin"
+	ln -s '/opt/Agregore Browser/agregore-browser' "${pkgdir}/usr/bin/agregore-browser"
+
+	mv "${pkgdir}/usr/share/icons/hicolor/0x0/apps/" "${pkgdir}/usr/share/pixmaps"
+	rm -r "${pkgdir}/usr/share/icons"
+}

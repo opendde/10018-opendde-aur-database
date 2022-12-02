@@ -1,0 +1,4 @@
+build() {
+	mv "${pkgname}.py" "${pkgname}"
+	chmod 755 "${pkgname}"
+}

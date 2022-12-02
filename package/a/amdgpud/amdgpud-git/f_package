@@ -1,0 +1,16 @@
+package() {
+	cd "$pkgname"
+	find "target/$CARCH-unknown-linux-gnu/release/" \
+		-maxdepth 1 \
+		-executable \
+		-type f \
+		-exec install -D -t "$pkgdir/usr/bin/" '{}' \+
+	find services \
+		-maxdepth 1 \
+		-name '*.service' \
+		-type f \
+		-exec install -Dm644 -t "$pkgdir/usr/lib/systemd/system/" '{}' \+
+	install -Dm644 LICENSE* -t "$pkgdir/usr/share/licenses/$pkgname/"
+	install -Dm644 README.md -t "$pkgdir/usr/share/doc/$pkgname/"
+	install -Dm644 "$srcdir/config.toml" -t "$pkgdir/etc/$_name/"
+}

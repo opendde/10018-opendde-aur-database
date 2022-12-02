@@ -1,0 +1,11 @@
+build() {
+  cd "$srcdir/${pkgname%-git}/lang/c"
+
+  msg2 'Building...'
+  mkdir build && cd build
+  cmake .. \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DTHREADSAFE=true
+  make
+}

@@ -1,0 +1,4 @@
+build() {
+	cd "${srcdir}"
+	gcc -o anbox-bridge ./anbox-bridge.c
+}

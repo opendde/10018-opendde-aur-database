@@ -1,0 +1,9 @@
+package() {
+  bld=$srcdir/$pkgname_pkgver/proj/blhost/gcc/Release
+  install -Dm 755 $bld/$pkgname -t $pkgdir/usr/bin
+
+  # documentation
+  install -Dm 644 \
+    $srcdir/$pkgname_pkgver/docs/"blhost User's Guide.pdf" \
+	$pkgdir/usr/share/doc/$pkgname/MCUBLHOSTUG-rev7-20200429.pdf
+}

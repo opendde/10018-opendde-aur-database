@@ -1,0 +1,6 @@
+build() {
+    #export CPLUS_INCLUDE_PATH="$CPLUS_INCLUDE_PATH:/usr/include/python3.6m/"
+    cd "${srcdir}/boost_1_63_0"
+	./bootstrap.sh --with-libraries=chrono,filesystem,program_options,thread
+	./b2 variant=release link=shared runtime-link=shared stage
+}

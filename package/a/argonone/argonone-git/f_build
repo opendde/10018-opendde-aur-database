@@ -1,0 +1,4 @@
+build() {
+  cd "${srcdir}"/"${_gitname}"
+  git apply "${srcdir}"/remove_virtual_env.patch
+}

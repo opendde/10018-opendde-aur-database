@@ -1,0 +1,6 @@
+package() {
+	cd ${srcdir}/
+	mkdir -p ${pkgdir}/usr/share/themes
+	cp -r AdwaitaDark ${pkgdir}/usr/share/themes
+	chown -R root:root ${pkgdir}/usr/share/themes
+}

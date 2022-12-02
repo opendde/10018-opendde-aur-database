@@ -1,0 +1,7 @@
+package() {
+  cd "$srcdir/$pkgname-v$pkgver"
+  make prefix="$pkgdir/usr" install
+  install -d -m755 "$pkgdir"/usr/{bin,share/doc/$pkgname}
+  install -D -m755 bz2aespipe "$pkgdir"/usr/bin/
+  install -D -m644 README ChangeLog "$pkgdir"/usr/share/doc/$pkgname/
+}

@@ -1,0 +1,4 @@
+package() {
+    cd $srcdir/ansible-lint-${pkgver}
+    python2 setup.py install --root="$pkgdir" --optimize=1
+}

@@ -1,0 +1,12 @@
+build() {
+    for _arch in ${_architectures}; do
+        source android-env ${_arch}
+        processor=$(basename ${ANDROID_CC})
+        processor="${processor%%-*}"
+        sed "s|@TRIPLE@|${_arch}|g" android-cmake.sh > android-${_arch}-cmake
+
+        for _pyver in ${_python_versions}; do
+            sed "s|@TRIPLE@|${_arch}|g;s|@PYMAJMIN@|${_pyver}|g" android-cmake-py.sh > android-${_arch}-cmake-py${_pyver}
+        done
+    done
+}

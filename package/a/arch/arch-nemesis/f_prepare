@@ -1,0 +1,4 @@
+prepare() {
+    cd $(ls ${srcdir} | grep arch-nemesis)
+    dephell deps convert --from pyproject.toml --to setup.py
+}

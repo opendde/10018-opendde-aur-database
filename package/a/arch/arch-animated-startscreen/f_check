@@ -1,0 +1,4 @@
+check() {
+	cd "Arch-Aurora-Borealis-Startscreen-master"
+	make -k check
+}

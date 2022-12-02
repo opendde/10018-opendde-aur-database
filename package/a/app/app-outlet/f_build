@@ -1,0 +1,6 @@
+build() {
+  _ensure_local_nvm
+  cd ${pkgname}-${pkgver}
+  npm install
+  npm run electron:linux
+}

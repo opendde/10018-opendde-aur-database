@@ -1,0 +1,6 @@
+build() {
+  cd "openblt_v0${pkgver//.}/Host/Source/BootCommander/build"
+
+  cmake ..
+  make
+}

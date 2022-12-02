@@ -1,0 +1,17 @@
+build() {
+  cd "${srcdir}/ComputeLibrary"
+  git checkout "v$pkgver"
+  scons -j`cat /proc/cpuinfo | grep -i "processor" | wc -l` \
+  os=linux arch=x86_64 build=native \
+  Werror=0 debug=1 asserts=1 \
+  neon=0 \
+  opencl=1 gles_compute=0 embed_kernels=1 \
+  examples=0 \
+  set_soname=0 \
+  openmp=0 cppthreads=1 \
+  pmu=0 \
+  mali=0 \
+  validation_tests=0 \
+  benchmark_tests=0 \
+  extra_cxx_flags="-fPIC"
+}

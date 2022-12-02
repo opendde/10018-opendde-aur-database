@@ -1,0 +1,8 @@
+build() {
+  cd $_srcdir
+
+  mkdir -p build-$_target && pushd build-$_target
+  $_target-configure --enable-pax_emutramp
+  make
+  popd
+}

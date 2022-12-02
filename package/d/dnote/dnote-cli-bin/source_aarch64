@@ -1,0 +1,1 @@
+("${_pkgname}-${pkgver}-arm64.tar.gz::https://github.com/${_shortname}/${_shortname}/releases/download/cli-v${pkgver}/${_shortname}_${pkgver}_linux_arm64.tar.gz")

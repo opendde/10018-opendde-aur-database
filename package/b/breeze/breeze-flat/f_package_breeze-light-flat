@@ -1,0 +1,4 @@
+package_breeze-light-flat() {
+    pkgdesc="Breeze Light, ${_pkgdesc}"
+    copy_theme
+}

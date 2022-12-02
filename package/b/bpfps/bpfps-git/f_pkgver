@@ -1,0 +1,4 @@
+pkgver() {
+  cd "${srcdir}/src/github.com/genuinetools/bpfps"
+  git describe --long --tags --abbrev=7 | sed 's/^v//; s/-/+/; s/-/\./'
+}

@@ -1,0 +1,28 @@
+build() {
+  cd ${srcdir}/edb-debugger
+  sed -i "s:/usr/local:/usr:g" common.pri
+  # generate all Makefiles...
+  qmake-qt5 -makefile DEFAULT_PLUGIN_PATH="/usr/lib32/edb/"
+  make qmake
+
+  for dir in src plugins
+  do
+    cd ${dir} && qmake-qt5 && cd ..
+  done
+
+  # ...and fix march in them
+  for file in $(find src plugins -name Makefile)
+  do
+    sed -i 's/-march=x86-64/-march=i686/g' ${file}
+  done
+
+  make
+
+  # that's rediculous, see https://bbs.archlinux.org/viewtopic.php?id=133403
+  # yup, we're patchin binary files... but i think it's still more simple way
+  # than patching system header or defining macro in all source code files
+  for file in $(find -name \*.so)
+  do
+    sed -i 's/buildkey=x86_64 linux g++-4 full-config/buildkey=i386 linux g++-4 full-config\o00\o00/' ${file}
+  done
+}

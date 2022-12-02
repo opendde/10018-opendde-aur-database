@@ -1,0 +1,19 @@
+package() {
+  cd "$srcdir/binkd"
+  make DESTDIR="$pkgdir" install
+
+  mv "$pkgdir/usr/sbin" "$pkgdir/usr/bin"
+
+  install -dm0755 "$pkgdir/etc/binkd"
+  mv "$pkgdir/etc/binkd.conf-dist" "$pkgdir/etc/binkd/binkd.conf"
+
+  for dir in inbound{,-temp,-unsecure} outbound/fidonet longbox personalboxes nodelist; do
+    mkdir -p "$pkgdir/var/spool/ftn/$dir"
+  done
+
+  cd "$srcdir"
+  install -Dm0644 binkd.service   "$pkgdir/usr/lib/systemd/system/binkd.service"
+  install -Dm0644 binkd@.service  "$pkgdir/usr/lib/systemd/system/binkd@.service"
+  install -Dm0644 binkd.socket    "$pkgdir/usr/lib/systemd/system/binkd.socket"
+  install -Dm0644 binkd.tmpfiles  "$pkgdir/usr/lib/tmpfiles.d/binkd.conf"
+}

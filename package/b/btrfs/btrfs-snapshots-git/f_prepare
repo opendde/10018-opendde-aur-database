@@ -1,0 +1,9 @@
+prepare() {
+    cd "$srcdir/${pkgname%-git}"
+    local file
+    while read -r file; do
+        sed -i "1s:#\!.*/env \(.*\)$:#\!/usr/bin/\1:" "$file"
+        sed -i "\:/usr/local/etc:s:/usr/local::g" "$file"
+        sed -i "\:/usr/local:s:/usr/local:/usr:g" "$file"
+    done < <(git ls-files)
+}

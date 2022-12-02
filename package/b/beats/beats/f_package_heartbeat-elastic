@@ -1,0 +1,8 @@
+package_heartbeat-elastic() {
+    pkgdesc='Ping remote services for availability and log results to Elasticsearch or send to Logstash'
+    conflicts=('heartbeat')
+    replaces=('heartbeat')
+
+    _do_package_beat
+    cp -R monitors.d "$pkgdir"/etc/$_pkgname/
+}

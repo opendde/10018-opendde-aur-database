@@ -1,0 +1,16 @@
+package() {
+  install -Dm 644 beaker.desktop -t "$pkgdir"/usr/share/applications
+
+  cd beaker-$pkgver
+
+  mkdir "$pkgdir"/usr/{lib,bin}
+  cp -a dist/linux-unpacked "$pkgdir"/usr/lib/beaker
+  ln -s /usr/lib/beaker/beaker-browser "$pkgdir"/usr/bin/beaker
+
+  for i in 16 24 32 48 64 96 128 256 512 1024; do
+    install -Dm 644 build/icons/${i}x${i}.png \
+      "$pkgdir"/usr/share/icons/hicolor/${i}x${i}/apps/beaker.png
+  done
+
+  install -Dm 644 LICENSE -t "$pkgdir"/usr/share/licenses/beaker
+}

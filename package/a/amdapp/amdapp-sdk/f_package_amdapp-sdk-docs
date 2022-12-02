@@ -1,0 +1,12 @@
+package_amdapp-sdk-docs() {
+pkgdesc="AMD Accelerated Parallel Processing (APP) SDK, 3.0 with OpenCL 2.0 support. Documentation"
+install=amdapp-sdk-docs.install
+
+  cd ${srcdir}/${_subdir}
+  install -m755 -d ${pkgdir}/usr/share/doc/amdapp-sdk
+  cp -r ./docs/* ${pkgdir}/usr/share/doc/amdapp-sdk
+  
+  #License
+  install -m755 -d ${pkgdir}/usr/share/licenses
+  ln -s amdapp-sdk ${pkgdir}/usr/share/licenses/${pkgname}
+}

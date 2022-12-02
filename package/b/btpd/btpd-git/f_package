@@ -1,0 +1,9 @@
+package() {
+	local installopts="--mode 0644 -D"
+	local sysddir="$pkgdir/usr/lib/systemd/user"
+	local licdir="$pkgdir/usr/share/licenses/$pkgname"
+	install $installopts "$srcdir/btpd.service" "$sysddir/btpd.service"
+	install $installopts "$srcdir/$_gitname/LICENSE" "$licdir/LICENSE"
+	cd "$srcdir/$_gitname"
+	make DESTDIR="$pkgdir/" install
+}

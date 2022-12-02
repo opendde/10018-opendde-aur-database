@@ -1,0 +1,4 @@
+prepare() {
+	cd "$_builddir"
+	patch -p1 < "$srcdir/fix-mbedtls_include.patch"
+}

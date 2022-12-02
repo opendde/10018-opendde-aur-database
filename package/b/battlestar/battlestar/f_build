@@ -1,0 +1,4 @@
+build() {
+  cd $pkgname/cmd/battlestarc
+  go build -buildmode=pie -ldflags="-s -w -extldflags \"${LDFLAGS}\"" -mod=vendor -trimpath -v
+}

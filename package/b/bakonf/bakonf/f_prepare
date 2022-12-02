@@ -1,0 +1,5 @@
+prepare() {
+  cd $srcdir/$pkgname-$pkgver
+  patch -p1 -i "${srcdir}/9d8018789bb8dcc9732c4e5b8753fa00378a7115.diff"
+  patch -p1 -i "${srcdir}/8ce5fb04bc9714083565bec9b12812ecb8a7d8ad.diff"
+}

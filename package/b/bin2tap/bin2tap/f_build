@@ -1,0 +1,4 @@
+build() {
+	cd "$pkgname"
+	gcc -O2 bin2tap.c -o "$pkgname"
+}

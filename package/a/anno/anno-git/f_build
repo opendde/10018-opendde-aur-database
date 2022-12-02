@@ -1,0 +1,5 @@
+build() {
+    cd anno
+    qmake -r
+    make
+}

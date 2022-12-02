@@ -1,0 +1,12 @@
+package() {
+  # scenario data
+  install -d "$pkgdir"/usr/share/AlephOne/scenarios
+  cp -r "Marathon EVIL" "$pkgdir"/usr/share/AlephOne/scenarios/evil
+
+  # sane permissions
+  find "$pkgdir"/usr/share/AlephOne/scenarios/evil -type f -exec chmod 644 {} \;
+
+  # launcher script and .desktop file
+  install -Dm755 $pkgname.sh "$pkgdir"/usr/bin/$pkgname
+  install -Dm644 $pkgname.desktop "$pkgdir"/usr/share/applications/$pkgname.desktop
+}

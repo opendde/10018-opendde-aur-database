@@ -1,0 +1,28 @@
+build() {
+    cd $pkgname
+    git checkout ${pkgver//_/-}
+    mkdir -p "$srcdir/${pkgname}-runtime/"{platform_linux/{bin,lib,src},chibios}
+    cp -r "$srcdir/$_chibios"/* "$srcdir/${pkgname}-runtime/chibios/"
+    bsdtar -xf "$srcdir/${pkgname}-runtime/chibios/ext/fatfs-0.9-patched.zip" -C "$srcdir/${pkgname}-runtime/chibios/ext"
+    cp -r "$srcdir/$_toolchain"/* "$srcdir/${pkgname}-runtime/platform_linux/"
+    cd "$srcdir/$_libusb"
+    patch -N -p1 < "$srcdir/$pkgname/platform_linux/src/libusb.stdfu.patch"
+    ./configure --prefix="$srcdir/${pkgname}-runtime/platform_linux"
+    make
+    make install
+    cd "$srcdir/$_dfu_util"
+    ./configure --prefix="$srcdir/${pkgname}-runtime/platform_linux" \
+        USB_LIBS="$srcdir/${pkgname}-runtime/platform_linux/lib/libusb-1.0.a -ludev -pthread" \
+        USB_CFLAGS="-I$srcdir/${pkgname}-runtime/platform_linux/include/libusb-1.0/"
+    make
+    sed -i -e 's/SPACE := */EMPTY :=/'                     "$srcdir/$pkgname"/firmware/Makefile.patch
+    sed -i -e 's/SPACE += */SPACE := \$(EMPTY) \$(EMPTY)/' "$srcdir/$pkgname"/firmware/Makefile.patch
+    make install
+    make clean
+    ldd "$srcdir/${pkgname}-runtime/platform_linux/bin/dfu-util"
+    cd "$srcdir/$pkgname"
+    sed -i "s,doc,/usr/share/doc/$pkgname," src/main/java/axoloti/menus/HelpMenu.java
+    sed -i "s,file:doc,file:///usr/share/$pkgname," src/main/java/resources/about.html
+    echo '##### Building GUI #####'
+    ant
+}

@@ -1,0 +1,5 @@
+build() {
+  cd gnome-shell-$pkgver/data/theme
+  find . -type f -print0 | xargs -0 sed -i "s/resource:\/\/\/org\/gnome\/shell\/theme/./g"
+  sassc gnome-shell.scss > gnome-shell.css
+}

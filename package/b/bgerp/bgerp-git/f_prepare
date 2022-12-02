@@ -1,0 +1,5 @@
+prepare() {
+	cd "$srcdir/${pkgname%-git}"
+    sed -i 's|#JAVA_HOME=|. /etc/conf.d/bgerp|' build/bgerp/files/setenv.sh
+    chmod +x gradlew 
+}

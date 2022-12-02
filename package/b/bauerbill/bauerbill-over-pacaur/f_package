@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir/"
+
+  mkdir -p "$pkgdir"/usr/bin/
+  install pacaur "$pkgdir"/usr/bin/
+}

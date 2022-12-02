@@ -1,0 +1,25 @@
+build() {
+
+    cmake \
+        -B _build \
+        -S ${_name} \
+        -G Ninja \
+        -D CMAKE_INSTALL_PREFIX=/usr \
+        -D CMAKE_SKIP_RPATH=YES \
+        -D BUILD_SHARED_LIBS=1 \
+        -D INSTALL_LIBS=1 \
+        -D INSTALL_EXTRA_LIBS=1 \
+        -D BUILD_PYBULLET=ON \
+        -D BUILD_PYBULLET_NUMPY=ON \
+        -D BUILD_OPENGL3_DEMOS=ON \
+        -D BULLET2_MULTITHREADING=ON \
+        -D USE_DOUBLE_PRECISION=ON \
+        -D CMAKE_BUILD_TYPE=Release \
+        -Wno-dev
+
+    ninja -C _build
+
+    cd ${_name}
+    python setup.py build
+    doxygen
+}

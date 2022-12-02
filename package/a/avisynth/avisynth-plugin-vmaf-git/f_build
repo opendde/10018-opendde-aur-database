@@ -1,0 +1,21 @@
+build() {
+  cd "${srcdir}/build-vmaf"
+    arch-meson  ../libvmaf/libvmaf \
+     --default-library=static \
+     --prefix="${srcdir}/fakeroot/usr" \
+     -Denable_tests=false \
+     -Denable_docs=false \
+     -Dbuilt_in_models=true
+
+  ninja install
+
+  cd "${srcdir}/${_plug}/build"
+
+   PKG_CONFIG_PATH="${srcdir}/fakeroot/usr/lib/pkgconfig" \
+   CXXFLAGS+=" $(pkg-config --cflags avisynth)" \
+   cmake .. \
+   -DCMAKE_BUILD_TYPE=Release \
+   -DCMAKE_INSTALL_PREFIX=/usr \
+
+  make
+}

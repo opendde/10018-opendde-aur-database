@@ -1,0 +1,35 @@
+package() {
+  cd "$srcdir/allwpilib"
+
+  mkdir -p $pkgdir/usr/${_target}/include
+  mkdir -p $pkgdir/usr/${_target}/lib
+  mkdir -p $pkgdir/usr/include
+  mkdir -p $pkgdir/usr/lib
+
+  # ni-libraries
+  pushd ni-libraries/build/outputs > /dev/null
+  yes A | unzip -u -q nilibraries-classifier-headers.zip -d $pkgdir/usr/${_target}/include
+  yes A | unzip -u -q -j nilibraries-classifier-linuxathena.zip -d $pkgdir/usr/${_target}/lib
+  popd > /dev/null
+
+  # HAL
+  pushd hal/build/outputs > /dev/null
+  unzip -u -q hal-headers.zip -d $pkgdir/usr/${_target}/include
+  unzip -u -q hal-headers.zip -d $pkgdir/usr/include
+  unzip -u -q -j zipcpphalAthena-classifier-linuxathena.zip -d $pkgdir/usr/${_target}/lib
+  unzip -u -q -j zipcpphalSim-classifier-linuxx86-64.zip -d $pkgdir/usr/lib
+  popd > /dev/null
+
+  # wpilibc
+  pushd wpilibc/build/outputs > /dev/null
+  unzip -u -q wpilibc-headers.zip -d $pkgdir/usr/${_target}/include
+  unzip -u -q wpilibc-headers.zip -d $pkgdir/usr/include
+  unzip -u -q -j zipcppwpilibc-classifier-linuxathena.zip -d $pkgdir/usr/${_target}/lib
+  unzip -u -q -j zipcppwpilibc-classifier-linuxx86-64.zip -d $pkgdir/usr/lib
+  popd > /dev/null
+  cp wpilibc/build/libwpi.so $pkgdir/usr/${_target}/lib
+
+  find $pkgdir -type f -name LICENSE.txt -exec rm {} \;
+
+  install -Dm644 LICENSE.txt $pkgdir/usr/share/licenses/${_target}-wpilib/LICENSE
+}

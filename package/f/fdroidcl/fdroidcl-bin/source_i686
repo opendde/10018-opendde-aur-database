@@ -1,0 +1,1 @@
+("$pkgname-$pkgver-i686::https://github.com/mvdan/fdroidcl/releases/download/v$pkgver/fdroidcl_v${pkgver}_linux_386")

@@ -1,0 +1,7 @@
+_maybe_install_completion() {
+  local _from_path=contrib/"$1".bash-completion
+  local _to_path="$pkgdir"/usr/share/bash-completion/completions/"$1"
+  if [ -f "$_from_path" ]; then
+    install -Dm644 "$_from_path" "$_to_path"
+  fi
+}

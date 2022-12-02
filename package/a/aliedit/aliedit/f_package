@@ -1,0 +1,10 @@
+package() {
+	cd "${srcdir}"
+	ARCHIVE=`awk '/^__ARCHIVE_BELOW__/ {print NR + 1; exit 0; }' ${srcdir}/aliedit.sh`
+	tail -n+$ARCHIVE aliedit.sh | tar xzvm -C "${srcdir}"/
+	if [ "$CARCH" = "i686" ]; then
+		install -D -m644 "${srcdir}/lib/libaliedit32.so" "${pkgdir}/usr/lib/mozilla/plugins/libaliedit32.so"
+	elif [ "$CARCH" = "x86_64" ]; then
+		install -D -m644 "${srcdir}/lib/libaliedit64.so" "${pkgdir}/usr/lib/mozilla/plugins/libaliedit64.so"
+	fi
+}

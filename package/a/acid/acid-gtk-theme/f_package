@@ -1,0 +1,5 @@
+package() {
+  cd ${srcdir}/ACID
+  install -d ${pkgdir}/usr/share/themes/${pkgname}
+  cp -rf * ${pkgdir}/usr/share/themes/${pkgname}
+}

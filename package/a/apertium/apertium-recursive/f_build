@@ -1,0 +1,6 @@
+build() {
+	export CXXFLAGS="$CXXFLAGS -I/usr/include/utf8cpp"
+	cd "$srcdir/$pkgname-$pkgver"
+	./autogen.sh --prefix=/usr
+	make
+}

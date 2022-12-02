@@ -1,0 +1,7 @@
+build() {
+  cd "${srcdir}/${pkgname}"
+  # We run this twice because of an error with automake.
+  autoreconf -fi || autoreconf -fi
+  ./configure --prefix=/usr
+  make
+}

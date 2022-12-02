@@ -1,0 +1,21 @@
+package() {
+    ALIZA_DIR="/opt/aliza"
+    ALIZA_C_DIR="${pkgdir}${ALIZA_DIR}/install_menu"
+    ALIZA_I_DIR="${pkgdir}/usr/share/icons/hicolor"
+
+    find "${pkgdir}" -type d -exec chmod 750 {} \;
+    
+    mkdir -p "${pkgdir}${ALIZA_DIR}"
+    cp -r "${pkgname}-${pkgver}"/* "${pkgdir}${ALIZA_DIR}"
+
+    #tar xzf "${pkgname}-${pkgver}.tar.gz" -C "${pkgdir}${ALIZA_DIR}" --strip 1 --owner root --group root
+    #install -d 
+
+    for i in 16 22 24 32 36 42 48 64 72 96 128 192 256
+    do
+      install -Dm644 "${ALIZA_C_DIR}/icons/hicolor/${i}x${i}/apps/aliza.png" "${ALIZA_I_DIR}/${i}x${i}/apps/aliza.png"
+    done
+    install -Dm644 "${ALIZA_C_DIR}/icons/hicolor/scalable/apps/aliza.svg" "${ALIZA_I_DIR}/scalable/apps/aliza.svg"
+
+    install -Dm644 "${srcdir}/aliza.desktop" "${pkgdir}/usr/share/applications/aliza.desktop"
+}

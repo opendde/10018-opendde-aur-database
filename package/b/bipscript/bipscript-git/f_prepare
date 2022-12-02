@@ -1,0 +1,4 @@
+prepare() {
+  patch -p2 -i "bipscript.patch"
+  cd "bipscript"
+}

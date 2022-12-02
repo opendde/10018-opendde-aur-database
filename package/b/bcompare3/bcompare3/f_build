@@ -1,0 +1,15 @@
+build() {
+  # Prepare the directory skeleton needed for install.sh
+  mkdir -p "${srcdir}/build/usr/share/applications"
+  mkdir -p "${srcdir}/build/usr/share/doc"
+  mkdir -p "${srcdir}/build/usr/share/mime/packages"
+  mkdir -p "${srcdir}/build/usr/share/pixmaps"
+
+  # Apply some fixes on install.sh before run it
+  cd "bcompare-${pkgver}"
+  sed -i 's|/usr/|${PREFIX}/usr/|g' install.sh
+  fakeroot ./install.sh --prefix="${srcdir}/build"
+
+  # Fix wrong path
+  sed -i "s|"${srcdir}/build"|/usr|g" "${srcdir}/build/bin/bcompare"
+}

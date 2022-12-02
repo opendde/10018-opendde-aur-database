@@ -1,0 +1,4 @@
+build() {
+  cd ${pkgname%%-*}-${pkgver}
+  make KVERSION="$(cat /usr/lib/modules/$_extramodules/version)"
+}

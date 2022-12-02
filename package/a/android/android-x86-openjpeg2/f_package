@@ -1,0 +1,12 @@
+package() {
+    source android-env ${_android_arch}
+
+    cd "${srcdir}/openjpeg-${pkgver}/build-${_android_arch}-static"
+    make DESTDIR="$pkgdir" install
+    cd "${srcdir}/openjpeg-${pkgver}/build-${_android_arch}-shared"
+    make DESTDIR="$pkgdir" install
+
+    rm -r "${pkgdir}"/${ANDROID_PREFIX_BIN}
+    ${ANDROID_STRIP} -g --strip-unneeded "${pkgdir}"/${ANDROID_PREFIX_LIB}/*.so
+    ${ANDROID_STRIP} -g "$pkgdir"/${ANDROID_PREFIX_LIB}/*.a
+}

@@ -1,0 +1,6 @@
+build() {
+  cd "$srcdir/ASL-$pkgver"
+  mkdir build && cd build
+  cmake -G "Unix Makefiles" ../
+  make
+}

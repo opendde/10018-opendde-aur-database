@@ -1,0 +1,7 @@
+package() {
+  pkgdesc="Beautiful Manjaro Bootsplash with space animation"
+  cd "$srcdir"
+
+  install -Dm644 "$srcdir/bootsplash-theme-manjaro-space-purple/bootsplash-manjaro-space-purple" "$pkgdir/usr/lib/firmware/bootsplash-themes/manjaro-space-purple/bootsplash"
+  install -Dm644 "$srcdir/bootsplash-theme-manjaro-space-purple/bootsplash-manjaro-space-purple.initcpio_install" "$pkgdir/usr/lib/initcpio/install/bootsplash-manjaro-space-purple"
+}

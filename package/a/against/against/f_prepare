@@ -1,0 +1,4 @@
+prepare() {
+        cd "${srcdir}"
+        sed -i '1c\#!/usr/bin/env python2' "${pkgname}.py"
+}

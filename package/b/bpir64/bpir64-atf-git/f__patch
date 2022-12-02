@@ -1,0 +1,11 @@
+_patch () {
+  patch -p1 -N -r - < "${srcdir}/bl31-inside-bl2-image.patch"
+  patch -p1 -N -r - < "${srcdir}/mmc-high-speed.patch"
+  patch -p1 -N -r - < "${srcdir}/move-bl33-base.patch"
+  patch -p1 -N -r - < "${srcdir}/no-uboot-bl2.patch"
+  patch -p1 -N -r - < "${srcdir}/no-uboot-bl31.patch"
+  if [ ! -z "$(cat ${srcdir}/${_gitname}/plat/mediatek/mt7622/include/platform_def.h | \
+            grep FIP_DECOMP_TEMP_SIZE)" ]; then
+    patch -p1 -N -r - < "${srcdir}/incr-fip-decomp-size.patch"
+  fi
+}

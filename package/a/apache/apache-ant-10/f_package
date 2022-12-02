@@ -1,0 +1,32 @@
+package() {
+    cd "${srcdir}/apache-ant-${pkgver}/apache-ant-${pkgver}"
+
+    install -dm755 "${pkgdir}/etc"
+    install -dm755 "${pkgdir}/usr/share/doc"
+    install -dm755 "${pkgdir}/usr/share/apache-ant/bin"
+    install -dm755 "${pkgdir}/usr/share/java/apache-ant"
+    install -dm755 "${pkgdir}/usr/share/licenses/apache-ant"
+      
+    ln -s /etc/apache-ant            "${pkgdir}/usr/share/apache-ant/etc"
+    ln -s /usr/share/java/apache-ant "${pkgdir}/usr/share/apache-ant/lib"
+
+    find bin -type f -a ! -name \*.bat -a ! -name \*.cmd \
+        -exec install -m755 {} "${pkgdir}/usr/share/apache-ant/bin" \;
+    install -m644 lib/*.jar  "${pkgdir}/usr/share/java/apache-ant"
+
+    cp -Rp etc "${pkgdir}/etc/apache-ant"
+    rm -f      "${pkgdir}/etc/apache-ant/ant-bootstrap.jar"
+
+    install -Dm755 "${srcdir}/bin_ant"       "${pkgdir}/usr/bin/ant"
+    install -Dm644 "${srcdir}/ant.conf"      "${pkgdir}/etc/apache-ant/ant.conf"
+    install -Dm755 "${srcdir}/apache-ant.sh" "${pkgdir}/etc/profile.d/apache-ant.sh"
+    install -m644  LICENSE NOTICE            "${pkgdir}/usr/share/licenses/apache-ant"
+
+    # fix python2 path
+    sed -i "${pkgdir}/usr/share/apache-ant/bin/runant.py" \
+        -e 's|/usr/bin/python|/usr/bin/python2|'
+
+    # Documentation
+    cp -r "${srcdir}/apache-ant-${pkgver}/manual" \
+          "${pkgdir}/usr/share/doc/apache-ant"
+}

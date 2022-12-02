@@ -1,0 +1,3 @@
+package() {
+  install -Dm755 "${srcdir}/${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+}

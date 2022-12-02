@@ -1,0 +1,3 @@
+build() {
+   unar -e GBK  ${srcdir}/${_pkg_file_name}
+}

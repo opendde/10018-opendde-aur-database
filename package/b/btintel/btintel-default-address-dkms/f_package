@@ -1,0 +1,13 @@
+package() {
+    install -Dm644 Makefile "${pkgdir}/usr/src/${_pkgbase}-${pkgver}/Makefile"
+    install -Dm644 dkms.conf "${pkgdir}/usr/src/${_pkgbase}-${pkgver}/dkms.conf"
+    install -Dm644 btintel.c "${pkgdir}/usr/src/${_pkgbase}-${pkgver}/btintel.c"
+    install -Dm644 btusb.c "${pkgdir}/usr/src/${_pkgbase}-${pkgver}/btusb.c"
+    install -Dm644 btbcm.h "${pkgdir}/usr/src/${_pkgbase}-${pkgver}/btbcm.h"
+    install -Dm644 btintel.h "${pkgdir}/usr/src/${_pkgbase}-${pkgver}/btintel.h"
+    install -Dm644 btrtl.h "${pkgdir}/usr/src/${_pkgbase}-${pkgver}/btrtl.h"
+
+    sed -e "s/@_PKGBASE@/${_pkgbase}/" \
+        -e "s/@PKGVER@/${pkgver}/" \
+        -i "${pkgdir}"/usr/src/${_pkgbase}-${pkgver}/dkms.conf
+}

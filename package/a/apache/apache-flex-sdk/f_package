@@ -1,0 +1,22 @@
+package() {
+    # remove windows files
+    rm "${_srcdir}/"{bin,ide}/*.bat
+
+    (
+    cd "$_srcdir"
+    patch -i "${srcdir}/27.0-to-32.0.patch" # Update default version from 27.0 to 32.0
+    cd frameworks
+    patch -i "${srcdir}/27.0-to-32.0-frameworks.patch"
+    )
+
+    install -d "${pkgdir}/opt"
+    
+    # sdk files
+    cp -dr --no-preserve='ownership' "$_srcdir" "${pkgdir}/opt/${pkgname}"
+    
+    # player
+    install -D -m644 "${srcdir}/playerglobal.swc" "${pkgdir}/opt/${pkgname}/player/${_player_ver}/playerglobal.swc"
+    
+    # set PATH
+    install -D -m755 apache-flex-sdk.sh -t "${pkgdir}/etc/profile.d"
+}

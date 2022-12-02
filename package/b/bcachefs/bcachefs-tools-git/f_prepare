@@ -1,0 +1,7 @@
+prepare() {
+    cd "$srcdir/$_reponame"
+
+    PName="add-mkinitcpio-hook-for-Arch.patch"
+    msg2 "Patching with $PName ..."
+    patch -Np1 -i "../$PName"
+}

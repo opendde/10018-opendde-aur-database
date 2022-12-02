@@ -1,0 +1,8 @@
+package() {
+	cd $srcdir
+	cabextract 20662520_6c535fbfa9dca0d07ab069e8918896086e2af0a7.cab
+	hex2hcd BCM20702A1_001.002.014.1443.1572.hex
+	install -D -T -m644 BCM20702A1_001.002.014.1443.1572.hcd $pkgdir/usr/lib/firmware/brcm/BCM20702A1-0a5c-216f.hcd
+	cd $pkgdir/usr/lib/firmware/brcm/
+	ln -rs BCM20702A1-0a5c-216f.hcd BCM20702A0-0a5c-216f.hcd
+}

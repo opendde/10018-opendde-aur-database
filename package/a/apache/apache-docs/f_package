@@ -1,0 +1,5 @@
+package() {
+  install -d ${pkgdir}/usr/share/doc/httpd
+	cp -a ${srcdir}/httpd-docs-${pkgver}.en/* \
+    ${pkgdir}/usr/share/doc/httpd/
+}

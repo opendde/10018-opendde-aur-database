@@ -1,0 +1,7 @@
+build() {
+  cd Bibata_Extra_Cursor-$pkgver
+
+  pushd builder
+  make build_unix
+  popd
+}

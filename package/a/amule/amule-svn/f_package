@@ -1,0 +1,29 @@
+package() {
+  cd amule
+
+  make DESTDIR=$pkgdir install
+
+  rm $pkgdir/usr/share/pixmaps/amule.*
+  install -m644 $srcdir/amule.png $pkgdir/usr/share/pixmaps
+
+  install src/utils/fileview/mulefileview $pkgdir/usr/bin
+  ln -rs $pkgdir/usr/bin/mulefileview $pkgdir/usr/bin/fileview
+
+  install -d $pkgdir/usr/share/webapps/amps
+  install -m644 $(find src/utils/amps -maxdepth 1 -type f) $pkgdir/usr/share/webapps/amps
+  install -d $pkgdir/usr/share/webapps/amps/langs
+  install -m644 src/utils/amps/langs/* $pkgdir/usr/share/webapps/amps/langs
+  install -d $pkgdir/usr/share/webapps/amps/images
+  install -m644 src/utils/amps/images/* $pkgdir/usr/share/webapps/amps/images
+
+  install -m644 *.txt docs/{*.dia,AUTHORS,COPYING,README.*} README* $pkgdir/usr/share/doc/amule
+
+  install -d $pkgdir/usr/share/doc/cas
+  install -m644 src/utils/cas/README $pkgdir/usr/share/doc/cas
+  ln -rs $pkgdir/usr/share/doc/cas $pkgdir/usr/share/doc/amule
+
+  install -d $pkgdir/usr/share/doc/amps
+  ln -rs $pkgdir/usr/share/webapps/amps/{CHANGELOG,COPYING,README,SETTINGS,TODO} \
+    $pkgdir/usr/share/doc/amps
+  ln -rs $pkgdir/usr/share/doc/amps $pkgdir/usr/share/doc/amule
+}

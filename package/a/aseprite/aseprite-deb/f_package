@@ -1,0 +1,6 @@
+package() {
+	ar x Aseprite_$pkgver-1_amd64.deb
+	tar xf data.tar.xz -C $pkgdir
+	chmod -R 755 $pkgdir/usr
+	chmod +x $pkgdir/usr/bin/aseprite
+}

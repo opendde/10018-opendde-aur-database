@@ -1,0 +1,4 @@
+build() {
+	cd "$_pkgname-v$pkgver"
+	make all
+}

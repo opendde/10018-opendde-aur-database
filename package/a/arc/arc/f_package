@@ -1,0 +1,3 @@
+package() {
+  make -C "arc-${pkgver}" PREFIX=/usr DESTDIR="${pkgdir}" install
+}

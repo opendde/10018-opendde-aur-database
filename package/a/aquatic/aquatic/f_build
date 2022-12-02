@@ -1,0 +1,16 @@
+build() {
+  cd $pkgbase
+
+  # Enable support for CPU all extensions on current CPU except ~AVX-512.
+  . ./scripts/env-native-cpu-without-avx-512
+
+  # Compile
+  cargo build --release -p aquatic_udp
+  cargo build --release -p aquatic_http
+  cargo build --release -p aquatic_ws # --features "with-glommio" --no-default-features
+
+  # Generate config files
+  ./target/release/aquatic_udp -p > aquatic_udp.toml
+  ./target/release/aquatic_http -p > aquatic_http.toml
+  ./target/release/aquatic_ws -p > aquatic_ws.toml
+}

@@ -1,0 +1,1 @@
+(etc/{cecdaemon.conf,systemd/system/multi-user.target.wants/cecdaemon.service})

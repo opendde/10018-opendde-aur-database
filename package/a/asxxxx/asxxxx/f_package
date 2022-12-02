@@ -1,0 +1,8 @@
+package() {
+  cd "${srcdir}/asxv$(echo $pkgver | fold -w1 | head -n 1)pxx/"
+  install -d "${pkgdir}/usr/bin/"
+  install -Dm755 asxmak/linux/exe/as* asxmak/linux/exe/s19os9 "${pkgdir}/usr/bin/"
+  install -d "${pkgdir}/usr/share/${pkgname}/asxhtml/"
+  install -Dm644 asxhtml/* "${pkgdir}/usr/share/${pkgname}/asxhtml/"
+  install -Dm644 readme.txt changes.txt "${pkgdir}/usr/share/${pkgname}/"
+}

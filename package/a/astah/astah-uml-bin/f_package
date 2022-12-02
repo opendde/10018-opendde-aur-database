@@ -1,0 +1,11 @@
+package() {
+  cp -aR "${srcdir}/usr" "${pkgdir}"
+  mkdir -p "${pkgdir}/opt/"
+  mv "${pkgdir}/usr/lib/astah_uml" "${pkgdir}/opt/"
+  mkdir -p "${pkgdir}/usr/share/doc/astah_uml/"
+  mv "${pkgdir}/opt/astah_uml"/ReferenceManual-* "${pkgdir}/usr/share/doc/astah_uml/"
+  mkdir -p "${pkgdir}/usr/share/licenses/astah_uml"
+  mv "${pkgdir}/opt/astah_uml"/AstahLicenseAgreement-e.txt "${pkgdir}/usr/share/licenses/astah_uml/LICENSE"
+  rm "${pkgdir}/usr/bin/astah-uml"
+  ln -s /opt/astah_uml/astah-uml "${pkgdir}/usr/bin"
+}

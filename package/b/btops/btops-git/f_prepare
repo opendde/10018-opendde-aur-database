@@ -1,0 +1,5 @@
+prepare() {
+  rm -rf "${srcdir}/src"
+  mkdir -p "${srcdir}/src/github.com/cmschuetz"
+  ln -sf "${srcdir}/${_pkgname}" "${srcdir}/src/github.com/cmschuetz/btops"
+}

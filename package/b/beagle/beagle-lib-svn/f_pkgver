@@ -1,0 +1,5 @@
+pkgver() {
+  cd $srcdir/$pkgname-trunk
+
+  svnversion | tr -d [A-z]
+}

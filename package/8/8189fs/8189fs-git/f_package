@@ -1,0 +1,5 @@
+package() {
+  install -d "$pkgdir/usr/lib/modules/${_extramodules}/"
+  install -m644 "$srcdir/$_pkgname/8189fs.ko.gz" \
+    "$pkgdir/usr/lib/modules/${_extramodules}/8189fs.ko.gz"
+}

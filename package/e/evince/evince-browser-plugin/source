@@ -1,0 +1,1 @@
+("https://download.gnome.org/sources/evince/${pkgver:0:4}/evince-${pkgver}.tar.xz")

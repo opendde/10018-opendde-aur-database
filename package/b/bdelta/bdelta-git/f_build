@@ -1,0 +1,7 @@
+build() {
+  _unpackeddir="${srcdir}/${_pkgname}"
+  cd "${_unpackeddir}"
+  cd src
+  
+  make
+}

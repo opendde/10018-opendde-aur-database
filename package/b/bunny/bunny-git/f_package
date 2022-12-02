@@ -1,0 +1,4 @@
+package() {
+    cd "$_pkgname"
+    make install prefix="/usr/" destdir="$pkgdir" version="$pkgver" -j1 
+}

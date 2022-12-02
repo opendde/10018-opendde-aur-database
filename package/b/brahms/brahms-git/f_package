@@ -1,0 +1,4 @@
+package() {
+	cd "brahms/build"
+	make DESTDIR="$pkgdir" install
+}

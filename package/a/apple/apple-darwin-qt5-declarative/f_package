@@ -1,0 +1,27 @@
+package() {
+  cd "${srcdir}/${_pkgfqn}"
+
+  init_osxcross
+  for _arch in ${_architectures}; do
+    for _config in "${_configurations[@]}"; do
+      pushd build-${_arch}-${_config##*=}
+      make INSTALL_ROOT="$pkgdir" install
+
+      # QmlDebuggerServiceFactory plugin is not available so remove CMake plugin file for it
+      rm "${pkgdir}/${_osxcrossprefix}/${_arch}/lib/cmake/Qt5Qml/Qt5Qml_QQmlDebuggerServiceFactory.cmake"
+
+      # Strip the binaries, remove debug libraries
+      find "${pkgdir}/${_osxcrossprefix}" -name "*.dylib" -a -not -iname '*_debug*' -exec ${_osxcrossprefix}/bin/${_arch}-strip -S -x {} \;
+      find "${pkgdir}/${_osxcrossprefix}" -name '*.a' -a -not -iname '*_debug.a' -a -not -iname '*DevTools.a' -a -not -iname '*Bootstrap.a' -exec ${_osxcrossprefix}/bin/${_arch}-strip -S -x {} \;
+      [[ $APPLE_DARWIN_QT_DEBUG_BUILD ]] || \
+        find "${pkgdir}/${_osxcrossprefix}" -iname '*_debug*' -exec rm {} \;
+      [[ -d "${pkgdir}/${_osxcrossprefix}/${_arch}/lib/qt/bin/" ]] && \
+        find "${pkgdir}/${_osxcrossprefix}/${_arch}/lib/qt/bin/" -exec strip --strip-all {} \;
+      find "${pkgdir}/${_osxcrossprefix}/${_arch}/lib/" -iname "*DevTools.a" -exec strip -g {} \;
+      popd
+    done
+  done
+
+  # Drop QMAKE_PRL_BUILD_DIR because reference the build dir
+  find "$pkgdir/${_osxcrossprefix}" -type f -name '*.prl' -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
+}

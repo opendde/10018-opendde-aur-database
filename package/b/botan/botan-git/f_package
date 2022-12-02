@@ -1,0 +1,6 @@
+package() {
+  cd "botan"
+
+  make DESTDIR="$pkgdir" install
+  install -Dm644 "license.txt" "$pkgdir/usr/share/licenses/botan/license.txt"
+}

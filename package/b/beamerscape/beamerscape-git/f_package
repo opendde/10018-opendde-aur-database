@@ -1,0 +1,13 @@
+package() {
+
+  cd ${srcdir}/${pkgname}
+  [ -d ${pkgdir}/usr/bin ] ||  mkdir -p ${pkgdir}/usr/bin
+  install -m755 bin/export_overlays ${pkgdir}/usr/bin
+
+  [ -d ${pkgdir}/usr/share/apps/cmake/modules/ ] ||  mkdir -p ${pkgdir}/usr/share/apps/cmake/modules/
+  install -m644 cmake/*.cmake ${pkgdir}/usr/share/apps/cmake/modules
+
+  [ -d ${pkgdir}/usr/share/${_pkgname} ] ||  mkdir -p ${pkgdir}/usr/share/${_pkgname}
+  cp -R examples ${pkgdir}/usr/share/${_pkgname}/
+
+}

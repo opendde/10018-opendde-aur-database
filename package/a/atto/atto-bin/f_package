@@ -1,0 +1,10 @@
+package() {
+  cd "$srcdir" || exit 1
+
+  for cmd in atto{,-safesign}; do
+    install -Dm0755 "$cmd" "$pkgdir/usr/bin/$cmd"
+  done
+
+  install -Dm0644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
+  install -Dm0644 LICENSE   "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

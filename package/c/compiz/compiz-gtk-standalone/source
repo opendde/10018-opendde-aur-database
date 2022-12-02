@@ -1,0 +1,1 @@
+("${_name}-core-${pkgver}.tar.gz::http://www.northfield.ws/projects/${_name}/releases/${pkgver}/core.tar.gz"

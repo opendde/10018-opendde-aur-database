@@ -1,0 +1,5 @@
+pkgver() {
+  cd "$srcdir"
+  chmod +x "ecs-cli-$_md5sum"
+  ./ecs-cli-$_md5sum -v | sed -rn 's/ecs-cli version ([0-9\.]+) \(\w+\)/\1/p'
+}

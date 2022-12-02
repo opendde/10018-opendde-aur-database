@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir/arc-firefox-theme-$_pkgver"
+  make DESTDIR="$pkgdir" install
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

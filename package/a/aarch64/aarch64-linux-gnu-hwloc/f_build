@@ -1,0 +1,16 @@
+build() {
+  mkdir -p ${_pkgname}-build
+  pushd ${_pkgname}-build
+
+  CFLAGS+=" -D__aarch64__ -march=armv8.8-a -fcf-protection=none -Wno-use-after-free"
+  CXXFLAGS+=" -D__aarch64__ -march=armv8.8-a -fcf-protection=none -Wno-use-after-free"
+  QEMU_LD_PREFIX="/usr/${_target}/" LD_LIBRARY_PATH="/usr/${_target}/lib64" ${srcdir}/${_pkgname}-${pkgver}/configure CC="${_target}-gcc" \
+    --build="${_target}" \
+    --host="${_target}" \
+    --prefix=/usr/${_target} \
+    --sbindir=/usr/${_target}/bin \
+    --enable-plugins \
+    --sysconfdir=/usr/${_target}/etc
+  make
+  popd
+}

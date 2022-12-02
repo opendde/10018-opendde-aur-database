@@ -1,0 +1,3 @@
+package() {
+	mv opt var $pkgdir/
+}

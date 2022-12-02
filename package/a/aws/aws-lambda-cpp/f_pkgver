@@ -1,0 +1,6 @@
+pkgver() {
+  cd $pkgname
+  local v="$(git describe --tags)"
+  v="${v#v}"
+  printf %s "${v//-/+}"
+}

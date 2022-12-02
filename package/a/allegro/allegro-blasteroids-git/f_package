@@ -1,0 +1,15 @@
+package() {
+    ORIGIN=$srcdir/allegro_blasteroids
+    DESTINATION=$pkgdir/opt/allegro-blasteroids
+    mkdir -p $DESTINATION
+    mkdir -p $pkgdir/usr/share/applications
+    cmake $ORIGIN
+    echo "Disabling verbose code..."
+    cp ../config.h $ORIGIN/include/blasteroids
+    make
+    cp blasteroids $DESTINATION
+    cp blasteroids_font.ttf $DESTINATION
+    cp ../AllegroBlasteroids.desktop $pkgdir/usr/share/applications
+    mkdir -p $pkgdir/usr/bin
+    cp ../ablasteroids $pkgdir/usr/bin
+}

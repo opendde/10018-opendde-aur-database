@@ -1,0 +1,4 @@
+pkgver() {
+  cd "$srcdir/${pkgname%-git}"
+  printf %s.%s $(git describe --tags|tr - .| cut -c2-) $(git log -1 --format="%cd" --date=short | tr - _) 
+}

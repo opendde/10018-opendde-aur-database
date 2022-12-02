@@ -1,0 +1,3 @@
+package() {
+  install -Dm755 "$srcdir/$pkgname-$pkgver/target/release/allsorts" "$pkgdir/usr/bin/allsorts"
+}

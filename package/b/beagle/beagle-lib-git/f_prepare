@@ -1,0 +1,5 @@
+prepare() {
+  cd $srcdir/$pkgname
+
+  ./autogen.sh
+}

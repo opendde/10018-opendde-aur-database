@@ -1,0 +1,21 @@
+colorize() {
+	cd ${_pkgname}-${pkgver}-$1
+
+	find . -type f -name "configure.ac" -exec sed -i \
+	"s/themes\/Arc\]/themes\/Arc-$1\]/Ig;\
+	 s/themes\/Arc-Darker\]/themes\/Arc-Darker-$1\]/Ig;\
+	 s/themes\/Arc-Dark\]/themes\/Arc-Dark-$1\]/Ig;\
+	 s/themes\/Arc-Lighter\]/themes\/Arc-Lighter-$1\]/Ig;\
+	" {} \;
+
+	find . -type f -name "*.*" -exec sed -i \
+	"s/#5294e2/$2/Ig;\
+	 s/#4DADD4/$3/Ig" {} \;
+	find . -type f -name "gtkrc" -exec sed -i \
+	"s/#5294e2/$2/Ig;\
+	 s/#4DADD4/$3/Ig" {} \;
+
+	./autogen.sh --prefix=/usr --with-gnome-shell=3.36 --with-cinnamon=4.6 --with-gtk3=3.24
+
+	cd ..
+}

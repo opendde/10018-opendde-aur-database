@@ -1,0 +1,5 @@
+package() {
+  install -d "$pkgdir/usr/share/arduino/libraries/Arcbotics_Sparki"  
+  cp -a . "$pkgdir/usr/share/arduino/libraries/Arcbotics_Sparki"
+  install -Dm644 "$srcdir/sparki_usb" $pkgdir/usr/bin/sparki_usb
+}

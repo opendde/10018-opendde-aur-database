@@ -1,0 +1,4 @@
+build() {
+    cd "${srcdir}/${pkgname}-${pkgver}"
+    make PREFIX=/usr WITH_ZSTD=1
+}

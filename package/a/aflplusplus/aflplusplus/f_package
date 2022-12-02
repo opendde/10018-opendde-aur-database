@@ -1,0 +1,4 @@
+package() {
+  cd "AFLplusplus-${pkgver}"
+  make install PREFIX="/usr" DESTDIR="${pkgdir}"
+}

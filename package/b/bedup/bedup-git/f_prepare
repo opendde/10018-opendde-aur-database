@@ -1,0 +1,13 @@
+prepare() {
+  if [ ! -e "${srcdir}/bedup.git" ]; then
+    git clone "$url" "${srcdir}/bedup.git"
+    cd "${srcdir}/bedup.git"
+    git reset --hard "$_commit"
+  else
+    cd "${srcdir}/bedup.git"
+    git pull origin master
+    git reset --hard "$_commit"
+  fi
+  git apply ../bedup-contextlib2.patch
+  patch -p1 -i "${srcdir}/bedup-update-current-rev.patch"
+}

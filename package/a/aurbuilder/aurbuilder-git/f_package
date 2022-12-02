@@ -1,0 +1,5 @@
+package() {
+	cd "$srcdir/archbuilder"
+        install -Dm755 run.sh "$pkgdir"/usr/bin/aurbuild
+        install -Dm644 spot-options.json "$pkgdir"/usr/share/aurbuild/spot-options.json
+}

@@ -1,0 +1,14 @@
+package() {
+  pushd "$srcdir/$pkgname-2"
+    make DESTDIR="${pkgdir}/" install
+    for d in usr/share/{doc/$pkgname-2,pixmaps,applications,man/man1} ; do
+      install -dm755 "${pkgdir}/$d" ;
+    done
+    
+    install -m644 -t "${pkgdir}/usr/share/doc/$pkgname-2" README NEWS ChangeLog AUTHORS
+  popd
+  
+  install -m644 "debian/$pkgname.1" "${pkgdir}/usr/share/man/man1"
+  install -m644 "debian/$pkgname.desktop" "${pkgdir}/usr/share/applications"
+  install -m644 "debian/$pkgname.svg" "${pkgdir}/usr/share/pixmaps"
+}

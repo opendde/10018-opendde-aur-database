@@ -1,0 +1,3 @@
+prepare() {
+    echo 'indule_path = ${include_path}:/usr/share/aps/php' > ${srcdir}/aps.ini
+}

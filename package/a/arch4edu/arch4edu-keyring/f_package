@@ -1,0 +1,7 @@
+package() {
+  cd "$srcdir/keyring-$pkgver"
+
+  install -Dm644 arch4edu.gpg $pkgdir/usr/share/pacman/keyrings/arch4edu.gpg
+  install -Dm644 arch4edu-revoked $pkgdir/usr/share/pacman/keyrings/arch4edu-revoked
+  install -Dm644 arch4edu-trusted $pkgdir/usr/share/pacman/keyrings/arch4edu-trusted
+}

@@ -1,0 +1,4 @@
+prepare() {
+	cd "$pkgname"
+	patch -p1 -i"$srcdir/0001-Use-modern-threading-api.patch"
+}

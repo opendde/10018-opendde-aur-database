@@ -1,0 +1,4 @@
+prepare() {
+  cd "$_pkgname"
+  sed -e 's!/usr/local/share/acc!/usr/share/acc!' -i acc.c
+}

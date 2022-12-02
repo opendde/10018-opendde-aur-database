@@ -1,0 +1,10 @@
+prepare () {
+  # We build from the versioned tarball from github so we do not need to
+  # depend on the git tag to find the version number.  Also there seems to be
+  # no clean way to override the safety checks that setuptools_scm do.
+  # Solution: We remove the dependecy on setuptools_scm and fake the version
+  # file.
+  cd "$srcdir/$pkgname-$pkgver"
+  sed -i "/use_scm_version/d;/setuptools_scm/d;/name=/a version='$pkgver'," setup.py
+  echo "version = '$pkgver'" > afew/version.py
+}

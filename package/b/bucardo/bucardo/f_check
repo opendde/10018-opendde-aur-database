@@ -1,0 +1,9 @@
+check() {
+  cd "$srcdir/$_distdir"
+  (
+    export PERL_MM_USE_DEFAULT=1 PERL5LIB=""
+    # TODO
+    # bucardo 5.6.0 tests don't work with PG 14 because of a change of an error string between 13 and 14
+    # make test
+  )
+}

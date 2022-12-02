@@ -1,0 +1,10 @@
+package() {
+  cd "$srcdir/$_pkgname-$pkgver"
+  mkdir -p $pkgdir/usr/{src,bin,share/$pkgname}
+
+  cp -rf certs-local $pkgdir/usr/src/
+  cp scripts/* $pkgdir/usr/bin/
+  cp Arch-Linux-PKGBUILD-example $pkgdir/usr/share/$pkgname/PKGBUILD.example
+  cp -rf patches $pkgdir/usr/share/$pkgname/patches
+  cp README.scripts.md $pkgdir/usr/share/$pkgname/README.scripts.md
+}

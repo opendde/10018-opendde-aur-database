@@ -1,0 +1,3 @@
+package() {
+  install -Dm755 bandwhich $pkgdir/usr/bin/bandwhich
+}

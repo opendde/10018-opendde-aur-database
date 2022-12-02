@@ -1,0 +1,3 @@
+package() {
+	install -Dm0644 $_filename "$pkgdir/etc/$_filename"
+}

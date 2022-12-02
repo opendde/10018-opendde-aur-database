@@ -1,0 +1,4 @@
+build() {
+    cd $srcdir/Breeze_Hacked
+    ./build.sh
+}

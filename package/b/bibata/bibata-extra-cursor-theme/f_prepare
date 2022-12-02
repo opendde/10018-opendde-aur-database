@@ -1,0 +1,7 @@
+prepare() {
+  cd Bibata_Extra_Cursor-$pkgver
+  mkdir -p bitmaps
+  bsdtar -xf "$srcdir/$pkgname-bitmaps-$pkgver.zip" -C bitmaps/
+
+  rm -rf themes
+}

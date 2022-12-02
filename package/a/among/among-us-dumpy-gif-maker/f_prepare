@@ -1,0 +1,3 @@
+prepare() {
+    chmod +x "${_pkgname}"
+}

@@ -1,0 +1,47 @@
+build() {
+    # Create desktop entries
+    echo "[Desktop Entry]
+Type=Application
+Name=Agisoft MetaShape
+Comment=Photogrammetric processing software
+Exec=agisoft-metashape
+MimeType=application/agisoft.psx;application/agisoft.psz
+Icon=agisoft-metashape
+Terminal=false
+Categories=Science;ImageProcessing" > "$srcdir/agisoft-metashape.desktop"
+
+    # Create MetaShape MIME type file
+    echo '<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+    <mime-type type="application/agisoft.psx">
+        <comment>MetaShape Project</comment>
+        <icon name="application-agisoft-psx"/>
+        <glob-deleteall/>
+        <glob pattern="*.psx"/>
+    </mime-type>
+    <mime-type type="application/agisoft.psz">
+        <comment>MetaShape Archive</comment>
+        <icon name="application-agisoft-psz"/>
+        <glob-deleteall/>
+        <glob pattern="*.psz"/>
+    </mime-type>
+</mime-info>' > "$srcdir/${pkgname}-mime.xml"
+
+    # Create 128x128 application icons
+    base64 -d "$srcdir/agisoft-metashape-icon-encoded.txt" > "$srcdir/agisoft-metashape_128.png"
+    
+    # Create 128x128 mime icons
+    base64 -d "$srcdir/agisoft-psx-mime-icon-encoded.txt" > "$srcdir/application-agisoft-psx_128.png"
+    base64 -d "$srcdir/agisoft-psz-mime-icon-encoded.txt" > "$srcdir/application-agisoft-psz_128.png"
+    
+    # Create icons for other resolutions
+    for _res in 16 32 48 64; do
+        convert "$srcdir/agisoft-metashape_128.png" -resize ${_res}x${_res} "$srcdir/agisoft-metashape_${_res}.png"
+        convert "$srcdir/application-agisoft-psx_128.png" -resize ${_res}x${_res} "$srcdir/application-agisoft-psx_${_res}.png"
+        convert "$srcdir/application-agisoft-psz_128.png" -resize ${_res}x${_res} "$srcdir/application-agisoft-psz_${_res}.png"
+    done
+    
+    # Create executables for /usr/bin
+    echo "#!/bin/bash
+/opt/agisoft/${_pkgname}/metashape.sh \$@" > "$srcdir/agisoft-metashape"
+}

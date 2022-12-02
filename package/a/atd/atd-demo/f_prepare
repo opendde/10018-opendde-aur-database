@@ -1,0 +1,4 @@
+prepare() {
+  # unpack
+  bsdtar -xf data/data.tar
+}

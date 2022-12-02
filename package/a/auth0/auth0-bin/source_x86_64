@@ -1,0 +1,1 @@
+("${archive}_${pkgver}_x86_64.tar.gz::$url/releases/download/v${pkgver}/${archive}_${pkgver}_Linux_x86_64.tar.gz")

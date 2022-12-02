@@ -1,0 +1,7 @@
+package() {
+  cd ${srcdir}/out
+  make install
+  install -dm755 "${pkgdir}/usr/bin"
+  ln -sf /opt/brick/brick "${pkgdir}/usr/bin/brick"
+  ln -sf /opt/brick/bin/brick-client "${pkgdir}/usr/bin/brick-client"
+}

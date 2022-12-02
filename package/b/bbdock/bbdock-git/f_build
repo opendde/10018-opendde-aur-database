@@ -1,0 +1,6 @@
+build() {
+  cd $pkgname
+  ./configure --prefix=/usr
+  make clean
+  make
+}

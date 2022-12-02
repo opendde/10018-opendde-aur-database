@@ -1,0 +1,6 @@
+move_copyright() {
+    find ${pkgdir}/usr/share/doc -name "changelog.Debian.gz" -delete
+    mkdir -p ${pkgdir}/usr/share/licenses/${pkgname}
+    find ${pkgdir}/usr/share/doc -name "copyright" -exec mv {} ${pkgdir}/usr/share/licenses/${pkgname} \;
+    find ${pkgdir}/usr/share/doc -type d -empty -delete
+}

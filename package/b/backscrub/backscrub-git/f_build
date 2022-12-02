@@ -1,0 +1,10 @@
+build() {
+    ls "$srcdir"
+    cmake \
+        -B "${pkgname}/build" \
+        -S "${pkgname}" \
+        -DTENSORFLOW:PATH="$srcdir/tensorflow" \
+        -DCMAKE_BUILD_TYPE:STRING='None' \
+        -DCMAKE_INSTALL_PREFIX:PATH='/usr'
+    cmake --build "${pkgname}/build"
+}

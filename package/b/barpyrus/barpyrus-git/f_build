@@ -1,0 +1,4 @@
+build() {
+  cd barpyrus
+  python setup.py build
+}

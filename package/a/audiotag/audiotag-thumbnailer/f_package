@@ -1,0 +1,4 @@
+package () {
+  install -Dm644 "$pkgname.schemas" "$pkgdir/usr/share/gconf/schemas/$pkgname.schemas"
+	install -m755 "$pkgname" "$pkgdir/usr/bin/$pkgname"
+}

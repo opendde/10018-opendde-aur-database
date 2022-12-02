@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir"
+  chmod +x $pkgname
+  install -Dm755 $pkgname $pkgdir/usr/bin/$pkgname
+}

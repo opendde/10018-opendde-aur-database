@@ -1,0 +1,8 @@
+extract_deb() {
+    local tmpdir="$(basename "${1%.deb}")"
+    rm -Rf "$tmpdir"
+    mkdir "$tmpdir"
+    cd "$tmpdir"
+    ar x "$1"
+    tar -C "${pkgdir}" -xf data.tar.xz
+}

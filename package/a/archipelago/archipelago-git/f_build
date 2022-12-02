@@ -1,0 +1,5 @@
+build() {
+	cd "$srcdir/${_pkgname}"
+    yarn install
+    yarn run dist -- -l deb
+}

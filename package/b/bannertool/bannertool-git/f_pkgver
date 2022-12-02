@@ -1,0 +1,4 @@
+pkgver() {
+    cd "$srcdir/$_gitname"
+    git log --pretty=format:"%ad.%h" --date=format:"%s" -1
+}

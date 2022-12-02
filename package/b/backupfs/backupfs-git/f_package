@@ -1,0 +1,8 @@
+package() {
+  cd "$srcdir/$pkgname"
+  mkdir -p $pkgdir/usr/{bin,/share/man}
+  make PREFIX="$pkgdir/usr" TGTGRP="root" MANDIR="$pkgdir/usr/share/man" install
+  install -Dm644 cron.daily-backup.sh $pkgdir/usr/share/doc/$pkgname/cron.daily-backup.sh
+  install -Dm644 README $pkgdir/usr/share/doc/$pkgname/README
+  install -Dm644 BUGS $pkgdir/usr/share/doc/$pkgname/BUGS
+}

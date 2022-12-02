@@ -1,0 +1,3 @@
+package() {
+	NAME="${pkgname}" make PREFIX=/usr DESTDIR="${pkgdir}" clean install
+}

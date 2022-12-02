@@ -1,0 +1,4 @@
+build() {
+  cd "$srcdir"/mod-arpeggiator-lv2
+  make
+}

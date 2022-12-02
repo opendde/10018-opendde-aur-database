@@ -1,0 +1,6 @@
+_build_common() {
+  # Archlinux changed default /usr/bin/python to 3.1.2
+  # need to use /usr/bin/python2 instead
+  sed -i 's|python|python2|' autogen.sh
+    CC="gcc-4.7" CFLAGS="-march=native -O2 -pipe" ./autogen.sh
+}

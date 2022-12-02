@@ -1,0 +1,24 @@
+package() {
+  install -d /$pkgdir/usr/share/icons/hicolor
+  install -d /$pkgdir/usr/share/icons/hicolor/16x16
+  install -d /$pkgdir/usr/share/icons/hicolor/16x16/actions
+  install -d /$pkgdir/usr/share/icons/hicolor/16x16/apps
+  install -d /$pkgdir/usr/share/icons/hicolor/22x22
+  install -d /$pkgdir/usr/share/icons/hicolor/22x22/actions
+  install -d /$pkgdir/usr/share/icons/hicolor/22x22/apps
+  install -d /$pkgdir/usr/share/icons/hicolor/24x24
+  install -d /$pkgdir/usr/share/icons/hicolor/24x24/actions
+  install -d /$pkgdir/usr/share/icons/hicolor/24x24/apps
+  install -d /$pkgdir/usr/share/icons/hicolor/32x32
+  install -d /$pkgdir/usr/share/icons/hicolor/32x32/actions
+  install -d /$pkgdir/usr/share/icons/hicolor/32x32/apps
+  install -d /$pkgdir/usr/share/icons/hicolor/48x48
+  install -d /$pkgdir/usr/share/icons/hicolor/48x48/actions
+  install -d /$pkgdir/usr/share/icons/hicolor/48x48/apps
+  install -d /$pkgdir/usr/share/icons/hicolor/scalable
+  install -d /$pkgdir/usr/share/icons/hicolor/scalable/actions
+  install -d /$pkgdir/usr/share/icons/hicolor/scalable/apps
+
+  cp -R $pkgname/* $pkgdir 
+
+}

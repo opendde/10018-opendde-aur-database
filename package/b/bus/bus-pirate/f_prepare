@@ -1,0 +1,4 @@
+prepare() {
+  cd "${srcdir}/Bus_Pirate-${pkgver}/scripts/BusPirateGUI"
+  qmake
+}

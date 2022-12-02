@@ -1,0 +1,15 @@
+package() {
+  cd $srcdir
+
+  ar x ${_printer}cupswrapper-${_version}.i386.deb || return 1
+  [ ! -d "data" ] &&  mkdir data
+  tar -xzvf data.tar.gz -C data || return 1
+
+  [ ! -d "data/usr/share" ] && mkdir data/usr/share
+  mv data/usr/local/Brother data/usr/share/brother
+  rm -r data/usr/local
+  sed -i 's|/usr/local/Brother|/usr/share/brother|g' `grep -lr '/usr/local/Brother' data/` || return 1
+  sed -i 's|/etc/init.d|/etc/rc.d|' `grep -lr '/etc/init.d' data/` || return 1
+
+  cp -r data/usr $pkgdir || return 1
+}

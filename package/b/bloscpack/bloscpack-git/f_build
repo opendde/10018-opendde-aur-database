@@ -1,0 +1,5 @@
+build() {
+  cd "bloscpack"
+
+  python "setup.py" build
+}

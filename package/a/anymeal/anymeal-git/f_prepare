@@ -1,0 +1,4 @@
+prepare() {
+  # Fix Googletest file path
+  sed -i.bak "24s|googletest/googletest|googletest|" "${_pkgname}/configure.ac"
+}

@@ -1,0 +1,11 @@
+package() {
+  cd "$srcdir"/arch-emerge
+
+  install -Dm755 emerge $pkgdir/usr/bin/emerge
+  install -Dm644 emerge.8 $pkgdir/usr/share/man/man8/emerge.8
+  install -Dm644 COPYING $pkgdir/usr/share/licenses/$pkgname/COPYING
+  install -Dm644 README.md $pkgdir/usr/share/doc/$pkgname/README.md
+  install -Dm644 emerge.conf $pkgdir/usr/share/doc/$pkgname/emerge.conf
+  install -dm755 $pkgdir/etc/emerge
+  install -Dm644 emerge.conf $pkgdir/etc/emerge/emerge.conf
+}

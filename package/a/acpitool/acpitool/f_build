@@ -1,0 +1,8 @@
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+  patch -p1 <$srcdir/linux-3.0.patch
+  patch -p1 <$srcdir/sysfs-battery.patch
+  patch -p1 <$srcdir/0001-Use-dynamic-structures-instead-of-predefined-ones.patch
+  ./configure --prefix=/usr
+  make
+}

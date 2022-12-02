@@ -1,0 +1,4 @@
+check() {
+  cd "arrow-apache-arrow-${pkgver}/c_glib"
+  meson test -C 'build' --print-errorlogs
+}

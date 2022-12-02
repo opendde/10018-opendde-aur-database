@@ -1,0 +1,22 @@
+package_bareos-tools() {
+  pkgdesc="${pkgdesc} - CLI tools (bcopy, bextract, bls, bregeq, bwild, bregex)"
+  depends=("bareos-common=${pkgver}" 'glibc')
+  for f in \
+     usr/bin/bregex \
+     usr/bin/bwild \
+     usr/bin/bcopy \
+     usr/bin/bextract \
+     usr/bin/bls \
+     usr/bin/bregex \
+     usr/bin/bwild \
+     usr/bin/bpluginfo \
+     usr/share/man/man1/bwild.1* \
+     usr/share/man/man1/bregex.1* \
+     usr/share/man/man8/bcopy.8* \
+     usr/share/man/man8/bextract.8* \
+     usr/share/man/man8/bls.8* \
+     usr/share/man/man8/bpluginfo.8* \
+  ; do
+    cp_pkgdir "$f" "$srcdir/install/"
+  done
+}

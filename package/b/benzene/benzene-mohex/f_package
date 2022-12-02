@@ -1,0 +1,9 @@
+package() {
+  mkdir -p $pkgdir/usr/bin
+  mkdir -p $pkgdir/usr/local/share/benzene
+
+  cp $srcdir/benzene-$pkgver/src/mohex/mohex $pkgdir/usr/bin/mohex
+  cp $srcdir/benzene-$pkgver/share/mohex-ice-patterns.txt $pkgdir/usr/local/share/benzene/
+  cp $srcdir/benzene-$pkgver/share/mohex-vc-captured-set.txt $pkgdir/usr/local/share/benzene/
+  cp $srcdir/benzene-$pkgver/share/mohex-patterns.txt $pkgdir/usr/local/share/benzene/
+}

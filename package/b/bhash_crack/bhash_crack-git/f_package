@@ -1,0 +1,4 @@
+package() {
+    install -Dm0750 ${srcdir}/${pkgname}/bhash_crack.sh ${pkgdir}/opt/${pkgname}/bhash_crack.sh
+    install -Dm0664 ${srcdir}/${pkgname}/output_sample ${pkgdir}/opt/${pkgname}/output_sample
+}

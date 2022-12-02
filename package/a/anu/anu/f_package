@@ -1,0 +1,4 @@
+package() {
+  cd $srcdir/"$pkgname-${pkgver//_/-}"
+  install -Dm755 "target/release/$pkgname" "$pkgdir/usr/bin/$pkgname"
+}

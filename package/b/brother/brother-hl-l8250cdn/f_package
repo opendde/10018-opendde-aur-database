@@ -1,0 +1,14 @@
+package() {
+  cp -R $srcdir/usr $pkgdir
+
+  #We need to install the filter file to the cups filter path, so the PPD can find it
+  mkdir -p $pkgdir/usr/lib/cups/filter
+  cp $srcdir/opt/brother/Printers/hll8250cdn/cupswrapper/brother_hll8250cdn_printer_en.ppd \
+     $pkgdir/usr/lib/cups/filter
+
+  if [ -d $srcdir/opt ]; then
+    cp -R $srcdir/opt $pkgdir;
+  fi
+  install -m 644 -D cupswrapper-license.txt $pkgdir/usr/share/licenses/${pkgname}/cupswrapper-licence.txt
+  install -m 644 -D lpr-license.txt $pkgdir/usr/share/licenses/${pkgname}/lpr-licence.txt
+}

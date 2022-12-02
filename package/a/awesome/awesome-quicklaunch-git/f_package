@@ -1,0 +1,8 @@
+package() {
+  cd ${srcdir}/${_gitname}
+  # Install the library
+  install -Dm644 init.lua "$pkgdir/usr/share/awesome/lib/quicklaunch/init.lua"
+  # Install documentation
+  install -Dm644 README.md "$pkgdir/usr/share/doc/$pkgname/README"
+  install -Dm644 UNLICENSE "$pkgdir/usr/share/doc/$pkgname/UNLICENSE"
+}

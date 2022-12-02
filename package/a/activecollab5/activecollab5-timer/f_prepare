@@ -1,0 +1,3 @@
+prepare() {
+    dpkg-deb -x activecollab-timer.deb ${srcdir}
+}

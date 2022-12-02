@@ -1,0 +1,11 @@
+package() {
+    cd "$_pkgname"
+
+    install -d "${pkgdir}/usr/share/acme.sh/deploy" "${pkgdir}/usr/share/acme.sh/dnsapi" "${pkgdir}/usr/bin"
+
+    install -Dm755 acme.sh "${pkgdir}/usr/share/acme.sh"
+    install -Dm755 deploy/*.sh "${pkgdir}/usr/share/acme.sh/deploy"
+    install -Dm755 dnsapi/*.sh "${pkgdir}/usr/share/acme.sh/dnsapi"
+
+    ln -s /usr/share/acme.sh/acme.sh "${pkgdir}/usr/bin/acme.sh"
+}

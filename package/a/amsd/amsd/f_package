@@ -1,0 +1,9 @@
+package() {
+	mkdir usr/bin
+	mv sbin/* usr/bin/
+	mv lib64/* usr/lib/
+	rm -r lib64 sbin
+	install -Dm644 opt/amsd/amsd.license "$pkgdir"/usr/share/licenses/$pkgname/LICENSE.txt
+	rm opt/amsd/amsd.license
+	cp -a etc opt usr "$pkgdir"
+	}

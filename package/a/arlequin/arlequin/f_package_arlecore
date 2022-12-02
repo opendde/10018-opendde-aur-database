@@ -1,0 +1,5 @@
+package_arlecore() {
+  pkgdesc="console version of of Arlequin: An Integrated Software for Population Genetics Data Analysis"
+  arch=('x86_64')
+  install -Dm 755 $srcdir/${pkg1}_linux/${pkg1}${pkgver//./}_64bit $pkgdir/usr/bin/$pkg1
+}

@@ -1,0 +1,3 @@
+prepare() {
+    tar xpf "astap-${pkgver}.tar.gz"
+}

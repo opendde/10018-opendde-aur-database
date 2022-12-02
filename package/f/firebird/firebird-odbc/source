@@ -1,0 +1,1 @@
+(${pkgver}.${_pkgsubver}.tar.gz::http://sourceforge.net/projects/firebird/files/firebird-ODBC-driver/${pkgver}-Release/OdbcJdbc-src-${pkgver}.${_pkgsubver}.tar.gz/download

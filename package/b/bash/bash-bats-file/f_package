@@ -1,0 +1,13 @@
+package() {
+  cd "${srcdir}/bats-file-${pkgver}"
+
+  for fn in *.bash; do
+    install -Dm755 ${fn} "${pkgdir}/usr/lib/bats-file/$(basename $fn)"
+  done
+
+  for fn in src/*.bash; do
+    install -Dm755 ${fn} "${pkgdir}/usr/lib/bats-file/src/$(basename $fn)"
+  done
+
+  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

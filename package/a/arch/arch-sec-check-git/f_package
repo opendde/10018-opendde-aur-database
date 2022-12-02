@@ -1,0 +1,6 @@
+package() {
+  cd ${pkgname%-git}
+  install -Dm755 "target/release/${pkgname%-git}" "${pkgdir}/usr/bin/${pkgname%-git}"
+  install -Dm644 LICENSE.md "${pkgdir}/usr/share/licenses/${pkgname%-git}/LICENSE"
+
+}

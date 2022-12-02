@@ -1,0 +1,9 @@
+package() {
+	cd "${srcdir}/${_pkgname}"
+	make ${_opts} \
+		DESTDIR="${pkgdir}" \
+		sbindir=/usr/bin \
+		prefix=/usr \
+		etcdir=/etc \
+		install
+}

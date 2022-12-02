@@ -1,0 +1,4 @@
+prepare() {
+  cd $srcdir/bareos
+  sed -i "s/python-config/python2-config/g" configure
+}

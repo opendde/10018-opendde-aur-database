@@ -1,0 +1,9 @@
+package() {
+  mkdir -p $pkgdir$_DESTDIR
+  touch $pkgdir$_DESTDIR/ld.conf
+
+  cd "$srcdir/$pkgname"
+  make APRON_PREFIX="$pkgdir"/usr install
+
+  rm $pkgdir$_DESTDIR/ld.conf
+}

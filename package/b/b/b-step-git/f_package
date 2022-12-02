@@ -1,0 +1,7 @@
+package() {
+  cd "$srcdir/${pkgname%-git}"
+  mkdir -p "${pkgdir}/usr/bin/"
+  mkdir -p "${pkgdir}/usr/lib/vst3/"
+  cp -r build/B-Step_artefacts/Release/VST3/B-Step.vst3/ "${pkgdir}/usr/lib/vst3/"
+  cp -r build/B-Step_artefacts/Release/Standalone/B-Step "${pkgdir}/usr/bin/"
+}

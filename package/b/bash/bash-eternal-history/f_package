@@ -1,0 +1,3 @@
+package() {
+	install $srcdir/$pkgname.sh -D --target-directory $pkgdir/etc/profile.d/
+}

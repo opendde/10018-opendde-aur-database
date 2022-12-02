@@ -1,0 +1,13 @@
+package() {
+    cd ${pkgname}
+
+    make DESTDIR="${pkgdir}" install
+
+    for ext in '-cli' '-tx' 'd'; do
+        install -Dm644 contrib/asofe${ext}.bash-completion \
+            "${pkgdir}"/usr/share/bash-completion/completions/asofe${ext}
+    done
+
+    install -Dm644 -t "${pkgdir}"/usr/lib/systemd/user ../asofed.service
+    install -Dm644 COPYING "${pkgdir}"/usr/share/licenses/${pkgname}/COPYING
+}

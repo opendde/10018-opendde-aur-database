@@ -1,0 +1,6 @@
+build() {
+    cd "anki-$pkgver"
+    export CC=/usr/bin/clang
+    export CXX=/usr/bin/clang++
+    env PATH="/usr/lib/jvm/java-11-openjdk/bin/:$PATH" bazel build -c opt dist
+}

@@ -1,0 +1,8 @@
+build() {
+  cd $_reponame-$pkgver/vst3
+  if [[ -d /usr/share/vst3sdk ]]; then
+    VST_SDK_DIR=/usr/share ./buildLinux.sh
+  else
+    VST_SDK_DIR=/usr/include ./buildLinux.sh
+  fi
+}

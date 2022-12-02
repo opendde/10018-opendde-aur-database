@@ -1,0 +1,11 @@
+build() {
+  cd $srcdir/$pkgname
+
+  export JAVA_HOME=/usr/lib/jvm/default
+
+  ./configure \
+    --prefix=/usr \
+    --enable-openmp
+
+  make
+}

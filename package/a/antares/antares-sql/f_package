@@ -1,0 +1,19 @@
+package() {
+    # Enter the source directory
+    cd "${srcdir}"
+    # Install the desktop file
+    install -Dm644 ./antares-sql.desktop "${pkgdir}/usr/share/applications/antares-sql.desktop"
+    # Install the startup script
+    install -Dm755 ./antares-sql.sh "${pkgdir}/usr/bin/antares-sql"
+
+    # Enter the Antares source folder downloaded from GitHub
+    cd "antares-${pkgver}"
+    # Create destination directory
+    install -dm755 "${pkgdir}/usr/lib/antares-sql"
+    # Install the asar archive
+    install -Dm644 ./build/linux-unpacked/resources/app.asar "${pkgdir}/usr/lib/antares-sql/antares-sql.asar"
+    # Copy the folder with the native dependencies
+    cp -r ./build/linux-unpacked/resources/app.asar.unpacked "${pkgdir}/usr/lib/antares-sql/antares-sql.asar.unpacked"
+    # Install the icon
+    install -Dm644 ./assets/appx/Square150x150Logo.png "${pkgdir}/usr/share/icons/antares-sql.png"
+}

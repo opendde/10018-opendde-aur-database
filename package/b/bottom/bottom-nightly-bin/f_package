@@ -1,0 +1,3 @@
+package() {
+        install -D btm "$pkgdir/usr/bin/btm"
+}

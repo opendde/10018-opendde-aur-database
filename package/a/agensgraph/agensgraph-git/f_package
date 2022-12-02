@@ -1,0 +1,25 @@
+package() {
+  
+  cd "${srcdir}/${_pkgname}"
+
+  # install license
+  install -D -m644 COPYRIGHT "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+
+  make DESTDIR="${pkgdir}" install
+  make -C contrib DESTDIR="${pkgdir}" install
+
+  install -D -m755 "${srcdir}/HadoopJDBCLoader.class" \
+    "${pkgdir}/usr/lib/postgresql/HadoopJDBCLoader.class"
+  install -D -m755 "${srcdir}/HadoopJDBCUtils.class" \
+    "${pkgdir}/usr/lib/postgresql/HadoopJDBCUtils.class"
+  install -D -m644 "${srcdir}/postgresql.tmpfiles.conf" \
+    "${pkgdir}/usr/lib/tmpfiles.d/postgresql.conf"
+  install -D -m644 "${srcdir}/agensgraph.service" \
+    "${pkgdir}/usr/lib/systemd/system/agensgraph.service"
+  install -D -m755 "${srcdir}/postgresql-check-db-dir" \
+    "${pkgdir}/usr/bin/postgresql-check-db-dir"
+  install -D -m644 "${srcdir}/postgresql.pam" \
+    "${pkgdir}/etc/pam.d/postgresql"
+  install -D -m644 "${srcdir}/postgresql.logrotate" \
+    "${pkgdir}/etc/logrotate.d/postgresql"
+}

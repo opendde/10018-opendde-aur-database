@@ -1,0 +1,6 @@
+prepare() {
+	cd "$pkgname-$pkgver"
+	patch -p1 -i "../010_ftbfs-gcc4.patch"
+        patch -p1 -i "../020_minus-sign.patch"
+	autoreconf -vfi
+}

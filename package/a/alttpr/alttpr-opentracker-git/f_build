@@ -1,0 +1,9 @@
+build() {
+	cd "$pkgname"
+	dotnet publish \
+	  --runtime linux-x64 \
+	  --configuration Release \
+	  --self-contained true \
+	  -p:UseAppHost=true \
+	  --output "../build"
+}

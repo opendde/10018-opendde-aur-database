@@ -1,0 +1,8 @@
+package() {
+  cd "$pkgname"
+  for i in ftdetect ftplugin indent syntax; do
+    install -Dm644 -t "${pkgdir}/usr/share/vim/vimfiles/${i}" "$i"/*.vim
+  done
+  install -Dm644 -t "${pkgdir}"/usr/share/vim/vimfiles/snippets ansible.snippets
+  install -Dm644 -t "${pkgdir}/usr/share/licenses/${pkgname}" LICENSE syntax/jinja2.vim_LICENSE
+}

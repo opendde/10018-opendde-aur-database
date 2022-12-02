@@ -1,0 +1,4 @@
+build () {
+	arch-meson "$srcdir" build
+	ninja -C build
+}

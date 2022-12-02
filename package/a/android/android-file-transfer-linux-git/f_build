@@ -1,0 +1,10 @@
+build() {
+  cd "$_pkgname"
+  
+  cd build
+
+  cmake -G Ninja .. \
+    -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_EXE_LINKER_FLAGS=-Wl,-O1,--sort-common,-z,relro,-z,now
+
+  ninja
+}

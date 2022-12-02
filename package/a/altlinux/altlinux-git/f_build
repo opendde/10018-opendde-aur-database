@@ -1,0 +1,5 @@
+build() {
+    cd "$srcdir"/"$_spkgname"
+    
+    pyinstaller altlinux.spec --clean
+}

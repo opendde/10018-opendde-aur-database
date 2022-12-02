@@ -1,0 +1,4 @@
+prepare() {
+  cd $_pkgname-$pkgver
+  patch -p1 <"$srcdir/66.patch"
+}

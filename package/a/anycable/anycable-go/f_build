@@ -1,0 +1,12 @@
+build() {
+  cd gopath/src/github.com/anycable/$pkgname
+  export GOPATH="$srcdir"/gopath
+  export CGO_ENABLED=0
+  export GO111MODULE=on
+  export GOFLAGS=-mod=mod
+  go build \
+    -ldflags "-s -w -X main.version=$pkgver" \
+    -gcflags "all=-trimpath=$GOPATH" \
+    -asmflags "all=-trimpath=$GOPATH" \
+    -a -o $GOPATH/bin/anycable-go cmd/anycable-go/main.go
+}

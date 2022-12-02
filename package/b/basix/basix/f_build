@@ -1,0 +1,12 @@
+build() {
+  cmake \
+    -S ${pkgname}-${pkgver}/cpp \
+    -B build \
+    -DCMAKE_BUILD_TYPE=None \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DBUILD_SHARED_LIBS=TRUE \
+    -DCMAKE_CXX_STANDARD=20 \
+    -DCMAKE_CXX_COMPILER=g++ \
+    -Wno-dev
+  cmake --build build --target all
+}

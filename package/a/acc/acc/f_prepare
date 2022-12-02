@@ -1,0 +1,4 @@
+prepare() {
+    cd acc-${pkgver}
+    sed -ri "s|/usr/local/share/acc|/usr/share/acc|" acc.c
+}

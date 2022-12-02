@@ -1,0 +1,3 @@
+package() {
+  install -Dm 644 71-hw1.rules "$pkgdir"/usr/lib/udev/rules.d/71-hw1.rules
+}

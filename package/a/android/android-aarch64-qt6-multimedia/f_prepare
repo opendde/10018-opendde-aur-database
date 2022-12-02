@@ -1,0 +1,9 @@
+prepare () {
+  cd $_pkgfqn
+
+  # apply patches; further descriptions can be found in patch files itself
+  for patch in "$srcdir/"*.patch; do
+    msg2 "Applying patch $patch"
+    patch -p1 -i "$patch"
+  done
+}

@@ -1,0 +1,7 @@
+build() {
+  cd ${pkgname}-${pkgver}
+  ./configure --prefix=/usr --enable-transparency=yes \
+    --enable-background-image --enable-fading --enable-menubar \
+    --enable-graphics
+  make
+}

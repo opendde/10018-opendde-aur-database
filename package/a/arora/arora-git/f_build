@@ -1,0 +1,6 @@
+build() {
+  cd "$srcdir/$_gitname"
+  qmake-qt4 PREFIX=/usr
+  make sub-src-qmake_all
+  make
+}

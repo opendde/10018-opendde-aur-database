@@ -1,0 +1,4 @@
+check() {
+	cd ${pkgname}/build
+	make test
+}

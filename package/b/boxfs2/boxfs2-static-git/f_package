@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir/boxfs2"
+  install -D -s boxfs "$pkgdir/usr/bin/boxfs"
+  install -D boxfs-init "$pkgdir/usr/bin/boxfs-init"
+}

@@ -1,0 +1,7 @@
+package() {
+  mkdir -p $pkgdir/usr/share/bibellese/data
+  cd bibellese/build
+  make install
+  cd ..
+  install -D -m644 license.txt "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

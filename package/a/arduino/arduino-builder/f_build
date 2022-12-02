@@ -1,0 +1,8 @@
+build() {
+	cd "${srcdir}/${pkgname}-${pkgver}"
+	export GOPATH="${srcdir}/${pkgname}-${pkgver}"
+	go get -fix github.com/go-errors/errors
+	go get -fix github.com/stretchr/testify
+	go get -fix github.com/jstemmer/go-junit-report
+	go build arduino.cc/arduino-builder
+}

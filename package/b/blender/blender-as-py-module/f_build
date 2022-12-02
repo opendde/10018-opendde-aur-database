@@ -1,0 +1,23 @@
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+
+  local PYTHON_VER=3.9
+  export PYTHONHASHSEED=0
+
+  cmake . \
+    -Bbuild \
+    -GNinja \
+    -Cbuild_files/cmake/config/bpy_module.cmake .. \
+    -DOPTIX_ROOT_DIR="$srcdir"/include \
+    -DWITH_CYCLES_EMBREE=ON \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DWITH_INSTALL_PORTABLE=OFF \
+    -DWITH_PYTHON_INSTALL=OFF \
+    -DPYTHON_VERSION=$PYTHON_VER \
+    -DPYTHON_LIBPATH=/usr/lib \
+    -DPYTHON_LIBRARY=python$PYTHON_VER \
+    -DPYTHON_INCLUDE_DIRS=/usr/include/python$PYTHON_VER \
+    -DCMAKE_CXX_FLAGS="-I /usr/include/python$PYTHON_VER"
+  ninja -C build
+}

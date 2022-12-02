@@ -1,0 +1,1 @@
+("${_appname}${pkgver}.tar.gz::https://github.com/Jules-WinnfieldX/CyberDropDownloader/archive/refs/tags/${pkgver}.tar.gz"

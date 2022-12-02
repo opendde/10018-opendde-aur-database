@@ -1,0 +1,1 @@
+(${pkgname%-git}::git+https://github.com/ambrop72/${pkgname%-git}.git#branch=master)

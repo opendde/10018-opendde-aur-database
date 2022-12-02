@@ -1,0 +1,4 @@
+package() {
+    install -Dm644 "${_pkgname}-${pkgver}/${_pkgname}.ko" "${pkgdir}/usr/lib/modules/${_extramodules}/${_pkgname}.ko"
+    xz -9 "${pkgdir}/usr/lib/modules/${_extramodules}/${_pkgname}.ko"                      
+}

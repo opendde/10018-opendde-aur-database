@@ -1,0 +1,6 @@
+package_ttf-amiri-typewriter() {
+	cd "$_pname-$pkgver"
+	install -Dm0644 -t "$pkgdir/usr/share/fonts/TTF/" *.ttf
+	install -Dm0644 -t "$pkgdir/usr/share/doc/$pkgname/" README.txt *.pdf
+	install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname" OFL.txt
+}

@@ -1,0 +1,13 @@
+package() {
+	cd "$srcdir"
+
+	mkdir -p "$pkgdir/opt/betacraft-launcher/"
+	chmod -R 755 "$pkgdir/opt/betacraft-launcher/"
+
+	install -D -m755 "$srcdir/betacraft-launcher" "$pkgdir/usr/bin/betacraft-launcher"
+
+	install -D -m644 "$srcdir/$pkgname-$pkgver.jar" "$pkgdir/opt/betacraft-launcher/BetaCraft-Launcher-Java.jar"
+
+	install -D -m644 "$srcdir/betacraft-launcher.png" "$pkgdir/usr/share/pixmaps/betacraft-launcher.png"
+	install -D -m644 "$srcdir/betacraft-launcher.desktop" "$pkgdir/usr/share/applications/betacraft-launcher.desktop"
+}

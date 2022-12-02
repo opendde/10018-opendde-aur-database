@@ -1,0 +1,30 @@
+build() {
+  cd gcc-build
+
+  # using -pipe causes spurious test-suite failures
+  # http://gcc.gnu.org/bugzilla/show_bug.cgi?id=48565
+  CFLAGS=${CFLAGS/-pipe/}
+  CXXFLAGS=${CXXFLAGS/-pipe/}
+
+  $srcdir/$_basedir/configure \
+      --prefix=/usr \
+      --program-prefix=$_target- \
+      --with-local-prefix=/usr/$_target \
+      --with-sysroot=/usr/$_target \
+      --with-build-sysroot=/usr/$_target \
+      --libdir=/usr/lib --libexecdir=/usr/lib \
+      --target=$_target --host=$CHOST --build=$CHOST \
+      --disable-nls \
+      --enable-languages=c,c++,fortran \
+      --enable-shared --enable-threads=posix \
+      --with-system-zlib --with-isl --enable-__cxa_atexit \
+      --disable-libunwind-exceptions --enable-clocale=gnu \
+      --disable-libstdcxx-pch --disable-libssp \
+      --enable-gnu-unique-object --enable-linker-build-id \
+      --enable-lto --enable-plugin --enable-install-libiberty \
+      --with-linker-hash-style=gnu --enable-gnu-indirect-function \
+      --disable-multilib \
+      --enable-checking=release
+
+  make -j${_ncpus}
+}

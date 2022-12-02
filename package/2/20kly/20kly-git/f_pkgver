@@ -1,0 +1,4 @@
+pkgver() {
+  cd $_gitname
+  echo $(git describe --always | sed 's/-/./g')
+}

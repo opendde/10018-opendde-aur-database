@@ -1,0 +1,8 @@
+_cargo_version() {
+    local _oldpwd
+    _oldpwd="$PWD"
+    cd "$srcdir/$_pkgname"
+    printf "%s" "$(git describe --long --tags \
+        | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/\([^-]*\)-\([^-]*\)$/\1.\2/')"
+    cd $_oldpwd
+}

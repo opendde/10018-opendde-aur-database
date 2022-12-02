@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}::https://github.com/nttgin/BGPalerter/releases/download//v${pkgver}/bgpalerter-linux-x64"

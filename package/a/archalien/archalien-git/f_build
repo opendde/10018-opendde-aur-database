@@ -1,0 +1,4 @@
+build() {
+    cd "${_pkgname}"
+    echo -e "$_pkgname_bin" | tee ${_pkgname}_bin
+}

@@ -1,0 +1,6 @@
+build() {
+    cd "$srcdir"
+    tar -xf data.tar.gz -C .
+    tar -xf control.tar.gz -C .
+  patch -Np0 < fix_lp.patch
+}

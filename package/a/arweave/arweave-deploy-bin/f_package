@@ -1,0 +1,5 @@
+package() {
+  mkdir -p "${pkgdir}/usr/bin"
+  chmod a+x arweave
+  cp arweave "${pkgdir}/usr/bin"
+}

@@ -1,0 +1,4 @@
+pkgver() {
+  cd $pkgname
+  echo "v"$(git rev-list --count master)
+}

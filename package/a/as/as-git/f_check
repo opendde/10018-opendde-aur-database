@@ -1,0 +1,10 @@
+check() {
+  cd "$srcdir/as"
+  mkdir -p build
+  cd build
+
+  cmake ..
+  make
+
+  ./as_test
+}

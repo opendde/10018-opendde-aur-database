@@ -1,0 +1,5 @@
+build() {
+  cd audiotools
+  python setup.py build
+  make -C docs
+}

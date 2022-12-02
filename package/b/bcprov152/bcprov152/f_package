@@ -1,0 +1,8 @@
+package() {
+    cd "$srcdir/bcprov-jdk15on-${pkgver/./}"
+
+    install -m755 -d "${pkgdir}/usr/share/java"
+    install -m755 -d "${pkgdir}/usr/share/licenses/${pkgname}"
+    install -m644 bcprov.jar "${pkgdir}/usr/share/java/"
+    install -m644 LICENSE.html "${pkgdir}/usr/share/licenses/${pkgname}/"
+}

@@ -1,0 +1,10 @@
+build() {
+  cd "${_plug}"
+
+  CXXFLAGS+=" $(pkg-config --cflags avisynth)" \
+  cmake -B build -S . \
+   -DCMAKE_BUILD_TYPE=Release \
+   -DCMAKE_INSTALL_PREFIX=/usr \
+
+  cmake --build build
+}

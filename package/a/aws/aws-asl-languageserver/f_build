@@ -1,0 +1,4 @@
+build() {
+  cd "aws-toolkit-vscode-$pkgver"
+  npm run vscode:prepublish || true
+}

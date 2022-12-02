@@ -1,0 +1,1 @@
+"https://github.com/${pkgname%-git}/${_name}"

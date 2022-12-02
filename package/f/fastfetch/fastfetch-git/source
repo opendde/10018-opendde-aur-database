@@ -1,0 +1,1 @@
+("${_src_dir}::git+https://github.com/LinusDierheimer/fastfetch.git#branch=dev")

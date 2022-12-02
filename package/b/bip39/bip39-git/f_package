@@ -1,0 +1,7 @@
+package() {
+  cd "$srcdir/$_pkgname"
+  mkdir -p "$pkgdir/usr/bin" || true
+	mkdir -p "$pkgdir/usr/share/man/man1" || true
+  mkdir -p "$pkgdir/usr/share/doc/bip39" || true
+  make install PREFIX="$pkgdir/usr"
+}

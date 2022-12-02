@@ -1,0 +1,8 @@
+build() {
+  mkdir -p build
+  cd build
+  cmake ../allegro5 \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DWANT_DOCS_HTML=OFF
+  make
+}

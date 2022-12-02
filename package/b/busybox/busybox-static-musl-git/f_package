@@ -1,0 +1,4 @@
+package() {
+ mkdir   -p    $pkgdir/usr/bin
+ install -m755 $srcdir/build/busybox $pkgdir/usr/bin/
+}

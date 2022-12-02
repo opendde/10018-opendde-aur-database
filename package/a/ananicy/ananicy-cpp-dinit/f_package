@@ -1,0 +1,4 @@
+package() {
+    install -dm755 "$pkgdir/etc/dinit.d"
+    install -Dm755 "$srcdir/ananicy-cpp.dinit" "$pkgdir/etc/dinit.d/ananicy-cpp"
+}

@@ -1,0 +1,12 @@
+prepare() {
+    cd "$srcdir/libpng-$pkgver"
+    source android-env ${_android_arch}
+
+    # Add animated PNG (apng) support
+    # see http://sourceforge.net/projects/libpng-apng/
+    gzip -dkf ../libpng-$pkgver-apng.patch.gz
+    patch -Np0 -i ../libpng-$pkgver-apng.patch
+    sed -i "s/libpng@PNGLIB_MAJOR@@PNGLIB_MINOR@/libpng/g" libpng.pc.in
+    sed -i "s/-lpng@PNGLIB_MAJOR@@PNGLIB_MINOR@/\-lpng/g" libpng.pc.in
+    sed -i "s/libpng@PNGLIB_MAJOR@@PNGLIB_MINOR@/libpng/g" Makefile.in
+}

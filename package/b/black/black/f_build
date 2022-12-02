@@ -1,0 +1,4 @@
+build() {
+  cd black-$pkgver
+  python setup.py build
+}

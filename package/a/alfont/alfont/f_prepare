@@ -1,0 +1,13 @@
+prepare() {
+  msg2 "Extracting source with unrar, as libarchive has no support for 'solid' rar archives..."
+  unrar x -idq -o+ AlFont${pkgver//.}.rar alfont/{docs/FTL.txt,include,src/alfont.c}
+  cd alfont
+  # fix line endings
+  sed 's/\r//g' -i include/alfont*.h docs/FTL.txt src/alfont.c
+  # fix memory leaks
+  patch -Np1 < ../alfont-$pkgver-fix-memory-leaks.patch
+  # remove alfont_get_string
+  patch -Np1 < ../alfont-$pkgver-remove-alfont_get_string.patch
+  # enable building for linux
+  sed '/^#define ALFONT_WINDOWS/s,^,//,;/^\/\/#define ALFONT_LINUX/s,^//,,' -i include/alfont.h
+}

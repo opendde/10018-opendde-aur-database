@@ -1,0 +1,4 @@
+package() {
+    cd "$srcdir/bootcleanse-$pkgver"
+    make DESTDIR="${pkgdir}" install
+}

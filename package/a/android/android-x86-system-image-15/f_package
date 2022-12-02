@@ -1,0 +1,6 @@
+package() {
+  mkdir -p "${pkgdir}/opt/android-sdk/system-images/android-${_apiver}/"
+  mv "${srcdir}/x86" "${pkgdir}/opt/android-sdk/system-images/android-${_apiver}/x86"
+
+  chmod -R ugo+rX "${pkgdir}/opt"
+}

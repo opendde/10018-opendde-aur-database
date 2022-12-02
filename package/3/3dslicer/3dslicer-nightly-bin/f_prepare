@@ -1,0 +1,12 @@
+prepare() {
+# manually extract tarball due to their unpredicted name
+  mkdir "${srcdir}/${_pkgname}"
+  tar xvf "${srcdir}/${_pkgname}-${pkgver}.tar.gz" -C "${srcdir}/${_pkgname}" --strip-components 1
+
+  echo "Creating desktop file"
+  gendesk -f -n --pkgname ${_pkgname} \
+    --pkgdesc "${pkgdesc}" \
+    --categories "Graphics;MedicalSoftware;Science;" \
+    --icon "${_pkgname}" \
+    --exec "Slicer"
+}

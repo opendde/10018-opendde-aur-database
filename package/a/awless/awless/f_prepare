@@ -1,0 +1,4 @@
+prepare() {
+  mkdir -p src/github.com/wallix
+  mv ${pkgname}-${pkgver} src/github.com/wallix/awless
+}

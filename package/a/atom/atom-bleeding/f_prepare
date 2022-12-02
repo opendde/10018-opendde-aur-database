@@ -1,0 +1,149 @@
+prepare() {
+  function describe {
+    printf "$(git -C "$srcdir/$1" describe --tags `git -C "$srcdir/$1" rev-list --tags --max-count=1` | sed 's/v//g')"
+  }
+  _apmver=$(describe apm)
+  _dark_bint_syntax_ver="$(describe dark-bint-syntax)"
+  _fusion_ui_ver="$(describe fusion-ui)"
+  _hyperclick_ver="$(describe hyperclick)"
+  _hyperlink_hyperclick_ver="$(describe hyperlink-hyperclick)"
+  _language_archlinux_ver="$(describe language-archlinux)"
+  _language_gfm2_ver="$(describe language-gfm2)"
+  _language_ini_desktop_ver="$(describe language-ini-desktop)"
+  _language_liquid_ver="$(describe language-liquid)"
+  _language_patch2_ver="$(describe language-patch2)"
+  _language_unix_shell_ver="$(describe language-unix-shell)"
+  _language_vala_modern_ver="$(describe language-vala-modern)"
+  _tf_ver="$(describe terminal-fusion)"
+
+  ## apm
+  rm -rf "${srcdir}"/apm-build
+  sed -i -e "s/_this.installedAtomVersion = '.*'/_this.installedAtomVersion = '${_atomver}'/g" ${srcdir}/../upgrade.patch
+  updpkgsums $srcdir/../PKGBUILD
+
+  cd apm
+  # Use custom launcher
+  rm bin/apm{,.cmd} bin/npm{,.cmd}
+  rm src/cli.coffee
+  install -m755 ${srcdir}/apm.js bin/apm
+
+  # Don't download binary Node
+  patch -Np1 -i ${srcdir}/no-scripts.patch
+  rm BUNDLED_NODE_VERSION script/*
+
+  # Use system node-gyp
+  patch -Np1 -i ../use-system-node-gyp.patch
+
+  ## atom
+  cd "${srcdir}/${_pkgname}-${_atomver}"
+
+  sed -e "s|<SRCDIR>|$srcdir/apm-build|g" "${srcdir}"/use-system-apm.patch > $srcdir/use-system-apm-fix.patch
+
+  patch -Np1 -i "${srcdir}"/use-system-electron.patch
+  patch -Np1 -i "${srcdir}"/use-system-apm-fix.patch
+  patch -Np1 -i "${srcdir}"/fix-license-path.patch
+
+  sed -i -e "/exception-reporting/d" \
+         -e "/metrics/d" \
+         -e "/-ui/d" \
+         -e "/-syntax/d" \
+         -e "/-theme/d" \
+         -e "s/\"language-gfm\": \".*\",/\"language-gfm2\": \"${_language_gfm2_ver}\",\n    \"language-ini-desktop\": \"${_language_ini_desktop_ver}\",\n    \"language-liquid\": \"${_language_liquid_ver}\",\n    \"language-patch2\": \"${_language_patch2_ver}\",/g" \
+         -e "/\"dependencies\": {/a \
+                     \"language-patch2\": \"${_language_patch2_url}\"," \
+         -e "s/\"language-shellscript\": \".*\",/\"language-unix-shell\": \"${_language_unix_shell_ver}\",\n    \"language-vala-modern\": \"${_language_vala_modern_ver}\",\n    \"language-archlinux\": \"${_language_archlinux_ver}\",\n    \"terminal-fusion\": \"${_tf_ver}\",/g" \
+         -e "s/\"link\": \".*\",/\"hyperclick\": \"${_hyperclick_ver}\",\n    \"hyperlink-hyperclick\": \"${_hyperlink_hyperclick_ver}\",/g" package.json
+
+  _L=("about"
+  "archive-view"
+  "autocomplete-atom-api"
+  "autocomplete-css"
+  "autocomplete-html"
+  "autocomplete-plus"
+  "autocomplete-snippets"
+  "autoflow"
+  "autosave"
+  "background-tips"
+  "bookmarks"
+  "bracket-matcher"
+  "command-palette"
+  "deprecation-cop"
+  "dev-live-reload"
+  "encoding-selector"
+  "fuzzy-finder"
+  "git-diff"
+  "find-and-replace"
+  "go-to-line"
+  "grammar-selector"
+  "image-view"
+  "incompatible-packages"
+  "keybinding-resolver"
+  "line-ending-selector"
+  "markdown-preview"
+  "notifications"
+  "open-on-github"
+  "package-generator"
+  "settings-view"
+  "snippets"
+  "spell-check"
+  "status-bar"
+  "styleguide"
+  "symbols-view"
+  "tabs"
+  "timecop"
+  "tree-view"
+  "update-package-dependencies"
+  "welcome"
+  "whitespace"
+  "wrap-guide"
+  "language-c"
+  "language-clojure"
+  "language-coffee-script"
+  "language-csharp"
+  "language-css"
+  "language-git"
+  "language-go"
+  "language-html"
+  "language-hyperlink"
+  "language-java"
+  "language-javascript"
+  "language-json"
+  "language-less"
+  "language-make"
+  "language-mustache"
+  "language-objective-c"
+  "language-perl"
+  "language-php"
+  "language-property-list"
+  "language-python"
+  "language-ruby"
+  "language-ruby-on-rails"
+  "language-sass"
+  "language-source"
+  "language-sql"
+  "language-text"
+  "language-todo"
+  "language-toml"
+  "language-xml"
+  "language-yaml")
+
+  for i in "${_L[@]}"
+  do
+    unset ver
+    ver="$(git -C "$srcdir/$i" describe --tags `git -C "$srcdir/$i" rev-list --tags --max-count=1` | sed 's/v//g')"
+    sed -i -e "s/\"$i\": \".*\"/\"$i\": \"$ver\"/g" package.json
+  done
+
+  # Fix for Electron 1.2.0
+  patch -Np1 -i "${srcdir}"/beforeunload.patch
+  patch -Np1 -i "${srcdir}"/run-as-node.patch
+
+  # Fix for Electron 1.3.0
+  patch -Np1 -i "${srcdir}"/fix-pane-resize-handle.patch
+
+  # Fix for Electron 1.4.0
+  patch -Np1 -i "${srcdir}"/fix-ime-events-handler.patch
+
+  # Theme patch
+  patch -Np1 -i "${srcdir}"/theme.patch
+}

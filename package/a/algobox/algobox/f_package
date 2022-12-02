@@ -1,0 +1,5 @@
+package() {
+	  cd "${srcdir}/${pkgname}-${pkgver}"
+	    make INSTALL_ROOT="${pkgdir}" install
+#	      install -Dm644 COPYING "$pkgdir/usr/share/licenses/$pkgname/COPYING"
+}

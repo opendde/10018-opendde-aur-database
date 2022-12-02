@@ -1,0 +1,13 @@
+package_bitcoinhd-qt() {
+	pkgdesc="BitcoinHD is a peer-to-peer network based digital currency - Qt (binary package)"
+	depends=('boost-libs' 'hicolor-icon-theme' 'libevent' 'miniupnpc' 'protobuf' 'qrencode' 'qt5-base' 'zeromq')
+
+	install -Dm755 bhd-v$pkgver/bin/btchd-qt "$pkgdir"/usr/bin/btchd-qt
+	install -Dm644 bhd-v$pkgver/share/man/man1/btchd-qt.1 "$pkgdir"/usr/share/man/man1/btchd-qt.1
+	install -Dm644 btchd-$pkgver/share/pixmaps/bitcoin128.png "$pkgdir"/usr/share/pixmaps/btchd128.png
+
+	if [ ! -f "/usr/share/licenses/btchd/COPYING" ]; then
+	    install -Dm644 btchd-$pkgver/COPYING "$pkgdir"/usr/share/licenses/btchd/COPYING
+	fi
+	install -Dm644 bitcoinhd-qt.desktop "$pkgdir"/usr/share/applications/btchd-qt.desktop
+}

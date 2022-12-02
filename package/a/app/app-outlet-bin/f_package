@@ -1,0 +1,8 @@
+package() {
+  install -Dm644 ${_appname}.desktop -t "${pkgdir}/usr/share/applications"
+  install -Dm644 LICENSE -t "${pkgdir}/usr/share/licenses/${_appname}"
+  install -Dm644 icon.png "${pkgdir}/usr/share/pixmaps/${_appname}.png"
+  install -d "${pkgdir}/opt/${_appname}"
+  mv ${_appname}.AppImage "$pkgdir/opt/${_appname}/${_appname}.AppImage"
+  chmod +x "$pkgdir/opt/${_appname}/${_appname}.AppImage"
+}

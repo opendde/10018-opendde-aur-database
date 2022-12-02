@@ -1,0 +1,4 @@
+prepare() {
+    cd $srcdir/$pkgname
+    git checkout v$pkgver
+}

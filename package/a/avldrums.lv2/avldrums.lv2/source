@@ -1,0 +1,1 @@
+("$pkgname-$pkgver.tar.gz::https://github.com/x42/${pkgname}/releases/download/v${pkgver}/${pkgname}-v${pkgver}.tar.xz")

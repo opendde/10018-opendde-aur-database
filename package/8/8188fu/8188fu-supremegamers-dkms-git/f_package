@@ -1,0 +1,31 @@
+package() {
+  cd "$srcdir"
+
+  local install_dir="$pkgdir/usr/src/$_pkgname-$pkgver"
+
+  # Copy dkms.conf
+  install -Dm644 dkms.conf "$install_dir/dkms.conf"
+
+  # Blacklist r8188fu
+  install -Dm644 blacklist-r8188fu.conf "$pkgdir/etc/modprobe.d/r8188fu.conf"
+
+  # Set name and version
+  sed -e "s/@_PKGNAME@/$_pkgname/" -e "s/@PKGVER@/$pkgver/" -i "$install_dir/dkms.conf"
+
+  # Copy sources
+  cd "$_pkgname"
+
+  for d in $(find . -type d); do
+    install -dm755 "$install_dir/$d"
+  done
+
+  for f in $(find . -type f ! -name '.gitignore'); do
+    install -m644 "$f" "$install_dir/$f"
+  done
+
+  # Install firmware
+  install -Dm644 firmware/rtl8188fufw.bin ${pkgdir}/usr/lib/firmware/rtlwifi/rtl8188fufw.bin
+
+  mkdir -p "$pkgdir/etc/modprobe.d/"
+  echo "options rtl8188fu rtw_power_mgnt=0 rtw_enusbss=0" > "$pkgdir/etc/modprobe.d/rtl8188fu.conf"
+}

@@ -1,0 +1,8 @@
+package() {
+  cd "$pkgdir"
+  install -Dm644 "${srcdir}/$_android/NOTICE.txt" usr/share/licenses/$pkgname/NOTICE.txt
+  ver=$(cat "${srcdir}/$_android/source.properties" |grep ^Pkg.Revision=|sed 's/Pkg.Revision=\([0-9.]*\).*/\1/')
+  mkdir -p opt/$_sdk/build-tools/$ver
+  cp -r "$srcdir/$_android/"* "$pkgdir/opt/$_sdk/build-tools/$ver"
+  chmod +Xr -R "$pkgdir/opt/$_sdk/build-tools/$ver"
+}

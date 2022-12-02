@@ -1,0 +1,3 @@
+package() {
+  curl https://raw.githubusercontent.com/phenax/bsp-layout/master/install.sh | sudo sh -;
+}

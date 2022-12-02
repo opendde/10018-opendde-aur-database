@@ -1,0 +1,7 @@
+package() {
+	cd "$pkgname-$pkgver"
+	make DESTDIR="$pkgdir/" install
+	install -Dv ../udev.rules ${pkgdir}/usr/lib/udev/rules.d/92_pcscd_abcccid.rules
+	install -Dv LICENSE ${pkgdir}/usr/share/licenses/$pkgname/LICENSE
+	
+}

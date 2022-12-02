@@ -1,0 +1,8 @@
+build() {
+  cd "autoconf-archive"
+
+  ./bootstrap.sh
+  ./configure --prefix="/usr"
+  make maintainer-all
+  make
+}

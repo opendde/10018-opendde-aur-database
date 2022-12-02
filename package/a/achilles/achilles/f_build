@@ -1,0 +1,7 @@
+build() {
+  cd "$srcdir/$pkgname-2"
+
+  patch -p1 -i "../debian/patches/010_previous.patch"
+  ./configure --prefix=/usr
+  make CXXFLAGS="${CXXFLAGS} -I/usr/include/SDL"
+}

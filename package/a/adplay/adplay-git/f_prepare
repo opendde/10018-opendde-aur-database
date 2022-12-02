@@ -1,0 +1,4 @@
+prepare() {
+  cd "$srcdir/${_srcname}"
+  autoreconf --install
+}

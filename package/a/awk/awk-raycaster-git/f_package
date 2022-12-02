@@ -1,0 +1,4 @@
+package() {
+  install -Dm755 launch.sh "$pkgdir/usr/bin/awkaster"
+  install -Dm644 "$_pkgname/awkaster.awk" "$pkgdir/usr/share/$pkgname/awkaster.awk"
+}

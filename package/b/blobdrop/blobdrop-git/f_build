@@ -1,0 +1,5 @@
+build() {
+	cd "$_pkgname"
+	cmake -B build -G Ninja -DCMAKE_INSTALL_PREFIX="/usr"
+	cmake --build build
+}

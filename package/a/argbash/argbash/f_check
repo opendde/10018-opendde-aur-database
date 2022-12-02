@@ -1,0 +1,4 @@
+check() {
+	cd "$pkgname-$pkgver/resources"
+	make check
+}

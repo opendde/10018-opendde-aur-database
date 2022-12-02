@@ -1,0 +1,5 @@
+prepare() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  patch -p1 <${srcdir}/01-debian-patches.all
+  patch -p1 <${srcdir}/02-fedora-patch.all
+}

@@ -1,0 +1,63 @@
+package_bcompare() {
+  pkgdesc="Beyond Compare 4: Compare, sync, and merge files and folders"
+  optdepends=('bcompare-kde4: KDE 4 service menus for Beyond Compare 4'
+              'bcompare-kde5: KDE Plasma 5 service menus for Beyond Compare 4'
+              'bcompare-nautilus: Nautilus service menus for Beyond Compare 4'
+              'bcompare-thunar: Thunar service menus for Beyond Compare 4'
+              'bcompare-cinnamon: Cinnamon service menus for Beyond Compare 4'
+              'bcompare-mate: MATE service menus for Beyond Compare 4'  )
+  install=${pkgbase}.install
+
+  # Excecute install script - needs to be run here
+  cd "${pkgbase}-${pkgver}"
+  _install_dir="${srcdir}/install"
+  sh -version &> /dev/null && sh   install.sh --prefix="${_install_dir}"\
+                           || bash install.sh --prefix="${_install_dir}"
+  # Prepare the directory skeleton needed for install.sh
+  cp -r "${_install_dir}/bin"  "${pkgdir}/"
+  cp -r "${_install_dir}/lib"  "${pkgdir}/"
+  cp -r "${_install_dir}/usr"  "${pkgdir}/"
+
+  # Move some directories to usr
+  cd "${pkgdir}"
+  if [ -d usr/lib ]; then
+    mv usr/lib/* lib
+  fi
+  mv bin lib usr/
+
+  # Fix wrong paths
+  sed -i "s|"${_install_dir}"|/usr|g" usr/bin/bcompare
+
+  # Remove KDE, Gnome and Xfce files
+  rm -rf "${pkgdir}/usr/share/kde4"
+  rm -rf "${pkgdir}/usr/lib/x86_64-linux-gnu"
+  rm -rf "${pkgdir}/usr/lib/kde4"
+  rm -rf "${pkgdir}/usr/lib/nautilus"
+  rm -rf "${pkgdir}/usr/lib/thunarx-2"
+  rm -rf "${pkgdir}/usr/lib/thunarx-3"
+  rm -rf "${pkgdir}/usr/lib/caja"
+  rm -rf "${pkgdir}/usr/lib/nemo"
+
+  #Clean unneded files
+  if [ "$CARCH" = "x86_64" ]; then
+    rm "${pkgdir}/usr/lib/beyondcompare/bcmount32"
+  elif [ "$CARCH" = "i686" ]; then
+    rm "${pkgdir}/usr/lib/beyondcompare/bcmount64"
+  fi
+  pushd usr/lib/beyondcompare/ > /dev/null
+  rm -f uninstall.sh RPM-GPG-KEY-scootersoftware scootersoftware.repo kde_context_menu
+  mv help "${pkgdir}/usr/share/doc/beyondcompare"
+  mv README "${pkgdir}/usr/share/doc/beyondcompare/"
+  rm -rf ext
+  popd > /dev/null
+
+  # Link help where Help -> Contents option is expecting to find it
+  ln -sf "/usr/share/doc/beyondcompare" "${pkgdir}/usr/lib/beyondcompare/help"
+
+  # Clean some mime files
+  pushd usr/share > /dev/null
+  mv  mime/packages .
+  rm -rf mime/*
+  mv packages mime/
+  popd > /dev/null
+}

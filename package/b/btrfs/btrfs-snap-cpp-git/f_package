@@ -1,0 +1,8 @@
+package() {
+    cd "${srcdir}/${pkgname}"
+    PREFIX="$pkgdir" make install
+}
+package() {
+    install -Dm755 "${srcdir}/${pkgname}/build/btrfs-snap" "${pkgdir}/usr/bin/btrfs-snap-cpp"
+    install -Dm644 "${srcdir}/${pkgname}/btrfs-snap.conf" "${pkgdir}/etc/btrfs-snap-cpp.conf"
+}

@@ -1,0 +1,5 @@
+build() {
+	cd "${srcdir}/${_appname}"
+	./configure --prefix=/usr
+	make
+}

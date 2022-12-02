@@ -1,0 +1,7 @@
+build() {
+	cd "${pkgname%-git}"
+	cd docs
+	make PREFIX=/usr
+	cd ..
+	python setup.py build
+}

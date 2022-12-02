@@ -1,0 +1,6 @@
+package() {
+	tar -zxf data.tar.gz -C "${pkgdir}"
+
+	# Server not supported (for now)
+	rm -rf ${pkgdir}/etc
+}

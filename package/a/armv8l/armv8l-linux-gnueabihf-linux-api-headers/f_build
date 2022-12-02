@@ -1,0 +1,6 @@
+build() {
+  cd ${srcdir}/linux-${_basever}
+
+  make ARCH=arm mrproper
+  make ARCH=arm headers_check
+}

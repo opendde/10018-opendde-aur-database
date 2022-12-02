@@ -1,0 +1,5 @@
+package() {
+	#create symlink for backward compabiliy
+	cp -r ./usr "$pkgdir/"
+	ln -s Ani-Rem "$pkgdir/usr/bin/SeasonProxer"
+}

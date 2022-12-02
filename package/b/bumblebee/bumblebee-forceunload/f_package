@@ -1,0 +1,23 @@
+package() {
+    cd "${srcdir}/${_pkgname}-${pkgver}"
+
+    # Install main app
+    make install DESTDIR="$pkgdir" \
+      completiondir=/usr/share/bash-completion/completions
+
+    # Blacklist nvidia and nouveau modules
+    # Reference: https://github.com/Bumblebee-Project/Bumblebee/issues/719
+    install -Dm644 "${srcdir}/bumblebee.conf" "${pkgdir}/usr/lib/modprobe.d/bumblebee.conf"
+
+    # Install systemd unit
+    install -Dm644 "scripts/systemd/bumblebeed.service" "${pkgdir}/usr/lib/systemd/system/bumblebeed.service"
+    sed -i "s/sbin/bin/" "${pkgdir}/usr/lib/systemd/system/bumblebeed.service"
+
+    # Make bash_completion work
+    mv -v "$pkgdir"/usr/share/bash-completion/completions/{bumblebee,optirun}
+
+    # Fix for FS#59312
+    sed -i "s/have/_have/" "${pkgdir}/usr/share/bash-completion/completions/optirun"
+
+    install -Dm644 "$srcdir"/bumblebee.sysusers "$pkgdir"/usr/lib/sysusers.d/$_pkgname.conf
+}

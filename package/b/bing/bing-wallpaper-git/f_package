@@ -1,0 +1,5 @@
+package() {
+    build_dir="${srcdir}/${pkgname}"
+    install -Dm755 "${build_dir}/bing-wallpaper" "${pkgdir}/usr/bin/bing-wallpaper"
+    install -Dm644 "${build_dir}/bing-wallpaper.service" "${pkgdir}/usr/lib/systemd/user/bing-wallpaper.service"
+}

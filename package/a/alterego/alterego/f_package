@@ -1,0 +1,15 @@
+package() {
+  cd AlterEgo_Linux/AlterEgo
+
+  install -Dm755 AlterEgo.sh "$pkgdir"/usr/bin/alterego
+  rm AlterEgo.sh
+
+  install -d "$pkgdir"/usr/share/games/alterego
+  cp -r * "$pkgdir"/usr/share/games/alterego/
+
+  # game does not run without world writable bit set for the level files :-/
+  find "$pkgdir"/usr/share/games/alterego/Content/level* -type f -exec chmod 666 {} \;
+
+  install -Dm644 "$srcdir"/alterego.desktop "$pkgdir"/usr/share/applications/alterego.desktop
+  install -Dm644 "$srcdir"/ae1-150x150.png "$pkgdir"/usr/share/pixmaps/alterego.png
+}

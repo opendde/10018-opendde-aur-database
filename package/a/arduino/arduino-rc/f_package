@@ -1,0 +1,46 @@
+package() {
+    cd "Arduino-master-${pkgver}/build/linux/work"
+
+    # Create directories
+    install -dm755 "${pkgdir}/usr/share/"{doc,icons/hicolor,applications,mime/packages}
+
+    # Copy the whole SDK
+    cp -a . "${pkgdir}/usr/share/arduino"
+
+    # Create wrapper for java8 + buider and documentation symlink
+    install -Dm755 "${srcdir}/arduino.sh" "${pkgdir}/usr/bin/arduino"
+
+    # Link arduino-builder, libastylej, libserialport and docs
+    # TODO astyle libserialport do not work yet
+    # TODO remove unzip dependency once all deps are resolved
+    # https://github.com/arduino/ctags/issues/12
+    # https://github.com/arduino/Arduino/issues/5538
+    # https://github.com/arduino/listSerialPortsC/issues/9
+
+    
+
+    # Arduino-builder
+    # https://bugs.archlinux.org/task/52377
+    # https://github.com/arduino/arduino-builder/issues/209
+    ln -s /usr/bin/arduino-builder "${pkgdir}/usr/share/arduino/arduino-builder"
+    install -dm755 "${pkgdir}/usr/share/arduino/tools-builder"
+
+    #rm "${pkgdir}/usr/share/arduino/lib/libastylej.so"
+    #ln -s /usr/lib/libastyle-2.05.1.so "${pkgdir}/usr/share/arduino/lib/libastylej.so"
+    #rm "${pkgdir}/usr/share/arduino/lib/liblistSerialsj.so"
+    #ln -s /usr/lib/libserialport.so "${pkgdir}/usr/share/arduino/lib/liblistSerialsj.so"
+    rm -r "${pkgdir}/usr/share/arduino/reference"
+    ln -s /usr/share/doc/arduino "${pkgdir}/usr/share/arduino/reference"
+
+    # Install desktop icons (keep a symlink for the arduino binary)
+    cp -a lib/icons/* "${pkgdir}/usr/share/icons/hicolor"
+    rm -rf "${pkgdir}/usr/share/arduino/lib/icons"
+    ln -s /usr/share/icons/hicolor "${pkgdir}/usr/share/arduino/lib/icons"
+
+    # Create desktop file using existing template
+    sed "s,<BINARY_LOCATION>,arduino %U,g;s,<ICON_NAME>,arduino,g" "lib/desktop.template" \
+    > "${pkgdir}/usr/share/applications/arduino.desktop"
+
+    # Install Arduino mime type
+    ln -s /usr/share/arduino/lib/arduino-arduinoide.xml "${pkgdir}/usr/share/mime/packages/arduino.xml"
+}

@@ -1,0 +1,7 @@
+package() {
+    make -C build DESTDIR="$pkgdir" install
+    install -D -m644 astc-encoder/Source/astcenc.h -t "${pkgdir}/usr/include"
+    ln -s astcenc-sse2 "${pkgdir}/usr/bin/astcenc"
+    ln -s libastcenc-sse2.so "${pkgdir}/usr/lib/libastcenc.so"
+    rm "${pkgdir}/usr/bin"/test-unit*
+}

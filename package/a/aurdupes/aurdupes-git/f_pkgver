@@ -1,0 +1,6 @@
+pkgver() {
+  cd "${srcdir}/${_pkgname}"
+
+  # Get the version number.
+  git describe --long | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}

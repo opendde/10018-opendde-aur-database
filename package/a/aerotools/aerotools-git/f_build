@@ -1,0 +1,4 @@
+build() {
+  cd aerotools
+	make
+}

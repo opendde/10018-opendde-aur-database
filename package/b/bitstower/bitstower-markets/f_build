@@ -1,0 +1,4 @@
+build() {
+  arch-meson ${_upstream} build
+  ninja -C build
+}

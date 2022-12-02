@@ -1,0 +1,8 @@
+package() {
+  mkdir -p "$pkgdir/opt/blheli-configurator"
+  mkdir -p "$pkgdir/usr/bin"
+  install -Dm644 "$srcdir/blheli-configurator.desktop" "$pkgdir/usr/share/applications/$pkgname.desktop"
+  install -Dm644 "$srcdir/icon_128.png?raw=true" "$pkgdir/opt/blheli-configurator/blheli_icon_128.png"
+  cp -r --preserve=all "$srcdir/BLHeli Configurator/." "$pkgdir/opt/blheli-configurator"
+  ln -s "/opt/blheli-configurator/$pkgname" "$pkgdir/usr/bin/$pkgname"
+}

@@ -1,0 +1,4 @@
+build() {
+    cd "${srcdir}/${ghpkgname}-${pkgver}/"
+    make -j$(nproc) build
+}

@@ -1,0 +1,1 @@
+("http://download.fedoraproject.org/pub/fedora/linux/releases/$_fedoraversion/Everything/x86_64/os/Packages/e/edk2-ovmf-${pkgver}git${_githash}-${_relnum}.fc$_fedoraversion.noarch.rpm"

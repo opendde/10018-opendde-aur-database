@@ -1,0 +1,8 @@
+package() {
+	cd "$srcdir"
+	sed -i 's+/home/richard/Doom/IWADs/+USERPATH+g' config/settings.json
+  	mkdir -pm 755 $pkgdir/opt/arachnotron
+  	install -m 755 arachnotron $pkgdir/opt/arachnotron
+  	cp -r --no-preserve=mode,ownership config $pkgdir/opt/arachnotron
+  	install -D -m 755 arachnowrap $pkgdir/usr/bin/arachnotron
+}

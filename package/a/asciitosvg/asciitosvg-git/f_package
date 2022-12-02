@@ -1,0 +1,3 @@
+package() {
+  install -Dm755 "gopath/bin/a2s" "$pkgdir/usr/bin/a2s"
+}

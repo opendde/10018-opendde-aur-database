@@ -1,0 +1,5 @@
+package_alterlinux-live-info() {
+    pkgdesc="Display version information of live environment"
+    install_files
+    install_license
+}

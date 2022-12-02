@@ -1,0 +1,8 @@
+package() {
+    install -d "${pkgdir}/usr/share/icons"
+
+    cp -r "${srcdir}/macOS-Monterey" "${pkgdir}/usr/share/icons"
+    cp -r "${srcdir}/macOS-Monterey-White" "${pkgdir}/usr/share/icons"
+    cp -r "${srcdir}/macOS-BigSur" "${pkgdir}/usr/share/icons"
+    cp -r "${srcdir}/macOS-BigSur-White" "${pkgdir}/usr/share/icons"
+}

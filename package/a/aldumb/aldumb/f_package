@@ -1,0 +1,9 @@
+package() {
+  DESTDIR="$pkgdir" cmake --install aurbuild
+  install -Dm644 dumb-$pkgver/LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
+
+  # delete stuff present in `dumb` package
+  rm -f "$pkgdir"/usr/include/dumb.h
+  rm -f "$pkgdir"/usr/lib/libdumb*
+  rm -rf "$pkgdir"/usr/lib/pkgconfig
+}

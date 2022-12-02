@@ -1,0 +1,1 @@
+("$pkgname::git+https://github.com/SnowyMouse/fancy-mouse-boot-rom.git#commit=$_commit")

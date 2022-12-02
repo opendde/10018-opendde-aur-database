@@ -1,0 +1,5 @@
+package() {
+  cd "$pkgname-$pkgver"
+  mkdir -p "$pkgdir"
+  tar -C "$pkgdir" -xf data.tar.xz
+}

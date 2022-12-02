@@ -1,0 +1,15 @@
+build() {
+  cd "$srcdir/AppImageLauncher"
+  cmake . \
+    -DCMAKE_BUILD_TYPE='None' \
+    -DCMAKE_INSTALL_PREFIX='/usr' \
+    -DUSE_SYSTEM_LIBAPPIMAGE='ON' \
+    -DUSE_SYSTEM_GTEST='ON' \
+    -DBUILD_TESTING='OFF' \
+    -Wno-dev
+
+  # See https://github.com/TheAssassin/AppImageLauncher/issues/251
+  make libappimageupdate libappimageupdate-qt
+  cmake .
+  make
+}

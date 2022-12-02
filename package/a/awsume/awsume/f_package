@@ -1,0 +1,9 @@
+package() {
+    cd "$pkgname-$pkgver"
+    python setup.py install --root="$pkgdir/" --optimize=1 --skip-build
+    install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
+    install -Dm644 README.md -t "$pkgdir/usr/share/doc/$pkgname/"
+
+    rm -f "$pkgdir/usr/bin/awsume.bat"
+    rm -f "$pkgdir/usr/bin/awsume.ps1"
+}

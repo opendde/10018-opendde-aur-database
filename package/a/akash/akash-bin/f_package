@@ -1,0 +1,4 @@
+package() {
+    install -Dt "${pkgdir}/usr/bin" "${srcdir}/${_pkgname}_${pkgver}_linux_amd64/${_pkgname}"
+    install -m644 -Dt "${pkgdir}/usr/share/licenses/${_pkgname}" LICENSE
+}

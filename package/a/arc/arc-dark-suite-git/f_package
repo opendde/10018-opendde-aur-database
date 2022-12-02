@@ -1,0 +1,10 @@
+package() {
+    mkdir -p $pkgdir/usr/share
+    cp -r $srcdir/$pkgname/aurorae $pkgdir/usr/share/
+    cp -r $srcdir/$pkgname/color-schemes $pkgdir/usr/share/
+    cp -r $srcdir/$pkgname/konsole $pkgdir/usr/share/
+    cp -r $srcdir/$pkgname/Kvantum $pkgdir/usr/share/
+    cp -r $srcdir/$pkgname/yakuake $pkgdir/usr/share/
+    cp -r $srcdir/$pkgname/wallpapers $pkgdir/usr/share/
+    cp -r $srcdir/$pkgname/konversation $pkgdir/usr/share/
+}

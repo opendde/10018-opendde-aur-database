@@ -1,0 +1,5 @@
+build() {
+  cd Arachne
+  make PERFUTILS=/usr COREARBITER=/usr \
+       EXTRA_CXXFLAGS='-Wno-error=class-memaccess'
+}

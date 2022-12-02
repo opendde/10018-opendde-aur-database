@@ -1,0 +1,6 @@
+prepare() {
+  cd $gitdir
+
+  ./bootstrap
+  ./configure
+}

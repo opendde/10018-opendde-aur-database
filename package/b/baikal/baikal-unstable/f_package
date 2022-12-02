@@ -1,0 +1,5 @@
+package() {
+  cd "${srcdir}/${_pkgname}"
+  install -d "${pkgdir}/usr/share/webapps/${_pkgname}"
+  cp -dr --no-preserve=ownership "build/${_pkgname}" "${pkgdir}/usr/share/webapps/"
+}

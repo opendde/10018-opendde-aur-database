@@ -1,0 +1,1 @@
+("${pkgname%-slim}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz")

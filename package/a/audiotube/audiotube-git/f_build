@@ -1,0 +1,5 @@
+build() {
+  cd "${pkgname%-git}"
+  cmake -DCMAKE_INSTALL_PREFIX=/usr -B build
+  make -C build
+}

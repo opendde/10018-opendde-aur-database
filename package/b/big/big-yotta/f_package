@@ -1,0 +1,4 @@
+package() {
+	cp -r opt "$pkgdir"
+	install -Dm644 opt/BigYotta/BigYotta.desktop "$pkgdir/usr/share/applications/BigYotta.desktop"
+}

@@ -1,0 +1,1 @@
+("$_pkgname-$pkgver.tar.gz::https://github.com/matrix-org/$_pkgname/archive/v$pkgver/$_pkgname-v$pkgver.tar.gz"

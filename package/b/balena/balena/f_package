@@ -1,0 +1,16 @@
+package() {
+    install -Dm755 "${srcdir}/balena/bundles/latest/binary-balena/balena" "${pkgdir}/usr/bin/balena"
+    symlinks=(balenad balena-containerd balena-containerd-ctr balena-containerd-shim balena-proxy balena-runc)
+    for s in "${symlinks[@]}"; do
+        ln -s "balena" "${pkgdir}/usr/bin/${s}"
+    done
+
+    install -Dm644 "${srcdir}/balena.service" \
+      "$pkgdir/usr/lib/systemd/system/balena.service"
+    install -Dm644 "${srcdir}/balena.socket" \
+      "$pkgdir/usr/lib/systemd/system/balena.socket"
+    install -Dm644 "${srcdir}/80-balena.rules" \
+        "$pkgdir/usr/lib/udev/rules.d/80-balena.rules"
+      install -Dm644 "$srcdir/balena.sysusers" \
+        "$pkgdir/usr/lib/sysusers.d/balena.conf"
+}

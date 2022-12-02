@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}.tar.xz::${_launchpad_url}/+sourcefiles/${pkgname}/${pkgver}+build1~groovy/${pkgname}_${pkgver}+build1~groovy.tar.xz")

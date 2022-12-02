@@ -1,0 +1,32 @@
+package() {
+    install -d -m 755 "${pkgdir}/usr/bin"
+    install -d -m 755 "${pkgdir}/usr/share/abevjava"
+    install -d -m 755 "${pkgdir}/etc"
+
+    unzip -oq "$srcdir/usr/share/abevjava/abevjava_install-$pkgver-${subver}.jar" -d "$srcdir"
+    install -m 655 "${srcdir}"/setenv "${pkgdir}"/usr/share/abevjava
+    install -m 655 "${srcdir}"/abevjava "${pkgdir}"/usr/bin
+    install -m 644 "${srcdir}"/abevjavapath.cfg "${pkgdir}"/etc
+
+    install -D "${srcdir}/${pkgname}".desktop "${pkgdir}"/usr/share/applications/"${pkgname}".desktop
+	install -Dm 644 "${srcdir}"/application/abevjava.png "${pkgdir}"/usr/share/pixmaps/abevjava.png
+
+    cp -r "${srcdir}"/application/* "${pkgdir}"/usr/share/abevjava
+
+    # Create anyk group and set download folder writable for group members
+    install -Dm 644 "${srcdir}/anyk.sysusers" "${pkgdir}/usr/lib/sysusers.d/anyk.conf"
+    
+    chgrp -R 569 "${pkgdir}/usr/share/abevjava/abev"
+    chgrp -R 569 "${pkgdir}/usr/share/abevjava/eroforrasok"
+    chgrp -R 569 "${pkgdir}/usr/share/abevjava/nyomtatvanyok"
+    chgrp -R 569 "${pkgdir}/usr/share/abevjava/upgrade"
+    chgrp -R 569 "${pkgdir}/usr/share/abevjava/segitseg"
+
+    chmod -R g=u "${pkgdir}/usr/share/abevjava/abev"
+    chmod -R g=u "${pkgdir}/usr/share/abevjava/eroforrasok"
+    chmod -R g=u "${pkgdir}/usr/share/abevjava/nyomtatvanyok"
+    chmod -R g=u "${pkgdir}/usr/share/abevjava/upgrade"
+    chmod -R g=u "${pkgdir}/usr/share/abevjava/segitseg"
+    
+    install=anyk.install
+}

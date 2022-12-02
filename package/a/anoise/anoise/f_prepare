@@ -1,0 +1,8 @@
+prepare() {
+
+  # remove space from SRCDEST folder
+  mv -f "$pkgname " "$pkgname"
+
+  cd "$srcdir/$pkgname"
+  patch --forward --strip=1 --input="$srcdir/setup.patch"
+}

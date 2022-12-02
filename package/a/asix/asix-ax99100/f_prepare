@@ -1,0 +1,88 @@
+prepare() {
+  set -u
+  _install_check
+  cd "${_srcdir}"
+
+  rm -rf '.git'
+  rm 'ax99100' # Current kernels automatically load the driver
+
+  sed -e 's:\r$::g' -i $(grep -l $'\r$' *)
+
+  if [ "$(vercmp "${pkgver}" '1.7.0')" -ne 0 ]; then
+    # diff -pNau5 ax99100_sp.c{.orig,} > '0000-ax99100_sp.c-ch.patch'
+    patch -Nup0 -i "${srcdir}/0000-ax99100_sp.c-ch.patch"
+  fi
+
+  if [ "$(vercmp "${pkgver}" '1.8.0')" -lt 0 ]; then
+    # diff -pNau5 ax99100_sp.c{.orig,} > '0001-kernel.5.12.MODULE_SUPPORTED_DEVICE.patch'
+    patch -Nup0 -i "${srcdir}/0001-kernel.5.12.MODULE_SUPPORTED_DEVICE.patch"
+  fi
+
+  #cd '..'; cp -pr "${_srcdir}" 'a'; ln -s "${_srcdir}" 'b'; false
+  # diff -pNaru5 'a' 'b' > '0002-kernel-5.18-pci_free_consistent-pci_alloc_consistent.patch'
+  patch -Nup1 -i "${srcdir}/0002-kernel-5.18-pci_free_consistent-pci_alloc_consistent.patch"
+
+  # Make package and DKMS compatible
+  # cp -p 'Makefile' 'Makefile.Arch'
+  sed -e 's:\s\+$::g '\
+      -e 's:/lib/:/usr/lib/:g' \
+      -e '# Double space slop' \
+      -e 's:  : :g' \
+      -e '# Fix all MDIR' \
+      -e 's:^\(MDIR\)=.*$:\1=kernel/drivers/tty/serial:g' \
+      -e '# RM isnt set anywhere so why use it? This isnt appropriate for packaging' \
+      -e 's:^\t\$(RM):#&:g' \
+      -e 's:^RM_PATH:#&:g' \
+      -e '# Disable all clean items to use built in clean' \
+      -e '/^clean:/,/^$/ s:^\t:#&:g' \
+      -e 's@^clean:@&\n\t$(MAKE) -C $(KDIR) M=$(PWD) clean@g' \
+      -e '/spi_test/ s:^#\trm:\trm:g' \
+      -e '# Fix paths for package:g' \
+      -e '/^install:/,/^$/ s:/usr/:"$(DESTDIR)"&:g' \
+      -e '/^install:/,/^$/ s:/etc/:"$(DESTDIR)"&:g' \
+      -e '/ln -s/ s:"$(DESTDIR)"::' \
+      -e '# default does too much' \
+      -e '/^default:/,/^$/ s:^\s\+rm:#&:g' \
+      -e '# might as well remove all remaining install lines' \
+      -e '/^install:/,/^$/ s:^[\ta-z]:#&:g' \
+      -e 's|^#install:|install:|g' \
+      -e 's:^#\(\tcp ax99100.ko\):\1:g' \
+      -e '/\/kernel\// s:^\tcp :#&:g' \
+      -e '# Separate utils from module' \
+      -e '/select_BR\.c/ s|^|\nutils:\n|g' \
+      -e '# Change default to modules and provide all target' \
+      -e 's|^default:|all: modules utils\n\n&\n\nmodules:|g' \
+      -e '#Disable debian stuff' \
+      -e 's|\(^DEBIAN_VERSION_FILE:\)=.*$|\1=x|g' \
+      -e 's|\(^DEBIAN_DISTRO:\)=.*$|\1=y|g' \
+      -e '# CURRENT is not used' \
+      -e 's:^CURRENT=:#&:g' \
+      -e '# Should be using CFLAGS' \
+      -e 's:gcc :gcc $(CFLAGS) :g' \
+      -e '# $(PWD) is not calculated correctly' \
+      -e 's:\$(PWD):$(shell pwd):g' \
+    -i 'Makefile'
+  test ! -s 'Makefile.Arch'
+
+  # uppercase module name not matching lowercase filename is a problem
+  #cp -p 'ax99100_sp.c'{,.orig}
+  sed -e '/"/ s:\bAX99100\b:ax99100:g' -i 'ax99100_sp.c'
+
+  # Branding
+  if ! :; then
+    # forgot to update the version
+    sed -e 's:^\(#define DRV_VERSION\s\).*$:\1"'"${pkgver}"' Arch Linux":g' -i 'ax99100_sp.h'
+  else
+    local _vers
+    _vers="$(sed -n -e 's:^#define DRV_VERSION\s"\([^"]\+\)".*$:\1:p' 'ax99100_sp.h')" # '
+    if [ "${_vers}" != "${pkgver}" ]; then
+      echo "Version mismatch ${_vers} ${pkgver}"
+      set +u
+      false
+    fi
+    sed -e '/^#define DRV_VERSION/ s:"\(.*\)":"\1 Arch Linux":g' -i 'ax99100_sp.h'
+  fi
+
+  #make -s clean
+  set +u
+}

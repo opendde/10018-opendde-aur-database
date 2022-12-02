@@ -1,0 +1,6 @@
+install_whl() {
+  # install
+  PIP_CONFIG_FILE=/dev/null $python -m pip install --isolated --root="$pkgdir" --ignore-installed --no-deps "${_name}-$pkgver$extraver-none-any.whl"
+  # generate .pyo
+  $python -O -m compileall ${pkgdir}
+}

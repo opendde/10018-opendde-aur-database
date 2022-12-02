@@ -1,0 +1,6 @@
+check() {
+	cd "$srcdir/$pkgname-$pkgver"
+
+	export RUSTUP_TOOLCHAIN=stable
+	cargo test --frozen
+}

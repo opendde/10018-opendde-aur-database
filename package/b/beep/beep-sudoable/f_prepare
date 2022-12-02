@@ -1,0 +1,3 @@
+prepare() {
+  patch -d "beep-${pkgver}" -Np1 -i "${srcdir}/0001-beep-main.c-yolo-it-when-running-with-sudo.patch"
+}

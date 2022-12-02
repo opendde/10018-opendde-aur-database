@@ -1,0 +1,6 @@
+package() {
+#  unzip audiowide.zip
+  install -d "$pkgdir/usr/share/fonts/${pkgname%-font}"
+  install -t "$pkgdir/usr/share/fonts/${pkgname%-font}" -m644 Audiowide-Regular.ttf
+  install -Dm644 OFL.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

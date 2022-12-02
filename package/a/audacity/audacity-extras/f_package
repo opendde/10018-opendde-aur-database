@@ -1,0 +1,9 @@
+package() {
+	cd "${srcdir}/audacity-plugin"
+	rm notch.ny
+	mkdir -p "${pkgdir}/usr/share/audacity/plug-ins"
+	for file in ${srcdir}/audacity-plugin/*.ny
+	do
+		install -D -m644 "${file}" "${pkgdir}/usr/share/audacity/plug-ins/"
+	done
+	}

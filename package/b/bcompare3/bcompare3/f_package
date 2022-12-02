@@ -1,0 +1,35 @@
+package() {
+  cd "${srcdir}/build"
+
+  # Install shell script file
+  install -m 755 -d "${pkgdir}/usr/bin"
+  install -m 755 -t "${pkgdir}/usr/bin" "bin/bcompare"
+
+  # Install binary files
+  install -m 755 -d "${pkgdir}/usr/${_LIB_DIR}/beyondcompare"
+  install -m 755 -t "${pkgdir}/usr/${_LIB_DIR}/beyondcompare" "${_LIB_DIR}/beyondcompare/BCompare"
+  install -m 644 -t "${pkgdir}/usr/${_LIB_DIR}/beyondcompare" "${_LIB_DIR}/beyondcompare"/{libqtc.so.1,libqt-mt.so.3,qtrc}
+
+  # Install documentation and help files
+  install -m 755 -d "${pkgdir}/usr/share/doc/${pkgname}/help"
+  install -m 644 -t "${pkgdir}/usr/share/doc/${pkgname}" "${_LIB_DIR}/beyondcompare/README"
+  install -m 644 -t "${pkgdir}/usr/share/doc/${pkgname}/help" "${_LIB_DIR}/beyondcompare/help"/*
+  ln -s "../../share/doc/${pkgname}/help" "${pkgdir}/usr/${_LIB_DIR}/beyondcompare/help"
+
+  # Install application launcher
+  install -m 755 -d "${pkgdir}/usr/share/applications"
+  install -m 755 -t "${pkgdir}/usr/share/applications" "usr/share/applications/bcompare.desktop"
+
+  # Install icons
+  install -m 755 -d "${pkgdir}/usr/share/pixmaps"
+  install -m 644 -t "${pkgdir}/usr/share/pixmaps" "usr/share/pixmaps"/*
+  install -m 755 -d "${pkgdir}/usr/share/mime/"
+
+  # Install MIME files
+  install -m 755 -d "${pkgdir}/usr/share/mime/packages"
+  install -m 644 -t "${pkgdir}/usr/share/mime/packages" "usr/share/mime/packages/bcompare.xml"
+
+  # Install license file
+  install -m 755 -d "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -m 644 -t "${pkgdir}/usr/share/licenses/${pkgname}" "${srcdir}/LICENSE"
+}

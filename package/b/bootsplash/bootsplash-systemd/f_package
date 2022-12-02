@@ -1,0 +1,6 @@
+package() {
+    install -Dm644 "${srcdir}/bootsplash-hide-when-booted.service" "${pkgdir}/usr/lib/systemd/system/bootsplash-hide-when-booted.service"
+    install -Dm644 "${srcdir}/bootsplash-ask-password-console.service" "${pkgdir}/usr/lib/systemd/system/bootsplash-ask-password-console.service"
+    install -Dm644 "${srcdir}/bootsplash-show-on-shutdown.service" "${pkgdir}/usr/lib/systemd/system/bootsplash-show-on-shutdown.service"
+    install -Dm644 "${srcdir}/bootsplash-ask-password-console.path" "${pkgdir}/usr/lib/systemd/system/bootsplash-ask-password-console.path"
+}

@@ -1,0 +1,4 @@
+prepare() {
+	cd ${srcdir}"/"${pkgname}"-"${pkgver}
+	sed -n '/.*LICENSE.*/,$p' ${pkgname}.txt > LICENSE
+}

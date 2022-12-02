@@ -1,0 +1,30 @@
+package() {
+	# move extracted files to pkgdir
+	mv $srcdir/usr $pkgdir/usr
+
+	# make links to required libraries
+	mkdir $pkgdir/usr/lib32
+	ln -s /usr/lib32/libreadline.so.8.0 $pkgdir/usr/lib32/libreadline.so.7
+	ln -s /usr/lib32/libreadline.so.8.0 $pkgdir/usr/lib32/libreadline.so.6
+	ln -s /usr/lib32/libhistory.so.8.0 $pkgdir/usr/lib32/libhistory.so.7
+	ln -s /usr/lib32/libncursesw.so $pkgdir/usr/lib32/libncurses.so.5
+	ln -s /usr/lib32/libncursesw.so $pkgdir/usr/lib32/libtinfo.so.5
+	cp $pkgdir/usr/local/lib/libagena.so $pkgdir/usr/lib32/libagena.so
+
+	# generate desktop file for agenaedit
+	mkdir $pkgdir/usr/share
+	mkdir $pkgdir/usr/share/applications
+	mkdir $pkgdir/usr/share/pixmaps
+	desktop=$pkgdir/usr/share/applications/AgenaEdit.desktop
+	cp $pkgdir/usr/agena/share/icons/agena.png $pkgdir/usr/share/pixmaps/agena.png
+	echo "[Desktop Entry]" >> $desktop
+	echo "Type=Application" >> $desktop
+	echo "Version=$pkgver" >> $desktop
+	echo "Name=AgenaEdit" >> $desktop
+	echo "Comment=Agena editor featuring syntax-highlighting and an integrated environment" >> $desktop
+	echo "Path=/usr/local/bin" >> $desktop
+	echo "Exec=agenaedit" >> $desktop
+	echo "Icon=/usr/share/pixmaps/agena.png" >> $desktop
+	echo "Terminal=false" >> $desktop
+	echo "Categories=Education;Languages;Agena;IDE" >> $desktop
+}

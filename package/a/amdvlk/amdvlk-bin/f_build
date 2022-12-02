@@ -1,0 +1,4 @@
+build() {
+  ar -x ${srcdir}/amdvlk_${pkgver}_amd64.deb
+  tar -xJf ${srcdir}/data.tar.xz
+}

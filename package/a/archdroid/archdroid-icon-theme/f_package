@@ -1,0 +1,6 @@
+package() {
+  msg2 "Installing ${pkgname}...";
+  cd ${pkgname};
+  install -dm 755 "${pkgdir}"/usr/share/icons;
+  cp -drf --no-preserve='ownership' . "${pkgdir}"/usr/share/icons/;
+};

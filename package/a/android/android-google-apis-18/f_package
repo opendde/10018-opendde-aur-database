@@ -1,0 +1,7 @@
+package() {
+  mkdir -p "${pkgdir}/opt/android-sdk/add-ons/"
+  mv "${srcdir}/google_apis-1743067-mac-x86" "${pkgdir}/opt/android-sdk/add-ons/addon-google_apis-google-${_sdkint}"
+  cp "${srcdir}/source.properties" "${pkgdir}/opt/android-sdk/add-ons/addon-google_apis-google-${_sdkint}"
+
+  chmod -R ugo+rX "${pkgdir}/opt"
+}

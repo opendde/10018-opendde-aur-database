@@ -1,0 +1,8 @@
+prepare() {
+  pushd ${_gitname}
+  if [ -d node_modules ]; then
+    node script/clean.js
+  fi
+  node script/bootstrap.js
+  popd
+}

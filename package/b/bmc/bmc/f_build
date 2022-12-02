@@ -1,0 +1,4 @@
+build() {
+  cd "$srcdir/BMC-$pkgver"
+  python setup.py build
+}

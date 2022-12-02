@@ -1,0 +1,5 @@
+build() {
+  cd "$srcdir"
+  # unzip will issue a warning about extra bytes at beginning of file, ignore it
+  unzip $_pkgname-linux-$pkgver-bin || true
+}

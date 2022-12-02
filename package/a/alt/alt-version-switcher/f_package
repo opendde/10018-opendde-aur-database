@@ -1,0 +1,3 @@
+package() {
+    install -Dm755 "$srcdir/$_pkgname-$pkgver/target/release/$_pkgname" "$pkgdir/usr/bin/$_pkgname"
+}

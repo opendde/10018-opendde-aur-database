@@ -1,0 +1,6 @@
+build() {
+    cd $pkgname
+
+    # Build the daemon and client
+    cargo build --release --locked
+}

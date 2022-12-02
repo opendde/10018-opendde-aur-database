@@ -1,0 +1,5 @@
+package() {
+  tar -xf data.tar.?z -C "$pkgdir" ./opt
+  rm -rf $pkgdir/opt/aaronia
+	chmod 755 $pkgdir/opt
+}

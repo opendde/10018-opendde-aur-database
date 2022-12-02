@@ -1,0 +1,5 @@
+package() {
+  cd "ALTMediaWriter-master"
+
+  INSTALL_ROOT="${pkgdir}" make install
+}

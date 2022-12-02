@@ -1,0 +1,5 @@
+build() {
+	cd "$srcdir/$_pkgname"
+	sed -i "s|/usr|$pkgdir/usr|" install.sh
+	sed -i 's|\[ -d ~/.local/share/applications \]|false|' install.sh
+}

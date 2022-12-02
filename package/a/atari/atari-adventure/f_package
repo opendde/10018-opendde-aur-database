@@ -1,0 +1,11 @@
+package() {
+  cd "$srcdir"
+
+  install -d $pkgdir/usr/share/$pkgname/
+  install -m644 adv-map1.gif $pkgdir/usr/share/$pkgname/
+  _rom_img_file=ADVNTURE.BIN 
+  install -m644 $_rom_img_file $pkgdir/usr/share/$pkgname/
+  echo "#!/bin/sh" > $pkgname
+  echo stella /usr/share/$pkgname/$_rom_img_file >> $pkgname
+  install -D -m755 $pkgname $pkgdir/usr/bin/$pkgname
+}

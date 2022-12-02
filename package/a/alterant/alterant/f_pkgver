@@ -1,0 +1,4 @@
+pkgver() {
+  cd $srcdir/src/$_gourl
+  printf "%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}

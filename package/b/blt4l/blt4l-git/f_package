@@ -1,0 +1,3 @@
+package() {
+	install -D -m644 "${srcdir}/build/libblt_loader.so" "${pkgdir}/usr/lib/blt4l/libblt_loader.so"
+}

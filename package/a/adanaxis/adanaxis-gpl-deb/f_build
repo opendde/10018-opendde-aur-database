@@ -1,0 +1,8 @@
+build() {
+	cd $srcdir
+	ar -x ${startdir}/src/${name}_${pkgver}.dfsg.1-${pkgrel}_${ARCH}.deb
+	tar -zxf ${startdir}/src/data.tar.gz
+	#cp -r ${startdir}/src/usr/ ${startdir}/pkg/
+	#install -d /usr/lib
+	#ln -s "/usr/lib/libtiff.so" "${startdir}/pkg/usr/lib/libtiff.so.4"
+}

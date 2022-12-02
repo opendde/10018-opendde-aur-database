@@ -1,0 +1,10 @@
+build() {
+  mkdir -p "$srcdir"/$_gitname/build
+  cd "$srcdir"/$_gitname/build
+
+  meson .. \
+    --prefix /usr \
+    --buildtype=plain
+
+  ninja
+}

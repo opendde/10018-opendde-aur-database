@@ -1,0 +1,17 @@
+package() {
+	cd "$srcdir/$_pkgname-$_ver"
+	source "$srcdir/setenv-android.sh"
+
+	# install header files, libraries and license
+	for lib in libcrypto.{a,so} libssl.{a,so}; do
+		install -D -m0644 $lib "$pkgdir/$_pref/lib/$lib"
+	done
+	mkdir -p "$pkgdir/$_pref/include"
+	cp -r include/openssl "$pkgdir/$_pref/include"
+	install -D -m644 LICENSE $pkgdir/usr/share/licenses/$pkgname/LICENSE
+
+	# strip binaries
+        local strip_path=$ANDROID_TOOLCHAIN/${CROSS_COMPILE}strip
+	find "$pkgdir" -name 'lib*.so' -type f -exec "$strip_path" --strip-unneeded {} \;
+	find "$pkgdir" -name 'lib*.a' -type f -exec "$strip_path" -g {} \;
+}

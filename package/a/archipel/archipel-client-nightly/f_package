@@ -1,0 +1,7 @@
+package() {
+  cd "$srcdir"
+  install -d "$pkgdir/usr/share/archipel"
+  cp -r 'Archipel'/* "$pkgdir/usr/share/archipel"
+  find "$pkgdir/usr/share/archipel" -type f -exec chmod 644 {} \;
+  find "$pkgdir/usr/share/archipel" -type d -exec chmod 755 {} \;
+}

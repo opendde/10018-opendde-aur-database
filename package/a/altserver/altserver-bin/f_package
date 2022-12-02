@@ -1,0 +1,4 @@
+package() {
+    install -Dm755 "AltServer-${_pkgver}-$CARCH" "${pkgdir}/usr/bin/altserver"
+    install -Dm644 "altserver.service" "${pkgdir}/usr/lib/systemd/system/altserver.service"
+}

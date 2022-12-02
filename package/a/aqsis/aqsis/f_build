@@ -1,0 +1,12 @@
+build() {
+  cd "$srcdir"/$pkgname-$pkgver
+
+  mkdir -p "$srcdir"/$pkgname-build
+  cd "$srcdir"/$pkgname-build
+
+  cmake "$srcdir"/$pkgname-$pkgver \
+    -DCMAKE_SKIP_RPATH=ON \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DSYSCONFDIR=/etc/aqsis
+  make
+}

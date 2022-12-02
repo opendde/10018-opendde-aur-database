@@ -1,0 +1,19 @@
+build() {
+    cd "${srcdir}/antique-penguin-client"
+
+    # Build application
+    yarn install
+    yarn dist
+
+    # Create desktop entry
+    cat << EOF > "${srcdir}/antique-penguin-client/antique-penguin-launcher.desktop"
+[Desktop Entry]
+Type=Application
+Name=Antique Penguin
+Comment=A moderated virtual remake of Club Penguin where anyone can play games, have fun and interact with others.
+Icon=/usr/share/pixmaps/antique-penguin-launcher.png
+Exec=/usr/bin/antique-penguin-launcher
+Terminal=false
+Categories=Game
+EOF
+}

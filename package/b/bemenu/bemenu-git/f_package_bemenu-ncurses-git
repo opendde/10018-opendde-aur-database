@@ -1,0 +1,9 @@
+package_bemenu-ncurses-git() {
+	pkgdesc='ncurses renderer for bemenu'
+	provides=(bemenu-renderer-git bemenu-ncurses)
+	conflicts=(bemenu-ncurses)
+	depends=(libbemenu-git ncurses)
+
+	cd "$_pkgbase"
+	make DESTDIR="$pkgdir" PREFIX=/usr install-curses
+}

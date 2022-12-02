@@ -1,0 +1,16 @@
+prepare() {
+  cd "${srcdir}/${_pkgname}-${pkgver}"
+
+  for f in "${source[@]}"; do
+    [[ "$f" =~ \.patch$ ]] && \
+    ( \
+      patch -p1 -i "${srcdir}/${f}" > /dev/null 2>&1 ||\
+      ( \
+        echo "failed to apply patch: $(basename ${f})" && \
+        exit 1 \
+      ) \
+    )
+  done
+
+  chmod +x "${srcdir}/${source[0]%%::*}"
+}

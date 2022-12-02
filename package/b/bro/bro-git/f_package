@@ -1,0 +1,5 @@
+package() {
+  cd ${pkgname}
+  make DESTDIR="$pkgdir/" install
+  install -DTm644 COPYING "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
+}

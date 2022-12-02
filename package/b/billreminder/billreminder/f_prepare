@@ -1,0 +1,11 @@
+prepare() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+
+  # python2 fix
+  for file in billreminder.in billreminderd.in src/gui/widgets/*.py ; do
+    sed -i 's_#!/usr/bin/env python_#!/usr/bin/env python2_' $file
+  done
+
+  # fix python version check
+  sed -i 's/"x$PYTHON_VERSION" = "x2.5"/"x$PYTHON_VERSION" > "x2.4"/' configure
+}

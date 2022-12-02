@@ -1,0 +1,4 @@
+package() {
+  cd "${pkgname%-git}"
+  make DESTDIR="$pkgdir/" install
+}

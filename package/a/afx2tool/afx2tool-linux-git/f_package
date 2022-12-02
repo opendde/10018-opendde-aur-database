@@ -1,0 +1,6 @@
+package() {
+  cd "$_pkgname"
+  install -Dm755 afx2-tool "$pkgdir/usr/bin/afx2-tool"
+
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

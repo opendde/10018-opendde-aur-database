@@ -1,0 +1,1 @@
+("${pkgname}"::"git+https://github.com/agateau/${_pkgname}.git")

@@ -1,0 +1,9 @@
+package() {
+	cd "${srcdir}"
+	install -d ${pkgdir}/usr/bin
+	install -d ${pkgdir}/usr/share/{apertium,applications,pixmaps,}
+	install -m 644 apertium-viewer.jar "${pkgdir}/usr/share/apertium/"
+	install -m 644 *.desktop "${pkgdir}/usr/share/applications/"
+	install -m 644 apertiumview/resources/apertium.png "${pkgdir}/usr/share/pixmaps/"
+	install -m 755 apertium-viewer "${pkgdir}/usr/bin/"
+}

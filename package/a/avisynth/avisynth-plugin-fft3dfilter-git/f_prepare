@@ -1,0 +1,5 @@
+prepare() {
+  mkdir -p build
+
+  rm -fr "${_plug}/fft3dfilter/"{avs*,avi*}
+}

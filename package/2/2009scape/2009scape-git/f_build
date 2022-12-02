@@ -1,0 +1,5 @@
+build() {
+    cd "${srcdir}/09launcher/"
+
+    sh gradlew jar
+}

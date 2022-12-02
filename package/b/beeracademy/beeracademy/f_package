@@ -1,0 +1,7 @@
+package() {
+	cd "${srcdir}"
+  install -D -m755 "${srcdir}/beeracademy"         "${pkgdir}/usr/bin/beeracademy"
+  install -D -m644 "${srcdir}/beeracademy.desktop" "${pkgdir}/usr/share/applications/beeracademy.desktop"
+  install -D -m644 "${srcdir}/beeracademy.png"     "${pkgdir}/usr/share/pixmaps/beeracademy.png"
+  install -D -m644 "${srcdir}/academy_v2.jar"     "${pkgdir}/usr/share/java/beeracademy/beeracademy.jar"
+}

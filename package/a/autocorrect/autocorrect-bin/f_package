@@ -1,0 +1,3 @@
+package() {
+    install -Dm755 "autocorrect" "${pkgdir}/usr/bin/autocorrect"
+}

@@ -1,0 +1,11 @@
+    build() {
+      cd "$pkgname-$pkgver"
+      ./autogen.sh
+      make
+    }
+
+
+    package() {
+      cd "$pkgname-$pkgver"
+      make DESTDIR="$pkgdir/" install
+    }

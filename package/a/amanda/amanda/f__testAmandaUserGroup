@@ -1,0 +1,12 @@
+_testAmandaUserGroup() {
+  if ! getent group "${_amandagroup}" > /dev/null ; then
+    error "The amanda group must exist prior to building."
+    error "Suggested command: groupadd -g ${_amandagid} ${_amandagroup}"
+    return 1
+  fi
+  if ! getent passwd "${_amandauser}" > /dev/null ; then
+    error "The amanda user must exist prior to building."
+    error "Suggested command: useradd --system -u ${_amandauid} -g ${_amandagroup} -G storage,disk -m -d ${_amhome} -s /bin/bash -c 'Amanda Backup Daemon' ${_amandauser}"
+    return 2
+  fi
+}

@@ -1,0 +1,21 @@
+build() {
+  cd "$pkgname-$pkgver"
+
+  # set Go flags
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+
+  # compile binary
+  go build -v \
+    -trimpath \
+    -buildmode=pie \
+    -mod=vendor \
+    -modcacherw \
+    -ldflags "-linkmode external -extldflags ${LDFLAGS}" \
+    -o build \
+    .
+
+  # generate man page
+  asciidoctor -b manpage "doc/$pkgname.adoc"
+}

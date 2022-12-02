@@ -1,0 +1,3 @@
+package() {
+  install -Dm755 ${srcdir}/${pkgname}/avrcalc ${pkgdir}/usr/bin/avrcalc
+}

@@ -1,0 +1,5 @@
+check() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  cd build
+  ctest --output-on-failure
+}

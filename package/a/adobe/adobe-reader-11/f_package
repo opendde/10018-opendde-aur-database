@@ -1,0 +1,16 @@
+package() {
+  install -m755 -d "$pkgdir"/usr/share/$pkgname "$pkgdir"/usr/share/$pkgname/Program\ Files "$pkgdir"/usr/share/$pkgname/Program\ Files/Common\ Files "$pkgdir"/usr/share/$pkgname/ProgramData
+  cp -a "$srcdir"/tmp/env/drive_c/Program\ Files/Adobe "$pkgdir"/usr/share/$pkgname/Program\ Files
+  cp -a "$srcdir"/tmp/env/drive_c/Program\ Files/Common\ Files/Adobe "$pkgdir"/usr/share/$pkgname/Program\ Files/Common\ Files
+  cp -a "$srcdir"/tmp/env/drive_c/ProgramData/Adobe "$pkgdir"/usr/share/$pkgname/ProgramData
+  cp -a "$srcdir"/tmp/env/system.reg "$pkgdir"/usr/share/$pkgname
+  install -Dm755 launcher.sh "$pkgdir"/usr/bin/$pkgname
+  sed -i "s/pkgname/$pkgname/g" "$pkgdir"/usr/bin/$pkgname
+  install -Dm644 launcher.desktop "$pkgdir"/usr/share/applications/$pkgname.desktop
+  sed -i "s/pkgname/$pkgname/g" "$pkgdir"/usr/share/applications/$pkgname.desktop
+  install -Dm644 "$srcdir"/tmp/local/icons/hicolor/16x16/apps/*_SC_Reader.0.png "$pkgdir"/usr/share/icons/hicolor/16x16/apps/$pkgname.png
+  install -Dm644 "$srcdir"/tmp/local/icons/hicolor/32x32/apps/*_SC_Reader.0.png "$pkgdir"/usr/share/icons/hicolor/32x32/apps/$pkgname.png
+  install -Dm644 "$srcdir"/tmp/local/icons/hicolor/48x48/apps/*_SC_Reader.0.png "$pkgdir"/usr/share/icons/hicolor/48x48/apps/$pkgname.png
+  install -Dm644 "$srcdir"/tmp/local/icons/hicolor/256x256/apps/*_SC_Reader.0.png "$pkgdir"/usr/share/icons/hicolor/256x256/apps/$pkgname.png
+  install -Dm644 "$srcdir"/tmp/env/drive_c/Program\ Files/Adobe/Reader\ 11.0/Reader/Legal/ENU/license.html "$pkgdir"/usr/share/licenses/$pkgname/license.html
+}

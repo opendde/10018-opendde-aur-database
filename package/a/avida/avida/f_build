@@ -1,0 +1,14 @@
+build() {
+  cd "$srcdir"
+  test -d out && rm -rf out
+  mkdir out
+  cd out
+  # disable unit tests for apto
+  # console interface ON
+  cmake ../avida-$pkgver -DCMAKE_INSTALL_PREFIX=/usr  \
+    -DAPTO_UNIT_TESTS=OFF  \
+    -DAVD_UNIT_TESTS=OFF \
+    -DAVD_GUI_NCURSES=ON \
+    -DCMAKE_BUILD_TYPE=Release
+  make
+}

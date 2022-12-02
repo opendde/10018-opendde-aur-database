@@ -1,0 +1,3 @@
+prepare() {
+	gendesk -n --pkgname "${pkgname}" --pkgdesc "${pkgdesc}"
+}

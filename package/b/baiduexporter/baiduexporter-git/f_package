@@ -1,0 +1,8 @@
+package() {
+    d="$pkgdir"/usr/share
+    install -Dm644 $_srcname/LICENSE "$d"/licenses/$_pkgname/LICENSE
+    d="$d"/$_pkgname
+    cp -rT $_srcname/chrome/release "$d"
+    find "$d" -type d -exec chmod 755 {} +
+    find "$d" -type f -exec chmod 644 {} +
+}

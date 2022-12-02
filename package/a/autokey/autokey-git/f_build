@@ -1,0 +1,17 @@
+build() {
+  cd "$pkgname2" || return
+  echo -e "${prefix}Building AutoKey"
+
+  python setup.py build
+
+  # copying sample user scripts
+  echo -e "${prefix}${prefix}Copying sample user scripts"
+  [ -d lib/autokey/configmanager/predefined_user_scripts ] && cp -r lib/autokey/configmanager/predefined_user_scripts build/lib/autokey/configmanager/
+
+  # [FIXME - is this still necessary? ] remove shebang from python libraries
+  #for lib in $(find lib/autokey/ -name "*.py"); do
+  #  sed '/\/usr\/bin\/env/d' $lib > $lib.new &&
+  #  touch -r $lib $lib.new &&
+  #  mv $lib.new $lib
+  #done
+}

@@ -1,0 +1,5 @@
+prepare() {
+	echo $_kernver_base
+	\cp --remove-destination $(readlink btusb.c) btusb.c
+	patch -p1 < btusb.patch
+}

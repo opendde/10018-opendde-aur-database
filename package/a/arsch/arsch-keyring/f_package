@@ -1,0 +1,5 @@
+package() {
+  _d=usr/share/pacman/keyrings
+  mkdir -p $pkgdir/$_d
+  install -m 644 $srcdir/arsch* $pkgdir/$_d
+}

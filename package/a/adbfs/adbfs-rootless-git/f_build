@@ -1,0 +1,4 @@
+build() {
+  cd adbfs-rootless
+  make
+}

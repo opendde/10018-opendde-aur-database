@@ -1,0 +1,1 @@
+("git+https://gitlab.com/ia-projekt-zespolowy-2021-2022/box-installer.git#tag=v${pkgver}")

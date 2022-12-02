@@ -1,0 +1,21 @@
+package() {
+  cd $_srcdir
+
+  pushd build-$_target
+  make DESTDIR="$pkgdir" install
+  popd
+
+  mv "$pkgdir"/usr/share/pkgconfig "$pkgdir"/usr/$_target/lib/pkgconfig
+  rm -rf "$pkgdir"/usr/share
+
+  install -Dm644 COPYING "$pkgdir/usr/$_target/share/licenses/$pkgname/LICENSE"
+
+  for lib in ncurses ncurses++ form panel menu; do
+    echo "INPUT(-l${lib}w)" >"$pkgdir/usr/$_target/lib/lib${lib}.so"
+    ln -s ${lib}w.pc "$pkgdir/usr/$_target/lib/pkgconfig/${lib}.pc"
+  done
+
+  # some packages look for -lcurses during build
+  echo 'INPUT(-lncursesw)' >"$pkgdir/usr/$_target/lib/libcursesw.so"
+  ln -s libncurses.so "$pkgdir/usr/$_target/lib/libcurses.so"
+}

@@ -1,0 +1,20 @@
+package() {
+    cd "$srcdir/$pkgname-$pkgver/${_srcname}/build"
+    install -D --mode=0644 dist/etc/beegfs-mon.conf "${pkgdir}/etc/beegfs/beegfs-mon.conf"
+    install -D --mode=0644 dist/usr/lib/systemd/system/beegfs-mon.service "${pkgdir}/usr/lib/systemd/system/beegfs-mon.service"
+    install -D --mode=0644 dist/usr/lib/systemd/system/beegfs-mon@.service "${pkgdir}/usr/lib/systemd/system/beegfs-mon@.service"
+    install -D --mode=0644 libMon.a "${pkgdir}/usr/lib/beegfs/libMon.a"
+    install -D --mode=0755 beegfs-mon "${pkgdir}/usr/bin/beegfs-mon"
+
+    cd "$srcdir/$pkgname-$pkgver/${_srcname}/scripts/grafana"
+    install -D --mode=0644 client_ops_node.json "${pkgdir}/etc/beegfs/grafana/client_ops_node.json"
+    install -D --mode=0644 client_ops_user.json "${pkgdir}/etc/beegfs/grafana/client_ops_user.json"
+    install -D --mode=0644 influxdb.json "${pkgdir}/etc/beegfs/grafana/influxdb.json"
+    install -D --mode=0644 meta.json "${pkgdir}/etc/beegfs/grafana/meta.json"
+    install -D --mode=0644 storage.json "${pkgdir}/etc/beegfs/grafana/storage.json"
+    install -D --mode=0644 storage_targets.json "${pkgdir}/etc/beegfs/grafana/storage_targets.json"
+    install -D --mode=0755 import-dashboards "${pkgdir}/etc/beegfs/grafana/import-dashboards"
+
+    cd "$srcdir/$pkgname-$pkgver"
+    install -D --mode=0644 LICENSE.txt "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.txt"
+}

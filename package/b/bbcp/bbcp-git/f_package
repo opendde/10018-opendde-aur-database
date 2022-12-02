@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir/$_pkgname"
+  osver=`./MakeSname`
+  install -Dm 755 "$srcdir/$_pkgname/bin/$osver/bbcp" "$pkgdir/usr/bin/bbcp"
+}

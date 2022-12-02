@@ -1,0 +1,6 @@
+build() {
+  cd $pkgname-$pkgver
+
+  cmake -B build -D CMAKE_INSTALL_PREFIX="$pkgdir/usr"
+  cmake --build build
+}

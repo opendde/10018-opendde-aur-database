@@ -1,0 +1,5 @@
+build() {
+	cd "ide-v$pkgver"
+	qmake-qt5 "$pkgname.pro"
+	make
+}

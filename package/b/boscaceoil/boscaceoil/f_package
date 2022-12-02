@@ -1,0 +1,15 @@
+package() {
+  install -dm755 "$pkgdir/usr/share/boscaceoil"
+  cp -ra "." "$pkgdir/usr/share/boscaceoil"
+  rm -rf "$pkgdir/usr/share/boscaceoil/boscaceoil_win_v2.zip"
+
+  install -Dm755 boscaceoil "$pkgdir/usr/bin/boscaceoil"
+
+  install -dm755 "$pkgdir/usr/share/applications"
+  install -m644 boscaceoil.desktop "$pkgdir/usr/share/applications/boscaceoil.desktop"
+
+  install -dm755 "$pkgdir/usr/share/icons/hicolor/256x256/apps"
+  install -m644 boscaceoil.png "$pkgdir/usr/share/icons/hicolor/256x256/apps/boscaceoil.png"
+
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

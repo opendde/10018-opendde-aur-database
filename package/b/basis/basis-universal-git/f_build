@@ -1,0 +1,4 @@
+build() {
+  cd basis_universal
+  ninja
+}

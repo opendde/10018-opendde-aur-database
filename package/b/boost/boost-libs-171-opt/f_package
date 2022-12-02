@@ -1,0 +1,8 @@
+package() {
+  cd "boost_1_71_0"
+  install -d "${pkgdir}/opt/usr/include/"
+  install -d "${pkgdir}/opt/usr/lib/"
+  cp -r boost "${pkgdir}/opt/usr/include/"
+  cp -r stage/lib/* "${pkgdir}/opt/usr/lib/"
+  install -Dm644 LICENSE_1_0.txt "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

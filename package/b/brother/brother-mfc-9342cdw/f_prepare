@@ -1,0 +1,13 @@
+prepare() {
+  install -d usr/share/cups/model usr/lib/cups/filter
+  wrapper=opt/brother/Printers/mfc${_model}/cupswrapper/cupswrappermfc${_model}
+  sed -i '/^ *lpadmin/d;/^sleep/Q' "$wrapper"
+  perl -i -spe 's#/(usr|opt)#$srcdir/$1#g;s#/model/Brother#/model#g' -- -srcdir="$srcdir" "$wrapper"
+  ./"$wrapper"
+  rm "$wrapper"
+  perl -i -spe 's/$srcdir//' -- -srcdir="$srcdir" usr/lib/cups/filter/*lpdwrapper*
+
+  rm opt/brother/Printers/mfc${_model}/cupswrapper/brother_mfc${_model}_printer_en.ppd
+  # /etc/printcap is managed by cups
+  rm opt/brother/Printers/mfc${_model}/inf/setupPrintcap*
+}

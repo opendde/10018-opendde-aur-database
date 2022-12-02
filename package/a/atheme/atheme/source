@@ -1,0 +1,1 @@
+("https://github.com/atheme/atheme/releases/download/v${_pkgver}/${_pkgname}-v${_pkgver}.tar.xz"

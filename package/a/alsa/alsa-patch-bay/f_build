@@ -1,0 +1,7 @@
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+  patch -p1 < ../../alsa-patch-bay.patch
+  ./configure --prefix=/usr
+  sed -i '946d' src/Makefile
+  make
+}

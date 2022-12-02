@@ -1,0 +1,5 @@
+prepare() {
+  tar -x \
+    -f "${srcdir}/${pkgname}-${pkgver}.tar.gz" -z \
+    -C "${srcdir}" --strip-components=1
+}

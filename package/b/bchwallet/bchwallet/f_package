@@ -1,0 +1,8 @@
+package() {
+  cd "${srcdir}/go/src/github.com/gcash/bchwallet"
+
+  install -Dm 775 "bchwallet" \
+    "${pkgdir}/usr/bin/${pkgname}"
+  install -Dm 644 "LICENSE" \
+    "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

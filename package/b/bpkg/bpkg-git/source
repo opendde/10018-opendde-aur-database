@@ -1,0 +1,1 @@
+("${_gitname}::git+https://github.com/${_gitname}/${_gitname}")

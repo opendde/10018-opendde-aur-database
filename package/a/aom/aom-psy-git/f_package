@@ -1,0 +1,12 @@
+package() {
+  cd "aom"
+
+  make -C "_build" DESTDIR="$pkgdir" install
+  cp "_build/examples/photon_noise_table" "$pkgdir/usr/bin/photon_noise_table"
+  cp "_build/examples/noise_model" "$pkgdir/usr/bin/noise_model"
+
+  install -d "$pkgdir/usr/share/doc/aom"
+  cp -R "_build/docs/." "$pkgdir/usr/share/doc/aom"
+
+  install -Dm644 {LICENSE,PATENTS} -t "$pkgdir/usr/share/licenses/aom"
+}

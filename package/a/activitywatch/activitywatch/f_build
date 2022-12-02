@@ -1,0 +1,29 @@
+build() {
+    export DISABLE_OPENCOLLECTIVE=1  # what the fuck is this shit
+    cd "$srcdir/$pkgname"
+
+    pushd aw-qt
+    pyrcc5 -o aw_qt/resources.py aw_qt/resources.qrc
+    popd
+
+    pushd aw-server/aw-webui/aw-client-js
+    npm ci --no-fund
+    npm run compile
+    popd
+
+    pushd aw-server/aw-webui
+    npm ci --no-fund
+    npm run build
+    popd
+
+    pushd aw-server
+    mkdir -p aw_server/static/
+    cp -rv aw-webui/dist/* aw_server/static
+    popd
+
+    for repo in aw-{core,client,qt,server,watcher-{afk,window}}; do
+        pushd $repo
+        python setup.py build
+        popd
+    done
+}

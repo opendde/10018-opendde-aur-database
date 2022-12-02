@@ -1,0 +1,11 @@
+build() {
+	mkdir -p "$_pkgname"/build
+	cd "$_pkgname"/build
+
+	cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DUSE_BUNDLED_LIBRARIES=OFF -G Ninja
+	ninja
+
+	cd ../Documentation/Doxygen
+	doxygen native.doxyconfig
+	doxygen csharp.doxyconfig
+}

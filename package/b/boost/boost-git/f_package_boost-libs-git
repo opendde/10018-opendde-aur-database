@@ -1,0 +1,36 @@
+package_boost-libs-git() {
+  pkgdesc+=' - runtime libraries'
+  depends=('bzip2' 'zlib' 'icu' 'zstd')
+  optdepends=('openmpi: for mpi support')
+  provides=(libboost_atomic.so libboost_chrono.so libboost_container.so
+    libboost_context.so libboost_contract.so libboost_coroutine.so
+    libboost_date_time.so libboost_fiber.so libboost_filesystem.so
+    libboost_graph.so libboost_graph_parallel.so libboost_iostreams.so
+    libboost_locale.so libboost_log.so libboost_log_setup.so
+    libboost_math_c99.so libboost_math_c99f.so libboost_math_c99l.so
+    libboost_math_tr1.so libboost_math_tr1f.so libboost_math_tr1l.so
+    libboost_mpi.so "libboost_numpy${_py/./}.so"
+    libboost_prg_exec_monitor.so libboost_program_options.so
+    "libboost_python${_py/./}.so" libboost_random.so
+    libboost_regex.so libboost_serialization.so
+    libboost_stacktrace_addr2line.so libboost_stacktrace_basic.so
+    libboost_stacktrace_noop.so libboost_system.so libboost_thread.so
+    libboost_timer.so libboost_type_erasure.so libboost_unit_test_framework.so
+    libboost_wave.so libboost_wserialization.so boost-libs)
+  conflicts=('boost-libs')
+
+  install -D fakeinstall/lib/*.so* -t "$pkgdir/usr/lib/"
+
+  # https://github.com/boostorg/mpi/issues/112
+  local _site="$(python -c 'import site; print(site.getsitepackages()[0])')"
+  install -d "$pkgdir/$_site/boost"
+  touch "$pkgdir/$_site/boost/__init__.py"
+  python -m compileall -o 0 -o 1 -o 2 "$pkgdir/$_site/boost"
+
+  # https://github.com/boostorg/python/issues/203#issuecomment-391477685
+  for _lib in python numpy; do
+    ln -srL "${pkgdir}"/usr/lib/libboost_${_lib}${_py::1}{${_py#*.},}.so
+  done
+
+  install -Dm644 boost/LICENSE_1_0.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

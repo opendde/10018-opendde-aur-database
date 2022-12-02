@@ -1,0 +1,8 @@
+package() {
+    cd "${srcdir}/${_pkgname}-${pkgver}"
+    make DESTDIR="${pkgdir}" install
+
+    # add desktop file with StartupNotify=false and MATE specific settings removed
+    rm "${pkgdir}/usr/share/applications/${_pkgname}.desktop"
+    install -Dm755 "${srcdir}/${pkgname}.desktop" "${pkgdir}/usr/share/applications/${_pkgname}.desktop"
+}

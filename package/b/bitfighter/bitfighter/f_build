@@ -1,0 +1,10 @@
+build() {
+  echo " ${CPPFLAGS}"
+  export CFLAGS+=" ${CPPFLAGS}"
+  export CXXFLAGS+=" ${CPPFLAGS}"
+  cmake -B build -S "bitfighter-${pkgver}" \
+    -DCMAKE_BUILD_TYPE='None' \
+    -DCMAKE_INSTALL_PREFIX='/usr' \
+    -Wno-dev
+  make -C build
+}

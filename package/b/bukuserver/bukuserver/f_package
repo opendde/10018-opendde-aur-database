@@ -1,0 +1,9 @@
+package() {
+  cd "$srcdir/buku-$pkgver"
+  python setup.py install --root="${pkgdir}" --prefix=/usr
+  install -Dm644 auto-completion/fish/buku.fish "${pkgdir}/usr/share/fish/vendor_completions.d/buku.fish"
+  install -Dm644 auto-completion/bash/buku-completion.bash "${pkgdir}/etc/bash_completion.d/buku"
+  install -Dm644 auto-completion/zsh/_buku "${pkgdir}/usr/share/zsh/site-functions/_buku"
+  gzip -f buku.1
+  install -Dm644 buku.1.gz "${pkgdir}/usr/share/man/man1/buku.1.gz"
+}

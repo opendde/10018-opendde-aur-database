@@ -1,0 +1,5 @@
+build() {
+	cd "$pkgname-$pkgver"
+	CFLAGS+=" $CPPFLAGS"
+	make USE_GNUTLS=1
+}

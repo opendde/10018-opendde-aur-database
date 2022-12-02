@@ -1,0 +1,4 @@
+build() {
+  cd $srcdir/buddhasay-$pkgver
+  cargo build --release
+}

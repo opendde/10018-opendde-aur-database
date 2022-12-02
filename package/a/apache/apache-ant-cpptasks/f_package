@@ -1,0 +1,4 @@
+package() {
+	install -d "${pkgdir}/usr/share/java/apache-ant/"
+	install "${srcdir}/${_pkgname}-${pkgver}/target/lib/${_pkgname}.jar" "${pkgdir}/usr/share/java/apache-ant/${_pkgname}.jar"	
+}

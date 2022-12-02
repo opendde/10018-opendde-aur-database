@@ -1,0 +1,6 @@
+package() {
+mkdir -p $pkgdir/usr/bin
+mkdir -p $pkgdir/usr/share/archbashstrap
+install -m 755 "$srcdir/$pkgname-$pkgver/archbashstrap" "$pkgdir/usr/bin/archbashstrap"
+install -m 655 "$srcdir/$pkgname-$pkgver/packages" "$pkgdir/usr/share/archbashstrap/packages"
+}

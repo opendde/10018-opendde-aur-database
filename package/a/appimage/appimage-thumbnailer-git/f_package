@@ -1,0 +1,4 @@
+package() {
+    cd "${pkgname}"
+    DESTDIR="$pkgdir" PREFIX=/usr ./install.sh
+}

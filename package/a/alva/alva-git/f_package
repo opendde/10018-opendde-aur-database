@@ -1,0 +1,19 @@
+package() {
+  # enter git repo
+  cd "$pkgname" 
+
+  # copy license
+  install -D -m 644 LICENSE "${pkgdir}/usr/share/licenses/$pkgname/LICENSE"
+
+  # copy electron resources
+  mkdir -p "${pkgdir}/usr/share/"
+  cp -f dist/linux-unpacked/resources/app.asar "${pkgdir}/usr/share/alva.asar"
+
+  # create run script
+  mkdir -p "${pkgdir}/usr/bin"
+  printf '%s\n' \
+  '#!/bin/sh' \
+  'exec electron /usr/share/alva.asar "$@"' \
+  > "$pkgdir/usr/bin/alva"
+  chmod a+x "$pkgdir/usr/bin/alva"
+}

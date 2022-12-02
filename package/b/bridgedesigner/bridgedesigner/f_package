@@ -1,0 +1,14 @@
+package() {
+  mkdir -p $pkgdir/usr/bin
+  mkdir -p $pkgdir/usr/share/{applications,java/bridgedesigner,pixmaps}
+  
+  install -m755 bridgedesigner $pkgdir/usr/bin/
+  install -m644 bridgedesigner.desktop $pkgdir/usr/share/applications/
+  install -m644 bridgedesigner.png $pkgdir/usr/share/pixmaps/
+  install -m644 "Bridge Designer 2016 (2nd Ed) Installation Image/Bridge Designer 2016.app/Contents/Java"/AbsoluteLayout.jar $pkgdir/usr/share/java/bridgedesigner/
+  install -m644 "Bridge Designer 2016 (2nd Ed) Installation Image/Bridge Designer 2016.app/Contents/Java"/beansbinding-1.2.1.jar $pkgdir/usr/share/java/bridgedesigner/
+  install -m644 "Bridge Designer 2016 (2nd Ed) Installation Image/Bridge Designer 2016.app/Contents/Java"/bsaf-1.9.1.jar $pkgdir/usr/share/java/bridgedesigner/
+  install -m644 "Bridge Designer 2016 (2nd Ed) Installation Image/Bridge Designer 2016.app/Contents/Java"/jh.jar $pkgdir/usr/share/java/bridgedesigner/
+  install -m644 "Bridge Designer 2016 (2nd Ed) Installation Image/Bridge Designer 2016.app/Contents/Java"/swing-layout-1.0.4.jar $pkgdir/usr/share/java/bridgedesigner/
+  install -m644 "Bridge Designer 2016 (2nd Ed) Installation Image/Bridge Designer 2016.app/Contents/Java"/WPBD.jar $pkgdir/usr/share/java/bridgedesigner/
+}

@@ -1,0 +1,4 @@
+build() {
+    cd "${srcdir}"/"${_aarubase}"
+    dotnet publish -f ${_netcoretarget} -c Release --self-contained -r ${dotnet_rid}
+}

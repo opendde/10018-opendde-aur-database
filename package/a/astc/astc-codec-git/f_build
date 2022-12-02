@@ -1,0 +1,9 @@
+build() {
+    cmake -B build -S astc-codec \
+        -DCMAKE_BUILD_TYPE:STRING='None' \
+        -DCMAKE_INSTALL_PREFIX:PATH='/usr' \
+        -DBUILD_SHARED_LIBS:BOOL='ON' \
+        -DCMAKE_SKIP_RPATH:BOOL='YES' \
+        -Wno-dev
+    make -C build
+}

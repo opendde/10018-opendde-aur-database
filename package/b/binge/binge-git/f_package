@@ -1,0 +1,16 @@
+package() {
+    cd "$srcdir/application"
+    install -dm755 "$pkgdir/opt/Binge"
+    install -dm755 "$pkgdir/usr/share/pixmaps"
+    cp -r ./ "$pkgdir/opt/Binge"
+    cp -r "$pkgdir/opt/Binge/icon.svg" "$pkgdir/usr/share/pixmaps/binge.svg"
+
+    # Link to binary
+    install -dm755 "$pkgdir/usr/bin"
+    ln -s "/opt/Binge/binge" "$pkgdir/usr/bin/binge"
+
+    # Desktop Entry
+    install -Dm644 "$srcdir/application/Binge.desktop" \
+        "$pkgdir/usr/share/applications/Binge.desktop"
+    sed -i s%/usr/share%/opt% "$pkgdir/usr/share/applications/Binge.desktop"
+}

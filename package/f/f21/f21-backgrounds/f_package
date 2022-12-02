@@ -1,0 +1,8 @@
+package() {
+  cd ${srcdir}/${pkgname}-${pkgver}
+  make DESTDIR=${pkgdir} install
+  rm -r ${pkgdir}/var/run
+  install -d ${pkgdir}/usr/bin 
+  install -D data/scripts/e2guardian ${pkgdir}/etc/logrotate.d/e2guardian
+  install -D -m644 ${srcdir}/e2guardian.service ${pkgdir}/usr/lib/systemd/system/e2guardian.service
+}

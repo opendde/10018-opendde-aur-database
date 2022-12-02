@@ -1,0 +1,4 @@
+package() {
+  cd "$srcdir"/geoip-api-mod_geoip2-$pkgver
+  install -Dm0755 .libs/mod_geoip.so $pkgdir/usr/lib/httpd/modules/mod_geoip.so
+}

@@ -1,0 +1,5 @@
+prepare() {
+  cd "${srcdir}/${_pkgname}"
+  msg2 "Removing '-Werror' from 'CMakeLists.txt'"
+  sed -e 's|\-Werror||' -i CMakeLists.txt
+}

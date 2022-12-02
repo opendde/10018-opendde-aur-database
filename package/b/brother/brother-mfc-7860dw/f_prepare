@@ -1,0 +1,4 @@
+prepare() {
+  # Modify file locations to align with packaging standards for Arch Linux systems and tame the wrapper.
+  patch -p1 < "${srcdir}/brother-mfc-7860dw.patch" || return 1
+}

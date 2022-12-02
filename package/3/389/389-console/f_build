@@ -1,0 +1,7 @@
+build() {
+  cd ${pkgname}-${pkgver}
+  ant -Dbuilt.dir="built" \
+    -Djss.local.location=/usr/share/java \
+    -Dapache.codec.local.location=/usr/share/java/commons-codec \
+    -Dapache.lang.local.location=/usr/share/java/commons-lang
+}

@@ -1,0 +1,14 @@
+prepare() {
+  cd "${_pkgname}"
+
+  local submodules=(
+    'Plugins/agslua/agslua'
+    'Common/libsrc/googletest'
+  )
+
+  for module in "${submodules[@]}"; do
+    git submodule init "${module}"
+    git config "submodule.${module}.url" "${srcdir}/$(basename ${module})"
+    git submodule update "${module}"
+  done
+}

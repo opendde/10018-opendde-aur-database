@@ -1,0 +1,5 @@
+build() {
+  cd $srcdir/adb
+  mv ../adbMakefile makefile
+  make
+}

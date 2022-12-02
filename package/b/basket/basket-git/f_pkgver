@@ -1,0 +1,5 @@
+pkgver() {
+  cd basket
+  _ver="$(cat CMakeLists.txt | grep "Basket VERSION" | cut -d ' ' -f 3 | tr '\n' '.' | cut -d ")" -f1)"
+  echo "$(echo ${_ver}).r$(git rev-list --count HEAD).$(git rev-parse --short HEAD)"
+}

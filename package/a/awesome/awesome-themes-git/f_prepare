@@ -1,0 +1,6 @@
+prepare() {
+	cd "${_gitname}"
+	
+	rm README
+	rm -rf "0-screenshots"
+}

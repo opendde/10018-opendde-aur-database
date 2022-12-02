@@ -1,0 +1,40 @@
+package() {
+  _instdirbase='/opt/entfernungsrechner'
+  _instdir="${pkgdir}/${_instdirbase}"
+  _execdirbase='/usr/bin'
+  _execdir="${pkgdir}/${_execdirbase}"
+  _docdirbase="/usr/share/doc/${_pkgname}"
+  _docdir="${pkgdir}/${_docdirbase}"
+  _licensedirbase="/usr/share/licenses/${pkgname}"
+  _licensedir="${pkgdir}/${_licensedirbase}"
+
+  install -v -d -m755 "${_instdir}"
+  install -v -d -m755 "${_instdir}/doc"
+  install -v -d -m755 "${_execdir}"
+  install -v -d -m755 "${_docdir}"
+
+  (
+    cd "${_instdir}"
+    bsdtar -x -v -f "${srcdir}/entfernungsrechner.zip"
+    chmod 644 *
+    chmod 755 *.[eE][xX][eE]
+  )
+
+  install -v -D -m755 "${srcdir}/entfernungsrechner.sh" "${_execdir}/entfernungsrechner"
+
+  install -v -D -m644 "${srcdir}/Entfernungsrechner_Benutzerhandbuch.pdf" "${_instdir}/doc/Entfernungsrechner_Benutzerhandbuch.pdf"
+  echo "${url}" > "${_instdir}/doc/info.url"
+  chmod 644 "${_instdir}/doc/info.url"
+
+  install -v -D -m644 "${srcdir}/license-dummy.txt" "${_licensedir}/license-dummy.txt"
+
+  (
+    cd "${_docdir}"
+    ln -v -s "${_instdirbase}/doc/Entfernungsrechner_Benutzerhandbuch.pdf" .
+    ln -v -s "${_instdirbase}/doc/info.url" .
+  )
+
+  chmod 755 "${_docdir}"
+  chmod 755 "${_instdir}"
+  chmod 755 "${_instdir}/doc"
+}

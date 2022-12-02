@@ -1,0 +1,8 @@
+build() {
+  cd "acl"
+
+  ./autogen.sh
+  ./configure \
+    --prefix="/usr"
+  make
+}

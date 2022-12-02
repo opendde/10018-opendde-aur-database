@@ -1,0 +1,5 @@
+check() {
+  cd "bash"
+
+  #make check
+}

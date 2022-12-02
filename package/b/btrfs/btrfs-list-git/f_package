@@ -1,0 +1,4 @@
+package() {
+    cd "$srcdir/${_pkgname}"
+    install -Dm755 btrfs-list "${pkgdir}/usr/bin/btrfs-list"
+}

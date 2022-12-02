@@ -1,0 +1,1 @@
+(fail2ban-$pkgver.tar.gz::https://github.com/fail2ban/fail2ban/archive/$pkgver.tar.gz

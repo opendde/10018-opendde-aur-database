@@ -1,0 +1,4 @@
+package() {
+	cd aptyay
+	make DESTDIR="$pkgdir/" install
+}

@@ -1,0 +1,4 @@
+package() {
+    cd bootsound
+    bash install.sh "$pkgdir"
+}

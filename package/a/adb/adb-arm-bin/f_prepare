@@ -1,0 +1,12 @@
+prepare() {
+  for src in "${noextract[@]}"; do
+    # This will extract the source .deb file to a folder of same
+    # name without the .deb at the end
+    # It is necessary to do this because, although makepkg will
+    # happily handle .deb files, all contents share same name and
+    # overwrite each other…
+    mkdir "${srcdir}/${src%.deb}"
+    cd "${srcdir}/${src%.deb}" || exit 10
+    ar -x "../$src"
+  done
+}

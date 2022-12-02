@@ -1,0 +1,9 @@
+prepare() {
+  cd "${srcdir}/${pkgname}-"*
+  #cd "${srcdir}/${pkgname}-${pkgver}"
+
+  # Set absolute paths for static files
+  sed -i "s^File.dirname(__FILE__) + '/lib^'/usr/lib/${pkgname}^g" main.rb
+  sed -i "s^ENV\['HOME'\] + '/.^'/etc/${pkgname}/^g" lib/config.rb
+  sed -i "s^ENV\['HOME'\] + '/.^'/var/log/${pkgname}/^g" main.rb
+}

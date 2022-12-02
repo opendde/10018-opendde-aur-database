@@ -1,0 +1,7 @@
+pkgver() {
+  cd "${pkgname}"
+
+  local cargo_version=$(grep "^version" < Cargo.toml | head -n 1 | awk '{ print $3 }' | sed 's/\"//g')
+
+  printf "%s.r%s.%s" "${cargo_version}" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}

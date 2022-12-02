@@ -1,0 +1,6 @@
+build() {
+  # To build with GTK+3 instead of GTK+2, the "hiro=gtk3" flag needs to be
+  # passed to make.
+  cd amethyst/amethyst
+  make hiro=gtk3
+}

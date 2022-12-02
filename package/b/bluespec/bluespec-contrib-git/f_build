@@ -1,0 +1,4 @@
+build() {
+        cd "$srcdir/bsc-contrib"
+        make
+}

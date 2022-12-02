@@ -1,0 +1,4 @@
+prepare() {
+	cd "$pkgname-$pkgver"
+	cp archnord.sh archnord
+}

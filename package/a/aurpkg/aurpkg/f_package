@@ -1,0 +1,3 @@
+package() {
+  install -Dm755 "${srcdir}"/${pkgname}-${pkgver}/aurpkg "${pkgdir}"/usr/bin/aurpkg
+}

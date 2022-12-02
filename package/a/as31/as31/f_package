@@ -1,0 +1,7 @@
+package() {
+	cd ${srcdir}/${pkgname}-${pkgver}
+
+	make DESTDIR=${pkgdir} install
+	
+	install -D -m 644 COPYING ${pkgdir}/usr/share/licenses/as31/COPYING
+}

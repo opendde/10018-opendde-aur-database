@@ -1,0 +1,6 @@
+check() {
+  cd "${_pkgname}-build"
+  export QT_QPA_PLATFORM=offscreen
+  ctest --output-on-failure
+  unset -v QT_QPA_PLATFORM
+}

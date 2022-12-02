@@ -1,0 +1,4 @@
+prepare () {
+  # https://github.com/bazelbuild/bazel/issues/8666
+  pushd third_party/grpc && patch -p0 -i "$srcdir/grpc_rename_gettid.patch"
+}

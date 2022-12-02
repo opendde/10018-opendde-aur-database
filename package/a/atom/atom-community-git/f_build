@@ -1,0 +1,4 @@
+build() {
+  cd ${_gitname}
+  node script/build.js --no-bootstrap
+}

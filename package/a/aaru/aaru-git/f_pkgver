@@ -1,0 +1,4 @@
+pkgver() {
+  cd "${srcdir}"/"${_aarubase}"
+  echo v6.0.0.`git rev-parse --short HEAD`
+}

@@ -1,0 +1,12 @@
+prepare() {
+	cd "$srcdir/${_pkgname}-${_pkgver}-${_version}${_pkgrel}"
+	sed -i -e "/exception-reporting/d" \
+	-e "/metrics/d" \
+	package.json
+
+	chmod 755 -R package.json
+	sed -i -e 's@node script/bootstrap@node script/bootstrap --no-quiet@g' \
+	./script/build
+
+	sed -i -e "s/<%=Desc=%>/${pkgdesc}/g" "${srcdir}/${_pkgname}-${_version}.desktop"
+}

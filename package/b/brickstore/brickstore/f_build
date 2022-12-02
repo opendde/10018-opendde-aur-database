@@ -1,0 +1,5 @@
+build() {
+  cd "$pkgname-$pkgver"
+  /usr/lib/qt6/bin/qt-cmake -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr .
+  cmake --build . --config Release --parallel
+}

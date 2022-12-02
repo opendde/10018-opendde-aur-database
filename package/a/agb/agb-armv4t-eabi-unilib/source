@@ -1,0 +1,1 @@
+("https://github.com/aquefir/${pkgname#agb-armv4t-eabi-}/archive/v${_symver}-$pkgver.tar.gz")

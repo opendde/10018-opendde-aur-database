@@ -1,0 +1,8 @@
+build() {
+  cd $pkgname/ashpd-demo
+  meson setup \
+    -Dprefix=/usr \
+    -Dbuildtype=release \
+    build
+  ninja -C build
+}

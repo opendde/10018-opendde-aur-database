@@ -1,0 +1,7 @@
+build () {
+  cd "${srcdir}"
+
+  mkdir -p $pkgname
+  cd "${srcdir}/${pkgname}"
+  unzip -o "${srcdir}/AirZoshi.air"
+}

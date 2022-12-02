@@ -1,0 +1,6 @@
+package() {
+	export PYTHONHASHSEED=0
+	cd "$pkgname"
+	python -m installer --destdir="$pkgdir/" dist/*.whl
+	install -Dm644 README.md -t "$pkgdir/usr/share/doc/$pkgname/"
+}

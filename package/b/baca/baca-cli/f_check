@@ -1,0 +1,4 @@
+check() {
+	cd "${pkgname}"
+	RUSTUP_TOOLCHAIN=stable cargo test --release --frozen --all-features --target-dir=target
+}

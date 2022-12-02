@@ -1,0 +1,5 @@
+build() {
+  export GOPATH="${srcdir}/_go"
+  cd "$GOPATH/src/${_importpath}"
+  go build
+}

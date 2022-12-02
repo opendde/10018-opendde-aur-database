@@ -1,0 +1,14 @@
+build() {
+  cd "$srcdir/boolector-3.2.2"
+
+  # Setup lingeling
+  ./contrib/setup-lingeling.sh
+
+  # Setup btor2tools
+  CFLAGS="" ./contrib/setup-btor2tools.sh
+
+  # Build Boolector
+  ./configure.sh --shared
+  cd build
+  make
+}

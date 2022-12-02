@@ -1,0 +1,4 @@
+build() {
+    cd "${pkgname//-/_}-$pkgver"
+    python setup.py build
+}

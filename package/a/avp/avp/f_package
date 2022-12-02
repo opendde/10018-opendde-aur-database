@@ -1,0 +1,13 @@
+package() {
+  cd ${pkgname}-${_dirname}/build
+
+  # install binary
+  install -D -m755 avp "${pkgdir}/opt/avp/avp"
+  install -D -m755 "${srcdir}/avp" "${pkgdir}/usr/bin/avp"
+
+  # install readme
+  install -D -m644 ../README "${pkgdir}/opt/${pkgname}/README"
+
+  # install license
+  install -D -m644 ../LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

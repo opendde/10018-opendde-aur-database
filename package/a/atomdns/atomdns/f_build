@@ -1,0 +1,9 @@
+build() {
+  export GOPATH="$srcdir/build"
+  export PATH=$GOPATH/bin:$PATH
+
+  cd $pkgname-${pkgver}
+  # In order to build with PIE buildmode, we need to use CGO.
+  # Currently, we will keep cgo disabled for better performance.
+  GO111MODULE=on CGO_ENABLED=0 go build -v -ldflags="-s -w" -o atomdns ./cmd/atomdns
+}

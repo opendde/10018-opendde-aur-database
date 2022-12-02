@@ -1,0 +1,8 @@
+build() {
+  cd build
+  cmake ../$pkgname \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DENABLE_DOC=ON \
+    -DENABLE_STATIC=OFF
+  make
+}

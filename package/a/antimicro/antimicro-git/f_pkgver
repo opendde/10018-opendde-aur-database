@@ -1,0 +1,4 @@
+pkgver() {
+	cd "${srcdir}/$_name"
+		git describe | sed 's/-/.r/; s/-/./'
+}

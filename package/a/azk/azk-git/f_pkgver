@@ -1,0 +1,4 @@
+pkgver() {
+    cd "$_pkgname"
+    git tag -l | sort -V | tail -1 | sed 's/^v//'
+}

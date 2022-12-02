@@ -1,0 +1,1 @@
+("git://github.com/mernen/${pkgname%-git}.git")

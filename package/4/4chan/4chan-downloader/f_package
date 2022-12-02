@@ -1,0 +1,20 @@
+package() {
+  cd $srcdir
+  # Binaries
+  install -Dm755 fourchan-dl $pkgdir/usr/share/4chan-downloader/fourchan-dl
+  install -Dm755 fourchan-dl-console $pkgdir/usr/share/4chan-downloader/fourchan-dl-console
+  
+  # Plugins
+  mkdir -p $pkgdir/usr/share/4chan-downloader/plugins
+  cp plugins/*.so $pkgdir/usr/share/4chan-downloader/plugins
+
+  # Start file
+  install -Dm755 $pkgname $pkgdir/usr/bin/$pkgname
+  
+  # Desktop icon
+  install -Dm644 gui/resources/4chan.png $pkgdir/usr/share/pixmaps/$pkgname.png
+  install -Dm644 $pkgname.desktop $pkgdir/usr/share/applications/$pkgname.desktop  
+  
+  # Make directory writeable
+  chmod o+w $pkgdir/usr/share/4chan-downloader
+}

@@ -1,0 +1,4 @@
+check() {
+  cd $_hkgname-$pkgver
+  runhaskell Setup test
+}

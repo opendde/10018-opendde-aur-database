@@ -1,0 +1,17 @@
+package() {
+  cd ${pkgname%-git}
+  make -j1 DESTDIR="${pkgdir}" install
+
+  # move vim files to correct place
+  install -dm755 "$pkgdir"/usr/share/vim/vimfiles/{ftdetect,syntax}
+  install -Dm644 "$pkgdir"/usr/share/asymptote/asy.vim \
+	  "$pkgdir"/usr/share/vim/vimfiles/syntax/asy.vim
+  install -Dm644 "$pkgdir"/usr/share/asymptote/asy_filetype.vim \
+	  "$pkgdir"/usr/share/vim/vimfiles/ftdetect/asy.vim
+  rm "$pkgdir"/usr/share/asymptote/asy.vim \
+     "$pkgdir"/usr/share/asymptote/asy_filetype.vim
+  install -dm755 "$pkgdir"/usr/share/org.kde.syntax-highlighting/syntax
+  cd "$pkgdir"/usr/share/asymptote/
+  sh asy-kate.sh
+  mv asymptote.xml "$pkgdir"/usr/share/org.kde.syntax-highlighting/syntax
+}

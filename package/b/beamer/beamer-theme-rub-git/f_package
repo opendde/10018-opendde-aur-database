@@ -1,0 +1,24 @@
+package() {
+  TEXMFDIST=$(kpsewhich -var-value=TEXMFDIST)
+  cd "${srcdir}/rub-beamer/tex/latex/rub-beamer"
+  install -d -m755 "${pkgdir}/${TEXMFDIST}/tex/latex/rub-beamer"
+
+  install -m644 beamercolorthemeRub.sty \
+          "${pkgdir}/${TEXMFDIST}/tex/latex/rub-beamer/"
+  install -m644 beamerfontthemeRub.sty \
+          "${pkgdir}/${TEXMFDIST}/tex/latex/rub-beamer/"
+  install -m644 beamericonarticle.pdf \
+          "${pkgdir}/${TEXMFDIST}/tex/latex/rub-beamer/"
+  install -m644 beamericonbook.pdf \
+          "${pkgdir}/${TEXMFDIST}/tex/latex/rub-beamer/"
+  install -m644 beamerinnerthemeRub.sty \
+          "${pkgdir}/${TEXMFDIST}/tex/latex/rub-beamer/"
+  install -m644 beamerouterthemeRub.sty \
+          "${pkgdir}/${TEXMFDIST}/tex/latex/rub-beamer/"
+  install -m644 beamerthemeRub.sty \
+          "${pkgdir}/${TEXMFDIST}/tex/latex/rub-beamer/"
+
+  mkdir -p "${pkgdir}/usr/share/doc/${pkgname}"
+  install -m644 "${srcdir}/rub-beamer/README.md" \
+          "${pkgdir}/usr/share/doc/${pkgname}/"
+}

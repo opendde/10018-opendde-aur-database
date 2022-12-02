@@ -1,0 +1,23 @@
+package() {
+  cd $srcdir
+  arch_suffix=_${CARCH}
+  
+  # Binaries:
+  install -dm755 ${pkgdir}/usr/bin
+  install -Dm755 usr/sbin/{aksusbd,hasplmd}${arch_suffix} ${pkgdir}/usr/bin/
+
+  # udev rules:
+  install -dm755 ${pkgdir}/usr/lib/udev/rules.d
+  install -m644 etc/udev/rules.d/* ${pkgdir}/usr/lib/udev/rules.d/
+
+  # systemd service
+  install -dm755 ${pkgdir}/usr/lib/systemd/system/
+  install -m644 var/hasplm/init/aksusbd${arch_suffix}.service ${pkgdir}/usr/lib/systemd/system/aksusbd.service
+  install -m644 var/hasplm/init/hasplmd${arch_suffix}.service ${pkgdir}/usr/lib/systemd/system/hasplmd.service
+
+  # Readme.html:
+  install -dm755 ${pkgdir}/usr/share/aksusbd/Readme
+  cp -R Readme_HTML5/* ${pkgdir}/usr/share/aksusbd/Readme/
+  chmod -R 644 ${pkgdir}/usr/share/aksusbd/Readme/*
+
+}

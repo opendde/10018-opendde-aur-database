@@ -1,0 +1,1 @@
+("${pkgname}-v${pkgver}.tar.gz::https://git.sr.ht/~arsen/alsa_rnnoise/archive/v${pkgver}.tar.gz")

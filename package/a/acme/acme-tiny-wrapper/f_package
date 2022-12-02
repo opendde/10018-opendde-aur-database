@@ -1,0 +1,6 @@
+package() {
+    cd "$pkgname"
+
+    install -m 0755 -d $pkgdir/usr/bin/
+    install -m 0755 acme-tiny-wrapper $pkgdir/usr/bin/acme-tiny-wrapper
+}

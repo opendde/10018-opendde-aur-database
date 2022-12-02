@@ -1,0 +1,9 @@
+build() {
+  set -u
+  cd "${_srcdir}"
+  if [ ! -s 'Makefile' ]; then
+    ./configure --prefix='/usr' --disable-static -C
+  fi
+  make -s
+  set +u
+}

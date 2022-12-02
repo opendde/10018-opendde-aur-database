@@ -1,0 +1,8 @@
+package() {
+
+  install -d -m 755 "$pkgdir"/usr/share/icons/AntuDark
+
+  cd $srcdir/$pkgname/AntuDark
+  cp -r . "$pkgdir"/usr/share/icons/AntuDark/
+
+}

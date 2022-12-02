@@ -1,0 +1,4 @@
+pkgver () {
+	cd "${pkgname}"
+	git rev-list --count HEAD
+}

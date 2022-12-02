@@ -1,0 +1,22 @@
+build() {
+  # Package needs -fno-plt so we'll add it in case someone uses non-default build flags.. would it be better to add !buildflags option?
+  # -mno-avx fixes segfaults that occur with some configs https://github.com/GPUOpen-Drivers/AMDVLK/issues/50#issuecomment-472315431
+  export CFLAGS="$CFLAGS -fno-plt -mno-avx"
+  export CXXFLAGS="$CXXFLAGS -fno-plt -mno-avx"
+  export LDFLAGS="$LDFLAGS -z now" 
+  
+  cd xgl
+
+  cmake -H. -Bbuilds/Release64 \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DBUILD_WAYLAND_SUPPORT=On \
+    -DXGL_METROHASH_PATH=${srcdir}/MetroHash \
+    -DXGL_CWPACK_PATH=${srcdir}/CWPack \
+    -G Ninja
+    
+  msg "build amdvlk64.so"
+  ninja -C builds/Release64
+  
+  msg "build spvgen.so"
+  ninja -C builds/Release64 spvgen
+}

@@ -1,0 +1,5 @@
+package() {
+    cd "$_name"
+
+    install -D -t "$pkgdir/opt/auto-root" "auto-root.bash" "auto-root-shrc"
+}

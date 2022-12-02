@@ -1,0 +1,12 @@
+package() {
+  # music files
+  install -dm755 "${pkgdir}/opt/7kaa/MUSIC/"
+  cd "${srcdir}/${pkgname}/MUSIC/"
+  install -m644 *.WAV "${pkgdir}/opt/7kaa/MUSIC/"
+
+  # readme
+  install -D -m644 "${srcdir}/${pkgname}/README-Music.txt" "${pkgdir}/usr/share/doc/7kaa/README-Music"
+
+  # license
+  install -D -m644 "${srcdir}/${pkgname}/COPYING-Music.txt" "${pkgdir}/usr/share/licenses/7kaa/COPYING-Music"
+}

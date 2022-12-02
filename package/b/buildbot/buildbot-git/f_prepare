@@ -1,0 +1,7 @@
+prepare() {
+  cd buildbot
+
+  # This test relies on VERSION_ID field in /etc/os-release. On Arch Linux this
+  # field is missing.
+  patch -Np1 -i ../skip-linux-distro-test.patch
+}

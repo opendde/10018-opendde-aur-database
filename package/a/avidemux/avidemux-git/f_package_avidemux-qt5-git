@@ -1,0 +1,31 @@
+package_avidemux-qt5-git() {
+  pkgdesc="Qt5 GUI for Avidemux. (GIT version)"
+  depends=("avidemux-core-git=${pkgver}"
+           'qt5-base'
+           'libxv'
+           'glu'
+           'desktop-file-utils'
+           'hicolor-icon-theme'
+           )
+  provides=('avidemux-qt5')
+  conflicts=('avidemux-qt5'
+             'avidemux-qt'
+             )
+  replaces=('avidemux-qt-git')
+
+  DESTDIR="${pkgdir}" cmake --install build_qt5
+  DESTDIR="${pkgdir}" cmake --install build_qt5_plugins
+
+  rm -fr "${pkgdir}/usr/lib/ADM_plugins6/shaderDemo"
+
+  mv "${pkgdir}/usr/share/applications/org.avidemux.Avidemux.desktop" "${pkgdir}/usr/share/applications/org.avidemux.Avidemux_qt5.desktop"
+  mv "${pkgdir}/usr/share/icons/hicolor/128x128/apps/org.avidemux.Avidemux.png" "${pkgdir}/usr/share/icons/hicolor/128x128/apps/org.avidemux.Avidemux_qt5.png"
+  mv "${pkgdir}/usr/share/metainfo/org.avidemux.Avidemux.appdata.xml" "${pkgdir}/usr/share/metainfo/org.avidemux.Avidemux_qt5.appdata.xml"
+
+  setconf "${pkgdir}/usr/share/applications/org.avidemux.Avidemux_qt5.desktop" Name="Avidemux Qt5"
+  setconf "${pkgdir}/usr/share/applications/org.avidemux.Avidemux_qt5.desktop" Icon=org.avidemux.Avidemux_qt5
+
+  sed -e 's|org.avidemux.Avidemux|&_qt5|g' \
+      -e 's|<name>Avidemux|& Qt5|g' \
+      -i "${pkgdir}/usr/share/metainfo/org.avidemux.Avidemux_qt5.appdata.xml"
+}

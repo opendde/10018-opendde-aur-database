@@ -1,0 +1,7 @@
+package() {
+  pkgdesc="Bootsplash with cool sakura tree"
+  cd "$srcdir"
+
+  install -Dm644 "$srcdir/bootsplash-theme-sakura/bootsplash-sakura" "$pkgdir/usr/lib/firmware/bootsplash-themes/sakura/bootsplash"
+  install -Dm644 "$srcdir/bootsplash-theme-sakura/bootsplash-sakura.initcpio_install" "$pkgdir/usr/lib/initcpio/install/bootsplash-sakura"
+}

@@ -1,0 +1,5 @@
+build() {
+    cd "$_pkgname-$pkgver"
+    ./configure --prefix='${DESTDIR}/usr' --sbindir='${exec_prefix}/bin'
+    make
+}

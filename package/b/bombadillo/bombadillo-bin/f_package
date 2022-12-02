@@ -1,0 +1,7 @@
+package() {
+	install -D "$_pkg" -t "$pkgdir/usr/bin/"
+	install -Dm644 README.txt -t "$pkgdir/usr/share/doc/$pkgname/"
+	install -Dm644 "$_pkg.desktop" -t "$pkgdir/usr/share/applications/"
+	install -Dm644 "$_pkg-icon.png" -t "$pkgdir/usr/share/pixmaps/"
+	install -Dm644 "$_pkg.1" -t "$pkgdir/usr/share/man/man1/"
+}

@@ -1,0 +1,7 @@
+package() {
+  cd "$pkgname"
+  make DESTDIR="$pkgdir" install
+  
+  install -d "$pkgdir/usr/share/themes/Adapta/chrome"
+  cp -r chrome/* $pkgdir/usr/share/themes/Adapta/chrome
+}

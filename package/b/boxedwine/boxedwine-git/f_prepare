@@ -1,0 +1,4 @@
+prepare() {
+  cd "$srcdir/Boxedwine"
+  mkdir -p project/linux/bin
+}

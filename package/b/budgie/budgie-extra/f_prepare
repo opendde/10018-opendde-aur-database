@@ -1,0 +1,4 @@
+prepare() {
+    cd $srcdir
+    mv $pkgname-$_commit $pkgname-$pkgver
+}

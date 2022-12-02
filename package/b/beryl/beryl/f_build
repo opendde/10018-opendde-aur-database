@@ -1,0 +1,9 @@
+build() {
+	cd "$pkgname-$pkgver"
+	mkdir fake_home
+	HOME="fake_home" npm ci
+
+	rm -rf fake_home
+
+	npm run package
+}

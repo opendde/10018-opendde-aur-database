@@ -1,0 +1,6 @@
+package() {
+  cd breeze-icon-theme
+ 
+  install -d "$pkgdir"/usr/share/icons
+  cp -r Breeze* "$pkgdir"/usr/share/icons
+}

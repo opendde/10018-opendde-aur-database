@@ -1,0 +1,11 @@
+package() {
+#  _ffver=`pacman -Q firefox | cut -f2 -d\ | cut -f1 -d-`
+#  depends=("firefox>=${_ffver}" "firefox<=${_ffver/0/99}")
+
+  cd "${srcdir}"
+  local _prefix="${pkgdir}"/usr/lib/firefox/distribution/searchplugins/common
+
+  for i in ${source[@]}; do
+    install -D -m 0644 "${srcdir}"/$i ${_prefix}/$i
+  done
+}

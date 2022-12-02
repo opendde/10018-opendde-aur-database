@@ -1,0 +1,8 @@
+package() {
+  cd "${srcdir}/bgfx.cmake"
+  cmake --install . -v --strip --prefix "$pkgdir/usr"
+
+  # remove helper and 3rdparty includes used to compile bgfx
+  rm -rf ${pkgdir}/usr/include/compat
+  rm -rf ${pkgdir}/usr/include/tinystl
+}

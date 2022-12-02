@@ -1,0 +1,14 @@
+package() {
+  cd $pkgdir
+
+  # Install executable
+  install -Dm755 "$srcdir/$_gitname/aquaria" usr/bin/aquaria
+
+  # Install some additional game files needed by the executable
+  mkdir -p usr/share/aquaria/override
+  cp -r "$srcdir/$_gitname"/{game_scripts,files}/* usr/share/aquaria/override
+
+  # Install desktop entry
+  install -Dm644 "$srcdir"/$_installname.desktop \
+                 usr/share/applications/$_installname.desktop
+}

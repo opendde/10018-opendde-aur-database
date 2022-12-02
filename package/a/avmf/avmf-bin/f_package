@@ -1,0 +1,4 @@
+package() {
+	bsdtar -xv -C "$pkgdir" -f "$srcdir/data.tar.xz"
+	rm -rf "$pkgdir/usr/share/doc"
+}

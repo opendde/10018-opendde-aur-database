@@ -1,0 +1,1 @@
+("${_plugin_name}-${pkgver}.xpi::https://addons.mozilla.org/firefox/downloads/file/${_id}/${_plugin_name}-${pkgver}-an+fx.xpi"

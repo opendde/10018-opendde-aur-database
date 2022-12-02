@@ -1,0 +1,7 @@
+prepare() {
+  # FIX: https://github.com/ctt-gob-es/clienteafirma/issues/223
+  cd "jmulticard-${_jmulticard_commit}"
+  export PATH="/usr/lib/jvm/java-11-openjdk/bin/:$PATH"
+  mvn clean install -Dmaven.test.skip=true
+  # FIX: end 223
+}

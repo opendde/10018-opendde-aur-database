@@ -1,0 +1,1 @@
+("git://${_gopkg}/${pkgname}.git#tag=${pkgver}"

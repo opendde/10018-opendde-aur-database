@@ -1,0 +1,18 @@
+package() {
+  cd "${srcdir}/flink-${_appver}"
+  install -d "${pkgdir}/usr/bin" \
+             "${pkgdir}/opt" \
+             "${pkgdir}/var/log/apache-flink" \
+             "${pkgdir}/run/apache-flink"
+  cp -r "${srcdir}/flink-${_appver}" "${pkgdir}/opt/apache-flink/"
+  cd "${pkgdir}/usr/bin"
+  binpath='/opt/apache-flink/bin/flink'
+  ln -s "${binpath}" $binary
+  install -Dm644 "${srcdir}/apache-flink-jobmanager.service" "${pkgdir}/usr/lib/systemd/system/apache-flink-jobmanager.service"
+  install -Dm644 "${srcdir}/apache-flink-taskmanager@.service" "${pkgdir}/usr/lib/systemd/system/apache-flink-taskmanager@.service"
+  mkdir -p "${pkgdir}/etc/apache-flink"
+  install -Dm644 "${srcdir}/flink-${_appver}/conf"/* "${pkgdir}/etc/apache-flink"
+  cd "${pkgdir}/opt/apache-flink"
+  mv conf conf-templates
+  ln -sf '/etc/apache-flink' conf
+}

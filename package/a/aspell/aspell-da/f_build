@@ -1,0 +1,5 @@
+build() {
+  cd $pkgname-$pkgver-0
+  ./configure
+  make
+}

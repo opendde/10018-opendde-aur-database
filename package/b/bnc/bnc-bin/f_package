@@ -1,0 +1,5 @@
+package() {
+    install -Dm755 "$srcdir/bnc-${pkgver}-debian8-64bit-static/bnc-${pkgver}-debian8-64bit-static" "$pkgdir/usr/bin/bnc"
+    install -Dm644 "${srcdir}/ntrip-logo.png" "${pkgdir}/usr/share/pixmaps/bnc.png"
+    install -Dm644 "${srcdir}/bnc.desktop" "${pkgdir}/usr/share/applications/bnc.desktop"
+}

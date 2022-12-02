@@ -1,0 +1,88 @@
+prepare() {
+  cd "brave-browser"
+
+  # Hack to prioritize python2 in PATH
+  mkdir -p "${srcdir}/bin"
+  ln -sf /usr/bin/python2 "${srcdir}/bin/python"
+  ln -sf /usr/bin/python2-config "${srcdir}/bin/python-config"
+  export PATH="${srcdir}/bin:${PATH}"
+
+  msg2 "Prepare the environment..."
+  npm install
+  patch -Np1 -i ../chromium-no-history.patch
+
+  git submodule init
+  git config submodule.chromium.url "${srcdir}"/chromium
+  git config submodule.brave-core.url "${srcdir}"/brave
+  git config submodule.depot_tools.url "${srcdir}"/depot_tools
+  git config submodule.adblock-rust.url "${srcdir}"/adblock-rust
+  git submodule update
+  cp -rT "${srcdir}"/chromium src
+  cp -rT "${srcdir}"/brave-core src/brave
+  cp -r "${srcdir}"/depot_tools src/brave/vendor/
+  cp -rT "${srcdir}"/adblock-rust src/brave/vendor/adblock_rust_ffi
+
+  msg2 "Running \"npm run\""
+  if [ -d src/out/Release ]; then
+    npm run sync -- --force
+  else
+    npm run init
+  fi
+
+  msg2 "Apply Chromium patches..."
+  cd src/
+
+  # https://crbug.com/893950
+  sed -i -e 's/\<xmlMalloc\>/malloc/' -e 's/\<xmlFree\>/free/' \
+    third_party/blink/renderer/core/xml/*.cc \
+    third_party/blink/renderer/core/xml/parser/xml_document_parser.cc \
+    third_party/libxml/chromium/*.cc
+
+  # Use the --oauth2-client-id= and --oauth2-client-secret= switches for
+  # setting GOOGLE_DEFAULT_CLIENT_ID and GOOGLE_DEFAULT_CLIENT_SECRET at
+  # runtime -- this allows signing into Chromium without baked-in values
+  patch -Np1 -i ../../use-oauth2-client-switches-as-default.patch
+
+  # https://crbug.com/1164975
+  patch -Np1 -i ../../chromium-glibc-2.33.patch
+
+  # Revert addition of [[clang::nomerge]] attribute; not supported by clang 11
+  patch -Rp1 -d base <../../add-clang-nomerge-attribute-to-CheckError.patch
+
+  # Fixes for building with libstdc++ instead of libc++
+  patch -Np1 -i ../../patches/chromium-90-quantization_utils-include.patch
+  patch -Np1 -i ../../patches/chromium-90-TokenizedOutput-include.patch
+
+  # Force script incompatible with Python 3 to use /usr/bin/python2
+  sed -i '1s|python$|&2|' third_party/dom_distiller_js/protoc_plugins/*.py
+
+  # Hacky patching
+  sed -e 's/enable_distro_version_check = true/enable_distro_version_check = false/g' -i chrome/installer/linux/BUILD.gn
+
+  # Allow building against system libraries in official builds
+  if [ "$COMPONENT" = "4" ]; then
+    sed -i 's/OFFICIAL_BUILD/GOOGLE_CHROME_BUILD/' \
+        tools/generate_shim_headers/generate_shim_headers.py
+
+    msg2 "Add patches for custom build"
+    for _patch in "$srcdir/brave-patches-$brave_patchset_name"/*.patch; do
+        patch -Np1 -i "$_patch"
+    done
+
+    # Remove bundled libraries for which we will use the system copies; this
+    # *should* do what the remove_bundled_libraries.py script does, with the
+    # added benefit of not having to list all the remaining libraries
+    local _lib
+    for _lib in ${_unwanted_bundled_libs[@]}; do
+      find "third_party/$_lib" -type f \
+      \! -path "third_party/$_lib/chromium/*" \
+      \! -path "third_party/$_lib/google/*" \
+      \! -path "third_party/harfbuzz-ng/utils/hb_scoped.h" \
+      \! -regex '.*\.\(gn\|gni\|isolate\)' \
+      -delete
+    done
+
+    ./build/linux/unbundle/replace_gn_files.py \
+      --system-libraries "${!_system_libs[@]}"
+  fi
+}

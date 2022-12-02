@@ -1,0 +1,8 @@
+build() {
+  cd "${_pkgname}-${pkgver}"
+
+  yarn install --ignore-optional
+  yarn run compile
+  rm -r node_modules/
+  yarn install --production --ignore-optional
+}

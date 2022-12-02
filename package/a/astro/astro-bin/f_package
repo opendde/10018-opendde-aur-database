@@ -1,0 +1,4 @@
+package() {
+  install -Dm755 "./astro" "${pkgdir}/usr/bin/astro"
+
+}

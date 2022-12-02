@@ -1,0 +1,9 @@
+package() {
+  cd "${srcdir}/adafruit-ampy-${pkgver}"
+
+  python setup.py install --root="$pkgdir/" --skip-build  --optimize=1
+  # install documentation
+  install -Dm644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+  # install license
+  install -Dm644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+}

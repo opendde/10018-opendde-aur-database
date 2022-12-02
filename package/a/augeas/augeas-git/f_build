@@ -1,0 +1,8 @@
+build() {
+	cd "${srcdir}/${_pkgname}"
+	./autogen.sh
+	sed -i 's|Requires:.*|Requires: libxml-2.0|' augeas.pc.in
+	./configure --prefix=/usr
+	make
+	# make --gnulib-srcdir=/usr/share/gnulib
+}

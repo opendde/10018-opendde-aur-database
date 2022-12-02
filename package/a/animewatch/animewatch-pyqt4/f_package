@@ -1,0 +1,23 @@
+package() {
+
+  _bpath="${srcdir}/${_pkgname}-${pkgver}-${pkgrel}/${_gitname}"
+
+  install -d "${pkgdir}/usr/share/${_pkgname}/"
+  install -d "${pkgdir}/usr/share/${_pkgname}/Plugins/"
+  install -d "${pkgdir}/usr/share/applications/"
+  install -d "${pkgdir}/usr/bin/"
+  
+  install -Dm755 "${_bpath}"/{animeWatch.py,musicArtist.py,adb.py,1.png,input.conf,default.jpg,introspect.xml,stream.py,tray.png} "${pkgdir}/usr/share/${_pkgname}/"
+  cat "${_bpath}/AnimeWatch.desktop" | sed 's/Exec=/Exec=python -B \/usr\/share\/AnimeWatch\/animeWatch.py \%u/g' > "${pkgdir}/usr/share/applications/AnimeWatch.desktop"
+  echo '#!/bin/bash' > "${pkgdir}/usr/bin/anime-watch"
+  echo 'if [ -z "$1" ]; then python -B /usr/share/AnimeWatch/animeWatch.py; else python -B /usr/share/AnimeWatch/animeWatch.py "$(pwd)/$1"; fi' >> "${pkgdir}/usr/bin/anime-watch"
+  chmod +x "${pkgdir}/usr/bin/anime-watch"
+  
+  for file in "${_bpath}/Plugins/"*;do
+  	nm=$(echo $file | rev | cut -d'/' -f1 | rev)
+  	if [ $nm != "installPlugins.py" ];then
+  		#echo $nm
+		install -Dm755 "$file" "${pkgdir}/usr/share/${_pkgname}/Plugins/"
+	fi
+  done	
+}

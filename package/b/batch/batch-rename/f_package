@@ -1,0 +1,20 @@
+package() {
+  echo >&2 "Packaging the ${_gemname} gem"
+  _gemdir="$(/usr/bin/ruby -e 'puts Gem.default_dir')"
+  /usr/bin/gem install \
+    --ignore-dependencies --no-document --no-user-install \
+    --install-dir="${pkgdir}/${_gemdir}" \
+    --bindir="${pkgdir}/usr/bin" \
+    "${_gemname}-${pkgver}.gem"
+
+  echo >&2 'Cleaning up'
+  rm "${pkgdir}/${_gemdir}/cache/${_gemname}-${pkgver}.gem"
+
+  echo >&2 'Packaging the README'
+  install -D -m 644 -t "${pkgdir}/usr/share/doc/${pkgname}" \
+    "${pkgdir}/${_gemdir}/gems/${_gemname}-${pkgver}/README.md"
+
+  echo >&2 'Packaging the license'
+  install -D -m 644 -t "${pkgdir}/usr/share/licenses/${pkgname}" \
+    "${pkgdir}/${_gemdir}/gems/${_gemname}-${pkgver}/LICENSE"
+}

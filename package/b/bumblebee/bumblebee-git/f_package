@@ -1,0 +1,15 @@
+package() {
+    cd "$_gitname"
+
+    make install DESTDIR="$pkgdir"  \
+      completiondir=/usr/share/bash-completion/completions
+
+
+    #Blacklist nvidia and nouveau modules
+    # Reference: https://github.com/Bumblebee-Project/Bumblebee/issues/719
+    install -Dm644 "${srcdir}/bumblebee.conf" "${pkgdir}/usr/lib/modprobe.d/bumblebee.conf"
+
+    # Install systemd unit
+    install -Dm644 "scripts/systemd/bumblebeed.service" "${pkgdir}/usr/lib/systemd/system/bumblebeed.service"
+    sed -i "s/sbin/bin/" "${pkgdir}/usr/lib/systemd/system/bumblebeed.service"
+  }

@@ -1,0 +1,19 @@
+_brverchk() {
+  local _ver="$1"
+  _ver="${_ver%.*}"
+  _ver="${_ver%.*}"
+  local _vb="${_ver%-*}"
+  _vb="${_vb%-*}-"
+  _ver="${_ver#${_vb}}"
+  local _pv="$2"
+  if [ -z "${_pv}" ]; then
+    _pv="$3"
+  fi
+  if [ -z "${_pv}" ]; then
+    _pv="$4"
+  fi
+  if [ "${_ver}" != "${_pv//_/-}" ]; then
+    echo "Version mismatch: ${_ver} ${_pv//_/-}" 1>&2
+    _mismatch=$((_mismatch+1))
+  fi
+}

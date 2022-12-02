@@ -1,0 +1,8 @@
+package_python-autodiff() {
+	depends=('python')
+	arch=('x86_64')
+	pkgdesc+=' -- Python bindings'
+
+	PYTHONHASHSEED=0 python -m installer --destdir="$pkgdir" build/python/package/dist/*.whl
+	install -Dm644 "$pkgbase-$pkgver/LICENSE" -t "$pkgdir/usr/share/licenses/$pkgname/"
+}

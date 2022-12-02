@@ -1,0 +1,41 @@
+build() {
+  for patch in "$srcdir"/*.{diff,patch}; do
+    patch -Np0 < "$patch"
+  done
+
+  cd "$srcdir/$_rname-$pkgver"
+
+  . /etc/profile.d/qt3.sh
+  . /etc/profile.d/kde3.sh
+
+
+  # prepare build
+  ./configure CC=gcc-4.3 CXX=g++-4.3 --prefix=/opt/kde \
+      --with-gnu-ld \
+      --enable-mysql \
+      --enable-postgresql \
+      --with-mp4v2 \
+      --with-ifp \
+      --with-libmtp \
+      --with-libnjb \
+      --with-libgpod \
+      --without-arts \
+      --without-gstreamer \
+      --with-xine \
+      --without-nmm \
+      --without-mas \
+      --with-libvisual \
+      --disable-debug \
+      --enable-debug=no \
+      --without-xmms \
+      --enable-nls
+
+  # build
+  sed -i -e 's/konquisidebar//g' amarok/src/Makefile
+  # Patching convert from a char** to a const * char *.
+  sed -i 's/char \*\*xine_urls = NULL/const char *const *xine_urls = NULL/' "$srcdir/amarok-1.4.10/amarok/src/engine/xine/xine-engine.cpp"
+  # Why the hell is ._gem_commands.rb not extracted????
+  cp $srcdir/_gem_commands.rb $srcdir/amarok-$pkgver/amarok/src/mediadevice/daap/mongrel/lib/rubygems/._gem_commands.rb
+
+  make
+}

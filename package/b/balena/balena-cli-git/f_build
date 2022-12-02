@@ -1,0 +1,9 @@
+build() {
+  cd "${srcdir}/${pkgname%-git}" || exit 1
+
+  npm install
+  npm publish --dry-run
+  local packagefile
+  packagefile=$(npm pack)
+  mv "${packagefile}" "${srcdir}/${pkgname}.tgz"
+}

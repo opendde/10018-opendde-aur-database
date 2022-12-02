@@ -1,0 +1,8 @@
+prepare() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+
+  # Patching to fix FFMPEG5 and CMakeLists bug with config.h definition position https://invent.kde.org/multimedia/amarok/-/merge_requests/45
+  patch -Np1 -i "${srcdir}/ffmpeg5_cmakelist_configure.patch"
+
+  mkdir -p "${srcdir}/${pkgname}-${pkgver}/build"
+}

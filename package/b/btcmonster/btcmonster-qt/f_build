@@ -1,0 +1,6 @@
+build() {
+  cd "$srcdir/$pkgname"
+  ./autogen.sh
+  ./configure --with-gui=qt5
+  make
+}

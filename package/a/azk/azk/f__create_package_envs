@@ -1,0 +1,6 @@
+_create_package_envs() {
+  (
+    echo "export AZK_LAST_COMMIT_ID=$azk_last_commit_id"
+    echo "export AZK_LAST_COMMIT_DATE=$azk_last_commit_date"
+  ) > .package-envs
+}

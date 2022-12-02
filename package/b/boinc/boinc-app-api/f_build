@@ -1,0 +1,11 @@
+build() {
+  if [ ! -d ${srcdir}/build ]; then
+    cd ${srcdir}/${_reponame}
+    meson --prefix=/usr --buildtype=release ${srcdir}/build
+    cd ..
+  fi
+
+  cd ${srcdir}/build
+
+  ninja
+}

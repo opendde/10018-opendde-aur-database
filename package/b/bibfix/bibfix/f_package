@@ -1,0 +1,4 @@
+package() {
+    cd "bibfix-release-${pkgver}"
+    python3 setup.py install --root="$pkgdir/"
+}

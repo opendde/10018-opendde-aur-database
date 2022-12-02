@@ -1,0 +1,5 @@
+prepare() {
+  cd ${name}
+# patch -Np1 -i ../remove.updater.patch 
+  rm addon_updater.py addon_updater_ops.py
+}

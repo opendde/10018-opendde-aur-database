@@ -1,0 +1,9 @@
+build() {
+    cd "${startdir}"
+    if [ ! -d "build/active-data" ]; then
+        mkdir -p build/active-data;
+    fi
+    cd build/active-data
+    cmake ${srcdir}/active-data
+    make -j `nproc`
+}

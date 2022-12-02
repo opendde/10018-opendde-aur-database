@@ -1,0 +1,1 @@
+("https://github.com/dragonflydb/dragonfly/releases/download/v${pkgver}/dragonfly-${arch}.tar.gz")

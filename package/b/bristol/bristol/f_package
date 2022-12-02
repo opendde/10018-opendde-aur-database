@@ -1,0 +1,7 @@
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+
+  make DESTDIR="${pkgdir}" install
+  install -v -m 0644 ChangeLog ${pkgdir}/usr/share/bristol/
+  install -v -m 0644 README ${pkgdir}/usr/share/bristol/
+}

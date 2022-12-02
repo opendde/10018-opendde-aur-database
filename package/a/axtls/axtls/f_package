@@ -1,0 +1,6 @@
+package() {
+	cd "axtls-code"
+	mkdir -p "$pkgdir/usr"
+	sed "s#PREFIX=.*#PREFIX=\"$pkgdir/usr\"#g" -i config/.config
+	make install
+}

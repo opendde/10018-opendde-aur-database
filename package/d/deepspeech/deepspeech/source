@@ -1,0 +1,1 @@
+("${_pkgname}-${pkgver}::git+https://github.com/mozilla/DeepSpeech.git#tag=v${pkgver}")

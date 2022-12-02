@@ -1,0 +1,3 @@
+package() {
+    install -Dm755 "$_pkgname"/src/.libs/*.so -t "$pkgdir/usr/lib/httpd/modules/"
+}

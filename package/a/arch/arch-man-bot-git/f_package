@@ -1,0 +1,5 @@
+package() {
+	cd "${pkgname%-git}"
+	install -vDm 775 "main.py" "${pkgdir}/usr/bin/${pkgname%-git}"
+	install -vDm 644 "../${pkgname%-git}.service" -t "${pkgdir}/usr/lib/systemd/system"
+}

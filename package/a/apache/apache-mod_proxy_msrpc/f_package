@@ -1,0 +1,4 @@
+package() {
+  cd ${pkgname}/src/.libs/
+  install -Dm755 mod_proxy_msrpc.so "$pkgdir/usr/lib/httpd/modules/mod_proxy_msrpc.so"
+}

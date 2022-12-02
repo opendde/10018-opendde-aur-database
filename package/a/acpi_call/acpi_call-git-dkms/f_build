@@ -1,0 +1,20 @@
+build() {
+  warning "Please make sure linux kernel headers are built/installed for the kernel acpi_call will be used with ::"
+  warning "example #1: 'pacman -S linux-headers'"
+  warning "example #2: 'pacman -S linux-lts-headers'"
+
+  cd ${srcdir}
+  
+  # create dkms.conf
+  cat > dkms.conf <<EOF
+PACKAGE_VERSION=${pkgver}
+PACKAGE_NAME=${pkgname}
+AUTOINSTALL="yes"
+
+MAKE="make KVER=\${kernelver}"
+CLEAN="make clean"
+
+BUILT_MODULE_NAME[0]="${_pkgname}"
+DEST_MODULE_LOCATION[0]="/extra"
+EOF
+}

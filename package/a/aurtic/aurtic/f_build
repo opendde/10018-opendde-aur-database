@@ -1,0 +1,5 @@
+build() {
+  cd "$pkgname"
+
+  GOPATH="$srcdir" go build
+}

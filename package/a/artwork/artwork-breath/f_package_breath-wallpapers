@@ -1,0 +1,9 @@
+package_breath-wallpapers() {
+  pkgdesc='Breath wallpapers'
+
+  cd "${srcdir}/breath/wallpapers"
+  install -Dm644 Bamboo/contents/images/5120x2880.png \
+    ${pkgdir}/usr/share/backgrounds/bamboo.png
+  install -Dm644 Bamboo\ at\ Night/contents/images/5120x2880.png \
+    ${pkgdir}/usr/share/backgrounds/bambooatnight.png
+}

@@ -1,0 +1,1 @@
+("${_appimg}::${url}/releases/download/v${pkgver}/${_appimg}")

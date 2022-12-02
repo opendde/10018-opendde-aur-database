@@ -1,0 +1,5 @@
+build() {
+    cd "${srcdir}/${_srcname}-${pkgver}"
+    ./configure --prefix=/usr
+    make
+}

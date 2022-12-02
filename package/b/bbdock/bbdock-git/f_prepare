@@ -1,0 +1,4 @@
+prepare () {
+  cd $pkgname
+  patch -Np2 -b -z .orig <../$_pkgname.patch
+}

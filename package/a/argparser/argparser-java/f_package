@@ -1,0 +1,4 @@
+package() {
+	cd "${srcdir}/argparser-${pkgver}"
+	make DESTDIR="$pkgdir" PKGNAME="$pkgname" install-java install-license
+}

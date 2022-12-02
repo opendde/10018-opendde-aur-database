@@ -1,0 +1,10 @@
+build() {
+  cd "${srcdir}/bgfx.cmake"
+  cmake -DBGFX_BUILD_EXAMPLES=OFF \
+        -DBGFX_INSTALL_EXAMPLES=OFF \
+        -DBGFX_CUSTOM_TARGETS=OFF \
+        -DBGFX_LIBRARY_TYPE=SHARED \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_BUILD_TYPE=RelWithDebInfo
+  cmake --build .
+}

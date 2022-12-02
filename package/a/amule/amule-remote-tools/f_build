@@ -1,0 +1,27 @@
+build() {
+  cd aMule-$pkgver
+
+  ./configure --prefix=/usr \
+              --mandir=/usr/share/man \
+              --disable-cas \
+              --disable-wxcas \
+              --disable-amule-daemon \
+              --enable-amulecmd \
+              --enable-amule-gui \
+              --disable-alc \
+              --disable-alcc \
+              --disable-webserver \
+              --disable-debug \
+              --enable-optimize \
+              --enable-geoip \
+              --disable-upnp \
+              --disable-monolithic \
+              --disable-ed2k \
+              --disable-xas \
+              --disable-fileview \
+              --disable-plasmamule \
+              --disable-static \
+              --disable-kde-in-home \
+              --with-boost
+  make
+}

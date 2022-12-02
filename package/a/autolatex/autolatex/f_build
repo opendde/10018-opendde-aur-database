@@ -1,0 +1,5 @@
+build() {
+  cd $pkgname-$pkgname-$pkgver
+  perl ./Makefile.PL --disable gtk --prefix=/usr
+  make
+}

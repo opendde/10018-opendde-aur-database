@@ -1,0 +1,11 @@
+package() {
+    cd ${srcdir}
+    install -m755 -d ${pkgdir}/usr/lib/firefox/extensions/$acrID
+    cp -a * ${pkgdir}/usr/lib/firefox/extensions/$acrID
+    rm -f ${pkgdir}/usr/lib/firefox/extensions/$acrID/$_acrfilename
+    cd ${pkgdir}/usr/lib/firefox/extensions/$acrID
+
+    # Fix permissions
+    find -type d -exec chmod 0755 \{\} \+
+    find -type f -exec chmod 0644 \{\} \+
+}

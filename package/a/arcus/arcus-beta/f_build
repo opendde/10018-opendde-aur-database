@@ -1,0 +1,14 @@
+build() {
+  pwd
+  cd libArcus
+  mkdir -p build
+  cd build
+  
+  cmake .. \
+  -DCMAKE_INSTALL_PREFIX=/usr \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DBUILD_EXAMPLES=OFF  \
+  -DCMAKE_INSTALL_LIBDIR=/usr/lib/
+
+  make
+}

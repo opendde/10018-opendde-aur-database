@@ -1,0 +1,4 @@
+pkgver() {
+  cd libarib25
+  echo "0.2.5.$(git rev-parse --short HEAD)"
+}

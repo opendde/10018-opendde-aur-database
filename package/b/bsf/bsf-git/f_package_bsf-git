@@ -1,0 +1,15 @@
+package_bsf-git() {
+	provides=(bsf)
+	conflicts=(bsf)
+	depends=(libutil-linux libx11 icu libxcursor libxrandr libxi libgl openal flac libvorbis snappy freeimage freetype2)
+	arch=(x86_64)
+
+	pushd "$_pkgname"/build
+	DESTDIR="$pkgdir"/ ninja install
+	popd > /dev/null
+
+	find "$pkgdir"/usr/lib -name "*.dbg" -delete
+
+	mkdir -p "$pkgdir"/usr/share/licenses/$pkgbase
+	install "$_pkgname"/LICENSE.md $pkgdir/usr/share/licenses/$pkgbase/
+}

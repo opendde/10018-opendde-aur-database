@@ -1,0 +1,4 @@
+package() {
+  cd "$pkgname-$pkgver"
+  install -Dm755 "$pkgname" bitcomplete/bitcomplete -t "$pkgdir/usr/bin"
+}

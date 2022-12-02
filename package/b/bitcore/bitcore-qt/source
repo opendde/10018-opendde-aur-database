@@ -1,0 +1,1 @@
+("${pkgname%-git}::git+http://github.com/LIMXTEC/BitCore.git"

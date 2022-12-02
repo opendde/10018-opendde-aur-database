@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir"
+
+  install -Dm755 "./$setup" "$pkgdir/opt/acronis/cyber-protect/$setup"
+}

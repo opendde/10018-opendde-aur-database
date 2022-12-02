@@ -1,0 +1,8 @@
+check() {
+    cd "$srcdir"
+
+    DEBFILEHASH=$(sha256sum ${_pkgname}-latest.deb | awk '{print $1}')
+    CORRECTHASH=$(cat checksum.txt)
+
+    [[ "$DEBFILEHASH" == "$CORRECTHASH" ]]
+}

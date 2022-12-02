@@ -1,0 +1,7 @@
+build() {
+    cd "$srcdir/$pkgname"
+
+    # NTL 11 now uses pthread functions, so we need to have it link to libpthread.
+    ./configure --prefix=/usr --enable-shared-barvinok --with-isl=system --with-polylib=system LIBS="-lpthread"
+    make
+}

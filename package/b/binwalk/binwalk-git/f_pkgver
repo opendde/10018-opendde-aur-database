@@ -1,0 +1,5 @@
+pkgver() {
+  cd ${pkgname}
+  printf "%s.%s.%s" "$(grep 'MODULE_VERSION' -m1 setup.py|cut -d\" -f2)" \
+    "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}

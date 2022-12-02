@@ -1,0 +1,7 @@
+package () {
+	cd "$srcdir"
+
+	mkdir -p "$pkgdir"/usr/share/theme
+	cp -Rp "$_pkgname" "$pkgdir"/usr/share/themes
+	chmod 644 "$pkgdir"/usr/share/themes/"$_pkgname"/openbox-3/*
+}

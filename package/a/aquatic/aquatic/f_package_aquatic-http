@@ -1,0 +1,7 @@
+package_aquatic-http() {
+  pkgdesc="A multi-threaded BitTorrent tracker written in Rust - HTTPS daemon."
+  _binname="aquatic_http"
+  install -Dm755 $pkgbase/target/release/$_binname $pkgdir/usr/bin/$pkgname
+  install -Dm644 $pkgbase/$_binname.toml $pkgdir/etc/$pkgbase/$pkgname.toml
+  install -Dm644 ../$pkgname.service $pkgdir/usr/lib/systemd/system/$pkgname.service
+}

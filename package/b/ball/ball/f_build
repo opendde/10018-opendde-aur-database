@@ -1,0 +1,15 @@
+build() {
+  cd ${srcdir}/${_pkgname}-${pkgver}
+  patch -p1 < $srcdir/${_pkgname}-${pkgver}-PersistentObject_cast.patch
+  patch -p1 < $srcdir/${_pkgname}-${pkgver}-Qt_macro.patch
+  patch -p1 < $srcdir/${_pkgname}-${pkgver}-link_view_X11.patch
+  cd ..
+  mkdir -p build
+  cd build
+  cmake ../${_pkgname}-${pkgver} \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DBALL_PYTHON_SUPPORT=OFF		# broken with current SIP
+
+  make
+}

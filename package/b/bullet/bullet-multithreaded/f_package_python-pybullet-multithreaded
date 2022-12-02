@@ -1,0 +1,11 @@
+package_python-pybullet-multithreaded() {
+    pkgdesc="Bullet Python bindings"
+    depends+=('bullet-multithreaded' 'gcc-libs')
+    provides=('python-pybullet')
+    conflicts=('python-pybullet')
+
+    install -Dm755 _build/examples/pybullet/libpybullet.so.${pkgver} "${pkgdir}"/usr/lib/libpybullet.so.${pkgver}
+    cd ${_name}
+    python setup.py install --prefix=/usr --root="${pkgdir}" --optimize=1 --skip-build
+    install -Dm644 "${srcdir}"/${_name}/LICENSE.txt "${pkgdir}"/usr/share/licenses/$pkgname/LICENSE
+}

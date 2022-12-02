@@ -1,0 +1,5 @@
+build() {
+    cd $pkgname-$_srcver
+    make blastem
+    ./menumake.sh
+}

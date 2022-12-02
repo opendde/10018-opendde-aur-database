@@ -1,0 +1,1 @@
+("$pkgname::git+https://github.com/nathan-at-least/cargo-checkmate.git#commit=$_commit")

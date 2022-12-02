@@ -1,0 +1,6 @@
+prepare() {
+  cd "$_pkgname"
+  git submodule init
+  git config submodule.gatb-core.url "$srcdir/gatb-core"
+  git submodule update
+}

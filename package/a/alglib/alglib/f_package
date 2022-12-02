@@ -1,0 +1,4 @@
+package() {
+    cd ${srcdir}/cpp/build
+    make DESTDIR=${pkgdir}/ install
+}

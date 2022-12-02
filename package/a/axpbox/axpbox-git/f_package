@@ -1,0 +1,11 @@
+package() {
+  echo "Entering directory $srcdir/${pkgname%-*}/build."
+  cd "$srcdir/${pkgname%-*}/build"
+  install -d "$pkgdir/usr/bin"
+  install axpbox "$pkgdir/usr/bin/axpbox"
+
+  echo "Entering directory $srcdir/${pkgname%-*}."
+  cd "$srcdir/${pkgname%-*}"
+  install -d "$pkgdir/usr/share/doc/$pkgname"
+  install -D -t "$pkgdir/usr/share/doc/$pkgname" *.md
+}

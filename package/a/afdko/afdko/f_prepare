@@ -1,0 +1,5 @@
+prepare () {
+	cd "$_archive"
+	sed -i -e 's/==/>=/g;s/,<=[0-9.]\+//' requirements.txt
+	sed -i -E "/'(wheel|cmake|ninja)',?$/d" setup.py
+}

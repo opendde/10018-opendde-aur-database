@@ -1,0 +1,5 @@
+prepare() {
+  cd $_pkgname
+  find . -name CVS -prune -exec rm -rf {} \;
+  rm 2dt manual.pdf
+}

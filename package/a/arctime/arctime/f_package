@@ -1,0 +1,34 @@
+package() {
+  for png in *.png; do
+    install -D ./${png} "${pkgdir}/usr/share/icons/hicolor/${png%.*}/apps/${pkgname}.png"
+  done
+  
+  install -D ${pkgname}.desktop "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+  
+  cd ${srcdir}/ARCTIME_PRO_${pkgver}_LINUX
+  
+  install -D './tools/GPL LICENSE.txt' "${pkgdir}/usr/share/licenses/$pkgname/LICENSE.txt"
+  
+  pkghome="${pkgdir}/usr/share/${pkgname}"
+  install -Dm644 ./ArcTime.jar "${pkghome}/ArcTime.jar"
+  cp -r ./ArcTime_lib "${pkghome}/ArcTime_lib"
+  cp -r ./resources "${pkghome}/resources"
+  chmod 644 "${pkghome}/resources/Roboto-Regular.ttf"
+  install -d "${pkghome}/tools/config"
+  echo '/usr/lib' > "${pkghome}/tools/config/vlcpath.txt"
+  install -d "${pkghome}/tools/"{x86,x64}
+  ln -sf /usr/bin/ffmpeg "${pkghome}/tools/x86/ffmpeg-linux32"
+  ln -sf /usr/bin/ffprobe "${pkghome}/tools/x86/ffprobe-linux32"
+  ln -sf /usr/bin/ffmpeg "${pkghome}/tools/x64/ffmpeg-linux64"
+  ln -sf /usr/bin/ffprobe "${pkghome}/tools/x64/ffprobe-linux64"
+  
+  echo '#!/bin/bash
+PATH=/usr/lib/jvm/java-8-openjdk/jre/bin:$PATH
+cd /usr/share/arctime
+exec java -Xms128m -Xmx512m -jar ./ArcTime.jar
+' > "${pkghome}/$pkgname"
+  chmod +x "${pkghome}/$pkgname"
+  
+  install -d "${pkgdir}/usr/bin"
+  ln -sf "/usr/share/${pkgname}/${pkgname}" "${pkgdir}/usr/bin/$pkgname"
+}

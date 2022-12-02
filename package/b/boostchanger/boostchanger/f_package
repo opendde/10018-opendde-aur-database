@@ -1,0 +1,7 @@
+package() {
+	cd boostchanger/app
+	install -Dm755 boostchanger.AppImage ${pkgdir}/usr/bin/boostchanger
+	install -Dm755 boostchangerrunner.sh ${pkgdir}/usr/bin/boostchangerrunner
+	install -Dm644 boostchanger.desktop ${pkgdir}/usr/share/applications/boostchanger.desktop
+	install -Dm644 boostchanger.png ${pkgdir}/usr/share/pixmaps/boostchanger.png
+}

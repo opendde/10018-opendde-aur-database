@@ -1,0 +1,5 @@
+prepare() {
+  cd "$srcdir/amphetype"
+  patch -fp0 < $srcdir/amphetype.patch
+  chmod +x Amphetype.py
+}

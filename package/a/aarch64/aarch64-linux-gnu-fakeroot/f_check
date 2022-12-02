@@ -1,0 +1,5 @@
+check() {
+    pushd ${_pkgname}-build
+    make check
+    popd
+}

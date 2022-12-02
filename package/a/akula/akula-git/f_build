@@ -1,0 +1,5 @@
+build() {
+  cd "${srcdir}/${_pkgname}"
+
+  env CARGO_TARGET_DIR=${srcdir}/${_pkgname}/target cargo build --profile=production
+}

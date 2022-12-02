@@ -1,0 +1,5 @@
+prepare() {
+	dpkg-deb -x libantlr-java_2.7.7+dfsg-6_all.deb ${srcdir}
+	dpkg-deb -x antlr_2.7.7+dfsg-6_all.deb ${srcdir}
+	
+}

@@ -1,0 +1,14 @@
+package() {
+	_mypkgver=${pkgver/./}
+	cd "$srcdir/beav-$_mypkgver"
+	chmod 644 beav.1
+	gzip -c beav${_mypkgver}.txt > beav${_mypkgver}.txt.gz
+	chmod 644 beav${_mypkgver}.txt.gz
+	chmod 755 beav
+	mkdir -p $pkgdir/usr/share/man/man1
+	cp -p beav.1 $pkgdir/usr/share/man/man1/.
+	mkdir -p $pkgdir/usr/share/doc/beav
+	cp -p beav${_mypkgver}.txt.gz $pkgdir/usr/share/doc/beav/.
+	mkdir -p $pkgdir/usr/bin
+	cp -p beav $pkgdir/usr/bin/.
+}

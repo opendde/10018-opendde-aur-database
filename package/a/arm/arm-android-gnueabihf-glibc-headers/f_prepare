@@ -1,0 +1,7 @@
+prepare() {
+  cd glibc-${pkgver}
+
+  patch -p1 -i ${srcdir}/glibc-${_commit}.patch
+
+  mkdir ${srcdir}/glibc-build
+}

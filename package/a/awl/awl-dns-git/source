@@ -1,0 +1,1 @@
+("${pkgname}::git+https://git.froth.zone/sam/awl.git")

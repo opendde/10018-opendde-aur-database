@@ -1,0 +1,7 @@
+package() {
+  cd "$srcdir/$_pkgname"
+  mkdir -p "$pkgdir/usr"
+  tar cf - include | (cd "$pkgdir/usr" && tar xf -)
+  chmod 644 "$pkgdir/usr/include/boost/"*
+  chmod 755 "$pkgdir/usr/include/boost"
+}

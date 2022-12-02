@@ -1,0 +1,6 @@
+build() {
+  cd $_gitname
+  cmake -DAQUARIA_DEFAULT_DATA_DIR=/usr/share/aquaria \
+        -DAQUARIA_USE_SDL2=1
+  make
+}

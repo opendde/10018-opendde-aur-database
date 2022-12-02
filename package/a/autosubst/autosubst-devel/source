@@ -1,0 +1,1 @@
+("autosubst::git+https://github.com/tebbi/${_pkgname}#branch=coq86-devel")

@@ -1,0 +1,5 @@
+prepare() {
+  bsdtar --extract --file "$pkgname-$pkgver.tgz"
+  cd "$pkgname-$pkgver"
+  patch -Np2 < "$srcdir"/amide_nognome.patch
+}

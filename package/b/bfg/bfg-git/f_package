@@ -1,0 +1,4 @@
+package() {
+  install -DT -m755 "${srcdir}/bfg.sh" "${pkgdir}/usr/bin/bfg"
+  install -DT -m644 "$(find . -name 'bfg*.jar')" "${pkgdir}/usr/share/java/bfg/bfg.jar"
+}

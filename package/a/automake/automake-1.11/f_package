@@ -1,0 +1,8 @@
+package() {
+  cd ${srcdir}/${_realname}-${pkgver}
+  make DESTDIR=${pkgdir} install
+
+  rm -rf "$pkgdir/usr/"{bin/{aclocal,automake},share/{doc,aclocal}}
+  rm "$pkgdir/usr/share/man/man1/"{aclocal,automake}.1
+  find $pkgdir/usr/share/info -type f -exec rename automake automake-1.11 '{}' ';'
+}

@@ -1,0 +1,5 @@
+prepare() {
+    cd "autotrace-travis-${_date}.${_build}"
+    patch -d src -Np0 -i "${srcdir}/010-autotrace-fix-swf-output.patch"
+    ./autogen.sh
+}

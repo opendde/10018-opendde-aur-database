@@ -1,0 +1,6 @@
+package() {
+	mkdir -p "${pkgdir}/usr/bin/"
+	cd ${srcdir}"/"${pkgname}"-"${pkgver}
+	mv ${pkgname}	${pkgdir}/usr/bin/
+	install -Dm644 "LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

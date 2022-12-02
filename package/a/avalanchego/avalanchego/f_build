@@ -1,0 +1,4 @@
+build() {
+  cd "$srcdir"
+  tar -zxvf avalanchego-linux-amd64-${pkgver}.tar.gz
+}

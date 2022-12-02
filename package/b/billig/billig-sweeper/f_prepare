@@ -1,0 +1,4 @@
+prepare() {
+	rmdir "billig-sweeper-${pkgver}/tomlc99"
+	ln -sf "${srcdir}/tomlc99" "billig-sweeper-${pkgver}/tomlc99"
+}

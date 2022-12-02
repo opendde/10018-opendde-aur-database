@@ -1,0 +1,4 @@
+package() {
+    install -Dm644 *.ttc ${pkgdir}/usr/share/fonts/${pkgname}/SourceHanNotoCJK.ttc
+    install -Dm644 *LICENSE.md ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.md
+}

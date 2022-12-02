@@ -1,0 +1,12 @@
+build() {
+    cd "ALPSCore-$pkgver"
+    mkdir -p build
+    cd build
+    cmake -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DTesting=OFF \
+        -DDocumentation=OFF \
+        -DENABLE_MPI=OFF \
+        ..
+    make
+}

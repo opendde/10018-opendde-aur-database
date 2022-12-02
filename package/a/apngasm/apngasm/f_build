@@ -1,0 +1,7 @@
+build() {
+  cd $pkgname
+  [[ -d build ]] || mkdir build
+  cd build
+  cmake -D CMAKE_INSTALL_PREFIX="/usr" ../
+  make
+}

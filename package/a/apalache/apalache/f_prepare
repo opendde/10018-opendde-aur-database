@@ -1,0 +1,3 @@
+prepare() {
+	patch --directory="$srcdir" --forward --strip=1 --input="$srcdir/sys-install.patch"
+}

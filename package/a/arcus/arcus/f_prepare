@@ -1,0 +1,10 @@
+prepare() {
+  export _sitelib="$(python -c 'import site; print(site.getsitepackages()[0])')"
+
+  python -m venv --system-site-packages .venv
+  source .venv/bin/activate
+  python -m pip install sip==6.5.1
+
+  cd libArcus-${pkgver}
+  patch -Np1 -i ../protobuf-3.18.patch
+}

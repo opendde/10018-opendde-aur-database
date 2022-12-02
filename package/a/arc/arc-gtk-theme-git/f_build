@@ -1,0 +1,16 @@
+build() {
+  cd "${_pkgname}"
+
+  meson --prefix=/usr build \
+    -Dgnome_shell_gresource=true \
+    -Dcinnamon_version="${_cinnamonver}" \
+    -Dgnome_shell_version="${_gnomeshellver}"
+  meson compile -C build
+
+  meson --prefix=/usr build-solid \
+    -Dtransparency=false \
+    -Dgnome_shell_gresource=true \
+    -Dcinnamon_version="${_cinnamonver}" \
+    -Dgnome_shell_version="${_gnomeshellver}"
+  meson compile -C build-solid
+}

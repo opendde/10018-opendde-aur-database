@@ -1,0 +1,1 @@
+("${pkgname}"::"git+https://github.com/weiliu89/caffe.git#branch=ssd")

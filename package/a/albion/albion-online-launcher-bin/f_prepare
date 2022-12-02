@@ -1,0 +1,17 @@
+prepare() {
+  chrpath -d "${srcdir}/data/launcher/Albion-Online"
+
+  pushd "${srcdir}/data/launcher"
+  rm libQt5* qt.conf xdelta3 QtWebEngineProcess libicu* \
+     libSDL2-2.0.so.0 libSDL2-2.0.so \
+     libcrypto.so libssl.so libxkbcommon* libxcb*
+
+  rm -r resources plugins translations
+  chmod 775 ./*
+  chmod 664 version.txt
+  popd
+
+  pushd "${srcdir}/data"
+  patch Albion-Online < "${srcdir}/Albion-Online.patch"
+  popd
+}

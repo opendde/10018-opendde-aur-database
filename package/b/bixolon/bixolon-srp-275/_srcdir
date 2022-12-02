@@ -1,0 +1,1 @@
+"${_pkgnick}_CUPS_Driver_V${pkgver//_/.}"

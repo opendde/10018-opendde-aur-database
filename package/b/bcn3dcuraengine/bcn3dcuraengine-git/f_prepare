@@ -1,0 +1,6 @@
+prepare() {
+    cd $srcdir
+    patch --forward --strip=0 --input="${srcdir}/gcc9.patch"
+    cd $srcdir/CuraEngine
+    patch --forward --strip=1 --input="${srcdir}/5aad55bf67e52ce5bdb27a3925af8a4cab441b38.patch"
+}

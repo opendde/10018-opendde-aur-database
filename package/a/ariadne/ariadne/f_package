@@ -1,0 +1,10 @@
+package() {
+  cd "$srcdir/SRC-$pkgver"
+
+  # Install binaries
+  mkdir -p "$pkgdir/usr/bin"
+  install -m755 Linux/{ariadne,prospero} "$pkgdir/usr/bin"
+
+  # Install a license file
+  install -Dm644 README "$pkgdir/usr/share/licenses/$pkgname/COPYING"
+}

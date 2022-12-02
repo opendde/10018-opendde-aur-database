@@ -1,0 +1,4 @@
+build() {
+    cd "$srcdir"
+    sed "s#%MAJOR%#$_major#g;s#%MINOR%#$_minor#g;s#%MICRO%#$_micro#g" package.xml.in > package.xml
+}

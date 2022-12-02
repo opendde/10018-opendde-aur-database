@@ -1,0 +1,19 @@
+package() {
+  cd "Bombermaaan_${pkgver}_${_pkgdate}_src"
+
+  # binary
+  install -Dm755 Bombermaaan/Bombermaaan "$pkgdir"/usr/bin/bombermaaan
+  # library
+  install -Dm644 RESGEN/libbombermaaan.so.1.0.0 "$pkgdir"/usr/lib/libbombermaaan.so.1.0.0
+  ln -s libbombermaaan.so.1.0.0 "$pkgdir"/usr/lib/libbombermaaan.so.1
+  ln -s libbombermaaan.so.1 "$pkgdir"/usr/lib/libbombermaaan.so
+  # doc
+  install -Dm644 Readme.html "$pkgdir"/usr/share/doc/$pkgname/README.html
+  cd ..
+  # level pack by feillyne: http://www.moddb.com/games/bombermaaan/addons/level-pack-151-levels
+  install -d "$pkgdir"/usr/share/$pkgname/Levels
+  install -m644 Levels/* "$pkgdir"/usr/share/$pkgname/Levels
+  # .desktop entry
+  install -Dm644 $pkgname.png "$pkgdir"/usr/share/pixmaps/$pkgname.png
+  install -Dm644 $pkgname.desktop "$pkgdir"/usr/share/applications/$pkgname.desktop
+}

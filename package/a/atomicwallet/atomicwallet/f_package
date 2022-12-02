@@ -1,0 +1,10 @@
+package() {
+  set -e
+
+  mv opt usr "$pkgdir"
+
+  cd "$pkgdir/usr"
+  mkdir bin
+  cd bin
+  ln -s "../../opt/Atomic Wallet/atomic" atomicwallet
+}

@@ -1,0 +1,6 @@
+build() {
+  cd ${pkgname%-git}
+
+  msg "Building..."
+  make
+}

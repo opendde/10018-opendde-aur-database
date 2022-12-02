@@ -1,0 +1,21 @@
+build() {
+    cd "${srcdir}/build-generator"
+    export ASDF_OUTPUT_TRANSLATIONS="/:${srcdir}/fasl-cache"
+    export CC=cc
+    "${srcdir}/cl-launch" -Q \
+        -S "(:source-registry \
+             (:tree \""${srcdir}"\") \
+             :ignore-inherited-configuration)" \
+        -s jenkins.project.commandline-interface \
+        -F 'rune-dom::(defun adjust-vector-exponentially (vector new-dimension set-fill-pointer-p)
+  (let ((d (array-dimension vector 0)))
+    (when (< d new-dimension)
+      (loop
+          do (setf d (max 1 (* 2 d)))
+          while (< d new-dimension))
+      (adjust-array vector d))
+    (when set-fill-pointer-p
+      (setf (fill-pointer vector) new-dimension))))' \
+        --dump ! --output "build-generator" \
+        -r "jenkins.project.commandline-interface:main"
+}

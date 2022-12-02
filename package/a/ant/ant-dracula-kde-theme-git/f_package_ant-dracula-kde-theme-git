@@ -1,0 +1,14 @@
+package_ant-dracula-kde-theme-git() {
+  provides=("ant-dracula-kde-theme")
+  optdepends=("ant-dracula-gtk-theme: Matching GTK theme"
+              "ant-dracula-kvantum-theme-git: Ant Dracula theme for Kvantum Qt style (recommended)")
+
+  cd "${_pkgname}/kde"
+
+  mkdir -p "${pkgdir}/usr/share/aurorae/themes" "${pkgdir}/usr/share/sddm/themes"
+
+  cp -r aurorae/* "${pkgdir}/usr/share/aurorae/themes"
+  cp -r color-schemes "${pkgdir}/usr/share"
+  cp -r plasma "${pkgdir}/usr/share"
+  cp -r sddm/* "${pkgdir}/usr/share/sddm/themes"
+}

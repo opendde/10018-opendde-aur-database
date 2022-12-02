@@ -1,0 +1,21 @@
+package() {
+    cd "$srcdir/${pkgname%-git}"
+
+    python setup.py install --root="$pkgdir/" --optimize=1
+
+    install -Dm644 \
+    "$srcdir/${pkgname%-git}/LICENSE.txt" \
+    "$pkgdir/usr/share/licenses/blrm/LICENSE.txt"
+
+    install -Dm644 \
+    "$srcdir/${pkgname%-git}/README.rst" \
+    "$pkgdir/usr/share/blrm/README.rst"
+
+    install -Dm644 \
+    "$srcdir/${pkgname%-git}/share/blrm.conf.example" \
+    "$pkgdir/usr/share/blrm/blrm.conf.example"
+
+    install -Dm644 \
+    "$srcdir/${pkgname%-git}/share/blacklist.example" \
+    "$pkgdir/usr/share/blrm/blacklist.example"
+}

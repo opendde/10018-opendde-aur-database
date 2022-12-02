@@ -1,0 +1,7 @@
+package() {
+  cd ${pkgname}
+  install -d "${pkgdir}/usr/share/bettercap/caplets"
+  cp -r . "${pkgdir}/usr/share/bettercap/caplets"
+  rm -r "${pkgdir}/usr/share/bettercap/caplets/"{.git,.gitignore,Makefile,README.md,LICENSE.md}
+  install -Dm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
+}

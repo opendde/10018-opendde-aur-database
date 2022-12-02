@@ -1,0 +1,5 @@
+package() {
+	cd build-binutils
+	make DESTDIR="$pkgdir/" install
+	rm -rf "$pkgdir/usr/share"
+}

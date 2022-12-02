@@ -1,0 +1,4 @@
+prepare() {
+ cd $_name-$pkgver
+ patch -Np1 -i ../gs954.patch
+}

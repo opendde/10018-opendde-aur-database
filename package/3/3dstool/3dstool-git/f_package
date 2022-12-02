@@ -1,0 +1,10 @@
+package() {
+    cd "$pkgname/project"
+    make install # Actually installs to "../bin"
+    install -d "$pkgdir/usr/bin/"
+    install "../bin/3dstool" "$pkgdir/usr/bin/"
+
+    # Move ignore file into /usr/share
+    install -d "$pkgdir/usr/share/3dstool"
+    install "../bin/ignore_3dstool.txt" "$pkgdir/usr/share/3dstool"
+}

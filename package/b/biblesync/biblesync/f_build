@@ -1,0 +1,9 @@
+build() {
+  cd "$pkgname-$pkgver"
+  cmake -S . -B build \
+    -DBUILD_SHARED_LIBS=TRUE \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DLIBDIR=/usr/lib \
+    ../
+  make -C build
+}

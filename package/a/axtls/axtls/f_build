@@ -1,0 +1,4 @@
+build() {
+	cd "axtls-code"
+	make
+}

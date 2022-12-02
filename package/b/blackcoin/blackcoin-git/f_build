@@ -1,0 +1,10 @@
+build() {
+    # Build blackcoind
+    cd "$srcdir/$_gitname/src"
+    make -f makefile.unix
+
+    # Build blackcoin-qt
+    cd "$srcdir/$_gitname"
+    qmake "USE_UPNP=1" "USE_QRCODE=1" "QMAKE_CXXFLAGS=-std=c++11"
+    make
+}

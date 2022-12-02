@@ -1,0 +1,6 @@
+build() {
+  cd "$srcdir"/$pkgname-$pkgver
+  # python2 fix
+  sed -i 's_#!/usr/bin/env python_#!/usr/bin/env python2_' DNSBL.py
+  sed -i 's_#!/usr/bin/python_#!/usr/bin/python2_' ADNS.py
+}

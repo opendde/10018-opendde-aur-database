@@ -1,0 +1,3 @@
+package() {
+  make -C "$_pkgname-$pkgver" PREFIX=/usr DESTDIR="$pkgdir" install
+}

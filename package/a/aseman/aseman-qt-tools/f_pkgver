@@ -1,0 +1,4 @@
+pkgver() {
+  cd ${pkgname}
+  git describe --long | sed 's/\([^-]*-g\)/\1/;s/-/+/g' | sed 's/.stable//g' | sed 's/v//g'
+}

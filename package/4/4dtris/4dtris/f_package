@@ -1,0 +1,6 @@
+package() {
+  cd "${srcdir}"/$pkgname-$pkgver
+
+  make DESTDIR="${pkgdir}" install
+  mv "${pkgdir}"/usr/games "${pkgdir}"/usr/bin
+}

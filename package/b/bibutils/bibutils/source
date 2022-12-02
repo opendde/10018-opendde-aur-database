@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}.tgz::https://sourceforge.net/projects/bibutils/files/bibutils_${pkgver}_src.tgz/download")

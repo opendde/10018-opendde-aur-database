@@ -1,0 +1,4 @@
+build() {
+  cd ${srcdir}/${pkgname}-version${pkgver}
+  cc -lsndfile ${pkgname}.c -o ${pkgname}
+}

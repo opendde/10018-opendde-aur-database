@@ -1,0 +1,7 @@
+build() {
+	cd "${_srcdir}"
+	make alternatives
+	
+	cd "po"
+	make
+}

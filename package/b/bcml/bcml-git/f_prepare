@@ -1,0 +1,3 @@
+prepare() {
+	gendesk --pkgname "${_name}" --pkgdesc "${pkgdesc}" --exec "bcml %u" --mimetypes "x-schema-handler/bcml"
+}

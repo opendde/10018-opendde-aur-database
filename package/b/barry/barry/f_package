@@ -1,0 +1,21 @@
+package() {
+  cd ${srcdir}/${pkgname}-${pkgver}
+
+  make DESTDIR=${pkgdir} install
+
+  # Install PPP scripts for pppob
+  mkdir -p ${pkgdir}/etc/ppp/peers/ ${pkgdir}/etc/chatscripts/
+  find ${srcdir}/${pkgname}-${pkgver}/ppp/ -name *.chat -exec cp {} ${pkgdir}/etc/chatscripts/ \;
+  find ${srcdir}/${pkgname}-${pkgver}/ppp/ ! -name *.chat ! -name README -exec cp {} ${pkgdir}/etc/ppp/peers/ \;
+
+  # Install .desktop file and icon
+  mkdir -p ${pkgdir}/usr/share/pixmaps
+  cp ./desktop/images/barry_logo_icon.xpm ${pkgdir}/usr/share/pixmaps
+  
+  mkdir -p ${pkgdir}/usr/share/applications
+  cp ../barrybackup.desktop ${pkgdir}/usr/share/applications
+
+  # Install udev rules to allow barrybackup to access devices without root
+  mkdir -p ${pkgdir}/usr/lib/udev/rules.d
+  cp udev/70-blackberry-perms.rules ${pkgdir}/usr/lib/udev/rules.d
+}

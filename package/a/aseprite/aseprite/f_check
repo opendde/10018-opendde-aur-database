@@ -1,0 +1,3 @@
+check() {
+	env -C build ctest --output-on-failure
+}

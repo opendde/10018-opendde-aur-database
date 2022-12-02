@@ -1,0 +1,15 @@
+package() {
+	echo aa
+    #jar -xf ${srcdir}/${pkgname}.jar LICENSE.txt
+
+    install -Dm644 "${pkgname}.jar" \
+                  "${pkgdir}/usr/share/java/${pkgname}/algobuild.jar"
+    install -Dm755 "${pkgname}" \
+                  "${pkgdir}/usr/bin/${pkgname}"
+    install -Dm644 ${pkgname}.desktop \
+                  "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+    install -Dm644 ${pkgname}.png \
+                  "${pkgdir}/usr/share/icons/hicolor/128x128/apps/${pkgname}.png"
+    install -Dm644 LICENSE.txt "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.txt"
+    echo a
+}

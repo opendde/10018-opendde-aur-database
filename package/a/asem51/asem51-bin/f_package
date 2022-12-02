@@ -1,0 +1,23 @@
+package() {
+	cd "${srcdir}/asem51"
+
+	# Install the executables
+	find . -type f \( -not -name '*.sh' \)  -executable -exec install -Dm755 "{}" -t "${pkgdir}/usr/bin" \;
+
+	# Install the device specifications
+	find mcu/ -type f  -exec install -Dm644 "{}" -t "${pkgdir}/usr/share/${pkgname%-bin}/mcu" \;
+	install -Dm644 "../setup-environment-variable.sh" "${pkgdir}/etc/profile.d/asem51.sh"
+
+	# Install the man pages
+	find . -name '*.1' -exec install -Dm644 "{}" -t "${pkgdir}/usr/share/man/man1" \;
+
+	# Install the docs
+	find html/ -type f -exec install -Dm644 "{}" -t "${pkgdir}/usr/share/doc/${pkgname%-bin}/html" \;
+
+	install -Dm644 "asem_51.doc"    "${pkgdir}/usr/share/doc/${pkgname%-bin}/asem.doc"
+	install -Dm644 "boot51.doc"  -t "${pkgdir}/usr/share/doc/${pkgname%-bin}"
+
+	install -Dm644 "README.1ST"     "${pkgdir}/usr/share/doc/${pkgname%-bin}/README"
+	install -Dm644 "support.doc" -t "${pkgdir}/usr/share/doc/${pkgname%-bin}"
+	install -Dm644 "license.doc"    "${pkgdir}/usr/share/licenses/${pkgname%-bin}/LICENSE"
+}

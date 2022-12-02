@@ -1,0 +1,20 @@
+package() {
+  cd "Blackmagic RAW"
+
+  for module in BlackmagicRAWPlayer BlackmagicRAWSDK BlackmagicRAWSpeedTest; do
+      install -d "$pkgdir/usr/share/licenses/$pkgname/$module"
+      cp --no-preserve=ownership "$module-Third Party Licenses.txt" \
+                                 "$pkgdir/usr/share/licenses/$pkgname/$module/Third Party Licenses.txt"
+  done
+
+  cp --no-preserve=ownership "./usr/lib64/blackmagic/BlackmagicRAWSDK/Documents/License.txt" \
+                             "$pkgdir/usr/share/licenses/$pkgname/BlackmagicRAWSDK"
+
+  cp -dr --no-preserve=ownership "./usr/share" "$pkgdir/usr"
+  cp -dr --no-preserve=ownership "./usr/lib64" "$pkgdir/usr/lib"
+
+  install -d "$pkgdir/usr/bin" ; cd "$pkgdir/usr/bin"
+  
+  ln -s ../lib/blackmagic/BlackmagicRAWPlayer/BlackmagicRAWPlayer ./blackmagicraw-player
+  ln -s ../lib/blackmagic/BlackmagicRAWSpeedTest/BlackmagicRAWSpeedTest ./blackmagicraw-speedtest
+}

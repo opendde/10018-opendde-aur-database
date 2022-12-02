@@ -1,0 +1,8 @@
+package_python-buildbot-waterfall-view() {
+  python="python"
+  depends=('buildbot')
+  pkgdesc="Buildbot Waterfall View plugin"
+  _name=${_names[3]}
+  extraver="-py2.py3"
+  install_whl
+}

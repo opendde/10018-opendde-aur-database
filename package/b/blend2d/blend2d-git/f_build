@@ -1,0 +1,21 @@
+build() {
+  cd "$_pkgname"
+
+  [[ -d build ]] && rm -rf build
+  mkdir build && cd build
+
+  # "It's strongly advised to use Clang to compile Blend2D on all platforms to achieve maximum performance."
+  export CC='clang'
+  export CXX='clang++'
+
+  # Build a shared library with tests
+  cmake .. \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DASMJIT_DIR="$srcdir"/asmjit \
+    -DBLEND2D_EMBED=FALSE \
+    -DBLEND2D_STATIC=FALSE \
+    -DBLEND2D_TEST=TRUE
+
+  make
+}

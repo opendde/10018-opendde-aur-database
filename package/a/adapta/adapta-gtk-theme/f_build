@@ -1,0 +1,18 @@
+build() {
+    cd "${pkgname}-${pkgver}"
+
+    local gnome_shell="--enable-gnome"
+    if [[ -z "$(which gnome-shell 2> /dev/null)" ]]
+    then
+        gnome_shell="--disable-gnome"
+    fi
+
+    ./autogen.sh --enable-gtk_next \
+                 --enable-chrome \
+                 --enable-plank \
+                 --enable-telegram \
+                 --enable-parallel \
+                 --disable-unity \
+                 "$gnome_shell"
+    make
+}

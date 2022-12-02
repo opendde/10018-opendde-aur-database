@@ -1,0 +1,8 @@
+package() {
+  cd "$srcdir/AutopanoVideo"
+  install -dm755 $pkgdir/{opt/kolor,usr/share/licenses/$pkgname/}
+  cp -r $srcdir/AutopanoVideo $pkgdir/opt/kolor/$pkgname
+  #mv $pkgdir/opt/kolor/$pkgname/Copyright $pkgdir/usr/share/licenses/$pkgname/
+  install -Dm755 $srcdir/$pkgname $pkgdir/usr/bin/$pkgname
+  install -Dm644 "$srcdir/$pkgname.desktop" "$pkgdir/usr/share/applications/$pkgname.desktop"
+}

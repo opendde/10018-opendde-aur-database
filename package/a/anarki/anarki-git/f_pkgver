@@ -1,0 +1,4 @@
+pkgver() {
+  cd ${_pkgname}
+  git describe --tags| cut -c4- | sed 's+-+.r+' | tr - .
+}

@@ -1,0 +1,21 @@
+package() {
+  cd "${srcdir}/Artemis-${pkgver}"
+
+  # install basic stuff
+  mkdir -p "${pkgdir}/opt/${pkgname}"
+
+  install -Dm755 "${srcdir}/artemis3" "${pkgdir}/usr/bin/artemis3"
+  install -Dm755 "spec_files/Linux/dist/Artemis" "${pkgdir}/opt/${pkgname}/Artemis"
+  cp -ar "src/themes" "${pkgdir}/opt/${pkgname}/"
+
+  # install desktop entries and icons
+  install -Dm644 "spec_files/Linux/artemis3.svg" "${pkgdir}/usr/share/icons/hicolor/scalable/apps/artemis3.svg"
+  install -Dm644 "${srcdir}/artemis3.desktop" "${pkgdir}/usr/share/applications/artemis3.desktop"
+
+  # create group
+  install -Dm644 "${srcdir}/artemis3.sysusers" "${pkgdir}/usr/lib/sysusers.d/artemis3.conf"
+
+  # fix permissions
+  chown -R root:2008 "${pkgdir}/opt/${pkgname}"
+  chmod -R g+w "${pkgdir}/opt/${pkgname}"
+}

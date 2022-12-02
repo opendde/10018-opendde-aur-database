@@ -1,0 +1,18 @@
+package() {
+    cd $_filename
+
+    mkdir -p "$pkgdir"/opt/${_pkgname}/
+
+    cp -r ${_prefix} ${pkgdir}/opt/${_pkgname}/
+    cp -r bin ${pkgdir}/opt/${_pkgname}/
+    cp -r include ${pkgdir}/opt/${_pkgname}/
+    cp -r lib ${pkgdir}/opt/${_pkgname}/
+    cp -r libexec ${pkgdir}/opt/${_pkgname}/
+    cp -r share ${pkgdir}/opt/${_pkgname}/
+    
+    install -dm755 ${pkgdir}/usr/bin
+    for bin in ${pkgdir}/opt/${_pkgname}/bin/*;
+    do
+        ln -sf /opt/${_pkgname}/bin/$(basename ${bin}) ${pkgdir}/usr/bin/$(basename ${bin})
+    done
+}

@@ -1,0 +1,5 @@
+package () {
+    install -D -m755 ${srcdir}/${pkgname}/build_kernel.sh ${pkgdir}/usr/bin/build_efi_kernels
+    install -D -m644 ${srcdir}/${pkgname}/kernel-update.hook ${pkgdir}/etc/pacman.d/hooks/efi-kernel-update.hook
+    sed -i 's/\/opt\/build_kernel\.sh/\/usr\/bin\/build_efi_kernels/' ${pkgdir}/etc/pacman.d/hooks/efi-kernel-update.hook
+}

@@ -1,0 +1,9 @@
+build() {
+  cd ${name}
+  sed -i "s|/O2|-O2|" setup64.py 
+  sed -i "s|/openmp|-fopenmp|" setup64.py 
+  sed -i "s|/fp:fast|-ffast-math|" setup64.py 
+
+  python setup64.py build_ext --inplace
+  cp mciso*.so mciso*.html -t ../
+}

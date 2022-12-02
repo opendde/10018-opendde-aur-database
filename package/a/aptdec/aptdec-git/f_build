@@ -1,0 +1,6 @@
+build() {
+	cmake -B build -S aptdec \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX='/usr'
+	make -C build
+}

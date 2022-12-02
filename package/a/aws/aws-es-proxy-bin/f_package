@@ -1,0 +1,3 @@
+package() {
+	install -D -g root -m 0755 -o root "$srcdir/aws-es-proxy-${pkgver}" "$pkgdir/usr/bin/aws-es-proxy"
+}

@@ -1,0 +1,1 @@
+("$url/releases/download/v${pkgver%0}/${_fname^}-${pkgver%00}.zip")

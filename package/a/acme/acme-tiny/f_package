@@ -1,0 +1,6 @@
+package() {
+    cd "$srcdir"
+
+    install -m 0755 -d "$pkgdir/usr/bin/"
+    install -m 0755 "$script_name" "$pkgdir/usr/bin/acme-tiny"
+}

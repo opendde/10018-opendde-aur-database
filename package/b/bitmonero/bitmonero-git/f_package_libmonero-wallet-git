@@ -1,0 +1,17 @@
+package_libmonero-wallet-git() {
+
+	provides=('libmonero-wallet')
+
+        # NOTE: this is crucial, otherwise stripping breaks the .a archive:
+        # monero-core (GUI) fails to link against it (it can't find symbols
+        # that are clearly in the library).
+        options=(!strip)
+
+        cd $srcdir/$_gitname/$_builddir
+        _stagedir=stagedir
+        mkdir -p $_stagedir
+        make DESTDIR=$_stagedir install
+
+        cd $_stagedir
+        find usr/{include,lib} -type f -exec install -D -m 755 {} ${pkgdir}/{} \;
+}

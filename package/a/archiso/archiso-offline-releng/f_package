@@ -1,0 +1,7 @@
+package() {
+    cd ${srcdir}
+
+    # Install the offline-modified releng
+    install -dm 755 "$pkgdir/usr/share/archiso/configs"
+    cp -r "$srcdir/usr/share/archiso/configs/offline_releng" "$pkgdir/usr/share/archiso/configs/"
+}

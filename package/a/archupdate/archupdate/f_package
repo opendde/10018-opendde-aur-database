@@ -1,0 +1,8 @@
+package() {
+ # cd "$srcdir/$_gitname-build"
+
+  msg "Installing script file"
+  install -Dm655 "${srcdir}/archupdate.sh" "${pkgdir}${_basedir}/bin/archupdate.sh"
+  install -Dm644 "${srcdir}/archupdate.desktop" "${pkgdir}/${_basedir}/share/applications/archupdate.desktop"
+  install -Dm644 "${srcdir}/arch.png" "${pkgdir}/${_basedir}/share/pixmaps/archicon.png"
+}

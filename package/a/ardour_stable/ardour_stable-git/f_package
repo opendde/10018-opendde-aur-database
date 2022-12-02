@@ -1,0 +1,9 @@
+package() {
+  cd "${srcdir}/${pkgname%-*}"
+
+  python2 waf --destdir="${pkgdir}" install
+
+  # Install freedesktop.org compatible application starter desktop file
+  install -Dm644 "${srcdir}/ardour.desktop" \
+    "${pkgdir}/usr/share/applications/ardour.desktop"
+}

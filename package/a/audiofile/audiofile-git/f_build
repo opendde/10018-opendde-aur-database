@@ -1,0 +1,7 @@
+build() {
+  cd "audiofile"
+
+  ./autogen.sh
+  ./configure --prefix="/usr" --disable-docs
+  make
+}

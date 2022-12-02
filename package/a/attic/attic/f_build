@@ -1,0 +1,4 @@
+build() {
+  cd "$srcdir/Attic-$pkgver/docs"
+  PYTHONPATH=.. make man
+}

@@ -1,0 +1,1 @@
+("$pkgname-$pkgver.tar.gz::https://github.com/apache/buildstream/archive/refs/tags/$pkgver.tar.gz")

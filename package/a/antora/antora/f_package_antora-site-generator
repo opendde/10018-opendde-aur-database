@@ -1,0 +1,3 @@
+package_antora-site-generator() {
+  _package site-generator
+}

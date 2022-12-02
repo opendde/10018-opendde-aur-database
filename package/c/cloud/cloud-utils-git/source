@@ -1,0 +1,1 @@
+("$pkgname::bzr+http://bazaar.launchpad.net/~${_pkgbase}-dev/$_pkgbase/trunk")

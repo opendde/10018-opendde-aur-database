@@ -1,0 +1,5 @@
+prepare() {
+	cd "$srcdir/${pkgname%-git}"
+	patch -p1 -i "$srcdir/airsane-systemd-dir.patch"
+	sed -i 's#/usr/local/#/usr/#g' systemd/airsaned.service
+}

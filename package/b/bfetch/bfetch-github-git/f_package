@@ -1,0 +1,5 @@
+package() {
+  cd $_gitname
+  mkdir -p "${pkgdir}/usr/bin"
+  mv "bfetch" "${pkgdir}/usr/bin/bfetch"
+}

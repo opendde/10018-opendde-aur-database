@@ -1,0 +1,4 @@
+package() {
+  install -D -m755 arukas "$pkgdir/usr/bin/arukas"
+  install -D -m644 -t "$pkgdir/usr/share/doc/$pkgname" README.md LICENSE.txt .env.sample
+}

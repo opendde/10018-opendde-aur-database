@@ -1,0 +1,5 @@
+pkgver() {
+  cd "${srcdir}/amule-dlp"
+  printf "%s.r%s.%s" "$(grep -Po '(?<=set \(PACKAGE_VERSION ").+(?="\))' ./CMakeLists.txt)" \
+					"$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}

@@ -1,0 +1,1 @@
+(archive-${pkgver}.tar.gz::${url}/releases/download/${pkgver}/bottom_armv7-unknown-linux-gnueabihf.tar.gz)

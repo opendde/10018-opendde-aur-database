@@ -1,0 +1,8 @@
+package() {
+  cd "${srcdir}"
+
+  install -D ${_shortname}-${pkgver}-complete.jar \
+             "${pkgdir}"/usr/share/java/${_shortname}-${pkgver}-complete.jar
+  ln -s antlr-${pkgver}-complete.jar "${pkgdir}"/usr/share/java/antlr3-complete.jar
+  install -D antlr3 "${pkgdir}"/usr/bin/antlr3
+}

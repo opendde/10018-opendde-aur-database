@@ -1,0 +1,6 @@
+package() {
+	cd "$srcdir/$_srcname"
+
+	mkdir -p "$pkgdir/usr/bin"
+	cp bspc "$pkgdir/usr/bin/bspc"
+}

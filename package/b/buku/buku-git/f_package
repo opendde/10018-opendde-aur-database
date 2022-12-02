@@ -1,0 +1,10 @@
+package() {
+  set -u
+  cd "${_pkgname}"
+  install -Dm644 "${_pkgname}.1" -t "${pkgdir}/usr/share/man/man1/"
+  python setup.py install --root="${pkgdir}" --prefix='/usr'
+  install -Dm644 'auto-completion/fish/buku.fish' -t "${pkgdir}/usr/share/fish/vendor_completions.d/"
+  install -Dm644 'auto-completion/bash/buku-completion.bash' "${pkgdir}/etc/bash_completion.d/buku"
+  install -Dm644 'auto-completion/zsh/_buku' -t "${pkgdir}/usr/share/zsh/site-functions/"
+  set +u
+}

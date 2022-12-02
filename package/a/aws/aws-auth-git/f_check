@@ -1,0 +1,4 @@
+check() {
+  cd "aws-auth"
+  go test ./...
+}

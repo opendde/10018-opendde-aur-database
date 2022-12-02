@@ -1,0 +1,8 @@
+package() {
+    install -Dm644 alertmanager-matrix.service "$pkgdir"/usr/lib/systemd/system/alertmanager-matrix.service
+    install -Dm644 alertmanager-matrix.sysusers "$pkgdir"/usr/lib/sysusers.d/alertmanager-matrix.conf
+    install -Dm644 alertmanager-matrix.tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/alertmanager-matrix.conf
+    cd "alertmanager_matrix-$pkgver"
+    install -Dm644 ammatrix.example.yml "$pkgdir"/etc/ammatrix.yml
+    make PREFIX=/usr DESTDIR=$pkgdir install
+}

@@ -1,0 +1,7 @@
+package() {
+	## Install VST
+	install -Dm755 "${srcdir}/plugin-binaries/VST/ACM-5A.so" "${pkgdir}/usr/lib/vst/ACM-5A.so"
+	## Install VST3
+	mkdir -p "${pkgdir}/usr/lib/vst3"
+	cp -r "${srcdir}/plugin-binaries/VST3/ACM-5A.vst3" "${pkgdir}/usr/lib/vst3/ACM-5A.vst3"
+}

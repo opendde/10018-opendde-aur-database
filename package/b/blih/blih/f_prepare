@@ -1,0 +1,4 @@
+prepare() {
+	cd "${pkgname}-${pkgver}"
+	sed -i s/python3.3/python/ "${pkgname}.py"
+}

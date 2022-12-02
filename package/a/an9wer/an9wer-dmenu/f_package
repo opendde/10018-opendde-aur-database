@@ -1,0 +1,11 @@
+package() {
+  cd "$_pkgname"
+  make PREFIX=/usr DESTDIR="$pkgdir" install
+  install -m644 -D LICENSE "$pkgdir/usr/share/licenses/$_pkgname/LICENSE"
+  install -m644 -D README  "$pkgdir/usr/share/doc/$_pkgname/README"
+  # Source codes
+  install -m644 -D -t "$pkgdir/usr/src/$_pkgname" \
+    arg.h config.def.h config.mk dmenu.1 dmenu.c drw.c drw.h \
+    LICENSE Makefile README stest.1 stest.c util.c util.h
+  install -m755 -D -t "$pkgdir/usr/src/$_pkgname" dmenu_path dmenu_run 
+}

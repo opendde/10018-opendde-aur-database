@@ -1,0 +1,6 @@
+package() {
+    echo "Moving audacity binary."
+    mkdir -p "$pkgdir/usr/bin/"
+    chmod +x audacity-linux-$pkgver-x86_64.AppImage
+    mv audacity-linux-$pkgver-x86_64.AppImage "$pkgdir/usr/bin/audacity"
+}

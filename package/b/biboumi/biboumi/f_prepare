@@ -1,0 +1,11 @@
+prepare() {
+  mkdir -p build
+  cd build
+  cmake ../$pkgname-$pkgver \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DSERVICE_USER=biboumi \
+    -DSERVICE_GROUP=jabber \
+    -Wno-dev \
+    -G Ninja
+}

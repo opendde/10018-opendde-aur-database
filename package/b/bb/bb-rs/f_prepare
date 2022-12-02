@@ -1,0 +1,7 @@
+prepare() {
+	if [[ $CARCH = aarch64 ]]; then
+		# Fixes build on AArch64
+		sed 's#i8#u8#g' -i $_pkgname-$pkgver/src/ui.rs
+	else true # Fixes build in chroot on x86_64
+	fi
+}

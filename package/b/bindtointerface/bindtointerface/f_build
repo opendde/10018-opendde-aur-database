@@ -1,0 +1,9 @@
+build() {
+	gcc \
+	-nostartfiles \
+	-fpic \
+	-shared bindToInterface.c \
+	-o bindToInterface.so \
+	-ldl \
+	-D_GNU_SOURCE
+}

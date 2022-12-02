@@ -1,0 +1,5 @@
+build() {
+  cd $_pkgname
+  ./configure --prefix=/usr --mandir=/usr/share/man
+  make V=0
+}

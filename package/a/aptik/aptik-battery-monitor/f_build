@@ -1,0 +1,4 @@
+build() {
+  cd "battery-monitor-${pkgver}"
+  make
+}

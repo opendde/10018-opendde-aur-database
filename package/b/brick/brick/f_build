@@ -1,0 +1,7 @@
+build() {
+  cd ${srcdir}
+  mkdir -p out
+  cd out
+  cmake -DCMAKE_INSTALL_PREFIX=${pkgdir} -DSKIP_BRICK_REGISTER=1 "../brick-${pkgver}"
+  make
+}

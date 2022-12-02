@@ -1,0 +1,7 @@
+prepare() {
+	cd "$_pkgbase"
+
+	#patch -p1 -i "$srcdir/$pkgname-$pkgver.patch"
+
+	mkdir -p build
+}

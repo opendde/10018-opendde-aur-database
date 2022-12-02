@@ -1,0 +1,5 @@
+build() {
+	cd $srcdir
+	mkdir -p $FULLNAME_PKG; cd $FULLNAME_PKG
+	rpmextract.sh "../${FULLNAME_PKG}.rpm"
+}

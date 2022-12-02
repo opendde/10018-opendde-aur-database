@@ -1,0 +1,4 @@
+build() {
+    cd $srcdir/
+    tar -xvf $srcdir/amdfand-1.0.11.tar.gz
+}

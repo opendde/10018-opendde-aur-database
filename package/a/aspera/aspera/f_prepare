@@ -1,0 +1,7 @@
+prepare() {
+  export GOPATH="${srcdir}/_go"
+  mkdir -p $(dirname "$GOPATH/src/${_importpath}/")
+  ln -sf "${srcdir}/${_realname}" "$GOPATH/src/${_importpath}"
+  cd "$GOPATH/src/${_importpath}"
+  dep ensure -v
+}

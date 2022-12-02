@@ -1,0 +1,10 @@
+prepare() {
+  cd "httpd"
+
+  # set default user
+  sed -e 's#User daemon#User http#' \
+      -e 's#Group daemon#Group http#' \
+      -i "docs/conf/httpd.conf.in"
+
+  cat "$srcdir/arch.layout" >> "config.layout"
+}

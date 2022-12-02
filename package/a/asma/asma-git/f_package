@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir/$pkgname/build"
+  DESTDIR="$pkgdir" ninja install
+  cd "$srcdir/$pkgname"
+  rm -rf build
+}

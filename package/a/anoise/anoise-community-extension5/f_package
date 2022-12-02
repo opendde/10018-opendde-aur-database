@@ -1,0 +1,3 @@
+package() {
+  install -Dm644 ${_folder[${_pkg}]}/sounds/* -t "${pkgdir}"/usr/share/anoise/sounds/
+}

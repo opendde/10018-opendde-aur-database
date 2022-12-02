@@ -1,0 +1,4 @@
+pkgver() {
+  cd "${_pkgbase}" || exit
+  echo "v$(git describe --long | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g')"
+}

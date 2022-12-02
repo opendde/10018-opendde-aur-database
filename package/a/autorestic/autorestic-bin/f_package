@@ -1,0 +1,4 @@
+package() {
+  mkdir -p "${pkgdir}/usr/local/bin/"
+  cp "${srcdir}/autorestic" "${pkgdir}/usr/local/bin/autorestic"
+}

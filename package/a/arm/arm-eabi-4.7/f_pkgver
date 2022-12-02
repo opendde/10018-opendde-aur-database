@@ -1,0 +1,4 @@
+pkgver() {
+	cd "${srcdir}/arm-eabi-4.7"
+	printf "r%d" "$(git rev-list --count HEAD)"
+}

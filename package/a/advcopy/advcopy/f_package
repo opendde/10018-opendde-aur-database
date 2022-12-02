@@ -1,0 +1,5 @@
+package() {
+  cd "${srcdir}"/coreutils-${_coreutils_pkgver}
+  install -Dm755 src/cp ${pkgdir}/usr/bin/vcp
+  install -Dm755 src/mv ${pkgdir}/usr/bin/vmv
+}

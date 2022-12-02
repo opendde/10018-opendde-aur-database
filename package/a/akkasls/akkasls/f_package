@@ -1,0 +1,3 @@
+package() {
+  install -Dm 755 -t "${pkgdir}/usr/local/bin" akkasls
+}

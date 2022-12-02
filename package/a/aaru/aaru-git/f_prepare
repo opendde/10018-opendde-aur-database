@@ -1,0 +1,4 @@
+prepare() {
+  cd "${srcdir}"/"${_aarubase}"
+  git submodule update --init --checkout --recursive
+}

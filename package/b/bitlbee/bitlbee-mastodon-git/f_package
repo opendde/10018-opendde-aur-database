@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir/${pkgname%-git}"
+  make DESTDIR="$pkgdir" install
+  mkdir -p "$pkgdir/usr/share/bitlbee"
+  cp "doc/mastodon-help.txt" "$pkgdir/usr/share/bitlbee"
+}

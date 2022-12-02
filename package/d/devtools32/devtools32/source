@@ -1,0 +1,1 @@
+("$pkgname::git+https://git.archlinux32.org/devtools32#tag=v${pkgver}")

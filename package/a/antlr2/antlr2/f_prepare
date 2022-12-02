@@ -1,0 +1,4 @@
+prepare() {
+  cd antlr-${pkgver}
+  patch -Np0 -i "${srcdir}"/gcc4.4.patch
+}

@@ -1,0 +1,4 @@
+build() {
+  cd "bsnes-${pkgver}"
+  make -C bsnes hiro=qt5 moc=/usr/bin/moc
+}

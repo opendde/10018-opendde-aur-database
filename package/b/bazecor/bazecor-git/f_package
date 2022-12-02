@@ -1,0 +1,17 @@
+package() {
+    # AppImage
+    _appimage=$(find ${srcdir}/${pkgname} -iname "*.AppImage")
+    install -Dm755 "${_appimage}" "${pkgdir}/opt/${_pkgname}/${_pkgname}.AppImage"
+
+    # Symlink AppImage
+    install -dm755 "${pkgdir}/usr/bin"
+    ln -s "/opt/${_pkgname}/${_pkgname}.AppImage" "${pkgdir}/usr/bin/${_pkgname}"
+
+    # Desktop file
+    install -Dm644 "${srcdir}/squashfs-root/${_pkgname}.desktop"\
+        "${pkgdir}/usr/share/applications/${_pkgname}.desktop"
+
+    # Icons
+    install -dm755 "${pkgdir}/usr/share/"
+    cp -a "${srcdir}/squashfs-root/usr/share/icons" "${pkgdir}/usr/share/"
+}

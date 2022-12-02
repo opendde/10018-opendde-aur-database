@@ -1,0 +1,26 @@
+package_bareos-webui() {
+  pkgdesc="${pkgdesc} - Webui (Bareos web administration)"
+  depends=('php7' 'php7-fpm' 'jansson')
+  optdepend=('apache' 'nginx' 'php7-apache' )
+  backup=('etc/bareos-webui/directors.ini'
+          'etc/bareos-webui/configuration.ini'
+          'etc/bareos/bareos-dir.d/console/admin.conf.example'
+          'etc/bareos/bareos-dir.d/profile/webui-admin.conf'
+          'etc/httpd/conf/extra/bareos-webui.conf')
+  #_cp ${srcdir}/install/usr/share/bareos-webui ${pkgdir}/usr/share/webapps/bareos-webui
+  for f in \
+     etc/bareos/bareos-dir.d/console/admin.conf.example \
+     etc/bareos/bareos-dir.d/profile/webui-admin.conf \
+     etc/bareos/bareos-dir.d/profile/webui-limited.conf.example \
+     etc/bareos/bareos-dir.d/profile/webui-readonly.conf \
+     etc/httpd/conf/extra/bareos-webui.conf \
+     etc/bareos-webui/directors.ini \
+     etc/bareos-webui/configuration.ini \
+     usr/share/bareos-webui \
+     +usr/share/licenses/${pkgname} \
+  ; do
+    cp_pkgdir "$f" "$srcdir/install/"
+  done
+  cp ${srcdir}/bootstrap-table-locale-all.min.js ${pkgdir}/usr/share/bareos-webui/public/js/bootstrap-table-locale-all.min.js
+  install -Dm644 ${srcdir}/bareos/webui/{README.md,LICENSE,doc/README-TRANSLATION.md} "${pkgdir}/usr/share/licenses/${pkgname}/"
+}

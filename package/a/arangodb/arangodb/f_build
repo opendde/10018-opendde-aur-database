@@ -1,0 +1,17 @@
+build() {
+  msg2 "Symlinking 'python' to python2."
+  ln -s -f /usr/bin/python2 python
+  export PATH="`pwd`:$PATH"
+  export LD="ld.gold"
+
+  msg2 "Configuring ArangoDB."
+  cd $srcdir/ArangoDB-$pkgver
+  [ -d build ] || mkdir build && cd build
+  cmake -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_PREFIX:PATH=/ \
+    -DCMAKE_SKIP_RPATH=On \
+    ..
+  msg2 "Building ArangoDB."
+  make
+}

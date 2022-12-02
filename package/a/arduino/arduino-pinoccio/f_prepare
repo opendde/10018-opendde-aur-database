@@ -1,0 +1,11 @@
+prepare() {
+  cd firmware-pinoccio
+  git submodule init
+  git config submodule.hardware/pinoccio.url "$srcdir/core-pinoccio"
+  git config submodule.libraries/bitlash.url "$srcdir/library-bitlash"
+  git config submodule.libraries/gainspan.url "$srcdir/library-gainspan-s2w"
+  git config submodule.libraries/js0n.url "$srcdir/js0n"
+  git config submodule.libraries/lwm.url "$srcdir/library-atmel-lwm"
+  git config submodule.libraries/pinoccio.url "$srcdir/library-pinoccio"
+  git submodule update
+}

@@ -1,0 +1,1 @@
+("${pkgname}_${pkgver}-${pkgrel}.tar.gz::https://github.com/HorlogeSkynet/${pkgname}/archive/v${pkgver}.tar.gz")

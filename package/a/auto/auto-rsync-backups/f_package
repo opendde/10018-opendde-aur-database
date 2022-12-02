@@ -1,0 +1,9 @@
+package() {
+    cd $pkgname-$pkgver
+    for f in auto-rsync-{backups,restore}.sh auto-rsync-backups.common; do
+        install -D -m755 $f "${pkgdir}/usr/bin/$f"
+    done
+    for f in backups.{sample.conf,excludes} AUTHORS COPYING HISTORY LICENSE README.md; do
+        install -D -m644 $f "${pkgdir}/usr/share/${pkgname}/$f"
+    done
+}

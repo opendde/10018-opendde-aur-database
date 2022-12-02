@@ -1,0 +1,29 @@
+package_bareos-common() {
+  pkgdesc="${pkgdesc} - Common files"
+  depends=('libcap' 'openssl' 'acl' 'bash' 'lzo' 'jansson' 'zlib')
+  install=bareos-common.install
+  for f in \
+     usr/lib/bareos/libbareos.so* \
+     usr/lib/bareos/libbareosfastlz.so* \
+     usr/lib/bareos/libbareosfind.so* \
+     usr/lib/bareos/libbareoslmdb.so* \
+     usr/lib/bareos/libbareosndmp.so* \
+     usr/lib/bareos/libbareossd.so* \
+     usr/lib/bareos/scripts/bareos-config \
+     usr/lib/bareos/scripts/bareos-config-lib.sh \
+     usr/lib/bareos/scripts/bareos-explorer \
+     usr/lib/bareos/scripts/btraceback.gdb \
+     usr/bin/bsmtp \
+     usr/bin/btraceback \
+     usr/share/man/man1/bsmtp.1* \
+     usr/share/man/man8/btraceback.8* \
+     var/lib/bareos \
+     +etc/bareos \
+     +var/log/bareos \
+     +run/bareos \
+     +usr/share/licenses/${pkgname} \
+  ; do
+    cp_pkgdir "$f" "$srcdir/install/"
+  done
+  install -Dm644 ${srcdir}/bareos/core/{AGPL-3.0.txt,LICENSE,README.*} "${pkgdir}/usr/share/licenses/${pkgname}/"
+}

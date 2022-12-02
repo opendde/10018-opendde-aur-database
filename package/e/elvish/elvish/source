@@ -1,0 +1,1 @@
+("git+https://github.com/elves/elvish.git#tag=v$pkgver")

@@ -1,0 +1,5 @@
+prepare() {
+  cd "$srcdir/$pkgname"
+  git submodule update --init
+  patch -Np1 -i "${srcdir}/adapt_to_arch.patch"
+}

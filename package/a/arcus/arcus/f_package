@@ -1,0 +1,5 @@
+package() {
+  DESTDIR="${pkgdir}" cmake --install build
+
+  install -Dm644 "${srcdir}/libArcus-${pkgver}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

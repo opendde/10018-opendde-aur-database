@@ -1,0 +1,5 @@
+check() {
+    cd "$srcdir/$pkgname-$pkgver/build"
+    lib/fab/SbFabTest
+    lib/graph/SbGraphTest
+}

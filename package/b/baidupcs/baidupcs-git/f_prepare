@@ -1,0 +1,4 @@
+prepare() {
+  cd "$srcdir/$_pkgname"
+  sed -i "s|http://|https://|g;s|^inline|static inline|" pcs/pcs.c
+}

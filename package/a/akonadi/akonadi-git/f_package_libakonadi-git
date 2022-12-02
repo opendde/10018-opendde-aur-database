@@ -1,0 +1,9 @@
+package_libakonadi-git() {
+	pkgdesc='Libraries used by applications based on Akonadi'
+	depends=(kitemmodels kaccounts-integration)
+	conflicts=("${pkgname%-git}")
+	provides=("${pkgname%-git}=${pkgver}")
+
+	DESTDIR="$pkgdir" cmake --install build
+	rm -r "$pkgdir"/usr/bin # Provided by akonadi
+}

@@ -1,0 +1,1 @@
+("v$pkgver.tar.gz::${_git_url}/archive/v$pkgver.tar.gz")

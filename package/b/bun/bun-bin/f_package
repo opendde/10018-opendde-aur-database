@@ -1,0 +1,3 @@
+package() {
+  install -Dm755 "./bun-linux-x64/bun" "${pkgdir}/usr/bin/bun"
+}

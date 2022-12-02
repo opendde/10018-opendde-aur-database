@@ -1,0 +1,10 @@
+build() {
+  cmake \
+    -S "asl" \
+    -B build \
+    -DCMAKE_BUILD_TYPE=None \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DBUILD_SHARED_LIBS=1 \
+    -Wno-dev
+  cmake --build build --target all
+}

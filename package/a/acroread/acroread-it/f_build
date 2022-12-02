@@ -1,0 +1,6 @@
+build() {
+  cd "${srcdir}"
+  rpmextract.sh AdobeReader_ita-${pkgver}-1.i486.rpm
+  cd opt/Adobe/Reader8
+  patch -Np3 -i "${srcdir}"/acroread-scim.patch || return 1
+}

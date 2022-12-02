@@ -1,0 +1,4 @@
+package() {
+  cd "$srcdir"/mod_auth_mellon-$pkgver
+  install -Dm0755 .libs/mod_auth_mellon.so $pkgdir/usr/lib/httpd/modules/mod_auth_mellon.so
+}

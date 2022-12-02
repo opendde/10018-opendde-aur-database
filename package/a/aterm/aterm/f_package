@@ -1,0 +1,6 @@
+package() {
+  cd ${pkgname}-${pkgver}
+  make DESTDIR="${pkgdir}" install
+  install -Dm644 "$srcdir/aterm.png" "$pkgdir/usr/share/pixmaps/aterm.png"
+  install -Dm644 "$srcdir/aterm.desktop" "$pkgdir/usr/share/applications/aterm.desktop"
+}

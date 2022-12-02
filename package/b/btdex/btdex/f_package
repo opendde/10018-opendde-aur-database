@@ -1,0 +1,11 @@
+package() {
+	install -Dm644 btdex-v${pkgver}-all.jar "$pkgdir"/opt/btdex/btdex-all.jar
+	install -Dm755 btdex.sh "$pkgdir"/opt/btdex/btdex.sh
+	mkdir -p "$pkgdir"/usr/bin
+	ln -sf /opt/btdex/btdex.sh "$pkgdir"/usr/bin/btdex
+
+	install -Dm644 btdex.desktop "$pkgdir"/usr/share/applications/btdex.desktop
+	install -Dm644 icon.png "$pkgdir"/usr/share/pixmaps/btdex.png
+
+	install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/btdex/LICENSE
+}

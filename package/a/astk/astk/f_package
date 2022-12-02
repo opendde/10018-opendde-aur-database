@@ -1,0 +1,25 @@
+package() {
+    cd "${srcdir}/aster-full-src-${_asterver}"
+
+    python2 setup.py install --prefix="${pkgdir}${_installdir}" astk
+
+    install -d -m 755 "${pkgdir}/usr/bin/"
+    install -m 755 "${srcdir}/astk-ssh" "${pkgdir}${_installdir}/bin/"
+
+    for _FILE in {"etc/codeaster/astkrc/config_serveurs","etc/codeaster/profile.sh"}
+    do
+        sed -e "s|${pkgdir}||g" -i "${pkgdir}${_installdir}/${_FILE}"
+    done
+
+    sed -e "s|\$ASTER_ROOT/outils/xmgrace|/usr/bin/xmgrace|" -i "${pkgdir}${_installdir}/etc/codeaster/astkrc/outils"
+    sed -e "s|\$ASTER_ROOT/outils/gmsh|/usr/bin/gmsh|" -i "${pkgdir}${_installdir}/etc/codeaster/astkrc/outils"
+
+    echo "export TKPNG_ROOT=/usr/lib/tkpng0.9" >> "${pkgdir}${_installdir}/etc/codeaster/profile.sh"
+
+    install -m 755 -d "${pkgdir}/usr/share/pixmaps"
+    cp "${srcdir}/${pkgname}.png" "${pkgdir}/usr/share/pixmaps/"
+    desktop-file-install --dir="${pkgdir}/usr/share/applications" "${srcdir}/${pkgname}.desktop"
+
+    # mv etc from /usr to /
+    mv "${pkgdir}${_installdir}/etc/" "${pkgdir}"
+}

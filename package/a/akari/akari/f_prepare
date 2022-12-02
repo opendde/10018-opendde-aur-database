@@ -1,0 +1,7 @@
+prepare() {
+  _kernver="$(uname -r)"
+  cp -a "/usr/lib/modules/${_kernver}/build" "${srcdir}"
+  cd "${srcdir}/build"
+  tar -zxf "${srcdir}/${pkgname}-${pkgver}-${_timestamp}.tar.gz"
+  patch -p2 -i "${srcdir}/activation_trigger.patch"
+}

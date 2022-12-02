@@ -1,0 +1,6 @@
+prepare() {
+  cd "$srcdir"
+  msg2 "Decompressing Debian package..."
+  ar xv "${_debname}" > /dev/null
+  tar -xf data.tar.xz > /dev/null
+}

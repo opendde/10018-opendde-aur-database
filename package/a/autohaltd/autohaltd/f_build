@@ -1,0 +1,5 @@
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+  env -u DEBUG ./configure --prefix=/usr --sbindir=/usr/bin --libexecdir=/usr/lib
+  make
+}

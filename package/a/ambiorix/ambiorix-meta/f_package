@@ -1,0 +1,3 @@
+package() {
+	echo "Do nothing - meta package"
+}

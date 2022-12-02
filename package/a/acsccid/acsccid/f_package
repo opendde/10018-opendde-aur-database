@@ -1,0 +1,12 @@
+package() {
+    cd "${srcdir}/${pkgname}-${pkgver}" || return 1
+    sed -i '/$(INSTALL_UDEV_RULE_FILE)/ c\' src/Makefile || return 1
+    make DESTDIR="${pkgdir}" install || return 1
+    install -Dm644 src/92_pcscd_acsccid.rules "$pkgdir/etc/udev/rules.d/92_pcscd_acsccid.rules" || return 1
+    install -Dm644 AUTHORS "$pkgdir/usr/share/licenses/$pkgname/AUTHORS" || return 1
+    install -Dm644 ChangeLog "$pkgdir/usr/share/licenses/$pkgname/ChangeLog" || return 1
+    install -Dm644 COPYING "$pkgdir/usr/share/licenses/$pkgname/COPYING" || return 1
+    install -Dm644 INSTALL "$pkgdir/usr/share/licenses/$pkgname/INSTALL" || return 1
+    install -Dm644 NEWS "$pkgdir/usr/share/licenses/$pkgname/NEWS" || return 1
+    install -Dm644 README "$pkgdir/usr/share/licenses/$pkgname/README" || return 1
+}

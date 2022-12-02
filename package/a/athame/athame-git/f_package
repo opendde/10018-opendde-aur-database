@@ -1,0 +1,4 @@
+package() {
+  make -C $_readline DESTDIR="$pkgdir" install
+  install -Dm644 $_pkgname/athamerc "$pkgdir"/etc/athamerc
+}

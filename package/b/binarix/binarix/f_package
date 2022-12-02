@@ -1,0 +1,5 @@
+package() {
+  mkdir -p "$pkgdir/usr/bin/"
+  cd "$srcdir/$pkgname-$pkgver"
+  install -m4555 -o root $pkgname "$pkgdir/usr/bin/"
+}

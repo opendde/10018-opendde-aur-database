@@ -1,0 +1,12 @@
+package() {
+	cd ${srcdir}/${_pkgname}
+	mkdir -p $pkgdir/{opt/asbru,usr/share/pixmaps,usr/share/man/man1,usr/share/applications,usr/bin,etc/bash_completion.d}
+	cp -rp res utils lib $pkgdir/opt/asbru/
+	cp -p res/asbru_bash_completion $pkgdir/etc/bash_completion.d/asbru_bash_completion
+	cp res/asbru-logo-64.png $pkgdir/usr/share/pixmaps/${_pkgname}.png
+	cp res/${_pkgname}.desktop $pkgdir/usr/share/applications/
+	gzip -c res/${_pkgname}.1 > $pkgdir/usr/share/man/man1/${_pkgname}.1.gz
+	cp -p ${_pkgname} $pkgdir/opt/asbru/${_pkgname}
+	chmod 755 $pkgdir/opt/asbru/${_pkgname}
+	ln -sf /opt/asbru/${_pkgname} $pkgdir/usr/bin/${_pkgname}
+}

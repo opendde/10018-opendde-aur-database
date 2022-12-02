@@ -1,0 +1,4 @@
+package() {
+    cd "$srcdir/monopticon/contrib/expirements/auralcap/build"
+    make DESTDIR="$pkgdir/" install
+}

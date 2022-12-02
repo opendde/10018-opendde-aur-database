@@ -1,0 +1,9 @@
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  
+  patch -Np1 -i "${startdir}/generic.h.patch"
+  
+  ./configure --prefix=/usr
+
+  make ECHO=echo
+}

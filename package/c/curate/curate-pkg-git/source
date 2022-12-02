@@ -1,0 +1,1 @@
+("git+https://github.com/andrei-pavel/${_gitrepository}.git#branch=${_gitbranch}")

@@ -1,0 +1,12 @@
+package() {
+	cd $srcdir/$pkgname-$pkgver
+
+	cp -arv arch/root/* $pkgdir
+
+	mkdir -p $pkgdir/usr/lib/bautista
+	cp -arv rust/target/debug/bautista-bot $pkgdir/usr/lib/bautista
+
+	mkdir -p $pkgdir/usr/lib/bautista/meross-bridge
+	cp -arv node/meross-bridge/*.js $pkgdir/usr/lib/bautista/meross-bridge
+	cp -ar node/node_modules $pkgdir/usr/lib/bautista
+}

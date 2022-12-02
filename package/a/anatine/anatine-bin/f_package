@@ -1,0 +1,8 @@
+package() {
+  mkdir -p "${pkgdir}/usr/share/anatine"
+  bsdtar -C "${pkgdir}/usr/share/anatine" -xf "${srcdir}/Anatine-linux-v${pkgver}.zip"
+  mkdir -p "${pkgdir}/usr/bin"
+  ln -s "/usr/share/anatine/Anatine" "${pkgdir}/usr/bin/anatine"
+  RPM_BUILD_ROOT="$pkgdir" desktop-file-install "${srcdir}/anatine.desktop"
+  install -Dm644 "${srcdir}/Icon-${pkgver}.png" "${pkgdir}/usr/share/pixmaps/Anatine.png"
+}

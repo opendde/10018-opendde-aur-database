@@ -1,0 +1,9 @@
+build() {
+    cd "${srcdir}"/libtheora-${pkgver}
+    source android-env ${_android_arch}
+
+    android-${_android_arch}-configure \
+        --disable-examples
+
+    make $MAKEFLAGS
+}

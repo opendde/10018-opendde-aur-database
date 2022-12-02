@@ -1,0 +1,11 @@
+package() {
+	cd "$pkgname-$pkgver"
+	make DESTDIR="$pkgdir/" install
+
+    
+    make INSTALL_ROOT="${pkgdir}"/ install || return 1
+    find "$pkgdir" -type d -print0 | xargs -0 chmod -R 755
+    find "$pkgdir" -type f -print0 | xargs -0 chmod -R 644
+    chmod 755 "$pkgdir/usr/bin/booksorg"
+
+}

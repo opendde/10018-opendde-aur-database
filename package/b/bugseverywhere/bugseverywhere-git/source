@@ -1,0 +1,1 @@
+("${pkgname}-${_commit}.tgz::https://gitorious.org/be/be?p=be:be.git;a=snapshot;h=${_commit};sf=tgz")

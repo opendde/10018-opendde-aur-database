@@ -1,0 +1,5 @@
+prepare() {
+        tar -xf data.tar.gz -C "${srcdir}"
+	sed -i -e '47,53c my $basedir = "/opt/brother/Printers/BrGenML1";' \
+		${srcdir}/opt/brother/Printers/BrGenML1/cupswrapper/brother_lpdwrapper_BrGenML1
+}

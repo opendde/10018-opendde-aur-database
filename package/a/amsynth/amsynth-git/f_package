@@ -1,0 +1,10 @@
+package() {
+  depends+=(libatk-1.0.so libfontconfig.so libfreetype.so libgdk_pixbuf-2.0.so
+  libgdk-x11-2.0.so libgio-2.0.so libglib-2.0.so libgobject-2.0.so
+  libgtk-x11-2.0.so libharfbuzz.so libpangocairo-1.0.so libpangoft2-1.0.so
+  libpango-1.0.so)
+
+  cd "${srcdir}/${_pkgname}"
+  make DESTDIR="${pkgdir}/" install
+  install -vDm 644 {AUTHORS,NEWS,README} -t "${pkgdir}/usr/share/doc/${pkgname}/"
+}

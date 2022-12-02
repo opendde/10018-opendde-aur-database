@@ -1,0 +1,4 @@
+prepare() {
+    cd $pkgname
+    git checkout $_commit
+}

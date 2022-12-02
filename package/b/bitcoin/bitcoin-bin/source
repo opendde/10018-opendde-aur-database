@@ -1,0 +1,1 @@
+("${_bindirbase}.tar.gz::https://bitcoincore.org/bin/bitcoin-core-${pkgver}/bitcoin-${pkgver}-x86_64-linux-gnu.tar.gz"

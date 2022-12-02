@@ -1,0 +1,7 @@
+build() {
+  cd beaker-$pkgver/scripts
+  npm i
+  npm run build
+  npm run rebuild
+  npx electron-builder --dir
+}

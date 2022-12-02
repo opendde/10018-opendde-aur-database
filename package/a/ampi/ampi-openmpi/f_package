@@ -1,0 +1,10 @@
+package() {
+  cd "charm-v${pkgver}"
+  make -C tmp install DESTDIR="${pkgdir}/opt/ampi-${_backend}"
+  # Workaround https://github.com/UIUC-PPL/charm/issues/2275
+  for wrapper in ampicc ampiCC ampicxx; do
+    f="${pkgdir}/opt/ampi-${_backend}/bin/$wrapper"
+    echo "Patching $f"
+    sed -i 's|charmarch=$(cat $CHARMBIN/../tmp/.gdir)|charmarch=mpi|g' "$f"
+  done
+}

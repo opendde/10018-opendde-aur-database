@@ -1,0 +1,10 @@
+package() {
+  cd "$srcdir/${pkgname}_$pkgver"
+  install -Dm755 "Linux/libblpapi3_64.so" "$pkgdir/usr/lib/libblpapi3_64.so"
+  install -Dm644 include/* -t "$pkgdir/usr/include"
+  install -Dm644 doc/html/* -t "$pkgdir/usr/share/doc/$pkgname/html"
+  install -Dm644 doc/ChangeLog.txt "pkgdir/usr/share/doc/ChangeLog.txt"
+
+  # copy license to proper directory
+  install -Dm644 License.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

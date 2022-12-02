@@ -1,0 +1,25 @@
+prepare() {
+  set -u
+  cd "${_srcdir[${CARCH}]}"
+  # Fix the compile by overwriting useless switches in the makefile. In this binary file the replace string must be exactly the same length
+  local _f1='EXTRA_CFLAGS := -Wall -Wstrict-prototypes '
+  local _f2='EXTRA_CFLAGS := -Wall @/tmp/ArchOpts      '
+  local _g1=' SUBDIRS='
+  local _g2='       M='
+  #local _f2='EXTRA_CFLAGS := -include linux/module.h   '
+  sed -e "s#${_f1}#${_f2}#g" -e "s#${_g1}#${_g2}#g" -i "${_exe[${CARCH}]}"
+  # There are other ways to do this...
+  cat >> 'ArchOpts' << EOF
+-Wstrict-prototypes
+-include linux/module.h
+-include linux/uaccess.h
+-DHAVE_UNLOCKED_IOCTL=1
+EOF
+  sed -e '1i #!/usr/bin/sh' \
+      -e "1i cp -p '/usr/lib/${pkgname}/ArchOpts' '/tmp/'" \
+      -e 's:^\(\s\+\)\./afulnx_26_64:\1sync\n&:g' \
+      -e '# Prevent auto reboot. This stops the reboot but if you dont autoreboot the upgrade doesnt happen.' \
+      -e '#s: /defans::g' \
+    -i "${_sh[${CARCH}]}"
+  set +u
+}

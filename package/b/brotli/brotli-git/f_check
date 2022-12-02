@@ -1,0 +1,5 @@
+check() {
+  cd "brotli"
+
+  make -C "_build" test
+}

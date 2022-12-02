@@ -1,0 +1,8 @@
+prepare() {
+  cd basis_universal
+  cmake \
+    -G Ninja \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    .
+}

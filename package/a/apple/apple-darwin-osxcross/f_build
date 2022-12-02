@@ -1,0 +1,15 @@
+build() {
+  cd "$srcdir/$_pkgname"
+  export UNATTENDED=yes
+  export OSX_VERSION_MIN=10.13
+
+  msg2 'Build osxcross'
+  ./build.sh
+
+  msg2 'Build toolchain file and wrapper for CMake'
+  cd "$srcdir"
+  for _arch in ${_architectures}; do
+    sed -e "s|@TRIPLE@|${_arch}|g" -e "s|@PREFIX@|${_prefix}/SDK/${_sdkname}/usr|g" -e "s|@OSXCROSSDIR@|${_prefix}|g" toolchain-apple-darwin.cmake > toolchain-${_arch}.cmake
+    sed -e "s|@TRIPLE@|${_arch}|g" -e "s|@PREFIX@|${_prefix}/SDK/${_sdkname}/usr|g" -e "s|@OSXCROSSDIR@|${_prefix}|g" apple-darwin-cmake.sh > ${_arch}-cmake
+  done
+}

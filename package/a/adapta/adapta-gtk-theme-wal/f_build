@@ -1,0 +1,18 @@
+build() {
+  cd adapta-gtk-theme
+
+  source "../colors.sh"
+
+  ./autogen.sh \
+    --prefix='/usr' \
+    --enable-parallel \
+    --enable-plank \
+    --enable-telegram \
+    --disable-unity \
+    --with-selection_color="$color4" \
+    --with-accent_color="$color6" \
+    --with-suggestion_color="$color5" \
+    --with-destruction_color="$color2"
+ 
+  make
+}

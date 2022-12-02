@@ -1,0 +1,6 @@
+build() {
+  cd "${srcdir}"/AFFLIBv3-${pkgver}
+  sh bootstrap.sh
+  ./configure --prefix=/usr --sysconfdir=/etc
+  make
+}

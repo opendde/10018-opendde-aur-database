@@ -1,0 +1,5 @@
+package() {
+	cd "${srcdir}"
+	#make DESTDIR="${pkgdir}" prefix=/usr sbindir=/usr/bin bindir=/usr/bin libdir=/usr/lib install 
+	install -Dm755 "${srcdir}/apngopt" "${pkgdir}/usr/bin/apngopt"
+}

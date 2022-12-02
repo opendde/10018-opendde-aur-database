@@ -1,0 +1,5 @@
+build() {
+    cd bemenu-${pkgver}
+    cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib
+    make
+}

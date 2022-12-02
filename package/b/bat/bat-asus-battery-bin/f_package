@@ -1,0 +1,4 @@
+package() {
+    mv "${srcdir}/bat_$pkgver" "${srcdir}/bat-asus-battery"
+    install -Dm755 "${srcdir}/bat-asus-battery" -t "${pkgdir}/usr/bin"
+}

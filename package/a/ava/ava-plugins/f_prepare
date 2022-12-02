@@ -1,0 +1,6 @@
+prepare () {
+	## Extract AVA Plugins Archive
+	_archive="`xdg-user-dir DOWNLOAD`/Harrison-AVA-linux-64bit.tar.gz"
+	ln -srf ${_archive} "$srcdir/`basename ${_archive}`"
+	tar -xvzf "$srcdir/`basename ${_archive}`"
+}

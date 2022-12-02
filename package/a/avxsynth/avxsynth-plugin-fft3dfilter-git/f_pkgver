@@ -1,0 +1,4 @@
+pkgver() {
+  cd "${_plug}"
+  echo "$(git log -1 --format="%cd" --date=short | tr -d '-').$(git log -1 --format="%h")"
+}

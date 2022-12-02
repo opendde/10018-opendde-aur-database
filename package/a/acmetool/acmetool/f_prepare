@@ -1,0 +1,6 @@
+prepare() {
+    export GOPATH="${srcdir}/build"
+    mkdir -p "${GOPATH}/src/github.com/hlandau/"
+    mv "${srcdir}/acmetool-${pkgver}" "${GOPATH}/src/github.com/hlandau/acme"
+    go get -v github.com/hlandau/acme/cmd/acmetool
+}

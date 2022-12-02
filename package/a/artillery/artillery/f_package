@@ -1,0 +1,23 @@
+package() {
+  cd "$srcdir/artillery"
+
+  # Install script is interactive, run install
+  # passing responses.
+  python2 setup.py <<< $'y\nn\nn'
+
+  rm "$pkgdir/var/artillery/setup.py"
+
+  install -dm755 "$pkgdir/usr/bin"
+
+  cat > "$pkgdir/usr/bin/artillery" <<EOF
+#!/bin/sh
+cd /var/artillery
+if test \$EUID != 0 ; then
+  echo 'Must be run as root.'
+  exit 1
+fi
+python2 artillery.py "\$@"
+EOF
+
+  chmod +x "$pkgdir/usr/bin/artillery"
+}

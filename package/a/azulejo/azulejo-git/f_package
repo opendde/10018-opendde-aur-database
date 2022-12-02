@@ -1,0 +1,6 @@
+package() {
+	cd "$srcdir/$_pkgname"
+	python setup.py install --root="$pkgdir/" --optimize=1
+  mkdir -p $pkgdir/usr/share/licenses/azulejo/
+  cp LICENSE $pkgdir/usr/share/licenses/azulejo/
+}

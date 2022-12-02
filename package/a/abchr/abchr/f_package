@@ -1,0 +1,8 @@
+package() {
+    cd "abchr-java"
+    install -Dm 644 -t "${pkgdir}/usr/share/java/${pkgname}" *.jar
+    install -Dm 644 -t "${pkgdir}/usr/share/${pkgname}" clicodecs.cfg
+
+    cd "${srcdir}"
+    install -Dm 755 -t "${pkgdir}/usr/bin" abchr
+}

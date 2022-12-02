@@ -1,0 +1,12 @@
+prepare() {
+  if [[ -n "${_shell_version}" ]]; then
+    cd ${srcdir}/${_shell}
+    git checkout "${_shell_version}"
+  fi
+
+  cd ${srcdir}/${_brackets}
+  if [[ -n "${_brackets_version}" ]]; then
+    git checkout "${_version_prefix}${_brackets_version}"
+  fi
+  git submodule update --init --recursive
+}

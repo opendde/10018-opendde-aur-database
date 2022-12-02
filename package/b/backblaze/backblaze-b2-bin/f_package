@@ -1,0 +1,4 @@
+package() {
+  mkdir -p "${pkgdir}/usr/local/bin/"
+  cp "${srcdir}/b2-linux" "${pkgdir}/usr/local/bin/b2"
+}

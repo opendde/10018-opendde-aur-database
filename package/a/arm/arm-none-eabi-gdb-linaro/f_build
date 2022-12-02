@@ -1,0 +1,17 @@
+build() {
+  cd ${srcdir}/${_basedir}
+  sed -i "/ac_cpp=/s/\$CPPFLAGS/\$CPPFLAGS -O2/" libiberty/configure
+
+  mkdir build
+  cd build
+  ../configure --target=arm-none-eabi \
+               --prefix=/usr \
+               --datarootdir=/usr/share/arm-none-eabi-gdb \
+               --enable-multilib \
+               --enable-interwork \
+               --with-system-readline \
+							 --with-guile=guile-2.0 \
+							 --with-python=python3.6 \
+               --disable-nls
+  make
+}

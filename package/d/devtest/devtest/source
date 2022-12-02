@@ -1,0 +1,1 @@
+("git+https://github.com/bscubed/devtest.git#tag=v${pkgver}")

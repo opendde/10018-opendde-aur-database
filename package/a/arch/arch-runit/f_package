@@ -1,0 +1,27 @@
+package() {
+	cd "$srcdir/void-runit"
+	make DESTDIR="$pkgdir" PREFIX=usr install
+
+	cd "${srcdir}/admin/runit-$_runit_ver"
+	# default services
+	install -dm0755 "$pkgdir/var"
+
+	ln -s ../etc/runit/runsvdir/current "$pkgdir/var/service" #???
+
+	# install binaries
+	install -dm0755 "$pkgdir/usr/bin"
+	for f in $(<package/commands); do
+		install -sm0755 src/$f "$pkgdir/usr/bin"
+	done
+	ln -s runit-init "$pkgdir/usr/bin/init"
+
+	# man-pages
+	install -dm0755 "$pkgdir/usr/share/man/man8"
+	install -m0644 man/* "$pkgdir/usr/share/man/man8"
+
+	# doc
+	install -dm0755 "$pkgdir/usr/share/doc/runit"
+	install -m0644 doc/*.html "$pkgdir/usr/share/doc/runit"
+
+	install -Dm0644 package/COPYING "$pkgdir/usr/share/licenses/runit/LICENSE"
+	}

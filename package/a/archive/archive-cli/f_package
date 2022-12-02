@@ -1,0 +1,5 @@
+package() {
+	cd "$pkgname-$pkgver"
+        install -D -m777 archive-create "${pkgdir}/usr/bin/archive-create"
+        install -D -m777 archive-extract "${pkgdir}/usr/bin/archive-extract"
+}

@@ -1,0 +1,15 @@
+package() {
+    cd "$srcdir"/abcmidi
+
+    make DESTDIR="$pkgdir/" install
+
+    # Install programming documentation to docdir
+    install -m 755 -d "$pkgdir"/usr/share/doc/$pkgname/programming
+
+    install -m 644 doc/programming/*.txt doc/programming/*.abc \
+                   "$pkgdir"/usr/share/doc/$pkgname/programming
+
+    # Install example ABC files to docdir
+    install -m 755 -d "$pkgdir"/usr/share/doc/$pkgname/samples
+    install -m 644 samples/*.abc "$pkgdir"/usr/share/doc/$pkgname/samples
+}

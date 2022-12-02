@@ -1,0 +1,5 @@
+package() {
+  install -Dm755 "$pkgname" -t "$pkgdir"/usr/bin/
+  install -d "$pkgdir"/usr/share/licenses/$pkgname
+  head -29  $pkgname.cpp > "$pkgdir"/usr/share/licenses/$pkgname/zlib.license
+}

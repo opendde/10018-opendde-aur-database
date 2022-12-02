@@ -1,0 +1,13 @@
+package_bibtex2website-gui() {
+    pkgname=('bibtex2website-gui')
+    depends+=('qt5-base')
+    license=('LGPL3')
+
+    build_bibtex2website-gui
+
+    install -Dm644 "$srcdir/build-gui/bin/BibTeX2WebsiteGUI" "$pkgdir/usr/bin/bibtex2website-gui"
+    chmod +x "$pkgdir/usr/bin/bibtex2website-gui"
+
+    install -Dm644 "$srcdir/$pkgbase-$pkgver/lib/bibtex2website-gui.desktop" "$pkgdir/usr/share/applications/bibtex2website-gui.desktop"
+    install -Dm644 "$srcdir/$pkgbase-$pkgver/lib/bibtex2website.svg" "$pkgdir/usr/share/$pkgbase/bibtex2website.svg"
+}

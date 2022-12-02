@@ -1,0 +1,4 @@
+package() {
+    cd "$srcdir/$pkgname-$pkgver"
+    install -Dm755 abella "${pkgdir}/usr/bin/abella"
+}

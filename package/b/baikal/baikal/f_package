@@ -1,0 +1,11 @@
+package() {
+  cd "${srcdir}/baikal"
+
+  install -dm 755 "$pkgdir"/usr/share/{webapps,doc}"/$pkgname"
+  install -dm 700 -o http -g http "$pkgdir/var/lib/$pkgname"
+  install -dm 700 -o http -g http "$pkgdir/var/lib/$pkgname/config"
+  cp -R Core html vendor "$pkgdir/usr/share/webapps/$pkgname"
+  install -Dm644 README.md "$pkgdir/usr/share/doc/$pkgname"
+  ln -s "/var/lib/$pkgname" "$pkgdir/usr/share/webapps/$pkgname/Specific"
+  ln -s "/var/lib/$pkgname/config" "$pkgdir/usr/share/webapps/$pkgname/config"
+}

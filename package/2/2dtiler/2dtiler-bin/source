@@ -1,0 +1,1 @@
+("http://ab.inf.uni-tuebingen.de/software/${_pkgname}/${_pkgname}${pkgver//./}.zip"

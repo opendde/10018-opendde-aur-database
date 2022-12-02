@@ -1,0 +1,1 @@
+("${pkgname}_${_pkgver}.tar.xz::${_ppaurl}/+sourcefiles/${pkgname}/${_pkgver}/${pkgname}_${_pkgver}.tar.xz")

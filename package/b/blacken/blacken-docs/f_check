@@ -1,0 +1,4 @@
+check() {
+  cd ${pkgname}-${pkgver}
+  python -m pytest
+}

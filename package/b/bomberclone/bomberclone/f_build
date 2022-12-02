@@ -1,0 +1,6 @@
+build() {
+  cd "$pkgname-$pkgver"
+
+  ./configure --prefix=/usr
+  make CFLAGS="-O3 $(pkg-config --cflags --libs sdl) $CFLAGS -lm -w"
+}

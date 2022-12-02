@@ -1,0 +1,22 @@
+package() {
+  cd "${srcdir}/${_packagename}/build/Atraci/${_platform}/"
+
+  # Program
+  msg2 "Installing program to ${_DEST}"
+  install -dm755 "${pkgdir}${_DEST}"
+  install -m755 "Atraci" "${pkgdir}${_DEST}"
+  install -m644 "nw.pak" "${pkgdir}${_DEST}"
+  install -m644 "libffmpegsumo.so" "${pkgdir}${_DEST}"
+  install -m644 "icudtl.dat" "${pkgdir}${_DEST}"
+
+  # Link to program
+  msg2 "Symlink /usr/bin/${provides[0]} -> ${_DEST}/Atraci"
+  install -dm755 "${pkgdir}/usr/bin"
+  ln -s "${_DEST}/Atraci" "${pkgdir}/usr/bin/${provides[0]}"
+
+  # Desktop file
+  install -Dm644 "${srcdir}/atraci.desktop" "${pkgdir}/usr/share/applications/atraci.desktop"
+
+  # Icon
+  install -Dm644 "${srcdir}/${_packagename}/images/icon.png" "${pkgdir}/usr/share/pixmaps/atraci.png"
+}

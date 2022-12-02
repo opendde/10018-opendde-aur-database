@@ -1,0 +1,1 @@
+("https://pkgbuild.com/~maximbaz/repo/chromium-vaapi-${pkgver}-${_pkgrel}-${arch}.pkg.tar.zst"{,.sig})

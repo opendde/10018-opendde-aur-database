@@ -1,0 +1,5 @@
+build() {
+  cd "$_pkgname-$pkgver"
+  sed '1,1i#include <sys/resource.h>' -i include/libbb.h
+  make
+}

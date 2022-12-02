@@ -1,0 +1,14 @@
+package() {
+	# Compiled binary
+	install -D -m644 "${srcdir}/build/libblt_loader.so" "${pkgdir}/usr/lib/blt4l/libblt_loader.so"
+
+	# Steam Runtime binary
+	install -D -m644 "${srcdir}/${__steamrtfilename//.SteamRT/(SteamRT)}/libblt_loader.so" "${pkgdir}/usr/lib/blt4l/libblt_loader_steamrt.so"
+
+	# Launcher
+	install -D -m755 "${srcdir}/blt4l.sh" "${pkgdir}/usr/bin/blt4l"
+
+	# Mods Folder
+	cp -r "${srcdir}/blt4l/lua/Payday-2-BLT-Lua/mods/" "${pkgdir}/usr/lib/blt4l/mods/"
+	chmod -R 755 "${pkgdir}/usr/lib/blt4l/mods/"
+}

@@ -1,0 +1,4 @@
+package() {
+  cd "$pkgname-$pkgver"
+  DESTDIR="$pkgdir/" cmake --install . --verbose
+}

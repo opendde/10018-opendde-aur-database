@@ -1,0 +1,18 @@
+package() {
+    # AppImage
+    install -Dm755 "${srcdir}/${_pkgname}-${pkgver}-${CARCH}.appimage" "${pkgdir}/opt/${pkgname}/${pkgname}.AppImage"
+
+    # Desktop file                          why
+    install -Dm644 "${srcdir}/squashfs-root/net.86box.${_pkgname}.desktop"\
+            -t "${pkgdir}/usr/share/applications"
+
+    # Icon images
+    cp -R "${srcdir}/squashfs-root/usr/share/icons" "$pkgdir/usr/share"
+
+    # Symlink executable
+    install -dm755 "${pkgdir}/usr/bin"
+    ln -s "/opt/${pkgname}/${pkgname}.AppImage" "${pkgdir}/usr/bin/86Box"
+
+    # Symlink to roms folder from 86box-roms
+    ln -s "/usr/share/86Box/roms" "${pkgdir}/opt/${pkgname}/roms"
+}

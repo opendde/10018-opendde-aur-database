@@ -1,0 +1,29 @@
+package_btcwallet() {
+  pkgdesc="Secure Bitcoin wallet daemon written in Go"
+  provides=('btcwallet')
+  conflicts=('btcwallet')
+
+  echo 'Installing btcwallet license...'
+  install -Dm 644 "$srcdir/src/github.com/btcsuite/btcwallet/LICENSE" \
+          -t "$pkgdir/usr/share/licenses/btcwallet"
+
+  echo 'Installing btcwallet docs...'
+  for _doc in CHANGES README.md sample-btcwallet.conf; do
+    install -Dm 644 "$srcdir/src/github.com/btcsuite/btcwallet/$_doc" \
+            -t "$pkgdir/usr/share/doc/btcwallet"
+  done
+  cp -dpr --no-preserve=ownership \
+    "$srcdir/src/github.com/btcsuite/btcwallet/docs" \
+    "$pkgdir/usr/share/doc/btcwallet"
+
+  echo 'Installing btcwallet...'
+  for _bin in btcdropwtxmgr \
+              btcsweepaccount \
+              btcwallet; do
+    install -Dm 755 "$srcdir/bin/$_bin" -t "$pkgdir/usr/bin"
+  done
+
+  echo 'Cleaning up pkgdir...'
+  find "$pkgdir" -type d -name .git -exec rm -r '{}' +
+  find "$pkgdir" -type f -name .gitignore -exec rm -r '{}' +
+}

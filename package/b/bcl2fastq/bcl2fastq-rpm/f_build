@@ -1,0 +1,5 @@
+build() {
+  mkdir -p "${srcdir}"/"${pkgname}"-"${_pkg_ver}" && cd "$_"
+  mv ../bcl2fastq2-v"${_pkg_ver}"."${_pkg_build}"-Linux-x86_64.rpm ./
+  bsdtar -xf bcl2fastq2-v"${_pkg_ver}"."${_pkg_build}"-Linux-x86_64.rpm
+}

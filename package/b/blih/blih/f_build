@@ -1,0 +1,5 @@
+build() {
+	cd "${pkgname}-${pkgver}"
+	mv "${pkgname}.py" "${pkgname}"
+	chmod 755 "${pkgname}"
+}

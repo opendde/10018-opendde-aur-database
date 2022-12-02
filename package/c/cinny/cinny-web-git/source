@@ -1,0 +1,1 @@
+("${_pkgname}::git+https://github.com/ajbura/cinny.git#branch=dev")

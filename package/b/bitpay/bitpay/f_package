@@ -1,0 +1,24 @@
+package() {
+
+    # Prep destination
+    mkdir -p ${pkgdir}/opt/bitpay
+    cd ${pkgdir}/opt/bitpay
+
+    # Unzip the binary package
+    unzip ${startdir}/BitPay-linux.zip
+    
+    # Remove arch suffix 
+    mv BitPay-linux/* .
+    rmdir BitPay-linux
+
+    # Fix file permissions
+    find ${pkgdir}/opt/bitpay/ -type f -print0 | xargs -0 chmod a+r
+
+    # Symlink in to the default PATH
+    mkdir -p ${pkgdir}/usr/bin
+    ln -s /opt/bitpay/BitPay ${pkgdir}/usr/bin/bitpay
+
+    # Create desktop icon
+    install -Dm644 "$srcdir"/bitpay.desktop "$pkgdir/usr/share/applications/bitpay.desktop"
+    install -Dm644 "$srcdir"/BitPay-linux/512x512.png "$pkgdir/usr/share/pixmaps/bitpay.png"
+}

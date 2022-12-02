@@ -1,0 +1,9 @@
+package_avenida() {
+    pkgdesc+=' (GTK2 version)'
+    groups=('mate')
+    conflicts=("${pkgbase}-gtk3")
+    depends=('dconf' 'gtk2' 'startup-notification')
+
+    cd "${srcdir}/${pkgbase}-gtk2"
+    make DESTDIR="${pkgdir}" install
+}

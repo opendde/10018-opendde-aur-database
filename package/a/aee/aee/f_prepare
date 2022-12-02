@@ -1,0 +1,7 @@
+prepare() {
+	cd "$srcdir/$pkgname-$pkgver"
+	chmod 644 aee.c help.c localize.c help.ae
+	patch -p0 < "$srcdir/fix_init_file_loc.patch"
+	patch -p0 < "$srcdir/fix_help_file_loc.patch"
+	patch -p0 < "$srcdir/fix_help_file_txt.patch"
+}

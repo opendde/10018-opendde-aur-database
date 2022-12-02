@@ -1,0 +1,8 @@
+build () {
+  cd ${srcdir}/bertini_real
+  libtoolize
+  autoreconf -i
+  CPPFLAGS="$CPPFLAGS -I/usr/include/bertini"
+  ./configure --prefix=/usr CPPFLAGS="$CPPFLAGS" --includedir=/usr/include/bertini_real
+  make
+}

@@ -1,0 +1,5 @@
+package() {
+    # Copy archlinux arduino avr core
+    install -dm755 "${pkgdir}/usr/share/arduino/hardware/archlinux-arduino"
+    cp -a "${srcdir}/avr" "${pkgdir}/usr/share/arduino/hardware/archlinux-arduino"
+}

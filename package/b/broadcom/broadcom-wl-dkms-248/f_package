@@ -1,0 +1,14 @@
+package() {
+  cd "${srcdir}"
+
+  local dest="${pkgdir}/usr/src/${pkgname/-dkms/}-${pkgver}"
+
+  mkdir -p "${dest}"
+  cp -RL src lib Makefile dkms.conf "${dest}"
+  chmod a-x "${dest}/lib/LICENSE.txt" # Ships with executable bits set
+
+  mkdir -p "${pkgdir}/usr/share/licenses/${pkgname}"
+  ln -rs "${dest}/lib/LICENSE.txt" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+
+  install -D -m 644 broadcom-wl-dkms.conf "${pkgdir}/etc/modprobe.d/broadcom-wl-dkms.conf"
+}

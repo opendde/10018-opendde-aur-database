@@ -1,0 +1,5 @@
+build() {
+  cd "${pkgname%-git}"
+
+  cargo build --release --locked
+}

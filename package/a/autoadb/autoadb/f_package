@@ -1,0 +1,3 @@
+package() {
+  cargo install --no-track --root "${pkgdir}"/usr --path "${srcdir}/${pkgname}"
+}

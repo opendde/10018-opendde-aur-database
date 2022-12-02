@@ -1,0 +1,10 @@
+package() {
+  depends=('cairo' 'fontconfig' 'gcc-libs' 'gdk-pixbuf2' 'glib2' 'glibc' 'gtk3'
+           'libpng' 'libsm' 'libx11' 'libxxf86vm' 'openssl' 'pango' 'webkit2gtk' 'zlib')
+
+  bsdtar -xf data.tar.zst -C "$pkgdir"
+
+  rm -r "$pkgdir"{/etc/,/usr/share/menu/}
+  install -dm755 "$pkgdir/usr/share/licenses/$pkgname"
+  ln -sr "$pkgdir/usr/share/BeerSmith${pkgver%%.*}/license.rtf" -t "$pkgdir/usr/share/licenses/$pkgname/"
+}

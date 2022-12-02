@@ -1,0 +1,7 @@
+prepare() {
+    cd "${srcdir}"/giflib-${pkgver}
+    source android-env ${_android_arch}
+
+    check_ndk_version_ge_than 18.0
+    patch -Np1 -i "../Makefile.patch"
+}

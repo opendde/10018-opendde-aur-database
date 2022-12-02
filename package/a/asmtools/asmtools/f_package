@@ -1,0 +1,5 @@
+package() {
+  cd ${srcdir}/${pkgname}-${_version}-build/release
+  install -D -m 644 lib/asmtools.jar ${pkgdir}/usr/share/java/${pkgname}/asmtools.jar
+  install -Dm644 LICENSE ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
+}

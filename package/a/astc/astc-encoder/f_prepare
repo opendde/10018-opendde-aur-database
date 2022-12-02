@@ -1,0 +1,6 @@
+prepare() {
+    git -C astc-encoder submodule init
+    git -C astc-encoder config --local submodule.Source/GoogleTest.url "${srcdir}/googletest"
+    git -C astc-encoder -c protocol.file.allow='always' submodule update
+    patch -d astc-encoder -Np1 -i "${srcdir}/010-astc-encoder-use-shared-library.patch"
+}

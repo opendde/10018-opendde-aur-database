@@ -1,0 +1,53 @@
+_fn_pydepends() {
+  # Paste in from setup.py. This function does NOT work in zsh.
+local _requires="
+requires = [
+    'botocore>=1.19.0,<1.20.0',
+    'cement==2.8.2',
+    'colorama>=0.2.5,<0.4.4',  # use the same range that 'docker-compose' uses
+    'future>=0.16.0,<0.17.0',
+    'pathspec==0.5.9',
+    'python-dateutil>=2.1,<3.0.0',  # use the same range that 'botocore' uses
+    'requests>=2.20.1,<=2.24',
+    'setuptools >= 20.0',
+    'semantic_version == 2.5.0',
+    'six>=1.12.0,<=1.15.0',
+    'termcolor == 1.1.0',
+    'wcwidth>=0.1.7,<0.2.0',
+    #found further down in setup.py
+    'PyYAML>=5.3.1,<5.4',  # use the same range that 'aws-cli' uses. This is also compatible with 'docker-compose'
+    'urllib3>=1.25.4,<1.26',
+    # use the same ranges as 'docker-py':
+    'docker-compose >= 1.25.2, < 1.26.0',
+    'blessed>=1.9.5',
+    #Part of Botocore
+    #'docutils<0.16,>=0.10'
+]
+"
+  # Convert requires=[] to local _requires=()
+  _requires="${_requires//requires = \[/local _requires=(}"
+  _requires="${_requires//\]/)}"
+  eval "${_requires}"
+  _requires=("${_requires[@]// /}")    # embedded spaces
+  _requires=("${_requires[@]%,}")      # trailing commas
+  _requires=("${_requires[@]//==/$3}") # translate ==
+  _requires=("${_requires[@]#python-}") # remove leading python-
+  local _pynoless=" $2 "               # we can search for ' foo '
+  _pydepends=()
+  local _pyst1
+  for _pyst1 in "${_requires[@]}"; do # foo>=0.0,<=0.0
+    _pyst1="${_pyst1,,}"
+    local _pyname="${_pyst1%%[<=>]*}" # foo
+    _pyst1="${_pyst1#${_pyname}}"     # >=0.0,<=0.0
+    local IFS=','
+    local _pyst2=(${_pyst1})          # (>=0.0 <=0.0)
+    _pyst2=("${_pyst2[@]/#/$1${_pyname}}") # (foo>=0.0 foo<=0.0)
+    local _pystn
+    for _pystn in "${!_pyst2[@]}"; do
+      if [[ "${_pyst2[${_pystn}]}" == *\<* ]] && [ "${_pynoless// ${_pyname} /}" != "${_pynoless}" ]; then
+        unset _pyst2[${_pystn}]
+      fi
+    done
+    _pydepends+=("${_pyst2[@]}")
+  done
+}

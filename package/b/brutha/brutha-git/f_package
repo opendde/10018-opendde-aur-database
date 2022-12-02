@@ -1,0 +1,5 @@
+package() {
+  cd "${pkgname%-git}"
+  python2 setup.py install --root="${pkgdir}"/ --optimize=1
+  install -Dm644 README "${pkgdir}/usr/share/doc/${pkgname}/README"
+}

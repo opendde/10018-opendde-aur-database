@@ -1,0 +1,9 @@
+build() {
+    cd "$pkgname-$pkgver"
+    go build \
+        -trimpath \
+        -buildmode=pie \
+        -mod=readonly \
+        -modcacherw \
+        -ldflags "-extldflags \"${LDFLAGS}\" -X main.builtBy=amfora-AUR -X main.commit=922e7981a92cb7bf0d7b3baf1694d0fffe90d448"
+}

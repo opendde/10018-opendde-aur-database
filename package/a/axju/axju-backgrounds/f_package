@@ -1,0 +1,6 @@
+package() {
+    cd axju-os/src/backgrounds
+    mkdir -p ${pkgdir}/usr/share/backgrounds/${pkgname}
+    cp -rf * ${pkgdir}/usr/share/backgrounds/${pkgname}
+    #install -Dm644 README.org "${pkgdir}/usr/share/doc/${pkgname}/README.org"
+}

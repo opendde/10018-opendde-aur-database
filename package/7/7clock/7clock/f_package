@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+
+  install -Dm755 "target/release/7clock" "$pkgdir/usr/bin/7clock"
+  install -Dm644 "LICENSE-MIT" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

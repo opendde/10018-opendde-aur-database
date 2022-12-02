@@ -1,0 +1,9 @@
+package() {
+  
+  cd ${srcdir}
+  
+  install -Dm644 BurpSuiteCn.jar -t ${pkgdir}/usr/share/burpsuite/
+
+  install -Dm644 burp-cn.hook -t ${pkgdir}/usr/share/libalpm/hooks/
+  
+}

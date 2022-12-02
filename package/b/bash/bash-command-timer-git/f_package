@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  install -D -m0755 "$srcdir/$pkgname-$pkgver/bash_command_timer.sh" \
+    "$pkgdir/usr/share/bash-command-timer/bash_command_timer.sh"
+}

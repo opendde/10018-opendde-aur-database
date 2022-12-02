@@ -1,0 +1,12 @@
+package() {
+    install -d "${pkgdir}"/usr/bin
+
+    for _arch in ${_architectures}; do
+        source android-env ${_arch}
+        install -m 755 android-${_arch}-cmake "${pkgdir}"/usr/bin/
+
+        for _pyver in ${_python_versions}; do
+            install -m 755 android-${_arch}-cmake-py${_pyver} "${pkgdir}"/usr/bin/
+        done
+    done
+}

@@ -1,0 +1,23 @@
+build() {
+  cd ${pkgname}-2.0.0
+
+  ./autogen.sh
+
+  ./configure --prefix=/usr \
+    --enable-btg-config \
+    --enable-session-saving \
+    --enable-event-callback \
+    --enable-command-list \
+    --enable-upnp \
+    --enable-gui \
+    --enable-www \
+    --enable-url \
+    --with-boost-date-time=mt \
+    --with-boost-filesystem=mt \
+    --with-boost-thread=mt \
+    --with-boost-regex=mt \
+    --with-boost-program-options=mt
+    #--enable-cli \
+
+  make
+}

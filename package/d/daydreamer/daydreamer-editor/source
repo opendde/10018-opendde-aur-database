@@ -1,0 +1,1 @@
+("${pkgname}-${_app_editor[1]}.zip::https://drive.google.com/uc?export=download&id=${_app_editor[0]}"

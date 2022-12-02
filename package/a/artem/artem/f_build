@@ -1,0 +1,16 @@
+build() {
+	cd "$pkgname-$pkgver"
+	export RUSTUP_TOOLCHAIN=stable
+	export CARGO_TARGET_DIR=target
+	cargo build --release --frozen
+
+	#create a completions and doc folder
+	mkdir -p deployment/completions
+	mkdir -p deployment/doc
+	#copy completion files and man page
+	cp -u target/release/build/artem-*/out/* deployment/completions/
+	#move man page to doc folder
+	mv deployment/completions/artem.1 deployment/doc/
+	#copy binary file
+	cp -u target/release/artem deployment
+}

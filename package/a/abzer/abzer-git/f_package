@@ -1,0 +1,4 @@
+package() {
+  cd "${srcdir}/abzer"
+  python setup.py install --root="$pkgdir" --optimize=1
+}

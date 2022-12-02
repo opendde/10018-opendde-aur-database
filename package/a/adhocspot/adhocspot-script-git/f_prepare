@@ -1,0 +1,3 @@
+prepare() {
+  chmod 755 "${srcdir}/${_pkgname}/adhocspot.sh" # So that pkgver() can execute it.
+}

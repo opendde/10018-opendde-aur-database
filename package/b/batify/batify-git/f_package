@@ -1,0 +1,4 @@
+package() {
+  cd "$srcdir/$_pkgname"
+  install -Dm644 99-${_pkgname}.rules ${pkgdir}/etc/udev/rules.d/99-${_pkgname}.rules
+}

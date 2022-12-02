@@ -1,0 +1,10 @@
+build() {
+  cd apache-${_pkgbase}-${pkgver}
+  export JAVA_HOME=/usr/lib/jvm/java-7-jdk
+  ./bootstrap.sh
+  bootstrap/bin/ant -Ddest=optional -f fetch.xml
+  _replace_lib /usr/share/java/junit.jar lib/optional/junit-4.12.jar
+  _replace_lib /usr/share/java/hamcrest-core.jar lib/optional/hamcrest-core-1.3.jar
+  _replace_lib /usr/share/java/hamcrest-library.jar lib/optional/hamcrest-library-1.3.jar
+  bootstrap/bin/ant dist
+}

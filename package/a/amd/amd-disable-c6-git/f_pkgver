@@ -1,0 +1,9 @@
+pkgver() {
+  # shellcheck disable=SC2154
+  cd "${srcdir}/${_gitname}" || {
+        msg "Failed to cd into ${srcdir}/${_gitname}"
+        return 1
+  }
+
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}

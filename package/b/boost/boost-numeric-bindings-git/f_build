@@ -1,0 +1,4 @@
+build() {
+    cd "$srcdir/$_gitname"
+    python2 configure --prefix=/usr
+}

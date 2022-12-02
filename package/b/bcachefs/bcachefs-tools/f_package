@@ -1,0 +1,4 @@
+package() {
+	cd "$pkgname"
+	make PREFIX=/usr $MAKEFLAGS DESTDIR="$pkgdir/" install
+}

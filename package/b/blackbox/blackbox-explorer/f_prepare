@@ -1,0 +1,6 @@
+prepare() {
+	cd "$_reponame-$pkgver"
+
+	# Allow higher node version
+	sed 's#"node": "#&>=#' -i package.json
+}

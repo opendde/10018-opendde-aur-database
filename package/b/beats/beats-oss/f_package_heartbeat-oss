@@ -1,0 +1,6 @@
+package_heartbeat-oss() {
+    pkgdesc='Ping remote services for availability and log results to Logstash or directly to Elasticsearch OSS or OpenSearch'
+
+    _do_package_beat
+    cp -R monitors.d "$pkgdir/etc/$pkgname/"
+}

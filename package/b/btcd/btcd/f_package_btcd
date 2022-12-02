@@ -1,0 +1,30 @@
+package_btcd() {
+  pkgdesc="An alternative full node Bitcoin implementation written in Go"
+  provides=('btcd')
+  conflicts=('btcd')
+
+  echo 'Installing btcd license...'
+  install -Dm 644 "$srcdir/src/github.com/btcsuite/btcd/LICENSE" \
+          -t "$pkgdir/usr/share/licenses/btcd"
+
+  echo 'Installing btcd docs...'
+  for _doc in CHANGES README.md sample-btcd.conf; do
+    install -Dm 644 "$srcdir/src/github.com/btcsuite/btcd/$_doc" \
+            -t "$pkgdir/usr/share/doc/btcd"
+  done
+  cp -dpr --no-preserve=ownership "$srcdir/src/github.com/btcsuite/btcd/docs" \
+    "$pkgdir/usr/share/doc/btcd"
+
+  echo 'Installing btcd...'
+  for _bin in btcaddblock \
+              btcctl \
+              btcd \
+              btcfindcheckpoint \
+              btcgencerts; do
+    install -Dm 755 "$srcdir/bin/$_bin" -t "$pkgdir/usr/bin"
+  done
+
+  echo 'Cleaning up pkgdir...'
+  find "$pkgdir" -type d -name .git -exec rm -r '{}' +
+  find "$pkgdir" -type f -name .gitignore -exec rm -r '{}' +
+}

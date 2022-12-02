@@ -1,0 +1,10 @@
+package_apache-arrow() {
+    provides=('arrow' 'parquet-cpp')
+    conflicts=('arrow' 'parquet-cpp')
+
+    cd "$srcdir/arrow-$pkgbase-$pkgver/cpp/build"
+    mkdir -p "$pkgdir"
+    cmake -DCMAKE_INSTALL_PREFIX=$pkgdir/usr ..
+    ninja install
+    find "${pkgdir}/usr/lib/" -name "*testing*" -delete
+}

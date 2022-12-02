@@ -1,0 +1,9 @@
+package() {
+	cd "${pkgname}-${pkgver}"
+	make prefix="${pkgdir}/usr" install
+	install -Dm644 License.txt ${pkgdir}/usr/share/licenses/${pkgdir}/License.txt
+	install -Dm644 ../ATTRACT.MODE.intro.16-9.v6.1080p.mp4 ${pkgdir}/usr/share/attract/intro/intro.mp4
+	install -Dm644 ../ATTRACT.MODE.intro.4-3.v6.1080p.mp4 ${pkgdir}/usr/share/attract/intro/intro_4x3.mp4
+	install -Dm644 util/icon.png ${pkgdir}/usr/share/pixmaps/attract.png
+	install -Dm644 ${srcdir}/attract.desktop ${pkgdir}/usr/share/applications/attract.desktop
+}

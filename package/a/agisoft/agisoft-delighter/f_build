@@ -1,0 +1,39 @@
+build() {
+    # Create desktop entries
+    echo "[Desktop Entry]
+Type=Application
+Name=Agisoft De-Lighter
+Comment=Remove shadows from model textures
+Exec=agisoft-delighter
+MimeType=application/agisoft.dlz
+Icon=agisoft-delighter
+Terminal=false
+Categories=Science;ImageProcessing" > "$srcdir/agisoft-delighter.desktop"
+
+    # Create Delighter MIME type file
+    echo '<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+    <mime-type type="application/agisoft.dlz">
+        <comment>Delighter Projects</comment>
+        <icon name="application-agisoft-dlz"/>
+        <glob-deleteall/>
+        <glob pattern="*.dlz"/>
+    </mime-type>
+</mime-info>' > "$srcdir/${pkgname}-mime.xml"
+
+    # Create 128x128 application icons
+    base64 -d "$srcdir/agisoft-delighter-icon-encoded.txt" > "$srcdir/agisoft-delighter_128.png"
+    
+    # Create 128x128 mime icons
+    cp "$srcdir/agisoft-delighter_128.png" "$srcdir/application-agisoft-dlz_128.png"
+    
+    # Create icons for other resolutions
+    for _res in 16 32 48 64; do
+        convert "$srcdir/agisoft-delighter_128.png" -resize ${_res}x${_res} "$srcdir/agisoft-delighter_${_res}.png"
+        convert "$srcdir/application-agisoft-dlz_128.png" -resize ${_res}x${_res} "$srcdir/application-agisoft-dlz_${_res}.png"
+    done
+    
+    # Create executables for /usr/bin
+    echo "#!/bin/bash
+/opt/agisoft/${_pkgname}/delighter.sh \$@" > "$srcdir/agisoft-delighter"
+}

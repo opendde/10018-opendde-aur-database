@@ -1,0 +1,9 @@
+build() {
+    cd "${srcdir}"/libjpeg-turbo-${pkgver}
+    source android-env ${_android_arch}
+
+    android-${_android_arch}-cmake \
+        -DWITH_JPEG8=ON \
+        .
+    make $MAKEFLAGS
+}

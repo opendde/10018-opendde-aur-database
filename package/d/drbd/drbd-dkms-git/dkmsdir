@@ -1,0 +1,1 @@
+"${pkgdir}/usr/src/drbd-${pkgver%%_*}"

@@ -1,0 +1,5 @@
+build() {
+	cd "$pkgname-v$pkgver"
+	cmake -DCMAKE_INSTALL_PREFIX=/usr -DBIPSCRIPT_VERSION=v$pkgver .
+	make
+}

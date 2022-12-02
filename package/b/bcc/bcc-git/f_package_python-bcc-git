@@ -1,0 +1,21 @@
+package_python-bcc-git() {
+	pkgdesc='BPF Compiler Collection - Python 3 bindings - latest git code'
+	arch=('any')
+	depends=('bcc-git' 'python')
+	optdepends=('python-netaddr: Network address representation and manipulation'
+		'python-pyroute2: Netlink and Linux network configuration')
+	provides=("python-bcc=${pkgver}")
+	conflicts=('python-bcc')
+
+	cd "${srcdir}/${pkgbase}/build"
+
+	# Force a quick python3 binding build (C library is already built)
+	cmake -DREVISION="${pkgver}" \
+		-DPYTHON_CMD="python" \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=/usr/lib ..
+	make -C src/python
+
+	# Install just those bindings
+	make -C src/python DESTDIR="${pkgdir}" install
+}

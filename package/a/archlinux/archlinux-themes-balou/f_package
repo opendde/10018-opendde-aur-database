@@ -1,0 +1,4 @@
+package() {
+  install -d "${pkgdir}/usr/share/themes"
+  cp -a "${srcdir}/themes/." "${pkgdir}/usr/share/themes"
+}

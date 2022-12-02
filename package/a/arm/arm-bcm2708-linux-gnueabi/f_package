@@ -1,0 +1,17 @@
+package() {
+
+  for tc_dir in ${srcdir}/tools/arm-bcm2708/arm-bcm2708*
+  do
+
+    tc=$(basename ${tc_dir})
+
+    install -d ${pkgdir}/{opt,usr/bin/${tc}}
+    cp -a ${tc_dir} ${pkgdir}/opt
+
+    for i in $(find ${pkgdir}/opt -name "${tc}-*")
+    do
+      ln -s /opt/${tc}/bin/${i##*/} ${pkgdir}/usr/bin/${tc}/${i##*i-}
+    done
+
+  done
+}

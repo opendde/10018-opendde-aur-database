@@ -1,0 +1,40 @@
+build() {
+	cd "${srcdir}/binutils-${pkgver}"
+
+  export MAKEINFO=${srcdir}/usr/bin/makeinfo
+
+  install -d build
+  cd build
+  export CC="gcc -L$(pwd)/bfd/.libs/"
+
+  if [ "${CARCH}" = "x86_64" ]; then
+    ../configure --build=$(../config.guess) \
+                 --disable-multilib \
+                 --disable-nls \
+                 --enable-64-bit-bfd \
+                 --enable-install-libbfd \
+                 --includedir=/usr/$(../config.guess)/include \
+                 --infodir=/usr/share/info \
+                 --libdir=/usr/lib \
+                 --mandir=/usr/share/man \
+                 --prefix=/usr \
+                 --target=avr \
+                 --disable-werror
+  else
+    ../configure --build=$(../config.guess) \
+                 --disable-nls \
+                 --enable-install-libbfd \
+                 --includedir=/usr/$(../config.guess)/include \
+                 --infodir=/usr/share/info \
+                 --libdir=/usr/lib \
+                 --mandir=/usr/share/man \
+                 --prefix=/usr \
+                 --target=avr \
+                 --disable-werror
+  fi
+
+  # This checks the host environment and makes sure all the necessary tools are available to compile Binutils.
+  make configure-host || return 1
+
+  make tooldir=/usr || return 1
+}

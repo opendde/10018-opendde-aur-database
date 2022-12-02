@@ -1,0 +1,6 @@
+prepare() {
+  cd "$pkgname"
+  # strip https:// from canonical URL
+  go mod init "${url#https://}" || echo 'already modded'
+  go mod tidy
+}

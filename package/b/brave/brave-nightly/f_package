@@ -1,0 +1,10 @@
+package() {
+    cp -a --reflink=auto brave/opt "$pkgdir/opt"
+    cp -a --reflink=auto brave/usr "$pkgdir/usr"
+    
+    install -Dm0755 "$pkgname.sh" "$pkgdir/usr/bin/brave-nightly"
+    install -Dm0644 "brave/opt/brave.com/brave-nightly/product_logo_128_nightly.png" "$pkgdir/usr/share/pixmaps/brave-browser-nightly.png"
+    install -Dm0664 -t "$pkgdir/usr/share/licenses/$pkgname" "brave/opt/brave.com/brave-nightly/LICENSE"
+    # allow firejail users to get the suid sandbox working
+    chmod 4755 "$pkgdir/opt/brave.com/brave-nightly/chrome-sandbox"
+}

@@ -1,0 +1,7 @@
+package_acarsdec-git-airspy() {
+  pkgdesc="Multi-channel ACARS decoder with airspy backend"
+  depends=('airspy' 'libusb')
+
+  cd "$pkgbase"
+  install -Dm755 build-airspy/acarsdec "$pkgdir/usr/bin/acarsdec"
+}

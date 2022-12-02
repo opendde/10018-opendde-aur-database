@@ -1,0 +1,4 @@
+build() {
+  cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=RelWithDebInfo -B build -S "${pkgname%-git}"
+  cmake --build build --config RelWithDebInfo
+}

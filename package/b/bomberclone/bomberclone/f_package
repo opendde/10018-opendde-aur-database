@@ -1,0 +1,12 @@
+package() {
+  make -C "$pkgname-$pkgver" DESTDIR="$pkgdir" install
+
+  # package desktop shortcut
+  install -Dm644 $pkgname-$pkgver/$pkgname.desktop \
+    "$pkgdir/usr/share/applications/$pkgname.desktop"
+
+  # create a symlink to the icon
+  install -d "$pkgdir/usr/share/pixmaps"
+  ln -s "/usr/share/games/$pkgname/pixmaps/$pkgname.png" \
+    "$pkgdir/usr/share/pixmaps/$pkgname.png"
+}

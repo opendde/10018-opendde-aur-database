@@ -1,0 +1,5 @@
+prepare() {
+  cd ${srcdir}/${pkgname}-${pkgver}
+  patch -p1 -i ../update.patch
+  patch -p1 -i ../fix-namespacing.patch
+}

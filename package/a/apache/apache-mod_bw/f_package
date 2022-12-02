@@ -1,0 +1,8 @@
+package() {
+  cd "$srcdir"
+
+  install -Dm644 .libs/$_pkgname.so $pkgdir/$_MODDIR/$_pkgname.so
+
+  # install docs
+  install -Dm644 $_pkgname.txt $pkgdir/$_DOCDIR/$_pkgname.txt
+}

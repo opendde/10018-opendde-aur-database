@@ -1,0 +1,17 @@
+package() {
+	msg2 'aws-vault binary'
+	pushd "${srcdir}/${pkgname}" >/dev/null
+	{
+		install -Dm755 "aws-vault-git" "${pkgdir}/usr/bin/aws-vault"
+		install -Dm644 "LICENSE" "${pkgdir}/usr/share/licenses/aws-vault-git/LICENSE"
+	}
+	popd >/dev/null
+
+	msg2 'completion files'
+	pushd "${srcdir}/${pkgname}" >/dev/null
+	{
+		install -Dm644 "contrib/completions/bash/aws-vault.bash" "${pkgdir}/usr/share/bash-completion/completions/aws-vault"
+		install -Dm644 "contrib/completions/zsh/aws-vault.zsh" "${pkgdir}/usr/share/zsh/site-functions/_aws-vault"
+	}
+	popd >/dev/null
+}

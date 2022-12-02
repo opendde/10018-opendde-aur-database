@@ -1,0 +1,14 @@
+build() {
+  cd bamf
+
+  export PYTHON=/usr/bin/python2
+
+  ./autogen.sh \
+    --prefix='/usr' \
+    --localstatedir='/var' \
+    --libexecdir='/usr/lib' \
+    --sysconfdir='/etc' \
+    --disable-static
+
+  make
+}

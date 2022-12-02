@@ -1,0 +1,3 @@
+package() {
+    install -Dm644 99-noavrcp.conf -t $pkgdir/etc/systemd/system/bluetooth.service.d/
+}

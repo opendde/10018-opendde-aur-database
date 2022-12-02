@@ -1,0 +1,9 @@
+package() {
+	cd "${srcdir}"
+	install -d ${pkgdir}/usr/bin
+	install -d ${pkgdir}/usr/share/{apertium,applications,pixmaps,}
+	install -m 644 apertium-caffeine.jar "${pkgdir}/usr/share/apertium/"
+	install -m 644 *.desktop "${pkgdir}/usr/share/applications/"
+	install -m 644 apertium.png "${pkgdir}/usr/share/pixmaps/apertium-caffeine.png"
+	install -m 755 ${pkgname} "${pkgdir}/usr/bin/"
+}

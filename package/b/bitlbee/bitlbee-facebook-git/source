@@ -1,0 +1,1 @@
+("git+https://github.com/bitlbee/${pkgname%-git}.git")

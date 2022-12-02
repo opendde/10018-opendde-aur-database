@@ -1,0 +1,7 @@
+package() {
+  cd ${pkgname}
+  # binary
+  install -vDm755 -t "${pkgdir}/usr/bin" "build/${pkgname}"
+  # documentation
+  install -vDm644 -t "${pkgdir}/usr/share/doc/${pkgname}" README.md air_example.toml
+}

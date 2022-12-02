@@ -1,0 +1,5 @@
+build() {
+  cd "$pkgname"
+  ./autogen.sh --prefix=/usr --with-gnome=${_gnomever}	
+  make
+}

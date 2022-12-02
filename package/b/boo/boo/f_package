@@ -1,0 +1,6 @@
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  make DESTDIR="${pkgdir}" install
+  rm -rf "${pkgdir}/share/"
+  rm -rf "${pkgdir}/usr/share/gtksourceview-1.0/language-specs/boo.lang"
+}

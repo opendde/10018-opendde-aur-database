@@ -1,0 +1,4 @@
+pkgver() {
+  cd ${pkgname%-git}
+  printf "%s.r%s.%s" $(git log -1 --format="%cd" --date=short|tr -d - ) $(git rev-list --count HEAD) $(git rev-parse --short HEAD)
+}

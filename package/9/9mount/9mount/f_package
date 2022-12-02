@@ -1,0 +1,7 @@
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+
+  make prefix="$pkgdir/usr" install
+  mkdir -p $pkgdir/usr/share/licenses/$pkgname
+  cp $srcdir/$pkgname-$pkgver/COPYING $pkgdir/usr/share/licenses/$pkgname/
+}

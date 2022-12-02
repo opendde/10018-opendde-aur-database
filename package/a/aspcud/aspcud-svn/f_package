@@ -1,0 +1,5 @@
+package() {
+    cd "$srcdir/$pkgname"
+    cd build/release
+    make DESTDIR=${pkgdir} install
+}

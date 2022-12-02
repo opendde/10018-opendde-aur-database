@@ -1,0 +1,8 @@
+package() {
+    local _gemdir="$(ruby -e 'puts Gem.default_dir')"
+    gem install --ignore-dependencies --no-user-install -i "$pkgdir/$_gemdir" -n "$pkgdir/usr/bin" "$pkgname-$pkgver.gem"
+    install -D -m644 "$pkgdir/$_gemdir/gems/$pkgname-$pkgver/LICENSE.adoc" "$pkgdir/usr/share/licenses/$pkgname/LICENSE.adoc"
+    install -D -m644 "$pkgdir/$_gemdir/gems/$pkgname-$pkgver/man/asciidoctor.1" "$pkgdir/usr/share/man/man1/asciidoctor.1"
+    rm "$pkgdir/$_gemdir/cache/$pkgname-$pkgver.gem"
+    rm -rf "$pkgdir/$_gemdir/gems/$pkgname-$pkgver/man"
+}

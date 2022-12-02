@@ -1,0 +1,21 @@
+package() {
+	cd apulse-${pkgver}/build
+
+	make DESTDIR="${pkgdir}/" install
+
+        # Move the libs to the correct place
+        mv "${pkgdir}/usr/lib/apulse/"lib* "${pkgdir}/usr/lib/"
+        # Remove the apulse script and man page
+        rm -rf "${pkgdir}/usr/bin" "${pkgdir}/usr/share/man" "${pkgdir}/usr/lib/apulse"
+        # Install the headers
+        mkdir "${pkgdir}/usr/include"
+        cp -Rpd "../3rdparty/pulseaudio-headers/pulse" "${pkgdir}/usr/include/"
+
+	# sample asoundrc
+	install -Dm644 ../../${source[1]} \
+		"${pkgdir}/usr/share/${pkgname}/${source[1]}"
+
+	# license
+	install -Dm644 ../LICENSE.MIT \
+		"${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

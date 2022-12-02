@@ -1,0 +1,4 @@
+build() {
+  cd "${srcdir}/brillo-v${pkgver}"
+  make
+}

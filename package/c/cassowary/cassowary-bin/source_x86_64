@@ -1,0 +1,1 @@
+("cassowary-$pkgver.tar.gz::https://github.com/rogerwelin/cassowary/releases/download/v$pkgver/cassowary_Linux_x86_64.tar.gz")

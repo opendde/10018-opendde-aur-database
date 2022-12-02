@@ -1,0 +1,1 @@
+("$pkgname-$pkgver.tar.xz::https://releases.linaro.org/components/toolchain/binaries/latest-7/${_prefix}/${_filename}.tar.xz")

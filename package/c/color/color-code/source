@@ -1,0 +1,1 @@
+("${_repo_name}-${pkgver}::${url}/archive/refs/tags/${pkgver}.tar.gz")

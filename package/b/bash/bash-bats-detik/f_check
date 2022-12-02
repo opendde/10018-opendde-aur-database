@@ -1,0 +1,4 @@
+check() {
+   cd "${srcdir}/bats-detik-${pkgver}"
+   bats tests
+}

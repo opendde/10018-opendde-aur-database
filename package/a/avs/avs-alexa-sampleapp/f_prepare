@@ -1,0 +1,7 @@
+prepare() {
+	cd "${srcdir}"
+	cp "CMakeLists.txt_1" "avs-device-sdk-${pkgver}/SampleApp/CMakeLists.txt"
+	cp "CMakeLists.txt_2" "avs-device-sdk-${pkgver}/SampleApp/src/CMakeLists.txt"
+	cd "avs-device-sdk-${pkgver}/SampleApp"
+	patch -p1 < "${srcdir}/headless.patch"
+}

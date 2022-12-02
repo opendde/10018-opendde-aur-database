@@ -1,0 +1,20 @@
+package() {
+    install -d -m0755 "$pkgdir/usr/lib"
+    cp -a --reflink=auto $_srcdir "$pkgdir/usr/lib/$pkgname"
+
+    # Allow Firejail Users To Get The SUID Sandbox Working
+    chmod 4755 $pkgdir/usr/lib/$_srcdir/chrome-sandbox
+
+	# Remove Unnecessary Brave Features
+	rm -rf $pkgdir/usr/lib/$_srcdir/cron
+	rm -rf $pkgdir/usr/lib/$_srcdir/resources/brave_rewards
+	
+    install -Dm0755 "$pkgname.sh" "$pkgdir/usr/bin/$pkgname"
+    install -Dm0644 -t "$pkgdir/usr/share/applications" "brave-browser-nightly.desktop"
+    install -Dm0644 "brave-browser-nightly.png" "$pkgdir/usr/share/pixmaps/brave-browser-nightly.png"
+	LICENSES_DIR="$pkgdir/usr/share/licenses/$pkgname"
+    mkdir -p "$LICENSES_DIR"
+    if [ -f "$pkgdir/usr/lib/$pkgname/LICENSE" ] && [ -f "$pkgdir/usr/lib/$pkgname/LICENSES.chromium.html" ]; then
+      mv "$pkgdir/usr/lib/$pkgname/"{LICENSE,LICENSES.chromium.html} "$LICENSES_DIR"
+    fi
+}

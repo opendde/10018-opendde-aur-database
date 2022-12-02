@@ -1,0 +1,4 @@
+package() {
+  mkdir -p "$pkgdir/usr/bin"
+  cp bossa bossac bossash "$pkgdir/usr/bin"
+}

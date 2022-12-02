@@ -1,0 +1,5 @@
+check() {
+    cd "$srcdir/$pkgname"
+    export RUSTUP_TOOLCHAIN=stable
+    cargo test --frozen --all-features
+}

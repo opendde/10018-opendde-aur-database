@@ -1,0 +1,16 @@
+package() {
+	install -dm755 "${pkgdir}/usr/share/games/actionfps/bin_unix"
+	cp -r "${_srcdir}"/{bot,docs,mods,packages,config,scripts,assaultcube.sh,changelog.txt,README.html,server.sh,server_wizard.sh} \
+		"${pkgdir}/usr/share/games/actionfps"
+		
+	install -Dm644 "${_srcdir}/config/servercmdline.txt" "${pkgdir}/etc/actionfps/servercmdline.txt"
+	rm "${pkgdir}/usr/share/games/actionfps/config/servercmdline.txt"
+	
+	install -Dm755 "${_srcdir}/source/src/ac_client" "${pkgdir}/usr/share/games/actionfps/bin_unix/native_client"
+	install -Dm755 "${_srcdir}/source/src/ac_server" "${pkgdir}/usr/share/games/actionfps/bin_unix/native_server"
+	install -Dm644 'actionfps.png' "${pkgdir}/usr/share/pixmaps/actionfps.png"
+	install -Dm644 'actionfps.desktop' "${pkgdir}/usr/share/applications/actionfps.desktop"
+	install -Dm644 "${_srcdir}/docs/package_copyrights.txt" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+	install -Dm755 'actionfps' "${pkgdir}/usr/bin/actionfps"
+	install -Dm755 'actionfps-server' "${pkgdir}/usr/bin/actionfps-server"
+}

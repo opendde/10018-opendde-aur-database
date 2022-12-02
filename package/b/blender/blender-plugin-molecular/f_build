@@ -1,0 +1,6 @@
+build() {
+  cd ${_name}/sources/
+  sed -e "s/'-march=i686',//;s/\(core_3\)8/\19/;s/\(minor == \)8/\19/" -i setup.py
+  python setup.py build_ext --inplace
+  cp core*.so core.html -t ../${_name}
+}

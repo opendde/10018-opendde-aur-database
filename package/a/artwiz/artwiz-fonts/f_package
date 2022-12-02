@@ -1,0 +1,7 @@
+package() {
+  install -d "${pkgdir}/usr/share/fonts/artwiz-fonts"
+  for lang in en de se; do
+     install -p -m 0644 artwiz-aleczapka-$lang-${pkgver}/*.pcf "${pkgdir}/usr/share/fonts/artwiz-fonts"
+     cat artwiz-aleczapka-$lang-${pkgver}/fonts.alias >> "${pkgdir}/usr/share/fonts/artwiz-fonts/fonts.alias"
+  done
+}

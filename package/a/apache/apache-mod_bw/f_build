@@ -1,0 +1,6 @@
+build() {
+  cd "$srcdir"
+
+  # make the module
+  /usr/sbin/apxs -c -o $_pkgname.so $_pkgname.c
+}

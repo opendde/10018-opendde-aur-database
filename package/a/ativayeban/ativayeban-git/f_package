@@ -1,0 +1,7 @@
+package() {
+  install -Dm644 "${srcdir}/${_pkgname}/COPYRIGHT" "${pkgdir}/usr/share/licenses/${_pkgname}/LICENSE"
+  install "${srcdir}/${_pkgname}/${_pkgname}" -Dm755 "${pkgdir}/opt/${_pkgname}/${_pkgname}"
+  install "${srcdir}/${_pkgname}/penguin_ball.png" -Dm644 "${pkgdir}/opt/${_pkgname}/penguin_ball.png"
+  install "${startdir}/${_pkgname}.sh" -Dm755 "${pkgdir}/usr/bin/${_pkgname}"
+  install -Dm644 "${startdir}/${_pkgname}.desktop" "${pkgdir}/usr/share/applications/${_pkgname}.desktop"
+}

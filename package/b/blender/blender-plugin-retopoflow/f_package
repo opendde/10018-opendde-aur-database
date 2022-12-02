@@ -1,0 +1,9 @@
+package() {
+  cd "$srcdir/"
+  addons="$pkgdir/usr/share/blender/$(blender -v | head -n1 | cut -f2 -d ' ')/scripts/addons/"
+  if [ ! -d "$addons" ]; then
+    mkdir -p "$addons"
+  fi
+  cp -a "$_gitname" "$addons/$_gitname"
+  rm -fr "$addons/$_gitname/.git"*
+}

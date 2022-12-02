@@ -1,0 +1,6 @@
+build() {
+  cd "${srcdir}/${pkgname%-patched}-${pkgver}"
+
+  ./configure --prefix=/usr
+  make
+}

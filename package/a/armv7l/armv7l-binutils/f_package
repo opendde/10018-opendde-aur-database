@@ -1,0 +1,8 @@
+package() {
+  cd binutils-$pkgver
+
+  make DESTDIR="$pkgdir" install
+
+  # Remove files that conflict with host version
+  rm -rf "$pkgdir"/usr/{etc,include,lib,share}
+}

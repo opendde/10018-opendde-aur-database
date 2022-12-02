@@ -1,0 +1,5 @@
+build() {
+  cd "$pkgname-$pkgver"
+  ./configure --bindir=/usr/bin --libexecdir=/usr/lib/anopa
+  make
+}

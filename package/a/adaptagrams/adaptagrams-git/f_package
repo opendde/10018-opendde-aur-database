@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir/$_pkgname/cola"
+  make DESTDIR="$pkgdir" install
+  install -m644 "libcola/exceptions.h" "$pkgdir/usr/include/libcola/"
+}

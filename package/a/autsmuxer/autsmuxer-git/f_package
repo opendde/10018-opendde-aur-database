@@ -1,0 +1,3 @@
+package() {
+  install -D -m755 "${srcdir}/autsmuxer/autsmuxer.sh" "${pkgdir}/usr/bin/autsmuxer"
+}

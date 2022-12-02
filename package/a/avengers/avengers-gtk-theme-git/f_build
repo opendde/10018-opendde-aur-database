@@ -1,0 +1,4 @@
+build() {
+    cd "${srcdir}/${_pkgname}"
+    patch Install < "${srcdir}/Install.patch"
+}

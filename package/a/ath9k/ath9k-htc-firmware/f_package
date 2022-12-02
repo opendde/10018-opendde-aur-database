@@ -1,0 +1,17 @@
+package() {
+
+  # create firmware folder to put the free firmware files there
+  install -d -m755 $pkgdir/usr/lib/firmware
+
+  cd $srcdir/open-ath9k-htc-firmware-$pkgver/target_firmware
+
+  # move firmware files to firmware folder
+  cp build/{k2,magpie}/htc_*.fw $pkgdir/usr/lib/firmware
+
+  # create license folder to put the license file there
+  install -d -m755 $pkgdir/usr/share/licenses/$pkgname
+
+  # put LICENSE to license folder
+  install -m644 $srcdir/LICENSE $pkgdir/usr/share/licenses/$pkgname
+  
+}

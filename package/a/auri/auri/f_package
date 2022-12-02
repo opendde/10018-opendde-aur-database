@@ -1,0 +1,16 @@
+package() {
+    cd "$pkgname"
+    
+    local source="$srcdir/$pkgname" target="$pkgdir"
+    
+    cd "$source" && make
+    
+    install -D -m "755" "$source/binary/auri" "$target/usr/bin/auri"
+    
+    local initcpio="$target/usr/lib/initcpio"
+    
+    install -D -m "644" "$source/hook/build.sh" "$initcpio/install/auri"
+    install -D -m "644" "$source/hook/run.sh" "$initcpio/hooks/auri"
+    
+    install -D -m "644" "$source/script/auri.sh" "$target/usr/lib/auri/script"
+}

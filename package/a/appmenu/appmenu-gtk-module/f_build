@@ -1,0 +1,9 @@
+build() {
+  cd "${srcdir}/${pkgname}"
+  cmake ./ \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_LIBEXECDIR=lib
+
+  make
+}

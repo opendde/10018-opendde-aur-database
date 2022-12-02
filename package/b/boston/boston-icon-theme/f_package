@@ -1,0 +1,17 @@
+package() {
+    cd "$srcdir/${_upname}"
+
+    install -d -m755 "$pkgdir/usr/share/licenses/$pkgname"
+    install -D -m644 license "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    install -D -m644 third-party "$pkgdir/usr/share/licenses/$pkgname/third-party"
+
+    install -d -m755 "$pkgdir/usr/share/doc/$pkgname"
+    install -D -m644 patrons.md "$pkgdir/usr/share/doc/$pkgname/patrons.md"
+    install -D -m644 changelog "$pkgdir/usr/share/doc/$pkgname/CHANGELOG"
+
+    install -d -m755 "$pkgdir/usr/share/icons/$_upname"
+    for size in 16 48 128 legacy symbolic; do
+        mv $size "$pkgdir/usr/share/icons/${_upname}/$size"
+    done
+    install -D -m644 index.theme "$pkgdir/usr/share/icons/${_upname}/index.theme"
+}

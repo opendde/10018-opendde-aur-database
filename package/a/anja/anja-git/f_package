@@ -1,0 +1,6 @@
+package() {
+	cd "$srcdir/${_pkgname%-git}"
+  #  make DESTDIR="$pkgdir/" install
+  mkdir $pkgdir/usr
+  ./install $pkgdir/usr
+}

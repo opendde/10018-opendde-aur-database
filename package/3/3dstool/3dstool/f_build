@@ -1,0 +1,8 @@
+build() {
+  cd build
+
+  cmake ../3dstool \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DUSE_DEP=OFF
+  make
+}

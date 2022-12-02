@@ -1,0 +1,4 @@
+package() {
+    cd "${_name}"
+    install -Dm0755 ./target/release/aw-watcher-window-wayland -t "${pkgdir}/usr/bin/"
+}

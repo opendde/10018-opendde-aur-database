@@ -1,0 +1,20 @@
+build() {
+  cd "${_pkgbase}"-${pkgver}
+  ./configure \
+          --prefix=/usr \
+          --mandir=/usr/share/man \
+          --sysconfdir=/etc \
+          --localstatedir=/var \
+          --libexecdir=/usr/lib \
+          --with-dbusconfdir=/usr/share \
+          --enable-btpclient \
+          --enable-midi \
+          --enable-sixaxis \
+          --enable-mesh \
+          --enable-hid2hci \
+          --enable-experimental \
+	  --disable-systemd \
+          --disable-udev \
+          --enable-library # this is deprecated
+  make
+}

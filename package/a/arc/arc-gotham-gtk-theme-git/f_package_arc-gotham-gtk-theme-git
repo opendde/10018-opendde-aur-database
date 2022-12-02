@@ -1,0 +1,10 @@
+package_arc-gotham-gtk-theme-git() {
+	pkgdesc="A flat theme with transparent elements based on gotham vim scheme"
+	conflicts=('arc-gtk-theme')
+	provides=('arc-gtk-theme')
+	replaces=('gtk-theme-arc')
+
+	cd "$_pkgname"
+	./configure --prefix=/usr
+	make DESTDIR="${pkgdir}" install
+}

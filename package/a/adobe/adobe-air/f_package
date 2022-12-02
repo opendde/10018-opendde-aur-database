@@ -1,0 +1,3 @@
+package() {
+  install -Dm755 "$srcdir/adobe-air" "$pkgdir/usr/bin/adobe-air"
+}

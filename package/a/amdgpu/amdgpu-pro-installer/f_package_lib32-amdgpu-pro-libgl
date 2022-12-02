@@ -1,0 +1,21 @@
+package_lib32-amdgpu-pro-libgl () {
+    pkgdesc="AMDGPU Pro OpenGL driver (32-bit)"
+    license=('custom: AMDGPU-PRO EULA')
+    provides=('lib32-libgl')
+    depends=("amdgpu-pro-libgl=${major}_${minor}-${pkgrel}" "lib32-libdrm" "lib32-libx11" "lib32-libxcb" "lib32-libxdamage" "lib32-libxext" "lib32-libxfixes" "lib32-libxxf86vm")
+    backup=(etc/amd/amdrc etc/ld.so.conf.d/10-amdgpu-pro-i386.conf)
+
+    extract_deb "${srcdir}"/libegl1-amdgpu-pro_${major_short}-${minor}~${ubuntu_ver}_i386.deb
+    extract_deb "${srcdir}"/libgl1-amdgpu-pro-dri_${major_short}-${minor}~${ubuntu_ver}_i386.deb
+    extract_deb "${srcdir}"/libgl1-amdgpu-pro-ext_${major_short}-${minor}~${ubuntu_ver}_i386.deb
+    extract_deb "${srcdir}"/libgl1-amdgpu-pro-glx_${major_short}-${minor}~${ubuntu_ver}_i386.deb
+    extract_deb "${srcdir}"/libglapi1-amdgpu-pro_${major_short}-${minor}~${ubuntu_ver}_i386.deb
+    extract_deb "${srcdir}"/libgles2-amdgpu-pro_${major_short}-${minor}~${ubuntu_ver}_i386.deb
+    move_copyright
+
+    # extra_commands:
+    rm "${pkgdir}"/etc/amd/amdrc "${pkgdir}"/opt/amdgpu-pro/lib/xorg/modules/extensions/libglx.so "${pkgdir}"/opt/amdgpu/share/drirc.d/10-amdgpu-pro.conf
+    move_libdir "usr/lib/i386-linux-gnu" "usr/lib32"
+    move_libdir "opt/amdgpu-pro/lib/i386-linux-gnu" "usr/lib32/amdgpu-pro"
+    sed -i "s|/opt/amdgpu-pro/lib/i386-linux-gnu|#/usr/lib32/amdgpu-pro  # commented to prevent problems of booting with amdgpu-pro, use progl32 script|" "${pkgdir}"/etc/ld.so.conf.d/10-amdgpu-pro-i386.conf
+}

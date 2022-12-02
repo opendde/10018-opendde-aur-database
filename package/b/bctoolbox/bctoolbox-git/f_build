@@ -1,0 +1,9 @@
+build() {
+  cmake -B build "${_pkgname}" \
+    -DCMAKE_INSTALL_PREFIX="/usr" \
+    -DENABLE_STATIC="NO" \
+    -DENABLE_TESTS="YES" \
+    -DENABLE_TESTS_COMPONENT="YES" \
+    -Wno-dev
+  make -C build
+}

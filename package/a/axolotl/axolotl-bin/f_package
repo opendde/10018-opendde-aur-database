@@ -1,0 +1,4 @@
+package() {
+  cp -fR $srcdir/etc $pkgdir/
+  cp -fR $srcdir/usr $pkgdir/
+}

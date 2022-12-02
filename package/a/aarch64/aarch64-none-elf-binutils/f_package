@@ -1,0 +1,8 @@
+package() {
+    cd binutils-$pkgver
+
+    make DESTDIR="$pkgdir" install
+
+    rm "$pkgdir"/usr/share/man/man1/${_target}-{dlltool,nlmconv,windmc,windres}.1
+    rm -r "$pkgdir"/usr/share/info
+}

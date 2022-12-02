@@ -1,0 +1,20 @@
+package() {
+  cd "$srcdir"
+  [ $CARCH == "i686" ] && _arch=x86 || _arch=amd64
+  
+  # Install game files
+  install -d "$pkgdir"/opt/Braid
+  cp -a data/gamedata/{data,README-linux.txt} "$pkgdir"/opt/Braid/
+  install -Dm755 data/$_arch/braid "$pkgdir"/opt/Braid/braid
+  
+  # Install launch script
+  install -Dm755 launcher "$pkgdir"/usr/bin/braid
+  
+  # Install icon & desktop entry
+  install -Dm644 data/gamedata/braid.png "$pkgdir"/usr/share/pixmaps/braid.png
+  install -Dm644 braid.desktop "$pkgdir"/usr/share/applications/braid.desktop
+  
+  # Install licenses
+  install -d "$pkgdir"/usr/share/licenses/braid
+  cp -a data/gamedata/licenses "$pkgdir"/usr/share/licenses/braid/
+}

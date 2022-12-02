@@ -1,0 +1,8 @@
+package() {
+  cd "$pkgname-$pkgver"
+  make -C build DESTDIR="$pkgdir/" install
+  install -Dm644 -t "$pkgdir/usr/share/doc/$pkgname/" \
+    ChangeLog README.md man/specification.txt WIRESHARK
+  install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname/" \
+    AUTHORS COPYING LICENSE
+}

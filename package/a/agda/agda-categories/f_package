@@ -1,0 +1,15 @@
+package() {
+    install -Dm644 agda-categories.agda-lib.in "$pkgdir"/usr/share/agda/lib/agda-categories.agda-lib
+
+    cd $pkgname-$pkgver
+
+    cp -pr _build/$_agdaver/agda/src/* src
+    install -dm755 "$pkgdir"/usr/share/agda/lib/categories
+    cp -pr src/* "$pkgdir"/usr/share/agda/lib/categories/
+
+    # Symlink to avoid writing to this place when agda-lib is present
+    install -dm755 "$pkgdir"/usr/share/agda/lib/_build/$_agdaver/agda
+    ln -s ../../../categories "$pkgdir"/usr/share/agda/lib/_build/$_agdaver/agda/
+
+    install -D -m644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}

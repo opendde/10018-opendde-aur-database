@@ -1,0 +1,11 @@
+build() {
+  cmake -B build-qt5 -S ${pkgbase%-git} \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DUSE_QT6=OFF
+  cmake --build build-qt5
+
+  cmake -B build-qt6 -S ${pkgbase%-git} \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DUSE_QT6=ON
+  cmake --build build-qt6
+}

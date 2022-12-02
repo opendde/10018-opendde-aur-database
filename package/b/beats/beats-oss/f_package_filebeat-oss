@@ -1,0 +1,7 @@
+package_filebeat-oss() {
+    pkgdesc='Sends log files to Logstash or directly to Elasticsearch OSS or OpenSearch'
+
+    _do_package_beat
+    cp -R build/package/modules.d "$pkgdir/etc/$pkgname/"
+    cp -R build/package/module "$pkgdir/usr/share/$pkgname/"
+}

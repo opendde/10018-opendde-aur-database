@@ -1,0 +1,5 @@
+build() {
+  cd "$srcdir/${_pkgname}-$pkgver"
+  ./configure --prefix=/usr --without-debug --with-pythonlibs="-lpthread -lm -ldl -lpython2.7" --with-pythonincludes=-I/usr/include/python2.7
+  make
+}

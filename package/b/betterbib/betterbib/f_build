@@ -1,0 +1,5 @@
+build() {
+  cd ${pkgname}-${pkgver}
+  export PYTHONHASHSEED=0
+  python -c "from setuptools import setup; setup();" build
+}

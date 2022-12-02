@@ -1,0 +1,5 @@
+package() {
+  mkdir -p $pkgdir/etc/init.d/
+  cp "ananicy.initd" $pkgdir/etc/init.d/ananicy
+  install=ananicy-openrc.install
+}

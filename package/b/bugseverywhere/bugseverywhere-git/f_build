@@ -1,0 +1,7 @@
+build() {
+  cd "bebe-${_commit}"
+  sed -i 's/	python /	python2 /' Makefile
+  sed -i 's/	python /	python2 /' doc/Makefile
+  make libbe/_version.py
+  make RST2MAN=/usr/bin/rst2man2.py DOC=man build
+}

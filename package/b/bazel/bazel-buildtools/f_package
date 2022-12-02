@@ -1,0 +1,5 @@
+package() {
+  cd buildtools-$pkgver
+  install -d "$pkgdir"/usr/bin
+  install -Dm755 bazel-bin/buildifier/*/buildifier bazel-bin/buildozer/*/buildozer bazel-bin/unused_deps/*/unused_deps $pkgdir/usr/bin/
+}

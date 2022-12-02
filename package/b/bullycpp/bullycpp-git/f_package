@@ -1,0 +1,7 @@
+package() {
+  cd build
+  make PREFIX=/usr INSTALL_ROOT="$pkgdir" install
+
+  install -D -m644 ../bullycpp/LICENSE "$pkgdir/usr/share/licenses/${_pkgname}/LICENSE"
+  install -D -m644 ../../98-serialcable.rules "$pkgdir"/etc/udev/rules.d/98-serialcable.rules
+}

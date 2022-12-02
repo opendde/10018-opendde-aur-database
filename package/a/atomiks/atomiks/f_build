@@ -1,0 +1,7 @@
+build() {
+	cd "$srcdir/$pkgname"-"$pkgver"
+	#The file size is not that much bigger anyway and it removes a somewhat rare build dependency
+	#sed  -i '/upx/d' Makefile
+	make
+	make editor
+}

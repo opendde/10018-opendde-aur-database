@@ -1,0 +1,4 @@
+pkgver() {
+  cd "archiso-profiles" || exit
+  git describe --tags | sed 's/-/+/g'
+}

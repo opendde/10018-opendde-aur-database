@@ -1,0 +1,9 @@
+build() {
+  meson \
+    --prefix="/usr/$_target" \
+    --buildtype=plain \
+    --cross-file "picolibc-$pkgver/scripts/cross-${_target}.txt" \
+    "picolibc-$pkgver" build
+
+  meson compile -C build
+}

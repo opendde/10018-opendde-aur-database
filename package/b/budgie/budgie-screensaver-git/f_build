@@ -1,0 +1,4 @@
+build() {
+    arch-meson "$pkgname" build --libexecdir="lib/budgie-screensaver"
+    meson compile -C build
+}

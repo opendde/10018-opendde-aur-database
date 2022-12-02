@@ -1,0 +1,21 @@
+build() {
+  cd AbiWord
+  export CXXFLAGS+=" -O3 -Wno-deprecated-declarations"
+
+  LANG=C LC_CTYPE=C ./autogen.sh --prefix=/usr \
+      --enable-shared \
+      --disable-static \
+      --enable-clipart \
+      --enable-templates \
+      --enable-plugins="hrtext google bmp xslfo command pdf \
+                        passepartout eml wordperfect psion aiksaurus s5 \
+                        sdw opml garble latex epub wikipedia gimp \
+                        opendocument paint mswrite wmf mif freetranslation \
+                        ots wpg kword gdict collab iscii goffice pdb \
+                        openwriter t602 presentation mathview \
+                        openxml wml mht applix loadbindings urldict \
+                        clarisworks docbook hancom babelfish" \
+      --enable-introspection
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+  make
+}

@@ -1,0 +1,4 @@
+build() {
+    cd "$srcdir/auto-cpufreq"
+    python setup.py build
+}

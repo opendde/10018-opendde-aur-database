@@ -1,0 +1,9 @@
+prepare() {
+	cd $pkgname
+	
+	# Allow higher node version
+	sed 's#"node": "#&>=#' -i package.json
+
+	# Remove unecessary Andoid/Cordova XML build dependcy
+	patch -Np1 < "$srcdir/remove_android_build_deps.patch"
+}

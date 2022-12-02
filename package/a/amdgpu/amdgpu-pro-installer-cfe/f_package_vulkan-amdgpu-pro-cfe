@@ -1,0 +1,21 @@
+package_vulkan-amdgpu-pro-cfe () {
+    pkgdesc="AMDGPU Pro Vulkan driver"
+    license=('custom: AMDGPU-PRO EULA')
+    provides=('vulkan-driver')
+    depends=()
+    conflicts=("vulkan-amdgpu-pro")
+
+    get_debs_vulkan
+    extract_deb "${srcdir}"/amdgpu-pro-${major}-${minor}-ubuntu-${ubuntu_ver}/vulkan-amdgpu-pro_${major}-${minor}_amd64.deb
+    move_libdir "opt/amdgpu-pro/lib/x86_64-linux-gnu" "usr/lib"
+    move_copyright
+
+    # extra_commands:
+    mkdir -p "${pkgdir}"/usr/share/vulkan/icd.d/
+    mv "${pkgdir}"/opt/amdgpu-pro/etc/vulkan/icd.d/amd_icd64.json "${pkgdir}"/usr/share/vulkan/icd.d/amd_pro_icd64.json
+    mv "${pkgdir}"/usr/lib/amdvlk64.so "${pkgdir}"/usr/lib/amdvlkpro64.so
+    sed -i "s#/opt/amdgpu-pro/lib/x86_64-linux-gnu/amdvlk64.so#/usr/lib/amdvlkpro64.so#" "${pkgdir}"/usr/share/vulkan/icd.d/amd_pro_icd64.json
+    find ${pkgdir} -type d -empty -delete
+    install -Dm755 "${srcdir}"/provlk "${pkgdir}"/usr/bin/provlk
+    install -Dm755 "${srcdir}"/provlk.bash-completion "${pkgdir}"/usr/share/bash-completion/completions/provlk
+}

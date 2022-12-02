@@ -1,0 +1,6 @@
+package() {
+  install -dm755 "$pkgdir/usr/share/java"
+  cp -r . "$pkgdir/usr/share/java/aoi"
+  install -Dm755 aoi.sh "$pkgdir/usr/bin/aoi"
+  install -Dm644 "$pkgname.desktop" "$pkgdir/usr/share/applications/$pkgname.desktop"
+}

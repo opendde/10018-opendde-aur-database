@@ -1,0 +1,3 @@
+package() {
+    install -DT "$srcdir/.go/bin/ankictl-git" "$pkgdir/usr/bin/ankictl"
+}

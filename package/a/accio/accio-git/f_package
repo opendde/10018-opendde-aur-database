@@ -1,0 +1,9 @@
+package() {
+	cd "source"
+
+	mkdir -p "$pkgdir/etc/cryptsetup-keys.d/"
+	install -Dm644 "accio-deploy-key@.service" "$pkgdir/usr/lib/systemd/system/accio-deploy-key@.service"
+	install -Dm755 "accio" "$pkgdir/usr/bin/accio"
+	install -Dm644 "sd-accio" "$pkgdir/usr/lib/initcpio/install/sd-accio"
+	install -Dm644 "accio.1.gz" "$pkgdir/usr/share/man/man1/accio.1.gz"
+}

@@ -1,0 +1,1 @@
+("${_pkgname}-${pkgver}::git+https://github.com/flameshot-org/flameshot.git#commit=cda5a0f148ade1536d390ed988091848ecf62d13")

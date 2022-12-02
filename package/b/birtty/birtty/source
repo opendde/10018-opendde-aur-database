@@ -1,0 +1,1 @@
+("git+https://www.uninformativ.de/git/birtty.git#tag=v${pkgver}")

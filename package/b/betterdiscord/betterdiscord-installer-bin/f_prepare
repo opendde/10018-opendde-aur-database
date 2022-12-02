@@ -1,0 +1,7 @@
+prepare() {
+	# making .AppImage file executable
+	chmod -v +x "${pkgname}-${pkgver}.${CARCH}.AppImage"
+
+	# extract .AppImage file
+	"./${pkgname}-${pkgver}.${CARCH}.AppImage" --appimage-extract
+}

@@ -1,0 +1,8 @@
+prepare() {
+  msg2 "Creating desktop file"
+  gendesk -f -n --pkgname ${_pkgname} \
+    --pkgdesc "${pkgdesc}" \
+    --categories "Graphics;MedicalSoftware;Science;" \
+    --icon "${_pkgname}" \
+    --exec "meshMetric"
+}

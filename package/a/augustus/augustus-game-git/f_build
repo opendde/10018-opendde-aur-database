@@ -1,0 +1,6 @@
+build() {
+    cd "$srcdir/${_pkgname}"
+    mkdir -p build && cd build
+    cmake ..
+    make
+}

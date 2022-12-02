@@ -1,0 +1,3 @@
+pkgver() {
+	curl -s https://pypi.org/pypi/$pipname/json | jq -r .info.version
+}

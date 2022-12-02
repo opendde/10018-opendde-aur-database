@@ -1,0 +1,6 @@
+build() {
+  mkdir -p Uranium/build
+  cd Uranium/build
+  cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+  make
+}

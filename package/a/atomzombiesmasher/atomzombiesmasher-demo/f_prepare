@@ -1,0 +1,22 @@
+prepare() {
+    msg2 "Patching to version $pkgver..."
+    cp -aT data $_gamefolder
+    
+    msg2 "Preparing launch script..."
+    echo -e "#!/usr/bin/sh\n" \
+            "cd /opt/$_installname\n" \
+            "exec ./atomzombiesmasher \"\$@\"\n" \
+        > "launcher.sh"
+    sed -i'' 's|./mono|mono|' $_gamefolder/atomzombiesmasher
+    
+    cd $_gamefolder
+    
+    msg2 "Fixing permissions..."
+    find -type f -exec chmod 644 {} \;
+    chmod +x atomzombiesmasher
+    
+    msg2 "Removing unneeded files..."
+    rm -r {mono,libc-2*,libglib*,libcsfml*,libsfml*}
+    rm -r {libopenal.so.1,libsndfile.so.1}
+    rm -r {Accessibility,Mono.*,mscorlib,System*}.dll
+}

@@ -1,0 +1,5 @@
+package() {
+    DESTDIR="$pkgdir" cmake \
+        --build "${pkgname}/build" \
+        --target install
+}

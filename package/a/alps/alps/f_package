@@ -1,0 +1,28 @@
+package() {
+  # config
+  install -D -m644 ${pkgname}.conf "${pkgdir}/etc/${pkgname}.conf"
+  # services
+  install -D -m644 ${pkgname}-system.service \
+    "${pkgdir}/usr/lib/systemd/system/${pkgname}.service"
+  install -D -m644 ${pkgname}-user.service \
+    "${pkgdir}/usr/lib/systemd/user/${pkgname}.service"
+
+  cd "${pkgname}-${_commit}"
+  # binary
+  install -D -m755 ${pkgname} "${pkgdir}/usr/bin/${pkgname}"
+  # plugin assets
+  install -d -m755 "${pkgdir}/usr/lib/${pkgname}/plugins"
+  for plugin in plugins/*; do
+    [ -d "${plugin}/public" ] && \
+      install -d -m755 "${pkgdir}/usr/lib/${pkgname}/${plugin}" && \
+      cp -a "${plugin}/public" \
+        "${pkgdir}/usr/lib/${pkgname}/${plugin}"
+  done
+  # themes
+  cp -a themes "${pkgdir}/usr/lib/${pkgname}"
+  # docs
+  install -D -m644 README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
+  cp -a docs "${pkgdir}/usr/share/doc/${pkgname}"
+  # license
+  install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

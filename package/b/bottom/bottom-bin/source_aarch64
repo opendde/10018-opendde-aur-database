@@ -1,0 +1,1 @@
+(archive-${pkgver}.tar.gz::${url}/releases/download/${pkgver}/bottom_aarch64-unknown-linux-gnu.tar.gz)

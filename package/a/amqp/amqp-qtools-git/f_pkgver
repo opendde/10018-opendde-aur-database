@@ -1,0 +1,4 @@
+pkgver() {
+  cd "qtools"
+  echo "$(cat VERSION.txt | sed 's/-SNAPSHOT//')-$(git rev-parse --short HEAD)" | sed 's/-/./g'
+}

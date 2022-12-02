@@ -1,0 +1,4 @@
+build() {
+	cd "$srcdir/$_dirname"
+	mv "$_srcname" "$_pkgname"
+}

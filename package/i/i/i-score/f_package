@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir/i-score-build"
+  cmake --build . --target install
+  install -D -m644 "$srcdir/$_gitname/LICENSE.txt" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

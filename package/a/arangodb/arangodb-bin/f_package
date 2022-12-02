@@ -1,0 +1,17 @@
+package() {
+    msg2 "Extracting the data.tar.gz..."
+    tar -xf "data.tar.gz" -C $pkgdir
+
+    msg2 "Removing /etc/init.d"
+    rm -r $pkgdir/etc/init.d
+
+    msg2 "Moving all binaries from /usr/sbin to /usr/bin and then removing it"
+    mv $pkgdir/usr/sbin/* $pkgdir/usr/bin
+    rmdir $pkgdir/usr/sbin
+
+    msg2 "Changing /usr/sbin to /usr/bin in arangodb3.service"
+    sed -i 's/\/usr\/sbin/\/usr\/bin/g' $pkgdir/lib/systemd/system/arangodb3.service
+
+    msg2 "Moving /lib to /usr/lib"
+    mv $pkgdir/lib $pkgdir/usr
+}

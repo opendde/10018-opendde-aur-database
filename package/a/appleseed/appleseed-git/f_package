@@ -1,0 +1,4 @@
+package() {
+  DESTDIR="${pkgdir}" ninja -C build install
+  install -D -m644 "${srcdir}/${pkgname}/LICENSE.txt" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

@@ -1,0 +1,8 @@
+package() {
+    cd "${srcdir}/${pkgname}-${pkgver}"
+    make DESTDIR="${pkgdir}" install
+    # license
+    install -D -m644 "${srcdir}/${pkgname}-${pkgver}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    # systemd unit
+    install -D -m644 "${srcdir}/amavisd-milter.service" "${pkgdir}/usr/lib/systemd/system/amavisd-milter.service"
+}

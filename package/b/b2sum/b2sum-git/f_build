@@ -1,0 +1,4 @@
+build() {
+    cd "${srcdir}/${_pkgname}/b2sum"
+    make all
+}

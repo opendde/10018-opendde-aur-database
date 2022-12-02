@@ -1,0 +1,19 @@
+package() {
+	cd ${_pkgname}/
+
+	# These variables are used in the Makefile to create the file directories.
+	PREFIX="/usr/local/"
+	EXAMPLEPREFIX="/etc/xdg/berry/"
+	
+	# Set the variables and install the files.
+    ./configure --prefix=/usr
+    make DESTDIR="${pkgdir}" install
+	
+	# Install the examples (sample configuration files)
+	mkdir -p "${pkgdir}/${EXAMPLEPREFIX}"
+	install -D -m644 -t "${pkgdir}/etc/xdg/berry/" examples/*
+
+	# Install berry.desktop
+	cd -
+	install -D -m644 -t "${pkgdir}/usr/share/applications/" berry.desktop
+}

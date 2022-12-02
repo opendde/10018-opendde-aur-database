@@ -1,0 +1,11 @@
+build() {
+  npm install --prefix $srcdir/${pkgname}
+  cd "$srcdir/${pkgname}"
+  npm run dist
+  cd dist
+  ar x `ls -1 ${appname}*.deb|head -n 1`
+  tar xJf data.tar.xz
+  sed -i 's/Name=aircall/Name=Aircall/' ${srcdir}/${pkgname}/dist/usr/share/applications/aircall.desktop
+
+
+}

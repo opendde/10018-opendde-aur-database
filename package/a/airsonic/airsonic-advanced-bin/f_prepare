@@ -1,0 +1,7 @@
+prepare() {
+    sed -i 's/\/var\/airsonic/\/var\/lib\/airsonic/' \
+        "${srcdir}/${_dirname}/contrib/airsonic.service" \
+        "${srcdir}/${_dirname}/contrib/airsonic-systemd-env"
+    sed -i 's/\/etc\/sysconfig\/airsonic/\/etc\/airsonic\/airsonic.conf/' \
+        "${srcdir}/${_dirname}/contrib/airsonic.service"
+}

@@ -1,0 +1,9 @@
+package_libamdenc-amdgpu-pro-cfe () {
+    pkgdesc="AMD Encode Core Library"
+    license=('custom: AMDGPU-PRO EULA')
+
+    get_debs_enc
+    extract_deb "${srcdir}"/amdgpu-pro-${major}-${minor}-ubuntu-${ubuntu_ver}/libamdenc-amdgpu-pro_${enc_ver}-${minor}_amd64.deb
+    move_libdir "opt/amdgpu-pro/lib/x86_64-linux-gnu" "usr/lib"
+    move_copyright
+}

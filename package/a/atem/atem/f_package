@@ -1,0 +1,11 @@
+package() {
+	cd "${srcdir}"/${pkgname}-${pkgver}
+
+	make DESTDIR="${pkgdir}" install
+
+	# Directories
+	install -d "${pkgdir}"/usr/share/licenses/${pkgname}
+
+	# License
+	ln -sf "/usr/share/doc/${pkgname}/LICENSE" "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
+}

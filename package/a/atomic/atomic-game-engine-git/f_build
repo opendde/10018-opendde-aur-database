@@ -1,0 +1,4 @@
+build() {
+  cd "$_name"
+  ./Build_AtomicEditor.sh 
+}

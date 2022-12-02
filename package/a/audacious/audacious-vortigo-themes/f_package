@@ -1,0 +1,4 @@
+package() {
+  cd "$srcdir"
+  find . -name "*wsz" -exec install -Dm644 '{}' "$pkgdir"/usr/share/audacious/Skins/'{}' \;
+}

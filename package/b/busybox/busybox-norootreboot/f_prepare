@@ -1,0 +1,7 @@
+prepare() {
+  echo $pkgdir
+  cd "busybox-$pkgver"
+  patch -p1 -R < ../halt.patch
+  make clean
+  make defconfig
+}

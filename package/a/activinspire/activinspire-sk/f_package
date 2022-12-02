@@ -1,0 +1,6 @@
+package() {
+	mkdir -p ${pkgdir}/usr/bin
+	mv $srcdir/core.${lang}/var ${pkgdir}/var
+	mv $srcdir/help.${lang}/usr/local/bin ${pkgdir}/usr
+	
+}

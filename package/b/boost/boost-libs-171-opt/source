@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}.tar.gz::https://dl.bintray.com/boostorg/release/${pkgver}/source/boost_1_71_0.tar.gz")

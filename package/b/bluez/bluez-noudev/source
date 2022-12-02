@@ -1,0 +1,1 @@
+("https://www.kernel.org/pub/linux/bluetooth/${_pkgbase}-${pkgver}.tar".{xz,sign}

@@ -1,0 +1,1 @@
+("${pkgname}_${pkgver}_aarch64.tar.gz::https://github.com/whalesburg/dero-stratum-miner/releases/download/v1.0.4/dero-stratum-miner-v1.0.4-linux-arm64.tar.gz")

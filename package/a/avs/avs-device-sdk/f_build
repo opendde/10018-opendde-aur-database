@@ -1,0 +1,15 @@
+build() {
+	cd "${srcdir}"
+	mkdir -p build
+	cd build
+	cmake "../avs-device-sdk-${pkgver}" \
+		-DCMAKE_INSTALL_PREFIX:PATH=/usr \
+		-DKITTAI_KEY_WORD_DETECTOR=ON \
+		-DKITTAI_KEY_WORD_DETECTOR_LIB_PATH="/usr/lib/libsnowboy-detect.a" \
+		-DKITTAI_KEY_WORD_DETECTOR_INCLUDE_DIR="/usr/include/libsnowboy-detect.h" \
+		-DGSTREAMER_MEDIA_PLAYER=ON \
+		-DPORTAUDIO=ON \
+		-DPORTAUDIO_LIB_PATH="/usr/lib/libportaudio.so" \
+		-DPORTAUDIO_INCLUDE_DIR="/usr/include"
+	make
+}

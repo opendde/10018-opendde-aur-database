@@ -1,0 +1,6 @@
+prepare() {
+  cd ${srcdir}/amber${_releasever}_src
+
+  # apply updates manually
+  ./update_amber --update
+}

@@ -1,0 +1,6 @@
+prepare() {
+
+  cd $_pkgname-$pkgver
+  sed -i 's/\/var\/run/\/run/' Makefile.in
+
+}

@@ -1,0 +1,10 @@
+package() {
+  cd "${srcdir}"/$pkgname-$pkgver
+
+  install -D -m755 avanor ${pkgdir}/usr/bin/avanor
+  mkdir -p "${pkgdir}"/usr/share/avanor
+  cp -rf manual ${pkgdir}/usr/share/avanor/
+
+  install -D -m644 "${srcdir}"/avanor.desktop "${pkgdir}"/usr/share/applications/avanor.desktop
+  install -D -m644 "${srcdir}"/avanor.png "${pkgdir}"/usr/share/pixmaps/avanor.png
+}

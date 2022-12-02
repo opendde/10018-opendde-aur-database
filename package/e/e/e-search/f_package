@@ -1,0 +1,4 @@
+package() {
+  cd $_pkg
+  go install -v .
+}

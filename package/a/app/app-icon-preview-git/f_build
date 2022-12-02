@@ -1,0 +1,4 @@
+build() {
+	arch-meson app-icon-preview build
+	meson compile -C build
+}

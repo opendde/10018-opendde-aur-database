@@ -1,0 +1,26 @@
+package() {
+    _target="$pkgdir"/opt/$_installname
+    
+    # Install game data
+    install -d "$_target"
+    cp -alrT data "$_target"
+    
+    # Remove unneeded files
+    rm -r "$_target"/$_lib_other
+    rm -r "$_target"/$_lib/{libSDL*,libfmodex.so,libmono*}
+    rm -r "$_target"/{mono,Bastion,Bastion.bin.*}
+    rm -r "$_target"/{mscorlib,Mono.*,System*}.dll
+    
+    # Install launch script
+    install -Dm755 launcher.sh "$pkgdir"/usr/bin/$_installname
+    
+    # Install desktop file & icon
+    install -Dm644 $_installname.desktop \
+                   "$pkgdir"/usr/share/applications/$_installname.desktop
+    install -Dm644 Bastion.png \
+                  "$pkgdir"/usr/share/icons/$_installname.png
+    
+    # Install docs
+    install -Dm644 Linux.README \
+                   "$pkgdir"/usr/share/doc/$_installname/Linux.README
+}

@@ -1,0 +1,5 @@
+build() {
+    cd "${srcdir}/ffi-experiments-${_ffiexpver}"
+    meson build
+    meson compile -C build
+}

@@ -1,0 +1,1 @@
+("${_gitname:=${pkgname%-git}}::${_giturl:-git+$url}")

@@ -1,0 +1,4 @@
+prepare() {
+    cd "$_pkgname"
+    cargo fetch --locked --target "$CARCH-unknown-linux-musl"
+}

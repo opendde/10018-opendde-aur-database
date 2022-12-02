@@ -1,0 +1,4 @@
+build() {
+  cd "${srcdir}/ASCIIpOrtal"
+  make linux
+}

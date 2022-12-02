@@ -1,0 +1,1 @@
+("${pkgname%-bin}-${pkgver}.tar.gz::http://plit.de/asem-51/${pkgname%-bin}-${pkgver}-ELF.tar.gz"

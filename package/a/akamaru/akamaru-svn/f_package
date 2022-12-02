@@ -1,0 +1,7 @@
+package() {
+  cd $srcdir/$_svnmod
+  
+  make DESTDIR=$pkgdir install
+  
+  install -D -m644 COPYING $pkgdir/usr/share/licenses/custom/akamaru-svn/LICENSE
+}

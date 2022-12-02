@@ -1,0 +1,14 @@
+build() {
+  cd avxsynth
+
+  autoreconf -if
+
+  cd "${srcdir}/build"
+  ffms2_CFLAGS="-I${srcdir}/fakeroot" \
+    ../avxsynth/configure \
+    --prefix=/usr \
+    --enable-silent-rules \
+    ${_disable_ffms2}
+
+  make
+}

@@ -1,0 +1,6 @@
+build() {
+# For a small memory system without writeable /tmp add --with-embedded   
+   cd "$pkgname-$pkgver"
+  ./configure --prefix=/usr -mandir=/usr/share/man #--with-embedded 
+  make CFLAGS="-fcommon -O2"
+}

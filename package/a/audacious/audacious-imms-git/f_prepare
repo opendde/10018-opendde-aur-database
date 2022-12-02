@@ -1,0 +1,5 @@
+prepare() {
+    cd $srcdir/imms/imms
+
+    echo "m4_define([GIT_VERSION], [$pkgver])" > gitversion.m4
+}

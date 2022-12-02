@@ -1,0 +1,7 @@
+check() {
+  mkdir -p "rename-$pkgver/tests"
+  cd "rename-$pkgver/tests"
+  touch foo.doc bar.doc
+  ../rename -s .doc .txt *.doc
+  stat foo.txt bar.txt >/dev/null
+}

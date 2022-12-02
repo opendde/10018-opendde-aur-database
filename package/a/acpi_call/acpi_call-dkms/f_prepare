@@ -1,0 +1,21 @@
+prepare() {
+	cd "${srcdir}/acpi_call-${pkgver}"
+
+	# Fix build with Linux >= 3.17
+	sed -i 's|acpi/acpi.h|linux/acpi.h|' acpi_call.c
+
+	# Fix build with Linux >= 4.12
+	sed -i 's|asm/uaccess.h|linux/uaccess.h|' acpi_call.c
+
+	# create dkms.conf
+	cat > dkms.conf <<EOF
+# Linux DKMS config script for acpi_call
+
+PACKAGE_VERSION=${pkgver}
+PACKAGE_NAME=acpi_call
+AUTOINSTALL=yes
+
+BUILT_MODULE_NAME[0]="acpi_call"
+DEST_MODULE_LOCATION[0]="/extra"
+EOF
+}

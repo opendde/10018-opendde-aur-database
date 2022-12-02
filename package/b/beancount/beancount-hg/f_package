@@ -1,0 +1,4 @@
+package () {
+	cd "${pkgname}"
+	python3 setup.py install --prefix=/usr --root="${pkgdir}"
+}

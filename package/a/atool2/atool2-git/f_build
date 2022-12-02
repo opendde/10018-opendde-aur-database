@@ -1,0 +1,5 @@
+build() {
+  cd "${srcdir}"/${_pkgname}
+
+  CONFIG_SHELL=/bin/bash ./configure --prefix=/usr --sysconfdir=/etc
+}

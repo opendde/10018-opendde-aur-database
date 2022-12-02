@@ -1,0 +1,11 @@
+prepare() {
+  cd $_reponame
+
+  autoreconf -i
+
+  mkdir -p ${srcdir}/${_reponame}-nox
+  rsync -r ${srcdir}/${_reponame}/* ${srcdir}/${_reponame}-nox --exclude=.git
+
+  # Don't force xss
+  sed -i 's/^  enable_xss="yes"$/  enable_xss="no"/' "$srcdir"/${_reponame}-nox/configure
+}

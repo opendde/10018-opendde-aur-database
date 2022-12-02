@@ -1,0 +1,12 @@
+package() {
+  cd "$pkgname-$pkgname-$pkgver"
+
+  cargo install \
+    --no-track \
+    --locked \
+    --root "$pkgdir/usr" \
+    --path "$srcdir/$pkgname-$pkgname-$pkgver/$pkgname-cli"
+
+  install -Dm644 "README.md" -t "$pkgdir/usr/share/doc/boringtun"
+  install -Dm644 "LICENSE.md" -t "$pkgdir/usr/share/licenses/boringtun"
+}

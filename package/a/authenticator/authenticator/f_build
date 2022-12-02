@@ -1,0 +1,4 @@
+build() {
+  arch-meson "$_pkgname-$pkgver" build
+  meson compile -C build
+}

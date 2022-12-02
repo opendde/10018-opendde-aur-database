@@ -1,0 +1,3 @@
+post_install() {
+    /opt/brother/Printers/dcpj968n/cupswrapper/cupswrapperdcpj968n
+}

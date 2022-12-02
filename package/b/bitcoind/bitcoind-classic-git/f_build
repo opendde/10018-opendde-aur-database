@@ -1,0 +1,9 @@
+build() {
+  cd "$srcdir/bitcoinclassic"
+
+  msg2 'Building...'
+  ./autogen.sh
+  ./configure --prefix=/usr --with-incompatible-bdb --with-gui=no --enable-hardening \
+        --enable-reduce-exports --disable-gui-tests --disable-maintainer-mode
+  make -j$(nproc)
+}

@@ -1,0 +1,7 @@
+build() {
+  cd $srcdir/$pkgname/service
+  [[ "$CARCH" = "x86_64" ]] \
+      && qmake als-controller.pro -r -spec linux-g++-64 \
+      || qmake als-controller.pro -r -spec linux-g++
+  make
+}

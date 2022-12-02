@@ -1,0 +1,8 @@
+package() {
+	cd "$pkgname-$pkgver"
+	install -dm755 "$pkgdir/usr/share"
+
+	cp -r "$srcdir"/$pkgname-$pkgver/build-aux/themes "$pkgdir/usr/share"
+	make DESTDIR="$pkgdir/"
+	make clean
+}

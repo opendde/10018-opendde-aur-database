@@ -1,0 +1,5 @@
+package() {
+  cd "aspell"
+
+  make DESTDIR="$pkgdir" install
+}

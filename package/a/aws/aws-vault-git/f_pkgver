@@ -1,0 +1,7 @@
+pkgver() {
+	pushd "${srcdir}/${pkgname}" >/dev/null
+	{
+		git describe --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g' | sed 's/^v\(.*\)/\1/'
+	}
+	popd >/dev/null
+}

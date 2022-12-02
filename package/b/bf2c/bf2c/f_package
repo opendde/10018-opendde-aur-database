@@ -1,0 +1,3 @@
+package() {
+  install -Dm755 bf2c.py "$pkgdir/usr/bin/bf2c"
+}

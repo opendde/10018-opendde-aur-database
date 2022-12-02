@@ -1,0 +1,25 @@
+package() {
+  cd "${srcdir}"/"${pkgname}"/jni
+  archlinux-java fix
+  # Headers for JNI are found in this Arch Linux specific location
+  env JAVA_HOME=/usr/lib/jvm/default   make -f makefile.linux
+  cd "${srcdir}"/"${pkgname}"
+
+  mkdir -p "${pkgdir}"/usr/share/doc/"${pkgname}"/
+  cp -r docs/* "${pkgdir}"/usr/share/doc/"${pkgname}"/
+
+  mkdir -p "${pkgdir}"/usr/share/java/"${pkgname}"/
+  cp -r config    "${pkgdir}"/usr/share/java/"${pkgname}"/
+  cp -r current   "${pkgdir}"/usr/share/java/"${pkgname}"/
+  cp -r jni       "${pkgdir}"/usr/share/java/"${pkgname}"/
+  cp -r pipelines "${pkgdir}"/usr/share/java/"${pkgname}"/
+  cp -r resources "${pkgdir}"/usr/share/java/"${pkgname}"/
+
+  for script in *.sh; do
+    sed -i s_'\bCP=.*'_CP=/usr/share/java/"${pkgname}"/current/_ "${script}"
+    sed -i s_'\bDIR=.*'_DIR=/usr/bin/_ "${script}"
+    sed -i s_'\bNATIVELIBDIR=.*'_NATIVELIBDIR=/usr/share/java/"${pkgname}"/current/jni/_ "${script}"
+
+    install -Dm775 "${script}" "${pkgdir}"/usr/bin/"${script}"
+  done
+}

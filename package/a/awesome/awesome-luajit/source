@@ -1,0 +1,1 @@
+("https://github.com/awesomeWM/awesome/releases/download/v$pkgver/$_archive.tar.xz"{,.asc})

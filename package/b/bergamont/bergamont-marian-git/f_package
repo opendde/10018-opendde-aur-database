@@ -1,0 +1,17 @@
+package() {
+	mkdir --parents "${pkgdir}/usr/share/licenses/${pkgname}/"
+
+	cd "${srcdir}/marian-dev/build"
+	install -D -t "${pkgdir}/usr/bin/" marian-decoder
+	cp ../LICENSE.md "${pkgdir}/usr/share/licenses/${pkgname}/marian_license.md"
+	
+	# ATTENTION: Change here on version bumps
+	cd "${srcdir}/firefox-translations-models-0.3.1/models/prod"
+	gunzip -r .
+	mkdir --parents "${pkgdir}/usr/share/firefox-translations-models/prod"
+	cp -r . "${pkgdir}/usr/share/firefox-translations-models/prod"
+	cp ../../LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/firefox_translations_models_license.txt"
+
+	cd "${srcdir}"
+	install -D -m644 -t "${pkgdir}/usr/share/man/man1/" marian-decoder.1
+}	

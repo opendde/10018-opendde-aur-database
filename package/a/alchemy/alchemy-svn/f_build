@@ -1,0 +1,5 @@
+build() {
+export PATH=/usr/lib/jvm/java-7-openjdk/jre/bin/:$PATH
+	cd ${pkgname}
+	ant
+}

@@ -1,0 +1,18 @@
+build () {
+	pushd "${pkgname}/doc" &> /dev/null
+	ruby docgen.rb mangen
+	popd &> /dev/null
+
+	rm -rf "${pkgname}/build"
+	mkdir "${pkgname}/build"
+	cd "${pkgname}/build"
+	cmake \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DVIDEO_PLATFORM=egl-dri \
+		-DSHMIF_TUI_ACCEL=ON \
+		-DENABLE_LWA=ON \
+		-DENABLE_LTO=ON \
+		../src
+	make
+}

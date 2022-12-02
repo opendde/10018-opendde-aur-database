@@ -1,0 +1,19 @@
+build() {
+  mkdir -p $srcdir/bforartists-build
+  cd $srcdir/bforartists-build
+  cmake $srcdir/Bforartists \
+    -DPYTHON_NUMPY_PATH=/usr/lib/python3.8/site-packages \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_BUILD_TYPE:STRING=Release \
+    -DWITH_INSTALL_PORTABLE=OFF \
+    -DWITH_PYTHON_INSTALL=OFF \
+    -DWITH_OPENCOLORIO=ON \
+    -DWITH_FFTW3=ON \
+    -DWITH_SYSTEM_GLEW=ON \
+    -DWITH_CODEC_FFMPEG=ON \
+    -DPYTHON_VERSION=3.8 \
+    $_EXTRAOPTS
+#    -DWITH_OPENCOLLADA:BOOL=OFF \
+
+  make -j $(nproc)
+}

@@ -1,0 +1,11 @@
+package() {
+  cd "$srcdir"
+  install -Dm644 "$srcdir/ASH-IR-Dataset/LICENSE.txt" "$pkgdir/usr/share/licenses/ash-ir-dataset/LICENSE"
+  install -Dm644 "$srcdir/ASH-IR-Dataset/README.md" "$pkgdir/usr/share/doc/ash-ir-dataset/README.md"
+  cp -r "$srcdir/ASH-IR-Dataset/BRIRs" "$pkgdir/usr/share/ash-ir-dataset/"
+  cp -r "$srcdir/ASH-IR-Dataset/Compatibility_Filters" "$pkgdir/usr/share/ash-ir-dataset/"
+  cp -r "$srcdir/ASH-IR-Dataset/HpCFs" "$pkgdir/usr/share/ash-ir-dataset/"
+  cp -r "$srcdir/ASH-IR-Dataset/Plots" "$pkgdir/usr/share/ash-ir-dataset/"
+  find "$pkgdir/usr/share/ash-ir-dataset/" -type d -exec chmod 755 {} \; 
+  find "$pkgdir/usr/share/ash-ir-dataset/" -type f -exec chmod 644 {} \; 
+}

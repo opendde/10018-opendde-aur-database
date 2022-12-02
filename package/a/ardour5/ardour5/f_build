@@ -1,0 +1,18 @@
+build() {
+  cd "${srcdir}/${_pkgname}-${pkgver}"
+
+  python2 waf configure \
+    --prefix=/usr \
+    --docs \
+    --libjack=weak \
+    --configdir=/etc \
+    --internal-shared-libs \
+    --lv2 \
+    --lxvst \
+    --optimize \
+    --with-backends=jack,alsa,dummy \
+    --cxx11 \
+    --no-phone-home
+
+  python2 waf build $MAKEFLAGS
+}

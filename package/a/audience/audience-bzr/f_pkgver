@@ -1,0 +1,5 @@
+pkgver() {
+  cd audience
+
+  echo "r$(bzr revno)"
+}

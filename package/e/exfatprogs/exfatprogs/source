@@ -1,0 +1,1 @@
+("exfatprogs-${pkgver}.tar.gz::https://github.com/exfatprogs/exfatprogs/archive/${pkgver}.tar.gz")

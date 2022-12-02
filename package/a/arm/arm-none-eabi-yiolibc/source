@@ -1,0 +1,1 @@
+("git+https://gitlab.com/kamcuk/yio#tag=${pkgver}")

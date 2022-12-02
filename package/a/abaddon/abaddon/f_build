@@ -1,0 +1,4 @@
+build () {
+  cmake -B build -S "$pkgname"
+  make -C build
+}

@@ -1,0 +1,4 @@
+pkgver() {
+    cd "$srcdir/Agda-nightly"
+    ./bin/agda -V|sed -rn "s/.*version (.*)-(.*)/\1.\2/p"
+}

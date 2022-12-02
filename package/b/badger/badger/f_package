@@ -1,0 +1,6 @@
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  install -Dm755 ${srcdir}/${pkgname}-bin "${pkgdir}/usr/bin/${pkgname}"
+  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  go clean -modcache #Remove go libraries
+}

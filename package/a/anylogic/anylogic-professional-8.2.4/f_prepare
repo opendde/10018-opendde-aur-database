@@ -1,0 +1,19 @@
+prepare() {
+    msg2 "Unpacking archive..."
+    if [ "$CARCH" == "x86_64" ]
+    then
+        tail -n +279 "$srcdir/$pkgname.linux.x86_64.tgz.bin" > "$pkgname.linux.x86_64.tgz"
+    elif [ "$CARCH" == "i686" ]
+    then
+        tail -n +279 "$srcdir/$pkgname.linux.i586.tgz.bin" > "$pkgname.linux.i586.tgz"
+    fi
+
+    msg2 "Extracting archive..."
+    if [ "$CARCH" == "x86_64" ]
+    then
+        tar -xf $pkgname.linux.x86_64.tgz
+    elif [ "$CARCH" == "i686" ]
+    then
+        tar -xf $pkgname.linux.i586.tgz
+    fi
+}

@@ -1,0 +1,18 @@
+build() {
+  cd "${_pkgname}-$pkgver"
+
+  ./configure \
+    --prefix=/usr \
+    --etcdir=/etc/bitlbee \
+    --sbindir=/usr/bin \
+    --pidfile=/run/bitlbee/bitlbee.pid \
+    --ipcsocket=/run/bitlbee/bitlbee.sock \
+    --systemdsystemunitdir=/usr/lib/systemd/system \
+    --ssl=gnutls \
+    --strip=0 \
+    --otr=plugin \
+    --skype=plugin \
+    --purple=1
+
+  make
+}

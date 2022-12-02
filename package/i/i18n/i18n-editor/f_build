@@ -1,0 +1,6 @@
+build() {
+	cd "${srcdir}"
+	cd "${pkgname}-${_pkgver}"
+
+	mvn install
+}

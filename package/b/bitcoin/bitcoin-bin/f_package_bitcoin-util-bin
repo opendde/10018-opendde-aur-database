@@ -1,0 +1,19 @@
+package_bitcoin-util-bin() {
+  local binname=bitcoin-util
+
+  pkgdesc="A peer-to-peer network based digital currency - Utility"
+  depends=(gcc-libs)
+  provides=('bitcoin-util')
+  conflicts=('bitcoin-util')
+
+  (
+    cd "$_bindirbase"
+    _package "$binname"
+  )
+
+  (
+    cd "$_srcdirbase"
+    _maybe_install_completion "$binname"
+    install -Dm644 COPYING "$pkgdir/usr/share/licenses/$pkgname/COPYING"
+  )
+}

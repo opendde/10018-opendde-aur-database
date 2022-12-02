@@ -1,0 +1,6 @@
+build() {
+    cd $srcdir/blockling-$pkgver/
+
+    sed -i 's,DATADIR=data/,DATADIR=/usr/share/blockling/data/,' Makefile
+    make
+}

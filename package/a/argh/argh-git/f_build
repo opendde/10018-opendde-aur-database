@@ -1,0 +1,7 @@
+build() {
+  cd "${pkgname%-git}/build"
+  cmake .. \
+    -DCMAKE_BUILD_TYPE=None \
+    -DCMAKE_INSTALL_PREFIX=/usr
+	make
+}

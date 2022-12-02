@@ -1,0 +1,15 @@
+package() {
+		cd "$srcdir/build"
+		install -dm 755 ${pkgdir}/usr/{bin,share/applications,share/bililocal}
+		install -Dm 755 BiliLocal ${pkgdir}/usr/share/bililocal/bililocal
+		install -m 644 ${srcdir}/bililocal.desktop ${pkgdir}/usr/share/applications
+		#install -m 644 ${srcdir}/logo.png ${pkgdir}/usr/share/bililocal
+		install -D -m 0644 ${srcdir}/bililocal.svg "${pkgdir}"/usr/share/icons/hicolor/scalable/apps/bililocal.svg
+        echo '#!/bin/sh' >> ${pkgdir}/usr/bin/bililocal
+		echo 'exec /usr/share/bililocal/bililocal "$@"' >> ${pkgdir}/usr/bin/bililocal
+		chmod +x ${pkgdir}/usr/bin/bililocal
+        ls | grep -oP '[_a-zA-Z0-9]+(?=\.qm)' | while read locale 
+        do 
+			install -Dm 644 ${locale}.qm ${pkgdir}/usr/share/bililocal/locale/${locale}/bililocal.qm
+		done
+}

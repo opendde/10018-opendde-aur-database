@@ -1,0 +1,4 @@
+package() {
+	cd "$_pkgname"
+	install -Dm755 "target/release/ambit" -t "$pkgdir/usr/bin/"
+}

@@ -1,0 +1,6 @@
+package() {
+  DESTDIR="$pkgdir" ninja -C build install
+
+  # https://bugs.archlinux.org/task/31861
+  sed -i '/MimeType/d' "$pkgdir/usr/share/applications/org.gnome.baobab.desktop"
+}

@@ -1,0 +1,4 @@
+pkgver() {
+  cd ${pkgname%-git}
+  git log -1 --format=format:'%as-%f' | tr - .
+}

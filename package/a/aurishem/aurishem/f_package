@@ -1,0 +1,7 @@
+package() {
+    install -D "$srcdir/aurishem/source/aurishem.desktop" "$pkgdir/usr/share/applications/aurishem.desktop"
+    install -D "$srcdir/aurishem/source/aurishem.png" "$pkgdir/usr/share/icons/hicolor/48x48/apps/aurishem.png"
+    install -D "$srcdir/aurishem/source/aurishem" "$pkgdir/usr/bin/aurishem"
+    chmod +x "$pkgdir/usr/bin/aurishem"
+    xdg-mime default aurishem.desktop x-scheme-handler/aurishem
+}

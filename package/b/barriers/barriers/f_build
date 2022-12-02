@@ -1,0 +1,5 @@
+build() {
+  cd "${srcdir}/Barriers-${pkgver}"
+  ./configure --prefix=/usr INSTALLDIRS=vendor || return 1
+  make || return 1
+}

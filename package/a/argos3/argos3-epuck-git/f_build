@@ -1,0 +1,7 @@
+build() {
+  cd "$srcdir/$_gitname"
+  mkdir build_simulator
+  cd build_simulator
+  cmake -DCMAKE_INSTALL_PREFIX=/usr ../src
+  make
+}

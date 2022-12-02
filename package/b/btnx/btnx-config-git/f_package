@@ -1,0 +1,4 @@
+package() {
+  cd btnx-config
+  make DESTDIR="${pkgdir}" install
+}

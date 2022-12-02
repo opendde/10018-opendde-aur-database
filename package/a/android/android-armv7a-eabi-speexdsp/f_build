@@ -1,0 +1,9 @@
+build() {
+    cd "${srcdir}"/speexdsp-${pkgver}
+    source android-env ${_android_arch}
+
+    android-${_android_arch}-configure \
+        --disable-neon
+
+    make $MAKEFLAGS
+}

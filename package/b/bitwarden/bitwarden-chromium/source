@@ -1,0 +1,1 @@
+("${url}/releases/download/browser-v${pkgver}/dist-chrome-${pkgver}.zip")

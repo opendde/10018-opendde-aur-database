@@ -1,0 +1,6 @@
+build() {
+  cd "${srcdir}"/$pkgname
+
+  qmake-qt4 $pkgname.pro
+  make
+}

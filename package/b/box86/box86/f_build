@@ -1,0 +1,8 @@
+build() {
+  cd ${pkgname}-${pkgver}
+  cmake -B build -S . \
+        -DARM_DYNAREC=ON \
+        -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+        -DCMAKE_INSTALL_PREFIX=/usr
+  make -C build
+}

@@ -1,0 +1,5 @@
+package() {
+    cd "${srcdir}/${_module}"
+    make DESTDIR="$pkgdir/" install
+    python setup.py install --root="${pkgdir}" --optimize=1 --skip-build
+}

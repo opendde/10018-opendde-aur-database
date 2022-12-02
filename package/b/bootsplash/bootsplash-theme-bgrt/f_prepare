@@ -1,0 +1,8 @@
+prepare() {
+  echo "Checking for BGRT..."
+  if [ ! -f "/sys/firmware/acpi/bgrt/version" ]
+  then
+    echo "BGRT not found, aborting..."
+    exit 1
+  fi
+}

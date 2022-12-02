@@ -1,0 +1,5 @@
+package() {
+	cd "$srcdir/${pkgname%-git}"
+	DESTDIR="$pkgdir" meson install -C build
+	install -D -m644 "${srcdir}/${pkgname%-git}/LICENSES/Zlib.txt" "${pkgdir}/usr/share/licenses/${pkgname%-git}/LICENSE"
+}

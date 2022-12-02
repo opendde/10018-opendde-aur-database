@@ -1,0 +1,10 @@
+prepare() {
+  cd AlephOne-$_pkgdate
+
+  # convert the windows icons
+  cd Resources/Windows
+  icotool -x -w 48 alephone.ico -o "$srcdir"/alephone.png
+  icotool -x -w 48 marathon.ico -o "$srcdir"/alephone-marathon.png
+  icotool -x -w 48 marathon2.ico -o "$srcdir"/alephone-marathon2.png
+  icotool -x -w 48 marathon-infinity.ico -o "$srcdir"/alephone-infinity.png
+}

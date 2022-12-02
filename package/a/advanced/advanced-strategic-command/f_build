@@ -1,0 +1,7 @@
+build() {
+  cd "$srcdir/asc-${pkgver}.0"
+  ./configure --prefix=/usr
+  # Recent versions of ligsigc++ require C++11.  Overring CXXFLAGS
+  # prevents the program from building, so we override CXX instead.
+  make CXX="g++ -std=c++11"
+}

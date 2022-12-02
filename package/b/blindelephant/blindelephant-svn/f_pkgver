@@ -1,0 +1,4 @@
+pkgver() {
+  cd blindelephant
+  svnversion | tr -d [A-z]
+}

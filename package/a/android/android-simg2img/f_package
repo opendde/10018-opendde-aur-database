@@ -1,0 +1,6 @@
+package() {
+	cd $pkgname-$pkgver
+  make PREFIX="$pkgdir/usr" install
+  chmod -v 644 "$pkgdir/usr/lib/libsparse.a"
+  install -vDm755 simg_dump.py "$pkgdir/usr/bin/"
+}

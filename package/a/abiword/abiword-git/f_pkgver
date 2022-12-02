@@ -1,0 +1,7 @@
+pkgver() {
+  cd AbiWord
+  major=$(awk '/\[abi_version_major\]/ {print $2}' configure.ac |tr -d \[ |tr -d \] | tr -d \))
+  minor=$(awk '/\[abi_version_minor\]/ {print $2}' configure.ac |tr -d \[ |tr -d \] | tr -d \))
+  micro=$(awk '/\[abi_version_micro\]/ {print $2}' configure.ac |tr -d \[ |tr -d \] | tr -d \))
+  printf "%s.%s.%s.%s.%s"  $major $minor $micro $(git rev-list --count HEAD) $(git rev-parse --short HEAD)
+}

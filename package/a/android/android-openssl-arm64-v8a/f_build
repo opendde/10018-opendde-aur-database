@@ -1,0 +1,18 @@
+build() {
+	cd "$srcdir/$_pkgname-$_ver"
+	source "$srcdir/setenv-android.sh"
+
+	./Configure \
+		--prefix="$_pref" \
+		--openssldir="$_pref" \
+		-isystem"$ANDROID_NDK_ROOT/sysroot/usr/include" \
+		-isystem"$ANDROID_NDK_ROOT/sysroot/usr/include/${_ANDROID_EABI%-*}" \
+		shared \
+		android
+	
+	# ensure the libraries are not versioned (setting CALC_VERSIONS doesn't work for some reason)
+        sed -i -e 's/\.\$(SHLIB_MAJOR)\.\$(SHLIB_MINOR)//g' Makefile
+
+	# build only libraries
+	make CALC_VERSIONS="SHLIB_COMPAT=; SHLIB_SOVER=" build_libs	
+}

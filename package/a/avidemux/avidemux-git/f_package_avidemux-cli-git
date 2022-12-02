@@ -1,0 +1,11 @@
+package_avidemux-cli-git() {
+  pkgdesc="CLI frontend for Avidemux. (GIT version)"
+  depends=("avidemux-core-git=${pkgver}")
+  provides=('avidemux-cli')
+  conflicts=('avidemux-cli')
+
+  DESTDIR="${pkgdir}" cmake --install build_cli
+  DESTDIR="${pkgdir}" cmake --install build_cli_plugins
+
+  rm -fr "${pkgdir}/usr/lib/ADM_plugins6/videoEncoders"
+}

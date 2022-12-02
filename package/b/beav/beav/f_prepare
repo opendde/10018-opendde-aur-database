@@ -1,0 +1,6 @@
+prepare() {
+	_mypkgver=${pkgver/./}
+	cd "$srcdir/beav-$_mypkgver"
+	patch < "$srcdir/beav_${pkgver}-${_debianpkgrel}.diff"
+	patch < "$srcdir/beav_on_archlinux.patch"
+}

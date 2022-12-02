@@ -1,0 +1,1 @@
+("${_pkgname}_${pkgver}_amd64.deb::https://github.com/${_pkgname}/${pkgname%-bin}-app/releases/download/v${_pkgver}/${_pkgname}_${_pkgver}_amd64.deb")

@@ -1,0 +1,4 @@
+pkgver() {
+  cd "${srcdir}/${pkgbase}"
+  git describe --always | sed 's|-|.|g' | sed 's/v//g'
+}

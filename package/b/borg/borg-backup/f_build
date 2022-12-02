@@ -1,0 +1,5 @@
+build() {
+  cd borg-backup
+  qmake
+  make all install
+}

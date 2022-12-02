@@ -1,0 +1,8 @@
+package() {
+	depends=('dkms')
+	provides=('AMZN-DRIVERS-ENA-MODULE')
+
+	install -m755 -d ${pkgdir}/usr/src/ena-${pkgver}/common/ena_com
+	install -m644 amzn-drivers-ena_linux_${pkgver}/kernel/linux/common/ena_com/* ${pkgdir}/usr/src/ena-${pkgver}/common/ena_com/
+	install -m644 amzn-drivers-ena_linux_${pkgver}/kernel/linux/ena/* ${pkgdir}/usr/src/ena-${pkgver}/
+}

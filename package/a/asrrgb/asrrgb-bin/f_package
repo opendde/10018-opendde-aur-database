@@ -1,0 +1,4 @@
+package() {
+	install -Dm 755 asrrgb "${pkgdir}/usr/bin/asrrgb"
+	install -Dm 644 60-asrrgb.rules "${pkgdir}/usr/share/asrrgb/60-asrrgb.rules"
+}

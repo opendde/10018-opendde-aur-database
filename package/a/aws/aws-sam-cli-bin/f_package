@@ -1,0 +1,12 @@
+package() {
+  # Install
+  $srcdir/install -i "$pkgdir/usr/share/aws-sam-cli" -b "$pkgdir/usr/bin" >/dev/null
+
+  # Fix symlink for current version directory
+  _remove_pkgdir_from_link "$pkgdir/usr/share/aws-sam-cli/current"
+
+  # Fix symlinks in bin directory
+  for i in $pkgdir/usr/bin/*; do
+    _remove_pkgdir_from_link "$i"
+  done
+}

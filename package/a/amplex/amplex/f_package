@@ -1,0 +1,11 @@
+package() {
+  ## Install Amplex VST
+  install -Dm755 $srcdir/Amplex_V4-0_x64.so $pkgdir/usr/lib/vst/Amplex_V4-0_x64.so
+  install -Dm755 $srcdir/IRbis_V1-0_x64.so $pkgdir/usr/lib/vst/IRbis_V1-0_x64.so
+  
+  ## Install Amplex Presets
+  mkdir -p $pkgdir/usr/share/amplex
+  cp $srcdir/\!\ Documentation/Elements/*.txt $pkgdir/usr/share/amplex
+  cp $srcdir/Amplex_Presets_V22/*.txt $pkgdir/usr/share/amplex
+  rm $pkgdir/usr/share/amplex/\!\ Read\ About.txt
+}

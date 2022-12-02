@@ -1,0 +1,22 @@
+package() {
+  msg2 "Preparing ArangoDB."
+  mkdir -p $pkgdir/usr/bin
+  cp -R $srcdir/ArangoDB-$pkgver/build/etc $pkgdir
+  cp $srcdir/ArangoDB-$pkgver/build/bin/arango* $pkgdir/usr/bin/
+  cp $srcdir/ArangoDB-$pkgver/build/bin/foxx* $pkgdir/usr/bin/
+  mkdir -p $pkgdir/usr/share/arangodb3/js
+  mkdir -p $pkgdir/usr/share/man
+  cp -R $srcdir/ArangoDB-$pkgver/js/* $pkgdir/usr/share/arangodb3/js
+  cp -R $srcdir/ArangoDB-$pkgver/build/Documentation/man/* $pkgdir/usr/share/man
+
+  install -dm755 -o arangodb -g arangodb $pkgdir/var/lib/arangodb3
+  install -dm755 -o arangodb -g arangodb $pkgdir/var/lib/arangodb3-apps
+
+  install -D -m644 $srcdir/ArangoDB-$pkgver/build/bin/icudtl.dat "$pkgdir"/usr/share/arangodb3/icudtl.dat
+  install -D -m644 arangodb-tmpfile.conf "$pkgdir"/usr/lib/tmpfiles.d/arangodb.conf
+  install -D -m644 $srcdir/ArangoDB-"$pkgver"/Installation/logrotate.d/arangod.systemd "$pkgdir"/etc/logrotate.d/arangodb3
+  install -D -m644 $srcdir/ArangoDB-$pkgver/LICENSE "${pkgdir}/usr/share/licenses/arangodb3/LICENSE"
+
+  msg2 "Preparing systemd service."
+  install -Dm644 $srcdir/arangodb3.service $pkgdir/usr/lib/systemd/system/arangodb3.service
+}

@@ -1,0 +1,5 @@
+build() {
+  cd "${srcdir}/bauh-${_commit}"
+  python3 setup.py build
+  python3 setup.py test || return 1
+}

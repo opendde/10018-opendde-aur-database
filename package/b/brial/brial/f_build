@@ -1,0 +1,7 @@
+build() {
+  cd $pkgname-$pkgver 
+
+  export PYTHON=python2
+  ./configure --prefix=/usr --enable-shared
+  make
+}

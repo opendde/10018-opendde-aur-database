@@ -1,0 +1,5 @@
+package() {
+    cd build
+    install -d $pkgdir/usr/lib
+    install -Dm755 *.a "$pkgdir/usr/lib/"
+}

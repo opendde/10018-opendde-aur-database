@@ -1,0 +1,12 @@
+prepare() {
+    cd ${pkgname}
+
+    # Set gitattributes on src/clientversion.cpp
+    git archive --format=tar ${_commit} -- src/clientversion.cpp | tar -xf -
+
+    patch -Np1 -i ../use-system-qpid-proton.patch
+    patch -Np1 -i ../use-system-rust.patch
+
+    # Runs forever
+    sed -e '/prioritisetransaction.py/d' -i qa/pull-tester/rpc-tests.sh
+}

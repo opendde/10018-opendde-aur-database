@@ -1,0 +1,11 @@
+package() {
+	cd "${pkgname%-*}"
+	install -m644 -D "LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+	install -m644 -D "afraiddns.service" \
+		"${pkgdir}/usr/lib/systemd/system/afraiddns.service"
+	install -m644 -D "afraiddns.timer" \
+		"${pkgdir}/usr/lib/systemd/system/afraiddns.timer"
+	install -m755 -D "afraiddns" "${pkgdir}/usr/bin/afraiddns"
+	mkdir -p "${pkgdir}/etc/afraiddns/"
+	touch "${pkgdir}/etc/afraiddns/apikey"
+}

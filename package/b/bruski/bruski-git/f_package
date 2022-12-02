@@ -1,0 +1,16 @@
+package() {
+	cd "${srcdir}/BruSKI"
+
+	install -d "${pkgdir}/usr/lib/bruski"
+	install -D src/Prelude/*.bru "${pkgdir}/usr/lib/bruski/"
+	
+	echo "-- Path to standard library" >> src/Config.hs
+	echo 'preludePath = "/usr/lib/bruski/"' >> src/Config.hs
+	
+	stack install --local-bin-path "${pkgdir}/usr/bin"
+
+	install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+	install -Dm644 README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
+
+	make DESTDIR="$pkgdir/" install
+}

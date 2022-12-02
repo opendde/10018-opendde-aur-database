@@ -1,0 +1,6 @@
+build() {
+  cd build
+  cmake "../${_plug}" \
+    -DCMAKE_INSTALL_PREFIX=/usr
+  make
+}

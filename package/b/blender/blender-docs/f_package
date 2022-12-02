@@ -1,0 +1,9 @@
+package() {
+    mkdir -p "$pkgdir/usr/share/doc/blender/html/"
+    mkdir -p "$pkgdir/usr/share/doc/blender/api/"
+    cp -rf "$srcdir"/blender_manual*/* "$pkgdir"/usr/share/doc/blender/html
+    cp -rf "$srcdir/blender_python_reference_${_spkgver/./_}"/* "$pkgdir"/usr/share/doc/blender/api
+    find "$pkgdir"/usr/share/doc/blender/ -type f -exec chmod 0644 {} \;
+    find "$pkgdir"/usr/share/doc/blender/ -type d -exec chmod 0755 {} \;
+    install -Dm644 "$srcdir"/LICENCE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

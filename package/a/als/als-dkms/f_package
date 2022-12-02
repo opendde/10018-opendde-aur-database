@@ -1,0 +1,4 @@
+package() {
+    install -d "$pkgdir"/usr/src/${_pkgname}-${pkgver}
+    cp -r ${_pkgname}/{Makefile,${_pkgname}.c,dkms.conf} "$pkgdir"/usr/src/${_pkgname}-${pkgver}/
+}

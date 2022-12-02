@@ -1,0 +1,4 @@
+pkgver() {
+  cd "$srcdir/allacrost"
+  svnversion | tr -d [A-z]
+}

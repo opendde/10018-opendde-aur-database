@@ -1,0 +1,13 @@
+build() {
+    cd "${srcdir}/${_name}"
+
+    git submodule init && git submodule update && autoreconf -i
+    ./configure
+
+    # Applying a fix to configured makefile
+    # Requires cblas along with openblas since openblas package does not support
+    # blas (openblas upstream problem)
+    sed -i 's/-lblas/-lblas -lcblas/g' Makefile
+
+    make
+}

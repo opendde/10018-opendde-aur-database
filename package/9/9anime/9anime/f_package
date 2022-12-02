@@ -1,0 +1,9 @@
+package() {
+  cd "$srcdir/$_gitname"
+  mkdir -p "$pkgdir/usr/share/$pkgname"
+  cp -a --no-preserve=ownership * "$pkgdir/usr/share/$pkgname"
+  mkdir -p "$pkgdir/usr/bin/"
+  touch "$pkgdir/usr/bin/$pkgname"
+  chmod +x "$pkgdir/usr/bin/$pkgname"
+  echo "exec /usr/share/$pkgname/$pkgname" > "$pkgdir/usr/bin/9anime"
+}

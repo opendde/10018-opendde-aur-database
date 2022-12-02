@@ -1,0 +1,15 @@
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+
+  msg 'Building...'
+  ./configure \
+    --prefix=/usr \
+    --sbindir=/usr/bin \
+    --libexecdir=/usr/lib/ald \
+    --sysconfdir=/etc \
+    --sharedstatedir=/usr/share/ald \
+    --localstatedir=/var/lib/ald \
+    --enable-readline \
+    --enable-gtk
+  make
+}

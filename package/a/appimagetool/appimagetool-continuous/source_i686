@@ -1,0 +1,1 @@
+("${_appimage}::${url}/releases/download/continuous/${_pkgname}-i686.AppImage")

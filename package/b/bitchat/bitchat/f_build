@@ -1,0 +1,5 @@
+build() {
+	cd BitChatClient
+	xbuild /p:Configuration=Release BitChatClient.sln
+	convert BitChatAppMono/logo2.ico[2] ../$pkgname.png
+}

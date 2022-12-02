@@ -1,0 +1,5 @@
+build() {
+    mkdir -p app
+    cp index.js logo.png package.json app
+    asar pack app app.asar
+}

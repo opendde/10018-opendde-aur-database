@@ -1,0 +1,15 @@
+package() {
+    mkdir -p "${pkgdir}/usr/bin/"
+    mkdir -p "${pkgdir}/usr/share/man/man6/"
+    mkdir -p "${pkgdir}/usr/share/doc/"
+
+    for name in "${_alternative_names[@]}"
+    do
+        ln -sf "/usr/bin/pipes.sh" "${pkgdir}/usr/bin/${name}"
+        ln -sf "/usr/share/man/man6/pipes.sh.6.gz" "${pkgdir}/usr/share/man/man6/${name}.6.gz"
+        ln -sf "/usr/share/doc/pipes.sh" "${pkgdir}/usr/share/doc/${name}"
+    done
+
+    #Nameclash with xscreensaver
+    rm -f "${pkgdir}/usr/share/man/man6/pipes.6.gz"
+}

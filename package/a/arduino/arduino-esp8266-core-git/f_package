@@ -1,0 +1,24 @@
+package() {
+  cd "$srcdir/esp-quick-toolchain"
+
+  # Prepare target directory for our system-global Arduino core
+  _targetdir="$pkgdir/usr/share/arduino/hardware/archlinux-esp8266/esp8266"
+  mkdir -p "$_targetdir"
+
+  # Start off with the Arduino stuff already prepared by "make install"
+  cp -r arduino/* "$_targetdir"
+
+  # Some cleanup
+  find "$_targetdir" -name '*.o' -delete
+  find "$_targetdir" -type d -name '.git*' -prune -exec rm -r '{}' \;
+
+  # Extract missing tools into the "tools" directory
+  _tools="$_targetdir/tools"
+  tar --no-same-owner -xf "x86_64-linux-gnu.esptool-"*".tar.gz" -C "$_tools"
+  tar --no-same-owner -xf "x86_64-linux-gnu.mklittlefs-"*".tar.gz" -C "$_tools"
+  tar --no-same-owner -xf "x86_64-linux-gnu.mkspiffs-"*".tar.gz" -C "$_tools"
+
+  # The toolchain expects a "python3/python3" in the tools directory
+  mkdir "$_tools/python3"
+  ln -s "/usr/bin/python3" "$_tools/python3/"
+}

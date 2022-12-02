@@ -1,0 +1,13 @@
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+
+  make DESTDIR="$pkgdir" install
+
+  install aranym-jit "$pkgdir"/usr/bin
+  install aranym-mmu "$pkgdir"/usr/bin
+  install aratapif "$pkgdir"/usr/bin
+  install -D contrib/icon-32.png \
+    ${pkgdir}/usr/share/pixmaps/aranym.png
+  install -D contrib/aranym.desktop \
+    ${pkgdir}/usr/share/applications/aranym.desktop
+}

@@ -1,0 +1,20 @@
+package() {
+    # Launcher and Data
+    install -Dm755 "${srcdir}/Battle Cube.${_arch}" "${pkgdir}/opt/${pkgname}/Battle Cube.${_arch}"
+    mv "${srcdir}/Battle Cube_Data" "${pkgdir}/opt/${pkgname}/"
+
+    # Install Binaries/Launchers
+    mkdir -p "$pkgdir/usr/bin"
+    ln -s "/opt/${pkgname}/Battle Cube.${_arch}"  "${pkgdir}/usr/bin/${pkgname}"
+
+    # Desktop Integration
+    mkdir -p "$pkgdir/usr/share/pixmaps"
+    ln -s "/opt/${pkgname}/Battle Cube_Data/Resources/UnityPlayer.png" \
+        "${pkgdir}/usr/share/pixmaps/${pkgname}.png"
+    install -Dm644 "${pkgname}.desktop" "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+
+    # Fix wonky permissions
+    find "${pkgdir}/opt/${pkgname}" -type d -exec chmod 755 {} \;
+    find "${pkgdir}/opt/${pkgname}" -type f -exec chmod 644 {} \;
+    chmod 755 "${pkgdir}/opt/${pkgname}/Battle Cube.${_arch}"
+}

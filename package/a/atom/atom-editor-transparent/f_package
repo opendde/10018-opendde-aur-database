@@ -1,0 +1,6 @@
+package() {
+  cd ${srcdir}/install
+  install -d $pkgdir/usr/
+  cp -rp bin $pkgdir/usr/
+  cp -rp share $pkgdir/usr/
+}

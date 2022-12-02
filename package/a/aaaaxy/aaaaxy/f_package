@@ -1,0 +1,7 @@
+package() {
+  cd "$pkgname-$pkgver"
+  install -Dm644 io.github.divverent.$pkgname.metainfo.xml "$pkgdir"/usr/share/metainfo/io.github.divverent.$pkgname.metainfo.xml
+  install -Dm644 $pkgname.png "$pkgdir"/usr/share/icons/hicolor/128x128/apps/$pkgname.png
+  install -Dm644 $pkgname.desktop "$pkgdir"/usr/share/applications/$pkgname.desktop
+  install -Dm755 $pkgname "$pkgdir"/usr/bin/$pkgname
+}

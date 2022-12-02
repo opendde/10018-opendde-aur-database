@@ -1,0 +1,6 @@
+build() {
+  cd "bsd-games-$pkgver"
+
+  ./configure
+  make
+}

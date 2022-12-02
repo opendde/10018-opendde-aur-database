@@ -1,0 +1,10 @@
+build() {
+  cd "$_pkgname-$pkgver"
+  ./configure \
+    --prefix="/usr/${_target}" \
+    --target="${_target}" \
+    --with-system-include-path="/usr/${_target}/include" \
+    --with-system-library-path="/usr/${_target}/lib" \
+    --build="$CHOST"
+  make
+}

@@ -1,0 +1,3 @@
+build() {
+  gcc "bbsuid.c" -o "bbsuid"
+}

@@ -1,0 +1,8 @@
+package() {
+  install -dm755 "${pkgdir}/opt"
+  install -Dm755 arcane_fortune "${pkgdir}/usr/bin/arcane_fortune"
+  cp -r "${srcdir}/arcane_fortune_v${pkgver//./_}" "${pkgdir}/opt/arcanefortune"
+  find "${pkgdir}/opt/arcanefortune" -type d -exec chmod a+rx {} \;
+  find "${pkgdir}/opt/arcanefortune" -type f -exec chmod a+r {} \;
+  install -Dm644 "${srcdir}/arcane_fortune_v${pkgver//./_}/license.txt" "${pkgdir}/usr/share/licenses/${pkgname}/license.txt"
+}

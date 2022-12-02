@@ -1,0 +1,4 @@
+package() {
+    cd "Apetag"
+    install -Dm 755 -t "${pkgdir}/usr/bin" apetag
+}

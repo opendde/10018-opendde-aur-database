@@ -1,0 +1,6 @@
+package() {
+  cd "$pkgname-$pkgver" || exit 1
+
+  install -Dm644 LICENSE.md "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  cp -r build/pkg/* "$pkgdir"
+}

@@ -1,0 +1,10 @@
+build() {
+  cd $pkgname
+  autoreconf
+  ./configure --prefix=/usr
+  sed -i 's+-lstr+/usr/lib/ocaml/libcamlstr.a+' Makefile
+  make 
+  # to get cross references right
+  hevea manual.tex
+  pdflatex manual.tex
+}

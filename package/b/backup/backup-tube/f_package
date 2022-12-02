@@ -1,0 +1,8 @@
+package() {
+  cd $srcdir/dist/
+  
+  mkdir -p $pkgdir/$_destdir
+  cp -r . $pkgdir/$_destdir
+
+  install -Dm755 $srcdir/${pkgname}.sh $pkgdir/usr/bin/${pkgname}
+}

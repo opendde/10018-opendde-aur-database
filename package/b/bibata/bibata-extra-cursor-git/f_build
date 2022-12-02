@@ -1,0 +1,9 @@
+build() {
+  cd "${srcdir}/${_gitname}"
+  for _variant in ${_variants[*]}; do
+    python render-cursors.py ./src/"${_variant}"/source-cursors.svg -o -a --name ${_variant}
+    sh tweak.sh "${_variant}"
+    sh x11-make.sh "${_variant}"
+    cp src/"${_variant}"/*.theme "${_variant}"/out/X11/"${_variant}"
+  done
+}

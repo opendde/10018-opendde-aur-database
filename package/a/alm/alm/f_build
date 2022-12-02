@@ -1,0 +1,7 @@
+build() {
+  NYA="$srcdir/$pkgname"
+  npm install -g --user root --prefix "$NYA/usr" "$srcdir/$pkgname-$pkgver.tgz"
+  rm -rf "$NYA/usr/etc"
+  find "$NYA/usr/lib/node_modules/$pkgname" \
+    -name "package.json" -exec sed -i -e "s|$srcdir||g" '{}' +
+}

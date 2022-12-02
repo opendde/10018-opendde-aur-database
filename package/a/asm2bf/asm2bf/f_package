@@ -1,0 +1,4 @@
+package() {
+	cd "asmbf-${pkgver:1}"
+	make DESTDIR="$pkgdir/" install
+}

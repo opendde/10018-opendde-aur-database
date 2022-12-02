@@ -1,0 +1,6 @@
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+
+  export PATH="/usr/bin:${PATH}" # override /usr/local/bin
+  ./configure --prefix=/usr && make
+}

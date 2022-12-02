@@ -1,0 +1,1 @@
+("${url}/releases/ffmpeg-${pkgver}.tar.xz"{,.asc}

@@ -1,0 +1,7 @@
+package() {
+	cd "${srcdir}/${pkgname}"
+
+	install -D -m0755 mail "${pkgdir}"/usr/bin/bsd-mailx
+	install -D -m0644 mail.1 "${pkgdir}"/usr/share/man/man1/bsd-mailx.1
+	install -D -m0644 misc/mail.rc "${pkgdir}"/etc/bsd-mailx.rc
+}

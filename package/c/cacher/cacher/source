@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}.AppImage::https://s3.amazonaws.com/download.cacher.io/Cacher-${pkgver}.AppImage"

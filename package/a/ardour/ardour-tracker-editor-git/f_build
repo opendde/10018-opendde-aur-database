@@ -1,0 +1,15 @@
+build() {
+  cd "${srcdir}/${pkgname%-*}"
+
+  python waf configure  --strict \
+                        --prefix=/usr \
+                        --configdir=/etc \
+                        --cxx11 \
+                        --libjack=weak \
+                        --optimize \
+                        --ptformat \
+                        --with-backends=alsa,dummy,jack,pulseaudio \
+                        --with-tracker-editor
+
+  python waf build $MAKEFLAGS
+}

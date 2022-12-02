@@ -1,0 +1,4 @@
+prepare() {
+    cd "$srcdir/$_pkgname"
+    #sed -i -e "s|CALAMARES_VERSION_PATCH 0|CALAMARES_VERSION_PATCH $_pointver|g" CMakeLists.txt
+}

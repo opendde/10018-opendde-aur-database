@@ -1,0 +1,6 @@
+build() {
+	cd "${_pkgname}"
+	chmod u+x bootsplash-manjaro-globe.sh
+	chmod u+x bootsplash-packer
+	sh ./bootsplash-manjaro-globe.sh
+}

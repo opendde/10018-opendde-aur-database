@@ -1,0 +1,1 @@
+(${pkgname}-${pkgver}.tar.gz::https://github.com/jangernert/FeedReader/archive/v${pkgver//_beta/-beta-}.tar.gz)

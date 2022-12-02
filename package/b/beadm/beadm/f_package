@@ -1,0 +1,6 @@
+package() {
+    cd "$pkgname-$pkgver"
+    install -Dm0755 beadm "$pkgdir/usr/bin/beadm"
+    install -Dm0644 beadm.conf "$pkgdir/etc/beadm.conf"
+    install -Dm0644 beadm.1 "$pkgdir/usr/share/man/man1/beadm.1"
+}

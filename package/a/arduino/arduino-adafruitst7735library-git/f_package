@@ -1,0 +1,12 @@
+package() {
+  install -dm755 "$pkgdir/usr/share/arduino/libraries/$_futurefoldername"
+  install -dm755 "$pkgdir/usr/share/arduino/examples/$_futurefoldername"
+
+  cp "$_gitname/Adafruit_ST7735.cpp" "$pkgdir/usr/share/arduino/libraries/$_futurefoldername"
+  cp "$_gitname/Adafruit_ST7735.h" "$pkgdir/usr/share/arduino/libraries/$_futurefoldername"
+  cp "$_gitname/README.txt" "$pkgdir/usr/share/arduino/libraries/$_futurefoldername"
+  chmod 755 "$pkgdir/usr/share/arduino/libraries/$_futurefoldername/" -R
+
+  cp -r "$_gitname/examples/." "$pkgdir/usr/share/arduino/examples/$_futurefoldername"
+  chmod 755 "$pkgdir/usr/share/arduino/examples/$_futurefoldername/" -R
+}

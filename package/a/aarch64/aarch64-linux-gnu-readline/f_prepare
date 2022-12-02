@@ -1,0 +1,11 @@
+prepare() {
+  cd $_srcdir
+
+  for patch in "$srcdir/"*.patch; do
+    msg2 "Applying patch $patch"
+    patch -Np0 -s -i "$patch"
+  done
+
+  # Remove RPATH from shared objects (FS#14366)
+  sed -i 's|-Wl,-rpath,$(libdir) ||g' support/shobj-conf
+}

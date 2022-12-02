@@ -1,0 +1,8 @@
+package() {
+   mkdir -p "${pkgdir}/opt/${_pkgname}"
+   cp -a "${srcdir}/${_pkgname}"/* "${pkgdir}/opt/${_pkgname}"/.
+   cd "${srcdir}/${_pkgname}"
+   make prefix=/usr DESTDIR="${pkgdir}" install
+   install -Dm644 "${srcdir}/${_pkgname}/MANUAL" -t "${pkgdir}/usr/share/doc/${_pkgname}"
+   install -Dm644 "${srcdir}/${_pkgname}/LICENSE" -t "$pkgdir/usr/share/licenses/${_pkgname}"
+}

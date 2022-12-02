@@ -1,0 +1,6 @@
+package() {
+    rpmextract.sh mfc9335cdwlpr-1.1.3-0.i386.rpm
+    rpmextract.sh mfc9335cdwcupswrapper-1.1.4-0.i386.rpm
+    mv $srcdir/usr/ $pkgdir/
+    mv $srcdir/opt/ $pkgdir/
+}

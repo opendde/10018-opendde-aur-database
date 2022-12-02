@@ -1,0 +1,7 @@
+package() {
+  install -Dm 644 \
+    apgdiff.git/target/apgdiff-2.6.0-SNAPSHOT.jar \
+    "$pkgdir/usr/share/apgdiff/apgdiff-2.6.0-SNAPSHOT.jar"
+
+  install -Dm 755 apgdiff "$pkgdir/usr/bin/apgdiff"
+}

@@ -1,0 +1,1 @@
+("${pkgname%-git}::git+https://github.com/mrowa44/emojify.git")

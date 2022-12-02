@@ -1,0 +1,5 @@
+pkgver() {
+  cd ${pkgname}
+  # Remove 'v' prefix on tags; prefix revision with 'r'; replace all '-' with '.'
+  git describe --long | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}

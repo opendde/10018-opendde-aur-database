@@ -1,0 +1,1 @@
+("git+https://github.com/adobe/brackets#tag=release-${pkgver//_/-}"

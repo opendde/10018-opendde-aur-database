@@ -1,0 +1,12 @@
+prepare() {
+  cd "$pkgname-$pkgver"
+
+  # generate a desktop shortcut
+  gendesk -f -n --pkgname $pkgname --pkgdesc "$pkgdesc" --name BomberClone
+
+  # add build fix extracted from upstream CVS (fixes FS#26942)
+  patch -p0 -i ../bomberclone-0.11.9-build-fix.patch
+
+  # buffer overflow patch, ref FS#44387
+  patch -p0 -i ../snprintf.diff
+}

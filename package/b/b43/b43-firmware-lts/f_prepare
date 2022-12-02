@@ -1,0 +1,6 @@
+prepare() {
+  cd "$srcdir/fi-$pkgver"
+  for f in "buffer.c channels.c colors.c config.c dcc.c error.c help.c irc.c loop.c main.c names.c nickcolor.c term.h theme.c user.c utils.c wordcloud.c"; do
+    sed -i "s@#include <ncursesw/@#include <@" ./$f
+  done
+}

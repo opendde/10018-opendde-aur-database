@@ -1,0 +1,12 @@
+package() {
+  cd "$srcdir/$pkgname"
+  mkdir -p "${pkgdir}/usr/bin"
+  mkdir -p "${pkgdir}/usr/share/abunchoftags/"
+
+  cp keywsync "${pkgdir}/usr/bin/"
+  cp examples/fetch_and_sync.sh "${pkgdir}/usr/share/abunchoftags/"
+
+  if [ -e notmuch_get_revision ]; then
+    cp notmuch_get_revision "${pkgdir}/usr/bin/"
+  fi
+}

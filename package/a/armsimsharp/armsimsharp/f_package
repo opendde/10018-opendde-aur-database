@@ -1,0 +1,5 @@
+package() {
+    install -D --mode=u=rwx,go=rx "--target-directory=${pkgdir}/usr/bin" "${srcdir}/${pkgname}"
+    install -D --mode=u=rw,go=r "--target-directory=${pkgdir}/opt/${pkgname}" "${srcdir}"/*.{config,dll,exe}
+    install -D --mode=u=rwx,go=rx "--target-directory=${pkgdir}/opt/${pkgname}" "${srcdir}/arm-none-eabi-as"
+}

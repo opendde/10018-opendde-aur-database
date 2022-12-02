@@ -1,0 +1,7 @@
+build() {
+  cd "${pkgname}"
+  export NPM_VERSION=$(npm --version)
+  make electron-develop
+  make webpack
+  npm prune --production
+}

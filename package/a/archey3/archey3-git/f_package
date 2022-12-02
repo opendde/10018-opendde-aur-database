@@ -1,0 +1,5 @@
+package() {
+    cd "$_pkgname"
+    python setup.py install --root=${pkgdir}
+    install -D -m644 COPYING ${pkgdir}/usr/share/licenses/archey/COPYING
+}

@@ -1,0 +1,11 @@
+build() {
+  cd "${pkgname%-git}"
+  ./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --disable-caches \
+    --disable-schemas-compile \
+    --enable-compile-warnings=minimum
+  make
+}

@@ -1,0 +1,6 @@
+package() {
+  cd "aws-toolkit-vscode-$pkgver"
+  install -Dm 644 LICENSE "$pkgdir"/usr/share/licenses/"$pkgname"/LICENSE
+  install -Dm 755 dist/src/stepFunctions/asl/aslServer.js "$pkgdir"/usr/bin/aws-asl-languageserver
+  sed -i '1s|^|#!/usr/bin/node\n|' "$pkgdir"/usr/bin/aws-asl-languageserver
+}

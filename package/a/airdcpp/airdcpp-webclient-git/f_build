@@ -1,0 +1,8 @@
+build() {
+  cd ${srcdir}/${_gitname}
+
+  export PKG_CONFIG_PATH=/usr/lib/openssl-1.0/pkgconfig
+
+  cmake . -DCMAKE_INSTALL_PREFIX=/usr
+  make
+}

@@ -1,0 +1,5 @@
+build() {
+  cd "bipscript"
+	cmake -DCMAKE_INSTALL_PREFIX=/usr .
+	make
+}

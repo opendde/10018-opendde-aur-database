@@ -1,0 +1,4 @@
+package() {
+  cd "$srcdir"/$pkgname
+  make INSTDIR="$pkgdir"/usr install
+}

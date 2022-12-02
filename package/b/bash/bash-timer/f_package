@@ -1,0 +1,5 @@
+package() {
+  cd "${srcdir}/"
+  install -D -m0755 -t "${pkgdir}/usr/share/${pkgname}" \
+    "${pkgname}-${pkgver}/${pkgname}.sh"
+}

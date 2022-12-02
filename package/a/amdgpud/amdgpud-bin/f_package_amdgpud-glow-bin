@@ -1,0 +1,8 @@
+package_amdgpud-glow-bin() {
+	pkgdesc+=' -- Xorg version'
+	provides+=('amdguid-glow')
+	conflicts+=('amdguid-wayland')
+
+	install -D glow/amdguid -t "$pkgdir/usr/bin/"
+	_package
+}

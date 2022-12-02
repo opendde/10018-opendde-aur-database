@@ -1,0 +1,4 @@
+prepare() {
+  cd $pkgname-$pkgname-$pkgver
+  sed -i '14s+^+#+' Makefile.PL
+}

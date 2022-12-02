@@ -1,0 +1,6 @@
+package() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  make DESTDIR="${pkgdir}" install
+  rm "${pkgdir}/usr/share/doc/ansifilter/COPYING" \
+     "${pkgdir}/usr/share/doc/ansifilter/INSTALL"
+}

@@ -1,0 +1,18 @@
+package() {
+	npm install -g \
+		--user root \
+		--prefix "$pkgdir"/usr \
+		"$srcdir"/$_name-$pkgver.tgz
+
+	# Non-deterministic race in npm gives 777 permissions to random directories.
+	# See https://github.com/npm/npm/issues/9359 for details.
+	find "${pkgdir}"/usr -type d -exec chmod 755 {} +
+
+	# Solve conflict with the alex package (Haskell lexer generator)
+	# https://github.com/get-alex/alex/issues/83
+	mv "${pkgdir}"/usr/bin/alex "${pkgdir}"/usr/bin/alexjs
+
+	install -D -m644 \
+		"${srcdir}/package/license" \
+		"${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

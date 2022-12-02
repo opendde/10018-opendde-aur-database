@@ -1,0 +1,21 @@
+prepare() {
+    echo -e "Please enter the API ID and API HASH\nYou can get one from https://my.telegram.org/apps"
+    echo -n "API ID: "
+    read _API_ID
+    echo -n -e "API HASH: " 
+    read _API_HASH
+
+    cd $_pkgname-$pkgver-full
+    patch -p1 < ../remove-ad.patch
+
+    cmake . \
+        -B build \
+        -G Ninja \
+        -DCMAKE_INSTALL_PREFIX="/usr" \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DTDESKTOP_API_ID=$_API_ID \
+        -DTDESKTOP_API_HASH=$_API_HASH \
+        -DDESKTOP_APP_DISABLE_AUTOUPDATE=ON
+    python -c 'with open("build/build.ninja","+r") as f:t=f.read();t=t.replace("LINK_LIBRARIES =","LINK_LIBRARIES = /usr/lib/liblzma.so.5");f.seek(0,0);f.write(t);f.truncate();'
+
+}

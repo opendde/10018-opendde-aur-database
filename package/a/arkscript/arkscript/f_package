@@ -1,0 +1,10 @@
+package() {
+    cd $srcdir
+    mkdir -p $pkgdir/usr/bin
+    mkdir -p $pkgdir/usr/lib/std
+
+    install -m644 $srcdir/lib/std/*.ark $pkgdir/usr/lib/std
+    install -m644 $srcdir/lib/*.arkm $pkgdir/usr/lib
+    install -m755 $srcdir/arkscript $pkgdir/usr/bin
+    install -m755 $srcdir/libArkReactor.so $pkgdir/usr/lib
+}

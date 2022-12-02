@@ -1,0 +1,5 @@
+build() {
+	cd ${srcdir}/${_pkgname}/pteid-mw-pt/_src/eidmw
+	qmake pteid-mw.pro
+	make -j${nproc}
+}

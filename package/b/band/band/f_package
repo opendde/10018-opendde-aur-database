@@ -1,0 +1,5 @@
+package() {
+	msg2 "Extracting package binaries(data.tar.xz)..."
+	bsdtar -xf ${srcdir}/data.tar.xz -C "${pkgdir}/"
+	install -Dm644 -t "${pkgdir}/usr/share/licenses/band/LICENSE" ${srcdir}/LICENSE
+}

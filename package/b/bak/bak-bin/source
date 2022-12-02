@@ -1,0 +1,1 @@
+("${pkgname%-bin}-$pkgver.tar.zst::https://github.com/gamemaker1/${pkgname%-bin}/releases/download/$pkgver/${pkgname%-bin}-$pkgver-$pkgrel-any.pkg.tar.zst")

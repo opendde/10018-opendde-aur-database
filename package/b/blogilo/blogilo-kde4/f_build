@@ -1,0 +1,6 @@
+build() {
+  mkdir -p "${srcdir}/${_blogdir}/build"
+  cd "${srcdir}/${_blogdir}/build" 
+  cmake -DCMAKE_INSTALL_PREFIX=`kde4-config --prefix` .. 
+  make 
+}

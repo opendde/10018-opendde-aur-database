@@ -1,0 +1,5 @@
+build() {
+  cd "${srcdir}/bluetoother"
+
+  ./scripts/install_bluetoother.py -b=Release  --installdir="/usr" --no-install --no-sudo
+}

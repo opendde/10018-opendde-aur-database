@@ -1,0 +1,24 @@
+package() {
+  local SOURCE="$srcdir/Diaspora_R1_Linux/Diaspora/"
+
+  cd $SOURCE
+
+  #install -D -m644 -t "$pkgdir/opt/$pkgname/" *.vp *.ini *.png *.bmp data
+  install -m644 -d "$pkgdir/opt/$pkgname/"
+  mv *.vp *.png *.bmp mod.ini pro00099.ini data "$pkgdir/opt/$pkgname/"
+
+  #install -D -m644 -t "$pkgdir/usr/share/doc/$pkgname/" *.pdf *.txt *.rtf
+  install -m644 -d "$pkgdir/usr/share/doc/$pkgname/"
+  mv *.pdf *.txt *.rtf "$pkgdir/usr/share/doc/$pkgname/"
+
+  # Fix permissions (since 'mv' won't set them)
+  chmod -R 644 "$pkgdir/opt/$pkgname/" "$pkgdir/usr/share/doc/$pkgname/"
+  find "$pkgdir/opt/$pkgname/" "$pkgdir/usr/share/doc/$pkgname/" -type d -exec chmod 755 '{}' \;
+
+    install -D -m755 $srcdir/bsg-diaspora-sa "$pkgdir/usr/bin/bsg-diaspora-sa"
+    install -D -m644 $srcdir/bsg-diaspora-sa.conf "$pkgdir/usr/share/$pkgname/bsg-diaspora-sa.conf"
+    install -D -m644 $srcdir/bsg-diaspora-sa.png "${pkgdir}/usr/share/pixmaps/bsg-diaspora-sa.png"
+    install -D -m644 $srcdir/bsg-diaspora-sa.desktop "$pkgdir/usr/share/applications/bsg-diaspora-sa.desktop"
+    install -D -m644 fs2_open/COPYING "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    install -D -m755 fs2_open/code/fs2_open_3.7.1 "$pkgdir/opt/$pkgname/fs2_open_diaspora"
+}

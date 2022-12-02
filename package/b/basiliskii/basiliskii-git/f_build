@@ -1,0 +1,12 @@
+build() {
+  cd macemu/BasiliskII/src/Unix
+  ./configure \
+    --prefix=/usr \
+    --enable-sdl-video \
+    --enable-sdl-audio \
+    --enable-jit-compiler \
+    --with-bincue \
+    --with-vdeplug
+
+  make -j1
+}

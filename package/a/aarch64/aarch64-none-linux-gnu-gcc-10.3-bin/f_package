@@ -1,0 +1,11 @@
+package() {
+  mkdir -p ${pkgdir}/usr
+  cp -a ${srcdir}/gcc-arm-${pkgverfull}-x86_64-${target}/* ${pkgdir}/usr
+
+  rm -f ${pkgdir}/usr/*-manifest.txt
+  rm -rf ${pkgdir}/usr/lib64
+  rm -rf ${pkgdir}/usr/include
+  rm -rf ${pkgdir}/usr/share/{doc,gcc-*,gdb,info,locale}
+  rm -rf ${pkgdir}/usr/share/man/{man5,man7}
+  rm -rf ${pkgdir}/usr/lib/bfd-plugins/libdep.so
+}

@@ -1,0 +1,4 @@
+pkgver() {
+  cd "${srcdir}/bitcoin-scrypt"
+  git log -1 --date=short --format="%cd.%h" | tr -d '-'
+}

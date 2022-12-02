@@ -1,0 +1,1 @@
+("${pkgname}_${pkgver}_aarch64.tar.gz::https://github.com/charmbracelet/confettysh/releases/download/v1.0.3/confettysh_1.0.3_linux_arm64.tar.gz")

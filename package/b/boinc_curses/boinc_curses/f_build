@@ -1,0 +1,8 @@
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+  cp "$srcdir/str_replace.h" .
+  make BOINC_HOME=/var/lib/boinc \
+       BOINCINCDIR=/usr/include/boinc \
+       BOINCLIBDIR=/usr/lib \
+       CFLAGS=-I.
+}

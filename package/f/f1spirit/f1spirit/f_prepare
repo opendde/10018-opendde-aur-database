@@ -1,0 +1,5 @@
+prepare() {
+    cd "${srcdir}/eSearch"
+    git checkout $(git describe --abbrev=0 --tags)
+    npm install
+}

@@ -1,0 +1,6 @@
+build() {
+	(
+		set -x
+		g++ $CFLAGS ./wave/tool/cpp.cpp $LDFLAGS -lboost_thread -lboost_filesystem -lboost_wave -lboost_program_options -lboost_timer
+	)
+}

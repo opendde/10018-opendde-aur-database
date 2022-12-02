@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir/aspell6-vi-$pkgver-1"
+  make DESTDIR="$pkgdir" install
+
+  install -D -m644 Copyright "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

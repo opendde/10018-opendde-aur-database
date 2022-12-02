@@ -1,0 +1,8 @@
+package_sddm-breath-theme() {
+  pkgdesc="Breath theme for SDDM"
+  depends=('plasma-framework' 'plasma-workspace')
+  conflicts=('sddm-breath2-theme-dev')
+  replaces=('sddm-breath2-theme')
+
+  make -C build-sddm DESTDIR="${pkgdir}" install
+}

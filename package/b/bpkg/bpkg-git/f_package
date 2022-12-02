@@ -1,0 +1,6 @@
+package() {
+  cd "${srcdir}/${_gitname}"
+
+  PREFIX="${pkgdir}/usr" ./setup.sh
+  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}

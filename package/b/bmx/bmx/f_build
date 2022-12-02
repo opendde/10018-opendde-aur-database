@@ -1,0 +1,6 @@
+build() {
+    cd $pkgname
+    bash autogen.sh
+    bash ./configure --prefix=/usr --disable-examples CFLAGS="-std=gnu99"
+    make -j$(nproc)
+}

@@ -1,0 +1,6 @@
+build() {
+  cd "$pkgname-$_realver"
+  autoreconf -i
+  ./configure --prefix=/usr
+  make
+}

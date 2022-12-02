@@ -1,0 +1,10 @@
+package () {
+  cd "$srcdir/$_realname-$pkgver"
+  make DESTDIR="$pkgdir" install
+
+  rm -rf "$pkgdir/usr/"{bin/{aclocal,automake},share/{doc,aclocal}}
+
+  rename "automake" "automake-1.14" "$pkgdir"/usr/share/info/*
+
+  rm "$pkgdir/usr/share/man/man1/"{aclocal,automake}.1
+}

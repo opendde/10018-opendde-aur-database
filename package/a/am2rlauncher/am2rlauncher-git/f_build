@@ -1,0 +1,4 @@
+build() {
+    cd "AM2RLauncher/AM2RLauncher/"
+    dotnet publish AM2RLauncher.Gtk -p:PublishSingleFile=true -p:DebugType=embedded -c release -r ubuntu.18.04-x64 --no-self-contained
+}

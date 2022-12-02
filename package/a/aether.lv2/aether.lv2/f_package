@@ -1,0 +1,13 @@
+package() {
+  depends+=(ttf-roboto)
+
+  cd $_projectname-$pkgver
+  install -vDm644 LICENSE.md -t "$pkgdir"/usr/share/licenses/$pkgname
+  install -vDm644 usermanual/* -t "$pkgdir"/usr/share/doc/$pkgname
+
+  cd "$srcdir"/build/$pkgname
+  install -vDm755 *.so -t "$pkgdir"/usr/lib/lv2/$pkgname
+  install -vDm644 *.ttl -t "$pkgdir"/usr/lib/lv2/$pkgname
+  install -d "$pkgdir"/usr/lib/lv2/$pkgname/fonts
+  ln -vs /usr/share/fonts/TTF/Roboto-{Light,Regular}.ttf -t "$pkgdir"/usr/lib/lv2/$pkgname/fonts
+}

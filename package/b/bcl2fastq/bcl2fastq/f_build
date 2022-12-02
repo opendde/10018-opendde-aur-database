@@ -1,0 +1,25 @@
+build() {
+  # get boost 1.55, correct its python invocation, and fake it as 1.54 for bcl2fastq
+  msg "Fix python2 in boost bootstrap"
+  sed -i 's/PYTHON=python/PYTHON=python2.7/' "${srcdir}/boost_1_55_0/bootstrap.sh"
+
+  msg "Fake boost 1.54 with boost 1.55"
+  cd "${srcdir}"
+  rm -rf boost_1_54_0
+  mv boost_1_55_0 boost_1_54_0
+  tar -cf boost_1_54_0.tar boost_1_54_0 && bzip2 boost_1_54_0.tar
+  rm bcl2fastq/redist/boost_1_54_0.tar.bz2
+  cp boost_1_54_0.tar.bz2 bcl2fastq/redist/
+
+  msg "Make build folder"
+  cd "${srcdir}"
+  rm -rf "${srcdir}/build"
+  mkdir -p "${srcdir}/build"
+  cd build
+
+  msg "Configure bcl2fastq"
+  "${srcdir}/${pkgname}/src/configure" --prefix="${pkgdir}"
+
+  msg "Make bcl2fastq"
+  make -j2
+}

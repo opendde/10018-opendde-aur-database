@@ -1,0 +1,8 @@
+check() {
+
+#  No tests defined
+#  meson test -C build --print-errorlogs
+
+  desktop-file-validate build/data/${_app_id}.desktop
+  appstreamcli validate build/data/${_app_id}.appdata.xml
+}

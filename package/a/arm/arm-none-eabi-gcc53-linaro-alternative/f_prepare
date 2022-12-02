@@ -1,0 +1,18 @@
+prepare() {
+  cd ${srcdir}
+  mv ${srcdir}/newlib-${_newlibver}/newlib   ${_basedir}
+  mv ${srcdir}/newlib-${_newlibver}/libgloss ${_basedir}
+
+hortdate=14.09
+_reldate=20${_relshortdate}
+
+cd ${srcdir}/${_basedir}
+  find ${srcdir}/*.patch | while read PATCH ; do
+    patch -Np1 -i $PATCH
+  done
+
+  cd ${srcdir}/${_basedir}
+  mkdir build
+  cd build
+
+}

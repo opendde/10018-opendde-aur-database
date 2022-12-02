@@ -1,0 +1,3 @@
+prepare() {
+    bsdcpio -i -m --quiet --make-directories '*/amidst-*.png' < "$_jarfile"
+}

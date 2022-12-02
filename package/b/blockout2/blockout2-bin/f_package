@@ -1,0 +1,8 @@
+package() {
+   install -d "$pkgdir"/{opt,usr/bin,usr/share/applications,usr/share/pixmaps}
+	chmod -x "$srcdir"/blockout/README.txt "$srcdir"/blockout/images/background.png "$srcdir"/blockout/sounds/music.ogg
+	mv "$srcdir"/blockout "$pkgdir"/opt/blockout2
+	cp -L "$srcdir"/blockout2 "$pkgdir"/usr/bin/
+	cp -L blockout2.desktop "$pkgdir"/usr/share/applications/
+	cp -L blockout2.png "$pkgdir"/usr/share/pixmaps/
+}

@@ -1,0 +1,4 @@
+build() {
+  arch-meson "${pkgname%-git}-$pkgver" build
+  meson compile -C build
+}

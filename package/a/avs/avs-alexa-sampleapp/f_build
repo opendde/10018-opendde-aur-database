@@ -1,0 +1,19 @@
+build() {
+	cd "${srcdir}"
+	mkdir -p build
+	cd build
+	# use older gcc version to avoid bugs
+	export CC="/usr/bin/gcc-4.9"
+	export CXX="/usr/bin/g++-4.9"
+	# removing -fno-plt usually defined in /etc/makepkg.conf
+	export CFLAGS="-march=x86-64 -mtune=generic -O2 -pipe"
+	export CXXFLAGS="-march=x86-64 -mtune=generic -O2 -pipe"
+	cmake "../avs-device-sdk-${pkgver}/SampleApp" \
+		-DCMAKE_PREFIX_PATH=/usr \
+		-DKWD=ON \
+		-DGSTREAMER_MEDIA_PLAYER=ON \
+		-DPORTAUDIO=ON \
+		-DPORTAUDIO_LIB_PATH="/usr/lib/libportaudio.so" \
+		-DPORTAUDIO_INCLUDE_DIR="/usr/include"
+	make
+}

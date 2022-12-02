@@ -1,0 +1,4 @@
+prepare() {
+  cd "$pkgname"
+  for f in "$srcdir"/*.patch; do patch < "$f"; done
+}

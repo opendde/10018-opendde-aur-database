@@ -1,0 +1,17 @@
+package() {
+  cd "$_pkgname-$pkgver"
+  make DESTDIR="$pkgdir" install
+
+  install -dm755 "$pkgdir$_sysroot"
+  mv "$pkgdir"/lib/ld-musl*.so* "$pkgdir$_sysroot"/lib
+  rmdir "$pkgdir"/lib
+
+  pushd "$pkgdir"/usr/bin
+  for _bin in *; do
+    mv "$_bin" "$_target-$_bin"
+  done
+  popd
+
+  install -Dm0644 README "$pkgdir"/usr/share/doc/$pkgname/README
+  install -Dm0644 COPYRIGHT "$pkgdir"/usr/share/licenses/$pkgname/COPYRIGHT
+}

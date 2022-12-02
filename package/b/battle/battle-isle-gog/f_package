@@ -1,0 +1,23 @@
+package() {
+    # data
+    install -d "$pkgdir"/opt/battle-isle
+    cp -r setup/* "$pkgdir"/opt/battle-isle
+    # fix permissions script
+    install -Dm755 fix-permissions.sh "$pkgdir"/opt/battle-isle
+    # additional dosbox configs
+    install -m644 *.conf "$pkgdir"/opt/battle-isle
+    # doc + licenses
+    install -d "$pkgdir"/usr/share/{doc,licenses}/$pkgname
+    for _f in app/*.pdf; do
+        ln -s -t "$pkgdir"/usr/share/doc/$pkgname "/opt/battle-isle/$(basename "$_f")"
+    done
+    install -m644 eula.txt "$pkgdir"/usr/share/licenses/$pkgname
+    # .desktop files and launchers
+    install -Dm644 $pkgname.desktop "$pkgdir"/usr/share/applications/battle-isle.desktop
+    install -Dm755 $pkgname.sh "$pkgdir"/usr/bin/battle-isle
+    for _m in desert moon; do
+        install -m644 battle-isle-$_m.desktop "$pkgdir"/usr/share/applications
+    done
+    # icon
+    install -Dm644 goggame-1207660993_6_256x256x32.png "$pkgdir"/usr/share/pixmaps/battle-isle.png
+}

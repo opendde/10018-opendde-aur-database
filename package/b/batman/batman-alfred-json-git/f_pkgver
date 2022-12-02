@@ -1,0 +1,4 @@
+pkgver() {
+    cd "$srcdir/alfred-json"
+    git rev-list HEAD --count
+}

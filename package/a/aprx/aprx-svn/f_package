@@ -1,0 +1,11 @@
+package() {
+ # cd "$srcdir/$_svnmod-build"
+  cd "aprx-2.08.svn593"
+  mkdir -p "${pkgdir}/usr/lib/systemd/system"
+  install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+  make DESTDIR="$pkgdir/" install
+  cp ${srcdir}/aprx.service ${pkgdir}/usr/lib/systemd/system
+  mkdir -p "${pkgdir}/usr/bin"
+  mv ${pkgdir}/sbin/* ${pkgdir}/usr/bin
+  rmdir ${pkgdir}/sbin
+}

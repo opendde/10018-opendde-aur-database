@@ -1,0 +1,3 @@
+build() {
+	tar -xf data.tar.gz
+}

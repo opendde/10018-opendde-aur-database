@@ -1,0 +1,20 @@
+package() {
+  chmod 755 ./${pkgname%-bin}-${pkgver}.AppImage
+  ./${pkgname%-bin}-${pkgver}.AppImage --appimage-extract
+  install -Dm644 squashfs-root/usr/share/icons/hicolor/0x0/apps/${pkgname%-bin}.png "${pkgdir}/usr/share/pixmaps/archifiltre.png"
+  gendesk -f -n --pkgname "${pkgname%-bin}" \
+          --pkgdesc "$pkgdesc" \
+          --name "Archifiltre" \
+          --comment "$pkgdesc" \
+          --exec "${pkgname%-bin}" \
+          --categories 'Utility;Application' \
+          --icon "${pkgname%-bin}"
+  install -Dm644 "${pkgname%-bin}.desktop" -t "${pkgdir}/usr/share/applications"
+  install -d "${pkgdir}/usr/bin"
+  install -Dm644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -d "${pkgdir}/usr/bin"
+  install -d "${pkgdir}/opt"
+  cp -avR squashfs-root/ "${pkgdir}/opt/${pkgname%-bin}"
+  ln -s /opt/${pkgname%-bin}/AppRun "${pkgdir}/usr/bin/${pkgname%-bin}"
+  find "${pkgdir}/opt/${pkgname%-bin}" -type d -exec chmod 755 {} +
+}

@@ -1,0 +1,5 @@
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr --sysconfdir=/etc
+  make V=0
+}

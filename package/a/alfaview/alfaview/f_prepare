@@ -1,0 +1,4 @@
+prepare() {
+    mkdir -p deb-data
+    bsdtar -O -xf "${pkgname}_${pkgver}.deb" data.tar.xz | bsdtar -C ./deb-data -xJf -
+}

@@ -1,0 +1,5 @@
+check() {
+    cd binutils-$pkgver
+
+    make check
+}

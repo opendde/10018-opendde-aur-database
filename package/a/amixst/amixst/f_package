@@ -1,0 +1,6 @@
+package() {
+	cd build
+	install -D "$pkgname" -t "$pkgdir/usr/bin/"
+	install -Dm644 "$srcdir/$pkgname-$pkgver/etc/conf" -t "$pkgdir/etc/$pkgname/"
+	install -Dm644 "$srcdir/$pkgname-$pkgver/README.md" -t "$pkgdir/usr/share/doc/$pkgname/"
+}

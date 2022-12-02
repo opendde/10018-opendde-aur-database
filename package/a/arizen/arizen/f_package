@@ -1,0 +1,6 @@
+package() {
+
+	# Extract package data
+	tar xf data.tar.xz -C "${pkgdir}"
+
+}

@@ -1,0 +1,6 @@
+package() {
+	cp -a usr $pkgdir
+	mkdir -p $pkgdir/usr/share/licenses/$pkgname
+	mv $pkgdir/usr/share/doc/arch-test/copyright $pkgdir/usr/share/licenses/$pkgname
+	rm -rf $pkgdir/usr/share/{doc,lintian}
+}

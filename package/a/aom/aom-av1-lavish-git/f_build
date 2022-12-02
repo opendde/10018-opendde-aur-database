@@ -1,0 +1,9 @@
+build() {
+  cmake -S ${pkgname%-git} -B build -G Ninja \
+    -DCONFIG_TUNE_VMAF=1 \
+    -DCONFIG_TUNE_BUTTERAUGLI=1 \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DBUILD_SHARED_LIBS=1 \
+    -DENABLE_TESTS=0
+  cmake --build build
+}

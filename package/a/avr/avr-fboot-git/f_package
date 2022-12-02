@@ -1,0 +1,5 @@
+package() {
+        cd "$srcdir/${pkgname%-git}/src"
+        mkdir -p $pkgdir/usr/bin
+	cp bootloader $pkgdir/usr/bin/${pkgname%-git}
+}

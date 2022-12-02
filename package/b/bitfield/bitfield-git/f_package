@@ -1,0 +1,5 @@
+package() {
+	cd ${pkgname%-git}
+
+	make DESTDIR="$pkgdir/" prefix=/usr sysconfdir=/etc install
+}

@@ -1,0 +1,4 @@
+prepare() {
+    mkdir ${srcdir}/build
+    tar -xf ${srcdir}/data.tar.xz -C ${srcdir}/build
+}

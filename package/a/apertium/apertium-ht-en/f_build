@@ -1,0 +1,14 @@
+build() {
+  patch -p0 < Makefile.am.patch
+  patch -p0 < Makefile.in.patch
+  # remove the c (comment) attribute, not in the DTD in apertium<=3.1.1:
+  patch -p0 < t1x.patch
+
+  mkdir -p "$pkgdir/usr/share/apertium/modes"
+
+  cd "$srcdir/$pkgname-$pkgver"
+
+  ./configure --prefix=/usr
+  make || return 1
+  make DESTDIR="$pkgdir/" install || return 1
+}

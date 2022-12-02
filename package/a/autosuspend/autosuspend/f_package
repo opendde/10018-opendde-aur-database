@@ -1,0 +1,17 @@
+package() {
+    cd "$pkgname-${pkgver}"
+    python3 setup.py install --root="$pkgdir/" --install-data=/usr
+    # setuptools install_data is a nightmare, and cannot be made to respect the
+    # filesystem hierarchy. Do things manually instead.
+    mv "$pkgdir/usr/etc" "$pkgdir"
+
+    # man pages
+    mkdir -p "${pkgdir}/usr/share/man/man1"
+    cp doc/build/man/autosuspend.1 "${pkgdir}/usr/share/man/man1"
+    mkdir -p "${pkgdir}/usr/share/man/man5"
+    cp doc/build/man/autosuspend.conf.5 "${pkgdir}/usr/share/man/man5"
+
+    # HTML help
+    mkdir -p "${pkgdir}/usr/share/doc"
+    cp -R doc/build/html "${pkgdir}/usr/share/doc/${pkgname}"
+}

@@ -1,0 +1,4 @@
+package() {
+	cd "$topdirname"
+	PREFIX="$pkgdir"/usr/ ./install.sh
+}

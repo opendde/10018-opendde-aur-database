@@ -1,0 +1,5 @@
+package() {
+  cd "$srcdir/aspell6-lv-$pkgver-1"
+  make DESTDIR="$pkgdir" install
+  install -Dm655 COPYING "$pkgdir/usr/share/licenses/custom/$pkgname/COPYING"
+}

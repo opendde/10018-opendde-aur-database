@@ -1,0 +1,7 @@
+build() {
+  cd "$srcdir"
+  gendesk -f -n --pkgname "$pkgname" \
+    --pkgdesc "$pkgdesc" \
+    --name='AOI (Art of Illusion)' \
+    --exec='java -Xmx512m -jar /usr/share/java/aoi/ArtOfIllusion.jar'
+}

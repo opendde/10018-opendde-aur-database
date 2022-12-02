@@ -1,0 +1,6 @@
+pkgver() {
+  # shellcheck disable=SC2154
+  local _norev
+  _norev="$(pacman -Q "${_pkgbase}" | awk '{print $2}')"
+  echo "${_norev%%-*}"
+}

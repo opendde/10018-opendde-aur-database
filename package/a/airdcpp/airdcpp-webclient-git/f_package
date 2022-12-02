@@ -1,0 +1,14 @@
+package() {
+  cd ${srcdir}/${_gitname}
+  make DESTDIR=${pkgdir}/ install
+
+  install -d "${pkgdir}"/usr/lib
+  mv ${pkgdir}/usr/lib64/* ${pkgdir}/usr/lib
+  rmdir ${pkgdir}/usr/lib64
+
+  cd ..
+  install -Dm644 airdcpp.service ${pkgdir}/usr/lib/systemd/system/airdcpp.service
+  install -Dm644 airdcpp.socket ${pkgdir}/usr/lib/systemd/system/airdcpp.socket
+  install -Dm644 airdcpp.sysusers ${pkgdir}/usr/lib/sysusers.d/airdcpp.conf
+  install -Dm644 airdcpp.tmpfiles ${pkgdir}/usr/lib/tmpfiles.d/airdcpp.conf
+}

@@ -1,0 +1,6 @@
+package() {
+    make -C build DESTDIR="$pkgdir" install
+    install -D -m755 build/cbrunsli -t "${pkgdir}/usr/bin"
+    install -D -m755 build/dbrunsli -t "${pkgdir}/usr/bin"
+    install -D -m644 brunsli/LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
+}

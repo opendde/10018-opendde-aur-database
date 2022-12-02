@@ -1,0 +1,6 @@
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}/badger"
+  export GOPATH="${srcdir}"/go
+  export PATH=$PATH:$GOPATH/bin
+  go build -v -o "${srcdir}/${pkgname}-bin"
+}

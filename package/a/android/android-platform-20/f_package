@@ -1,0 +1,11 @@
+package() {
+  mkdir -p "${pkgdir}/opt/android-sdk/platforms/"
+  mv "${srcdir}/android-${_sdkver}" "${pkgdir}/opt/android-sdk/platforms/android-${_sdkint}"
+
+  #chmod -R ugo+rX "${pkgdir}/opt"
+
+  #Change group users  
+  #chown -R :${_sdkgroup} "${pkgdir}/opt/android-sdk"
+  #Change permisions
+  chmod -R ug+rwX,o=rX "${pkgdir}/opt/android-sdk"	
+}

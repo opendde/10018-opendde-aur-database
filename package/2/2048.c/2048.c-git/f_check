@@ -1,0 +1,4 @@
+check() {
+	cd "${srcdir}/${_pkgname}"
+	./2048 test
+}

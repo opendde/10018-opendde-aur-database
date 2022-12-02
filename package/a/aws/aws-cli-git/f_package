@@ -1,0 +1,23 @@
+package() {
+  set +u
+  provides=("${_pybase}=${pkgver%%.r*}" "${_vcsprovides[@]}")
+  conflicts=("${_pyverother}-aws-cli" "${_pyver}-aws-cli" "${_pybase}" "${_vcsconflicts[@]}")
+  set -u
+  #depends=("${_pyver}" "${_pydepends[@]}")
+  #replaces=("${_pyver}-aws-cli" "${_pybase//-/}")
+
+  cd "${_srcdir}"
+  ${_pyver} setup.py install --root="${pkgdir}" --optimize=1
+  install -Dpm644 'bin/aws_zsh_completer.sh' "${pkgdir}/etc/zsh/aws_complete.zsh" # someone dropped an s. I don't know if I can change it safely.
+
+  install -Dpm644 <(cat << EOF
+# ${pkgname} ${pkgver} bash completion script
+# https://aur.archlinux.org/
+complete -C aws_completer aws
+EOF
+) "${pkgdir}/usr/share/bash-completion/completions/${pkgname%-git}"
+
+  install -Dpm644 'README.rst' 'requirements.txt' -t "${pkgdir}/usr/share/doc/${pkgname%-git}/"
+  install -Dpm644 'LICENSE.txt' "${pkgdir}/usr/share/licenses/${pkgname%-git}/LICENSE"
+  set +u
+}

@@ -1,0 +1,4 @@
+package() {
+  cd "${srcdir}/u-boot-${pkgver}/tools"
+  install -m755 -vDt $pkgdir/usr/bin bpir64-mkimage
+}

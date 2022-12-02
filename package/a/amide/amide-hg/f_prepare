@@ -1,0 +1,5 @@
+prepare() {
+  cd ${pkgname%-hg}/${pkgname%-hg}-current
+  sed -i "s+aclocal-1.14+aclocal-1.15+" Makefile.am
+  sed -i "s+automake-1.14+automake-1.15+" Makefile.am
+}

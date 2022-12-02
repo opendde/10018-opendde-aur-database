@@ -1,0 +1,11 @@
+package() {
+        # extract to pkgdir
+        bsdtar -O -xf "${pkgname}-${pkgver}.deb" data.tar.xz | bsdtar -C "${pkgdir}" -xJf -
+
+        # remove debian-specific files
+        rm -rf "${pkgdir}/usr/share/lintian"
+
+        # install LICENSE.txt
+        install -dm755 "${pkgdir}/usr/share/licenses/${pkgname}"
+        install "LICENSE.txt" "${pkgdir}/usr/share/licenses/${pkgname}"
+}

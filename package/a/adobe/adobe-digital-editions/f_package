@@ -1,0 +1,4 @@
+package() {
+    install -Dm644 ${_installer} ${pkgdir}/tmp/${_installer}
+    echo "_installer=${_installer}" > ${pkgdir}/tmp/${pkgname}.PKGBUILD
+}

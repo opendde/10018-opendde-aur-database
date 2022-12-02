@@ -1,0 +1,4 @@
+package() {
+	cd "$_pkgname"
+	make VERSION=$pkgver DESTDIR="$pkgdir" PREFIX=/usr install
+}

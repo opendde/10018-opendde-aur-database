@@ -1,0 +1,14 @@
+package() {
+  cd "${srcdir}/arc-theme-${pkgver}"
+
+  make DESTDIR="${pkgdir}" install
+
+  cd extra
+  for name in "Chrome" "Arc-Plank"; do
+    find "${name}" -type f -not -name *~ -exec install -Dm644 '{}' "${pkgdir}/usr/share/themes/{}" \;
+  done
+
+  cd ..
+  install -Dm644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
+  install -Dm644 README.md "${pkgdir}/usr/share/themes/Arc/README"
+}

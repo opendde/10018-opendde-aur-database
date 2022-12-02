@@ -1,0 +1,15 @@
+package() {
+    local lib="${pkgdir}/usr/lib/${pkgname}"
+    local bin="${pkgdir}/usr/bin"
+    local updater="updater.sh"
+    local cleaner="prefsCleaner.sh"
+
+    install -dm755 "${bin}"
+    ln -s "${lib#"${pkgdir}"}/${updater}" "${bin}/${_name}-updater"
+    ln -s "${lib#"${pkgdir}"}/${cleaner}" "${bin}/${_name}-cleaner"
+
+    cd "${_repo}"
+    install -Dm755 -t "${lib}" "${updater}" "${cleaner}"
+    install -Dm644 -t "${lib}" "user.js"
+    install -Dm644 -t "${pkgdir}/usr/share/licenses/${pkgname}" "LICENSE.txt"
+}

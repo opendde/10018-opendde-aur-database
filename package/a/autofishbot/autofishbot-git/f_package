@@ -1,0 +1,5 @@
+package() {
+	cd "${srcdir}/go/src/github.com/MscBaiMeow/AutoFishingBot"
+
+	install -Dm755 "./build/AutoFishingBot" "${pkgdir}/usr/bin/autofishbot"
+}

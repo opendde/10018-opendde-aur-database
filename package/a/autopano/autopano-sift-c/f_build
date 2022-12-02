@@ -1,0 +1,6 @@
+build() {
+  cd "${srcdir}/autopano-sift-C-${pkgver}"
+  cmake -DCMAKE_INSTALL_PREFIX=/usr .
+  sed -i 's/-lz/-lz -lm/' CMakeFiles/{autopano,generatekeys}.dir/link.txt
+  make
+}

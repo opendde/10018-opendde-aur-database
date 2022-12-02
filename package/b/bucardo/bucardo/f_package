@@ -1,0 +1,9 @@
+package() {
+  cd "$srcdir/$_distdir"
+  (
+    export INSTALL_BASE="$pkgdir"
+    make install
+  )
+
+  find "$pkgdir" -name .packlist -o -name perllocal.pod -delete
+}

@@ -1,0 +1,4 @@
+pkgver() {
+	cd "$srcdir/h2o"
+	git describe --tags | sed -e 's/^v//g' -e 's/-g.*$//g' -e 's/-/./g'
+}

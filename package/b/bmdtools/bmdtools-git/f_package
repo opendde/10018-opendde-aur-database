@@ -1,0 +1,9 @@
+package() {
+  cd "$srcdir/$_gitname-build"
+  
+  install -D bmdcapture "$pkgdir/usr/bin/bmdcapture"
+  install -D bmdplay "$pkgdir/usr/bin/bmdplay"
+  install -D bmdgenlock "$pkgdir/usr/bin/bmdgenlock"
+
+  install -D -m 0644 COPYING "$pkgdir/usr/share/licenses/$pkgname/COPYING"
+}

@@ -1,0 +1,4 @@
+package() {
+  mkdir -p "$pkgdir/usr/share/fonts/$pkgname"
+  cp -a "$srcdir/awesome-terminal-fonts-patching-strategy/patched/." "$pkgdir/usr/share/fonts/$pkgname"
+}

@@ -1,0 +1,5 @@
+build() {
+  cd "affiche-$pkgver.orig"
+  export GNUSTEP_MAKEFILES="$(gnustep-config --variable=GNUSTEP_MAKEFILES)"
+  make
+}

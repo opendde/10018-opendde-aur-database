@@ -1,0 +1,3 @@
+package() {
+   install -Dm755 "$srcdir/g15composer.run" "$pkgdir/etc/runit/sv/g15composer/run"
+}

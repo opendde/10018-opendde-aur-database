@@ -1,0 +1,5 @@
+build() {
+	cd "$pkgname-$pkgver/src"
+	qmake PREFIX=/usr
+	make
+}

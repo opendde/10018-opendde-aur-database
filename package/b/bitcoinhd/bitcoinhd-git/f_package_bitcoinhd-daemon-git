@@ -1,0 +1,13 @@
+package_bitcoinhd-daemon-git() {
+	pkgdesc="BitcoinHD is a peer-to-peer network based digital currency - daemon"
+	depends=('boost-libs' 'libevent' 'miniupnpc' 'zeromq')
+	backup=('etc/btchd/btchd.conf')
+
+	install -Dm755 btchd/src/btchdd "$pkgdir/usr/bin/btchdd"
+	install -Dm644 btchd/doc/man/btchdd.1 "$pkgdir/usr/share/man/man1/btchdd.1"
+	install -Dm644 btchd/share/examples/btchd.conf "$pkgdir/etc/btchd/btchd.conf"
+
+	if [ ! -f "/usr/share/licenses/btchd/COPYING" ]; then
+	    install -Dm644 btchd/COPYING "$pkgdir/usr/share/licenses/btchd/COPYING"
+	fi
+}

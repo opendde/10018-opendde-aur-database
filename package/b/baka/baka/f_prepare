@@ -1,0 +1,4 @@
+prepare() {
+	cd baka
+	autoreconf -i
+}

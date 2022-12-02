@@ -1,0 +1,8 @@
+prepare() {
+  cd "${srcdir}/${_srcname}-${pkgver}"
+  patch -Np1 -i "${srcdir}/Switch-to-CMAKE-default-variables.patch"
+  patch -Np1 -i "${srcdir}/Set-the-appropriate-SONAME-for-the-library.patch"
+
+  # fix issue with permissions of aces_writeattributes.*
+  chmod 644 aces_writeattributes.*
+}

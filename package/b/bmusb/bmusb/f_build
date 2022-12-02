@@ -1,0 +1,4 @@
+build() {
+  cd "${pkgname}"-"${_commit:0:7}"
+  make
+}

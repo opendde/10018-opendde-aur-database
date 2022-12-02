@@ -1,0 +1,6 @@
+prepare() {
+	"./Beam-Wallet-$pkgver.AppImage" --appimage-extract &> /dev/null
+	cd squashfs-root
+	sed -i "/Exec/s|/usr|/opt/$pkgname/usr|" BeamWallet.desktop
+	echo "Path=/opt/$pkgname/" >> BeamWallet.desktop
+}

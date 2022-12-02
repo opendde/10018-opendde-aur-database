@@ -1,0 +1,16 @@
+build() {
+    cd "${srcdir}"/termcap-${pkgver}
+    source android-env ${_android_arch}
+
+    ${ANDROID_CC} -fPIC -c termcap.c -DHAVE_STRING_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1
+    ${ANDROID_CC} -fPIC -c tparam.c -DHAVE_STRING_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1
+    ${ANDROID_CC} -fPIC -c version.c -DHAVE_STRING_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1
+
+    # Build a shared library.
+    ${ANDROID_CC} -shared -Wl,-soname,libtermcap.so \
+        -o libtermcap.so termcap.o tparam.o version.o
+
+    # Build a static library.
+    ${ANDROID_AR} rc libtermcap.a termcap.o tparam.o version.o
+    ${ANDROID_RANLIB} libtermcap.a
+}

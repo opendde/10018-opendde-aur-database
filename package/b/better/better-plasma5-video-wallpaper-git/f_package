@@ -1,0 +1,5 @@
+package() {
+   cd ${srcdir}/${_gitname}
+   make -C ${srcdir}/${_gitname}/build DESTDIR="$pkgdir" install        
+
+}

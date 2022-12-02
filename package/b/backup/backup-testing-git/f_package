@@ -1,0 +1,5 @@
+package() {
+	cd "${srcdir}/${_gitname}"
+	echo "Building package"
+	cp -dr --no-preserve=ownership {usr,etc} "${pkgdir}"/
+}

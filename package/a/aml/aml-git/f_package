@@ -1,0 +1,5 @@
+package () {
+	DESTDIR="${pkgdir}" ninja -C build install
+	install -Dm644 "${pkgname}/COPYING" \
+		"${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
+}

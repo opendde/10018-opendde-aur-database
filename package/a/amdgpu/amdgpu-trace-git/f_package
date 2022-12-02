@@ -1,0 +1,5 @@
+package() {
+    cd "${srcdir}/gpu-trace"
+    install -dm755 "$pkgdir/usr/bin/"
+    make INSTALL_ROOT="$pkgdir" INSTALL_PREFIX="/usr/" install
+}

@@ -1,0 +1,20 @@
+package() {
+  cd "${srcdir}"/$pkgname-$pkgver-140117
+  install -d "${pkgdir}"/usr/share/java/$pkgname "${pkgdir}"/usr/bin
+  rm $pkgname.bat
+
+  cp -r "${srcdir}"/$pkgname-$pkgver-140117/* "${pkgdir}"/usr/share/java/$pkgname
+  find "${pkgdir}"/usr/share/java/$pkgname -type f -exec chmod 644 "{}" \;
+
+# executable file
+  echo "#!/bin/bash" > "${pkgdir}"/usr/bin/$pkgname.sh
+  echo "cd /usr/share/java/$pkgname/" >> "${pkgdir}"/usr/bin/$pkgname.sh
+  echo "java -jar $pkgname-$pkgver-140117.jar \$*" >> "${pkgdir}"/usr/bin/$pkgname.sh
+  chmod 755 "${pkgdir}"/usr/bin/$pkgname.sh
+
+# .desktop file + icon
+  install -Dm644 "${srcdir}"/$pkgname.desktop \
+    "${pkgdir}"/usr/share/applications/$pkgname.desktop
+  install -Dm644 "${srcdir}"/$pkgname-$pkgver-140117/doc/resources/b2t.png \
+    "${pkgdir}"/usr/share/pixmaps/$pkgname.png
+}

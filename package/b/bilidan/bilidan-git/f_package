@@ -1,0 +1,7 @@
+package() {
+  cd ${srcdir}/${_reponame}
+  install -Dm755 bilidan.py ${pkgdir}/usr/share/bilidan/bilidan.py
+  install -Dm755 ${srcdir}/bilidan.sh ${pkgdir}/usr/bin/bilidan
+  install -Dm644 README.md ${pkgdir}/usr/share/doc/${pkgname}/README.md
+  install -Dm644 COPYING ${pkgdir}/usr/share/licenses/${pkgname}/COPYING
+}

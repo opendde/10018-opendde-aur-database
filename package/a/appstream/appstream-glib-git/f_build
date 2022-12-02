@@ -1,0 +1,7 @@
+build() {
+  arch-meson appstream-glib build \
+    -D alpm=true \
+    -D gtk-doc=true \
+    -D rpm=false
+  meson compile -C build
+}

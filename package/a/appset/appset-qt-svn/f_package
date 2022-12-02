@@ -1,0 +1,9 @@
+package() {
+    cd $srcdir/$_svnmod
+
+    make INSTALL_ROOT="$pkgdir/" install
+
+    #helper daemon
+    install -m 755 -d "$pkgdir/etc/rc.d" || return 1
+    install -m 755 "$srcdir/$_name-code/AppSetHelper/appset-helper.sh" "$pkgdir/etc/rc.d/appset-helper"
+}

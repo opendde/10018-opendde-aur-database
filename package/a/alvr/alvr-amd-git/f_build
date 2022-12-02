@@ -1,0 +1,6 @@
+build() {
+	cd "$srcdir/${pkgname%-git}"
+
+	#Build the main project
+	cargo xtask build-server --release
+}

@@ -1,0 +1,11 @@
+build() {
+  set -u
+  # setup cups-directories
+  install -dm755 "${srcdir}/usr/lib/cups/filter"
+  install -dm755 "${srcdir}/usr/share/cups/model"
+  install -dm755 "${srcdir}/usr/share/cups/model/Brother"
+  #install -dm755 "${srcdir}/usr/share/ppd" # For cups we don't need the ppd file here.
+
+
+  set +u
+}

@@ -1,0 +1,18 @@
+prepare() {
+	cd "${pkgname%-git}"
+	git submodule init
+	git config submodule.jslib.url "$srcdir/jslib"
+	git submodule update
+
+	# Remove pre and postinstall routines from package.json.
+	patch --strip=1 package.json ../package.json.patch
+	# This patch is required to make "Start automatically on login" work
+	patch --strip=1 src/main/messaging.main.ts ../messaging.main.ts.patch
+	# Patch build to make it work with system electron
+	export SYSTEM_ELECTRON_VERSION=$(electron$_electronversion -v | sed 's/v//g')
+	export ELECTRONVERSION=$_electronversion
+	jq < package.json \
+	   '.build["electronVersion"]=$ENV.SYSTEM_ELECTRON_VERSION | .build["electronDist"]="/usr/lib/electron\(env.ELECTRONVERSION)"' \
+	   > package.json.patched
+	mv package.json.patched package.json
+}

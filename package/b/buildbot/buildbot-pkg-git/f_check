@@ -1,0 +1,5 @@
+check() {
+  cd buildbot/pkg
+
+  python test_buildbot_pkg.py
+}

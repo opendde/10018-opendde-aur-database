@@ -1,0 +1,4 @@
+prepare() {
+	cd "$pkgname-$pkgver"
+	patch -p1 < ../cflags_ldflags_append.patch
+}

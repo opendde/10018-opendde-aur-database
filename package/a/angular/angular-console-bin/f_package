@@ -1,0 +1,14 @@
+package() {
+  cd "$srcdir/"
+  tar -xf data.tar.xz
+  cp -r usr/ $pkgdir
+  cp -r opt/ $pkgdir
+  mkdir -p "${pkgdir}/usr/share/icons/hicolor/512x512/apps"
+
+  install -m644 "usr/share/icons/hicolor/0x0/apps/angular-console.png" "${pkgdir}/usr/share/icons/hicolor/512x512/apps/angular-console.png"
+
+  install -Dm755 /dev/stdin "$pkgdir"/usr/bin/$_pkgname <<END
+#!/usr/bin/bash
+/opt/Angular\ Console/angular-console
+END
+}

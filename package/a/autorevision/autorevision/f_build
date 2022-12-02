@@ -1,0 +1,6 @@
+build() {
+  cd "$pkgname-${pkgver}"
+
+  make VERS=$pkgver
+  fmt < COPYING.md > COPYING
+}

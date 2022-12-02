@@ -1,0 +1,7 @@
+build() {
+    cd "${srcdir}"/libunistring-${pkgver}
+    source android-env ${_android_arch}
+
+    android-${_android_arch}-configure
+    make $MAKEFLAGS
+}

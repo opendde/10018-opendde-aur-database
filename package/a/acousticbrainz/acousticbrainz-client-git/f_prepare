@@ -1,0 +1,5 @@
+prepare() {
+  cd "$srcdir/$_pkgname"
+  # we have that in essentia-acousticbrainz
+  sed -i -e "/streaming_extractor_music/d" setup.py
+}

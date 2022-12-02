@@ -1,0 +1,11 @@
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+  # Qt
+  make
+  # Python
+  python2 setup.py build
+
+  cd "$srcdir/$pkgname-debian-experimental/docs/man"
+  rst2man2 bitmask.1.rst      bitmask.1
+  rst2man2 bitmask-root.1.rst bitmask-root.1
+}

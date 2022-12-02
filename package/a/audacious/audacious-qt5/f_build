@@ -1,0 +1,8 @@
+build() {
+  cd "$srcdir/$_pkgname-${pkgver/+/-}"
+
+  ./configure \
+    --prefix=/usr \
+    --with-buildstamp='Arch Linux'
+  make
+}

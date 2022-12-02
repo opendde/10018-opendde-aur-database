@@ -1,0 +1,5 @@
+package() {
+	install -Dm 644 "$pkgname.desktop" -t "$pkgdir/usr/share/applications/"
+	cd "$pkgname-$pkgver"
+	make DESTDIR="$pkgdir/" install
+}

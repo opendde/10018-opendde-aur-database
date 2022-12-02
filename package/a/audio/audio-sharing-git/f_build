@@ -1,0 +1,4 @@
+build() {
+	arch-meson AudioSharing build
+	meson compile -C build
+}

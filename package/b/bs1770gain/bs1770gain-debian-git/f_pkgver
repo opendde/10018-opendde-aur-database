@@ -1,0 +1,4 @@
+pkgver() {
+    cd "$_pkgname"
+    git describe | cut -d'/' -f2 | cut -d'-' -f1
+}

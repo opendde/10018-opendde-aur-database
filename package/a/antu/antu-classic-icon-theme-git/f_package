@@ -1,0 +1,9 @@
+package() {
+
+  # create theme dirs
+  install -d -m 755 "$pkgdir"/usr/share/icons
+
+  # install theme
+  cd "$srcdir"/"$_pkgname"/
+  cp -r . "$pkgdir"/usr/share/icons/
+}

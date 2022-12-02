@@ -1,0 +1,24 @@
+build() {
+  cd "${srcdir}/ANTs-${pkgver}/build"
+  cmake \
+      -DBUILD_ALL_ANTS_APPS=ON \
+      -DBUILD_SHARED_LIBS=OFF \
+      -DBUILD_STYLE_UTILS=OFF \
+      -DBUILD_TESTING=ON \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DCMAKE_INSTALL_PREFIX=/opt/ANTs \
+      -DEXTERNAL_PROJECT_BUILD_TYPE=Release \
+      -DFORCE_EXTERNAL_BUILDS=OFF \
+      -DITK_BUILD_MINC_SUPPORT=OFF \
+      -DITK_VERSION_MAJOR=5 \
+      -DOLD_BASELINE_TESTS=OFF \
+      -DRUN_LONG_TESTS=OFF \
+      -DRUN_SHORT_TESTS=ON \
+      -DSuperBuild_ANTS_USE_GIT_PROTOC=ON \
+      -DUSE_SYSTEM_ITK=OFF \
+      -DUSE_SYSTEM_SlicerExecutionMode=OFF \
+      -DUSE_SYSTEM_VTK=OFF \
+      -DUSE_VTK=ON \
+      ..
+  make
+}

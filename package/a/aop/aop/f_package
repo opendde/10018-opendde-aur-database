@@ -1,0 +1,6 @@
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+  mkdir -p $pkgdir/usr/{bin,share/$pkgname}
+  install -m755 $pkgname $pkgdir/usr/bin/$pkgname
+  install -m644 $pkgname-level-*.txt $pkgdir/usr/share/$pkgname
+}

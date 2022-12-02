@@ -1,0 +1,18 @@
+package() {
+	cd $srcdir/BetterSpades-${pkgver}-beta/build/bin
+	install -d "$pkgdir/usr/share/icons/hicolor/256x256/apps"
+	install -Dm644 "icon.png" "$pkgdir/usr/share/icons/hicolor/256x256/apps/$pkgname.png"
+	rm icon.png
+	install -d "$pkgdir/opt/$pkgname"
+	cp -a "$srcdir/BetterSpades-${pkgver}-beta/build/bin/." "$pkgdir/opt/$pkgname"
+	install -Dm755 "$srcdir/$pkgname" "$pkgdir/usr/bin/$pkgname"
+	install -d "$pkgdir/usr/share/applications"
+	install -Dm644 "$srcdir/$pkgname.desktop" "$pkgdir/usr/share/applications/$pkgname.desktop"
+	install -d "$pkgdir/usr/share/doc/$pkgname"
+	install -Dm644 "$srcdir/BetterSpades-${pkgver}-beta/LICENSE" "$pkgdir/usr/share/doc/$pkgname/LICENSE"
+	install -Dm644 "$srcdir/BetterSpades-${pkgver}-beta/README.md" "$pkgdir/usr/share/doc/$pkgname/README.md"
+	# Moving cache and config files to home dir to avoid crashes
+	rm -rf "$pkgdir/opt/$pkgname/cache"
+	ln -sf "/tmp/$pkgname/cache" "$pkgdir/opt/$pkgname/cache"
+	ln -sf "/tmp/$pkgname/config.ini" "$pkgdir/opt/$pkgname/config.ini"
+}

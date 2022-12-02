@@ -1,0 +1,12 @@
+build() {
+  cd "${pkgname}-${pkgver}-sources"
+
+  qmake-qt4 PREFIX=/usr -Wnone
+
+  # localization
+  lrelease-qt4 Qt/AppSet-Qt/*.ts
+  lrelease-qt4 Qt/AppSetTray-Qt/*.ts
+  lrelease-qt4 Qt/AppSetRepoEditor-Qt/*.ts
+
+  make
+}

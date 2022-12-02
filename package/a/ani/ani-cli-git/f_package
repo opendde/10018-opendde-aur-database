@@ -1,0 +1,5 @@
+package() {
+        cd "$srcdir/${_pkgname%-VCS}"
+	install -Dm755 "./ani-cli" "$pkgdir/usr/bin/ani-cli"
+	install -Dm644 "./ani-cli.1.gz" "$pkgdir/usr/share/man/man1/ani-cli.1.gz"
+}

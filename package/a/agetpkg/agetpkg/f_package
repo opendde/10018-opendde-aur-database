@@ -1,0 +1,4 @@
+package() {
+  cd agetpkg
+  install -Dm755 agetpkg "$pkgdir/usr/bin/agetpkg"
+}

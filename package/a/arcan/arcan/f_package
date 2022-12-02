@@ -1,0 +1,6 @@
+package() {
+  cd "$pkgbase-$pkgver"
+
+  make -C build DESTDIR="$pkgdir" install
+  install -Dm644 COPYING "$pkgdir/usr/share/licenses/$pkgname/COPYING"
+}

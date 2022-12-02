@@ -1,0 +1,43 @@
+build() {
+	cd ${pkgname}-${pkgver}
+        # Flag rationale:
+        # - Packages for ClutterFlow are not available
+        # - Packages for Zeitgeist are not available
+        # - Webkit has been disabled in recent Banshee builds, making the following unbuildable:
+        #   - Jamendo
+        #   - Karaoke
+        #   - Lyrics
+        # - Tests fail to compile
+        ./configure --prefix=/usr \
+            --with-vendor-build-id="$(lsb_release -ds | sed -r 's/^"(.*)"$/\1/')" \
+            --enable-gnome \
+            --enable-schemas-install \
+            --enable-alarmclock \
+            --enable-albumartwriter \
+            --enable-ampache \
+            --enable-appindicator \
+            --enable-awn \
+            --disable-clutterflow \
+            --enable-coverwallpaper \
+            --enable-duplicatesongdetector \
+            --enable-foldersync \
+            --disable-jamendo \
+            --disable-karaoke \
+            --enable-lastfmfingerprint \
+            --enable-lcd \
+            --enable-lirc \
+            --disable-lyrics \
+            --enable-liveradio \
+            --enable-magnatune \
+            --enable-mirage \
+            --enable-openvp \
+            --enable-radiostationfetcher \
+            --enable-randombylastfm \
+            --enable-streamrecorder \
+            --enable-telepathy \
+            --disable-zeitgeistdataprovider \
+            --disable-tests \
+            --disable-shave \
+            DMCS=/usr/bin/mcs
+	make
+}

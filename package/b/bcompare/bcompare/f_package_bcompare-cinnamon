@@ -1,0 +1,12 @@
+package_bcompare-cinnamon() {
+  pkgdesc="Cinnamon service menus for Beyond Compare 4"
+  depends=('bcompare')
+
+  msg2 "Packaging Cinnamon service menus..."
+  _install_dir="${srcdir}/install"
+  # Set up service menus
+  mkdir -p "${pkgdir}/usr/lib"
+
+  mv "${_install_dir}/usr/lib/nemo" "${pkgdir}/usr/lib/"
+  msg2 "Done!"
+}

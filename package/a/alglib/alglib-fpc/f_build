@@ -1,0 +1,8 @@
+build() {
+  cd "$srcdir/freepascal/src"
+  patch -p0 < ../../comments.patch
+  for file in `ls *.pas`
+  do
+    fpc $file
+  done
+}

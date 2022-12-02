@@ -1,0 +1,5 @@
+package() {
+	cd "$srcdir/${pkgname%-git}"
+	install -Dm 755 APRSGateway "${pkgdir}/usr/bin/APRSGateway"
+	install -Dm 600 APRSGateway.ini "${pkgdir}/etc/APRSGateway.ini"
+}

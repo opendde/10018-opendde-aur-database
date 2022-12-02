@@ -1,0 +1,6 @@
+build() {
+    cd "$_pkgname"
+
+    ./configure --with-libmodsecurity=/usr
+    make        
+}

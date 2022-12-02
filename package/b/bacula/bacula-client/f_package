@@ -1,0 +1,7 @@
+package() {
+    cd bacula-${pkgver}/
+    make DESTDIR="${pkgdir}" install
+    # we do not take the service file provided by bacula package
+    # as it needs too much customization
+    install -D -m0644 "${srcdir}/bacula-fd.service" "${pkgdir}/usr/lib/systemd/system/bacula-fd.service"
+}

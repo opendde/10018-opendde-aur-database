@@ -1,0 +1,7 @@
+prepare() {
+    cd ${srcdir}/obfuscator
+    git submodule update --init llvm-project
+    cd - && cd ${srcdir}/obfuscator/llvm-project
+    patch -p1 -i  ../obfuscator.patch
+    cd -
+}

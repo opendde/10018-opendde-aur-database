@@ -1,0 +1,1 @@
+("https://launchpad.net/${pkgbase}/${_majorver}/${pkgver}/+download/${pkgbase}-${_majorver}.tar.gz"{,.asc})

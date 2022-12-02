@@ -1,0 +1,4 @@
+build() {
+  cd "$srcdir"
+  ./mk-udev-hwdb opt/brother/scanner/brscan4/{Brsane4.ini,models4/*.ini} > hwdb
+}

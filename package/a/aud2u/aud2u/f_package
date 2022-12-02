@@ -1,0 +1,7 @@
+package() {
+    cd "$srcdir"
+    tar xf *
+    cp -r ./*/ "$pkgdir"
+    cd $pkgdir/usr/local/bin
+    ln -sf $pkgname"_en.sh" $pkgname
+}

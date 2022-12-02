@@ -1,0 +1,3 @@
+package() {
+  install -Dm755 "${pkgname/-bin/}_linux_386" "${pkgdir}/usr/bin/${pkgname/-bin/}"
+}

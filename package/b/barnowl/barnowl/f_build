@@ -1,0 +1,9 @@
+build() {
+  cd $srcdir/$pkgname-$pkgver
+  CFLAGS="-I/usr/include/openssl-1.0" LDFLAGS="-L/usr/lib/openssl-1.0" \
+  ./configure --prefix=/usr   \
+    --includedir=/usr/include \
+    --mandir=/usr/share/man   \
+    --docdir=/usr/share/doc/$pkgname
+  make
+}

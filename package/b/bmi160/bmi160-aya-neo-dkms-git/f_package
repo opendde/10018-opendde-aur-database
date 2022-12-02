@@ -1,0 +1,17 @@
+package() {
+	cd "${srcdir}"/"${_pkgbase}"
+  	local install_dir="${pkgdir}"/usr/src/${_pkgbase}-${pkgver}
+	
+  	install -Dm644 bmi160_ayaneo.patch "${install_dir}/bmi160_ayaneo.patch"
+	install -Dm644 bmi160_i2c-mods.conf "${install_dir}/bmi160_i2c-mods.conf"
+  	install -Dm644 dkms.conf "${install_dir}/dkms.conf"
+	install -Dm755 dkms-patchmodule.sh  "${install_dir}/dkms-patchmodule.sh"
+	install -Dm755 dkms.post_install "${install_dir}/dkms.post_install"
+	install -Dm755 dkms.post_remove "${install_dir}/dkms.post_remove"
+  	install -Dm644 Makefile "${install_dir}/Makefile"
+		
+	# Set name and version
+  	sed -e "s/@_PKGBASE@/${_pkgbase}/" \
+      	    -e "s/@PKGVER@/${pkgver}/" \
+            -i "${install_dir}"/dkms.conf
+}

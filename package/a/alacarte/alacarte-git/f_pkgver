@@ -1,0 +1,4 @@
+pkgver() {
+  cd alacarte
+  git describe --long | sed 's/-/+/g'
+}

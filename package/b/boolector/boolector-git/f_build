@@ -1,0 +1,7 @@
+build() {
+  cmake -B build -S "$_pkgname" \
+    -DCMAKE_INSTALL_PREFIX="/usr" \
+    -DBUILD_SHARED_LIBS=on \
+    -DTESTING=on
+  make -C build
+}

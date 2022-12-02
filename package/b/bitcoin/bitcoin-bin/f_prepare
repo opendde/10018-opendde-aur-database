@@ -1,0 +1,25 @@
+# We manually extract in prepare()
+noextract=("${_bindirbase}.tar.gz"
+           "${_srcdirbase}.tar.gz")
+sha256sums=('2cca490c1f2842884a3c5b0606f179f9f937177da4eadd628e3f7fd7e25d26d0'
+            '26748bf49d6d6b4014d0fedccac46bf2bcca42e9d34b3acfd9e3467c415acc05'
+            'ad527b35dcfecf4f6db6823b6a09b4fd2823a9db4cb6d528795f7cefe43d5a55'
+            '7a77112fb094b9b2e6dd873e24c9a6bacb1f1c453d811a024f271f4b78f2a704'
+            'ba83570b4671b18c230f23d8d93cd8faa73179a546655448c14d1644d9b49f35'
+            'a020897651c03690eae3411fe401100fd1a2ffaa799247165eb71124609b7959'
+            '71b125555451e9bc60b54a6658d886bad63bd18c58b5d6e3bd8977b82a70da7a')
+
+# Usage: _extract NAME
+_extract() {
+  local extract_dir="${srcdir}/${1}"
+  mkdir -p "$extract_dir"
+  tar -C "$extract_dir" --strip-components=1 -xzf "${startdir}/${1}.tar.gz"
+}
+prepare() {
+  _extract "$_bindirbase"
+  _extract "$_srcdirbase"
+
+  # Drop this and entries in source= and sha256sums= after
+  # https://github.com/bitcoin/bitcoin/pull/25975 is in a release
+  patch --directory="$_srcdirbase" --forward --strip=1 --input="${srcdir}/bitcoind.service.patch"
+}

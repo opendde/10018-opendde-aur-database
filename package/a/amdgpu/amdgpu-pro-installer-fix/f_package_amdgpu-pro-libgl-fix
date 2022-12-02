@@ -1,0 +1,28 @@
+package_amdgpu-pro-libgl-fix () {
+    pkgdesc="AMDGPU Pro OpenGL driver, patched version to enable AMF on RX 6000 series cards"
+    license=('custom: AMDGPU-PRO EULA')
+    provides=('libgl')
+    conflicts=('amdgpu-pro-libgl')
+    depends=("libdrm" "libx11" "libxcb" "libxdamage" "libxext" "libxfixes" "libxxf86vm")
+    backup=(etc/amd/amdapfxx.blb)
+
+    extract_deb "${srcdir}"/libegl1-amdgpu-pro_${major_}-${minor}~${ubuntu_ver}_amd64.deb
+    extract_deb "${srcdir}"/libgl1-amdgpu-pro-appprofiles_${major_}-${minor}~${ubuntu_ver}_all.deb
+    extract_deb "${srcdir}"/libgl1-amdgpu-pro-dri_${major_}-${minor}~${ubuntu_ver}_amd64.deb
+    extract_deb "${srcdir}"/libgl1-amdgpu-pro-ext_${major_}-${minor}~${ubuntu_ver}_amd64.deb
+    extract_deb "${srcdir}"/libgl1-amdgpu-pro-glx_${major_}-${minor}~${ubuntu_ver}_amd64.deb
+    extract_deb "${srcdir}"/libglapi1-amdgpu-pro_${major_}-${minor}~${ubuntu_ver}_amd64.deb
+    extract_deb "${srcdir}"/libgles2-amdgpu-pro_${major_}-${minor}~${ubuntu_ver}_amd64.deb
+    move_copyright
+
+    # extra_commands:
+    move_libdir "usr/lib/x86_64-linux-gnu" "usr/lib"
+    move_libdir "opt/amdgpu-pro/lib/x86_64-linux-gnu" "usr/lib/amdgpu-pro"
+    move_libdir "opt/amdgpu-pro/lib/xorg" "usr/lib/amdgpu-pro/xorg"
+    move_libdir "opt/amdgpu/share/drirc.d" "usr/share/drirc.d"
+    sed -i "s|/opt/amdgpu-pro/lib/x86_64-linux-gnu|#/usr/lib/amdgpu-pro  # commented to prevent problems of booting with amdgpu-pro, use progl script|" "${pkgdir}"/etc/ld.so.conf.d/10-amdgpu-pro-x86_64.conf
+    install -Dm755 "${srcdir}"/progl "${pkgdir}"/usr/bin/progl
+    install -Dm755 "${srcdir}"/progl.bash-completion "${pkgdir}"/usr/share/bash-completion/completions/progl
+    # For some reason, applications started with normal OpenGL (i.e. without ag pro) crashes at launch if this conf file is presented, so hide it for now, until I find out the reason of that.
+    mv "${pkgdir}"/usr/share/drirc.d/10-amdgpu-pro.conf "${pkgdir}"/usr/share/drirc.d/10-amdgpu-pro.conf.hide
+}

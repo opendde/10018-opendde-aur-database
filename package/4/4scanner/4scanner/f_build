@@ -1,0 +1,5 @@
+build() {
+	cd "$srcdir/$pkgname-$pkgver"
+	python setup.py clean --all
+	python setup.py build
+}

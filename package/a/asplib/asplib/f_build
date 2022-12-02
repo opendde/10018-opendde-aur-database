@@ -1,0 +1,11 @@
+build() {
+  cd "$srcdir/$pkgname-$_gitver"
+  mkdir -p build && pushd build
+  cmake \
+    -DCMAKE_INSTALL_PREFIX=$_prefix \
+    -DBUILD_SHARED_LIBS=1 \
+    -DCMAKE_BUILD_TYPE=Release \
+    ..
+  make
+  popd
+}

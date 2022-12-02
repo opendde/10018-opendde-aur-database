@@ -1,0 +1,6 @@
+build() {
+  cd "$srcdir/$_gitname"
+  ./autogen.sh
+  ./configure --with-gui=qt5 --with-zmq --with-qrencode
+   make
+}

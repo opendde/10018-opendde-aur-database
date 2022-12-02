@@ -1,0 +1,1 @@
+("linux-${pkgname#acpi_call-}-headers>=4.18")

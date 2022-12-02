@@ -1,0 +1,6 @@
+package() {
+	cd "${srcdir}/${pkgname}"
+
+    install -d -m755 $pkgdir/usr/share/icons/BMZ-cursor
+    cp -a * $pkgdir/usr/share/icons/BMZ-cursor
+}

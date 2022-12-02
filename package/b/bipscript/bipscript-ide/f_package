@@ -1,0 +1,4 @@
+package() {
+	cd "ide-v$pkgver"
+	make INSTALL_ROOT="$pkgdir" install
+}

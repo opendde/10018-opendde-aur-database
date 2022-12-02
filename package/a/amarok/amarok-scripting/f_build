@@ -1,0 +1,8 @@
+build() {
+  cd "${srcdir}/amarok-${_commit}/build"
+  cmake "${srcdir}/amarok-${_commit}" \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -DBUILD_TESTING=OFF
+  make
+}

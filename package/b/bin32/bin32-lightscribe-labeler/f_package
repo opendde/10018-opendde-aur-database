@@ -1,0 +1,19 @@
+package() {
+    cd $srcdir
+
+    msg2 "  -> Installing program..."
+    install -d $pkgdir/$_pkgpath/$_realname
+    cp -r $_pkgpath/SimpleLabeler $pkgdir/$_pkgpath/
+
+    msg2 "  -> Installing icon..."
+    install -Dm644 $_pkgpath/$_realname/content/images/LabelWizardIcon.png ${pkgdir}/usr/share/pixmaps/$_pkgname.png
+
+    msg2 "  -> Installing shortcut and symlink..."
+    install -Dm644 $_pkgname.desktop $pkgdir/usr/share/applications/$_pkgname.desktop
+    install -d $pkgdir/usr/bin
+    ln -s /$_pkgpath/$_realname/$_realname $pkgdir/usr/bin/$_pkgname
+    
+    msg2 "  -> Installing license           ..."
+    install -Dm644 $_pkgpath/lightscribeLicense.rtf $pkgdir/usr/share/licenses/$_pkgname/license.rtf
+    install -Dm755 $srcdir/SimpleLabeler $pkgdir/usr/bin/lightscribe-labeler
+}

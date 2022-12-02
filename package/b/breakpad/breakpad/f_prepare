@@ -1,0 +1,3 @@
+prepare() {
+  ln -sfT "${srcdir}/linux-syscall-support" "$pkgname/src/third_party/lss"
+}

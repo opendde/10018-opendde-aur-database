@@ -1,0 +1,5 @@
+package() {
+	cd ${pkgname}-${pkgver}
+	make prefix=${pkgdir}/usr install
+	rm -f ${pkgdir}/usr/share/icons/hicolor/icon-theme.cache # HACK: For `exists in filesystem` error.
+}

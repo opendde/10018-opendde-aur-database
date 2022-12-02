@@ -1,0 +1,5 @@
+pkgver() {
+  cd "${srcdir}/${_gitname}/"
+  printf "r%s.%s" "$(git show -s --format=%cd --date=format:%Y%m%d%H%M%S HEAD)" "$(git rev-parse --short HEAD)"
+
+}

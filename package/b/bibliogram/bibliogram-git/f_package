@@ -1,0 +1,29 @@
+package() {
+  install -D -m644 bibliogram.service -t "$pkgdir/usr/lib/systemd/system"
+
+  # Use a wrapper script as an entry point
+  install -D -m755 bibliogram.sh "$pkgdir/usr/bin/bibliogram"
+  cd "${srcdir}/${pkgname}"
+  install -d "${pkgdir}/opt/${_pkgname}"
+  cp -a * "${pkgdir}/opt/${_pkgname}"
+
+  # npm gives ownership of ALL FILES to build user
+  # https://bugs.archlinux.org/task/63396
+  chown -R root:root "${pkgdir}"
+
+  # Remove references to $pkgdir/$srcdir
+  find "$pkgdir" -type f -name package.json -print0 | xargs -0 sed -i "/_where/d"
+
+  local tmppackage="$(mktemp)"
+  local pkgjson="$pkgdir/opt/$_pkgname/package.json"
+  jq '.|=with_entries(select(.key|test("_.+")|not))' "$pkgjson" >"$tmppackage"
+  mv "$tmppackage" "$pkgjson"
+  chmod 644 "$pkgjson"
+
+  find "$pkgdir" -type f -name package.json | while read pkgjson; do
+    local tmppackage="$(mktemp)"
+    jq 'del(.man)' "$pkgjson" >"$tmppackage"
+    mv "$tmppackage" "$pkgjson"
+    chmod 644 "$pkgjson"
+  done
+}

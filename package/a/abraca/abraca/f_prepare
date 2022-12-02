@@ -1,0 +1,4 @@
+prepare() {
+  cd "$srcdir"/${_pkgname}-${pkgver}
+  patch -p1 < ../33.patch
+}  

@@ -1,0 +1,1 @@
+("${pkgname%-git}::git+https://gerrit.automotivelinux.org/gerrit/src/cmake-apps-module")

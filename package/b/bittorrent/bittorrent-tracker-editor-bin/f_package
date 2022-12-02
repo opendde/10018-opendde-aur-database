@@ -1,0 +1,8 @@
+package() {
+    cd "$srcdir"
+    install -D -m 755 trackereditor "$pkgdir/opt/trackereditor/trackereditor"
+    install -D -m 644 LICENSE "$pkgdir/usr/share/licenses/bittorrent-tracker-editor-bin/LICENSE"
+    chmod a+w "$pkgdir/opt/trackereditor"
+    mkdir -p "$pkgdir/usr/bin"
+    ln -sf "/opt/trackereditor/trackereditor" "$pkgdir/usr/bin/trackereditor"
+}

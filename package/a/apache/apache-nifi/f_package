@@ -1,0 +1,31 @@
+package() {
+    install -d "$pkgdir/opt"
+
+    cp -r "$srcdir/nifi-$pkgver" "$pkgdir/opt/apache-nifi"
+    install -Dm644 "$srcdir/apache-nifi.service" "$pkgdir/usr/lib/systemd/system/apache-nifi.service"
+
+    sed -i 's|^#export JAVA_HOME=.*$|export JAVA_HOME=/usr/lib/jvm/default-runtime|' "$pkgdir/opt/apache-nifi/bin/nifi-env.sh"
+    sed -i 's|^export NIFI_HOME=.*$|export NIFI_HOME=/opt/apache-nifi|' "$pkgdir/opt/apache-nifi/bin/nifi-env.sh"
+    sed -i 's|^export NIFI_LOG_DIR=.*$|export NIFI_LOG_DIR=/var/log/apache-nifi|' "$pkgdir/opt/apache-nifi/bin/nifi-env.sh"
+    sed -i 's|^export NIFI_PID_DIR=.*$|export NIFI_PID_DIR=/var/run/apache-nifi|' "$pkgdir/opt/apache-nifi/bin/nifi-env.sh"
+
+    sed -i 's|^nifi.flow.configuration.file=.*$|nifi.flow.configuration.file=/var/lib/apache-nifi/conf/flow.xml.gz|' "$pkgdir/opt/apache-nifi/conf/nifi.properties"
+    sed -i 's|^nifi.flow.configuration.archive.dir=.*$|nifi.flow.configuration.archive.dir=/var/lib/apache-nifi/conf/archive/|' "$pkgdir/opt/apache-nifi/conf/nifi.properties"
+    sed -i 's|^nifi.templates.directory=.*$|nifi.templates.directory=/var/lib/apache-nifi/conf/templates|' "$pkgdir/opt/apache-nifi/conf/nifi.properties"
+    sed -i 's|^nifi.nar.working.directory=.*$|nifi.nar.working.directory=/var/lib/apache-nifi/work/nar/|' "$pkgdir/opt/apache-nifi/conf/nifi.properties"
+    sed -i 's|^nifi.documentation.working.directory=.*$|nifi.documentation.working.directory=/var/lib/apache-nifi/work/docs/components|' "$pkgdir/opt/apache-nifi/conf/nifi.properties"
+    sed -i 's|^nifi.database.directory=.*$|nifi.database.directory=/var/lib/apache-nifi/database_repository|' "$pkgdir/opt/apache-nifi/conf/nifi.properties"
+    sed -i 's|^nifi.flowfile.repository.directory=.*$|nifi.flowfile.repository.directory=/var/lib/apache-nifi/flowfile_repository|' "$pkgdir/opt/apache-nifi/conf/nifi.properties"
+    sed -i 's|^nifi.content.repository.directory.default=.*$|nifi.content.repository.directory.default=/var/lib/apache-nifi/content_repository|' "$pkgdir/opt/apache-nifi/conf/nifi.properties"
+    sed -i 's|^nifi.provenance.repository.directory.default=.*$|nifi.provenance.repository.directory.default=/var/lib/apache-nifi/provenance_repository|' "$pkgdir/opt/apache-nifi/conf/nifi.properties"
+    sed -i 's|^nifi.web.jetty.working.directory=.*$|nifi.web.jetty.working.directory=/var/lib/apache-nifi/work/jetty|' "$pkgdir/opt/apache-nifi/conf/nifi.properties"
+
+    sed -i 's|^.*<property name="Directory">./state/local</property>*$|        <property name="Directory">/var/lib/apache-nifi/state/local</property>|' "$pkgdir/opt/apache-nifi/conf/state-management.xml"
+
+    for script in nifi.sh nifi-env.sh; do
+        chmod 755 "$pkgdir/opt/apache-nifi/bin/$script"
+    done
+
+    install -D -m 644 "${srcdir}/apache-nifi.sysusers" "${pkgdir}/usr/lib/sysusers.d/${pkgname}.conf"
+    install -D -m 644 "${srcdir}/apache-nifi.tmpfiles" "${pkgdir}/usr/lib/tmpfiles.d/${pkgname}.conf"
+}

@@ -1,0 +1,5 @@
+prepare() {
+    cd "${_repo}"
+    patch -i "${srcdir}/${source[1]}"
+    patch -i "${srcdir}/${source[2]}"
+}

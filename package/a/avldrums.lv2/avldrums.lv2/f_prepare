@@ -1,0 +1,3 @@
+prepare() {
+  mv -v "${pkgname}-v${pkgver}" "${pkgname}-${pkgver}"
+}

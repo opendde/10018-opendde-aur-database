@@ -1,0 +1,11 @@
+package_bitcoinhd-cli() {
+	pkgdesc="BitcoinHD is a peer-to-peer network based digital currency - RPC client (binary package)"
+	depends=('boost-libs' 'libevent')
+
+	install -Dm755 bhd-v$pkgver/bin/btchd-cli "$pkgdir"/usr/bin/btchd-cli
+	install -Dm644 bhd-v$pkgver/share/man/man1/btchd-cli.1 "$pkgdir"/usr/share/man/man1/btchd-cli.1
+
+	if [ ! -f "/usr/share/licenses/btchd/COPYING" ]; then
+	    install -Dm644 btchd-$pkgver/COPYING "$pkgdir"/usr/share/licenses/btchd/COPYING
+	fi
+}

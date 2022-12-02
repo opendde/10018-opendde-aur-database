@@ -1,0 +1,4 @@
+pkgver() {
+    cd "$srcdir/aqsis"
+    git log -1 --format='%cd.%h' --date=short | tr -d -
+}

@@ -1,0 +1,4 @@
+package() {
+    install -Dm755 "${srcdir}/${_pkgname}" "${pkgdir}/usr/bin/${_pkgname}"
+    install -Dm644 "${srcdir}/${_jar}" "${pkgdir}/usr/lib/${_jar}"
+}

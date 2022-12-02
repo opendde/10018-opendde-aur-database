@@ -1,0 +1,1 @@
+(${_pkgname}-${pkgver}-${_pkgrel}-${CARCH}.pkg.tar.${_ext})

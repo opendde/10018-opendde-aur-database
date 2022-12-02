@@ -1,0 +1,6 @@
+package() {
+  install -Dm644 cli/${pkgname}-${pkgver}.jar -t "${pkgdir}/usr/share/java/${pkgname}"
+  echo "#!/usr/bin/env bash
+  exec /usr/bin/java -jar '/usr/share/java/${pkgname}/${pkgname}-${pkgver}.jar' "\$\@"" > ananas-cli.sh
+  install -Dm755 ananas-cli.sh "${pkgdir}/usr/bin/ananas-cli"
+}

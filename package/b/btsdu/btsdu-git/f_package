@@ -1,0 +1,4 @@
+package() {
+    cd "$pkgname"
+    install -Dm755 "target/release/${_pkgname}" -t "${pkgdir}/usr/bin"
+}

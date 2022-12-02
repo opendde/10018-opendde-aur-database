@@ -1,0 +1,1 @@
+("${_pkgname}::https://github.com/thatonecalculator/discordrpcmaker-cli/releases/download/v${pkgver}/${_pkgname}")

@@ -1,0 +1,4 @@
+build() {
+	cd "Activity-Relay-${pkgver}"
+	go build
+}

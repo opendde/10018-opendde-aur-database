@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}::https://github.com/clMathLibraries/clFFT/archive/v${pkgver}.tar.gz"

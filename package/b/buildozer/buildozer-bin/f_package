@@ -1,0 +1,13 @@
+package() {
+  cd "${srcdir}"
+
+  # Install the license file
+  install -D -m 0644 \
+    "${source[1]%%::*}" \
+    "${pkgdir}/usr/share/licenses/${pkgname%-bin}/LICENSE"
+
+  # Install the binary
+  install -D -m 0755 \
+    "./${source[0]%%::*}" \
+    "${pkgdir}/usr/bin/${pkgname%-bin}"
+}

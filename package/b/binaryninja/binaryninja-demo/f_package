@@ -1,0 +1,12 @@
+package() {
+	mkdir ${pkgdir}/opt
+	mkdir -p ${pkgdir}/usr/share/icons/hicolor/128x128/apps
+	mkdir -p ${pkgdir}/usr/share/applications
+	mkdir -p ${pkgdir}/usr/bin
+
+	mv ${srcdir}/binaryninja ${pkgdir}/opt/binaryninja-demo
+
+	install -m644 ${srcdir}/binaryninja.png ${pkgdir}/usr/share/icons/hicolor/128x128/apps/
+	install -m644 ${srcdir}/binaryninja-demo.desktop ${pkgdir}/usr/share/applications/
+	install -m755 ${srcdir}/binaryninja-demo ${pkgdir}/usr/bin
+}

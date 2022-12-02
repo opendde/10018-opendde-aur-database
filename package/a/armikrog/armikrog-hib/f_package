@@ -1,0 +1,26 @@
+package() {
+  install -d "${pkgdir}/opt/${pkgname}/"
+  install -d "${pkgdir}/usr/bin/"
+  install -d "${pkgdir}/usr/share/applications/"
+
+  install -Dm644 "${srcdir}/LinuxUniversal/Armikrog_Data/Resources/UnityPlayer.png" "${pkgdir}/usr/share/pixmaps/armikrog.png"
+  mv "${srcdir}/LinuxUniversal/Armikrog_Data/" "${pkgdir}/opt/${pkgname}"
+  install -Dm755 "${srcdir}/LinuxUniversal/Armikrog.${_arch}" "${pkgdir}/opt/${pkgname}/"
+## Replace above three lines with following to use v20150710 ##
+  #install -Dm644 "${srcdir}/Armikrog_Data/Resources/UnityPlayer.png" "${pkgdir}/usr/share/pixmaps/armikrog.png"
+  #mv "${srcdir}/Armikrog_Data/" "${pkgdir}/opt/${pkgname}"
+  #install -Dm755 "${srcdir}/Armikrog.${_arch}" "${pkgdir}/opt/${pkgname}/"
+
+  ln -s "/opt/${pkgname}/Armikrog.${_arch}" "${pkgdir}/usr/bin/armikrog"
+
+  cat > "${pkgdir}/usr/share/applications/armikrog.desktop" <<EOF
+[Desktop Entry]
+Name=Armikrog
+Comment=Armikrog
+Exec=/usr/bin/armikrog
+Type=Application
+Terminal=false
+Icon=armikrog
+Categories=Game;
+EOF
+}

@@ -1,0 +1,4 @@
+package() {
+    cd ${pkgname}-v${pkgver}
+    make PREFIX=/usr DESTDIR="${pkgdir}" install
+}

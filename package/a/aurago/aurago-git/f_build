@@ -1,0 +1,5 @@
+build() {
+	cd aurago
+	bash linux/full_install.sh
+
+}

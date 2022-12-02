@@ -1,0 +1,6 @@
+package() {
+  mkdir -p $pkgdir/srv/http/bugzilla/template
+  cp -a $srcdir/bugzilla-$pkgver.ja/template/ja $pkgdir/srv/http/bugzilla/template/ja
+  find $pkgdir/srv/http/bugzilla -type f -exec chmod 0644 {} \;
+  find $pkgdir/srv/http/bugzilla -type d -exec chmod 0755 {} \;
+}

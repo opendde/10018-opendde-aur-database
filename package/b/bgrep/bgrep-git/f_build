@@ -1,0 +1,7 @@
+build() {
+  cd "$srcdir/$pkgname"
+  ./remove_cruft.sh
+  ./bootstrap
+  ./configure
+  make
+}

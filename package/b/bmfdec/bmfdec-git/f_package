@@ -1,0 +1,3 @@
+package() {
+	install -Dm755 -t "${pkgdir}/usr/bin" ${pkgname%-git}/bmf{2mof,dec,parse}
+}

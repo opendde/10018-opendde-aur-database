@@ -1,0 +1,4 @@
+package() {
+   cd "$pkgname"
+   install -Dm 755 target/release/blissify -t "${pkgdir}/usr/bin"
+}

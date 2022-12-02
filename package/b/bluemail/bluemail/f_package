@@ -1,0 +1,30 @@
+package() {
+    mkdir -p "${pkgdir}/opt"
+    mkdir -p "${pkgdir}/usr/bin"
+
+    unsquashfs -f -d "${pkgdir}/opt/bluemail" "${pkgname}-${pkgver}.snap"
+
+    # Fix too open folder permission
+    chmod 755 "${pkgdir}/opt/bluemail"
+
+    # Install launcher
+    install -m755 "${srcdir}/${pkgname}.sh" "${pkgdir}/usr/bin/bluemail"
+
+    # Fix and install desktop icons
+    for size in 22 24 32 48 64 128 256 512; do
+        mkdir -p "${pkgdir}/usr/share/icons/hicolor/${size}x${size}/apps"
+        convert "${pkgdir}/opt/bluemail/meta/gui/icon.png" -resize "${size}x${size}" \
+            "${pkgdir}/usr/share/icons/hicolor/${size}x${size}/apps/bluemail.png"
+    done
+
+    sed -ri 's/(Icon=).+/\1bluemail/' "${pkgdir}/opt/bluemail/meta/gui/bluemail.desktop"
+    install -Dm644 "${pkgdir}/opt/bluemail/meta/gui/bluemail.desktop" "${pkgdir}/usr/share/applications/bluemail.desktop"
+
+    # Cleanup snap vendor files and useless files
+    rm -r "${pkgdir}/opt/bluemail/lib"
+    rm -r "${pkgdir}/opt/bluemail/meta"
+    rm -r "${pkgdir}/opt/bluemail/usr"
+    rm ${pkgdir}/opt/bluemail/*.sh
+    rm ${pkgdir}/opt/bluemail/libEGL.so
+    rm ${pkgdir}/opt/bluemail/libGLESv2.so
+}

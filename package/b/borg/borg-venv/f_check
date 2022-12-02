@@ -1,0 +1,8 @@
+check() {
+  cd "$srcdir/$_pkgname-$pkgver/build/lib.linux-$CARCH-3".*/
+  local venvdir="$srcdir/venv-$_pkgname-$pkgver"
+
+  LANG=en_US.UTF-8 PYTHONPATH="$PWD:$PYTHONPATH" "$venvdir/bin/python" -m pytest --cov=borg \
+    --benchmark-skip --pyargs borg.testsuite -v \
+    -k 'not test_non_ascii_acl'
+}

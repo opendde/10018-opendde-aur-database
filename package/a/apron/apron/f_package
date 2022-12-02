@@ -1,0 +1,16 @@
+package() {
+  cd "$srcdir/apron-$pkgver"
+  make APRON_PREFIX="$pkgdir"/usr install
+
+  # fix include/ permissions
+  find "$pkgdir"/usr/include -type d -exec chmod 755 '{}' ';'
+  find "$pkgdir"/usr/include -type f -exec chmod 644 '{}' ';'
+
+  # remove test binaries
+  rm "$pkgdir"/usr/bin/*test*
+
+  # remove ocaml stuff
+  rm "$pkgdir"/usr/lib/*.ml
+  rm "$pkgdir"/usr/lib/*.mli
+  rm "$pkgdir"/usr/lib/*.idl
+}

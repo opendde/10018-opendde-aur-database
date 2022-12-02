@@ -1,0 +1,14 @@
+package() {
+	_setpath
+	cd "$srcdir/$_pkgname/frontend/app_flowy/product/"*/linux/Release/AppFlowy
+	install -dm755 "$pkgdir"{/usr/bin,/usr/share/applications,"/opt/$pkgname"}
+
+	cp -a * "$pkgdir/opt/$pkgname/"
+	rm "$pkgdir/opt/$pkgname/appflowy.desktop.temp"
+	ln -s "/opt/$pkgname/app_flowy" "$pkgdir/usr/bin/"
+
+	_desktop_file="$pkgdir/usr/share/applications/AppFlowy.desktop"
+	install -m644 appflowy.desktop.temp "$_desktop_file"
+	sed -i '/Exec=/s|\[CHANGE_THIS\]/AppFlowy|/usr/bin|' "$_desktop_file"
+	sed -i "/Icon=/s|\[CHANGE_THIS\]/AppFlowy|/opt/$pkgname|" "$_desktop_file"
+}

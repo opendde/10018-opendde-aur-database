@@ -1,0 +1,4 @@
+build() {
+	cd "${srcdir}"
+	make DESTDIR="${pkgdir}" prefix=/usr sbindir=/usr/bin bindir=/usr/bin libdir=/usr/lib
+}

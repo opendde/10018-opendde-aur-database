@@ -1,0 +1,4 @@
+build() {
+    cd "${pkgname}" || exit 1
+    ../../compile.bash "${OPTIONS}"
+}

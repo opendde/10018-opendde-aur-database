@@ -1,0 +1,6 @@
+package() {
+  cd "${pkgname}-${pkgver}"
+  install -Dm755 build/asciigraph "${pkgdir}/usr/bin/asciigraph"
+  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/asciigraph/LICENSE"
+  install -Dm644 README.md "${pkgdir}/usr/share/doc/asciigraph/README.md"
+}

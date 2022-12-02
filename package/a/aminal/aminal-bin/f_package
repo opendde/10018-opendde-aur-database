@@ -1,0 +1,3 @@
+package() {
+  install -Dm755 ${pkgname%-bin}-${pkgver} "${pkgdir}/usr/bin/aminal"
+}

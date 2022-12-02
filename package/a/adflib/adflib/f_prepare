@@ -1,0 +1,3 @@
+prepare() {
+  cd "$srcdir/${_pkgname}-${pkgver}"
+}

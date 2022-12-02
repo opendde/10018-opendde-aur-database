@@ -1,0 +1,14 @@
+package() {
+  cd "$srcdir"/BombSquad_Linux_*_"$pkgver"
+
+  install -Dm755 bombsquad "$pkgdir"/usr/share/bombsquad/bombsquad
+  install -dm755 ba_data "$pkgdir"/usr/share/bombsquad/ba_data
+  cp -r ba_data "$pkgdir"/usr/share/bombsquad/
+
+  find "${pkgdir}/usr/share/bombsquad/ba_data" -type f -exec chmod 644 {} \;
+  find "${pkgdir}/usr/share/bombsquad/ba_data" -type d -exec chmod 755 {} \;
+
+  install -Dm 755 "$srcdir"/bombsquad.sh "$pkgdir"/usr/bin/$pkgname
+  install -Dm 644 "$srcdir"/bombsquad.desktop "$pkgdir"/usr/share/applications/bombsquad.desktop
+  install -Dm 644 "$srcdir"/BombSquadIcon.png "$pkgdir"/usr/share/pixmaps/bombsquad.png
+}

@@ -1,0 +1,5 @@
+package() {
+  cd ${pkgname%-git}
+  make -C build DESTDIR="$pkgdir" install
+  install -vDm644 {,"$pkgdir/usr/share/licenses/$pkgname/"}COPYING
+}

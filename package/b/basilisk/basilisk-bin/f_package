@@ -1,0 +1,12 @@
+package() {
+	mkdir -p "$pkgdir"/opt
+	cp -ar --no-preserve=ownership "$srcdir"/basilisk "$pkgdir"/opt
+	mkdir -p "${pkgdir}"/usr/bin
+	cat > "${pkgdir}"/usr/bin/basilisk <<- __EOF__
+		#!/bin/bash
+		/opt/basilisk/basilisk "\$@"
+	__EOF__
+	chmod 755 "${pkgdir}"/usr/bin/basilisk
+	install -Dm644 "${srcdir}"/basilisk.desktop "${pkgdir}"/usr/share/applications/basilisk.desktop
+	install -Dm644 "${srcdir}"/basilisk/browser/icons/mozicon128.png "${pkgdir}"/usr/share/pixmaps/basilisk.png
+}

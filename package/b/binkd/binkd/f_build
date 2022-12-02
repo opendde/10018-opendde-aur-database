@@ -1,0 +1,13 @@
+build() {
+  cd "$srcdir/binkd"
+  cp mkfls/unix/{Makefile*,configure*,install-sh,mkinstalldirs} .
+  ./configure \
+    --prefix=/usr           \
+    --sbindir=/usr/bin      \
+    --mandir=/usr/share/man \
+    --sysconfdir=/etc       \
+    --with-debug            \
+    --with-zlib             \
+    ;
+  make
+}

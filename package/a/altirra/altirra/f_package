@@ -1,0 +1,17 @@
+package() {
+    dest="${pkgdir}"/opt/${pkgname}
+    # windows program files
+    install -Dm644 -t "${dest}"/ Additions.atr Altirra.chm Altirra64.exe firmware-setup.reg
+    # shell script
+    install -m755 altirra "${dest}"/altirra
+    # firmware roms
+    install -Dm644 -t "${dest}"/roms/ 5200.ROM ATARIBAS.ROM ATARIOSB.ROM ATARIXL.ROM
+    # desktop entry
+    share="${pkgdir}"/usr/share
+    install -Dm644 ${pkgname}.desktop "${share}"/applications/${pkgname}.desktop
+    install -Dm644 ${pkgname}.png "${share}"/pixmaps/${pkgname}.png
+    install -Dm644 application-${pkgname}.xml "${share}"/mime/packages/application-${pkgname}.xml
+    # PATH symlink
+    install -dm755 "${pkgdir}"/usr/bin/
+    ln -s /opt/${pkgname}/altirra "${pkgdir}"/usr/bin/altirra
+}

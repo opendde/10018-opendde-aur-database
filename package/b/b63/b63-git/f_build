@@ -1,0 +1,7 @@
+build() {
+  cd "${pkgname}-${pkgver}"
+  go build \
+    -trimpath \
+    -ldflags="-extldflags ${LDFLAGS} -s -w -X main.version=${pkgver}" \
+    -o $pkgname .
+}

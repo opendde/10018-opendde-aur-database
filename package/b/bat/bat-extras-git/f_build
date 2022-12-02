@@ -1,0 +1,4 @@
+build() {
+  cd "$srcdir/${pkgname%-git}"
+  ./build.sh --minify=none --no-verify
+}

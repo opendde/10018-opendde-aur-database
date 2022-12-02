@@ -1,0 +1,14 @@
+package() {
+    cd "$srcdir"
+
+    install -d "$pkgdir/opt/abricotine"
+    cp -r opt/Abricotine/* "$pkgdir/opt/abricotine"
+
+    install -d "$pkgdir/usr/bin"
+    ln -s "/opt/abricotine/abricotine" "$pkgdir/usr/bin/abricotine"
+
+    install -Dm644 "../abricotine.desktop" -t "$pkgdir/usr/share/applications/"
+    install -Dm644 \
+        "usr/share/icons/hicolor/48x48/apps/abricotine.png" \
+        "$pkgdir/usr/share/pixmaps/abricotine.png"
+}

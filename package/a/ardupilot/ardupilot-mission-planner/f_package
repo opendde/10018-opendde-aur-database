@@ -1,0 +1,7 @@
+package() {
+	install -d "${pkgdir}/opt/${_pkgname}"
+	cp -r ${srcdir}/* ${pkgdir}/opt/${_pkgname} -R
+
+	install -d "${pkgdir}/usr/share/applications"
+	install -m644 "${srcdir}/${_pkgname}.desktop" "${pkgdir}/usr/share/applications/${_pkgname}.desktop"
+}

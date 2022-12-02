@@ -1,0 +1,17 @@
+_fn_pre_remove() {
+  set -u
+  local _uid
+  _uid="\$(id -u "\${_amandauser}")"
+  if [ \$? -eq 0 ]; then
+    if [ "\${_uid}" -lt 1000 ]; then
+      userdel "\${_amandauser}" || :
+      echo "amanda: User \${_amandauser} deleted"
+      # Mysteriously, userdel also removes the group making groupdel fail
+      groupdel "\${_amandagroup}" 2>/dev/null || :
+      echo "amanda: Group \${_amandagroup} deleted"
+    else
+      echo "uid of amanda is \${_uid}, >=1000, can't delete"
+    fi
+  fi
+  set +u
+}

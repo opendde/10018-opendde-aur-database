@@ -1,0 +1,5 @@
+package() {
+  cd gopath/src/github.com/hashicorp/${_pkgname}
+  install -Dm755 bin/boundary "$pkgdir"/usr/bin/boundary
+  install -m644 -D LICENSE "$pkgdir/usr/share/licenses/${_pkgname}/LICENSE"
+}

@@ -1,0 +1,4 @@
+package() {
+  cd "${srcdir}/async-${pkgver}"
+  install -Dm 755 "target/release/async" "${pkgdir}/usr/bin/async"
+}

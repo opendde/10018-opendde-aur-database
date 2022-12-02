@@ -1,0 +1,4 @@
+build() {
+  cd $pkgname-$pkgver
+  make V=1 CFLAGS="$CFLAGS $CPPFLAGS" LDFLAGS="$LDFLAGS"
+}

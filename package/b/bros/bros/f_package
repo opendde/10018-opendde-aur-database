@@ -1,0 +1,11 @@
+package() {
+	# game rom atr
+	dest="${pkgdir}"/opt/${pkgname}
+	install -Dm644 Bros_1989_KE_Soft_DE_en_a3.atr "${dest}"/Bros.atr
+	# launch script
+	install -D ${pkgname} "${dest}"/${pkgname}
+	# desktop entry
+	share="${pkgdir}"/usr/share
+	install -Dm644 ${pkgname}.desktop "${share}"/applications/${pkgname}.desktop
+	install -Dm644 ${pkgname}.svg "${share}"/pixmaps/${pkgname}.svg
+}

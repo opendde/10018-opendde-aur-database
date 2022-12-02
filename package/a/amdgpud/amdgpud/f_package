@@ -1,0 +1,16 @@
+package() {
+	cd "$pkgname"
+	find "target/$CARCH-unknown-linux-gnu/release/" \
+		-maxdepth 1 \
+		-executable \
+		-type f \
+		-exec install -D -t "$pkgdir/usr/bin/" '{}' \+
+	find services \
+		-type f \
+		-name '*.service' \
+		-exec install -Dm644 -t "$pkgdir/usr/lib/systemd/system/" '{}' \+
+	install -Dm644 LICENSE.APACHE2.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE-APACHE"
+	install -Dm644 LICENSE.md "$pkgdir/usr/share/licenses/$pkgname/LICENSE-MIT"
+	install -Dm644 README.md -t "$pkgdir/usr/share/doc/$pkgname/"
+	install -Dm644 examples/default_config.toml "$pkgdir/etc/$pkgname/config.toml"
+}

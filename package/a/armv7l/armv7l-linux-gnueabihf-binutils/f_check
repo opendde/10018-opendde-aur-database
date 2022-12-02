@@ -1,0 +1,7 @@
+check() {
+  cd binutils-$pkgver
+  
+  # unset LDFLAGS as testsuite makes assumptions about which ones are active
+  # do not abort on errors - manually check log files
+  make -k LDFLAGS="" check || true
+}

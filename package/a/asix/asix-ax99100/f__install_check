@@ -1,0 +1,14 @@
+_install_check() {
+  local _ckvar
+  local _ckline
+  local _pkgname="${pkgname}"
+  for _ckvar in '_pkgname' '_modulename'; do
+    _ckline="${_ckvar}='${!_ckvar}'"
+    if ! grep -q "^${_ckline}"'$' "${startdir}/${install}"; then
+      msg "${install} must be fixed"
+      echo "${_ckline}"
+      set +u
+      false
+    fi
+  done
+}

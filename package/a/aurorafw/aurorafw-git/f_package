@@ -1,0 +1,5 @@
+package() {
+  cd $pkgname-$_gitname/build
+
+  DESTDIR="$pkgdir" ninja install
+}

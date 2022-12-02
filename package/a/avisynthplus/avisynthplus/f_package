@@ -1,0 +1,4 @@
+package() {
+    make -C build DESTDIR="$pkgdir" install
+    install -D -m644 "AviSynthPlus-${pkgver}/distrib/docs/english/build/man/avisynth.1" -t "${pkgdir}/usr/share/man/man1"
+}

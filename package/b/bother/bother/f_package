@@ -1,0 +1,4 @@
+package() {
+    cd $srcdir/Bother-1.0
+    python setup.py install --root="$pkgdir" --optimize=1 
+}

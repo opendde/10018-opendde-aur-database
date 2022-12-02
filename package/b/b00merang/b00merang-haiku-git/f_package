@@ -1,0 +1,7 @@
+package() {
+    cd "$pkgname"
+    local dest="$pkgdir"/usr/share/themes/'Haiku'
+
+    install -d "$dest"
+    cp -r * "$dest"
+}

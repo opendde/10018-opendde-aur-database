@@ -1,0 +1,4 @@
+package() {
+cd $srcdir/$pkgname-$pkgver
+install -D -m755 ./bsod $pkgdir/usr/bin/bsod
+}

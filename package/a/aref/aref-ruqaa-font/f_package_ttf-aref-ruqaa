@@ -1,0 +1,6 @@
+package_ttf-aref-ruqaa() {
+	cd "$_pname-$pkgver"
+	install -Dm0644 -t "$pkgdir/usr/share/fonts/TTF/" *.ttf
+	install -Dm0644 -t "$pkgdir/usr/share/doc/$pkgname/" README.md
+	install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname" OFL.txt
+}

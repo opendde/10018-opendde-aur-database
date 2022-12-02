@@ -1,0 +1,11 @@
+package() {
+#  _auroraver=`pacman -Q aurora | cut -f2 -d\ | cut -f1 -d-`
+#  depends=("aurora>=${_auroraver}" "aurora<=${_auroraver/0/99}")
+
+  cd "${srcdir}"
+  local _prefix="${pkgdir}"/usr/lib/aurora/distribution/searchplugins/common
+
+  for i in ${source[@]}; do
+    install -D -m 0644 "${srcdir}"/$i ${_prefix}/$i
+  done
+}

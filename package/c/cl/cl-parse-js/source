@@ -1,0 +1,1 @@
+("$pkgname::git+https://marijnhaverbeke.nl/git/parse-js#commit=$_commit")

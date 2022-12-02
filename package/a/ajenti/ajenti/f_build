@@ -1,0 +1,10 @@
+build() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+
+  python2 setup.py build
+  #make clean
+  #make tgz
+
+  #cd ${srcdir}/${pkgname}-${pkgver}/dist
+  #tar xzf ${pkgname}-${pkgver}.tar.gz
+}

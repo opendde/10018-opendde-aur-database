@@ -1,0 +1,12 @@
+package() {
+    cd "${srcdir}"/termcap-${pkgver}
+    source android-env ${_android_arch}
+
+    mkdir -p "${pkgdir}"/${ANDROID_PREFIX_INCLUDE}
+    mkdir -p "${pkgdir}"/${ANDROID_PREFIX_LIB}
+    install -D -m755 termcap.h "${pkgdir}"/${ANDROID_PREFIX_INCLUDE}/termcap.h
+    install -D -m755 libtermcap.so "${pkgdir}"/${ANDROID_PREFIX_LIB}/libtermcap.so
+    install -D -m755 libtermcap.a "${pkgdir}"/${ANDROID_PREFIX_LIB}/libtermcap.a
+    ${ANDROID_STRIP} -g --strip-unneeded "${pkgdir}"/${ANDROID_PREFIX_LIB}/*.so
+    ${ANDROID_STRIP} -g "$pkgdir"/${ANDROID_PREFIX_LIB}/*.a
+}

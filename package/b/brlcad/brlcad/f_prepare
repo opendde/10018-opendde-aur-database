@@ -1,0 +1,6 @@
+prepare() {
+    patch \
+        --strip=0 \
+        "--directory=${srcdir}/${pkgname}-rel-${pkgver//./-}" \
+        "--input=${srcdir}/build.patch"
+}

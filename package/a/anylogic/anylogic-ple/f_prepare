@@ -1,0 +1,7 @@
+prepare() {
+    msg2 "Unpacking archive..."
+    tail -n +374 "$srcdir/$pkgname-$pkgver.linux.x86_64.tgz.bin" > "$pkgname-$pkgver.linux.x86_64.tgz"
+
+    msg2 "Extracting archive..."
+    tar -xf $pkgname-$pkgver.linux.x86_64.tgz
+}

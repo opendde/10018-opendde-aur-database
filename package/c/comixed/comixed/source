@@ -1,0 +1,1 @@
+("${pkgname}-${pkgver}-2.1.zip::https://github.com/comixed/comixed/releases/download/v${pkgver}-2.1/comixed-release-${pkgver}-2.1-RELEASE.zip"

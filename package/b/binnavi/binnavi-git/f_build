@@ -1,0 +1,6 @@
+build() {
+  cd "${srcdir}/binnavi"
+  JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
+  mvn dependency:copy-dependencies -Dmaven.repo.local="${srcdir}/${pkgname}-${pkgver}"
+    ant build-binnavi-fat-jar
+}

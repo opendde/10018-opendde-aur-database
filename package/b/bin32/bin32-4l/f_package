@@ -1,0 +1,14 @@
+package() {
+  cd $srcdir
+  mkdir -p $pkgdir/{opt/4L/lib,usr/bin}
+  cp -R usr/4L $pkgdir/opt
+  mv $pkgdir/opt/4L/4L-cli $pkgdir/opt/4L/4L-cli.bin
+  install -m755 $srcdir/4L-cli $pkgdir/opt/4L
+  cd $pkgdir/usr/bin
+  ln -s ../../opt/4L/4L-cli 4L-cli
+  ln -s ../../opt/4L/4L-gui 4L-gui
+  find $pkgdir/opt -type d -exec chmod 755 {} \;
+  chmod -x $pkgdir/opt/4L/*/*
+  install -D -m644 $srcdir/lightscribe.png ${pkgdir}/usr/share/pixmaps/lightscribe.png
+  install -D -m644 $srcdir/lightscribe.desktop ${pkgdir}/usr/share/applications/lightscribe.desktop
+}

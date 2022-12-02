@@ -1,0 +1,4 @@
+prepare() {
+	rm -rf "${srcdir}/${pkgname}_${pkgver}/.gitignore"
+	rm -rf "${srcdir}/${pkgname}_${pkgver}/.git/"
+}

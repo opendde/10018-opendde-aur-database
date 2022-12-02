@@ -1,0 +1,10 @@
+prepare() {
+    echo -e '\033[0;31mWARNING : \033[1;33mThis package is deprecated, please use systemd-binfmt instead.\033[0m'
+    read -p "Do you really want to install it anyway ? " yn 
+    case $yn in
+	[Nn]* ) exit;;
+    esac
+    set -e
+    cd "${srcdir}/$pkgname-$_pkgver"
+    ./bootstrap
+}

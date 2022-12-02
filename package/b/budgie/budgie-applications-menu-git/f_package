@@ -1,0 +1,3 @@
+package() {
+  DESTDIR="${pkgdir}" meson install -C build
+}

@@ -1,0 +1,7 @@
+package() {
+  cd "$srcdir/"
+
+  install -D -m 644 -o root -g root abnt2ext "$pkgdir/usr/share/X11/xkb/symbols/abnt2ext"
+  install -D -m 644 -o root -g root patch_evdev.py "$pkgdir/usr/share/abnt2-ext/patch_evdev.py"
+  install -D -m 644 -o root -g root abnt2-patch-evdev.hook "$pkgdir/usr/share/libalpm/hooks/abnt2-patch-evdev.hook"
+}

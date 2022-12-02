@@ -1,0 +1,5 @@
+pkgver() {
+  cd "${srcdir}/${_pkgname}"
+  ver=$(printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)")
+  echo "${_pkgver}.${ver}"
+}

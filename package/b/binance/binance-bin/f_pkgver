@@ -1,0 +1,4 @@
+pkgver() {
+    tar -zxvf "${srcdir}/control.tar.gz" -C "${srcdir}"  > /dev/null
+    egrep '^Version:' control | awk '{print $2}'
+}

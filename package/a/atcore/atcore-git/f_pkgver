@@ -1,0 +1,5 @@
+pkgver() {
+   cd "atcore"
+   version="1.0.70"
+   printf "%s.r%s.%s" "$version" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}

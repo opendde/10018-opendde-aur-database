@@ -1,0 +1,20 @@
+package() {
+  # add bin
+  cd "${srcdir}/acmetool-v${pkgver}-linux_amd64_cgo"
+  install -Dm755 -t "${pkgdir}/usr/bin" bin/acmetool
+
+  # add documentation
+  install -Dm644 -t "${pkgdir}/usr/share/man/man8" doc/acmetool.8
+  install -Dm644 -t "${pkgdir}/usr/share/doc/${pkgname}" README.md
+
+  # add license
+  install -Dm644 -t "${pkgdir}/usr/share/licenses/${pkgname}" "${srcdir}/LICENSE"
+
+  # copy systemd units (service and timer)
+  install -Dm644 -t "${pkgdir}/usr/lib/systemd/system" \
+                     ${srcdir}/acmetool.service \
+                     ${srcdir}/acmetool.timer
+
+  # copy acmetool.tmpfiles
+  install -Dm644 -t "${pkgdir}/usr/lib/tmpfiles.d/" ${srcdir}/acmetool.conf
+}

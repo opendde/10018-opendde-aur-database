@@ -1,0 +1,9 @@
+build() {
+  cd "${srcdir}/${_gitname}"
+  
+  python -m poetry build
+  cd dist
+  tar zxf ${_gitname}-*.tar.gz
+  cd ${_gitname}-1.0.0
+  python setup.py build
+}

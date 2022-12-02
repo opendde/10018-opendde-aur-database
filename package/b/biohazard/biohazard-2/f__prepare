@@ -1,0 +1,11 @@
+_prepare() {
+  local _app_id="${1}"
+  local _title="${2}"
+  local _pkgbase="${3}"
+  local _pkgdesc="${4}"
+  local _icon="${5}"
+  local _uuid="${6}"
+  _desktop_file "${_app_id}" "${_title}" "${_pkgbase}" "${_pkgdesc}" "${_app_id}"
+  _launcher "${_pkgbase}" "${_app_id}"
+  echo "/usr/games/${_app_id}/${_uuid}.cue" > any
+}

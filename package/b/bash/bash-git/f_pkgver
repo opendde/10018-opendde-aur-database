@@ -1,0 +1,5 @@
+pkgver() {
+  cd ${pkgname%-git}
+  _ver="$(grep -m1 '@set VERSION' doc/version.texi | cut -d ' ' -f3 | tr - .)"
+  echo "${_ver}_r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
+}

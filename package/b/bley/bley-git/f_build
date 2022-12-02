@@ -1,0 +1,5 @@
+build() {
+	cd "$srcdir/${pkgname-git}"
+    git apply $srcdir/fix_setup.patch
+	python setup.py build
+}

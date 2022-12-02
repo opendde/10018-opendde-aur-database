@@ -1,0 +1,11 @@
+package() {
+	mkdir "${srcdir}"/data
+	tar -C "${srcdir}"/data -xzf data.tar.gz
+	pushd "${srcdir}"/data
+	find -type f -path "./opt*" -exec install -Dm755 {} "${pkgdir}"/{} \;
+	popd
+	mv "${pkgdir}"/opt/Aquaria "${pkgdir}"/opt/aquaria
+	mkdir -p "${pkgdir}"/usr/bin
+	ln -s /opt/aquaria/aquaria "${pkgdir}"/usr/bin/aquaria
+	install -Dm644 "${srcdir}"/aquaria.desktop "${pkgdir}"/usr/share/applications/aquaria.desktop
+}

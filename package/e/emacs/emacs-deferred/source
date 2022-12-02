@@ -1,0 +1,1 @@
+("$pkgname-$pkgver.tar.gz::https://github.com/kiwanami/emacs-deferred/archive/v${pkgver}.tar.gz")

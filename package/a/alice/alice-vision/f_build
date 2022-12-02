@@ -1,0 +1,5 @@
+build() {
+  cmake "${_CMAKE_FLAGS[@]}" -G Ninja -S AliceVision-${pkgver} -B build
+# shellcheck disable=SC2086 #allow MAKEFLAGS to carry more then one flag.
+  ninja ${MAKEFLAGS:--j1} -C build
+}

@@ -1,0 +1,4 @@
+build() {
+  cd "$srcdir/phc-winner-$pkgname-$pkgver"
+  make argon2 libs
+}

@@ -1,0 +1,4 @@
+build() {
+    cd "$srcdir/autopasswd-$pkgver"
+    make PREFIX=/usr
+}

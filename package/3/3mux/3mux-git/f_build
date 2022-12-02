@@ -1,0 +1,8 @@
+build() {
+  export GOPATH="$srcdir/gopath:/usr/share/gocode"
+  cd "gopath/src/$_gopkg"
+
+  go install \
+      -trimpath \
+      -ldflags "-extldflags ${LDFLAGS}"
+}

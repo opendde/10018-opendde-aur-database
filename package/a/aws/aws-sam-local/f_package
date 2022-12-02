@@ -1,0 +1,3 @@
+package() {
+  install -Dm755 sam "${pkgdir}/usr/bin/sam"
+}

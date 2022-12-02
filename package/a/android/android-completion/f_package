@@ -1,0 +1,5 @@
+package() {
+	for i in adb fastboot; do
+		install -Dm644 -t "$pkgdir/usr/share/bash-completion/completions/" "$srcdir/$i.bash"
+	done
+}

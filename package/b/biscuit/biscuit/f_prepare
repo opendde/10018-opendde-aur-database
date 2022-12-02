@@ -1,0 +1,4 @@
+prepare() {
+    chmod u+x ./Biscuit-${pkgver}.AppImage
+    ./Biscuit-${pkgver}.AppImage --appimage-extract
+}

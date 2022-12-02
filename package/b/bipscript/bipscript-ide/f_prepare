@@ -1,0 +1,4 @@
+prepare() {
+	cd "ide-v$pkgver"
+	./version.sh v$pkgver
+}

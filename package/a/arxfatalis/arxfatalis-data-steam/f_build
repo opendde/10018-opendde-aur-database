@@ -1,0 +1,9 @@
+build() {
+    
+    cd $srcdir
+    bsdtar xf steamcmd_linux.tar.gz
+    
+    chmod +x arx-downloader
+    ./arx-downloader
+    
+}

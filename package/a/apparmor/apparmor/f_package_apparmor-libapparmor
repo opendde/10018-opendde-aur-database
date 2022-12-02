@@ -1,0 +1,9 @@
+package_apparmor-libapparmor() {
+	pkgdesc='AppArmor library'
+	makedepends=('swig' 'perl' 'python')
+	depends=('python')
+
+	cd "${srcdir}/${pkgbase}-${_majorver}"
+	make -C libraries/libapparmor DESTDIR="${pkgdir}" install
+	install -D -m644 "libraries/libapparmor/swig/perl/LibAppArmor.pm" "${pkgdir}/${_vendorarch_perl_dir}"
+}

@@ -1,0 +1,10 @@
+package_bemenu-wayland-git() {
+	pkgdesc='Wayland (wlroots-based compositors) renderer for bemenu'
+	provides=(bemenu-renderer-git bemenu-wayland)
+	conflicts=(bemenu-wayland)
+	depends=(libbemenu-git libxkbcommon pango wayland)
+	install=bemenu-wayland-git.install
+
+	cd "$_pkgbase"
+	make DESTDIR="$pkgdir" PREFIX=/usr install-wayland
+}

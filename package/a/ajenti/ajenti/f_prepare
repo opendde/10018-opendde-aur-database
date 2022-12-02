@@ -1,0 +1,11 @@
+prepare() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+
+  patch -p2 < "${srcdir}/gevent_coros.patch"
+
+  msg2 'Replacing python shebang by python2 shebang...'
+  find . -type f -exec sed -i \
+    -e '1s|^#!/usr/bin/env python$|#!/usr/bin/env python2|' \
+    -e '1s|^#!/usr/bin/python$|#!/usr/bin/env python2|' \
+    "{}" \;
+}

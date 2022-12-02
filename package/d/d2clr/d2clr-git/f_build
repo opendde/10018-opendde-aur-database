@@ -1,0 +1,9 @@
+build() {
+  cd "${srcdir}"
+
+  # Compile bst
+  gcc bst.c -o bst
+
+  # Compile baad
+  gcc baad.c -o baad
+}

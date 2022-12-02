@@ -1,0 +1,1 @@
+("$_pkgbase-$pkgver.tar.gz::https://github.com/fastfloat/fast_float/archive/refs/tags/v$pkgver.tar.gz")

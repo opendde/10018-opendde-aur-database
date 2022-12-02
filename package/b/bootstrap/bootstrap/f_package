@@ -1,0 +1,11 @@
+package() {
+  cd ${pkgname}-${pkgver}-dist
+  install -d ${pkgdir}/usr/share/javascript/${pkgname}/{css,js}
+  for _jsfile in ./js/*; do
+	install -m0644 "${_jsfile}" "${pkgdir}/usr/share/javascript/${pkgname}/js/"
+  done
+  for _cssfile in ./css/*; do
+	install -m0644 "${_cssfile}" "${pkgdir}/usr/share/javascript/${pkgname}/css/"
+  done
+  install -Dm0644 "${srcdir}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE" 
+}

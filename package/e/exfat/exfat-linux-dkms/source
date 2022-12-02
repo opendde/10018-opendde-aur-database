@@ -1,0 +1,1 @@
+("$_gitname-${pkgver//_/-}arter97.tar.gz::https://github.com/arter97/exfat-linux/archive/${pkgver//_/-}arter97.tar.gz"

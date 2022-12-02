@@ -1,0 +1,8 @@
+package() {
+	install -Dm 755 "$srcdir/mergestat" "$pkgdir/usr/bin/mergestat"
+	mkdir -p "$pkgdir/usr/lib"
+	ln -s /usr/lib/libpcre.so "$pkgdir"/usr/lib/libpcre.so.3
+    ln -s /usr/bin/mergestat "$pkgdir/usr/bin/askgit"
+    install -Dm 644 "$srcdir/LICENSE" "$pkgdir/usr/share/licenses/askgit-bin/LICENSE"
+
+}

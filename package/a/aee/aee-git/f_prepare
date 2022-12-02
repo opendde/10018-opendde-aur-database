@@ -1,0 +1,4 @@
+prepare() {
+  cd ${pkgbase%-git}
+  patch -Np1 < "$srcdir"/fix_help_and_init_file.patch
+}

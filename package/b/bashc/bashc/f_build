@@ -1,0 +1,6 @@
+build() {
+  set -u
+  cd "${srcdir}/${_pkgname}"
+  make -s -j $(nproc)
+  set +u
+}

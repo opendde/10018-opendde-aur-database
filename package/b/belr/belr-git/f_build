@@ -1,0 +1,10 @@
+build() {
+  mkdir -p build
+  cd build
+  cmake -DCMAKE_PREFIX_PATH="/usr" \
+      -DCMAKE_INSTALL_PREFIX="/usr" \
+      -DENABLE_STATIC=NO \
+      -DENABLE_TOOLS=NO \
+      -DCMAKE_SKIP_INSTALL_RPATH=ON "../$_pkgname"
+  make
+}

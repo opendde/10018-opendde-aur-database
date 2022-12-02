@@ -1,0 +1,5 @@
+build() {
+  cd $srcdir/$pkgname-$pkgver
+  patch -Np1 -i $srcdir/use_pillow.patch
+  python2 setup.py build
+}
