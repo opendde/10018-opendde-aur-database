@@ -1,0 +1,21 @@
+build() {
+  msg2 "Building protobuf"
+  cd "${srcdir}/protobuf-2.5.0"
+  ln -s ../googletest-release-1.5.0 gtest
+  ./autogen.sh
+  mkdir -p "${srcdir}/protobuf-install-root"
+  ./configure prefix="${srcdir}/protobuf-install-root"
+  make
+  make install
+  
+  msg2 "Building protobuf-c"
+  cd "${srcdir}/protobuf-c-0.15"
+  D_LIBRARY_PATH="${srcdir}/protobuf-install-root/lib" LDFLAGS=-L"${srcdir}/protobuf-install-root/lib" PROTOC="${srcdir}/protobuf-install-root/bin/protoc" CXXFLAGS=-I"${srcdir}/protobuf-install-root/include" ./configure libdir="${srcdir}/protobuf-install-root/lib" includedir="${srcdir}/protobuf-install-root/include" prefix="${srcdir}/protobuf-install-root"
+  make
+  make install
+
+  msg2 "Building z-stack"
+  cd "${srcdir}/unpacked.vfs/default/programfileslinux/Source"
+  mkdir -p "${srcdir}/tools"
+  TCLIB="${srcdir}/tools" ./build_all
+}
