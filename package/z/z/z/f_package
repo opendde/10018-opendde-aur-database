@@ -1,0 +1,11 @@
+package() {
+	cd "$srcdir/$pkgname-$pkgver"
+
+	msg2 'Installing man page...'
+	# update path in manpage
+	sed -i z.1 -e "s:/path/to/z.sh:/usr/share/$pkgname/z.sh:g"
+	install -Dm 644 z.1 "$pkgdir/usr/share/man/man1/z.1"
+
+	msg2 'Installing...'
+	install -Dm 644 z.sh "$pkgdir/usr/share/$pkgname/z.sh"
+}

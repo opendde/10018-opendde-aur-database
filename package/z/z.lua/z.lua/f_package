@@ -1,0 +1,6 @@
+package() {
+  cd "${pkgname}-${pkgver}"
+  install -D -t "${pkgdir}/usr/share/${pkgname}/" \
+    init.fish README.md test_path.lua z.cmd z.lua z.lua.plugin.zsh
+  install -Dm644 -t "${pkgdir}/usr/share/licenses/${pkgname}/" LICENSE
+}
