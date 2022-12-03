@@ -711,6 +711,7 @@ advancedgenieeditor-git
 advancemame
 advancemenu
 advancescan
+advancescan-git
 advantech-vcom
 advcopy
 advcp
@@ -1547,6 +1548,7 @@ amfora-git
 amgcl-git
 amgx
 amide
+amide-git
 amide-hg
 amidimap
 amidst
@@ -3582,6 +3584,7 @@ asciicast2gif
 asciidoc-fake
 asciidoc-git
 asciidoc-gtk-highlight
+asciidoc-language-documentation-git
 asciidoc-plantuml-git
 asciidoc-py3
 asciidoc-static-pages
@@ -5879,6 +5882,7 @@ bilibili-live-helper-bin
 bilibili-live-helper-git
 bilibili-nativefier
 bilibilitool-dotnet-git
+bilibilitoolpro-git
 bilidan-git
 bilili
 bililive-recorder
@@ -6679,6 +6683,7 @@ boardy-server-bin
 boarpig-brainfuck
 boatswain
 boatswain-git
+bob
 bob-bin
 bobcat-git
 bobco-ttf
@@ -8851,6 +8856,7 @@ cargo-hatch
 cargo-i18n
 cargo-insta
 cargo-kcov-git
+cargo-lambda-bin
 cargo-license
 cargo-license-git
 cargo-lichking
@@ -9077,6 +9083,7 @@ catppuccin-gtk-theme-latte
 catppuccin-gtk-theme-macchiato
 catppuccin-gtk-theme-mocha
 catppuccin-kde-theme-git
+catppuccin-konsole-theme-git
 catppuccin-mocha-dark-cursors
 catppuccin-mocha-light-cursors
 catppuccin-wallpapers-git
@@ -14389,6 +14396,7 @@ desktend-git
 desktime
 desktoggle
 desktoggle-git
+desktop-builder
 desktop-config-git
 desktop-creator-git
 desktop-dimmer
@@ -16524,6 +16532,7 @@ dukto-bin
 dukto-qt5-git
 dum
 duma
+duma-git
 dumb-a4
 dumb-brightness-git
 dumb-init-git
@@ -18240,6 +18249,7 @@ emacs25-git
 emacs26-git
 emacs27-git
 emacs28-git
+emacs29-git
 emacsclient-desktop-git
 emacspeak
 emacspeak-git
@@ -20242,6 +20252,7 @@ ffc-hpc-git
 ffcast
 ffcss
 ffdec
+ffdec-bin
 ffdesktop
 ffdiaporama
 ffdiaporama-openclipart
@@ -20941,6 +20952,7 @@ firefox-floccus
 firefox-foxygestures
 firefox-fuckpa
 firefox-gesturefy
+firefox-gnome-search-provider
 firefox-gnome-theme-git
 firefox-gtk2
 firefox-gtk2-bin
@@ -23039,6 +23051,7 @@ g2sc
 g2ttrss-mobile
 g3data
 g3dviewer
+g3k
 g3k-git
 g3kb-switch
 g3kb-switch-git
@@ -26823,6 +26836,7 @@ goldendict-enruen-content
 goldendict-git
 goldendict-qt5-git
 goldendict-webengine-git
+goldendict-webengine-pr-git
 goldendict_qt4
 goldfish-fox
 goldfish-moon
@@ -26831,6 +26845,7 @@ goldjack
 goldtree-py
 goldy-gopher-git
 golem95
+golines
 golint-git
 golinx
 golismero
@@ -28044,6 +28059,7 @@ gst-libav-git
 gst-libav-oleavr
 gst-mpg123
 gst-omx
+gst-plugin-gtk4-git
 gst-plugin-jamesdsp-git
 gst-plugin-libde265
 gst-plugin-pipewire-git
@@ -30366,6 +30382,7 @@ hoyo-glyphs
 hp-git
 hp-health
 hp-mfp-10x-17x
+hp-omen-linux-module-dkms-git
 hp-smh-templates
 hp-snmp-agents
 hp-vendor-dkms-git
@@ -32917,6 +32934,7 @@ ite-backlight
 itex2mml
 itext-rups-bin
 itg3theme
+ithc-dkms-git
 itk
 itk-cvs
 itk-git
@@ -33609,6 +33627,7 @@ jfbterm-freebsd
 jfbterm-git
 jfbview
 jfbview-git
+jfcord-appimage
 jfdocs-html
 jfdocs-sgml
 jfdocs-text
@@ -35288,6 +35307,8 @@ keynav
 keynav-enhanced
 keynav-git
 keynav-improved-grid-git
+keyoxidizer
+keyoxidizer-git
 keyplus-git
 keyplusd-git
 keyring
@@ -36584,6 +36605,7 @@ kurly
 kurly-git
 kuro
 kuro-appimage
+kuro-bin
 kuro-electron
 kuroko
 kurso-de-esperanto-kape
@@ -43437,6 +43459,7 @@ m17n-cu
 m17n-cu-git
 m17n-db-indic
 m17n-im-shortname-unicode-emoji-git
+m1ndflay3r-updates
 m210
 m2m-aligner
 m2status
@@ -44407,6 +44430,7 @@ matrix-synapse-git
 matrix-synapse-imap
 matrix-synapse-py3-git
 matrix-synapse-rest-auth
+matrix-wechat-git
 matrix2051-git
 matrixbrandy
 matrixcli-git
@@ -44784,6 +44808,7 @@ mcrevproxy
 mcrl2
 mcron
 mcrypt
+mcscanx
 mcsctl
 mcsctl-git
 mcsema
@@ -45341,6 +45366,7 @@ metadata-cleaner
 metadata-cleaner1
 metag
 metag-git
+metagedit-git
 metainfo-builder-git
 metaio
 metakit
@@ -52139,6 +52165,7 @@ ntrig_calib-bzr
 ntrig_fix
 ntrviewer-git
 ntsclient-git
+ntt-git
 nttoolkit
 ntttcp-for-linux-git
 nu1ll1nux
@@ -53453,6 +53480,7 @@ odus-git
 odysee-nativefier
 odysseus
 odyssey
+odysseyra1n
 oed
 oelint-adv
 offerings-to-cthulhu-daemon
@@ -55767,6 +55795,7 @@ overseerr-git
 oversteer
 overtone-wpc
 overture
+overwitch
 overwitch-git
 ovh-api-client
 ovh-dns
@@ -56105,6 +56134,7 @@ pacman-pkgfile-hook
 pacman-ps
 pacman-pstatus
 pacman-python
+pacman-repo-stats
 pacman-reproducible
 pacman-screen-nosuid-hook
 pacman-src-git
@@ -61378,6 +61408,8 @@ piper-git
 pipes-rs-git
 pipes.c
 pipes.sh
+pipeswitchd
+pipeswitchd-bin
 pipethis
 pipetoys
 pipewalker
@@ -61572,6 +61604,7 @@ pkgconf-git
 pkgctrl-bin
 pkgdistcache
 pkgdl
+pkgdu
 pkgelf-git
 pkger
 pkger-rs
@@ -62200,6 +62233,7 @@ plymouth-theme-hamara
 plymouth-theme-hot-dog
 plymouth-theme-lenovo-bgrt
 plymouth-theme-logo-spinner-git
+plymouth-theme-manjaro-charge
 plymouth-theme-manjaro-elegant-new
 plymouth-theme-manjaro-redefined-bsplash
 plymouth-theme-manjaro-redefined-bsplash-new
@@ -64909,6 +64943,7 @@ python-anyconfig-json5-backend
 python-anyconfig-msgpack-backend
 python-anyqt
 python-anyqt-git
+python-aocd
 python-aodhclient
 python-apa102
 python-apache-libcloud
@@ -68533,6 +68568,7 @@ python-muranopkgcheck
 python-murmurhash
 python-musdb
 python-muselsl
+python-museval
 python-music-metadata-filter
 python-music-tag
 python-music21
@@ -68707,6 +68743,7 @@ python-nodeenv
 python-noiseprotocol-git
 python-nominatim
 python-nonblock
+python-norbert
 python-normalise-git
 python-normality
 python-normalize-git
@@ -70700,6 +70737,7 @@ python-requests_download
 python-requestsexceptions
 python-requirements-detector
 python-requirements-parser
+python-requirementslib
 python-reretry
 python-resampy
 python-resize-image
@@ -70837,6 +70875,7 @@ python-ruamel.yaml-hg
 python-ruamel.yaml.cmd
 python-rubicon-objc-git
 python-rubymarshal
+python-ruff
 python-ruffus
 python-runcommands
 python-runlike
@@ -71857,6 +71896,7 @@ python-transip-api
 python-transip-api-git
 python-transitions
 python-translate
+python-translate-shell
 python-translation-finder
 python-translationstring
 python-transliterate
@@ -76593,6 +76633,7 @@ quack
 quackle
 quad
 quad-bot
+quadcastrgb
 quadlet
 quadlet-git
 quadra-git
@@ -87657,6 +87698,7 @@ rust-nightly-osdev
 rust-nightly-rustup
 rust-nightly-src
 rust-parallel-git
+rust-punchr-bin
 rust-qt-binding-generator-git
 rust-racer
 rust-racer-git
@@ -90515,6 +90557,7 @@ slack-electron
 slack-export-viewer
 slack-libpurple-git
 slack-messenger
+slack-ozone
 slack-term
 slack-term-bin
 slack-tool
@@ -95858,6 +95901,7 @@ thrift-java
 thrift-static
 thrill-git
 thrive
+thrive-bin
 thrive-launcher-bin
 throttle
 throttlectl
@@ -96719,6 +96763,7 @@ topcoder-arena
 topdrawer
 topgit
 topgrade
+topgrade-bin
 topgrade-git
 toph
 tophat
@@ -98299,6 +98344,7 @@ ttf-ms-win10-fod-zh_cn
 ttf-ms-win11
 ttf-ms-win11-auto
 ttf-ms-win11-fod
+ttf-ms-win11-fod-zh_cn
 ttf-ms-win8
 ttf-ms33558
 ttf-mukta
@@ -99761,6 +99807,7 @@ unnethack
 unnethack-git
 uno
 uno-calculator-bin
+unocss-language-server-bin
 unofficial-homestuck-collection
 unofficial-homestuck-collection-bin
 unp64
@@ -105658,6 +105705,7 @@ xgraph-bin
 xgraphic
 xgrep
 xgridloc
+xguipro
 xguipro-git
 xhidecursor
 xhip
@@ -107954,6 +108002,7 @@ zutils
 zutty
 zutty-git
 zvelo-sitefilter
+zvm
 zvuchno
 zvvbook
 zvvonlinemusic
