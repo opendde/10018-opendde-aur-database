@@ -13,7 +13,8 @@ cd ~/
 git clone https://github.com/archlinux/aur.git
 cd aur
 git branch -a | sed 's#  remotes/origin/##g' | grep -v "main" > $CMD_PATH/pkglist.txt
-cat $CMD_PATH/pkglist.txt | wc -l
+cd $CMD_PATH
+cat $CMD_PATH/pkglist.txt | wc -l > pkgs.count.txt
 git add .
 git commit -a -m "CI $(date)"
 git push origin HEAD
