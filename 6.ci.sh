@@ -40,7 +40,7 @@ buildaur(){
     rm -rf /var/cache/pacman/pkg/
 }
 
-cd aur-all/$1
+cd aur-all/$GITHUB_REF_NAME
 
 for pkg in `ls`
 do
