@@ -20,10 +20,6 @@ cat /root/.ssh/known_hosts
 
 rsync -avP ./ ~/9329/ > /dev/null
 
-
-
-
-chown -R runner:runner ~/9329/
 cd ~/9329/
 ls -al 
 
