@@ -10,11 +10,9 @@ export PROJECT_NAME="${CMD_PATH##*/}"
 cd $CMD_PATH
 
 cd ~/
-git clone https://github.com/archlinux/aur.git
+git clone --depth=1 https://github.com/archlinux/aur.git
 cd aur
 git branch -a | sed 's#  remotes/origin/##g' | grep -v "main" > $CMD_PATH/7.aur.all.txt
 cd $CMD_PATH
 cat $CMD_PATH/7.aur.all.txt | wc -l > pkgs.count.txt
-git add .
-git commit -a -m "CI $(date)"
-git push origin HEAD
+
