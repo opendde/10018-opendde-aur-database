@@ -38,7 +38,6 @@ git remote set-url origin git@github.com:opendde/10018-opendde-aur-database.git
 
 git add .
 git commit -a -m "add"
-
 git push origin HEAD
 
 buildaur(){
@@ -51,7 +50,7 @@ buildaur(){
     rm -rf /var/cache/pacman/pkg/
 }
 
-# cd aur-all/$GITHUB_REF_NAME
+cd aur-all/$GITHUB_REF_NAME
 
 # for pkg in `ls`
 # do
