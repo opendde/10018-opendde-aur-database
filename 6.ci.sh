@@ -36,9 +36,21 @@ git push origin HEAD
 
 cd aur-all/$GITHUB_REF_NAME
 
+parse_pkgbuild()
+{
+    echo $1
+    cd ~/aur
+    git checkout $1
+    cat PKGBUILD
+    # Todo 解析文件 生成文件到package文件夹
+}
+
+
 for pkg in `ls`
 do
     echo $pkg
+    parse_pkgbuild $pkg
+    cd aur-all/$GITHUB_REF_NAME
 done
 
 
