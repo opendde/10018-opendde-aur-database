@@ -19,7 +19,6 @@ ssh-keyscan "frs.sourceforge.net" >> /root/.ssh/known_hosts
 cat /root/.ssh/known_hosts
 
 rsync -avP ./ ~/9329/ > /dev/null
-rsync -avzP README.md gnuhub@frs.sourceforge.net:/home/frs/project/archlinux365/9329-archlinux-aur-build/x86_64/  > /dev/null
 
 
 
