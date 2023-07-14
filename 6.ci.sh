@@ -52,7 +52,7 @@ buildaur(){
 
 cd aur-all/$GITHUB_REF_NAME
 
-# for pkg in `ls`
-# do
-#     buildaur $pkg
-# done
+for pkg in `ls`
+do
+    echo $pkg
+done
