@@ -14,5 +14,6 @@ git clone --depth=1 https://github.com/archlinux/aur.git
 cd aur
 git branch -a | sed 's#  remotes/origin/##g' | grep -v "main" > $CMD_PATH/7.aur.all.txt
 cd $CMD_PATH
+cat 7.aur.all.txt
 cat $CMD_PATH/7.aur.all.txt | wc -l > pkgs.count.txt
 

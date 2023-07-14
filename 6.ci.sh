@@ -18,6 +18,10 @@ ssh-keygen -f "/root/.ssh/known_hosts" -R "github.com"
 ssh-keyscan "github.com" >> /root/.ssh/known_hosts
 cat /root/.ssh/known_hosts
 
+  git config --global user.email "actions@github.com"
+  git config --global user.name "actions"
+
+
 cd ~
 git clone git@github.com:opendde/10018-opendde-aur-database.git
 
