@@ -25853,6 +25853,7 @@ ghetto-skype
 ghetto-skype-git
 ghextris
 ghfetch
+ghfetch-git
 ghi
 ghi-git
 ghidra
