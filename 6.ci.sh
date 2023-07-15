@@ -30,7 +30,7 @@ cd 10018-opendde-aur-database
 ls -al 
 
 ./101.aur.all.list.gen.sh
-./8.aur.index.sh
+#./8.aur.index.sh
 
 
 
@@ -104,7 +104,7 @@ git push origin HEAD
 
 
 
-
+echo "ok"
 
 
 # buildaur(){
