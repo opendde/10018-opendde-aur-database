@@ -7197,6 +7197,7 @@ bombermaaan
 bombermaaan-svn
 bombono-dvd
 bombsquad
+bombsquad-bin
 bombsquad-server
 bomi
 bomi-fresh
@@ -28203,6 +28204,7 @@ go-for-it
 go-for-it-bzr
 go-for-it-git
 go-fuse
+go-garble
 go-git
 go-go2go-git
 go-gojsonschema
@@ -55155,6 +55157,7 @@ nodm-dgw
 nodm-runit
 nody-greeter
 nofetch-git
+nofi-bin
 noforth
 nogil-python
 nogsfonts
@@ -94918,6 +94921,7 @@ seq66-devel-git
 seq66-git
 seqan
 seqan-git
+seqan3
 seqan3-git
 seqcombgo
 seqcombgo-bin
