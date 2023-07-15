@@ -83,7 +83,7 @@ parse_pkgbuild()
     cd ~/aur
     git checkout $1
     content=$(cat PKGBUILD)
-    onekeyGetOnePkgCfg $1 $content
+    onekeyGetOnePkgCfg $1 "$content"
     # Todo 解析文件 生成文件到package文件夹
 }
 
