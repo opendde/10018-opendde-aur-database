@@ -10708,6 +10708,7 @@ chrome-cntp
 chrome-gnome-shell
 chrome-gnome-shell-git
 chrome-pak-customizer-git
+chrome-pass-git
 chrome-remote-desktop
 chrome-shutdown-hook
 chrome-token-signing
@@ -18708,6 +18709,7 @@ eep24c
 eepbeacon
 eepclock
 eepkeyer
+eepm
 eercase
 eeshow-git
 eetsmunchies-hib
@@ -22838,6 +22840,7 @@ flash-merger
 flash-screen-git
 flash-trimmer
 flashbench-git
+flashbrowser-bin
 flashbrowser-git
 flasher
 flasher-harmattan
@@ -29957,6 +29960,7 @@ gsctl-bin
 gsdjvu
 gse2mseed
 gsegyview-bin
+gsender-bin
 gsequencer
 gsettings-desktop-schemas-338
 gsettings-desktop-schemas-dev
@@ -33109,6 +33113,7 @@ hyprland-nvidia-hidpi-git
 hyprland-nvidia-screenshare-git
 hyprland-opti-git
 hyprland-per-window-layout
+hyprland-plugins-git
 hyprland-relative-workspace-bin
 hyprland-scratchpad-git
 hyprland-screenshot-git
@@ -38330,6 +38335,7 @@ knotifications-light
 knotifyconfig-git
 knotter
 knowledge-appimage
+knowledge-canvas-bin
 known_hosts
 knownreader
 knowte
@@ -38922,6 +38928,7 @@ krusader-git
 krusader-l10n-bin-git
 krusader-l10n-frameworks
 krux-installer-appimage
+krux-installer-bin
 kryoflux
 kryptor
 kryptor-bin
@@ -41072,6 +41079,7 @@ libarsdk3-git
 libarstream-git
 libarstream2-git
 libart-lgpl
+libartnet
 libasdcp-cth
 libasdcp-cth-git
 libasecnsp11
@@ -44155,6 +44163,7 @@ lightzone-free
 lightzone-git
 ligo-bin
 liground-appimage
+liground-bin
 liketaskmanager-bin
 liketaskmanager-git
 likwid
@@ -44998,6 +45007,7 @@ lise-app
 lisgd
 lisgd-git
 lisk-desktop-appimage
+lisk-desktop-bin
 lisp
 lisp-git
 lispm-font
@@ -45085,6 +45095,7 @@ littre2
 litua
 litwr
 live-plus-plus-appimage
+live-plus-plus-bin
 live-radio-app-bin
 live-usb-install
 livebook
@@ -47162,6 +47173,7 @@ marvex
 marvex-git
 marvin
 marvin-appimage
+marvin-bin
 marvin_dsc
 marvinc-git
 marwaita-gtk-theme
@@ -47478,6 +47490,7 @@ matrix-synapse-py3-git
 matrix-synapse-rest-auth
 matrix-wechat-git
 matrix2051-git
+matrix_cpp
 matrixbrandy
 matrixcli-git
 matrixise
@@ -48047,6 +48060,7 @@ media-server-connect-git
 media-session-git
 media-sort-bin
 mediachips-appimage
+mediachips-bin
 mediaconch
 mediaconch-gui
 mediaconch-server
@@ -48224,6 +48238,7 @@ mellowplayer
 mellowplayer-git
 mellowplayer-kde
 melodie-appimage
+melodie-bin
 melody
 melody-music-player-git
 melonds
@@ -50352,6 +50367,7 @@ mixxx1.12-git
 mixxx_beta-git
 mixxx_stable-git
 mizar-appimage
+mizar-bin
 mizu-bin
 mjai-reviewer
 mji
@@ -50843,6 +50859,7 @@ modulo-git
 modustoolbox
 modutils
 modv-appimage
+modv-bin
 moe
 moe-kde-git
 moe-mansion
@@ -51049,6 +51066,7 @@ monica-git
 monicelli-git
 monique-monosynth-git
 monit-appimage
+monit-bin
 monit-docker
 monit-git
 monitask
@@ -56781,6 +56799,7 @@ ocaml-result
 ocaml-result-git
 ocaml-rss
 ocaml-samplerate
+ocaml-saturn
 ocaml-sawja
 ocaml-schroedinger
 ocaml-sedlex
@@ -57251,6 +57270,7 @@ oidn-git
 oie-icons-git
 oil
 oil-search
+oils-for-unix
 oilshell
 oink-git
 oinkmaster
@@ -66287,6 +66307,10 @@ plustache
 plustache-git
 pluto
 pluto-bin
+pluto-find-orb-git
+pluto-jpl-eph-git
+pluto-lunar-git
+pluto-sat-code-git
 pluxml
 pluzzdl-git
 plv8
@@ -67064,6 +67088,7 @@ potatopresenter-appimage
 potd
 pothos
 pothos-git
+potoo
 potool
 potool-renamed
 pouetchess_bin
@@ -71903,6 +71928,7 @@ python-heatshrink2
 python-helang-git
 python-help2man
 python-helpdev
+python-helpscout-v2
 python-hep_ml
 python-hermipy-git
 python-hexbytes
@@ -74279,6 +74305,7 @@ python-py-eddy-tracker-sample
 python-py-find-1st
 python-py-gfm
 python-py-lru-cache
+python-py-natpmp-git
 python-py-notifier
 python-py-params
 python-py-pde
@@ -77393,6 +77420,7 @@ python-websockify
 python-webssh
 python-webvtt-py
 python-webweb
+python-wekan
 python-werkzeug-git
 python-west
 python-wfdb
@@ -80708,6 +80736,7 @@ qbe-git
 qbec
 qbec-bin
 qbiobeat-git
+qbit-race-git
 qbittorrent-beta
 qbittorrent-cli
 qbittorrent-cli-bin
@@ -94943,6 +94972,7 @@ sequestrum-git
 sequoia
 sequoia-git
 sequoia-octopus-librnp
+sequoia-octopus-librnp-git
 sequoia-redactor
 ser-player
 ser2net-git
@@ -94981,11 +95011,14 @@ seriesmeta-bin
 serious-engine-git
 serioussam
 serioussam-alpha
+serioussam-brightisland-mappack
 serioussam-dancesworld
 serioussam-hno
+serioussam-nextencounter-mappack
 serioussam-oddworld
 serioussam-pefe2q
 serioussam-pese2q
+serioussam-rakanishu-mappacks
 serioussam-st8vi
 serioussam-st8vipe
 serioussam-tower
@@ -95180,6 +95213,7 @@ sh-elf-binutils-casio
 sh-elf-gcc
 sh-elf-gcc-casio
 sh-elf-newlib
+sh-undollar
 sh2_mp_ai_enabler
 sh3eb-elf-binutils
 sh3eb-elf-gcc
@@ -101141,6 +101175,7 @@ telegraph
 telegraph-git
 telegreat-bin
 telegreat-git
+teleguard-desktop
 teleirc
 teleirc-bin
 teleirc-git
@@ -105039,6 +105074,7 @@ tth
 tthsum
 ttk-theme-chooser
 ttk-themes
+ttk-themes-breeze
 ttkmusicplayer-bin
 ttl2c-git
 ttm
@@ -105675,6 +105711,7 @@ uctodata
 uctodata-git
 ucutag-git
 ucx
+ud
 udash-generator
 udbserver
 ude
@@ -114677,6 +114714,7 @@ zjtag
 zju-connect-bin
 zjunet
 zk
+zk-spaced
 zkg-git
 zkl
 zkutil
