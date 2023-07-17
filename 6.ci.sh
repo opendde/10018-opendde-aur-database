@@ -41,6 +41,7 @@ onekeyGetOnePkgCfg() {
     cd ~/10018-opendde-aur-database/
     file_content="$2"
     var_list=$(cat $file_content | sed -n '/^[a-zA-Z_][a-zA-Z0-9_]*=/p')
+    mkdir -p "./package/"$(echo $1 | cut -c1)"/"$(echo $1 | awk -F- '{print $1}')"/"$1
     save_link="./package/"$(echo $1 | cut -c1)"/"$(echo $1 | awk -F- '{print $1}')"/"$1"/var.sh"
     echo $var_list > $save_link
     function_list="$(echo "$file_content" | grep "()" | sed 's#() {##g' | grep -v "^#")"
