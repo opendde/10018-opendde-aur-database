@@ -3140,6 +3140,7 @@ arch-java-gui
 arch-kde-theme-git
 arch-konqueror-search
 arch-linux-2d-wallpapers
+arch-log
 arch-logo-dark-wallpapers
 arch-luks-suspend-git
 arch-man-bot-git
@@ -6291,6 +6292,7 @@ bililive-go-bin
 bililive-recorder
 bililive-recorder-bin
 bililiverecorder-bin
+bililiverecorder-git
 bililocal-git
 bililocal-osx-git
 bilimini-git
@@ -6425,6 +6427,7 @@ bioawk
 bioawk-git
 biobambam
 biodiff
+bioformats2raw
 biogeme
 biohazard-2
 biojava
@@ -7197,6 +7200,7 @@ bombermaaan
 bombermaaan-svn
 bombono-dvd
 bombsquad
+bombsquad-bin
 bombsquad-server
 bomi
 bomi-fresh
@@ -7441,6 +7445,7 @@ box-installer
 box0-studio-qt-git
 box0-utils-git
 box64
+box64-android-git
 box64-git
 box86
 box86-git
@@ -10707,6 +10712,7 @@ chrome-cntp
 chrome-gnome-shell
 chrome-gnome-shell-git
 chrome-pak-customizer-git
+chrome-pass-git
 chrome-remote-desktop
 chrome-shutdown-hook
 chrome-token-signing
@@ -11283,6 +11289,7 @@ claws-mail-gtk2-git
 claws-mail-gtk2-protectedheaders-nonm-git
 claws-mail-gtk3-git
 claws-mail-plugin-reloader-git
+claws-mail-protectedheaders-git
 claws-mail-tango-theme
 claws-mail-theme-basicsvg
 claws-mail-title-superset
@@ -12034,6 +12041,7 @@ codespace
 codespell-git
 codestats-cli
 codevis
+codevis-db-git
 codevis-git
 codeviz
 codex
@@ -12496,6 +12504,7 @@ concourse-fly-bin
 concourse-fly-git
 concourse-git
 concrete5
+concurrencpp
 concurrency-kit
 concurrencykit
 concurrent-queue
@@ -15290,6 +15299,7 @@ defragall-git
 defragfs
 deft-dkms
 degit
+degourou
 deheader
 deheader-git
 dehelper
@@ -16527,6 +16537,7 @@ dmenu-vojvoda-git
 dmenu-vus-git
 dmenu-wayland-git
 dmenu-win-git
+dmenu-wl-dmenu-dropin
 dmenu-xft
 dmenu-xft-mouse-height-fuzzy-history
 dmenu-xft-wxy-mouse
@@ -18707,6 +18718,7 @@ eep24c
 eepbeacon
 eepclock
 eepkeyer
+eepm
 eercase
 eeshow-git
 eetsmunchies-hib
@@ -19976,6 +19988,7 @@ eovim
 eovim-git
 eovpn
 epad
+epanet
 epanet2-git
 epanet2.toolkit-git
 eparakstitajs3
@@ -22180,6 +22193,7 @@ firefly-cli
 firefly-desktop-appimage
 firefly-iii
 firefly-iii-data-importer
+firefox-34-bin
 firefox-404-bookmarks
 firefox-always-nightly
 firefox-appmenu
@@ -22500,6 +22514,7 @@ firefox-extension-vimfx
 firefox-extension-vlc-context-menu
 firefox-extension-wappalyzer
 firefox-extension-xdm-browser-monitor
+firefox-extension-xdman8-browser-monitor-bin
 firefox-extension-yomichan
 firefox-extension-youtube-classic
 firefox-firetray
@@ -22818,6 +22833,7 @@ flap
 flappycoin-qt
 flappytiger
 flare
+flare-bin
 flare-engine
 flare-engine-git
 flare-game
@@ -22837,6 +22853,7 @@ flash-merger
 flash-screen-git
 flash-trimmer
 flashbench-git
+flashbrowser-bin
 flashbrowser-git
 flasher
 flasher-harmattan
@@ -28203,6 +28220,7 @@ go-for-it
 go-for-it-bzr
 go-for-it-git
 go-fuse
+go-garble
 go-git
 go-go2go-git
 go-gojsonschema
@@ -28655,6 +28673,8 @@ gohu-ttf-git
 gohufont
 gohufont-otb
 gohufont-powerline
+gohugo-bin
+gohugo-extended-bin
 gohup
 goi18n-bin
 goi3autowname-git
@@ -29955,6 +29975,7 @@ gsctl-bin
 gsdjvu
 gse2mseed
 gsegyview-bin
+gsender-bin
 gsequencer
 gsettings-desktop-schemas-338
 gsettings-desktop-schemas-dev
@@ -32563,6 +32584,7 @@ hpvirtualrooms
 hpx
 hpx-git
 hpy
+hqdfm-nativefier
 hqp
 hqplayer
 hqplayer-client
@@ -33107,6 +33129,7 @@ hyprland-nvidia-hidpi-git
 hyprland-nvidia-screenshare-git
 hyprland-opti-git
 hyprland-per-window-layout
+hyprland-plugins-git
 hyprland-relative-workspace-bin
 hyprland-scratchpad-git
 hyprland-screenshot-git
@@ -38328,6 +38351,7 @@ knotifications-light
 knotifyconfig-git
 knotter
 knowledge-appimage
+knowledge-canvas-bin
 known_hosts
 knownreader
 knowte
@@ -38920,6 +38944,7 @@ krusader-git
 krusader-l10n-bin-git
 krusader-l10n-frameworks
 krux-installer-appimage
+krux-installer-bin
 kryoflux
 kryptor
 kryptor-bin
@@ -41070,6 +41095,7 @@ libarsdk3-git
 libarstream-git
 libarstream2-git
 libart-lgpl
+libartnet
 libasdcp-cth
 libasdcp-cth-git
 libasecnsp11
@@ -43109,14 +43135,19 @@ librewolf-bin
 librewolf-comment-out-cfg-hook
 librewolf-dev-wayland
 librewolf-extension-bitwarden
+librewolf-extension-bitwarden-bin
 librewolf-extension-cookie-autodelete
 librewolf-extension-dark-reader
+librewolf-extension-dark-reader-bin
 librewolf-extension-gnome-shell-integration
 librewolf-extension-localcdn
+librewolf-extension-localcdn-bin
 librewolf-extension-noscript
 librewolf-extension-plasma-integration
 librewolf-extension-return-youtube-dislike-git
+librewolf-extension-uget-integration-bin
 librewolf-extension-xdm-browser-monitor
+librewolf-extension-xdman8-browser-monitor-bin
 librewolf-firefox-shim
 librewolf-gnome-search-provider
 librewolf-hg
@@ -43124,6 +43155,7 @@ librewolf-kde-appmenu
 librewolf-nightly
 librewolf-ublock-origin
 librewolf-wayland-hg
+librewolf-xdman8-browser-monitor-bin
 librfid-dpavlin-git
 librfm5
 librga-bin-git
@@ -44153,6 +44185,7 @@ lightzone-free
 lightzone-git
 ligo-bin
 liground-appimage
+liground-bin
 liketaskmanager-bin
 liketaskmanager-git
 likwid
@@ -44299,6 +44332,7 @@ linux-aarch64-rock64-bin
 linux-aarch64-rockpro64
 linux-acs-manjaro
 linux-air-combat
+linux-air-combat-appimage
 linux-akulm
 linux-amd
 linux-amd-drm-next
@@ -44996,6 +45030,7 @@ lise-app
 lisgd
 lisgd-git
 lisk-desktop-appimage
+lisk-desktop-bin
 lisp
 lisp-git
 lispm-font
@@ -45083,6 +45118,7 @@ littre2
 litua
 litwr
 live-plus-plus-appimage
+live-plus-plus-bin
 live-radio-app-bin
 live-usb-install
 livebook
@@ -46327,6 +46363,7 @@ lxqt-kcm-integration-extra-git
 lxqt-kcm-integration-git
 lxqt-kwin-desktop-git
 lxqt-l10n-git
+lxqt-labwc-session-git
 lxqt-less-theme-git
 lxqt-menu-data-git
 lxqt-meta
@@ -47160,6 +47197,7 @@ marvex
 marvex-git
 marvin
 marvin-appimage
+marvin-bin
 marvin_dsc
 marvinc-git
 marwaita-gtk-theme
@@ -47476,6 +47514,7 @@ matrix-synapse-py3-git
 matrix-synapse-rest-auth
 matrix-wechat-git
 matrix2051-git
+matrix_cpp
 matrixbrandy
 matrixcli-git
 matrixise
@@ -48045,6 +48084,7 @@ media-server-connect-git
 media-session-git
 media-sort-bin
 mediachips-appimage
+mediachips-bin
 mediaconch
 mediaconch-gui
 mediaconch-server
@@ -48222,6 +48262,7 @@ mellowplayer
 mellowplayer-git
 mellowplayer-kde
 melodie-appimage
+melodie-bin
 melody
 melody-music-player-git
 melonds
@@ -50350,6 +50391,7 @@ mixxx1.12-git
 mixxx_beta-git
 mixxx_stable-git
 mizar-appimage
+mizar-bin
 mizu-bin
 mjai-reviewer
 mji
@@ -50841,6 +50883,7 @@ modulo-git
 modustoolbox
 modutils
 modv-appimage
+modv-bin
 moe
 moe-kde-git
 moe-mansion
@@ -51047,6 +51090,7 @@ monica-git
 monicelli-git
 monique-monosynth-git
 monit-appimage
+monit-bin
 monit-docker
 monit-git
 monitask
@@ -51429,6 +51473,7 @@ moxa-uport11x0-git-dkms
 moxa-uport16x0
 moxygen
 moyu-appimage
+moyu-bin
 moz2fs
 moz60tool-git
 mozart-bin
@@ -51699,6 +51744,7 @@ mpv-sndio
 mpv-sponsorblock
 mpv-sponsorblock-git
 mpv-sponsorblock-minimal-git
+mpv-subs-popout
 mpv-thin
 mpv-thumbfast-git
 mpv-thumbfast-noenabled-git
@@ -55155,6 +55201,7 @@ nodm-dgw
 nodm-runit
 nody-greeter
 nofetch-git
+nofi-bin
 noforth
 nogil-python
 nogsfonts
@@ -56778,6 +56825,7 @@ ocaml-result
 ocaml-result-git
 ocaml-rss
 ocaml-samplerate
+ocaml-saturn
 ocaml-sawja
 ocaml-schroedinger
 ocaml-sedlex
@@ -57248,6 +57296,7 @@ oidn-git
 oie-icons-git
 oil
 oil-search
+oils-for-unix
 oilshell
 oink-git
 oinkmaster
@@ -61401,6 +61450,7 @@ pear-phpseclib
 pearl-git
 pearlfan
 pearpc-git
+pearson-reader-plus-bin
 pearson-reader-plus-full-lang
 pearson-reader-plus-it
 peass
@@ -66284,6 +66334,10 @@ plustache
 plustache-git
 pluto
 pluto-bin
+pluto-find-orb-git
+pluto-jpl-eph-git
+pluto-lunar-git
+pluto-sat-code-git
 pluxml
 pluzzdl-git
 plv8
@@ -66776,6 +66830,7 @@ pomodoro-applet
 pomodoro-logger
 pomodoro.py
 pomota-appimage
+pomota-bin
 pomotroid-appimage
 pomotroid-bin
 pomsky-bin
@@ -67061,6 +67116,7 @@ potatopresenter-appimage
 potd
 pothos
 pothos-git
+potoo
 potool
 potool-renamed
 pouetchess_bin
@@ -71900,6 +71956,7 @@ python-heatshrink2
 python-helang-git
 python-help2man
 python-helpdev
+python-helpscout-v2
 python-hep_ml
 python-hermipy-git
 python-hexbytes
@@ -74276,6 +74333,7 @@ python-py-eddy-tracker-sample
 python-py-find-1st
 python-py-gfm
 python-py-lru-cache
+python-py-natpmp-git
 python-py-notifier
 python-py-params
 python-py-pde
@@ -77390,6 +77448,7 @@ python-websockify
 python-webssh
 python-webvtt-py
 python-webweb
+python-wekan
 python-werkzeug-git
 python-west
 python-wfdb
@@ -80705,6 +80764,7 @@ qbe-git
 qbec
 qbec-bin
 qbiobeat-git
+qbit-race-git
 qbittorrent-beta
 qbittorrent-cli
 qbittorrent-cli-bin
@@ -86699,6 +86759,7 @@ raw-thumbnailer
 raw-thumbnailer-entry
 raw-to-img
 raw2dng-git
+raw2ometiff
 rawdog
 rawhide
 rawide-git
@@ -94918,6 +94979,7 @@ seq66-devel-git
 seq66-git
 seqan
 seqan-git
+seqan3
 seqan3-git
 seqcombgo
 seqcombgo-bin
@@ -94939,6 +95001,7 @@ sequestrum-git
 sequoia
 sequoia-git
 sequoia-octopus-librnp
+sequoia-octopus-librnp-git
 sequoia-redactor
 ser-player
 ser2net-git
@@ -94977,11 +95040,14 @@ seriesmeta-bin
 serious-engine-git
 serioussam
 serioussam-alpha
+serioussam-brightisland-mappack
 serioussam-dancesworld
 serioussam-hno
+serioussam-nextencounter-mappack
 serioussam-oddworld
 serioussam-pefe2q
 serioussam-pese2q
+serioussam-rakanishu-mappacks
 serioussam-st8vi
 serioussam-st8vipe
 serioussam-tower
@@ -95176,6 +95242,7 @@ sh-elf-binutils-casio
 sh-elf-gcc
 sh-elf-gcc-casio
 sh-elf-newlib
+sh-undollar
 sh2_mp_ai_enabler
 sh3eb-elf-binutils
 sh3eb-elf-gcc
@@ -95300,6 +95367,7 @@ shark-ml-git
 shark-ml-svn
 sharmavid-git
 sharness
+sharp-craft-launcher-bin
 sharp-mx-182to232d-ps
 sharp-mx-283to503-ps
 sharp-mx-3050to6170-ps
@@ -101137,6 +101205,7 @@ telegraph
 telegraph-git
 telegreat-bin
 telegreat-git
+teleguard-desktop
 teleirc
 teleirc-bin
 teleirc-git
@@ -102149,6 +102218,7 @@ thunderbird-extension-send-later-git
 thunderbird-extension-tbkeys
 thunderbird-extension-xnote-git
 thunderbird-firetray-57-git
+thunderbird-gnome-theme-git
 thunderbird-grammalecte
 thunderbird-gtk2
 thunderbird-gtk3
@@ -102469,6 +102539,8 @@ tinycamd-svn
 tinycmmc-git
 tinycorrect-git
 tinydb
+tinydm
+tinydm-dinit
 tinydns
 tinyfecvpn
 tinyfecvpn-git
@@ -103448,6 +103520,7 @@ travertine
 travis
 travis-conditions-bin
 travis-lint
+traxtor
 tray-control
 tray-control-git
 tray_mixer_plus
@@ -105035,6 +105108,7 @@ tth
 tthsum
 ttk-theme-chooser
 ttk-themes
+ttk-themes-breeze
 ttkmusicplayer-bin
 ttl2c-git
 ttm
@@ -105671,6 +105745,7 @@ uctodata
 uctodata-git
 ucutag-git
 ucx
+ud
 udash-generator
 udbserver
 ude
@@ -109604,6 +109679,7 @@ warsaw
 warsaw-bin
 warsaw-itau
 warsaw-openrc
+warsmash-git
 warsow-beta
 warsow-beta-data
 warspear
@@ -112036,6 +112112,7 @@ xdg-desktop-portal-kde-git
 xdg-desktop-portal-kde-steamos-kiofusefix
 xdg-desktop-portal-liri-git
 xdg-desktop-portal-lxqt-git
+xdg-desktop-portal-rs
 xdg-desktop-portal-shana
 xdg-desktop-portal-termfilechooser-git
 xdg-desktop-portal-wlr
@@ -113178,6 +113255,7 @@ xsetwallpaper-git
 xsg-fonts
 xsh
 xshogi
+xshot-git
 xsimd
 xskat
 xsmon
@@ -114673,6 +114751,7 @@ zjtag
 zju-connect-bin
 zjunet
 zk
+zk-spaced
 zkg-git
 zkl
 zkutil
