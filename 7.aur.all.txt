@@ -3141,6 +3141,7 @@ arch-kde-theme-git
 arch-konqueror-search
 arch-linux-2d-wallpapers
 arch-log
+arch-log-git
 arch-logo-dark-wallpapers
 arch-luks-suspend-git
 arch-man-bot-git
@@ -4589,6 +4590,7 @@ auto-reencode
 auto-root-git
 auto-rotation-hdaps-git
 auto-rsync-backups
+auto-sized-fzf-git
 auto-st
 auto-sub
 auto-xflux
@@ -18890,6 +18892,7 @@ elasticsearch5
 elasticsearch5-noconflict
 elasticsearch6
 elasticsearch7
+elasticsearch86
 elasticvue-bin
 elastix
 elastix-bin
@@ -43131,6 +43134,7 @@ librevault-git
 librevideoconverter
 librevisa
 librevisa-git
+librewands
 librewolf
 librewolf-bin
 librewolf-comment-out-cfg-hook
@@ -55769,6 +55773,7 @@ ntpsec
 ntpsec-git
 ntrack
 ntrack-appimage
+ntrack-bin
 ntrig_calib-bzr
 ntrig_fix
 ntrviewer-git
@@ -55798,6 +55803,7 @@ nuclia-appimage
 nuclide
 nuclide-server
 nudelta
+nudge
 nudge-bin
 nudgis-obs-plugin
 nudnik
@@ -55830,6 +55836,7 @@ numactl-git
 numactl-stable
 numad-git
 numara-appimage
+numara-bin
 numatop
 numb-git
 numberwang-git
@@ -87611,6 +87618,7 @@ residualvm-grim_mouse-git
 resin-cli
 resin-cli-git
 resin-pro
+resistor
 resistor-decoder
 resmap
 resnap-git
@@ -105589,6 +105597,7 @@ typst-git
 typst-lsp
 typst-lsp-bin
 typst-lsp-git
+typstfmt-git
 typstudio
 typstudio-bin
 tyrquake
