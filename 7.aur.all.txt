@@ -59808,6 +59808,7 @@ p3wm
 p3wm-git
 p3x-onenote
 p3x-onenote-appimage
+p3x-onenote-bin
 p3x-redis-ui-appimage
 p4
 p4d
