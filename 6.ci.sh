@@ -39,7 +39,7 @@ cd aur-all/$GITHUB_REF_NAME
 
 onekeyGetOnePkgCfg() {
     cd ~/10018-opendde-aur-database/
-    file_content="$2"
+    file_content=$(echo "$2"|| sed 's/#.*$//' | tr -s '\n' )
     var_list=$(echo $file_content | sed -n '/^[a-zA-Z_][a-zA-Z0-9_]*=/p')
     mkdir -p "./package/"$(echo $1 | cut -c1)"/"$(echo $1 | awk -F- '{print $1}')"/"$1
     save_link="./package/"$(echo $1 | cut -c1)"/"$(echo $1 | awk -F- '{print $1}')"/"$1"/var.sh"
