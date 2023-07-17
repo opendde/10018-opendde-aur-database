@@ -40,10 +40,10 @@ cd aur-all/$GITHUB_REF_NAME
 onekeyGetOnePkgCfg() {
     cd ~/10018-opendde-aur-database/
     file_content=$(echo "$2"|| sed 's/#.*$//' | tr -s '\n' )
-    var_list=$(echo $file_content | sed -n '/^[a-zA-Z_][a-zA-Z0-9_]*=/p')
     mkdir -p "./package/"$(echo $1 | cut -c1)"/"$(echo $1 | awk -F- '{print $1}')"/"$1
+    var_list="$(echo $file_content | sed -n '/^[a-zA-Z_][a-zA-Z0-9_]*=/p')"
     save_link="./package/"$(echo $1 | cut -c1)"/"$(echo $1 | awk -F- '{print $1}')"/"$1"/var.sh"
-    echo $var_list > $save_link
+    echo "$var_list" > $save_link
     function_list="$(echo "$file_content" | grep "()" | sed 's#() {##g' | grep -v "^#")"
     for ((i_func = 1; i_func <= $(echo "$function_list" | wc -l); i_func++)); do
         a_function=$(echo "$function_list" | awk 'NR=='"$i_func"'{print}')
