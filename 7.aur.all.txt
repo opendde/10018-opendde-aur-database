@@ -3141,6 +3141,7 @@ arch-kde-theme-git
 arch-konqueror-search
 arch-linux-2d-wallpapers
 arch-log
+arch-log-git
 arch-logo-dark-wallpapers
 arch-luks-suspend-git
 arch-man-bot-git
@@ -4589,6 +4590,7 @@ auto-reencode
 auto-root-git
 auto-rotation-hdaps-git
 auto-rsync-backups
+auto-sized-fzf-git
 auto-st
 auto-sub
 auto-xflux
@@ -18890,6 +18892,7 @@ elasticsearch5
 elasticsearch5-noconflict
 elasticsearch6
 elasticsearch7
+elasticsearch86
 elasticvue-bin
 elastix
 elastix-bin
@@ -19989,6 +19992,7 @@ eovim-git
 eovpn
 epad
 epanet
+epanet-git
 epanet2-git
 epanet2.toolkit-git
 eparakstitajs3
@@ -43130,6 +43134,7 @@ librevault-git
 librevideoconverter
 librevisa
 librevisa-git
+librewands
 librewolf
 librewolf-bin
 librewolf-comment-out-cfg-hook
@@ -53181,6 +53186,7 @@ ndyndns
 ne
 ne-git
 neanes-appimage
+neanes-bin
 neap
 neap-hotkey
 near-cli
@@ -54411,6 +54417,7 @@ ngp
 ngp-git
 ngraph-gtk
 ngrev-appimage
+ngrev-bin
 ngrok
 ngrok-beta
 ngrok-bin
@@ -54670,6 +54677,7 @@ nntpit-git
 no-appimage-desktop-integration
 no-colord
 no-fwl-appimage
+no-fwl-bin
 no-gconf
 no-more-secrets
 no-more-secrets-git
@@ -54704,6 +54712,7 @@ nodeboxeditor
 nodebrain
 nodeeditor
 nodeflow-appimage
+nodeflow-bin
 nodejs-0.12
 nodejs-10.10.0
 nodejs-4-lts
@@ -55431,6 +55440,7 @@ notes
 notes-cli-bin
 notes-git
 notes-nc-appimage
+notes-nc-bin
 notes-tree
 notes-up
 notes-up-git
@@ -55763,6 +55773,7 @@ ntpsec
 ntpsec-git
 ntrack
 ntrack-appimage
+ntrack-bin
 ntrig_calib-bzr
 ntrig_fix
 ntrviewer-git
@@ -55792,6 +55803,7 @@ nuclia-appimage
 nuclide
 nuclide-server
 nudelta
+nudge
 nudge-bin
 nudgis-obs-plugin
 nudnik
@@ -55824,6 +55836,7 @@ numactl-git
 numactl-stable
 numad-git
 numara-appimage
+numara-bin
 numatop
 numb-git
 numberwang-git
@@ -57634,6 +57647,7 @@ open-chinese-fonts
 open-cobol
 open-de
 open-delta
+open-duelyst-bin
 open-dyslexic-fonts
 open-dyslexic-fonts-git
 open-ecard-app-bin
@@ -59622,6 +59636,7 @@ overdrive2opus-git
 overdue
 overgod
 overgrive
+overgrowth-game-git
 overlap2d
 overlay-scrollbar-bzr
 overlayaz-git
@@ -81912,6 +81927,8 @@ quick-back-git
 quick-lint-js
 quick-lint-js-git
 quick-lookup
+quick-n-easy-web-builder-10
+quick-n-easy-web-builder-10-bin
 quick-n-easy-web-builder-5
 quick-n-easy-web-builder-6
 quick-n-easy-web-builder-7
@@ -87601,6 +87618,7 @@ residualvm-grim_mouse-git
 resin-cli
 resin-cli-git
 resin-pro
+resistor
 resistor-decoder
 resmap
 resnap-git
@@ -105579,6 +105597,7 @@ typst-git
 typst-lsp
 typst-lsp-bin
 typst-lsp-git
+typstfmt-git
 typstudio
 typstudio-bin
 tyrquake
