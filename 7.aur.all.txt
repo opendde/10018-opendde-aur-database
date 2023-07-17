@@ -14162,6 +14162,7 @@ cutemarked-git
 cutemaze
 cutemupen
 cutentr
+cutentr-bin
 cutentr-git
 cutepeaks
 cutepeaks-git
