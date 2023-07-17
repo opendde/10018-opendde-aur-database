@@ -700,6 +700,7 @@ adobe-air
 adobe-air-sdk
 adobe-base-14-fonts
 adobe-bin2c
+adobe-bin2c-git
 adobe-digital-editions
 adobe-dng
 adobe-flashplugin
@@ -9663,6 +9664,7 @@ catalyst-total
 catalyst-total-hd234k
 catalyst-total-pxp
 catalyst-utils
+catalyst-wallpapers
 catan-cow-client
 catapult
 catapult-bin
@@ -14159,6 +14161,7 @@ cutemarked
 cutemarked-git
 cutemaze
 cutemupen
+cutentr
 cutentr-git
 cutepeaks
 cutepeaks-git
@@ -29979,6 +29982,7 @@ gsctl-bin
 gsdjvu
 gse2mseed
 gsegyview-bin
+gsender
 gsender-bin
 gsequencer
 gsettings-desktop-schemas-338
@@ -32455,6 +32459,7 @@ hostapd-wpe
 hostblock-bin
 hostctl
 hostctl-bin
+hostd
 hostess
 hostess-git
 hostminder
@@ -36580,6 +36585,7 @@ juicefs-oss
 juicevm-bin
 juju
 jujutsu
+jujutsu-bin
 jujutsu-git
 jules-git
 julia-aarch64-git
@@ -95266,6 +95272,7 @@ sh-elf-binutils-casio
 sh-elf-gcc
 sh-elf-gcc-casio
 sh-elf-newlib
+sh-manpager
 sh-undollar
 sh2_mp_ai_enabler
 sh3eb-elf-binutils
@@ -101286,6 +101293,7 @@ telive
 telldus-core
 telldus-core-git
 tellenc
+tellenc-git
 tellmewhen
 tellus-git
 telnet-bsd
@@ -103467,6 +103475,7 @@ transformers_ocr
 transg-tui-git
 transgender-wallpapers
 transgui
+transgui-git
 transgui-gtk2-git
 transi2p
 transifex-client
@@ -104308,6 +104317,7 @@ ttf-freebanglafont
 ttf-fritz
 ttf-funfonts
 ttf-futhark-adapted
+ttf-futurama-fonts
 ttf-fuzzy-cootie
 ttf-fzjljw
 ttf-gabriola
