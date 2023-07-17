@@ -43150,7 +43150,9 @@ librewolf-extension-localcdn-bin
 librewolf-extension-noscript
 librewolf-extension-plasma-integration
 librewolf-extension-return-youtube-dislike-git
+librewolf-extension-sponsorblock-bin
 librewolf-extension-uget-integration-bin
+librewolf-extension-violentmonkey-bin
 librewolf-extension-xdm-browser-monitor
 librewolf-extension-xdman8-browser-monitor-bin
 librewolf-firefox-shim
@@ -44778,6 +44780,7 @@ linux-system76-gaze16
 linux-t2-wifi
 linux-t460s
 linux-tegra
+linux-terminal-battery-status-git
 linux-test-project
 linux-test-project-git
 linux-tfw
@@ -66950,6 +66953,7 @@ popstation_md
 popstationr-git
 popt-deb
 popt-git
+poptranslate
 poptrayminus
 popular-packages
 populate-git
@@ -72969,6 +72973,7 @@ python-mbed-os-tools
 python-mbed-tools
 python-mbedtls
 python-mbstrdecoder
+python-mcdreforged
 python-mcipc
 python-mcipc-git
 python-mcp2210-python-git
