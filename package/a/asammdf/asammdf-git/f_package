@@ -1,7 +1,0 @@
-package() {
-	cd "$srcdir/${pkgname}"
-	python setup.py install --root="$pkgdir" --optimize=1 --skip-build
-	desktop-file-install \
-		--dir="$pkgdir/usr/share/applications" "$srcdir/asammdf.desktop"
-	install -D -m644 "asammdf.png" "$pkgdir/usr/share/icons/hicolor/512x512/apps/asammdf.png"
-}

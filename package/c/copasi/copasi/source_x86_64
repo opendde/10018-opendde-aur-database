@@ -1,1 +1,0 @@
-(${pkgname}-${pkgver}.tar.gz::${_source}/COPASI-${pkgver}-Linux-64bit.tar.gz)

@@ -1,5 +1,0 @@
-build() {
-	cd "$srcdir/up1-cli-client-nodejs-$_commit"
-
-	npm install
-}

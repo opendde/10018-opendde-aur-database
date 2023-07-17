@@ -1,5 +1,0 @@
-package() {
-  cd "attr"
-
-  make DESTDIR="$pkgdir" install
-}

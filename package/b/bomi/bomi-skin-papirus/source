@@ -1,1 +1,0 @@
-("${_repo}-${pkgver}.tar.gz::${url}/archive/${_git}.tar.gz")

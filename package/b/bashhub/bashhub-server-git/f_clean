@@ -1,5 +1,0 @@
-clean() {
-  # Clean up symlink
-  rm -f "${srcdir}/src/${_repo_prefix}/${_repo_name}"
-  rm -f "${_repo_name}.bin"
-}

@@ -1,3 +1,0 @@
-prepare() {
-  mkdir -p $srcdir/breath-gtk-$_gitcommit/build
-}

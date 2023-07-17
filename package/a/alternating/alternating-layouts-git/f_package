@@ -1,4 +1,0 @@
-package() {
-  cd $_repo
-  install -Dm 755 alternating_layouts.py $pkgdir/usr/bin/alternating_layouts.py
-}

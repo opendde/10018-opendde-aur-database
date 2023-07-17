@@ -1,5 +1,0 @@
-prepare() {
-
-patch "$srcdir/opt/brother/Printers/${_brotherdrivername}/cupswrapper/brother_lpdwrapper_${_brotherdrivername}" < "$srcdir/brother_lpdwrapper_${_brotherdrivername}.patch"
-
-}

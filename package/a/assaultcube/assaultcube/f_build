@@ -1,5 +1,0 @@
-build() {
-	cd "${_srcdir}/source/src"
-	CC=clang CXX=clang++ CFLAGS="${_cflags}" CXXFLAGS="${_cxxflags}" make
-	make install
-}

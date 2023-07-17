@@ -1,7 +1,0 @@
-package() {
-    cd "${srcdir}"/libvpx-${pkgver}
-    source android-env ${_android_arch}
-
-    make DESTDIR="$pkgdir" install
-    ${ANDROID_STRIP} -g "$pkgdir"/${ANDROID_PREFIX_LIB}/*.a
-}

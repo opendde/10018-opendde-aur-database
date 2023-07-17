@@ -1,4 +1,0 @@
-package() {
-    cd "$srcdir/birdie"
-    make DESTDIR="$pkgdir/" install
-}

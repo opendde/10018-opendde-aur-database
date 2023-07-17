@@ -1,3 +1,0 @@
-check() {
-	ctest --test-dir build
-}

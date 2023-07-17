@@ -1,4 +1,0 @@
-pkgver() {
-	_setvars
-	printf "$_upstreamversion.$_date.$_commit"
-}

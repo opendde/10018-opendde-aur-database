@@ -1,5 +1,0 @@
-package() {
-  cd "$srcdir/ardhue"
-  cd build
-  DESTDIR="$pkgdir" ninja install
-}

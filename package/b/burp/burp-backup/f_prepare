@@ -1,4 +1,0 @@
-prepare() {
-  patch -d "$srcdir/$_pkgname-$pkgver" -p1 < 1d6c931af7c11f164cf7ad3479781e8f03413496.patch
-  cd "$srcdir/$_pkgname-$pkgver"
-}

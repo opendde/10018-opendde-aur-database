@@ -1,8 +1,0 @@
-package() {
-	cd $srcdir
-
-	install -d $pkgdir/usr/lib/
-	install -d $pkgdir/usr/bin/
-	cp -ra . $pkgdir/usr/lib/bililive-recorder
-	ln -s /usr/lib/bililive-recorder/BililiveRecorder.Cli "$pkgdir/usr/bin/BililiveRecorder.Cli"
-}

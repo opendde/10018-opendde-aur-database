@@ -1,4 +1,0 @@
-package() {
-	cd "${srcdir}/${_pkgname}/amigashell-2.3-4-any.pkg"
-	cp -a usr "$pkgdir"
-}

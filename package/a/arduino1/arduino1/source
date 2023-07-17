@@ -1,1 +1,0 @@
-("${_pkgname}-${pkgver}.tar.xz::https://github.com/arduino/Arduino/releases/download/${pkgver}/arduino-${pkgver}.tar.xz"

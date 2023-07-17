@@ -1,1 +1,0 @@
-("https://launchpad.net/desktopnova/${pkgver%.*}/$pkgver/+download/$pkgname-$pkgver.tar.gz")

@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.gem::https://rubygems.org/downloads/$pkgname-$pkgver.gem")

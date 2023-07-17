@@ -1,4 +1,0 @@
-package() {
-  cd "${srcdir}"/libarib25/build/
-  DESTDIR="${pkgdir}" make install
-}

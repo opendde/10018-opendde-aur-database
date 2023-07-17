@@ -1,7 +1,0 @@
-package() {
-    cd "${pkgname}-${pkgver}"
-    install -d "${pkgdir}/usr/share/"{pixmaps/faces,doc/"${pkgname}",user-manager}
-    install -Dm 0644 {'README.md','AUTHORS'} "$pkgdir/usr/share/doc/${pkgname}"
-    cp -r 'avatar' "$pkgdir"/usr/share/user-manager/'avatars'
-    cp -r faces/*.png "$pkgdir/usr/share/pixmaps/faces"
-}

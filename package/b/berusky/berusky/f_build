@@ -1,6 +1,0 @@
-build() {
-	cd "$srcdir"/"$pkgname"-"$pkgver"
-	/bin/sed -i 's|var/games|usr/share|g'	 src/defines.h
-	./configure --prefix=/usr
-	make
-}

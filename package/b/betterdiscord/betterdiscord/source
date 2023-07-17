@@ -1,1 +1,0 @@
-("$pkgname-$_tag.tar.gz::$url/archive/v${_tag}.tar.gz")

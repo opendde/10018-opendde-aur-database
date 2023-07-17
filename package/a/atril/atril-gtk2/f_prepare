@@ -1,6 +1,0 @@
-prepare() {
-    cd "${srcdir}/${_pkgbase}-${pkgver}"
-
-    # Fix mathjax path
-    sed -i 's|/usr/share/javascript/mathjax|/usr/share/mathjax|' backend/epub/epub-document.c
-}

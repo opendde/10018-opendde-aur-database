@@ -1,4 +1,0 @@
-prepare() {
-	cd "$pkgname-$pkgver"
-	git checkout $pkgver
-}

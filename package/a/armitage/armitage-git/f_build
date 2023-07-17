@@ -1,6 +1,0 @@
-build() {
-    cd "${srcdir}/${pkgname}"
-
-    ./package.sh
-    ./clean.sh
-}

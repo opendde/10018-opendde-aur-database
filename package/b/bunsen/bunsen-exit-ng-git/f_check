@@ -1,4 +1,0 @@
-check() {
-  cd "$srcdir/${pkgname%-git}"
-  bash -n bunsen-exit-ng
-}

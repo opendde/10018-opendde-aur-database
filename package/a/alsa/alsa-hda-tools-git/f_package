@@ -1,9 +1,0 @@
-package() {
-  cd alsa-hda-tools
-  cd hda-verb
-  make && install -D -m755 hda-verb  $pkgdir/usr/bin/hda-verb
-  cd ../hda-analyzer
-  patch -Np0 -i ../../patch
-  chmod +x * && install -m755 * $pkgdir/usr/bin/
-  rm $pkgdir/usr/bin/run.py  
-}

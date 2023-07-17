@@ -1,5 +1,0 @@
-build() {
-  cd althreat
-  ./configure --prefix=/usr
-  make
-}

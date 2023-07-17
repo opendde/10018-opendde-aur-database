@@ -1,4 +1,0 @@
-package() {
-    cd anno
-    make DESTDIR="$pkgdir" install
-}

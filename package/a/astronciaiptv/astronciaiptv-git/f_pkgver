@@ -1,4 +1,0 @@
-pkgver() {
-        cd iptv
-        git rev-list --count HEAD
-}

@@ -1,5 +1,0 @@
-package() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-  install -Dm755 build/${pkgname}-${pkgver} "${pkgdir}/usr/bin/asm-cli"
-  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/asm-cli/LICENSE"
-}

@@ -1,4 +1,0 @@
-package() {
-  cd "$srcdir/bootloadHID.2012-12-08/commandline"
-  install -D bootloadHID $pkgdir/usr/bin/bootloadHID
-}

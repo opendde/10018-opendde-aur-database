@@ -1,9 +1,0 @@
-package() {
-  export MONO_SHARED_DIR="$srcdir/.wabi"
-  mkdir -p "$MONO_SHARED_DIR"
-
-  cd "$srcdir/$_pkgbase"
-  make DESTDIR="$pkgdir" install
-
-  install -D -m644 COPYING "$pkgdir/usr/share/licenses/$_pkgbase/COPYING"
-}

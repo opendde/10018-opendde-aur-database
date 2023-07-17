@@ -1,1 +1,0 @@
-("${pkgname%-mono}::git+https://download.fastgit.org/kmakise/CoilgunRailgunUtility.git")

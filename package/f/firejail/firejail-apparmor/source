@@ -1,1 +1,0 @@
-(${pkgname}-${pkgver}.tar.gz::https://github.com/netblue30/firejail/archive/$pkgver.tar.gz)

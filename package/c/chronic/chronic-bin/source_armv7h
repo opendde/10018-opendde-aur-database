@@ -1,1 +1,0 @@
-("${_pkgname}-${pkgver}-armv7h::${url}/releases/download/v${pkgver}/${_pkgname}_linux_armv7")

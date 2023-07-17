@@ -1,5 +1,0 @@
-package() {
-  cd audiotools
-  python setup.py install --root="${pkgdir}" --optimize=1
-  make -C docs install MAN_PATH="${pkgdir}/usr/share/man"
-}

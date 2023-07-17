@@ -1,1 +1,0 @@
-("${pkgname%-git}::git+https://github.com/alexkim205/G-Desktop-Suite.git")

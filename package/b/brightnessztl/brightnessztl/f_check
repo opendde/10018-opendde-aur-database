@@ -1,4 +1,0 @@
-check() {
-  cd "${pkgname}-${pkgver}"
-  zig-out/bin/brightnessztl debug &>/dev/null
-}

@@ -1,4 +1,0 @@
-build() {
-    cd "$srcdir/$_pkgname"
-    scons PREFIX=/usr/ LIBDIR=/usr/share release=1 libxattr=0 newSettings=1 libappindicator=0 useStatusIcon=1 -j$(nproc)
-}

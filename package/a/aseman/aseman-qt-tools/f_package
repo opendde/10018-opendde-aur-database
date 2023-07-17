@@ -1,4 +1,0 @@
-package() {
-  cd ${pkgname}/build
-  make INSTALL_ROOT="$pkgdir" install
-}

@@ -1,5 +1,0 @@
-package() {
-  cd "${pkgname%-*}/plugins/LinuxVST/build"
-  mkdir -p "${pkgdir}/usr/lib/vst/${pkgname%-*}"
-  cp ./*.so "${pkgdir}/usr/lib/vst/${pkgname%-*}"
-}

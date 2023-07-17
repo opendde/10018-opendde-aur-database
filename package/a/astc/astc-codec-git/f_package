@@ -1,6 +1,0 @@
-package() {
-    mkdir -p "${pkgdir}/usr/include"
-    cp -dr --no-preserve='ownership' astc-codec/include/astc-codec "${pkgdir}/usr/include"
-    install -D -m755 build/src/decoder/astc_inspector_cli -t "${pkgdir}/usr/bin"
-    install -D -m644 build/src/decoder/lib*.so -t "${pkgdir}/usr/lib"
-}

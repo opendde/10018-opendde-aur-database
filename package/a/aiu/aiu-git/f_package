@@ -1,4 +1,0 @@
-package() {
-	cd "$srcdir/${pkgname%-git}"
-	install -Dm 755 "aiu" "${pkgdir}/usr/bin/aiu"
-}

@@ -1,8 +1,0 @@
-package() {
-    install -Dm 755 "${srcdir}/result/bin/bisc" "${pkgdir}/usr/bin/bisc"
-    install -Dm 644 "${srcdir}/result/share/bash-completion/completions/bisc.bash" "${pkgdir}/usr/share/bash-completion/completions/bisc.bash"
-    install -Dm 644 "${srcdir}/result/share/fish/vendor_completions.d/bisc.fish" "${pkgdir}/usr/share/fish/vendor_completions.d/bisc.fish"
-    install -Dm 644 "${srcdir}/result/share/man/man5/bisc.conf.5.gz" "${pkgdir}/usr/share/man/man5/bisc.conf.5.gz"
-    install -Dm 644 "${srcdir}/result/share/man/man1/bisc.1.gz" "${pkgdir}/usr/share/man/man1/bisc.1.gz"
-    install -Dm 644 "${srcdir}/result/share/zsh/site-functions/_bisc" "${pkgdir}/usr/share/zsh/site-functions/_bisc"
-}

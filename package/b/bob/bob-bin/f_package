@@ -1,3 +1,0 @@
-package() {
-    install -Dm755 "${srcdir}/bob" "${pkgdir}/usr/bin/bob"
-}

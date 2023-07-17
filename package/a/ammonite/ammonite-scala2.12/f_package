@@ -1,5 +1,0 @@
-package() {
-    mkdir $pkgdir/usr/bin -p
-	cp $srcdir/amm-$_scalaverhort $pkgdir/usr/bin/amm-$_scalaverhort
-    chmod +x $pkgdir/usr/bin/amm-$_scalaverhort
-}

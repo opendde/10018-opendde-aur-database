@@ -1,4 +1,0 @@
-prepare() {
-  cd alsa-utils
-  autoreconf -vfi
-}

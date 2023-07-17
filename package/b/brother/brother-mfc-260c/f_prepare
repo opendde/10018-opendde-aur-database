@@ -1,8 +1,0 @@
-prepare() {
-	# replace '/usr' by '$srcdir/usr' while running this strange scripts
-	sed -i "s:/usr:$srcdir/usr:g" $(grep -rl "usr" .)
-
-	# preparing directories
-	mkdir -p "$srcdir/usr/share/cups/model/"
-	mkdir -p "$srcdir/usr/lib/cups/filter/"
-}

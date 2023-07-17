@@ -1,4 +1,0 @@
-package() {
-  cd "battery-monitor-${pkgver}"
-  make DESTDIR="${pkgdir}" install
-}

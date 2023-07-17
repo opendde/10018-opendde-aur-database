@@ -1,7 +1,0 @@
-build() {
-    cmake -B build -S brunsli \
-        -DCMAKE_BUILD_TYPE:STRING='None' \
-        -DCMAKE_INSTALL_PREFIX:PATH='/usr' \
-        -Wno-dev
-    make -C build
-}

@@ -1,8 +1,0 @@
-build() {
-	cd "livecd-encryption-main"
-	cp /usr/share/archiso/configs/baseline/airootfs/etc/mkinitcpio.conf mkinitcpio.conf
-	sed -i "s/BINARIES=(/BINARIES=(cryptsetup /" mkinitcpio.conf
-	sed -i "s/MODULES=(/MODULES=(cbc dm-crypt /" mkinitcpio.conf
-	sed -i 's/\(HOOKS=(.*\)archiso /\1keyboard archiso-encrypted /' mkinitcpio.conf
-
-}

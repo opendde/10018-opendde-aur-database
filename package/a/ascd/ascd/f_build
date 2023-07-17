@@ -1,4 +1,0 @@
-build() {
-  cd ${pkgname}-${pkgver}+lib-src
-  make CCOPTIONS="-fPIC" EXTRA_INCLUDES="-I."
-}

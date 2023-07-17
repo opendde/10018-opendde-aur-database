@@ -1,8 +1,0 @@
-build() {
-  export PATH=/usr/lib/qt3/bin/:$PATH
-  export QTDIR=/usr/lib/qt3/
-
-  cd "$srcdir/alsa-tools-$pkgver/qlo10k1"
-  ./configure --prefix=/usr --with-qtdir=$QTDIR --disable-ld10k1test
-  make
-}

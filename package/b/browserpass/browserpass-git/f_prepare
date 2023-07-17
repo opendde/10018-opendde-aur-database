@@ -1,4 +1,0 @@
-prepare() {
-    cd "${_name}"
-    make configure
-}

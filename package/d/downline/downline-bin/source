@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.xz::https://github.com/jarbun/downline/releases/download/v${pkgver}/downline-${pkgver}-portable-linux.tar.xz"

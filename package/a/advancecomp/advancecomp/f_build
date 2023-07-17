@@ -1,7 +1,0 @@
-build() {
-  cd ${pkgname}-${pkgver}
-  ./configure \
-    --prefix=/usr \
-    --mandir=/usr/share/man
-  make
-}

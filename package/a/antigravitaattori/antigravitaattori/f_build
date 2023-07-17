@@ -1,5 +1,0 @@
-build() {
-cd $srcdir/antigravitaattori-master
-./configure --prefix=/usr
-make
-}

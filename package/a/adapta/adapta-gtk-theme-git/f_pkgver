@@ -1,5 +1,0 @@
-pkgver() {
-  cd adapta-gtk-theme
-
-  git describe --tags | sed 's/-/.r/; s/-g/./'
-}

@@ -1,6 +1,0 @@
-package() {
-  cd "$srcdir/${_pkgname}-${pkgver}"
-  
-  make DESTDIR="$pkgdir" ASTLIBDIR="/usr/lib/asterisk/modules" install || return 1
-  make DESTDIR="$pkgdir" samples || return 1
-}

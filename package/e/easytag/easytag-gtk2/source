@@ -1,1 +1,0 @@
-(http://download.gnome.org/sources/${_basename}/${pkgver:0:3}/${_basename}-${pkgver}.tar.xz)

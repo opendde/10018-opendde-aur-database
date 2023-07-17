@@ -1,6 +1,0 @@
-package() {
-  cd $pkgname
-  make DESTDIR=$pkgdir install
-  # Remove headers already provided by 'opencl-headers'
-  rm -f $pkgdir/usr/include/CL/{cl.h,cl_{egl.h,ext.h,gl.h,gl_ext.h,platform.h},opencl.h}
-}

@@ -1,5 +1,0 @@
-build () {
-	cd "${pkgname}"
-	./configure --prefix=/usr --with-bash-completion-dir=/usr/share/bash-completion --with-priv-mode=setuid
-	make
-}

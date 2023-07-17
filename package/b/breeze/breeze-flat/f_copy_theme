@@ -1,4 +1,0 @@
-copy_theme() {
-    install -dm755 "${pkgdir}/usr/share/plasma/desktoptheme"
-    cp -r ${srcdir}/${pkgbase}-v${pkgver}/${pkgname} ${pkgdir}/usr/share/plasma/desktoptheme
-}

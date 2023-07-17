@@ -1,4 +1,0 @@
-prepare() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-  patch --forward --strip=2 --input="${srcdir}/test_compose.patch"
-}

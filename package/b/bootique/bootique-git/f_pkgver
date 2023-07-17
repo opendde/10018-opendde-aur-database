@@ -1,4 +1,0 @@
-pkgver() {
-  cd "$srcdir/bootique"
-  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse 4 --short HEAD)"
-}

@@ -1,6 +1,0 @@
-build() {
-  cd BibTool
-  autoreconf
-  ./configure --prefix=/usr
-  make 
-}

@@ -1,8 +1,0 @@
-package() {
-    cd $pkgname
-    make DESTDIR="$pkgdir" install
-    install -Dm644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
-    install -Dm644 TODO-AVC.txt "$pkgdir/usr/share/doc/$pkgname/TODO-AVC.txt"
-    install -Dm644 TODO-FEATURES.txt "$pkgdir/usr/share/doc/$pkgname/TODO-FEATURES.txt"
-    install -Dm644 TODO-ISSUES.txt "$pkgdir/usr/share/doc/$pkgname/TODO-ISSUES.txt"
-}

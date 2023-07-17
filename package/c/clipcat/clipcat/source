@@ -1,1 +1,0 @@
-("${pkgname}.tgz::https://github.com/xrelkd/clipcat/archive/v${pkgver}.tar.gz")

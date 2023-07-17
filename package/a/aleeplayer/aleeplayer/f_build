@@ -1,5 +1,0 @@
-build() {
-    cd "AleePlayer-master"
-    qmake
-    make
-}

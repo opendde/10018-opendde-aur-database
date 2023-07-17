@@ -1,3 +1,0 @@
-pkgver() {
-  printf "0.7.r%s.%s" `git rev-parse --short  HEAD` `git rev-list --count HEAD`
-}

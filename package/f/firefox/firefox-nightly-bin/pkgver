@@ -1,1 +1,0 @@
-${_version}.${_build_id[date]}.${_build_id[time]}

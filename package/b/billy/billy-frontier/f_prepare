@@ -1,8 +1,0 @@
-prepare() {
-  cd "$pkgname"
-
-  # setup Git submodules
-  git submodule init
-  git config submodule.Pomme.url ../Pomme
-  git -c protocol.file.allow=always submodule update
-}

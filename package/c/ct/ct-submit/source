@@ -1,1 +1,0 @@
-("$pkgname-$pkgver.tar.gz"::"https://github.com/grahamedgecombe/ct-submit/archive/v$pkgver.tar.gz")

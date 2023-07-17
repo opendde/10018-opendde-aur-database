@@ -1,9 +1,0 @@
-prepare() {
-  mkdir -p build
-
-  cd "amule-${_pkgcomm}"
-
-  patch -p1 -i "${srcdir}/298.diff"
-
-  ./autogen.sh
-}

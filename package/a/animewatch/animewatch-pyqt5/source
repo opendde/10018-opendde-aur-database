@@ -1,1 +1,0 @@
-("https://github.com/kanishka-linux/${_pkgname}/releases/download/v${pkgver}-${pkgrel}/${_pkgname}-${pkgver}-${pkgrel}.tar.bz2")

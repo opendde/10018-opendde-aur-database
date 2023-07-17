@@ -1,4 +1,0 @@
-package() {
-    install -m 755 -d "${pkgdir}/usr/share/java/apache-ant/"
-    install -m 444 "${srcdir}/ant-contrib/ant-contrib-1.0b3.jar" "${pkgdir}/usr/share/java/apache-ant/"
-}

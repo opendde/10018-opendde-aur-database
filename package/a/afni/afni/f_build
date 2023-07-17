@@ -1,5 +1,0 @@
-build() {
-  cd "$srcdir"/afni-AFNI_$pkgver/src
-  CPPFLAGS=""
-  make -j1 vastness
-}

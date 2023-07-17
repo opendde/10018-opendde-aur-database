@@ -1,5 +1,0 @@
-package() {
-  cd "apk-tools"
-
-  meson install -C "_build" --destdir "$pkgdir"
-}

@@ -1,1 +1,0 @@
-("$pkgname::git+https://github.com/trivial-garbage/trivial-garbage#commit=$_commit")

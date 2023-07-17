@@ -1,4 +1,0 @@
-prepare() {
-        tar -xf batman.tar.gz
-        rm -f batman.tar.gz
-}

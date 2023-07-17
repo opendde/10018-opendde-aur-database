@@ -1,4 +1,0 @@
-pkgver() {
-	sed -nr 'N;s/#define VERSION "([0-9\.]+)"\n#define BUILD "([0-9]+)"/\1.r\2/p;D'\
-			"$srcdir/Bracmat/src/bracmat.c"
-}

@@ -1,4 +1,0 @@
-package() {
-  cd "$srcdir"/mod_h264_streaming-$pkgver/src
-  install -Dm0755 .libs/mod_h264_streaming.so $pkgdir/usr/lib/httpd/modules/mod_h264_streaming.so
-}

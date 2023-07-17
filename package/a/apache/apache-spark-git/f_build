@@ -1,4 +1,0 @@
-build() {
-    cd "$srcdir/spark"
-    build/mvn -DskipTests clean package
-}

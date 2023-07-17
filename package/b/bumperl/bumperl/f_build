@@ -1,5 +1,0 @@
-build() {
-  cd $pkgname
-  make deps compile escript
-  install -D "$pkgname" "$pkgdir/usr/bin/$pkgname" || return 1
-}

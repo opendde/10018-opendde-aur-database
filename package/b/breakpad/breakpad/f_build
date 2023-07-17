@@ -1,9 +1,0 @@
-build() {
-  cd "$srcdir/${pkgname}"
-
-  echo "Configuring"
-  autoreconf
-  ./configure --prefix=/usr
-  echo "Building"
-  make
-}

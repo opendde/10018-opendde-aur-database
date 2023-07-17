@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}::git+https://bitbucket.org/norecess464/cpcec-gtk.git#tag=v${pkgver}-${_tag}"

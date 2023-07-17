@@ -1,6 +1,0 @@
-build() {
-	cd "${pkgname}"
-	autoreconf -i
-	./configure --prefix=/usr
-	make
-}

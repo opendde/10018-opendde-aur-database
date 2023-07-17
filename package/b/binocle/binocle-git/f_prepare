@@ -1,4 +1,0 @@
-prepare() {
-  cd "${pkgname%-git}"
-  cargo fetch --locked
-}

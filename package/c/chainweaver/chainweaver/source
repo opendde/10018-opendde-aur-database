@@ -1,1 +1,0 @@
-("kadena-${pkgname}-linux-${pkgver}.deb::https://github.com/kadena-io/chainweaver/releases/download/v2.2.2/kadena-${pkgname}-linux-${pkgver}.deb")

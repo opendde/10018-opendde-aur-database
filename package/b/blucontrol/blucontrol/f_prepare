@@ -1,5 +1,0 @@
-prepare() {
-  cd "${pkgname}-${pkgver}"
-
-  patch -p1 -i "${srcdir}/compile-dynamically.patch"
-}

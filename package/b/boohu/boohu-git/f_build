@@ -1,5 +1,0 @@
-build() {
-  cd "$pkgname"
-  go build -o boohu .
-  go build --tags tk -o boohu-tk .
-}

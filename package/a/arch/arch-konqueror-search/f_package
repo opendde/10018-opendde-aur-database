@@ -1,8 +1,0 @@
-package() {
-	cd $srcdir
-	local prefix=${pkgdir}/usr/share/kde4/services/searchproviders/
-	install -D -m 0644 arpkg.desktop ${prefix}/arpkg.desktop &&
-	install -D -m 0644 arwiki.desktop ${prefix}/arwiki.desktop &&
-	install -D -m 0644 aur.desktop ${prefix}/aur.desktop &&
-	install -D -m 0644 arforum.desktop ${prefix}/arforum.desktop
-}

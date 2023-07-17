@@ -1,6 +1,0 @@
-build() {
-  cd "$srcdir"
-
-  export CC=gcc-10
-  ./mach build
-}

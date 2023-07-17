@@ -1,4 +1,0 @@
-prepare() {
-  cd $pkgname
-  sed "/#define VERSION/s,xxx,$pkgver," -i aewm.h
-}

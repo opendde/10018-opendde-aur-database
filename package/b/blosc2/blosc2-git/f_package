@@ -1,6 +1,0 @@
-package() {
-  cd "c-blosc2"
-
-  make -C "_build" DESTDIR="$pkgdir" install
-  install -Dm644 "LICENSE.txt" -t "$pkgdir/usr/share/licenses/blosc2"
-}

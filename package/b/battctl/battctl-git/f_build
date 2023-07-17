@@ -1,4 +1,0 @@
-build() {
-	cd "${srcdir}/${pkgname}"
-	go build -trimpath
-}

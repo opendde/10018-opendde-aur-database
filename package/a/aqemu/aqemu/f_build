@@ -1,6 +1,0 @@
-build() {
-
-    cd "$srcdir/$pkgname-$pkgver"
-    cmake -DCMAKE_INSTALL_PREFIX=/usr/ -DQT_QMAKE_EXECUTABLE=qmake4
-    make
-}

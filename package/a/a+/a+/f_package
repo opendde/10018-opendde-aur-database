@@ -1,7 +1,0 @@
-package() {
-  install -Dm755 usr/bin/a+ "$pkgdir/usr/bin/a+"
-  install -d "$pkgdir/usr/lib"
-  cp -r usr/lib/aplus-fsf "$pkgdir/usr/lib"
-  install -Dm644 "usr/share/man/man1/$pkgname.1.gz" \
-    "$pkgdir/usr/share/man/man1/$pkgname.1.gz"
-}

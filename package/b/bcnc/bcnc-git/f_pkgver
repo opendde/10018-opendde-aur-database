@@ -1,4 +1,0 @@
-pkgver() {
-    cd "$srcdir/bCNC"
-    printf 'r%s.%s' "$(git rev-list --count HEAD)" "$(git describe --always)"
-}

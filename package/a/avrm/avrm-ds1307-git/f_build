@@ -1,5 +1,0 @@
-build() {
-	T="${pkgname%-git}"
-	cd "$srcdir/${T#avrm-}"
-	make
-}

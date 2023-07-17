@@ -1,4 +1,0 @@
-package() {
-    DESTDIR="${pkgdir}" cmake --install "${pkgname}-${pkgver}/build"
-    install -Dm644 "${srcdir}/BeamerPresenter-${pkgver}/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-}

@@ -1,5 +1,0 @@
-prepare() {
-  cd "$srcdir/Alcarys_Complex_Trial"
-  sed -i "s#YYAppExePath#$_installdir#" Alcarys_Complex_Trial.desktop
-  sed -i 's#Categories=Games#Categories=Game#' Alcarys_Complex_Trial.desktop
-}

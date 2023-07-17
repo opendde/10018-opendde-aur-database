@@ -1,4 +1,0 @@
-build() {
-  cd "$srcdir"/mod_h264_streaming-$pkgver/src
-  apxs -L/usr/lib -I/usr/include -DBUILDING_H264_STREAMING -c mod_h264_streaming.c moov.c mp4_io.c mp4_reader.c mp4_writer.c mp4_process.c output_bucket.c output_mp4.c
-}

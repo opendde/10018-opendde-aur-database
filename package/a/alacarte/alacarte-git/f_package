@@ -1,5 +1,0 @@
-package() {
-  cd alacarte
-  make DESTDIR="$pkgdir" install
-  python3 -m compileall "$pkgdir"/usr/lib/python3.8/site-packages/Alacarte/
-}

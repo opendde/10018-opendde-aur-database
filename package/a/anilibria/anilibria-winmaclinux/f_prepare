@@ -1,6 +1,0 @@
-prepare() {
-	cd "$pkgname-$pkgver"
-	patch -p1 -i "$srcdir/0001-change-Exec-value-in-.desktop-file-to-match-archlinu.patch"
-	patch -p1 -i "$srcdir/0001-Change-instalation-path-to-be-Arch-linux-friendly.patch"
-	patch -p1 -i "$srcdir/0001-disable-version-check.patch"
-}

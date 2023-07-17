@@ -1,5 +1,0 @@
-build() {
-  cd "$pkgname"
-  npx pnpm install --frozen-lockfile --ignore-scripts
-  npm run packageQuick
-}

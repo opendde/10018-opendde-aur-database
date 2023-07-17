@@ -1,4 +1,0 @@
-check_argtable() {
-  cd "$srcdir/${pkgname%-*}${pkgver/./-}"
-  make -k check
-}

@@ -1,6 +1,0 @@
-prepare() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-  patch -Np1 -i "${srcdir}/arpalert-flags.patch"
-  patch -Np1 -i "${srcdir}/debian-fixes.patch"
-  autoreconf -fiv
-}

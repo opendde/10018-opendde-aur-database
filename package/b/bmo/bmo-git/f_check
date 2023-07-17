@@ -1,5 +1,0 @@
-check() {
-	cd "$srcdir/.go/src/bmo/tests"
-
-    ./run_tests.sh
-}

@@ -1,6 +1,0 @@
-check() {
-	# Test will download ~1GB of testfiles
-    echo "Running check() for the first time might take a while as it downloads ~1GB of testfiles. Skip with --nocheck"
-	export GOPATH="${srcdir}/${pkgname}-${pkgver}"
-	go test -timeout 60m arduino.cc/...
-}

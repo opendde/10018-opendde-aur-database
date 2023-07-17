@@ -1,4 +1,0 @@
-prepare() {
-  cd ${pkgname%-git}
-  patch -Np1 < "$srcdir"/compilescript.diff
-}

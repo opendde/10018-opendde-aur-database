@@ -1,9 +1,0 @@
-package() {
-  install -d "$pkgdir/usr/share/archipel"
-  cp -r "$srcdir/archipel-gui-$_appver"/* "$pkgdir/usr/share/archipel"
-  find "$pkgdir/usr/share/archipel" -type f -exec chmod 644 {} \;
-  find "$pkgdir/usr/share/archipel" -type d -exec chmod 755 {} \;
-
-  install -D -m 644 "$srcdir/archipel.desktop" "$pkgdir/usr/share/applications/archipel.desktop"
-  install -D -m 644 "$srcdir/archipel.svg" "$pkgdir/usr/share/icons/hicolor/scalable/apps/archipel.svg"
-}

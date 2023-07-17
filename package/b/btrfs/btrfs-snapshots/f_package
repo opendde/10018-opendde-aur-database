@@ -1,4 +1,0 @@
-package() {
-    cd "$srcdir/$pkgname-$pkgver"
-    DESTDIR=$pkgdir PREFIX=/usr ./scripts/install
-}

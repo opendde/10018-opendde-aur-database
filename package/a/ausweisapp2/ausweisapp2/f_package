@@ -1,5 +1,0 @@
-package() {
-  cd "${srcdir}"
-  DESTDIR="$pkgdir" cmake --install build
-  install -Dm644 "${srcdir}/AusweisApp2-${pkgver}/LICENSE.txt" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.txt"
-}

@@ -1,1 +1,0 @@
-("${pkgname}::git+https://code.briarproject.org/briar/briar.git#tag=release-${pkgver}")

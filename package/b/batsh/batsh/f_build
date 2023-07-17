@@ -1,6 +1,0 @@
-build() {
-  cd "${srcdir}/Batsh-${pkgver}/src"
-
-  ocp-build init  
-  ocp-build build
-}

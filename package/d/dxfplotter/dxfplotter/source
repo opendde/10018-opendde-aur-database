@@ -1,1 +1,0 @@
-("$pkgname-$pkgver::git+https://github.com/panzergame/$pkgname.git#tag=v${pkgver}")

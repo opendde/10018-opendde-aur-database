@@ -1,5 +1,0 @@
-build() {
-  cd "${srcdir}/${pkgname%-hg}"
-  make blastem
-  make menu.bin
-}

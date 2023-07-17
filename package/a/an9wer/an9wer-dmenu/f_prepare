@@ -1,4 +1,0 @@
-prepare() {
-  cd "$_pkgname"
-  cp config.def.h config.h
-}

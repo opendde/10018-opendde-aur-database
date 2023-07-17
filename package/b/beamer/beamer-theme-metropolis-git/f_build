@@ -1,5 +1,0 @@
-build() {
-    # Generate the style files.
-    cd $srcdir/mtheme
-    make
-}

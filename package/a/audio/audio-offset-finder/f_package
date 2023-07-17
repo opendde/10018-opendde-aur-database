@@ -1,7 +1,0 @@
-package() {
-  cd "${srcdir}"/${pkgname}
-  pip install --root "${pkgdir}/" .
-  install -D "${srcdir}"/${pkgname}/COPYING "${pkgdir}"/usr/share/licenses/${pkgname}/COPYING
-  install -D "${srcdir}"/${pkgname}/AUTHORS "${pkgdir}"/usr/share/doc/${pkgname}/AUTHORS
-  install -D "${srcdir}"/${pkgname}/README.md "${pkgdir}"/usr/share/doc/${pkgname}/README.md
-}

@@ -1,7 +1,0 @@
-package() {
-	install -d -m755 "$pkgdir"/usr/bin/
-	install -m755 ./a.out "$pkgdir"/usr/bin/wave
-
-	install -d -m755 "$pkgdir"/usr/share/licenses/boost-tool-wave-git
-	install -m644 -t "$pkgdir"/usr/share/licenses/boost-tool-wave-git/ ./LICENSE_1_0.txt
-}

@@ -1,1 +1,0 @@
-("${_pkgname}-${_atomver}.tar.gz::${_url}/atom/archive/v${_atomver}.tar.gz"

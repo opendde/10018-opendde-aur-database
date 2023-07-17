@@ -1,8 +1,0 @@
-prepare() {
-	cd "$pkgname-3bb4c748f622687a7ecbfe0017b02f5807f52b9b"
-	cd cxxopts
-	tar xf ../../cxxopts.tar.gz --strip-components=1
-	cd ../jsoncpp
-	tar xf ../../jsoncpp.tar.gz --strip-components=1
-	python amalgamate.py
-}	

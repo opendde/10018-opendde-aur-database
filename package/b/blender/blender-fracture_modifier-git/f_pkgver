@@ -1,8 +1,0 @@
-pkgver() {
-  blender_version=$(grep -Po "BLENDER_VERSION\s+\K[0-9]{3}" "$srcdir"/blender/source/blender/blenkernel/BKE_blender_version.h)
-  printf "%d.%d.r%s.g%s" \
-    $((blender_version/100)) \
-    $((blender_version%100)) \
-    "$(git -C "$srcdir/blender" rev-list --count HEAD)" \
-    "$(git -C "$srcdir/blender" rev-parse --short HEAD)"
-}

@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz::https://github.com/trufflesecurity/driftwood/archive/v${pkgver}.tar.gz")

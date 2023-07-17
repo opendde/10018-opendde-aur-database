@@ -1,4 +1,0 @@
-package() {
-  mkdir -p "$pkgdir/usr/lib/jvm"
-  cp -a "amazon-corretto-$pkgver-linux-x64" "$pkgdir/usr/lib/jvm/java-16-amazon-corretto"
-}

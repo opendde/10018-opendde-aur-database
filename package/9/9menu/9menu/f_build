@@ -1,5 +1,0 @@
-build() {
-  cd "$srcdir/$pkgname-$pkgver"
-  xmkmf
-  make
-}

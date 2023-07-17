@@ -1,3 +1,0 @@
-check() {
-	make -C $_pkgname check
-}

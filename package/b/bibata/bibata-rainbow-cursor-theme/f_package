@@ -1,5 +1,0 @@
-package() {
-  cd Bibata_Cursor_Rainbow-$pkgver
-  install -d "$pkgdir"/usr/share/icons
-  cp -r themes/Bibata-* "$pkgdir"/usr/share/icons/
-}

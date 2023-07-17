@@ -1,4 +1,0 @@
-package() {
-  cd brise
-  make DESTDIR="$pkgdir" install
-}

@@ -1,5 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname-$pkgver"
-  install -Dm755 bib2ref $pkgdir/usr/bin/bib2ref
-  install -Dm755 conv.sh $pkgdir/usr/share/$pkgname/conv.sh
-}

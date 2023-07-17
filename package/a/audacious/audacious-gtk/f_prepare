@@ -1,4 +1,0 @@
-prepare() {
-  cd "$srcdir/$_pkgname-4.1"
-  autoreconf -I m4
-}

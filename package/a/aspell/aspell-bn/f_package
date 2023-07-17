@@ -1,5 +1,0 @@
-package() {
-  cd "${srcdir}/aspell-bn-master"
-
-  make DESTDIR="${pkgdir}" install
-}

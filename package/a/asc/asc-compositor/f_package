@@ -1,7 +1,0 @@
-package() {
-	cd $pkgdir
-	mkdir -p usr/bin/
-	mkdir -p usr/share/xsessions/
-	install -m655 $srcdir/"$pkgname"/"asc" $pkgdir/usr/bin/"asc-compositor"
-	install -m655 $srcdir/asc.desktop $pkgdir/usr/share/xsessions/asc.desktop
-}

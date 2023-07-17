@@ -1,7 +1,0 @@
-package() {
-  cd $pkgname-src-$pkgver
-  install -Dm755 "$srcdir"/$pkgname.sh "$pkgdir"/usr/bin/$pkgname
-  install -Dm644 dist/$pkgname.jar "$pkgdir"/usr/share/java/$pkgname.jar
-  install -Dm644 dist/$pkgname-contrib.jar \
-    "$pkgdir"/usr/share/java/$pkgname-contrib.jar
-}

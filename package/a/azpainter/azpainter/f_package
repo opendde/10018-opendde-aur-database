@@ -1,5 +1,0 @@
-package() {
-    cd "${pkgname}-v${pkgver}"
-    cd build
-    DESTDIR="${pkgdir}" ninja install
-}

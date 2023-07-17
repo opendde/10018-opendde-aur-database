@@ -1,1 +1,0 @@
-("${pkgname}-${arch}::git+https://github.com/rapiz1/catp.git")

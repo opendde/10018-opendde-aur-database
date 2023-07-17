@@ -1,9 +1,0 @@
-build() {
-  cd "busybox"
-
-  cp "$srcdir/config" ".config"
-  yes "" | make oldconfig
-
-  export KCONFIG_NOTIMESTAMP=1  # reproducible build
-  make CC=musl-gcc
-}

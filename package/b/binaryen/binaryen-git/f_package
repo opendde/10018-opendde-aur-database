@@ -1,6 +1,0 @@
-package() {
-  cd "binaryen"
-
-  make -C "_build" DESTDIR="$pkgdir" install
-  install -Dm755 "$srcdir/binaryen.sh" -t "$pkgdir/etc/profile.d"
-}

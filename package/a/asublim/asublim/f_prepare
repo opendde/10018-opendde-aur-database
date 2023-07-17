@@ -1,4 +1,0 @@
-prepare() {
-  sed -i "s,/usr,$pkgdir/usr,g" "$pkgname/Makefile"
-  sed -i 's,/etc/X11,/usr/share/X11,g' "$pkgname/sublimWrap"
-}

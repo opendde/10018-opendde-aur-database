@@ -1,3 +1,0 @@
-pkgver() {
-  echo $_string | cut -d '-' -f 4
-}

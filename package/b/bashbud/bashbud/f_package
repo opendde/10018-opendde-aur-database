@@ -1,7 +1,0 @@
-package() {
-  cd "$pkgname-$_pkgver"
-
-  make DESTDIR="$pkgdir/" PREFIX=/usr install
-
-  install -Dm644 -t "$pkgdir/usr/share/doc/$pkgname" README.md
-}

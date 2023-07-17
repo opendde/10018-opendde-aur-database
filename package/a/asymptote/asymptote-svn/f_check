@@ -1,4 +1,0 @@
-check() {
-  cd "$srcdir/$_svnmod/${_svnmod}"
-  make check-all
-}

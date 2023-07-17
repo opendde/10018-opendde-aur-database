@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}::https://github.com/ovh/cds/releases/download/${pkgver}/cds-engine-linux-amd64"

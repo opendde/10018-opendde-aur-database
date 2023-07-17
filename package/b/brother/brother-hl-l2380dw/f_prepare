@@ -1,4 +1,0 @@
-prepare() {
-  cd "$srcdir/opt/brother/Printers/HLL2380DW/cupswrapper"
-  patch brother_lpdwrapper_HLL2380DW < "$srcdir/brother_lpdwrapper_HLL2380DW.diff"
-}

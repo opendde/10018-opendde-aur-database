@@ -1,8 +1,0 @@
-package() {
-  install -Ddm755 "$pkgdir/opt"
-  mv "$_pkgname-${pkgver/_/-}" "$pkgdir/opt/$pkgname"
-
-  install -Dm644 $pkgname.sh -t "$pkgdir/etc/profile.d/"
-
-  # XXX: not creating a symlink at /opt/android-sdk/ndk-bundle as the latter is already used by android-ndk
-}

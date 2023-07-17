@@ -1,9 +1,0 @@
-package() {
-  cd "${srcdir}/${_pkgname}"
-  patch -p2 bbswitch.c ${srcdir}/bbswitch-dkms-git-zephyrus14.patch
-  install -dm755 "${pkgdir}/usr/src/${_pkgname}-${pkgver}"
-  install -Dm644 Makefile bbswitch.c dkms/dkms.conf "${pkgdir}/usr/src/${_pkgname}-${pkgver}"
-
-  install -dm755 "${pkgdir}/usr/share/doc/${_pkgname}/"
-  install -Dm644 NEWS README.md "${pkgdir}/usr/share/doc/${_pkgname}/"
-}

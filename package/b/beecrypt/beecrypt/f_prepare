@@ -1,5 +1,0 @@
-prepare() {
-  cd "${srcdir}"/$pkgname-$pkgver
-
-  patch -Np1 -i "${srcdir}"/$pkgname-$pkgver-icu-61.patch
-}

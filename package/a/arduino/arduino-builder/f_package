@@ -1,9 +1,0 @@
-package() {
-	cd "${srcdir}/${pkgname}-${pkgver}"
-
-	# Install main tool
-	install -Dm755 "arduino-builder" "${pkgdir}/usr/bin/arduino-builder"
-
-	# Add documentation
-	install -Dm644 -t "${pkgdir}/usr/share/doc/${pkgname}" README.md
-}

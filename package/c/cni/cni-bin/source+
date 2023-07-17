@@ -1,1 +1,0 @@
-(${pkgname}-${pkgver}::"https://github.com/containernetworking/plugins/releases/download/v${pkgver}/cni-plugins-linux-${_pkgarch}-v${pkgver}.tgz")

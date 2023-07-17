@@ -1,5 +1,0 @@
-build() {
-  cd "trunk/AStyle/build/gcc"
-
-  make release shared static
-}

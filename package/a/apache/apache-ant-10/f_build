@@ -1,6 +1,0 @@
-build() {
-    cd "${srcdir}/apache-ant-${pkgver}"
-    export ANT_HOME="${srcdir}/apache-ant-${pkgver}/bootstrap"
-
-    bootstrap/bin/ant -lib lib/optional dist
-}

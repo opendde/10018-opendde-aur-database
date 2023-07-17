@@ -1,6 +1,0 @@
-package () {
-    cd "${pkgname}-${pkgver}"
-    python setup.py install --prefix=/usr --root="${pkgdir}"
-    # Rename bean-price executable to avoid conflicts with beancount package
-    mv "${pkgdir}/usr/bin/bean-price" "${pkgdir}/usr/bin/bean-price-standalone"
-}

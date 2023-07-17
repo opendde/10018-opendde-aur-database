@@ -1,7 +1,0 @@
-prepare() {
-	cd app-icon-preview
-
-	git submodule init
-	git config 'submodule.hig.url' "${srcdir}/HIG-app-icons"
-	git submodule update
-}

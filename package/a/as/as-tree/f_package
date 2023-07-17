@@ -1,5 +1,0 @@
-package() {
-	cd "$pkgname-$pkgver"
-	install -D target/release/as-tree -t "${pkgdir}/usr/bin"
-	install -Dm644 LICENSE.md "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-}

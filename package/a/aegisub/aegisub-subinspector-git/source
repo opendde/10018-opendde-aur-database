@@ -1,1 +1,0 @@
-("${_reponame}::git+https://github.com/TypesettingTools/${_reponame}.git")

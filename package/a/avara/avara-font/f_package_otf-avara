@@ -1,5 +1,0 @@
-package_otf-avara() {
-    provides=("$pkgbase")
-    cd "${_name^}-$_sha"
-    install -Dm644 -t "$pkgdir/usr/share/fonts/OTF/" fonts/*.otf
-}

@@ -1,9 +1,0 @@
-build() {
-  cd alsa-utils
-  ./configure --prefix=/usr \
-              --disable-alsaconf \
-              --sbindir=/usr/bin \
-              --with-udev-rules-dir=/usr/lib/udev/rules.d \
-              --with-systemdsystemunitdir=/usr/lib/systemd/system
-  make
-}

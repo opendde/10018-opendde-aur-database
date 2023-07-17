@@ -1,8 +1,0 @@
-build() {
-    cd "${srcdir}/${pkgname}-${pkgver}"
-    GOBIN_OLD=$GOBIN
-    GOBIN="${srcdir}/${pkgname}-${pkgver}"
-    go mod vendor
-    go run mage.go b
-    GOBIN=$GOBIN_OLD
-}

@@ -1,6 +1,0 @@
-prepare() {
-    cd "${srcdir}/${pkgname}"
-
-    patch -p1 -i "${srcdir}/added-a-services-column-in-the-host-table-view-with-filter.patch"
-    patch -p1 -i "${srcdir}/ui-change-menu-items-list-from-8-to-24.patch"
-}

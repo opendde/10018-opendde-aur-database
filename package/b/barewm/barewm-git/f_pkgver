@@ -1,4 +1,0 @@
-pkgver() {
-  cd "$_gitname"
-  git log -1 --format='%cd.%h' --date=short | tr -d -
-}

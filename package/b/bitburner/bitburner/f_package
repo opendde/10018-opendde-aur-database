@@ -1,9 +1,0 @@
-package() {
-    install -dm 755 "$pkgdir"/{opt,usr/bin}
-    cp -dr --no-preserve='ownership' "$pkgname/.build/$pkgname-linux-x64" "$pkgdir/opt/$pkgname"
-    ln -s "/opt/$pkgname/resources/app/steam_appid.txt" "$pkgdir/opt/$pkgname/steam_appid.txt"
-    ln -s "/opt/$pkgname/$pkgname" "$pkgdir/usr/bin/$pkgname"
-
-    install -Dm644 "$pkgname"/assets/Steam/logo.svg "$pkgdir/usr/share/icons/hicolor/scalable/apps/$pkgname.svg"
-    install -Dm644 bitburner.desktop "$pkgdir/usr/share/applications/$pkgname.desktop"
-}

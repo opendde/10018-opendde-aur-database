@@ -1,6 +1,0 @@
-check() {
-  cd "$srcdir/$_PKGNAME/build"
-  make check F77FLAGS="$F77FLAGS -fallow-argument-mismatch"
-  make ptcheck
-  make time
-}

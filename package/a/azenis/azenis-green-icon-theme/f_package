@@ -1,7 +1,0 @@
-package() {
-
-	mkdir -p $pkgdir/usr/share/icons/
-	cp -r "$srcdir/Azenis Icons Green" $pkgdir/usr/share/icons/
-	# icon size bugfix
-	#sed -i 's/devices,,/devices,/' "$pkgdir/usr/share/icons/Azenis-Green/index.theme"
-}

@@ -1,5 +1,0 @@
-prepare() {
-    cd $pkgname-$pkgver
-    sed -i -e "s,/usr/local,$pkgdir/usr,g" \
-        -e '/^MANDIR=/s,usr/man,usr/share/man,' install
-}

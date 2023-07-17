@@ -1,4 +1,0 @@
-package() {
-  cd "bipscript"
-	make DESTDIR="$pkgdir/" install
-}

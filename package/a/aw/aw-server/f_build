@@ -1,5 +1,0 @@
-build() {
-    cd $pkgname
-    make aw_webui
-    python setup.py build
-}

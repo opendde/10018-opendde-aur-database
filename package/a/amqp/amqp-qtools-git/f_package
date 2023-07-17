@@ -1,4 +1,0 @@
-package() {
-    cd "qtools"
-    make VIRTUALENV_ENABLED=0 DESTDIR="${pkgdir}" PREFIX=/usr install
-}

@@ -1,5 +1,0 @@
-build() {
-  cc -c -O *.cpp
-  cc -o astrolog *.o -lm -lX11 -ldl
-  strip $pkgname
-}

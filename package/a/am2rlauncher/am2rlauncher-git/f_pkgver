@@ -1,4 +1,0 @@
-pkgver() {
-    cd "AM2RLauncher"
-    git describe --tags --long | sed 's/\([^-]*-\)g/r\1/;s/-/./g;s/^v//g'
-}

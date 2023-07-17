@@ -1,6 +1,0 @@
-package() {
-  cd "${_pkgname}"
-  install -D -m 755 audd "${pkgdir}/usr/bin/audd"
-  install -D -m 755 audd-notif "${pkgdir}/usr/bin/audd-notif"
-  install -D -m 644 LICENSE "${pkgdir}/usr/share/licenses/${_pkgname}/LICENSE"
-}

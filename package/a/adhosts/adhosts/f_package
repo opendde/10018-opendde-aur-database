@@ -1,4 +1,0 @@
-package() {
-        cd $srcdir/$pkgname-main/
-        install -Dm755 $pkgname "$pkgdir/usr/bin/adhosts"
-}

@@ -1,6 +1,0 @@
-package() {
-	rm -f "${srcdir}/archlabs-wallpapers/"README.md
-	rm -f "${srcdir}/archlabs-wallpapers/"git-v*
-	mkdir -p "${pkgdir}/usr/share/backgrounds/archlabs/"
-	cp -r "${srcdir}/archlabs-wallpapers/"* "${pkgdir}/usr/share/backgrounds/archlabs/"
-}

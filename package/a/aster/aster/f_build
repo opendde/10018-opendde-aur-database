@@ -1,8 +1,0 @@
-build() {
-  cd "${srcdir}"
-
-  cd "${srcdir}/aster-${pkgver}"
-  LIBPATH="/usr/lib/hdf5_18 /usr/lib" INCLUDES="/usr/include/hdf5_18 /usr/include/metis-4 /usr/include" PYTHON="/usr/bin/python2" LRELEASE="lrelease-qt4" python2 waf configure --prefix="${pkgdir}${_installdir}" --enable-mumps --metis-libs=metis-4 --scotch-libs='esmumps scotch bz2 scotcherr' --install-as=${_installsuff} --enable-hdf5
-  python2 waf build
-  # python2 waf build_debug
-}

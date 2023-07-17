@@ -1,4 +1,0 @@
-build() {
-	cd "${srcdir}/${_prefix}${pkgver}/b2sum"
-	make all
-}

@@ -1,8 +1,0 @@
-package() {
-	cd "$srcdir"
-	mkdir -p $pkgdir/usr/share/afutrainer
-	install -m 644 *.aqz $pkgdir/usr/share/afutrainer
-	cd "$srcdir/afutrainer-$pkgver-src"
-	mkdir -p $pkgdir/usr/bin/
-	install -m 755 ./afutrainer $pkgdir/usr/bin/afutrainer
-} 

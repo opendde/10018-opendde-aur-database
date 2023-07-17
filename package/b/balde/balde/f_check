@@ -1,4 +1,0 @@
-check() {
-  cd "$srcdir/$pkgname-$pkgver/"
-  make -j1 check
-}

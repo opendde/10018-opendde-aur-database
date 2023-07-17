@@ -1,7 +1,0 @@
-package() {
-  cd "$pkgname-$pkgver/build"
-  make DESTDIR="$pkgdir/" install
-
-  cd ..
-  install -D -m644 COPYRIGHT "$pkgdir/usr/share/licenses/$pkgname/COPYRIGHT"
-}

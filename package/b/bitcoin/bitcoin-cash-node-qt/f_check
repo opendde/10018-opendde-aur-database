@@ -1,6 +1,0 @@
-check() {
-  cd "$srcdir/bitcoin-cash-node-$pkgver/build"
-
-  msg2 'Testing... (skipped)'
-  #ninja check
-}

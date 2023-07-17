@@ -1,1 +1,0 @@
-("linux_${pkgname}-${pkgver}-${pkgrel}.x86_64.rpm::https://vpn.brown.edu/public/download/linux_${pkgname}.x86_64.rpm")

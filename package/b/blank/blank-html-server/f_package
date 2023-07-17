@@ -1,6 +1,0 @@
-package() {
-    cd $srcdir
-
-    install -D -m 0755 "$pkgname" "$pkgdir/usr/bin/$pkgname"
-    install -D -m 0644 "${pkgname}.service" "$pkgdir/usr/lib/systemd/system/${pkgname}.service"
-}

@@ -1,1 +1,0 @@
-("https://s3.amazonaws.com/downloads.smartbear/collaborator/${pkgver}/${pkgname//-/_}_${pkgver//./_}_unix.tar.gz")

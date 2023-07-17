@@ -1,6 +1,0 @@
-build() {
-  cd atf-atf-$pkgver
-  autoreconf -i -s
-  ./configure --prefix=/usr --libexecdir=/usr/bin --disable-developer
-  make
-}

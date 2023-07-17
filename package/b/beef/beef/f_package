@@ -1,7 +1,0 @@
-package() {
-  cd "$pkgname-$pkgver"
-
-  make install DESTDIR="$pkgdir"
-  mv "$pkgdir/usr/bin/beef" "$pkgdir/usr/bin/beef.elf"
-  install -Dm755 beef.sh "$pkgdir/usr/bin/beef"
-}

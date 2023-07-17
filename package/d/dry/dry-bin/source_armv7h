@@ -1,1 +1,0 @@
-("${_pkgdownload}-armv7h::https://github.com/moncho/$_pkgname/releases/download/v${pkgver}/$_pkgname-linux-arm")

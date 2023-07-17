@@ -1,9 +1,0 @@
-package() {
-    _addons="${pkgdir}/opt/android-sdk/add-ons"
-    mkdir -p "${_addons}"
-    mv "${srcdir}/google-gdk" "${_addons}/addon-google_gdk-google-${_sdkint}"
-
-    chmod -R ugo+rX "${pkgdir}/opt"
-
-    cp "${srcdir}/source.properties" "${_addons}/addon-google_gdk-google-${_sdkint}"
-}

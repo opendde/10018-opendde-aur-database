@@ -1,9 +1,0 @@
-build() {
-  cd "$srcdir/$pkgname-$pkgver/src"
-  for file in TaxonSet Alias mbsumtree TGM Quartets mbsumtree
-do
-	clang++ -c $file.C
-done
-clang++ bucky.C TaxonSet.o Alias.o mbsumtree.o TGM.o Quartets.o -o bucky
-clang++ mbsum.C mbsumtree.o -o mbsum 
-}

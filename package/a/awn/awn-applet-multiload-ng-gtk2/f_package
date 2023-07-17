@@ -1,5 +1,0 @@
-package() {
-    cd "multiload-ng-$pkgver"
-    make DESTDIR="$pkgdir" install
-    rm -r "$pkgdir/usr/share/locale"
-}

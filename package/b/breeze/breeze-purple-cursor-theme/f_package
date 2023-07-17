@@ -1,8 +1,0 @@
-package() {
-    cd $srcdir/Breeze_Purple
-    install -d $pkgdir/usr/share/icons/Breeze_Purple
-    cp -rf *   $pkgdir/usr/share/icons/Breeze_Purple
-    chmod -R 644 $pkgdir/usr/share/icons/Breeze_Purple/*
-    chmod 755 $pkgdir/usr/share/icons/Breeze_Purple
-    chmod 755 $pkgdir/usr/share/icons/Breeze_Purple/cursors
-}

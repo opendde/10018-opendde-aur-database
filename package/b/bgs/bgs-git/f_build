@@ -1,6 +1,0 @@
-build() {
-  cd "$srcdir/bgs"
-  # add the correct settings to config.mk
-  sed -e "s|^\(\s*PREFIX =\).*|\1 /usr|" -i config.mk
-  make
-}

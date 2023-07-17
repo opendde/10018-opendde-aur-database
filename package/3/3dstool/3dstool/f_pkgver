@@ -1,5 +1,0 @@
-pkgver() {
-  cd 3dstool
-
-  git describe --tags | sed 's/^v//'
-}

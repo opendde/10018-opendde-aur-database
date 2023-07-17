@@ -1,4 +1,0 @@
-package() {
-	mkdir -p ${pkgdir}/usr/bin
-	cp -a ${srcdir}/{blackcoind,blackcoin-qt} ${pkgdir}/usr/bin
-}

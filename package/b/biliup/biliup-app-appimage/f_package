@@ -1,6 +1,0 @@
-package() {
-	install -dm755 "${pkgdir}/usr/share/icons/hicolor"
-    cp -a "${srcdir}/squashfs-root/usr/share/icons/hicolor" "${pkgdir}//usr/share/"
-	install -Dm755 ${_sourcename} "${pkgdir}/${_installdir}/biliup-app.AppImage"
-	install -Dm644 "${srcdir}/squashfs-root/biliup-app.desktop" "${pkgdir}/usr/share/applications/biliup-app.desktop"
-}

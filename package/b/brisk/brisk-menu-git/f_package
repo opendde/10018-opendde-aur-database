@@ -1,4 +1,0 @@
-package() {
-    cd "$srcdir/brisk-menu"
-    DESTDIR="$pkgdir" ninja -C build install
-}

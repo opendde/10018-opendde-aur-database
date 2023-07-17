@@ -1,4 +1,0 @@
-build() {
-  cd bios_extract
-  make
-}

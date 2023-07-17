@@ -1,5 +1,0 @@
-package() {
-  cd bamf
-
-  make DESTDIR="${pkgdir}" install
-}

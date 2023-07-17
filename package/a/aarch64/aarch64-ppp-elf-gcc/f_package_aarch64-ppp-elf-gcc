@@ -1,4 +1,0 @@
-package_aarch64-ppp-elf-gcc() {
-  mkdir -p "$pkgdir"/usr/bin
-  mv -f ~/x-tools/aarch64-ppp-elf "$pkgdir"/usr/bin/
-}

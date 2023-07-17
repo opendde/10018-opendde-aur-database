@@ -1,8 +1,0 @@
-build() {
-  mkdir -p $pkgname-$_gitname/build
-  cd $pkgname-$_gitname/build
-
-  env DC=ldmd arch-meson ..
-
-  ninja
-}

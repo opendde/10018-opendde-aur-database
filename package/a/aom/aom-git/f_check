@@ -1,5 +1,0 @@
-check() {
-  cd "aom"
-
-  #make -C "_build" runtests
-}

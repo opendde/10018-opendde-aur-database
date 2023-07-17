@@ -1,4 +1,0 @@
-build() {
-  cd "$srcdir/${pkgname%-git}"
-  make DEFAULT_MAP=/usr/share/"${pkgname%-git}"/ne_110m_land.shp
-}

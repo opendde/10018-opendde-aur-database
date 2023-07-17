@@ -1,5 +1,0 @@
-build () {
-	cd "$pkgname-$pkgver"
-    ./configure --enable-client --enable-paratext
-    make
-}

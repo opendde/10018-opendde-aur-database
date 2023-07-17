@@ -1,5 +1,0 @@
-package() {
-  cd bluez-${pkgver}/tools
-  install -Dm0755 rfcomm "$pkgdir"/usr/bin/rfcomm
-  install -Dm0755 rfcomm.1 "$pkgdir"/usr/share/man/man1/rfcomm.1
-}

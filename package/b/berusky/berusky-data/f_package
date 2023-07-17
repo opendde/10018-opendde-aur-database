@@ -1,5 +1,0 @@
-package() {
-	cd "$srcdir"/"$pkgname"-"$pkgver"
-	mkdir -p "$pkgdir"/usr/share/berusky/
-	cp -r {GameData,Graphics,Levels} "$pkgdir"/usr/share/berusky
-}

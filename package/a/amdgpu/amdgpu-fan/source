@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz::https://github.com/zzkW35/amdgpu-fan/archive/${pkgver}.tar.gz")

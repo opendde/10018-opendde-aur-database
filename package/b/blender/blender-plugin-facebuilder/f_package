@@ -1,9 +1,0 @@
-package() {
-  install -d "$pkgdir/usr/share/blender/$_blender_version/scripts/addons"
-  mv "$srcdir/keentools-blender/keentools" "$pkgdir/usr/share/blender/$_blender_version/scripts/addons/keentools_facebuilder"
-
-  install -d "$pkgdir/usr/share/blender/$_blender_version/scripts/addons/keentools_facebuilder/blender_independent_packages/pykeentools_loader/pykeentools"
-  mv "$srcdir/pykeentools_installation" "$pkgdir/usr/share/blender/$_blender_version/scripts/addons/keentools_facebuilder/blender_independent_packages/pykeentools_loader/pykeentools"
-
-  install -D -t "$pkgdir/usr/share/licenses/keentools-facebuilder" "$srcdir/../LICENSE"
-}

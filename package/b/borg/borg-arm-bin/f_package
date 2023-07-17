@@ -1,5 +1,0 @@
-package() {
-    install -D $_tgt-$CARCH $pkgdir/usr/bin/borg
-    ln $pkgdir/usr/bin/borg $pkgdir/usr/bin/borgfs
-    install -D -m644 $_tgt-README.txt $pkgdir/usr/share/doc/$pkgname/README.txt
-}

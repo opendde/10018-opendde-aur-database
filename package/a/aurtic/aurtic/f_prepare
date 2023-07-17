@@ -1,5 +1,0 @@
-prepare() {
-  cd "$pkgname"
-
-  GOPATH="$srcdir" go get -d
-}

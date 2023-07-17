@@ -1,5 +1,0 @@
-build() {
-  cd -- "$srcdir/abinit-$pkgver"
-  ./configure FC=gfortran CC=cc --prefix=/usr --with-hdf5  --without-mpi --with-libxc --with-netcdf --with-netcdf-fortran   --enable-openmp   
-  make  -j $(($(nproc) + 1))
-}

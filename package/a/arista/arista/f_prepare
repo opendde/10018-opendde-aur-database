@@ -1,7 +1,0 @@
-prepare() {
-  cd "${pkgname}-${pkgver}"
-  patch -p1 -i "../fix-for-python2.patch"
-  patch -p1 -i "../gst-webkit-imports.patch"
-  # The script arista-nautilus.py doesn't work with Nautilus 3.x
-  patch -p1 -i "../remove-arista-nautilus_py.patch"
-}

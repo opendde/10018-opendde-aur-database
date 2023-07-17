@@ -1,4 +1,0 @@
-build() {
-	arch-meson Breathing-$pkgver build
-	meson compile -C build
-}

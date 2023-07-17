@@ -1,4 +1,0 @@
-package() {
-	cd "$_sourcedir"
-	install -Dm 755 target/release/annepro2_tools -t "${pkgdir}/usr/bin"
-}

@@ -1,1 +1,0 @@
-("http://www.cmake.org/files/v${pkgver%.*}/cmake-${pkgver}.tar.gz")

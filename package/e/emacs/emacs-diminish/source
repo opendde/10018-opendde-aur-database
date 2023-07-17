@@ -1,1 +1,0 @@
-("$pkgname-$pkgver.tar.gz::https://github.com/emacsmirror/diminish/archive/v${pkgver}.tar.gz")

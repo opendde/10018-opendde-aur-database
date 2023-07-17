@@ -1,7 +1,0 @@
-prepare () {
-    cd "$srcdir/$pkgname"
-
-    # setup the repo
-    ./get_submodules.sh
-    ./autogen.sh
-}

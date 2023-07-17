@@ -1,6 +1,0 @@
-build() {
-    cd "${srcdir}/abricotine"
-
-    npm install --cache ../cache --devdir="${srcdir}/devdir"
-    npm run pack --cache ../cache --devdir="${srcdir}/devdir"
-}

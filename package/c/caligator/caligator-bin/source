@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.deb::https://github.com/teamxenox/caligator/releases/download/v${pkgver}/caligator_${pkgver}-0_amd64.deb"

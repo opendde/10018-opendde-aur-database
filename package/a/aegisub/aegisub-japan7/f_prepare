@@ -1,9 +1,0 @@
-prepare() {
-  cd aegisub
-
-  sed 's/$(LIBS_BOOST) $(LIBS_ICU)/$(LIBS_BOOST) $(LIBS_ICU) -pthread/' -i tools/Makefile
-
-  cp -f /usr/share/aclocal/ax_boost_{chrono,filesystem,locale,regex,system,thread}.m4 m4macros/
-
-  ./autogen.sh
-}

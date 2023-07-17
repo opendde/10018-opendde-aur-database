@@ -1,8 +1,0 @@
-package() {
-	find "$srcdir"/tmp/env/drive_c/Program\ Files/YAMAHA/AG\ DSP\ Controller -type f -name "*.csv" -execdir install -Dm644 {,${pkgdir}/usr/share/"$pkgname"/}{} \;
-	install -Dm755 "$srcdir"/ag_dsp_controller_patched.exe "$pkgdir"/usr/share/"$pkgname"/ag_dsp_controller.exe
-	install -Dm755 "$srcdir"/$pkgname.sh "$pkgdir"/usr/bin/"$pkgname"
-	install -Dm644 "$pkgname".desktop "$pkgdir"/usr/share/applications/"$pkgname".desktop
-	install -Dm644 "$pkgname".png "$pkgdir"/usr/share/pixmaps/"$pkgname".png
-	install -Dm644 "$srcdir"/LICENSE "$pkgdir"/usr/share/licenses/"$pkgname"/LICENSE
-}

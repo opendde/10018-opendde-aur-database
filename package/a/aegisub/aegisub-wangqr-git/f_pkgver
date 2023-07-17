@@ -1,4 +1,0 @@
-pkgver() {
-  cd Aegisub
-  echo "${_pkgtag#v}.r$(git rev-list --count ${_pkgtag}..HEAD).$(git rev-parse --short HEAD)"
-}

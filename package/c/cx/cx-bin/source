@@ -1,1 +1,0 @@
-("https://${_pkggopath}/releases/download/v${pkgver}/${_pkgname}-$pkgver-bin-linux-x64.zip")

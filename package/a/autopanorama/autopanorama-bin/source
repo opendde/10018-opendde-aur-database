@@ -1,1 +1,0 @@
-("${_pkgname}-${_pkgver}.deb::http://github.com/qchateau/AutoPanorama/releases/download/${_pkgver}/autopanorama-${_pkgver}.deb")

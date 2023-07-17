@@ -1,6 +1,0 @@
-package() {
-    cd ${srcdir}/build/
-    install -Dm755 "usr/bin/${_pkgname}" -t "${pkgdir}/usr/bin/"
-    install -Dm644 "usr/share/doc/${_pkgname}/copyright" -t "${pkgdir}/usr/share/doc/${_pkgname}/"
-    install -Dm644 "etc/systemd/system/aliyundrive-webdav.service" -t "${pkgdir}/etc/systemd/system/"
-}

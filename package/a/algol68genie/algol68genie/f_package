@@ -1,4 +1,0 @@
-package() {
-  cd "$srcdir/algol68g-$pkgver"
-  make DESTDIR="$pkgdir" docdir="/usr/share/doc/algol68g" install
-}

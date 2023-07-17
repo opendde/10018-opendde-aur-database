@@ -1,6 +1,0 @@
-check() {
-  cd ${pkgname%%-*}
-
-  msg2 'Testing...'
-  make -j$_nproc check
-}

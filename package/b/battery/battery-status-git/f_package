@@ -1,9 +1,0 @@
-package() {
-    cd battery-status
-
-    install -Dm755 battery-status-collect "$pkgdir/usr/bin/battery-status-collect"
-    install -Dm755 battery-status-graph "$pkgdir/usr/bin/battery-status-graph"
-    install -Dm644 $srcdir/battery-status-collect-suspend.service "$pkgdir/usr/lib/systemd/system/battery-status-collect-suspend.service"
-    install -Dm644 $srcdir/battery-status-collect.service "$pkgdir/usr/lib/systemd/system/battery-status-collect.service"
-    install -Dm644 $srcdir/battery-status-collect.timer "$pkgdir/usr/lib/systemd/system/battery-status-collect.timer"
-}

@@ -1,9 +1,0 @@
-build() {
-  cd "${pkgname}"
-    ./configure --prefix=/usr --includedir=/usr/include/apr-2 \
-    --with-installbuilddir=/usr/share/apr-2/build \
-    --enable-nonportable-atomics \
-    --with-devrandom=/dev/urandom --disable-static
-  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
-  make
-}

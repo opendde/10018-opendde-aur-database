@@ -1,4 +1,0 @@
-package() {
-  install -Dm755 "$pkgname/sublim" "$pkgdir/usr/bin/asublim"
-  install -Dm755 "$pkgname/sublimWrap" "$pkgdir/usr/bin/sublimWrap"
-}

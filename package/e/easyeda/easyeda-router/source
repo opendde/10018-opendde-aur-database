@@ -1,1 +1,0 @@
-(${pkgname}-${pkgver}.zip::"https://image.easyeda.com/files/easyeda-router-linux-x64-v${pkgver}.zip")

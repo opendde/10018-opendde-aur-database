@@ -1,4 +1,0 @@
-build() {
-	cd "$srcdir/bootterm"
-	make V=1 CFLAGS="$CFLAGS $CPPFLAGS" LDFLAGS="$LDFLAGS"
-}

@@ -1,7 +1,0 @@
-build() {
-    cd "${pkgname}"
-    
-    ./autogen.sh
-    ./configure
-    make
-}

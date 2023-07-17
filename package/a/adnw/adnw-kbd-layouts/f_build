@@ -1,5 +1,0 @@
-build() {
-    # Add linebreak at EOF to avoid syntax error.
-	gunzip -c "koy.map.gz" | sed -e '$a\' | gzip > "koy.map.gz2"
-> "koy.map"
-}

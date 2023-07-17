@@ -1,6 +1,0 @@
-package() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-  install -dm755 "${pkgdir}/usr/share/java/${pkgname}"
-  cp lib/*.jar "$pkgdir/usr/share/java/${pkgname}"
-  chmod +r "$pkgdir/usr/share/java/${pkgname}"/*.jar
-}

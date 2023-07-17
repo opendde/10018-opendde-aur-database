@@ -1,7 +1,0 @@
-package() {
-    cd $srcdir/$pkgname-$pkgver
-    python2 setup.py install --root=$pkgdir
-    install -d $pkgdir/usr/lib/systemd/system
-    install -m 644 redhat/systemd/bcfg2-server.service $pkgdir/usr/lib/systemd/system
-    install -m 644 redhat/systemd/bcfg2.service $pkgdir/usr/lib/systemd/system
-}

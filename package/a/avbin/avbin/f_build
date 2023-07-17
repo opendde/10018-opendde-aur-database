@@ -1,5 +1,0 @@
-build() {
-    cd AVbin
-    unset -v LDFLAGS # won't build if setted, modified by patch
-    ./build.sh --fast linux-x86-64
-}

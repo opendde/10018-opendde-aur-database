@@ -1,8 +1,0 @@
-package() {
-  install -d $pkgdir/usr
-  cd $srcdir
-  install -D LICENSE.zst $pkgdir/usr/share/licenses/$pkgname
-  cd $srcdir/gcc-arm-none-eabi-${pkgver//_/-}
-  rm lib/libcc1*
-  cp -a * $pkgdir/usr/
-}

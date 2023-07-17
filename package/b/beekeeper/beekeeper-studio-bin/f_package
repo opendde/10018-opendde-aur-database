@@ -1,9 +1,0 @@
-package() {
-  tar -xvf 'data.tar.xz' -C "${pkgdir}"
-  rm -rf "${pkgdir}/usr/share/doc"
-  install -dv "${pkgdir}/usr/bin"
-  ln -sfv "/opt/Beekeeper Studio/beekeeper-studio" -t "${pkgdir}/usr/bin"
-  install -Dvm644 "${pkgdir}/opt/Beekeeper Studio/"{'LICENSE.electron.txt','LICENSES.chromium.html'} \
-    -t "${pkgdir}/usr/share/licenses/beekeeper-studio"
-  install -Dvm644 "beekeeper-studio-3.7.9-license" "${pkgdir}/usr/share/licenses/beekeeper-studio/LICENSE"
-}

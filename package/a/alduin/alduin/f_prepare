@@ -1,4 +1,0 @@
-prepare() {
-  cd $pkgname-$pkgver
-  sed -i '/TrackerModal/d' src/script/components/app.jsx
-}

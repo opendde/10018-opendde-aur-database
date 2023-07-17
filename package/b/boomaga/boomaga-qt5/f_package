@@ -1,5 +1,0 @@
-package() {
-  cd $_name-$pkgver
-    make "DESTDIR=$pkgdir" install
-  install -D -m755 $srcdir/$_name-$pkgver/scripts/installPrinter.sh ${pkgdir}/usr/bin/
-}

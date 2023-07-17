@@ -1,4 +1,0 @@
-package() {
-  cd "$pkgname-$pkgver"
-  cargo install --no-track --locked --all-features --root "$pkgdir/usr/" --path .
-}

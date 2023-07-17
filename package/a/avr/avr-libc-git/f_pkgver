@@ -1,7 +1,0 @@
-pkgver() {
-  cd "$srcdir/${pkgname%-git}"
-  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-
-  # Tags are not included in the main branch
-  # git describe --long --tags --match 'avr-libc-*-release' | sed 's/^avr-libc-\(.*\)-release/\1/;s/\([^-]*-g\)/r\1/;s/-\|_/./g'
-}

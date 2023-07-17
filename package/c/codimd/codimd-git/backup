@@ -1,1 +1,0 @@
-("etc/webapps/${pkgname%-git}"/{config.json,.sequelizerc})

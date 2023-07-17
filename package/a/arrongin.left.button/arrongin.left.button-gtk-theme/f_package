@@ -1,5 +1,0 @@
-package() {
-  cd ${srcdir}/Arrongin-W-buttons-left-${pkgver}
-  install -d "$pkgdir"/usr/share/themes/${pkgname}
-  cp -rf * "$pkgdir"/usr/share/themes/${pkgname}
-}

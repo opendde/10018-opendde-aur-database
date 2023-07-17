@@ -1,4 +1,0 @@
-check() {
-  cd "${srcdir}/${pkgname}/build"
-  make test
-}

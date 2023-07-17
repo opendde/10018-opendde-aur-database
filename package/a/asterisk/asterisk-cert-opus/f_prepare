@@ -1,7 +1,0 @@
-prepare() {
-  cp -v "${srcdir}/asterisk-opus/formats/"* "${srcdir}/${_pkgname}-${_pkgver}/formats/"
-  cp -v "${srcdir}/asterisk-opus/codecs/"* "${srcdir}/${_pkgname}-${_pkgver}/codecs/"
-  cd "${srcdir}/${_pkgname}-${_pkgver}"
-  patch -p1 < "${srcdir}/asterisk-opus/asterisk.patch"
-  patch -p1 < "${srcdir}/0001-pjproject_bundled-Disable-opus.patch"
-}

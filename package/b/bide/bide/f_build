@@ -1,4 +1,0 @@
-build() {
-    unzip -o 'dl_logiciel.php?id=118&file=1'
-    unzip -o BIDE.jar
-}

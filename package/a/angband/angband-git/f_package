@@ -1,7 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname"
-  make DESTDIR="$pkgdir" install
-  rm -f "$pkgdir"/usr/share/angband/*/delete.me
-  install -Dm644 $srcdir/$pkgname/docs/copying.rst "$pkgdir"/usr/share/licenses/$pkgname/COPYING
-  install -d "$pkgdir"/usr/bin
-}

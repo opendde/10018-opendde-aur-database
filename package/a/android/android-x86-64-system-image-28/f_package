@@ -1,6 +1,0 @@
-package() {
-	_destdir="${pkgdir}/opt/android-sdk/system-images/android-${_apilevel}/default"
-	mkdir -p "${_destdir}"
-	mv "${srcdir}/${_image_arch}" "${_destdir}"
-	chmod -R ugo+rX "${pkgdir}/opt"
-}

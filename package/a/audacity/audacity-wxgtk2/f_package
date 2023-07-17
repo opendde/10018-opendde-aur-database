@@ -1,7 +1,0 @@
-package() {
-  cd "audacity-Audacity-${pkgver}"/build
-  make DESTDIR="${pkgdir}" install
-  rm "${pkgdir}"/usr/audacity
-  chmod -R go=u "${pkgdir}"
-  chmod -R go-w "${pkgdir}"
-}

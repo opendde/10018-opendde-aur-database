@@ -1,4 +1,0 @@
-package() {
-  cd "$pkgname-$pkgver"
-  cp -r target/* "$pkgdir"/
-}

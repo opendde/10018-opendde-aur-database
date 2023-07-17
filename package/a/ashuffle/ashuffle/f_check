@@ -1,5 +1,0 @@
-check() {
-  cd "ashuffle-${pkgver}"
-
-  ninja -C builddir test
-}

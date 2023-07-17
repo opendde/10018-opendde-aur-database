@@ -1,7 +1,0 @@
-build() {
-	cd build
-	qmake-qt5 "../amixst-${pkgver}"/src/amixst.pro \
-		CONFIG+=release \
-		-spec linux-g++
-	make
-}

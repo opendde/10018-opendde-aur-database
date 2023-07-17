@@ -1,6 +1,0 @@
-package() {
-	install -d "$pkgdir"/opt/ida-free/plugins
-	install -d "$pkgdir"/etc/profile.d
-	install "$pkgname"/bins/linux/ida70/* "$pkgdir"/opt/ida-free/plugins/
-	install ida-ghidra-blc.sh "$pkgdir"/etc/profile.d/
-}

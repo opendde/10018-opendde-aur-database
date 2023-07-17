@@ -1,4 +1,0 @@
-prepare() {
-	cd $srcdir/${_pkgbase}
-	sed -i '/tic /d' Makefile
-}

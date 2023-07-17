@@ -1,4 +1,0 @@
-package() {
-  cd  "${srcdir}/"bcloud
-  python setup.py install --prefix=/usr --root="${pkgdir}" || return 1
-}

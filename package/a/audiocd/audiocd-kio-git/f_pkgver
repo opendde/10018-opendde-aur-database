@@ -1,5 +1,0 @@
-pkgver() {
-  cd audiocd-kio
-  _ver="$(cat CMakeLists.txt | grep -m1 PROJECT_VERSION | grep -o "[[:digit:]]*" | paste -sd'.')"
-  echo "${_ver}.r$(git rev-list --count HEAD).$(git rev-parse --short HEAD)"
-}

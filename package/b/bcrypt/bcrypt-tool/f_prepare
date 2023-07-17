@@ -1,7 +1,0 @@
-prepare() {
-  mkdir -p "$srcdir/src/$_gourl"
-  rm -rf "${srcdir}/src/$_gourl/$pkgname"
-  mv -f "$pkgname-$pkgver" "$srcdir/src/$_gourl/$pkgname"
-  cd "$srcdir/src/$_gourl/$pkgname"
-  GOPATH="$srcdir" glide install
-}

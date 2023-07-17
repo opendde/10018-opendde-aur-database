@@ -1,4 +1,0 @@
-check() {
-  cd "$srcdir/$_mainfolder"
-  bin/bats --tap test
-}

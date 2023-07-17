@@ -1,5 +1,0 @@
-prepare() {
-    cd "$srcdir"
-    mkdir -p "$pkgname-$pkgver"
-    unzip -d "$pkgname-$pkgver" "$pkgname-$pkgver.zip"
-}

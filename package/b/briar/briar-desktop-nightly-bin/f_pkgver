@@ -1,4 +1,0 @@
-pkgver() {
-    local build_job_number=$(curl -I -s "${_jar_source}" | grep -E ^location: | grep -E -o '[[:digit:]]+')
-    echo -n "${build_job_number}"
-}

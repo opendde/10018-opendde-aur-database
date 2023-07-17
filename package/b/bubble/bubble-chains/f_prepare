@@ -1,4 +1,0 @@
-prepare() {
-	cd $pkgname-$pkgver
-	sed -i -e 's#/usr/local/bin#/usr/bin#g' chains.pro
-}

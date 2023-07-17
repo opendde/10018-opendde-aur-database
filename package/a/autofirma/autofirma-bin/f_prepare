@@ -1,4 +1,0 @@
-prepare() {
-  # Extract debian package
-  bsdtar -O -xf *.deb data.tar.xz | bsdtar -C "${srcdir}" -xJf -
-}

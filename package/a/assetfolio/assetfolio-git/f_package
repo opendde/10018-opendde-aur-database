@@ -1,6 +1,0 @@
-package() {
-  cd assetfolio/build
-  make DESTDIR="${pkgdir}" install
-  install -d "${pkgdir}/usr/share/applications"
-  mv "${pkgdir}/usr/AssetFolio.desktop" "${pkgdir}/usr/share/applications/"
-}

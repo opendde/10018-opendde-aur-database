@@ -1,7 +1,0 @@
-package() {
-    cd "${srcdir}/build"
-    install -Dm755 "${srcdir}/build/bloaty" \
-        "${pkgdir}/usr/bin/bloaty"
-    install -Dm644 "${srcdir}/${pkgname}/README.md" \
-        "${pkgdir}/usr/share/doc/${pkgname}/README.md"
-}

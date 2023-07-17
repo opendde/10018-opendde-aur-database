@@ -1,5 +1,0 @@
-package() {
-  install -d "$pkgdir"/usr/bin
-  install -Dm755 "$srcdir"/usr/bin/brprintconf_dcpj772dw "$pkgdir"/usr/bin/
-  cp -R "$srcdir"/opt "$pkgdir"/opt
-}

@@ -1,4 +1,0 @@
-build() {
-    cd ${pkgname%-git}
-    pnpm i && pnpm run dist
-}

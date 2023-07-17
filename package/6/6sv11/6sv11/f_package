@@ -1,5 +1,0 @@
-package() {
-  cd "$srcdir/6SV1.1/"
-  install -Dm755 sixsV1.1 "$pkgdir/usr/bin/sixsV1.1"
-  install -Dm644 ../LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-}

@@ -1,5 +1,0 @@
-check() {
-  cd "aws-console"
-
-  go test ./...
-}

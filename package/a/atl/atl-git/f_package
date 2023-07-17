@@ -1,4 +1,0 @@
-package() {
-  cd atl
-  make DESTDIR="$pkgdir" install
-}

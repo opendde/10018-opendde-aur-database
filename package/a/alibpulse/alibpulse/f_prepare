@@ -1,5 +1,0 @@
-prepare() {
-	cd apulse-${pkgver}
-
-	mkdir -p build
-}

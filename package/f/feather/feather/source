@@ -1,1 +1,0 @@
-(${pkgname}-${pkgver}.tar.gz::https://github.com/AxelMarchand/${_pkgname}/archive/v${pkgver}.tar.gz

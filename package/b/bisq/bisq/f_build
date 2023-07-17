@@ -1,5 +1,0 @@
-build() {
-  cd "${srcdir}/${pkgname}-${pkgver}" || exit
-  msg2 "Building bisq..."
-  ./gradlew clean :desktop:build -Dorg.gradle.java.home=/usr/lib/jvm/java-11-openjdk -x test
-}

@@ -1,7 +1,0 @@
-package() {
-  _unpackeddir="${srcdir}/${_pkgname}"
-  cd "${_unpackeddir}"
-  cd src
-  
-  make DESTDIR="${pkgdir}" install
-}

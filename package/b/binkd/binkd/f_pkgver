@@ -1,4 +1,0 @@
-pkgver() {
-  grep Version "$srcdir/binkd/mkfls/unix/binkd.spec" | awk '{ print $2 }'
-  #git describe --tags | sed 's/^binkd-//; s/-/.r/; s/[-_]/./g'
-}

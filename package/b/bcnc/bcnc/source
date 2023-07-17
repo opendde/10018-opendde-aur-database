@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz::https://github.com/vlachoudis/bCNC/archive/${pkgver}.tar.gz"

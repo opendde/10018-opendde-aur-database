@@ -1,5 +1,0 @@
-build() {
-  mkdir -p "$pkgname-$pkgver"
-  cd "$pkgname-$pkgver"
-  ar x "$srcdir/firmware-brcm80211_${pkgver}-${_dpkgrel}_all.deb"
-}

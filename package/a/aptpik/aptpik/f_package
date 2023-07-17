@@ -1,7 +1,0 @@
-package() {
-        cd "${_gitname}-v${pkgver}" &&
-        install -m 755 -D aptpik "${pkgdir}/usr/bin/aptpik"
-        cd "${pkgdir}/usr/bin/"
-        ln -s "aptpik" "apt"
-        ln -s "aptpik" "apt-get"
-}

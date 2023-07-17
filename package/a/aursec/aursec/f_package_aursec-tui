@@ -1,7 +1,0 @@
-package_aursec-tui() {
-	pkgdesc='Inspect the aursec blockchain'
-	depends=(python python-urwid python-requests aursec)
-
-	cd "$srcdir/aursec-$pkgver/tui"
-	make PREFIX="/usr" DESTDIR="$pkgdir/" install
-}

@@ -1,3 +1,0 @@
-package() {
-  install -D -Dm755 "$_pkgname"/arch-wiki-dmenu "$pkgdir"/usr/bin/arch-wiki-dmenu
-}

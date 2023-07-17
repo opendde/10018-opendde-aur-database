@@ -1,4 +1,0 @@
-prepare() {
-  echo 'Download of this software requires agreement with EULA at:'
-  echo "https://support.illumina.com/content/dam/illumina-support/documents/downloads/software/bcl2fastq/bcl2fastq2-v${_eula_ver}-eula.pdf"
-}

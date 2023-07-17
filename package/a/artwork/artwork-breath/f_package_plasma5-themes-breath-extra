@@ -1,5 +1,0 @@
-package_plasma5-themes-breath-extra() {
-  pkgdesc='Additional Breath colors for KDE Plasma 5'
-
-  make -C build-breath-extra DESTDIR="${pkgdir}" install
-}

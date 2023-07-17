@@ -1,8 +1,0 @@
-package_python-buildbot-console-view() {
-  python="python"
-  depends=('buildbot')
-  pkgdesc="Buildbot Console View plugin"
-  _name=${_names[4]}
-  extraver="-py2.py3"
-  install_whl
-}

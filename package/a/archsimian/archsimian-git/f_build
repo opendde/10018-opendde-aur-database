@@ -1,5 +1,0 @@
-build() {
-    cd "${pkgname%-git}"
-	qmake -o Makefile ArchSimian.pro
-    make
-}

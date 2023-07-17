@@ -1,6 +1,0 @@
-package() {
-	cd "${srcdir}/${pkgname}-${pkgver}"
-
-	install -Dm0755 bar "${pkgdir}/usr/bin/bar"
-	install -Dm0644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
-}

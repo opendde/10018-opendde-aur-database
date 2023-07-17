@@ -1,5 +1,0 @@
-package() {
-  cd "${srcdir}/bitcoin-scrypt"
-  install -D -m 0755 Bitcoin-sCrypt "${pkgdir}/usr/bin/Bitcoin-sCrypt"
-  install -D -m 0644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
-}

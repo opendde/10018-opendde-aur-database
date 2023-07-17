@@ -1,5 +1,0 @@
-package() {
-	cd ${pkgname}
-	install -D     ./awwan   ${pkgdir}/usr/bin/awwan
-	install -Dm644 ./LICENSE ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
-}

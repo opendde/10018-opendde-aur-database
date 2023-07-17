@@ -1,5 +1,0 @@
-package() {
-	cd "$pkgname-$pkgver"
-	install -D -m555 "./archnord" "${pkgdir}/usr/bin/archnord"
-	install -D -m644 LICENSE.md "${pkgdir}/usr/share/licenses/archnord/LICENSE"
-}

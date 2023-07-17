@@ -1,4 +1,0 @@
-pkgver() {
-  cd amule/
-  git describe --tags | sed 's/-/.r/; s/-g/./'
-}

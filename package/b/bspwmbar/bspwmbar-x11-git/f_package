@@ -1,5 +1,0 @@
-package() {
-  cd ${pkgname%-x11-git}
-  install -Dm755 ${pkgname%-x11-git} "$pkgdir"/usr/bin/${pkgname%-x11-git}
-  install -Dm644 docs/LICENSE "$pkgdir"/usr/share/licenses/${pkgname}/LICENSE
-}

@@ -1,4 +1,0 @@
-prepare() {
-    cd "breeze-5.20.5"
-    patch --forward --strip=1 --input="${srcdir}/1.patch"
-}

@@ -1,5 +1,0 @@
-prepare() {
-  #Remove static link
-  cd ${srcdir}/${_up_pkgname}${pkgver}/source
-  sed -i 's/-static//' Makefile
-}

@@ -1,8 +1,0 @@
-prepare() {
-  mkdir -p "${srcdir}/${_pkgbase}" && cd "${srcdir}/${_pkgbase}"
-
-  cp ../dkms.conf ../Makefile .
-  cp ../i2c-piix4-${pkgver}.c i2c-piix4.c
-
-  patch --no-backup-if-mismatch -Np4 < ../piix4.patch
-}

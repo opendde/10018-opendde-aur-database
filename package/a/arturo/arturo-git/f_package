@@ -1,9 +1,0 @@
-package() {
-  cd ${srcdir}/Arturo
-
-  python2 setup.py install --root="$pkgdir/" --optimize=1
-
-  mkdir -p "$pkgdir/usr/share/licenses/arturo"
-  cp MIT-LICENSE.txt "$pkgdir/usr/share/licenses/arturo/LICENSE"
-  # ln -s /usr/share/arduino/hardware/arduino/avr /usr/local/share/arduino/hardware/arduino
-}

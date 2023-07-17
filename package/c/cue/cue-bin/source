@@ -1,1 +1,0 @@
-("https://github.com/cuelang/cue/releases/download/v${pkgver}/cue_v${pkgver}_linux_amd64.tar.gz")

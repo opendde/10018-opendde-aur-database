@@ -1,5 +1,0 @@
-package() {
-    TEXMFDIST=$(kpsewhich -var-value=TEXMFDIST)
-    cd $srcdir/${_pkgname}
-    make DESTDIR=$pkgdir/$TEXMFDIST install
-}

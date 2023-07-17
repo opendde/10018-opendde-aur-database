@@ -1,8 +1,0 @@
-package() {
-  cd $srcdir/AndYetItMovesDemo
-  mkdir -p $pkgdir/usr/{share/AndYetItMovesDemo,bin}
-  /bin/tar cf - * | ( cd ../../pkg/usr/share/AndYetItMovesDemo/; tar xfp - )
-  ln -s /usr/share/AndYetItMovesDemo/AndYetItMovesDemo $pkgdir/usr/bin/AndYetItMovesDemo
-  install -D -m644 icons/48x48.png $pkgdir/usr/share/pixmaps/andyetitmovesdemo.png
-  install -D -m644 $srcdir/andyetitmovesdemo.desktop $pkgdir/usr/share/applications/andyetitmovesdemo.desktop
-}

@@ -1,8 +1,0 @@
-build() {
-  cd build
-  cmake ../"${pkgname%-git}" \
-    -DBUILD_TESTING=off \
-    -DCMAKE_INSTALL_PREFIX="/usr"
-
-  cmake --build .
-}

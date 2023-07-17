@@ -1,1 +1,0 @@
-("$_pkgname-$pkgver.tar.gz::$url/releases/download/v$pkgver/$_pkgname-linux-$arch.tar.gz")

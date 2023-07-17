@@ -1,5 +1,0 @@
-package() {
-    cd borealis
-    install -Dm755 target/release/borealis "${pkgdir}/usr/bin/borealis"
-    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}

@@ -1,6 +1,0 @@
-package() {
-  mkdir -p "$pkgdir/usr/bin"
-  cd "$pkgdir/usr/bin"
-  cp "$srcdir/$pkgname/src/apwal" "$pkgdir/usr/bin/"
-  ln -s "apwal" "$pkgdir/usr/bin/apwal-editor"
-}

@@ -1,6 +1,0 @@
-build() {
-  msg2 "Build program"
-  cd "${srcdir}/src/${_gourl}/${pkgname}"
-  export GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw"
-  GOPATH="${srcdir}" PATH="${srcdir}/bin:${PATH}" make
-}

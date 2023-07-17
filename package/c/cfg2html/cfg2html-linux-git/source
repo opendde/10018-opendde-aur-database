@@ -1,1 +1,0 @@
-("${pkgname}"::'git+https://github.com/cfg2html/cfg2html.git')

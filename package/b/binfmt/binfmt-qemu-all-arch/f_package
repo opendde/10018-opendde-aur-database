@@ -1,9 +1,0 @@
-package() {
-  install -Dm 644 "$srcdir/qemu.conf" "$pkgdir/usr/lib/binfmt.d/qemu.conf"
-  case $CARCH in
-    arm* | aarch64) sed -i "/qemu-arm/d" "$pkgdir/usr/lib/binfmt.d/qemu.conf" ;&
-    aarch64) sed -i "/qemu-aarch64/d" "$pkgdir/usr/lib/binfmt.d/qemu.conf" ;;
-    i686 | x86_64) sed -i "/qemu-i386/d" "$pkgdir/usr/lib/binfmt.d/qemu.conf" ;  sed -i "/qemu-x86_64/d" "$pkgdir/usr/lib/binfmt.d/qemu.conf" ;;
-    *) sed -i "/$CARCH/d" "$pkgdir/usr/lib/binfmt.d/qemu.conf" ;;
-  esac
-}

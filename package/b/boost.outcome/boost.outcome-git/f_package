@@ -1,6 +1,0 @@
-package() {
-    _repodir="$srcdir/$_reponame"
-
-    install -d $pkgdir/usr/include
-    cp -r $_repodir/include $pkgdir/usr
-}

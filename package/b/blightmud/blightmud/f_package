@@ -1,4 +1,0 @@
-package() {
-	cd $pkgname-$pkgver
-	install -D -m755 "$srcdir/$pkgname-$pkgver/target/release/blightmud" "$pkgdir/usr/bin/blightmud"
-}

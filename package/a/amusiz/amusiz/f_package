@@ -1,4 +1,0 @@
-package() {
-  cd "Amusiz-${pkgver}"
-  DESTDIR="${pkgdir}" ninja -C build install
-}

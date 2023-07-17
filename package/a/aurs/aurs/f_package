@@ -1,5 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname-v$pkgver-"*
-
-  install -D "target/release/aurs" -t "$pkgdir/usr/bin/"
-}

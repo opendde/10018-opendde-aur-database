@@ -1,5 +1,0 @@
-build() {
-  cd "$srcdir/aspell6-fi-$pkgver-0"
-  ./configure
-  make
-}

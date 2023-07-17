@@ -1,5 +1,0 @@
-build() {
-    cd "${pkgname}_${pkgver}_linux/$pkgname/build/gcc"
-    make deps
-    make
-}

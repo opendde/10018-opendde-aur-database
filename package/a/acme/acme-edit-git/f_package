@@ -1,6 +1,0 @@
-package() {
-  cd "$srcdir"
-  install -Dm755 bin/edit "$pkgdir/usr/bin/acme-edit"
-  install -Dm644 src/${_gourl}/README $pkgdir/usr/share/doc/${pkgname%-*}/README
-  install -Dm644 src/${_gourl}/LICENSE $pkgdir/usr/share/licenses/${pkgname%-*}/LICENSE
-}

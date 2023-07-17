@@ -1,5 +1,0 @@
-package() {
-  cd "$srcdir/$_gitname-build"
-  mkdir -p "$pkgdir/srv/alilua"
-  make PREFIX="$pkgdir/srv/alilua" install
-}

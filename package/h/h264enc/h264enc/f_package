@@ -1,6 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname-$pkgver"
-
-  ./install
-  rm ${pkgdir}/usr/share/doc/h264enc/{uninstall,LICENSE}
-}

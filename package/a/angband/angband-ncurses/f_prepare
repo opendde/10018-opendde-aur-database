@@ -1,7 +1,0 @@
-prepare() {
-  mv "${srcdir}/${_pkgname^}-${pkgver}" "${srcdir}/${_pkgname}-${pkgver}"
-  cd "${srcdir}/${_pkgname}-${pkgver}"
-
-  # Fix detection of ncurses config script for ncurses 6.0
-  sed -i 's/ncursesw5-config/ncursesw6-config/g' acinclude.m4
-}

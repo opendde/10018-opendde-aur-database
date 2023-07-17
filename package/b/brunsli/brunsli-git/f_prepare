@@ -1,4 +1,0 @@
-prepare() {
-	cd brunsli
-	git submodule update --init
-}

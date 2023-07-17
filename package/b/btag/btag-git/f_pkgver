@@ -1,4 +1,0 @@
-pkgver() {
-  cd "${srcdir}/${pkgname%-git}"
-  git describe --dirty | sed 's/release-//'
-}

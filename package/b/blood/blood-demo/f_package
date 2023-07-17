@@ -1,5 +1,0 @@
-package() {
-    rm -rf "$srcdir"/*EXE
-    rm -rf "$srcdir"/*zip
-    install -D -t "$pkgdir"/usr/share/games/nblood/ "$srcdir"/*
-}

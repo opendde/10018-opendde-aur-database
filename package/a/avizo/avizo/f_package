@@ -1,5 +1,0 @@
-package() {
-  cd $pkgname-$pkgver
-
-  meson install -C build --destdir "$pkgdir"
-}

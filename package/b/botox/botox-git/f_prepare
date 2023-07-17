@@ -1,5 +1,0 @@
-prepare() {
-    cd "${pkgname%-git}/"
-    patch -p1 -i "$srcdir/0001-Py3-support.patch"
-    patch -p1 -i "$srcdir/0002-Use-absolute-imports.patch"
-}

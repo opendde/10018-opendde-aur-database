@@ -1,4 +1,0 @@
-package() {
-	install -Dm 644 ${pkgname}.hook "${pkgdir}/usr/share/libalpm/hooks/${pkgname}.hook"
-	install -Dm 755 ${pkgname}-patch "${pkgdir}/usr/share/libalpm/scripts/${pkgname}-patch"
-}

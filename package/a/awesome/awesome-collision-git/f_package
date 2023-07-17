@@ -1,6 +1,0 @@
-package() {
-  cd "$_gitname"
-
-  install -dm 755 -- "${pkgdir}/usr/share/awesome/lib/${_gitname}/"
-  cp * "${pkgdir}/usr/share/awesome/lib/${_gitname}/"
-}

@@ -1,9 +1,0 @@
-#pkgver() {
-#    cd "$srcdir/$_pkgname"
-#    git rev-list --count HEAD
-#}
-
-pkgver() {
-  cd $pkgname
-  git describe --long --tags | sed -r 's,^[^0-9]*,,;s,([^-]*-g),r\1,;s,[-_],.,g'
-}

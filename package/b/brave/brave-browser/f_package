@@ -1,4 +1,0 @@
-package() {
-  cp -a "$srcdir/opt" "$pkgdir/opt"
-  cp -a "$srcdir/usr" "$pkgdir/usr"
-}

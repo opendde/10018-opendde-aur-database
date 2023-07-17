@@ -1,9 +1,0 @@
-package() {
-    local prefix="/usr/share/aegisub/automation"
-
-    cd "${_reponame}"
-    install -D -m644 examples/Aegisub/Inspector.moon "${pkgdir}${prefix}/include/SubInspector/Inspector.moon"
-    install -D -m644 build/src/libSubInspector.so    "${pkgdir}${prefix}/include/SubInspector/Inspector/libSubInspector.so"
-
-    install -D -m644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
-}

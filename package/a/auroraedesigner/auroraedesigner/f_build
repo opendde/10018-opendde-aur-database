@@ -1,5 +1,0 @@
-build() {
-    cd ${srcdir}/${pkgname}-${pkgver}
-    cmake ../auroraedesigner-$pkgver -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
-    make
-}

@@ -1,5 +1,0 @@
-build() {
-	cd boxcli 
-    npm install
-    ./node_modules/.bin/oclif-dev pack --targets=linux-x64
-}

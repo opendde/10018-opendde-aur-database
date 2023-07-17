@@ -1,5 +1,0 @@
-package() {
-    mkdir -p $pkgdir/usr/bin
-
-    cp "$srcdir/$pkgname/args" $pkgdir/usr/bin
-}

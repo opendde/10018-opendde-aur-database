@@ -1,4 +1,0 @@
-build() {
-  cd $pkgname-beta_${pkgver/\./_}/bsnes
-  make
-}

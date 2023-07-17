@@ -1,1 +1,0 @@
-(${pkgname%-VCS}'::git+https://github.com/hl037/ardoise.git'

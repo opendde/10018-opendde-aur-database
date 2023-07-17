@@ -1,7 +1,0 @@
-package() {
-  cd $_pkgname
-
-  for prog in "${_progs[@]}" ; do
-    make -C $prog install DESTDIR="$pkgdir" BINDIR=/usr/bin MANDIR=/usr/share/man/man8
-  done
-}

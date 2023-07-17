@@ -1,3 +1,0 @@
-pkgver() {
-  git -C boost describe --long --tags | sed 's/^boost-//;s/-/.r/;s/-/./'
-}

@@ -1,4 +1,0 @@
-package() {
-    cd "${srcdir}/build-generator"
-    install -D "${srcdir}/build-generator/build-generator" "${pkgdir}/usr/bin/build-generator"
-}

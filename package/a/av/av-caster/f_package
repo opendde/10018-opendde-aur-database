@@ -1,5 +1,0 @@
-package() {
-  mkdir -p $pkgdir/usr/bin/
-  cd "$rootdir"
-  cp Builds/Makefile/build/av-caster $pkgdir/usr/bin/
-}

@@ -1,8 +1,0 @@
-package() {
-   cd $_pkgname
-   mkdir -p "$pkgdir"/usr/share/applications
-   cp arteFetcher.desktop "$pkgdir"/usr/share/applications
-   mkdir -p "$pkgdir"/usr/share/pixmaps
-   cp img/arteFetcher.png "$pkgdir"/usr/share/pixmaps
-   make DESTDIR="$pkgdir" install 
-}

@@ -1,4 +1,0 @@
-package() {
-    cd "$srcdir/avro-release-$pkgver/lang/c++/build"
-    make DESTDIR="$pkgdir/" install
-}

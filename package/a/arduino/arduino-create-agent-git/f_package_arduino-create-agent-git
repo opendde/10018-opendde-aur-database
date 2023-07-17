@@ -1,5 +1,0 @@
-package_arduino-create-agent-git() {
-  depends=('libappindicator-gtk3')
-
-  _package
-}

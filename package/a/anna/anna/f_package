@@ -1,6 +1,0 @@
-package() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-  DESTDIR="$pkgdir" ninja -C build/ install
-  install -D -m644 ${srcdir}/spawny.sysusers ${pkgdir}/usr/lib/sysusers.d/spawny.conf
-  install -D -m644 ${srcdir}/spawny.tmpfiles ${pkgdir}/usr/lib/tmpfiles.d/spawny.conf
-}

@@ -1,5 +1,0 @@
-package() {
-  install -d "$pkgdir"/usr/bin
-  ln -s $(which bemenu) "$pkgdir"/usr/bin/dmenu
-  ln -s $(which bemenu-run) "$pkgdir"/usr/bin/dmenu-run
-}

@@ -1,5 +1,0 @@
-package() {
-   cd "${srcdir}/${_pkgname}/include/boost"
-   install -Dm644 di.hpp "${pkgdir}/usr/include/${_pkgname}/di.hpp"
-   cp -r di "${pkgdir}/usr/include/${_pkgname}"
-}

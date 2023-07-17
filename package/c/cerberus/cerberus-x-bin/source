@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz::https://github.com/MikeHart66/cerberus/releases/download/v${_pkgver}/cerberus-v${_pkgver}b.tar.gz")

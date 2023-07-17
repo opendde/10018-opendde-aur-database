@@ -1,4 +1,0 @@
-build() {
-	cd "$srcdir/"
-	gcc bit2bitbin.c -o bit2bitbin
-}

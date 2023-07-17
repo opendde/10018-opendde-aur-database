@@ -1,5 +1,0 @@
-package() {
-    install -Dm644 ${srcdir}/lib/firmware/${_fwname}-seq.fw ${pkgdir}/usr/lib/firmware/${_fwname}-seq.fw
-    install -Dm644 ${srcdir}/LICENSE.${_fwname}             ${pkgdir}/usr/share/doc/${pkgname}/LICENSE.${_fwname}
-    install -Dm644 ${srcdir}/README-94xx.pdf                ${pkgdir}/usr/share/doc/${pkgname}/README-94xx.pdf
-}

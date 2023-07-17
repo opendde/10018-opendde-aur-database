@@ -1,5 +1,0 @@
-package() {
-	cd $pkgname-$_snapshot
-	mkdir -p $pkgdir/usr/share/themes
-	cp -r * $pkgdir/usr/share/themes
-}

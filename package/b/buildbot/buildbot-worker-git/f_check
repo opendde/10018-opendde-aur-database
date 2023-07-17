@@ -1,4 +1,0 @@
-check() {
-  cd buildbot/worker
-  PYTHONPATH=. trial3 buildbot_worker
-}

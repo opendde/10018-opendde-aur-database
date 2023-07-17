@@ -1,6 +1,0 @@
-prepare() {
-  cd F-Engrave-${pkgver}_src
-  #sed -i "s,159,${pkgver//./},g" -i ../arch.patch
-  patch < ../arch.patch
-  dos2unix ${pkgname}.py
-}

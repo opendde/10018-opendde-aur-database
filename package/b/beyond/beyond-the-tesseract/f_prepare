@@ -1,5 +1,0 @@
-prepare() {
-	cd "tess"
-	patch -p1 -i patches01
-	patch -p0 -i patches02
-}

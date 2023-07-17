@@ -1,7 +1,0 @@
-pkgver() {
-    cd "$srcdir/$pkgname" || return
-    printf "%s.%s" \
-        "$(grep "\"version\":" package.json | \
-        sed -e 's/^.*"\S*".*"\(\S*\)".*$/\1/')" \
-        "$(git rev-list --count HEAD)"
-}

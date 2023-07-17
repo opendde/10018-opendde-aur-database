@@ -1,5 +1,0 @@
-check() {
-	export RUSTUP_TOOLCHAIN=stable
-	cd "rover-$pkgver"
-	cargo test --frozen --all-features
-}

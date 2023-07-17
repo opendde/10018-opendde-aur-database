@@ -1,4 +1,0 @@
-prepare() {
-  cd "$_pkgname"
-  mkdir -p build
-}

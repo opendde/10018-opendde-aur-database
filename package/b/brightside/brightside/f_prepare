@@ -1,6 +1,0 @@
-prepare() {
-  cd "$pkgname-$pkgver.orig"
-  patch -Np1 -i "$srcdir"/brightside-1.4.0-wnck.patch
-  # gconf install path fix
-  sed -i '/^schemadir =/s| = \$(sysconfdir)| = \$(datadir)|' src/Makefile.in
-}

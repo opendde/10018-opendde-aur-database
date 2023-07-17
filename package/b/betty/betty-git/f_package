@@ -1,9 +1,0 @@
-package() {
-  cd "${srcdir}/${_gitname}"
-
-  install -d "${pkgdir}/etc/${_gitname}"
-
-  install -Dm666 /dev/null "${pkgdir}/var/log/${_gitname}/betty_history"
-  install -D main.rb "${pkgdir}/usr/bin/${_gitname}"
-  install -Dm644 lib/* -t "${pkgdir}/usr/lib/${_gitname}"
-}

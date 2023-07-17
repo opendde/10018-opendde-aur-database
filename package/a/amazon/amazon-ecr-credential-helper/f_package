@@ -1,5 +1,0 @@
-package() {
-  cd "${srcdir}/src/${_gourl}/${pkgname}/bin/local"
-  install -Dm755 docker-credential-ecr-login \
-                 "${pkgdir}/usr/bin/docker-credential-ecr-login"
-}

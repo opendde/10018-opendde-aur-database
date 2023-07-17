@@ -1,9 +1,0 @@
-build() {
-  cd "${srcdir}/abiword-${pkgver}"
-  ./configure --prefix=/usr --enable-clipart --enable-templates \
-	      --without-gnomevfs --with-gio --disable-default-plugins \
-	      --disable-builtin-plugins --disable-static \
-	      --with-psiconv-config=/nothere --with-goffice \
-	      --enable-plugins="opendocument openwriter openxml pdf goffice"
-  make
-}

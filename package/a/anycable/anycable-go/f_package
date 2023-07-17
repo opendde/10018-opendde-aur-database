@@ -1,3 +1,0 @@
-package() {
-  install -Dm755 gopath/bin/$pkgname "$pkgdir"/usr/bin/$pkgname
-}

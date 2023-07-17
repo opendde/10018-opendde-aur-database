@@ -1,5 +1,0 @@
-package() {
-	cd "$pkgname-$pkgver" || exit
-	# shellcheck disable=2154
-	make DESTDIR="$pkgdir/" install
-}

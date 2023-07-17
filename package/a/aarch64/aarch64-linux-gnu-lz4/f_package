@@ -1,7 +1,0 @@
-package() {
-  cd $_srcdir
-
-  pushd build-$_target
-  make -C .. PREFIX=/usr/$_target DESTDIR="$pkgdir/" install
-  popd
-}

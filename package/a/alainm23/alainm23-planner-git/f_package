@@ -1,4 +1,0 @@
-package() {
-    cd "${_gitname}/"
-    DESTDIR="${pkgdir}" ninja -C _build install
-}

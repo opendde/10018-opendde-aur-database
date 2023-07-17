@@ -1,6 +1,0 @@
-build() {
-    cd "${pkgname%-git}/aursec"
-    make
-    cd "../tui"
-    make
-}

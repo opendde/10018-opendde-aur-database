@@ -1,9 +1,0 @@
-package() {
-  mv ${srcdir}/opt ${pkgdir}/
-  install -d ${pkgdir}/usr/share
-  mv ${srcdir}/usr/bin ${pkgdir}/usr/
-  mv ${srcdir}/usr/share/{applications,pixmaps} ${pkgdir}/usr/share/
-  install -d ${pkgdir}/usr/share/mime/packages/
-  mv ${srcdir}/usr/share/mime/packages/* ${pkgdir}/usr/share/mime/packages/
-  install -Dm644 LICENSE.rtf ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.rtf
-}

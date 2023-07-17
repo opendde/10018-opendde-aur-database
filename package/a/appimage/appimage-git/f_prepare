@@ -1,7 +1,0 @@
-prepare() {
-  cd "${srcdir}/${_gitname}"
-
-  ./build.sh --clean
-
-  sed -i "s/ctest -V/echo 'Skip Tests...'/g" build.sh
-}

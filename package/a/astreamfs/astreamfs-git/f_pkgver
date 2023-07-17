@@ -1,4 +1,0 @@
-pkgver() {
-  cd astreamfs
-  git describe --long | sed 's/-/.r/;s/-/./'
-}

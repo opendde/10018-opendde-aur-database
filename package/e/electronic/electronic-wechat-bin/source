@@ -1,1 +1,0 @@
-("https://github.com/kooritea/electronic-wechat/releases/download/v${pkgver}/electronic-wechat-linux-${_arch}-${pkgver}.zip"

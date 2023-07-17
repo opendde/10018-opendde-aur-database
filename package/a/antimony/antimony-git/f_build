@@ -1,8 +1,0 @@
-build() {
-	cd "$srcdir/${pkgname}"
-	cmake \
-		-GNinja \
-		-DCMAKE_BUILD_TYPE=Release \
-		-DCMAKE_INSTALL_PREFIX=/usr
-	ninja
-}

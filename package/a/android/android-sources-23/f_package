@@ -1,6 +1,0 @@
-package() {
-  _destdir="${pkgdir}/opt/android-sdk/sources/"
-  mkdir -p "${_destdir}"
-  mv "${srcdir}/src" "${_destdir}/android-${_apilevel}"
-  chmod -R ugo+rX "${pkgdir}/opt"
-}

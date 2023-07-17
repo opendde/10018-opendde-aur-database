@@ -1,5 +1,0 @@
-build() {
-	cd "${srcdir}/${pkgname}-${pkgver}"
-	qmake-qt4 PREFIX='/usr' 'CONFIG-=debug' -r
-	make
-}

@@ -1,6 +1,0 @@
-prepare() {
-    cd $srcdir/bennugd-code-r${pkgver}/modules
-    chmod +x ./configure
-    sed -i -e 's/info_ptr->trans_values/info_ptr->trans_color/' -e 's/info_ptr->trans[^_]/info_ptr->trans_alpha/' mod_map/file_png.c
-    sed -i -e '/fmul/s%^%// %' -e '/fdiv/s%^%// %' ../core/include/fmath.h
-}

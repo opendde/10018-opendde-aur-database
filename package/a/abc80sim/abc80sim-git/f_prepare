@@ -1,4 +1,0 @@
-prepare() {
-    cd ${srcdir}/${_pkgname}
-    git checkout master
-}

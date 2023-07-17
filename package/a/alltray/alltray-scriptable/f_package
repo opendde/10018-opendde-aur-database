@@ -1,5 +1,0 @@
-package() {
-  cd "$srcdir"/alltray-$pkgver
-  make DESTDIR="$pkgdir" install
-  mkdir -p "$pkgdir"/etc/alltray
-}

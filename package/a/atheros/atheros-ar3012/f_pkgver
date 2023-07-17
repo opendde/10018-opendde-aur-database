@@ -1,4 +1,0 @@
-pkgver() {
-	cd $srcdir
-	echo $version.r$(git rev-list --count HEAD)
-}

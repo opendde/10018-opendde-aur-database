@@ -1,5 +1,0 @@
-package() {
-	cd "$pkgname-$pkgver"
-	make DESTDIR="$pkgdir" install
-	install -Dm644 "$srcdir"/$pkgname.service "$pkgdir/usr/lib/systemd/system/$pkgname.service"
-}

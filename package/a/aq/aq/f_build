@@ -1,5 +1,0 @@
-build() {
-  cd "$pkgname"
-
-  cargo build --frozen --release --all-features
-}

@@ -1,5 +1,0 @@
-package() {
-  cd "$srcdir"
-  mkdir -p $pkgdir/usr/lib/firmware
-  cp dvb-usb-af9015.fw $pkgdir/usr/lib/firmware
-}

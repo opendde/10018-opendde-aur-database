@@ -1,5 +1,0 @@
-package() {
-	cd "$srcdir/${pkgname%}/bittube/build/release/bin/"
-	install -D -m755 "bittube-wallet-rpc" "$pkgdir/usr/bin/bittube-wallet-rpc"
-	install -D -m755 "bittubed" "$pkgdir/usr/bin/bittubed"
-}

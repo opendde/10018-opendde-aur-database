@@ -1,3 +1,0 @@
-prepare() {
-  tar -xzf "${pkgname}_${pkgver}.tar.gz"
-}

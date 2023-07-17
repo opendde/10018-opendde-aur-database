@@ -1,4 +1,0 @@
-package() {
-  cd AlizaMS/build
-  make DESTDIR="$pkgdir/" install
-}

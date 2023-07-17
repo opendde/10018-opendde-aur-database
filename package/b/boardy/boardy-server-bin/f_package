@@ -1,6 +1,0 @@
-package() {
-	install -Dm755 "$srcdir/BoardyServer"      "$pkgdir/opt/boardy-server/BoardyServer"
-	install -Dm644 "$srcdir/ServerConfig.json" "$pkgdir/opt/boardy-server/ServerConfig.json"
-	install -Dm644 "BoardyServer.service"      "$pkgdir/usr/lib/systemd/user/BoardyServer.service"
-	chmod +x "$pkgdir/opt/boardy-server/BoardyServer"
-}

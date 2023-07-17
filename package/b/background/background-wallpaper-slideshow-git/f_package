@@ -1,4 +1,0 @@
-package() {
-        cd "$srcdir/$_pkgname"
-	install -Dm755 "slideshow.sh" "$pkgdir/usr/bin/background-wallpaper-slideshow"
-}

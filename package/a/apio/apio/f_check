@@ -1,9 +1,0 @@
-check() {
-  cd "${_name}-$pkgver"
-
-  # We need a venv since apio.commands.upgrade requests the installed apio package version
-  python -m venv --system-site-packages test-venv
-  ./test-venv/bin/python -m install dist/*.whl
-
-  ./test-venv/bin/python -m pytest -v -c /dev/null test --offline
-}

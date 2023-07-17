@@ -1,3 +1,0 @@
-package() {
-  install -m755 -D suckless-rebuild "$pkgdir/usr/bin/suckless-rebuild"
-}

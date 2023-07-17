@@ -1,6 +1,0 @@
-package() {
-  cd ${pkgname}
-  install -Dm 755 bettercap -t "${pkgdir}/usr/bin"
-  install -Dm 644 bettercap.service -t "${pkgdir}/usr/lib/systemd/system"
-  install -Dm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
-}

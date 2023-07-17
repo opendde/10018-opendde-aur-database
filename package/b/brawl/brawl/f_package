@@ -1,3 +1,0 @@
-package() {
-	DESTDIR="${pkgdir}" ninja -C build install
-}

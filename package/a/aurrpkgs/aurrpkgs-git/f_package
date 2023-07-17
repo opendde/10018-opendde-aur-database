@@ -1,5 +1,0 @@
-package() {
-  cd "${pkgname}"
-
-  install -Dm755 aurrpkgs.py "${pkgdir}/usr/bin/aurrpkgs"
-}

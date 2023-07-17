@@ -1,9 +1,0 @@
-build() {
-    cd ${srcdir}/atomsk/${_pkgname}/src
-    make atomsk
-    chmod +x atomsk
-    cd ${srcdir}/atomsk/man
-    gzip -c atomsk > atomsk.1.gz
-    cd ${srcdir}/atomsk/tools
-    chmod +x *.sh
-}

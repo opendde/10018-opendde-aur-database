@@ -1,5 +1,0 @@
-build() {
-  cd "$srcdir/$_pkgname"
-  ./configure --prefix=/usr
-  make
-}

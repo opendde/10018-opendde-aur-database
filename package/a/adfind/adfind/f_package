@@ -1,6 +1,0 @@
-package() {
-	cd "${srcdir}/${pkgname}-master"
-        chmod +x "${pkgname}"
-        install -dm755 "${pkgdir}/usr/bin/"
-        cp "${pkgname}" "${pkgdir}/usr/bin/"
-}

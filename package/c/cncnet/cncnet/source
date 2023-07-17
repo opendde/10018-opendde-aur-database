@@ -1,1 +1,0 @@
-("${pkgname}_${pkgver}.tar.xz::https://downloads.cncnet.org/${pkgname}-${_pkgver}-any.pkg.tar.xz")

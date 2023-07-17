@@ -1,1 +1,0 @@
-("https://github.com/jeremylong/DependencyCheck/releases/download/v${pkgver}/${pkgname%%-cli}-${pkgver}-release.zip")

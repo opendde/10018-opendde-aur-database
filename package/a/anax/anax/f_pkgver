@@ -1,6 +1,0 @@
-pkgver() {
-  cd "$srcdir/$pkgname"
-
-# Git, tags available
-  git describe --tags | git describe --long | sed -E 's/([^-]*-g)/r\1/;s/-/./g'
-}

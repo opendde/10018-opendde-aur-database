@@ -1,3 +1,0 @@
-package() {
-  install -Dm0755 "${srcdir}/aquayman" "${pkgdir}/usr/bin/aquayman"
-}

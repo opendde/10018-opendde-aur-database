@@ -1,9 +1,0 @@
-package() {
-   mkdir -p "$pkgdir/opt/$pkgname-linux-$_arch"
-
-   cp -a "$srcdir/$_pkgarchive/." "$pkgdir/opt/$pkgname-linux-$_arch/"
-
-   install -D -m644 "$srcdir/$pkgname.service" "$pkgdir/usr/lib/systemd/user/$pkgname.service"
-
-   install -D -m644 "$srcdir/$_pkgarchive/LICENSE" "$pkgdir/usr/share/licenses/$_pkgarchive/LICENSE"
-}

@@ -1,1 +1,0 @@
-("http://${pkgname}.org/files/${pkgname}-${pkgver/./}.tar.gz"

@@ -1,4 +1,0 @@
-prepare() {
-	cd "$srcdir/$pkgname-$pkgver"
-	sed -i 's|usr/local|usr|g' "scripts/${pkgname}.service" auto_cpufreq/core.py
-}

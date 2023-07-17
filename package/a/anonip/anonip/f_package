@@ -1,6 +1,0 @@
-package() {
-    install -d $pkgdir/usr/share/licenses/$pkgname
-    install -m644 -t $pkgdir/usr/share/licenses/$pkgname "${_pkgname}-${pkgver}/LICENSE.txt"
-    cd "${_pkgname}-${pkgver}"
-    python setup.py install --root="${pkgdir}/" --optimize=1
-}

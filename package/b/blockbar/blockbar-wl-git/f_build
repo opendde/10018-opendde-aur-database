@@ -1,4 +1,0 @@
-build() {
-    cd "$srcdir/blockbar"
-    make WAYLAND=1
-}

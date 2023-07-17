@@ -1,7 +1,0 @@
-build() {
-  cd "$srcdir"/python-asar/trunk/asar-apache-agent/
-
-  sed -i 's/\/tmp/\/var\/log\/httpd/g' *.c
-  gcc -o asar_apache_agent asar_apache_agent.c
-  gcc -o asar_apache_gather asar_apache_gather.c
-}

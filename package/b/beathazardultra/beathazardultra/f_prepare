@@ -1,6 +1,0 @@
-prepare() {
-    cd "${srcdir}"
-
-    mkdir "${pkgname}-${pkgver}"
-    bsdtar -x -C "${pkgname}-${pkgver}" -f "${_gamepkg}"
-}

@@ -1,4 +1,0 @@
-package () {
-  cd "$srcdir"
-  install -Dm 644 wine.conf "$pkgdir/usr/lib/binfmt.d/wine.conf"
-}

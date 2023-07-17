@@ -1,5 +1,0 @@
-prepare() {
-  cd $pkgname-$pkgver
-  # fix compile errors, bin path, flags
-  patch -p1 -i ../f1spirit.patch
-}

@@ -1,3 +1,0 @@
-package() {
-  install -Dm755 BrowserStackLocal "$pkgdir/usr/bin/BrowserStackLocal"
-}

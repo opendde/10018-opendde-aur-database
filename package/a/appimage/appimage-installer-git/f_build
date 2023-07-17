@@ -1,5 +1,0 @@
-build() {
-    cd "${srcdir}/${_pkgname}"
-    qmake ./${_pkgname}.pro -spec linux-g++ CONFIG+=qtquickcompiler
-    make
-}

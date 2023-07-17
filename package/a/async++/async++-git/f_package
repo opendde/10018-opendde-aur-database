@@ -1,4 +1,0 @@
-package() {
-    make -C "${pkgname}/build" DESTDIR="$pkgdir" install
-    install -D -m644 "${pkgname}/LICENSE" -t "${pkgdir}/usr/share/licenses/${pkgname}"
-}

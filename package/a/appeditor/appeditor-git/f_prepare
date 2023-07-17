@@ -1,4 +1,0 @@
-prepare() {
-  cd "$srcdir/${pkgname%-git}"
-  patch --forward --strip=1 --input="${srcdir}/0001-Fix-121-failure-to-compile-with-vala-0.55.1.patch"
-}

@@ -1,6 +1,0 @@
-build() {
-  cd $pkgname-$pkgver
-  [ -x configure ] || ./autogen.sh
-  ./configure --prefix=/usr --disable-strict
-  make
-}

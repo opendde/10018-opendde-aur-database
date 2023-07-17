@@ -1,5 +1,0 @@
-package() {
-    mkdir -p "$pkgdir/usr/bin/" "$pkgdir/usr/lib/systemd/system"
-    cp "$srcdir/go/bin/aurora" "$pkgdir/usr/bin/aurora"
-    cp "$srcdir/go/src/$_pkgname/systemd/"* "$pkgdir/usr/lib/systemd/system/"
-}

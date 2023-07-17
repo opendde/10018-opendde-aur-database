@@ -1,8 +1,0 @@
-package() {
-	cd $pkgname
-
-	install -d $pkgdir/usr/bin
-
-	cp auto_rotate.py $pkgdir/usr/bin
-	cp tablet_mode_detection.py $pkgdir/usr/bin
-}

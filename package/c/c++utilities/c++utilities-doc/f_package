@@ -1,9 +1,0 @@
-package() {
-	cd "${srcdir}"
-
-	# Create directories
-	install -d "${pkgdir}/usr/lib/firmware/"
-
-	# Install to said directories
-	b43-fwcutter -w "${pkgdir}/usr/lib/firmware/" "${realname}-${pkgver}.o"
-}

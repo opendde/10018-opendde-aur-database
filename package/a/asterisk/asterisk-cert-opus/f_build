@@ -1,6 +1,0 @@
-build() {
-  cd "${srcdir}/${_pkgname}-${_pkgver}"
-  ./bootstrap.sh
-  ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --sbindir=/usr/bin --with-pjproject-bundled
-  make
-}

@@ -1,4 +1,0 @@
-build() {
-	cd "${srcdir}/${_gitname}-${pkgver}"
-	python3 setup.py build
-}

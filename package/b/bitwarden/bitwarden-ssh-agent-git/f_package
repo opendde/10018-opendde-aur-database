@@ -1,5 +1,0 @@
-package() {
-	cd "$srcdir/${pkgname%-git}"
-  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-  install -Dm755 "bw_add_sshkeys.py" "${pkgdir}/usr/bin/bw_add_sshkeys" 
-}

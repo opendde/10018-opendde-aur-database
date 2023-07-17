@@ -1,4 +1,0 @@
-package() {
-	install -D "${srcdir}/theme.mp3?raw=true" "${pkgdir}/opt/benny-hill/benny-hill.mp3"
-	install -D "${srcdir}/benny-hill" "${pkgdir}/usr/bin/benny-hill"
-}

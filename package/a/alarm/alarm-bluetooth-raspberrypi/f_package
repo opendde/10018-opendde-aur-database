@@ -1,8 +1,0 @@
-package() {
-    install -d ${pkgdir}/usr/lib/firmware/updates/brcm
-    install -d ${pkgdir}/boot/overlays
-    install -m 0644 ${srcdir}/bcmbt.dtbo ${pkgdir}/boot/overlays/bcmbt.dtbo
-
-    # workaround for Raspberry Pi 3B+
-    ln -s BCM4345C0.hcd ${pkgdir}/usr/lib/firmware/updates/brcm/BCM.hcd
-}

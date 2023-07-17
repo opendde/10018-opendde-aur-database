@@ -1,7 +1,0 @@
-package() {
-  mkdir -p "${pkgdir}/opt/android-sdk/extras/android/"
-  mv "${srcdir}/support" "${pkgdir}/opt/android-sdk/extras/android/support"
-
-  chmod -R ugo+rX "${pkgdir}/opt"
-  install -Dm644 "${srcdir}/source.properties" "${pkgdir}/opt/android-sdk/extras/android/support/source.properties"
-}

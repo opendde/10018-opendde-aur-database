@@ -1,4 +1,0 @@
-package() {
-    install -Dm755 "AltServer-${pkgver}" "${pkgdir}/usr/bin/${pkgname}"
-    install -Dm644 "${pkgname}.service" "${pkgdir}/usr/lib/systemd/system/${pkgname}.service"
-}

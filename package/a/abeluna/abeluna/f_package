@@ -1,4 +1,0 @@
-package() {
-	cd "${srcdir}/${pkgname}-${pkgver}" || exit 2
-	/usr/bin/python3 setup.py install --prefix=/usr --root="$pkgdir/" --optimize=1
-}

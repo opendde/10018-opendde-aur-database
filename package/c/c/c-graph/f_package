@@ -1,5 +1,0 @@
-package() {
-    install -Dm 644 h2.service -t "${pkgdir}/usr/lib/systemd/system"
-    install -Dm 644 h2.sysusers "${pkgdir}/usr/lib/sysusers.d/h2.conf"
-    install -Dm 644 h2.tmpfiles "${pkgdir}/usr/lib/tmpfiles.d/h2.conf"
-}

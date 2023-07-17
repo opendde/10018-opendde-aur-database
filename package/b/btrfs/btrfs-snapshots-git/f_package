@@ -1,4 +1,0 @@
-package() {
-    cd "$srcdir/${pkgname%-git}"
-    PREFIX=$pkgdir/usr ./scripts/install
-}

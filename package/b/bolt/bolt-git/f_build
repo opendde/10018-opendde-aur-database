@@ -1,7 +1,0 @@
-build() {
-  cd "${srcdir}"/bolt
-
-  install -d build
-  arch-meson build
-  ninja -v -C build
-}

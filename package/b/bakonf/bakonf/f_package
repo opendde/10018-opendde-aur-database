@@ -1,5 +1,0 @@
-package() {
-  install -Dm644 $srcdir/pacmandb.xml $pkgdir/etc/bakonf/sources/pacmandb.xml
-  cd $srcdir/$pkgname-$pkgver
-  make DESTDIR=$pkgdir/ install
-}

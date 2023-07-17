@@ -1,4 +1,0 @@
-package() {
-cd "${srcdir}/alien-${pkgver}"
-make DESTDIR="${pkgdir}" install
-}

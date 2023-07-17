@@ -1,7 +1,0 @@
-build() {
-    set -x
-    cd $srcdir
-    which bat && bat no_argv.patch || cat no_argv.patch
-    patch < no_argv.patch
-    set +x
-}

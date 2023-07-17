@@ -1,8 +1,0 @@
-package() {
-  cd ${pkgname}-${pkgver}
-  make install
-  python setup.py install -O1 --prefix="${pkgdir}/usr"
-  install -d "${pkgdir}/usr/share/doc/${pkgname}"
-  install -Dm 644 *.md "${pkgdir}/usr/share/doc/${pkgname}"
-  install -Dm 644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}

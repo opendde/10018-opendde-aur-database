@@ -1,9 +1,0 @@
-build() {
-  cd "${pkgname%-libopenmpt}-$pkgver"
-
-  ./configure \
-    --prefix=/usr \
-    --disable-gtk \
-    --enable-amidiplug
-  make
-}

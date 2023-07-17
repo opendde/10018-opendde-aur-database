@@ -1,5 +1,0 @@
-pkgver() {
-  cd ${pkgname}
-  printf "v%s.r%s.%s" "$(TZ=UTC git show -s --pretty=%cd --date=format-local:%Y%m%d HEAD)" \
-    "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-}

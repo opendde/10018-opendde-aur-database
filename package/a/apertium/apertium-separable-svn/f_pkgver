@@ -1,6 +1,0 @@
-pkgver() {
-  cd "$srcdir/${_pkgname}"
-  local ver="${pkgver%%.r*}"
-  local rev="$(svnversion)"
-  printf "%s.r%s" "${ver}" "${rev//[[:alpha:]]}"
-}

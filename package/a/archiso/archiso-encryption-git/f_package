@@ -1,4 +1,0 @@
-package() {
-  cd "${_pkgbase}" || exit
-  make DESTDIR="${pkgdir}" PREFIX='/usr' install
-}

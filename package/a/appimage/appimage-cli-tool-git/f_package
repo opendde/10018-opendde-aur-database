@@ -1,4 +1,0 @@
-package() {
-  #install -Dm755 build/cmd "$pkgdir/usr/bin/${pkgname%-git}"
-  install -Dm755 build/bin/cmd "$pkgdir/usr/bin/${pkgname%-git}"
-}

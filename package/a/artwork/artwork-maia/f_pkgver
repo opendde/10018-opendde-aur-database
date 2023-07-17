@@ -1,5 +1,0 @@
-pkgver() {
-  cd ${srcdir}/${_pkgname}
-  _REV=$(git rev-list --count master)
-  printf "r${_REV}"
-}

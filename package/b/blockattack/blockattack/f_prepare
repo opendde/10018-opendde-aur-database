@@ -1,5 +1,0 @@
-prepare() {
-  cd $pkgname-game-$pkgver
-  ./packdata.sh
-  mkdir -p ../build
-}

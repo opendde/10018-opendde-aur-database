@@ -1,1 +1,0 @@
-("${pkgname}-beta-amd64.deb::https://uploads.stardevelop.com/linux/${pkgname}-${pkgver}-amd64.deb")

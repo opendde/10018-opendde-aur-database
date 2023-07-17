@@ -1,6 +1,0 @@
-package() {
-  cd babe-qt
-  install -Dm755 Babe "$pkgdir/usr/bin/Babe"
-  install -Dm755 data/babe.svg "$pkgdir/usr/share/icons/hicolor/scalable/apps/Babe.svg"
-  install -Dm644 ../Babe.desktop "$pkgdir/usr/share/applications/Babe.desktop"
-}

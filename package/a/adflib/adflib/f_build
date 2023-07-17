@@ -1,7 +1,0 @@
-build() {
-  cd "${srcdir}/${_pkgname}-${pkgver}"
-  sh autogen.sh
-  #sh configure --prefix="${pkgdir}/"
-  sh configure
-  make
-}

@@ -1,4 +1,0 @@
-pkgver() {
-  cd ${srcdir}/${_pkgname}
-  echo $(cat bash-git-prompt.rb | grep url | sed 's|.*archive/||' | sed 's|.tar.gz"$||').r$(git rev-list --count HEAD).$(git rev-parse --short HEAD)
-}

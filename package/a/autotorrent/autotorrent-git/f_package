@@ -1,4 +1,0 @@
-package() {
-	cd mktorrent/autotorrent
-    install -Dm755 autotorrent "$pkgdir"/usr/bin/autotorrent
-}

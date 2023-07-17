@@ -1,3 +1,0 @@
-pkgver() {
-    printf 'r%s.g%s' "$(git -C astc-codec rev-list --count HEAD)" "$(git -C astc-codec rev-parse --short HEAD)"
-}

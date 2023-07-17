@@ -1,5 +1,0 @@
-package() {
-  cd $pkgname-$pkgname-$pkgver
-  install -d $pkgdir/usr
-  perl Makefile.PL --prefix=$pkgdir/usr --disable gtk install
-}

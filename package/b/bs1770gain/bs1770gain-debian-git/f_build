@@ -1,9 +1,0 @@
-build() {
-    cd "$_pkgname"
-
-    ./configure \
-        CFLAGS="${CFLAGS} -I/usr/include/ffmpeg2.8/" \
-        LDFLAGS="${LDFLAGS} -L/usr/lib/ffmpeg2.8/" \
-        --prefix=/usr
-    make
-}

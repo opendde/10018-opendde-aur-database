@@ -1,5 +1,0 @@
-build() {
-	cd autoconf-"${pkgver}"
-	./configure --prefix=/usr --program-suffix=-2.69
-	make
-}

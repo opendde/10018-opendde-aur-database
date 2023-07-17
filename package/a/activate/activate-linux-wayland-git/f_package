@@ -1,6 +1,0 @@
-package() {
-  install -D activate-linux.desktop "$pkgdir/usr/share/applications/activate-linux.desktop"
-  cd "$srcdir/$_pkgname"
-  install -Dm644 LICENSE.md "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-  install -D bin/activate-linux "$pkgdir/usr/bin/activate-linux"
-}

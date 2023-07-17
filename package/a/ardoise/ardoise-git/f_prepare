@@ -1,6 +1,0 @@
-prepare() {
-  cd ${pkgname%-VCS}
-  git submodule init
-  git config submodule.json.url $srcdir/ljsoncppp
-  git submodule update
-}

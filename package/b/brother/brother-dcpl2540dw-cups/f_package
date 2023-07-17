@@ -1,6 +1,0 @@
-package() {
-  mkdir -p ${pkgdir}/usr/share/cups/model/Brother
-  mkdir -p ${pkgdir}/usr/lib/cups/filter
-  cp ${srcdir}/opt/brother/Printers/DCPL2540DW/cupswrapper/brother-DCPL2540DW-cups-en.ppd ${pkgdir}/usr/share/cups/model/Brother
-  cp ${srcdir}/opt/brother/Printers/DCPL2540DW/cupswrapper/brother_lpdwrapper_DCPL2540DW ${pkgdir}/usr/lib/cups/filter
-}

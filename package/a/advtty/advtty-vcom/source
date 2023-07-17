@@ -1,1 +1,0 @@
-("${_srcdir,,}::http://downloadt.advantech.com/download/downloadsr.aspx?File_Id=${_dl}")

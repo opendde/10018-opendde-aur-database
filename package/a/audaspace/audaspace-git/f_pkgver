@@ -1,8 +1,0 @@
-pkgver() {
-  cd $_gitname
-
-  hash=$(git log --pretty=format:'%h' -n 1)
-  revision=$(git rev-list --count HEAD)
-
-  echo 1.3.0.$revision.$hash
-}

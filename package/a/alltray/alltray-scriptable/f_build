@@ -1,9 +1,0 @@
-build() {
-  # A few dev releases came out after 0.70 but that's it
-  cd "$srcdir"/alltray-$pkgver
-  patch -p0 ./src/main.c <"$srcdir"/signal.patch
-  
-  ./configure --prefix=/usr --disable-gconf
-  sed -i -e 's/-lglib-2.0/-lglib-2.0 -lX11/g' src/Makefile lib/Makefile
-  make
-}

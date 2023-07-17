@@ -1,5 +1,0 @@
-package() {
-  cd "$srcdir"/btanks-$pkgver
-  mkdir -p "$pkgdir"/usr/share/btanks
-  cp -r "$srcdir"/btanks-$pkgver/data "$pkgdir"/usr/share/btanks/data
-}

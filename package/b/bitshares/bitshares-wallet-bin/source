@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.deb::https://github.com/bitshares/bitshares-ui/releases/download/2.0.180215/BitShares2-light_${pkgver[@]##*-bin}_amd64.deb")

@@ -1,4 +1,0 @@
-package() {
-  cd "arping-$pkgver"
-  make DESTDIR="$pkgdir/" install
-}

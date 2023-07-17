@@ -1,4 +1,0 @@
-build() {
-  wrestool -x --output=boscaceoil.ico -t14 "BoscaCeoil.exe"
-  icotool -x boscaceoil.ico -o boscaceoil.png
-}

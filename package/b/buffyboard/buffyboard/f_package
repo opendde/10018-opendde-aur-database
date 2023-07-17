@@ -1,3 +1,0 @@
-package() {
-  DESTDIR=${pkgdir} meson install --no-rebuild -C _build
-}

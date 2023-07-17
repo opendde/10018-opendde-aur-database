@@ -1,3 +1,0 @@
-prepare() {
-  unzip "${pkgname}-${pkgver}.zip" -d "ASF"
-}

@@ -1,9 +1,0 @@
-package() {
-  cd "bowtie2-$pkgver-linux-$CARCH"
-
-  install -Dm755 bowtie2{,-*} -t "$pkgdir/usr/bin"
-  rm "$pkgdir/usr/bin"/*-debug
-
-  install -Dm644 {MANUAL,MANUAL.markdown,TUTORIAL} -t "$pkgdir/usr/share/doc/bowtie2"
-  install -Dm644 "doc"/* -t "$pkgdir/usr/share/doc/bowtie2/doc"
-}

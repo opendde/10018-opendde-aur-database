@@ -1,5 +1,0 @@
-package() {
-  cd "${_pkgname}"
-
-  install -Dm755 "target/release/bb" "$pkgdir/usr/bin/bb"
-}

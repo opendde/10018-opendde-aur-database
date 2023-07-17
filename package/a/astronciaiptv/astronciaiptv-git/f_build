@@ -1,5 +1,0 @@
-build() {
-        cd iptv
-        sed -i "s/__DEB_VERSION__/${pkgver}-git/g" usr/lib/astronciaiptv/astroncia_iptv.py
-        make
-}

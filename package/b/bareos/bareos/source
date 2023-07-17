@@ -1,1 +1,0 @@
-("git+https://github.com/bareos/bareos.git#tag=Release/${pkgver}"

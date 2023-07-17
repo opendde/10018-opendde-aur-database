@@ -1,5 +1,0 @@
-build() {
-	cd "asmbf-${pkgver:1}"
-	./configure --prefix=/usr --with-target=release
-	make all
-}

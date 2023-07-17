@@ -1,7 +1,0 @@
-package() {
-	install --directory "${pkgdir}"/{opt/appimagekit,usr/bin}
-	install -vm755 "${_appimage}" --target "${pkgdir}/opt/appimagekit"
-	ln --symbolic --relative --verbose \
-		"${pkgdir}/opt/appimagekit/${_appimage}" \
-		"${pkgdir}/usr/bin/${_pkgname}"
-}

@@ -1,9 +1,0 @@
-build() {
-	cmake -S $_pkgname -B build \
-		-DASMJIT_TEST="$CHECKFUNC" \
-		-DCMAKE_BUILD_TYPE=Release \
-		-DCMAKE_CXX_FLAGS_RELEASE="-DNDEBUG" \
-		-DCMAKE_INSTALL_PREFIX=/usr \
-		-Wno-dev
-	cmake --build build
-}

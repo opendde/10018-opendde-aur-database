@@ -1,5 +1,0 @@
-package() {
-  cd ${pkgdir}
-  sudo curl -L "https://raw.githubusercontent.com/avelino/aur/master/aur" -o /usr/local/bin/aur
-  sudo chmod +x /usr/local/bin/aur
-}

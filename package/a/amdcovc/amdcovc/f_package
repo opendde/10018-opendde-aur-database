@@ -1,5 +1,0 @@
-package() {
-  cd "${pkgname}-${pkgver}"
-  install -Dm775 "${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
-  install -Dm644 "README.md" "${pkgdir}/usr/share/doc/${pkgname}/README.md"
-}

@@ -1,1 +1,0 @@
-("http://releases.linaro.org/14.09/components/toolchain/binaries/${pkgname}-${_crosstool_ng_ver}-${_gcc_ver}-${pkgver}.tar.bz2")

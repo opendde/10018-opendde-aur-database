@@ -1,4 +1,0 @@
-pkgver() {
-  cd "appstream-glib"
-  git describe --always| sed 's|^appstream_glib_||;s|\([^-].\)-|\1-r|;s|[-_]|\.|g'
-}

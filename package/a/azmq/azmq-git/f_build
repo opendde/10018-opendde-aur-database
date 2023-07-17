@@ -1,9 +1,0 @@
-build() {
-  cd "$srcdir/$_gitname-build"
-  mkdir build && cd build
-  cmake -D CMAKE_INSTALL_PREFIX=/usr \
-        -D CMAKE_CXX_FLAGS=-pthread \
-        -D CMAKE_C_FLAGS=-pthread \
-        ..
-  make
-}

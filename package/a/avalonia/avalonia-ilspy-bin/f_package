@@ -1,7 +1,0 @@
-package() {
-  mkdir -p "$pkgdir/opt/"
-  mkdir -p "$pkgdir/usr/bin/"
-  cp -r "$srcdir/linux-x64/" "$pkgdir/opt/$pkgname/"
-  chmod +x "$pkgdir/opt/$pkgname/ILSpy"
-  ln -s "$pkgdir/opt/$pkgname/ILSpy" "$pkgdir/usr/bin/ILSpy"
-}

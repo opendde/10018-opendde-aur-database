@@ -1,1 +1,0 @@
-($_bin_file-aarch64::https://storage.googleapis.com/cloudsql-proxy/v$pkgver/cloud_sql_proxy.linux.arm64)

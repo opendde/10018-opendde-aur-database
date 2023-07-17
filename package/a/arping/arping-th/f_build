@@ -1,5 +1,0 @@
-build() {
-  cd "arping-$pkgver"
-  ./configure --prefix=/usr --program-suffix="-th" --sbindir=/usr/bin
-  make
-}

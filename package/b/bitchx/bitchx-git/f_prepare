@@ -1,5 +1,0 @@
-prepare() {
-  cd "$srcdir/$pkgname"
-  sed -i '1s/^/#include "irc_std.h"\n#include "irc.h"\n/' include/struct.h
-  sed -i '1s/^/#include "ircaux.h"\n/' dll/qbx/qbx.c
-}

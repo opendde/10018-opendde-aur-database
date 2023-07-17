@@ -1,9 +1,0 @@
-prepare() {
-  cd "$srcdir"
-
-  7z -y -i!Data1.cab e AcroRdr${_cloudver}${_nodotver}_en_US.exe
-  7z -y -i!*.otf e Data1.cab
-  7z -y -i!license.html19 e Data1.cab
-  7z -y -i\!*.o* e FontPack${_fpnodotver}_XtdAlf_Lang_${_cloudver}.msi
-  mv adobedevanagari_bolditalic.o adobedevanagari_bolditalic.otf
-}

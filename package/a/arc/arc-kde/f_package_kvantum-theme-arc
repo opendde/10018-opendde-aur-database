@@ -1,7 +1,0 @@
-package_kvantum-theme-arc() {
-    pkgdesc="Arc theme for Kvantum"
-    depends=('kvantum')
-
-    cd ${pkgbase}-${pkgver}
-    DESTDIR=$pkgdir THEMES=Kvantum make install
-}

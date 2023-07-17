@@ -1,8 +1,0 @@
-package_apparmor-pam() {
-	pkgdesc='AppArmor PAM library'
-	depends=('apparmor-libapparmor' 'pam')
-
-	cd "${srcdir}/${pkgbase}-${_majorver}"
-	make -C changehat/pam_apparmor DESTDIR="${pkgdir}/usr" install
-	install -D -m644 changehat/pam_apparmor/README "${pkgdir}/usr/share/doc/apparmor/README.pam_apparmor"
-}

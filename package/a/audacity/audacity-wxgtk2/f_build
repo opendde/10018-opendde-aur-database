@@ -1,5 +1,0 @@
-build() {
-  cd "audacity-Audacity-${pkgver}"/build
-  make
-  conan remove "*" --src --builds --force
-}

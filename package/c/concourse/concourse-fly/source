@@ -1,1 +1,0 @@
-("git+https://github.com/concourse/concourse.git#tag=v${pkgver}")

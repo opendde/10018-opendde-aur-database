@@ -1,1 +1,0 @@
-("$pkgname::git+$url#tag=v$pkgver?signed")

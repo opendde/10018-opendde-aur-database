@@ -1,9 +1,0 @@
-build() {
-  cd "$srcdir/$_pkgname"
-  cmake \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DPYTHON_EXECUTABLE=/usr/bin/python2 \
-    -DQT_MKSPECS_RELATIVE=share/qt4/mkspecs
-  make
-}

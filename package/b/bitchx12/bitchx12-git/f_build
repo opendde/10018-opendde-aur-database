@@ -1,5 +1,0 @@
-build() {
-  cd "$srcdir/$pkgname"
-  ./configure --prefix=/usr --mandir=/usr/share/man --enable-ipv6 --with-plugins --with-ssl
-  make 
-}

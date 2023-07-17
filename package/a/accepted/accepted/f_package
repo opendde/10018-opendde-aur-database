@@ -1,4 +1,0 @@
-package() {
-  cd "$pkgname"
-  install -Dm755 target/release/acc "$pkgdir/usr/bin/acc"
-}

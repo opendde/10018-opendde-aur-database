@@ -1,4 +1,0 @@
-build() {
-  cd ${srcdir}/braus
-  meson build --prefix=/usr
-}

@@ -1,3 +1,0 @@
-pkgver() {
-  date -d "$(meta updated_timestamp)" '+%Y%m%d%H%M%S'
-}

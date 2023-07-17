@@ -1,6 +1,0 @@
-package() {
-  cd $pkgname
-  install -Dm755 ${pkgname%-*} "$pkgdir"/usr/bin/${pkgname%-git}
-  install -Dm644 README.md "$pkgdir"/usr/share/doc/$pkgname/README
-  install -m644 formatting.notes "$pkgdir"/usr/share/doc/$pkgname/
-}

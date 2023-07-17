@@ -1,6 +1,0 @@
-package() {
-  install -Dm755 "${_pkgname}.sh" "${pkgdir}/etc/profile.d/${_pkgname}.sh"
-  install -Dm755 "${_pkgname}.csh" "${pkgdir}/etc/profile.d/${_pkgname}.csh"
-  install -Dm644 "${_pkgname}.conf" "${pkgdir}/etc/ld.so.conf.d/${_pkgname}.conf"
-  install -Dm644 license.html "${pkgdir}/usr/share/licenses/${_pkgname}/license.html"
-}

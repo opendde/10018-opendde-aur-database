@@ -1,1 +1,0 @@
-("${_pkgname}-${pkgver}.xpi::https://addons.mozilla.org/firefox/downloads/file/${_file}/bilder_ruckwartssuche_${_pkgname}-${pkgver}-fx.xpi")

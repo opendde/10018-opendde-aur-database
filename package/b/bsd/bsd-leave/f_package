@@ -1,7 +1,0 @@
-package() {
-	cd "$pkgname-$_debver"
-
-    install -Dm644 debian/copyright ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
-    install -Dm755 leave "$pkgdir"/usr/bin/leave
-    install -Dm644 leave.1 "$pkgdir"/usr/share/man/man1/leave.1
-}

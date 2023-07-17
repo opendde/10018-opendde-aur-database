@@ -1,6 +1,0 @@
-build() {
-    cd "$srcdir/$_pkgname"
-    ./bootstrap
-    ./configure --prefix=/usr --libexecdir=/usr/lib --sbindir=/usr/bin
-    make
-}

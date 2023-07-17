@@ -1,7 +1,0 @@
-package() {
-  cd "$pkgname-$pkgver"
-  install -d "$pkgdir/opt/async-profiler/build"
-  install -m 644 build/async-profiler.jar build/converter.jar "$pkgdir/opt/async-profiler/build"
-  install build/libasyncProfiler.so build/jattach build/fdtransfer "$pkgdir/opt/async-profiler/build"
-  install profiler.sh "$pkgdir/opt/async-profiler/profiler.sh"
-}

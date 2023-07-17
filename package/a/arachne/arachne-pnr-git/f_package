@@ -1,4 +1,0 @@
-package() {
-	cd "$srcdir/${pkgname%-git}"
-	make ICEBOX=/usr/share/icebox PREFIX=$pkgdir/usr install
-}

@@ -1,7 +1,0 @@
-prepare() {
-    local base=$(cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd)
-    local repo="$srcdir/acserver" # working repo location
-    local target=$([[ $pkgver == "0.0" ]] && printf "master" || printf "$pkgver")
-    git -C "$repo" checkout --quiet "$target" # checkout proper version
-    git -C "$repo" status # verify working repo change
-}

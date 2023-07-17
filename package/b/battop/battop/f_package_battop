@@ -1,7 +1,0 @@
-package_battop() {
-  cd "rust-$pkgname-$pkgver"
-
-  install -D -m755 "target/release/$pkgname" "$pkgdir/usr/bin/$pkgname"
-  install -D -m644 LICENSE-MIT "$pkgdir/usr/share/licenses/$pkgname/LICENSE-MIT"
-  install -D -m644 LICENSE-APACHE "$pkgdir/usr/share/licenses/$pkgname/LICENSE-APACHE"
-}

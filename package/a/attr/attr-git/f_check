@@ -1,5 +1,0 @@
-check() {
-  cd "attr"
-
-  #make check
-}

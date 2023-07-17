@@ -1,8 +1,0 @@
-package() {
-  cd "${pkgname}"
-  install -d "$pkgdir/usr/bin"
-  install -m755 bin/autopass "$pkgdir/usr/bin/autopass"
-  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-  install -Dm644 autopass.socket "$pkgdir/usr/lib/systemd/user/autopass.socket"
-  install -Dm644 autopass.service "$pkgdir/usr/lib/systemd/user/autopass.service"
-}

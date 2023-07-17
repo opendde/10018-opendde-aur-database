@@ -1,5 +1,0 @@
-package() {
-   cd "$pkgname"
-   install -Dm755 target/release/backdown "${pkgdir}/usr/bin/backdown"
-   install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}

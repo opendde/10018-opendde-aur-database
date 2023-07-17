@@ -1,4 +1,0 @@
-package() {
-    cd "${srcdir}/amgcl/build"
-    DESTDIR=${pkgdir} make install
-}

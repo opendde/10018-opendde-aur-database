@@ -1,4 +1,0 @@
-pkgver() {
-  cd avisynthplus
-  echo $(git describe --long --tags | tr - .)
-}

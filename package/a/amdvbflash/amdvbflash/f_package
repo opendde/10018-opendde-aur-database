@@ -1,5 +1,0 @@
-package() {
-  cd amdvbflash
-  mkdir -p "$pkgdir/usr/bin"
-  install -m 755 "amdvbflash" "$pkgdir/usr/bin"
-}

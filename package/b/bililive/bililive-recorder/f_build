@@ -1,6 +1,0 @@
-build() {
-	cd ${srcdir}/BililiveRecorder
-
-	./webui/build.sh
-	dotnet publish -c Release BililiveRecorder.Cli/BililiveRecorder.Cli.csproj -r linux-x64
-}

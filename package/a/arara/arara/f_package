@@ -1,8 +1,0 @@
-package() {
-  install -d -m755 "${pkgdir}"/usr/{share/java/arara,share/arara/tools,docs}
-  install -Dm 755 "arara_launch" "${pkgdir}/usr/bin/arara"
-  cp -r "${srcdir}/arara-"${pkgver}"/docs" "${pkgdir}/usr/"
-  cp -r "${srcdir}/arara-"${pkgver}"/tools" "${pkgdir}/usr/share/arara/"
-  cp -r "${srcdir}/arara-"${pkgver}"/application" "${pkgdir}/usr/share/java/arara/"
-  cp -r "${srcdir}/arara-"${pkgver}"/rules" "${pkgdir}/usr/share/java/arara/application/target/"
-}

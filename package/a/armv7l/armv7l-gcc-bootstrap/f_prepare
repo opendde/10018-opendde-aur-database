@@ -1,6 +1,0 @@
-prepare() {
-  cd $_basedir
-
-  rm -rf "$srcdir"/gcc-build
-  mkdir "$srcdir"/gcc-build
-}

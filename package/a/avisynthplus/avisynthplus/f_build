@@ -1,8 +1,0 @@
-build() {
-    cmake -B build -S "AviSynthPlus-${pkgver}" \
-        -DCMAKE_BUILD_TYPE:STRING='None' \
-        -DCMAKE_INSTALL_PREFIX:PATH='/usr' \
-        -Wno-dev
-    make -C build
-    make -C "AviSynthPlus-${pkgver}/distrib/docs/english" man
-}

@@ -1,7 +1,0 @@
-package() {
-  cp -R "${srcdir}"/usr "${pkgdir}"
-  cp -R "${srcdir}"/opt "${pkgdir}"
-
-  install -Dm644 cupswrapper-license.txt "${pkgdir}"/usr/share/licenses/"${pkgname}"/cupswrapper-licence.txt
-  install -Dm644 lpr-license.txt         "${pkgdir}"/usr/share/licenses/"${pkgname}"/lpr-licence.txt
-}

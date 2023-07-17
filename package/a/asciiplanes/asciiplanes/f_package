@@ -1,4 +1,0 @@
-package() {
-  cd "$pkgname-$pkgver"
-  install -m 755 -D "$pkgname.sf" "$pkgdir/usr/bin/$pkgname"
-}

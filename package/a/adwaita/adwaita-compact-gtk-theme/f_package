@@ -1,7 +1,0 @@
-package() {
-  cd "${srcdir}/adwaita-compact-${pkgver}"
-  
-  install -d ${pkgdir}/usr/share/themes/${pkgname}
-  cp -rf * ${pkgdir}/usr/share/themes/${pkgname}
-  
-}

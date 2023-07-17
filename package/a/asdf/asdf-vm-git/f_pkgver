@@ -1,4 +1,0 @@
-pkgver() {
-	cd "${srcdir}"/${_binname}
-	git describe --long --tags 2>/dev/null | sed -r 's/^v//;s/-/./g'
-}

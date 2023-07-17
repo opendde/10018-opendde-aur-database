@@ -1,5 +1,0 @@
-package() {
-    install -Dm644 "$srcdir/$pkgname.service" "$pkgdir/etc/systemd/system/$pkgname.service"
-    install -Dm644 "$srcdir/$pkgname.timer" "$pkgdir/etc/systemd/system/$pkgname.timer"
-    install -Dm755 "$srcdir/$pkgname" "$pkgdir/usr/bin/$pkgname"
-}

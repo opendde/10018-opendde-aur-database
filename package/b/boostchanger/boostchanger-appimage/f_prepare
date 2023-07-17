@@ -1,5 +1,0 @@
-prepare() {
-	pkgverold=1.2
-	rm -rf ${pkgdir}/opt/boostchanger-v$pkgverold
-	tar -xf boostchanger-v$pkgver.tar.gz
-}

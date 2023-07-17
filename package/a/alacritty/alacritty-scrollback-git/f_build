@@ -1,4 +1,0 @@
-build() {
-  cd alacritty
-  env CARGO_INCREMENTAL=0 cargo build --locked --release
-}

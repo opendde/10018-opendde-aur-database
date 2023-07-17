@@ -1,8 +1,0 @@
-check() {
-  for i in ${_golibs[@]}; do
-      # Ignore failing test of kingpin V2
-      if [ "$i" != "gopkg.in/alecthomas/kingpin.v2" ]; then
-          go test $i
-      fi
-  done
-}

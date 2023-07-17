@@ -1,7 +1,0 @@
-package() {
-  cd $pkgname-$pkgver
-  make DESTDIR="$pkgdir" install
-  install -m644 -D "COPYING" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-  install -m644 -D "../bbkeys.desktop" "$pkgdir/usr/share/applications/bbkeys.desktop"
-  install -m644 -D "../bbkeys.desktop" "$pkgdir/etc/xdg/autostart/bbkeys.desktop"
-}

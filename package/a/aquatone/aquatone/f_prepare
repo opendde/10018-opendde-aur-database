@@ -1,8 +1,0 @@
-prepare() {
-  mkdir -p "gopath/src/github.com/michenriksen"
-  ln -rTsf "${pkgname}-${pkgver}" "gopath/src/github.com/michenriksen/${pkgname}"
-
-  export GOPATH="${srcdir}/gopath"
-  cd "${GOPATH}/src/github.com/michenriksen/${pkgname}"
-  go get -d ./...
-}

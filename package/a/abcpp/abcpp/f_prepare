@@ -1,4 +1,0 @@
-prepare() {
-  cd $pkgname-$pkgver
-  patch -p1 -N -r - -i "$srcdir"/abcpp-makefile-cflags.patch
-}

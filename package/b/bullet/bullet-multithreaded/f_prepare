@@ -1,5 +1,0 @@
-prepare() {
-    cd ${_name}
-    # fix soname of pybullet
-    sed -i '/SET_TARGET_PROPERTIES(pybullet PROPERTIES PREFIX/d' examples/pybullet/CMakeLists.txt
-}

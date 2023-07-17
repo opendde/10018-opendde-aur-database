@@ -1,6 +1,0 @@
-package() {
-  install -d -v -m755 "${pkgdir}/usr/bin"
-  cd "${pkgdir}/usr/bin"
-  ln -sv "abeep" "beep"
-  install -D -v -m644 "${srcdir}/license-metapackage-pd.txt" "${pkgdir}/usr/share/licenses/${pkgname}/copying.public-domain.txt"
-}

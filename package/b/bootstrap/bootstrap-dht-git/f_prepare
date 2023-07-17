@@ -1,5 +1,0 @@
-prepare() {
-  cd "bootstrap-dht"
-
-  patch -Np1 -i "$srcdir/boost.patch"
-}

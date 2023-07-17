@@ -1,1 +1,0 @@
-("http://download.java.net/java/jdk${_major}/archive/${_build}/binaries/${_pkgname}-${_pkgver}+${_build}_linux-x86_bin.tar.gz"

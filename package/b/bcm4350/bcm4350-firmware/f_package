@@ -1,6 +1,0 @@
-package() {
-    cd "$srcdir"
-    install -Dm644 BCM4350C5_003.006.007.0095.1703.hcd \
-        "${pkgdir}/usr/lib/firmware/brcm/BCM-0a5c-6412.hcd"
-    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}

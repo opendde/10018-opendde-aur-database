@@ -1,4 +1,0 @@
-package() {
-	cd "$_builddir"
-	make prefix=/usr DESTDIR="$pkgdir" install
-}

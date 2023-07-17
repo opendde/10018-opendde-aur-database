@@ -1,4 +1,0 @@
-package() {
-	cp -R $srcdir/usr $pkgdir
-	if [ -d $srcdir/opt ]; then cp -R $srcdir/opt $pkgdir; fi
-}

@@ -1,5 +1,0 @@
-check() {
-	cd "${srcdir}/${pkgname}"
-
-    cmake --build build --target test
-}

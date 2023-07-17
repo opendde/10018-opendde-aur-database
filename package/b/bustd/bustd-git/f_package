@@ -1,7 +1,0 @@
-package() {
-    install -Dm0755 -t "$pkgdir/usr/bin/" "bustd/target/release/bustd"
-    install -Dm0644 -t "$pkgdir/usr/share/licenses/bustd" "bustd/LICENSE"
-    install -Dm0644 -t "$pkgdir/usr/share/doc/bustd" "bustd/README.md"
-    install -Dm0644 -t "$pkgdir/usr/lib/systemd/system/" bustd.service
-    echo "To enable and start bustd run 'sudo systemctl enable --now bustd.service'."
-}

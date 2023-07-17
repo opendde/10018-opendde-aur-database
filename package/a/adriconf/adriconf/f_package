@@ -1,8 +1,0 @@
-package() {
-    cd "${pkgname}-${pkgver}/build"
-    
-    make DESTDIR="$pkgdir" install
-    
-    install -D -m644 "${srcdir}/adriconf.desktop" -t "${pkgdir}/usr/share/applications"
-    install -D -m644 "${srcdir}/adriconf.png"     -t "${pkgdir}/usr/share/pixmaps"
-}

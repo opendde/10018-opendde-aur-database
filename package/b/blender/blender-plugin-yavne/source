@@ -1,1 +1,0 @@
-("${name}::git+https://github.com/fedackb/yavne.git${fragment}")

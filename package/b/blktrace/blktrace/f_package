@@ -1,4 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname-$pkgver"
-  make prefix=/usr mandir=/usr/share/man DESTDIR=$pkgdir/ install
-}

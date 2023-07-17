@@ -1,4 +1,0 @@
-pkgver() {
-  cd bash-xdg-dirs/
-  printf '%s.%s.%s.g%s' "${_basever}" "${_patchlevel}"  "$(git rev-list --count feature/xdg-dirs)" "$(git rev-parse --short HEAD)"
-}

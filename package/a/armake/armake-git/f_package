@@ -1,5 +1,0 @@
-package() {
-    cd "${srcdir}/${_pkgname}"
-    mkdir -p "${pkgdir}/usr/bin"
-    make DESTDIR="${pkgdir}" install
-}

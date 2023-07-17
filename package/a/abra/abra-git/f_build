@@ -1,4 +1,0 @@
-build() {
-	cd "$srcdir/go-abra";
-	make build;
-}

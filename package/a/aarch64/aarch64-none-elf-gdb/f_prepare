@@ -1,4 +1,0 @@
-prepare() {
-  cd gdb-$pkgver
-  sed -i "/ac_cpp=/s/\$CPPFLAGS/\$CPPFLAGS -O2/" libiberty/configure
-}

@@ -1,5 +1,0 @@
-package() {
-  cd "${pkgname}"
-  make DESTDIR="${pkgdir}" install
-  rm "${pkgdir}/usr/lib/apr.exp" # conflict with apr package and seems useless on linux
-}

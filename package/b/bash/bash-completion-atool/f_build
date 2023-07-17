@@ -1,5 +1,0 @@
-build() {
-  cd "${srcdir}"
-
-  install -Dm644 atool "${pkgdir}"/etc/bash_completion.d/atool
-}

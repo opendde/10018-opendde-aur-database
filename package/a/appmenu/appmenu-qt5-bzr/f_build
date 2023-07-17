@@ -1,5 +1,0 @@
-build() {
-  cd build
-  qmake-qt5 ../${_pkgname}/appmenu.pro
-  make
-}

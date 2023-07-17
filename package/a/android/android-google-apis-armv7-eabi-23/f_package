@@ -1,6 +1,0 @@
-package() {
-  mkdir -p "${pkgdir}/opt/android-sdk/system-images/android-${_sdkint}/google_apis"
-  cp -dpr --no-preserve=ownership "${srcdir}/armeabi-v7a" "${pkgdir}/opt/android-sdk/system-images/android-${_sdkint}/google_apis/armeabi-v7a"
-  chmod -R ugo+rX "${pkgdir}/opt"
-  install -m644 "${srcdir}/source.properties" "${pkgdir}/opt/android-sdk/system-images/android-${_sdkint}/google_apis/armeabi-v7a/source.properties"
-}

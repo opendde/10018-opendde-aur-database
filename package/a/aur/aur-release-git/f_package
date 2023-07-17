@@ -1,5 +1,0 @@
-package() {
-  cd "$srcdir/$_gitname-build"
-  make DESTDIR="$pkgdir/" install
-  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$_gitname/LICENSE"
-}

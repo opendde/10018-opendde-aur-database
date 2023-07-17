@@ -1,8 +1,0 @@
-prepare() {
-  cd $srcdir/$pkgname-$pkgver
-
-  sed -e '/set( CMAKE_BUILD_TYPE Release )/a set( CMAKE_CXX_FLAGS_RELEASE "-std=c++98 ${CMAKE_CXX_FLAGS_RELEASE}" )' \
-      -i CMakeLists.txt
-
-  mkdir -p build
-}

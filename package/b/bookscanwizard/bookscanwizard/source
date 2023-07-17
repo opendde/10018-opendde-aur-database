@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.zip::https://sourceforge.net/projects/bookscanwizard/files/BookScanWizard_${pkgver}.zip/download")

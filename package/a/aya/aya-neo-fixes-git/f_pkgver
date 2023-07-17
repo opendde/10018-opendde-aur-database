@@ -1,4 +1,0 @@
-pkgver() {
-	cd "$srcdir/${_gitdir}"
-	printf "%s.r%s.%s" $(date '+%y.%m') "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-}

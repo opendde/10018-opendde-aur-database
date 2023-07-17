@@ -1,6 +1,0 @@
-package() {
-  cd $pkgname
-  make DESTDIR="$pkgdir" PREFIX=/usr MANPREFIX=/usr/share/man install
-  install -Dm644 "$srcdir/2bwm.desktop" "$pkgdir/usr/share/xsessions/2bwm.desktop"
-  install -Dm644 "$srcdir/2bwm.copying" "$pkgdir/usr/share/licenses/$pkgname/COPYING"
-}

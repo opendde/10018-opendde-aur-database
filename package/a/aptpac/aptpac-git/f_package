@@ -1,8 +1,0 @@
-package() {
-    cd "${_gitname}"
-    install -m 755 -D aptpac "${pkgdir}/usr/bin/aptpac"
-    install -m 755 -D LICENSE "${pkgdir}/usr/share/licenses/aptpac/LICENSE"
-    cd "${pkgdir}/usr/bin/"
-    ln -s "aptpac" "apt"
-    ln -s "aptpac" "apt-get"
-}

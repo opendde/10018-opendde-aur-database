@@ -1,1 +1,0 @@
-("${pkgname}::git+https://github.com/4refr0nt/ESPlorer#commit=${_gitver}")

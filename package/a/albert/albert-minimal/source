@@ -1,1 +1,0 @@
-("mirrors/albert::git+https://github.com/albertlauncher/albert.git#tag=v${pkgver}"

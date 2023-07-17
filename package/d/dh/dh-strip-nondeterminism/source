@@ -1,1 +1,0 @@
-(${pkgname}::"git+https://salsa.debian.org/reproducible-builds/strip-nondeterminism.git#commit=${_gitcommit}")

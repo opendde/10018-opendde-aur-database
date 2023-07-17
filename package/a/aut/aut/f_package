@@ -1,5 +1,0 @@
-package() {
-	cd $srcdir/$pkgname-$pkgver/src
-	mkdir -p $pkgdir/usr/bin/
-	install aut $pkgdir/usr/bin/
-}

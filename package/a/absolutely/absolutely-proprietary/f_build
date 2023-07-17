@@ -1,4 +1,0 @@
-build() {
-	cd "$srcdir/$_sourcedirectory/"
-	python setup.py build
-}

@@ -1,4 +1,0 @@
-build() {
-  cd "$srcdir/${pkgname%-git}"
-  make ICEBOX=/usr/share/icebox PREFIX=/usr
-}

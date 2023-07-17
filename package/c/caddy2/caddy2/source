@@ -1,1 +1,0 @@
-("git+https://github.com/caddyserver/caddy#tag=${_tag}?signed"

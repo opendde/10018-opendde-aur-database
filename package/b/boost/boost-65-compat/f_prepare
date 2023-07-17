@@ -1,6 +1,0 @@
-prepare() {
-    cd $srcdir/${_pkgname}_${_boostver}/libs/python
-    patch -p1 < "${srcdir}"/660487c43fde76f3e64f1cb2e644500da92fe582.patch
-    cd $srcdir/${_pkgname}_${_boostver}
-    patch -p1 < "${srcdir}"/boost-1.73-python3.10-Py_fopen.patch
-}

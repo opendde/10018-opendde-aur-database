@@ -1,5 +1,0 @@
-build() {
-  cd linux-$pkgver
-
-  make ARCH=$_kernel_arch mrproper
-}

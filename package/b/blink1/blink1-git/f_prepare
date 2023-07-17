@@ -1,5 +1,0 @@
-prepare() {
-	cd ${srcdir}/blink1/commandline/
-
-	sed -i 's/-static//g' Makefile
-}

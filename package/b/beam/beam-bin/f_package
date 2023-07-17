@@ -1,7 +1,0 @@
-package() {
-    msg2 'Extracting the data.tar.xz...'
-    bsdtar -xzf data.tar.gz -C "${pkgdir}/"
-
-    msg2 'Install systemd service file...'
-    install -Dm644 "${srcdir}/beam.service" "${pkgdir}/usr/lib/systemd/user/beam.service"
-}

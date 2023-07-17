@@ -1,7 +1,0 @@
-package() {
-	tar xf data.tar.xz -C "${pkgdir}"
-
-	install -Dm644 ${pkgdir}/opt/assistant/license/License.rtf "$pkgdir/usr/share/licenses/$pkgname/License.rtf"
-	install -Dm644 ${pkgdir}/opt/assistant/scripts/assistant.desktop "$pkgdir/usr/share/applications/remote-assistant.desktop"
-	find "${pkgdir}" -type d -print0 |xargs -0 chmod 755
-}

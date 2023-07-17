@@ -1,6 +1,0 @@
-build() {
-  cd $srcdir/
-  msg "Extracting..."
-  tar zxf data.tar.gz
-  msg2 "Done extracting!"
-}

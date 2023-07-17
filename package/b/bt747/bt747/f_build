@@ -1,4 +1,0 @@
-build() {
-  cd "$srcdir"
-  convert "${pkgname}_128x128.gif" "${pkgname}_128x128.png"
-}

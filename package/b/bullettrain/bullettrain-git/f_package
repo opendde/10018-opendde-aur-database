@@ -1,4 +1,0 @@
-package() {
-    cd "$srcdir"
-    install -Dm755 "$srcdir/$_pkg" "$pkgdir/usr/bin/$_pkg"
-}

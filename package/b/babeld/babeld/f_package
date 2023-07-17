@@ -1,9 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname-$pkgver"
-
-  make PREFIX="/usr" TARGET="$pkgdir" install
-
-  install -Dm644 ../babeld.conf "${pkgdir}"/etc/babeld.conf
-  install -Dm644 ../babeld.service "${pkgdir}"/usr/lib/systemd/system/babeld.service
-  install -D -m644 LICENCE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}

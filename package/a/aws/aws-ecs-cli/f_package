@@ -1,5 +1,0 @@
-package() {
-  cd "$srcdir"
-  chmod +x "ecs-cli-$_md5sum"
-  install -Dm755 "ecs-cli-$_md5sum" "$pkgdir/usr/bin/ecs-cli"
-}

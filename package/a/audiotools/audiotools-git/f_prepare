@@ -1,7 +1,0 @@
-prepare() {
-  cd audiotools
-
-  sed -e 's|-m 644|-Dm 644|g' \
-      -i Makefile \
-      -i docs/Makefile
-}

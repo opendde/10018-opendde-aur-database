@@ -1,4 +1,0 @@
-build() {
-  arch-meson at-spi2-atk build
-  meson compile -C build
-}

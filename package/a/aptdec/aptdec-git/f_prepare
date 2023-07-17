@@ -1,7 +1,0 @@
-prepare() {
-    cd aptdec
-
-    git submodule init
-    git config submodule.src/argparse.url "$srcdir/argparse"
-    git -c protocol.file.allow=always submodule update
-}

@@ -1,7 +1,0 @@
-package() {
-  cd "${srcdir}"
-
-  # Install bst
-  install -Dm755 bst "${pkgdir}/usr/bin/bst"
-  install -Dm755 baad "${pkgdir}/usr/bin/baad"
-}

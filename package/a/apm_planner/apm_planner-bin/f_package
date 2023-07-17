@@ -1,4 +1,0 @@
-package() {
-	msg2 "Extracting the data.tar.xz..."
-	bsdtar -xf data.tar.xz -C "$pkgdir/"
-}

@@ -1,5 +1,0 @@
-package() {
-  cd "${srcdir}"
-
-  install -Dm644 "99-avrispmkII.rules" "${pkgdir}/etc/udev/rules.d/99-avrispmkII.rules"
-}

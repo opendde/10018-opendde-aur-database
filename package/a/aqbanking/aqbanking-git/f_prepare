@@ -1,3 +1,0 @@
-prepare() {
-  ACLOCAL_FLAGS='-I /usr/share/aclocal' make -C $_sourcedir -fMakefile.cvs
-}

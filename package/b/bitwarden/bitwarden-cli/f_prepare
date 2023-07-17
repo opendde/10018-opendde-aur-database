@@ -1,4 +1,0 @@
-prepare() {
-  rmdir "${srcdir}/cli-${pkgver}/jslib"
-  ln -s "${srcdir}/jslib-${_jslibcommit}" "${srcdir}/cli-${pkgver}/jslib"
-}

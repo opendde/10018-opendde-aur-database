@@ -1,8 +1,0 @@
-package() {
-  cd "bloscpack"
-
-  python "setup.py" install \
-    --optimize 1 \
-    --root "$pkgdir"
-  install -Dm644 "LICENSE" -t "$pkgdir/usr/share/licenses/bloscpack"
-}

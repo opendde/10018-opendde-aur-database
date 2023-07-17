@@ -1,6 +1,0 @@
-prepare() {
-   cd ${pkgbase%-python2}_${_boostver}
-
-   # https://github.com/boostorg/ublas/pull/97
-   patch -Np2 -i ../${pkgbase%-python2}-ublas-c++20-iterator.patch
-}

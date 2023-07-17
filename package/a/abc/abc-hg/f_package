@@ -1,5 +1,0 @@
-package() {
-  mkdir -p $pkgdir/usr/bin
-  cd $srcdir/$_pkgname
-  cp abc $pkgdir/usr/bin
-}

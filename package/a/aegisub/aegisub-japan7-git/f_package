@@ -1,6 +1,0 @@
-package() {
-  cd aegisub
-
-  DESTDIR="${pkgdir}" ninja -C builddir install
-  install -Dm 644 LICENCE -t "${pkgdir}"/usr/share/licenses/aegisub-git/
-}

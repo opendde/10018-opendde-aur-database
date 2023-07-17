@@ -1,6 +1,0 @@
-prepare() {
-  cd "$srcdir/bsc"
-  git submodule init
-  git config submodule.externals/vendor/yices/v2.6/yices2.url "$srcdir/yices2"
-  git submodule update
-}

@@ -1,4 +1,0 @@
-build() {
-  cd "${srcdir}/build/"
-  make M=akari modules
-}

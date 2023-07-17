@@ -1,8 +1,0 @@
-package() {
-    install -d ${pkgdir}/{etc,usr/share,var/lib,var/log}/blynk
-    install -d ${pkgdir}/usr/bin
-    install -Dm644 blynk.service ${pkgdir}/usr/lib/systemd/system/blynk.service
-    install -Dm644 server-${pkgver}.jar ${pkgdir}/usr/share/blynk/blynk-server.jar
-    install -Dm644 server.properties ${pkgdir}/etc/blynk/
-    install -Dm755 blynk-start.sh ${pkgdir}/usr/bin/
-}

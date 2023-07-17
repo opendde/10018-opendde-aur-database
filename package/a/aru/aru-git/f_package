@@ -1,4 +1,0 @@
-package() {
-    cd aru
-	install -Dm755 aru "$pkgdir/usr/bin/aru"
-}

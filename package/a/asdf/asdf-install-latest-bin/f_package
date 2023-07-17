@@ -1,4 +1,0 @@
-package() {
-  install -Dm755 "./asdf-install-latest" "${pkgdir}/usr/bin/asdf-install-latest"
-
-}

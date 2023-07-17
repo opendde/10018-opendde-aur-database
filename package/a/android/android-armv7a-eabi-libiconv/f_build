@@ -1,7 +1,0 @@
-build() {
-  cd $srcdir/${_pkgname}-${pkgver}
-  source android-env ${_pkg_arch}
-
-  android-${_pkg_arch}-configure
-  make $MAKEFLAGS
-}

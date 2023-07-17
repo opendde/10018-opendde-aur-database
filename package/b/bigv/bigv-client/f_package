@@ -1,5 +1,0 @@
-package() {
-  cd "$srcdir/bigv_0.9.2-1946"
-
-  ruby ./setup.rb install --prefix="$pkgdir/"
-}

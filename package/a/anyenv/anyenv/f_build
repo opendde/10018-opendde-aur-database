@@ -1,4 +1,0 @@
-build() {
-    cd $srcdir
-    tar -x --strip-components 1 -zf "v$pkgver.tar.gz"
-}

@@ -1,8 +1,0 @@
-package() {
-  cd "${srcdir}/${pkgname}-${pkgver}/build"
-
-  make DESTDIR="${pkgdir}" install
-
-  # The packaged libmsym conflicts with the system version.
-  find ${pkgdir} -type d -name "*msym*" -exec rm -r '{}' +
-}

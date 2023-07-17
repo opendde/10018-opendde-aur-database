@@ -1,5 +1,0 @@
-prepare() {
-  gendesk -f -n --pkgname=${pkgbase/-git} --pkgdesc="${amctc_pkgdesc/ -*}" \
-    --name=amctc --genericname="${amctc_pkgdesc/ -*}" --comment="$amctc_pkgdesc" \
-    --categories="Game;ActionGame"
-}

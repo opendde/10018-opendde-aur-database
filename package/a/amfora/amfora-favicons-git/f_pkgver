@@ -1,6 +1,0 @@
-pkgver() {
-    cd "$srcdir/amfora-favicons"
-
-    _tag=$(git tag --sort=v:refname | tail -n1)
-    printf '%s.r%s.g%s' "${_tag#v}" "$(git rev-list "$_tag"..HEAD --count)" "$(git rev-parse --short HEAD)"
-}

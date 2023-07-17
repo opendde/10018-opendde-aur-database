@@ -1,4 +1,0 @@
-build() {
-  cd "airvpn-client"
-  xbuild /p:Configuration="Release" /p:Platform="$_pkgarch" src/Eddie_VS2015.sln
-}

@@ -1,4 +1,0 @@
-package() {
-  mkdir -p "$pkgdir/usr/bin/"
-  cp "$srcdir/$_gitname/build/src/asymmetricfs" "$pkgdir/usr/bin/"
-}

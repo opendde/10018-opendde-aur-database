@@ -1,5 +1,0 @@
-package() {
-  mkdir -p "${pkgdir}/usr/bin"
-  cp "${srcdir}/arpchat-linux" "${pkgdir}/usr/bin/arpchat"
-  chmod +x "${pkgdir}/usr/bin/arpchat"
-}

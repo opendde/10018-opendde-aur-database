@@ -1,4 +1,0 @@
-prepare() {
-  rustup install stable
-  rustup default stable
-}

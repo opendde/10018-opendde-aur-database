@@ -1,6 +1,0 @@
-prepare() {
-    bsdtar -xpf "data.tar.xz"
-
-    patch -d "usr" -p1 <"0001-baidunetdisk-bin-desktop-file.patch"
-    sed -i '/Name/a Name[zh_CN]=百度网盘' usr/share/applications/${_pkgname}.desktop
-}

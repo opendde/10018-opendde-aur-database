@@ -1,6 +1,0 @@
-package() {
-	cd "${_pkgname}"
-	install -m 755 -D ${_pkgname}_bin "${pkgdir}/usr/bin/${_pkgname}"
-	install -m 644 -D ${_pkgname}.py "${pkgdir}/usr/lib/python${_python3_version}/site-packages/${_pkgname}/${_pkgname}.py"
-	install -m 644 -D LICENSE "${pkgdir}/usr/share/licenses/${_pkgname}/LICENSE"
-} 

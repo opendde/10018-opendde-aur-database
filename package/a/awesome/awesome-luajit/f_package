@@ -1,5 +1,0 @@
-package() {
-	cd "$_archive"
-	make -C build DESTDIR="$pkgdir" install
-	install -Dm0644 -t "$pkgdir/usr/share/xsessions/" awesome.desktop
-}

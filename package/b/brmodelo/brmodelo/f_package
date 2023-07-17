@@ -1,8 +1,0 @@
-package() {
-	cd "${srcdir}"
-	install -D -m644 "$pkgname-$pkgver.jar" "${pkgdir}/opt/brModelo/brModelo.jar"
-	install -D -m644 "Ajuda.brMh" "${pkgdir}/opt/brModelo/Ajuda.brMh"
-	install -D -m755 "brModelo.sh" "${pkgdir}/usr/bin/brModelo"
-	install -D -m644 "brModelo.desktop" "${pkgdir}/usr/share/applications/brModelo.desktop"
-	install -D -m644 "icon.png" "${pkgdir}/usr/share/pixmaps/brModelo.png"
-}

@@ -1,4 +1,0 @@
-package() {
-  DESTDIR="$pkgdir" cmake --install build
-  install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 ${pkgname%-git}/{LICENSE,PATENTS}
-}

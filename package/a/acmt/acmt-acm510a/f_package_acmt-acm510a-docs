@@ -1,4 +1,0 @@
-package_acmt-acm510a-docs () {
-	pkgdesc="ACM510AA Channel Dynamics (Documentation)"
-	install -Dm644 ${srcdir}/ACM510A/manual.pdf ${pkgdir}/usr/share/doc/${pkgbase}/manual.pdf
-}

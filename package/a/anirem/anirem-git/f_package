@@ -1,9 +1,0 @@
-package() {
-  cd build
-  make INSTALL_ROOT="$pkgdir" install
-  ln -s Ani-Rem "$pkgdir/usr/bin/anirem"
-
-  # license
-  cd "../$_pkgfqn"
-  install -D -m644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-}

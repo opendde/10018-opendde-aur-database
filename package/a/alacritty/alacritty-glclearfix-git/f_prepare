@@ -1,4 +1,0 @@
-prepare() {
-  cd "$_pkgname"/alacritty
-  git checkout overshoot-glclear
-}

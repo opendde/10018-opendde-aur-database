@@ -1,7 +1,0 @@
-build() {
-	cd "$srcdir"
-
-	sed -e 's|/path/to/amttool|/usr/bin/amttool|' \
-	    -e "s|/path/to/file/amt_traps.sh|/usr/share/$pkgname/amt_traps.sh|" \
-	    -i amt_traps_v1.4.sh
-}

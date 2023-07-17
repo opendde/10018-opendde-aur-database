@@ -1,7 +1,0 @@
-prepare() {
-    cd "$srcdir"/ncbi-blast-"$pkgver"+-src/c++ || exit
-    ./configure \
-        --prefix=/usr \
-        --with-dll \
-        --with-mt
-}

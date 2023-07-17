@@ -1,6 +1,0 @@
-build() {
-  _setvars
-	sed -i "s/=blender/=blender-lts/" $_base_dir/blender.desktop
-	sed -i "s/Name=Blender/Name=Blender LTS/" $_base_dir/blender.desktop
-  #TODO MAKE SOME sed to .desktop to replace blender with blender-lts
-}

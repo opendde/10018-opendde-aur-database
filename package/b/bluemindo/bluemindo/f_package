@@ -1,5 +1,0 @@
-package() {
-  cd $pkgname-1.0RC1
-
-  make DESTDIR="$pkgdir" install
-}

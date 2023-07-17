@@ -1,1 +1,0 @@
-(http://www.andscacs.com/downloads/${pkgname%-*}${pkgver/.}.zip)

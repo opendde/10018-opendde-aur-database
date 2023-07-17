@@ -1,3 +1,0 @@
-prepare() {
-  patch -p0 -d "${srcdir}/${pkgname%-devel}-$_suffix" -i "${srcdir}/bigloo-emacs.patch"
-}

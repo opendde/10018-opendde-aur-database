@@ -1,3 +1,0 @@
-prepare() {
-    cd "${srcdir}/${_gitname}/airdcpp-core"
-}

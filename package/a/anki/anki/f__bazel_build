@@ -1,8 +1,0 @@
-_bazel_build() {
-    bazel build -c opt wheels
-    _status=$?
-    bazel shutdown
-    if [[ $_status -gt 0 ]]; then
-        exit $_status # or call false
-    fi
-}

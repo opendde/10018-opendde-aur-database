@@ -1,6 +1,0 @@
-package() {
-	cd "$_pkgname"
-	make
-	install -dm 755 "$pkgdir"/usr/bin
-	install -m 755 ./badpng "$pkgdir"/usr/bin
-}

@@ -1,4 +1,0 @@
-package() {
-    cd austin/build
-    make DESTDIR="$pkgdir" install
-}

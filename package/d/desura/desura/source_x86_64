@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz::http://yantis-scripts.s3.amazonaws.com/${pkgname}_${pkgver/./_}.tar.gz"

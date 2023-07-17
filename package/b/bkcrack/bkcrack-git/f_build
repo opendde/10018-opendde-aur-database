@@ -1,5 +1,0 @@
-build() {
-	cd "$srcdir/bkcrack"
-	cmake .
-	make
-}

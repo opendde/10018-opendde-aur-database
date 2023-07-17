@@ -1,4 +1,0 @@
-build() {
-  cd adchpp
-  scons -j"$(nproc)" mode=release docs=yes ssl=yes langs=all tools=default systemboost=yes ruby=ruby arch="${_arch}" #systemlua=yes lua=lua5.1
-}

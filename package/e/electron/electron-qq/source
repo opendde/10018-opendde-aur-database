@@ -1,1 +1,0 @@
-("app-${pkgver}.asar::https://github.com/Clansty/${pkgname}/releases/download/v${pkgver}/app.asar"

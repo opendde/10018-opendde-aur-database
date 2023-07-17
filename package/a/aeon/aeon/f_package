@@ -1,8 +1,0 @@
-package() {
-  cd "${pkgname}-${pkgver}-${pkgname}"
-  install -Dm0644 "${srcdir}/${pkgname}.tmpfiles" "${pkgdir}/usr/lib/tmpfiles.d/${pkgname}.conf"
-  install -Dm0644 "${srcdir}/${pkgname}.sysusers" "${pkgdir}/usr/lib/sysusers.d/${pkgname}.conf"
-  install -Dm0644 "${srcdir}/${pkgname}d.service" "${pkgdir}/usr/lib/systemd/system/${pkgname}d.service"
-  install -Dm0644 "${srcdir}/${pkgname}d.conf" "${pkgdir}/etc/${pkgname}d.conf"
-  cp -r "bin" "${pkgdir}/usr"
-}

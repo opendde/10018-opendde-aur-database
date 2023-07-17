@@ -1,6 +1,0 @@
-package() {
-  cd "${pkgname}-${pkgver}/source"
-
-  runhaskell Setup copy --destdir="${pkgdir}"
-  rm -r "$pkgdir/usr/share/doc"
-}

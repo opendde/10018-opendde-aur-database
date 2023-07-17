@@ -1,1 +1,0 @@
-("git+https://github.com/kinvolk/container-linux-config-transpiler.git#tag=v${pkgver}")

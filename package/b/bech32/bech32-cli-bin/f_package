@@ -1,3 +1,0 @@
-package() {
-    install -Dt "$pkgdir/usr/local/bin" "$_reponame"
-}

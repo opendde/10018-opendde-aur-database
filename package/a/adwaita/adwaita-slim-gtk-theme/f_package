@@ -1,8 +1,0 @@
-package() {
-    mkdir Adwaita-Slim Adwaita-Slim-Dark
-    tar -xzf Adwaita-Slim.tar.gz -C Adwaita-Slim
-    tar -xzf Adwaita-Slim-Dark.tar.gz -C Adwaita-Slim-Dark
-
-    install -d "$pkgdir"/usr/share/themes
-    cp -r Adwaita-Slim Adwaita-Slim-Dark "$pkgdir"/usr/share/themes
-}

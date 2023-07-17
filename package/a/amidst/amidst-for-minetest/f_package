@@ -1,7 +1,0 @@
-package() {
-    cd "$srcdir"
-    _iconName=$(basename "/${_icon}")
-    install -Dm 755 "${_filename}" ${pkgdir}/usr/share/java/${pkgname}.jar
-    install -Dm 755 ${_iconName} ${pkgdir}/usr/share/pixmaps/${pkgname}.png
-    install -Dm 755 "${pkgname}.sh" ${pkgdir}/usr/bin/${pkgname}
-}

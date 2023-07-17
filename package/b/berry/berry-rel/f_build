@@ -1,5 +1,0 @@
-build() {
-	# Build the package.
-	cd ${pkgname}-${pkgver}/
-	make
-}

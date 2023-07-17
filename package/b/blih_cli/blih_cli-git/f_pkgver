@@ -1,4 +1,0 @@
-pkgver() {
-  cd "${pkgname}" || exit
-  git show --format=\"%H\" --no-patch | git describe --tags | sed 's/v//' | sed 's/-/_/g'
-}

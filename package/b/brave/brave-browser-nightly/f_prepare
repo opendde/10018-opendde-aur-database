@@ -1,5 +1,0 @@
-prepare() {
-  mkdir -p brave-browser-nightly
-  bsdtar -xf $pkgname-$pkgver.zip -C brave-browser-nightly
-  chmod +x brave-browser-nightly/brave-browser-nightly
-}

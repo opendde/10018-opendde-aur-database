@@ -1,3 +1,0 @@
-get_debs_amf() {
-         bash ./GET-DEBS-AMF.sh
-}

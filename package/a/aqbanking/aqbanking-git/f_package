@@ -1,3 +1,0 @@
-package() {
-  make -C $_sourcedir DESTDIR=$pkgdir install
-}

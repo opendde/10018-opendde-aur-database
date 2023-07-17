@@ -1,1 +1,0 @@
-("git+https://repo.or.cz/barvinok.git#tag=$pkgname-$pkgver")

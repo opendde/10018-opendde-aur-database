@@ -1,4 +1,0 @@
-package() {
-  cd libArcus/build
-  make DESTDIR="${pkgdir}" install
-}

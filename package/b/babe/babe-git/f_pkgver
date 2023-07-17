@@ -1,4 +1,0 @@
-pkgver() {
-  cd babe
-  git describe --long --tags | sed -r 's/([^-]*-g)/r\1/;s/-/./g;s/v//g'
-}

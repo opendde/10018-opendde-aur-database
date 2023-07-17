@@ -1,4 +1,0 @@
-prepare() {
-  cd "$srcdir/$pkgname"
-  patch --forward --strip=1 --input="${srcdir}/0001-Linux-changed-the-header-file-for-SIOCGSTAMP.patch"
-}

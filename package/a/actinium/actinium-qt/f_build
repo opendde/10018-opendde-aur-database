@@ -1,7 +1,0 @@
-build() {
-  cd "$srcdir/$pkgname"
-  find . -type f -iname "*.sh" -exec chmod +x {} \; 
-  ./autogen.sh
-  ./configure --with-gui=qt5 --disable-tests
-  make
-}

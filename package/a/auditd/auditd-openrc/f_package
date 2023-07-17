@@ -1,4 +1,0 @@
-package() {
-   _inst_confd 'auditd'
-   _inst_initd 'auditd'
-}

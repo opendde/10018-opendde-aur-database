@@ -1,4 +1,0 @@
-build() {
-  arch-meson atk build -D docs=false
-  ninja $NINJAFLAGS -C build
-}

@@ -1,5 +1,0 @@
-package() {
-	T="${pkgname%-git}"
-	cd "$srcdir/${T#avrm-}"
-	make PREFIX="$pkgdir/usr/avr/" install
-}

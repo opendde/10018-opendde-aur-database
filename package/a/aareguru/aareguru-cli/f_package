@@ -1,8 +1,0 @@
-package() {
-  _untardir=$(ls -d */)
-  cd "$_untardir"
-
-  _buildFilename=${_untardir::-1}
-
-  install -Dm755 "$_buildFilename" "$pkgdir/usr/bin/aareguru"
-}

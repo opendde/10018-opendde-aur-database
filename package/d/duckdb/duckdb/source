@@ -1,1 +1,0 @@
-("$pkgbase::git+https://github.com/duckdb/duckdb.git#commit=$_commit")

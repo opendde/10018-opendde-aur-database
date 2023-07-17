@@ -1,5 +1,0 @@
-build() {
-	cd "${srcdir}/${_gitrepo}"
-
-	make DEFAULT_PLATFORM="linux386" ACK_TEMP_DIR="${srcdir}"
-}

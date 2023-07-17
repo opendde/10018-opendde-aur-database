@@ -1,4 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname"
-  cp -r "opt/" "$pkgdir/opt/"
-}

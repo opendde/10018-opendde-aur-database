@@ -1,1 +1,0 @@
-("git+https://gitlab.com/dalton/$pkgname.git#branch=release/$_branch")

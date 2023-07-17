@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.zip"::"https://dl-game-sdk.discordapp.net/${pkgver}/${pkgname//-/_}.zip"

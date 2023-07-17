@@ -1,1 +1,0 @@
-(${_mirror}stable/community/${arch}/firefox-kde-opensuse-${pkgver}-${pkgrel}-${arch}.pkg.tar.xz{,.sig})

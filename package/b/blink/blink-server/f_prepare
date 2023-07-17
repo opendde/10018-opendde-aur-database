@@ -1,5 +1,0 @@
-prepare() {
-    cd "${srcdir}/${pkgname}-${_sha}"
-   sed -i 's/python/python2/' "bluetooth_server.py"
-   touch core.pyc
-}

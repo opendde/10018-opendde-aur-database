@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.zip::https://github.com/sorz/accept-language-per-site/archive/refs/tags/v${pkgver}.zip")

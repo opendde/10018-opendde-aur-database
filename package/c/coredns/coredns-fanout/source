@@ -1,1 +1,0 @@
-("coredns-$pkgver.tar.gz::https://github.com/coredns/coredns/archive/v$pkgver.tar.gz"

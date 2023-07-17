@@ -1,4 +1,0 @@
-pkgver() {
-    cd "${srcdir}"/astk
-    hg identify -n
-}

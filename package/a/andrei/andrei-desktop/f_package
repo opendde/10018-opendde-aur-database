@@ -1,7 +1,0 @@
-package() {
-	cd "$srcdir/andrei-linux/"
-	tar xf files.tar
-
-	# copy files preserving timestamps
-	rsync -a ./files/ "$pkgdir/"
-}

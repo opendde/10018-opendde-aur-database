@@ -1,4 +1,0 @@
-package() {
-  install -d "$pkgdir"/usr/share/themes
-  cp -r Ambiance-* Radiance-* "$pkgdir"/usr/share/themes
-}

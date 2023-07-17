@@ -1,5 +1,0 @@
-package() {
-  cd "automake"
-
-  make DESTDIR="$pkgdir" install
-}

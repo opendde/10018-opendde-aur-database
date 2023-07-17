@@ -1,5 +1,0 @@
-package() {
-  cd "$pkgname"
-  mkdir -p "${pkgdir}/usr/bin"
-  install -D -m755 ./base16-manager "${pkgdir}/usr/bin/$_pkgname"
-}

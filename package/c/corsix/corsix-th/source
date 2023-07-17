@@ -1,1 +1,0 @@
-("${_tarname}.tar.gz::${_repourl}/archive/refs/tags/v${_tagver}.tar.gz")

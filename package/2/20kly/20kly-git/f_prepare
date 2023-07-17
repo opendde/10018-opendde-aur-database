@@ -1,4 +1,0 @@
-prepare() {
-  cd "$_gitname"
-  patch -p1 -i $srcdir/0001-fix.patch
-}

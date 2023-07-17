@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}::git+https://github.com/ArduPilot/ardupilot.git#tag=Copter-${pkgver}"

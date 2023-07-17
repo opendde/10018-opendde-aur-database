@@ -1,5 +1,0 @@
-build() {
-  cd "$srcdir/$_pkgname"
-  make
-  make 99-acdcontrol.rules
-}

@@ -1,5 +1,0 @@
-build() {
-  cd $srcdir/$pkgname'-'$pkgver
-  install -d -m755 $pkgdir/usr/share/themes
-  cp -r ${pkgname%%-*}* $pkgdir/usr/share/themes || return 1
-}

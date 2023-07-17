@@ -1,7 +1,0 @@
-build() {
-  cd $srcdir/$pkgname-$pkgver
-  yarn install --ignore-engines
-  yarn run compile
-  yarn run pack
-  ./node_modules/.bin/electron-builder --linux deb
-}

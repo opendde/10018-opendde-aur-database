@@ -1,4 +1,0 @@
-package() {
-  install -m755 -d "$pkgdir/usr/bin"
-  install -m755 -t "$pkgdir/usr/bin" bootimg-tools/mkbootimg/{mkbootimg,unmkbootimg}
-}

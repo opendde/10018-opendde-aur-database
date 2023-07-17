@@ -1,6 +1,0 @@
-build() {
-  cd "Botan-$pkgver"
-
-  python2 configure.py --prefix=/usr --enable-modules=cvc
-  make
-}

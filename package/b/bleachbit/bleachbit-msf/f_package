@@ -1,4 +1,0 @@
-package() {
-  cd "${pkgname}-${pkgver}"
-  install -Dm644 msf.xml "${pkgdir}/usr/share/bleachbit/cleaners/msf.xml"
-}

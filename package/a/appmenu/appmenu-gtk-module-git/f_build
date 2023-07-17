@@ -1,4 +1,0 @@
-build() {
-  meson build "${srcdir}/${_pkgbase}/${_path}" --prefix=/usr --libexecdir=lib
-  meson compile -C build
-}

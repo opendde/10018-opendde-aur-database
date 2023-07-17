@@ -1,4 +1,0 @@
-check() {
-  cd "$pkgname"
-  RUSTUP_TOOLCHAIN=stable cargo test --release --locked --target-dir=target
-}

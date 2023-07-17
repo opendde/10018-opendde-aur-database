@@ -1,6 +1,0 @@
-prepare() {
-    cd "$srcdir/$_pkgname"
-    sed -i -e 's/wx-config/wx-config-2.8/g' makefile configure
-    ln -s /usr/include/ADL ADL_SDK/include
-    ./configure
-}

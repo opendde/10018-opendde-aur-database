@@ -1,5 +1,0 @@
-prepare() {
-    bsdtar -xvf pcxf380.zip ATARIBAS.ROM ATARIOSB.ROM ATARIXL.ROM
-    bsdtar -xvf 5200.zip
-    mv 5200.rom 5200.ROM
-}

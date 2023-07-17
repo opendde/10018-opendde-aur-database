@@ -1,4 +1,0 @@
-package() {
-	cd "compute-archlinux-image-builder-$pkgver"
-	install -m755 -Dt "$pkgdir/usr/bin/" build-arch-gce
-}

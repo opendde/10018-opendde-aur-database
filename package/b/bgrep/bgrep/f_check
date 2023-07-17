@@ -1,4 +1,0 @@
-check() {
-	cd $pkgname-$pkgname-$pkgver
-	make check
-}

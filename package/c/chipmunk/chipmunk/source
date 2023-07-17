@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz"::"https://github.com/slembcke/Chipmunk2D/archive/Chipmunk-${pkgver}.tar.gz"

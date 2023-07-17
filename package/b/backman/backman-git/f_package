@@ -1,7 +1,0 @@
-package() {
-	cd "${_pkgname}"
-	install -Dm644 LICENSE "$pkgdir/usr/share/licenses/backman/LICENSE"
-	install -Dm755 backman "$pkgdir/usr/bin/backman"
-	install -Dm755 set_xfce "$pkgdir/usr/share/backman/set_xfce"
-	install -Dm 644 fix_bg.png "$pkgdir/usr/share/backman/fix_bg.png"
-}

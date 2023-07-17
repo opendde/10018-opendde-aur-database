@@ -1,5 +1,0 @@
-build() {
-    cmake -S "$pkgname-$pkgver" -B "$pkgname-$pkgver/build" -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -Wno-dev
-    make -C "$pkgname-$pkgver/build"
-    make -C "$pkgname-$pkgver/build" manual
-}

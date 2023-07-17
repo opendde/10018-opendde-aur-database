@@ -1,1 +1,0 @@
-("${pkgname}-${_srcfile}::https://github.com/cherokee/webserver/archive/${_srcfile}"

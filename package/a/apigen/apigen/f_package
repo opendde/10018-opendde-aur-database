@@ -1,5 +1,0 @@
-package() {
-	install -Dm0644 LICENSE ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
-
-	install -D apigen.phar ${pkgdir}/usr/bin/apigen
-}

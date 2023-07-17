@@ -1,6 +1,0 @@
-package() {
-  cd "$srcdir/Attic-$pkgver"
-  install -D -m644 "docs/_build/man/attic-deduplicatingarchiver.1" "$pkgdir/usr/share/man/man1/attic.1"
-  install -D -m644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-  python3 setup.py -q install --root="$pkgdir" --optimize=1
-}

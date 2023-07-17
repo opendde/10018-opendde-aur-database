@@ -1,3 +1,0 @@
-pkgver() {
-    git -C astc-encoder describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g;s/^v//'
-}

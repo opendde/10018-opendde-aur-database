@@ -1,6 +1,0 @@
-prepare() {
-  cd "${srcdir}/AIK-Linux"
-
-  # apply patch to only operate on files within present working directory
-  patch -p1 < ${srcdir}/work-in-present-working-directory-only.patch
-}

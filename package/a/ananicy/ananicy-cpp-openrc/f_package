@@ -1,4 +1,0 @@
-package() {
-    install -dm755 "$pkgdir/etc/init.d"
-    install -Dm755 "$srcdir/ananicy-cpp.openrc" "$pkgdir/etc/init.d/ananicy-cpp"
-}

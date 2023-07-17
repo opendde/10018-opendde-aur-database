@@ -1,4 +1,0 @@
-pkgver() {
-  cd "$srcdir/$_pkgname"
-  git describe --always | sed -E 's/^ATOMIX_//;s/_/./g;s/([^-]*-g)/r\1/;s|-|.|g'
-}

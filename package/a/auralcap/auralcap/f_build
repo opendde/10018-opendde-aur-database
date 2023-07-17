@@ -1,6 +1,0 @@
-build() {
-    cd "$srcdir/monopticon/contrib/expirements/auralcap"
-    mkdir -p "$srcdir/monopticon/contrib/expirements/auralcap/build"
-    cmake -S . -B build
-    cmake --build build
-}

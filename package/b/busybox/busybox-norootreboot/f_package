@@ -1,4 +1,0 @@
-package() {
-  cd "$srcdir/busybox-$pkgver"
-  install -Dm755 busybox $pkgdir/usr/bin/busybox
-}

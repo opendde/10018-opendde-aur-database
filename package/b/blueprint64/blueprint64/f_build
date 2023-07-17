@@ -1,4 +1,0 @@
-build() {
-	qmake-qt5 app.pro -spec linux-g++
-	make -j `nproc`
-}

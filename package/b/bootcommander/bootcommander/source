@@ -1,1 +1,0 @@
-("$pkgname-$pkgver.zip::https://nav.dl.sourceforge.net/project/openblt/OpenBLT%20stable/version%20${pkgver}/openblt_v0${pkgver//.}.zip")

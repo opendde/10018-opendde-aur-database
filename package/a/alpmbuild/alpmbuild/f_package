@@ -1,5 +1,0 @@
-package() {
-    cd "$pkgname-$pkgver"
-    install -Dm 755 alpmbuild "$pkgdir/usr/bin/alpmbuild"
-    install -Dm 644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-}

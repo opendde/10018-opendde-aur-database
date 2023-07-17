@@ -1,5 +1,0 @@
-build() {
-  cd akabei
-  cmake . -DCMAKE_INSTALL_PREFIX=/usr 
-  make || return 1
-}

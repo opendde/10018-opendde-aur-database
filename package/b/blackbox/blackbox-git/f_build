@@ -1,7 +1,0 @@
-build() {
-  cd $pkgname
-  ./configure \
-      --enable-static \
-      --enable-shared
-  make
-}

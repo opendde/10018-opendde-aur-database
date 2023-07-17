@@ -1,6 +1,0 @@
-build() {
-  cd "${srcdir}/${_gitname}-build"
-  # build
-  qmake-qt4 activitydiary.pro
-  make
-}

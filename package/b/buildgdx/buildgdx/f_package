@@ -1,5 +1,0 @@
-package() {
-    install -D -t "$pkgdir"/usr/bin buildgdx
-    install -D -t "$pkgdir"/usr/share/$pkgname "$srcdir"/BuildGDX.jar
-    install -D -t "$pkgdir"/usr/share/applications -m 644 "$srcdir"/buildgdx.desktop
-}

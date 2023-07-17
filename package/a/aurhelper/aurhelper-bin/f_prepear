@@ -1,4 +1,0 @@
-prepear() {
-rm -rf ${pkgdir}/aurhelper.sh
-rm -rf /usr/bin/aurhelper
-}

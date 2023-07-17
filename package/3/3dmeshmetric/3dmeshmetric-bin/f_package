@@ -1,8 +1,0 @@
-package() {
-  install -d "${pkgdir}/opt" "${pkgdir}/usr/bin" "${pkgdir}/usr/share/pixmaps"
-  mv "${srcdir}/${_pkgname}${pkgver}-Linux" "${pkgdir}/opt/${_pkgname}"
-  cp "${pkgdir}/opt/${_pkgname}/icons/MeshMetric.png" "${pkgdir}/usr/share/pixmaps/${_pkgname}.png"
-  ln -s /opt/${_pkgname}/meshMetric "${pkgdir}/usr/bin/meshMetric"
-  ln -s /opt/${_pkgname}/ModelToModelDistance "${pkgdir}/usr/bin/ModelToModelDistance"
-  install -Dm644 "${srcdir}/${_pkgname}.desktop" "${pkgdir}/usr/share/applications/${_pkgname}.desktop"
-}

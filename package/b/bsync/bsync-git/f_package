@@ -1,3 +1,0 @@
-package() {
-	install -D "$srcdir/bsync/bsync" "$pkgdir/usr/bin/bsync"
-}

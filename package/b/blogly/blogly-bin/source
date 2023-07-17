@@ -1,1 +1,0 @@
-("${pkgname%-bin}-${_pkgver}.deb::https://github.com/aswinrajeev/blogly/releases/download/v${_pkgver}/blogly_${_pkgver}_amd64.deb"

@@ -1,8 +1,0 @@
-prepare() {
-    rm -rf "$srcdir/$_gosrcprj"
-    mkdir -p "$srcdir/$_gosrcprj"
-    mv "$srcdir/$_gopkg" "$srcdir/$_gosrcpkg"
-    cd "$srcdir/$_gosrcpkg"
-    msg2 "Fetching dependencies"
-    GOPATH="$srcdir" go get -d ./...
-}

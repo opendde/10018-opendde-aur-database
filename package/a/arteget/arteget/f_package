@@ -1,5 +1,0 @@
-package() {
-  cd "${srcdir}/${pkgname}-release-${pkgver}"
-
-  install -Dm 0755 arteget.rb "${pkgdir}/usr/bin/arteget"
-}

@@ -1,7 +1,0 @@
-prepare() {
-  cd $pkgname-$pkgver/src
-  sed '/<time.h>/ a\#include <limits.h>' -i brutalplayer.cpp
-  sed 's/GLvoid/void/g'                  -i {md3view,objview}.cpp
-  sed '/<string>/ a\#include <unistd.h>' -i {xboardplayer,faileplayer}.cpp
-  sed 's~#include\ <freetype/~#include\ <freetype2/freetype/~g' -i fontloader.h
-}

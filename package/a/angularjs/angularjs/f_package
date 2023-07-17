@@ -1,6 +1,0 @@
-package() {
-  cd "${srcdir}"
-  mkdir -p "${pkgdir}/usr/share/javascript/${pkgname}"
-  install -m644 "angular.js" "${pkgdir}/usr/share/javascript/${pkgname}"
-  install -m644 "angular.min.js" "${pkgdir}/usr/share/javascript/${pkgname}"
-}

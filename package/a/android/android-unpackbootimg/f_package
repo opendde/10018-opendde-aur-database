@@ -1,7 +1,0 @@
-package() {
-  cd "${srcdir}/${pkgname}"
-  mkdir -p "${pkgdir}/usr/bin"
-  install -m 755 -t "${pkgdir}/usr/bin" "${srcdir}/${pkgname}/mkbootimg"
-  install -m 755 -t "${pkgdir}/usr/bin" "${srcdir}/${pkgname}/mkbootimg.py"
-  install -m 755 -t "${pkgdir}/usr/bin" "${srcdir}/${pkgname}/unpackbootimg"
-}

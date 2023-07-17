@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}::git+https://github.com/jichu4n/bash-command-timer.git#branch=master")

@@ -1,7 +1,0 @@
-prepare() {
-  cd Bibata_Cursor_Rainbow-$pkgver
-  mkdir -p bitmaps
-  bsdtar -xf "$srcdir/$pkgname-bitmaps-$pkgver.zip" -C bitmaps/
-
-  rm -rf themes
-}

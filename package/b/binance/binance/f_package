@@ -1,5 +1,0 @@
-package() {
-    bsdtar -xv -C "${pkgdir}" -f "${srcdir}/data.tar.xz"
-    mkdir "${pkgdir}/usr/bin"
-    ln -s /opt/Binance/binance "${pkgdir}/usr/bin/binance"
-}

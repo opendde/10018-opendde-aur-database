@@ -1,5 +1,0 @@
-package() {
-  target="target/release"
-  cd $_pkgname
-  install -Dm755 "$target/$_pkgname" -t "$pkgdir/usr/bin"
-}

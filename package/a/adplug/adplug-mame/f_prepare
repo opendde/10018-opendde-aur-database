@@ -1,7 +1,0 @@
-prepare() {
-  cd "$srcdir/adplug-$pkgver"
-
-  patch -p1 -i $srcdir/adplug-2.2_mame.patch
-
-  autoreconf -fis
-}

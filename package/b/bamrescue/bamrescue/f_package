@@ -1,9 +1,0 @@
-package() {
-    cd "$srcdir/$pkgname"
-    install -Dm755 "target/release/$pkgname" "$pkgdir/usr/bin/$pkgname"
-    #install -Dm644 "target/man/$pkgname.gz" "$pkgdir/usr/share/man/$pkgname.gz"
-    #install -Dm644 "completion/bash/$pkgname" "$pkgdir/usr/share/bash-completion/completions/$pkgname"
-    #install -Dm644 "completion/bash/$pkgname" "$pkgdir/usr/share/zsh/site-functions/_$pkgname"
-    install -Dm644 "README.md" "$pkgdir/usr/share/doc/$pkgname/README.md"
-    install -Dm644 "LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-}

@@ -1,5 +1,0 @@
-pkgver() {
-  cd $_gitname
-  # Automatically generate package version from git commit number
-  echo $_basever+g$(git rev-list --count HEAD).$(git rev-parse --short HEAD)
-}

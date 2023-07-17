@@ -1,7 +1,0 @@
-package() {
-    mkdir -p "${pkgdir}/usr/bin"
-    mkdir -p "${pkgdir}/usr/share/doc/anysh"
-
-	cp "${srcdir}/anysh" "${pkgdir}/usr/bin/"
-	cp "${srcdir}/LICENSE" "${pkgdir}/usr/share/doc/anysh/"
-}

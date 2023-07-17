@@ -1,8 +1,0 @@
-build() {
-  cd "${pkgname}"
-  export CXX=clang++
-  export CC=clang
-
-  yarn
-  npm --cache "${srcdir}/npm-cache" run package-linux
-}

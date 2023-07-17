@@ -1,5 +1,0 @@
-build() {
-  cd "$pkgname-$pkgver"
-  stack clean "$pkgname"
-  stack build --pedantic "$pkgname"
-}

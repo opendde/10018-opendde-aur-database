@@ -1,6 +1,0 @@
-prepare() {
-  cd "$srcdir"/a7xpg
-  for i in $(cat ../debian/patches/series); do
-    patch -p1 <../debian/patches/$i
-  done
-}

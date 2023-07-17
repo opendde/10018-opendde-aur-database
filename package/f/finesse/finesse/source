@@ -1,1 +1,0 @@
-("git+https://git.ligo.org/$pkgname/$pkgname#tag=$pkgver")

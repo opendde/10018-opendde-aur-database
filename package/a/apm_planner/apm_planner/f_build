@@ -1,7 +1,0 @@
-build() {
-  # Uncomment to add support for Pixhawk mavlink dialect (require Google proto buffer)
-  # echo "MAVLINK_CONF += pixhawk" > "$srcdir/$pkgname-$pkgver/user_config.pri"
-
-  qmake PREFIX=/usr "$srcdir/$pkgname-$pkgver/apm_planner.pro"
-  make
-}

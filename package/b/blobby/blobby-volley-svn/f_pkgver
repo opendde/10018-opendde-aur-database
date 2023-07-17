@@ -1,5 +1,0 @@
-pkgver() {
-  cd blobby-code
-  local ver="$(svnversion)"
-  printf "r%s" "${ver//[[:alpha:]]}"
-}

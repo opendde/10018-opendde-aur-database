@@ -1,4 +1,0 @@
-package() {
-  mkdir -p "$pkgdir"/usr/share/arduino/tools/ArduBlockTool/tool
-  install -D -m644 "$srcdir"/ardublock-all.jar "$pkgdir"/usr/share/arduino/tools/ArduBlockTool/tool
-}

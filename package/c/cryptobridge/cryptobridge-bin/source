@@ -1,1 +1,0 @@
-("cryptobridge-${pkgver}.deb::https://github.com/CryptoBridge/cryptobridge-ui/releases/download/v${pkgver}/CryptoBridge_${pkgver}_amd64.deb")

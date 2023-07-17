@@ -1,6 +1,0 @@
-package() {
-  cd libArcus/build
-  make DESTDIR="${pkgdir}" install
-
-  install -Dm644 "${srcdir}/libArcus/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}

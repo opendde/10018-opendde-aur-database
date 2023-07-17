@@ -1,4 +1,0 @@
-package() {
-  cd ADMS-release-$pkgver
-  make DESTDIR="$pkgdir" install
-}

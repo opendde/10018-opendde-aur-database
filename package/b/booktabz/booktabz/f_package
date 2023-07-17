@@ -1,4 +1,0 @@
-package() {
-	bsdtar -Oxf $srcdir/BooktabZSetup-16.04.deb --include data.tar.xz  | tar -C $pkgdir -Jxf -
-	find $pkgdir/usr -type d -exec chmod 755 {} \;
-}

@@ -1,4 +1,0 @@
-package() {
-  cd "$cratename-$pkgver"
-  install -Dm0755 "target/release/$cratename" "$pkgdir/usr/bin/ablescript"
-}

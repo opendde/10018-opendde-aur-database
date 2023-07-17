@@ -1,5 +1,0 @@
-package() {
-    cd "$srcdir/${pkgname%-git}"
-    mkdir -p "$pkgdir/usr/bin"
-    cp bin/beluga "$pkgdir/usr/bin/beluga"
-}

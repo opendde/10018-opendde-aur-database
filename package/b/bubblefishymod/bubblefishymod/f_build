@@ -1,4 +1,0 @@
-build() {
-  cd "$srcdir/bfm-$pkgver"
-  make LDFLAGS=-shared gkrellm
-}

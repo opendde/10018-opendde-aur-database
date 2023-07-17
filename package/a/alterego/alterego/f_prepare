@@ -1,9 +1,0 @@
-prepare() {
-  cd AlterEgo_Linux/AlterEgo
-
-  # convert line endings from DOS to Unix
-  sed -i 's/\r$//' AlterEgo.sh
-
-  # patch launcher script
-  sed -i '2i cd\ /usr/share/games/alterego' AlterEgo.sh
-}

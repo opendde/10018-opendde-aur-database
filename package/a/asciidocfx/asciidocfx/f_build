@@ -1,6 +1,0 @@
-build() {
-    cd "AsciidocFX-${pkgver}"
-
-    # "install" seemingly means "build and ready for installation"
-    mvn clean install
-}

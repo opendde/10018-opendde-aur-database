@@ -1,4 +1,0 @@
-build() {
-    cd "$srcdir/ANGRYsearch"
-    python setup.py build
-}

@@ -1,4 +1,0 @@
-pkgver() {
-  cd ${pkgname%-git}
-  printf %s.r%s $(git describe --tags|tr -d v|sed 's+-+.r+'|tr - .) $(git rev-list --count HEAD)
-}

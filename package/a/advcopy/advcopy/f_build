@@ -1,7 +1,0 @@
-build() {
-  cd "${srcdir}"/coreutils-${_coreutils_pkgver}
-  patch -p1 -i "${srcdir}"/advcpmv-${pkgver}-${_coreutils_pkgver}.patch
-  ./configure --prefix=/usr --libexecdir=/usr/lib \
-              --enable-no-install-program=groups,hostname,kill,uptime
-  make
-}

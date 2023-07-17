@@ -1,3 +1,0 @@
-check() {
-    make -C "$srcdir/$_extracted" test # call test target from upstream
-}

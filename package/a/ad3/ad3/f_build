@@ -1,4 +1,0 @@
-build() {
-	cd "$srcdir/AD3-$pkgver"
-	make 
-}

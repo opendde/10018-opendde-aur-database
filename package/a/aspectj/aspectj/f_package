@@ -1,7 +1,0 @@
-package() {
-  cd "$srcdir"
-  mkdir -p $pkgdir/opt/aspectj
-  java -jar aspectj_$pkgver.jar -to $pkgdir/opt/aspectj
-  sed -i "s/ ASPECTJ_HOME=.*/ ASPECTJ_HOME=\/opt\/aspectj/" $pkgdir/opt/aspectj/bin/* 
-  sed -i "s/java-10-openjdk/default/" $pkgdir/opt/aspectj/bin/* 
-}

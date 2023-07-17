@@ -1,4 +1,0 @@
-package() {
-  cd "$srcdir/build"
-  make VERBOSE=1 DESTDIR="$pkgdir" install
-}

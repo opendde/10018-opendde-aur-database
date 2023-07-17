@@ -1,5 +1,0 @@
-build() {
-  cd $srcdir
-  rm -Rf $srcdir/bindfsit &>/dev/null || echo "No old repository found, proceding to git clone..."
-  git clone --depth 1 $_gitroot || return 1
-}

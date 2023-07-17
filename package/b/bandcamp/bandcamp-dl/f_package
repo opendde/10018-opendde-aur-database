@@ -1,4 +1,0 @@
-package() {
-  cd "${srcdir}/bandcamp-downloader-${pkgver}"
-  python setup.py install --root="${pkgdir}"
-}

@@ -1,1 +1,0 @@
-("$pkgname::git+https://github.com/lispci/fiveam#commit=$_commit")

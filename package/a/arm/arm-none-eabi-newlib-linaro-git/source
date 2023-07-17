@@ -1,1 +1,0 @@
-("git+http://git.linaro.org/toolchain/newlib.git#tag=newlib-$pkgver")

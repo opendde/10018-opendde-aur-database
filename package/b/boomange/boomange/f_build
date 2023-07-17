@@ -1,6 +1,0 @@
-build() {
-	cd ${srcdir}/${pkgname}-${pkgver}
-
-	runhaskell Setup configure --prefix=/usr -O --enable-executable-dynamic
-	runhaskell Setup build
-}

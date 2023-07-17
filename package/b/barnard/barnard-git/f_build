@@ -1,8 +1,0 @@
-build() {
-  export GOPATH="${srcdir}/gopath"
-  cd "${srcdir}/gopath/src/github.com/bmmcginty/barnard"
-  GO111MODULE=auto go install \
-    -gcflags "all=-trimpath=$GOPATH" \
-    -asmflags "all=-trimpath=$GOPATH" \
-    -ldflags "-extldflags $LDFLAGS" -v
-}

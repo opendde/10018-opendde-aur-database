@@ -1,5 +1,0 @@
-prepare() {
-	cd "$srcdir/${pkgname%-sl}-$pkgver"
-	patch -p1 -i ${srcdir}/gir_lookup.patch
-	patch -p1 -i ${srcdir}/python_version.patch
-}

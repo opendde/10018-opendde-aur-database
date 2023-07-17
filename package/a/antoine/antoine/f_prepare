@@ -1,9 +1,0 @@
-prepare() {
-  cd "$srcdir/$pkgname/source/"
-
-  sed -i 's#\$(HOME)#$(DESTDIR)/usr#g' Makefile_gfortran
-
-  cd "$srcdir/$pkgname/"
-
-  sed -i 's#\$HOME#/usr#g' go
-}

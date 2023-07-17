@@ -1,4 +1,0 @@
-prepare() {
-	# Make build directory
-	mkdir ${srcdir}/build
-}

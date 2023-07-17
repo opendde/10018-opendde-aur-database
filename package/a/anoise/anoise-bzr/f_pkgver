@@ -1,6 +1,0 @@
-pkgver() {
-  cd "${srcdir}/${_pkgname}"
-  printf "%s+%s" \
-         "$( grep 'version[\ ]*=' setup.py | sed 's:.*\=[\ ]*"\([^"]*\)".*:\1:' )" \
-         "$( bzr revno )"
-}

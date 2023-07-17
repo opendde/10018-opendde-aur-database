@@ -1,4 +1,0 @@
-build() {
-  cd $srcdir/
-  7z x -o$pkgname $_filename
-}

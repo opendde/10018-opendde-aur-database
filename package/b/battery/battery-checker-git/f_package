@@ -1,4 +1,0 @@
-package() {
-	mkdir -p $pkgdir/usr/bin
-	cp $srcdir/$_pkgname/check-battery $pkgdir/usr/bin
-}

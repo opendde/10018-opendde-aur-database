@@ -1,9 +1,0 @@
-package() {
-  cd "$_pkgname-$pkgver"
-  python -m installer --destdir="$pkgdir" dist/*.whl
-  for _file in *.md
-  do
-    install -Dm644 "${_file}" "${pkgdir}/usr/share/doc/${pkgname}/$(basename ${_file})"
-  done
-
-}

@@ -1,4 +1,0 @@
-check() {
-  cd alacritty
-  cargo test --locked --release
-}

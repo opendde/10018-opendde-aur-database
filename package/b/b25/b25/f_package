@@ -1,7 +1,0 @@
-package() {
-  cd $srcdir/$_foldername/arib25/src
-  mkdir -p ${pkgdir}/usr/lib
-  mkdir -p ${pkgdir}/usr/bin
-  make PREFIX="${pkgdir}/usr" install
-  make PREFIX="${pkgdir}/usr" install-headers
-}

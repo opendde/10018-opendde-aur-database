@@ -1,9 +1,0 @@
-package() {
-    cd "${srcdir}/$pkgname-$pkgver"
-    make DESTDIR=${pkgdir} install
-    install -Dsm755 "${srcdir}/$pkgname-$pkgver/brightd"   "${pkgdir}/usr/bin/brightd"
-    install -Dm644  "${srcdir}/$pkgname-$pkgver/brightd.1" "${pkgdir}/usr/share/man/man1/brightd.1"
-    install -Dm644  "${srcdir}/$pkgname-$pkgver/README"    "${pkgdir}/usr/share/doc/brightd/README"
-    install -Dm644  "${srcdir}/$pkgname-$pkgver/gpl.txt"    "${pkgdir}/usr/share/licenses/brightd/LICENSE"
-    install -Dm644  "${srcdir}/brightd.service"            "${pkgdir}/usr/lib/systemd/system/brightd.service"
-}

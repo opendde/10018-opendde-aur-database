@@ -1,7 +1,0 @@
-build() {
-  cd build
-  arch-meson ../bdsup2subpp \
-    --prefix /usr
-
-  ninja
-}

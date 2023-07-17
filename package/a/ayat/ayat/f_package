@@ -1,7 +1,0 @@
-package() {
-  mkdir -p "${pkgdir}/opt/airapps/${pkgname}"
-  unzip -q "${srcdir}/Ayat-v${pkgver}.air" -d "${pkgdir}/opt/airapps/${pkgname}"
-  install -Dm755 ${pkgname} "${pkgdir}/usr/bin/${pkgname}"
-  install -Dm644 ${pkgname}.desktop "${pkgdir}/usr/share/applications/${pkgname}.desktop"
-  install -Dm644 "${pkgdir}/opt/airapps/${pkgname}/icons/128_app.png" "${pkgdir}/usr/share/pixmaps/${pkgname}.png"
-}

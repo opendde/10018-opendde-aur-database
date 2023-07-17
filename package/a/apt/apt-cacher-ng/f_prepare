@@ -1,8 +1,0 @@
-prepare() {
-  cd ${srcdir}/${pkgname}-${pkgver}
-  # === uncomment the next line to update mirrors [w3m package is needed]; it will take some time ===
-  #make -f scripts/Makefile.release gendbs
-
-  # === uncomment next line to add archlinuxarm mirrors to archlx_mirrors file ===
-  #grep '^.*Server' ${srcdir}/mirrorlist|sed -e 's/^.*Server = //' -e 's/$arch\/$repo$//' >> conf/archlx_mirrors
-}

@@ -1,4 +1,0 @@
-package() {
-  cd "$srcdir/${PROJECT_DIR_NAME:-$_reponame-$pkgver}"
-  DESTDIR="${pkgdir}" ninja install
-}

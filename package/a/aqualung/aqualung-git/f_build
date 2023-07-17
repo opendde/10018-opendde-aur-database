@@ -1,8 +1,0 @@
-build() {
-	cd "$_pkgname"
-	# Enlarge MAX_SAMPLERATE
-	sed -i 's/MAX_SAMPLERATE 96000/MAX_SAMPLERATE 192000/g' src/core.h
-	sh autogen.sh
-	./configure --prefix=/usr --without-mac --without-lavc --without-ladspa
-	make
-}

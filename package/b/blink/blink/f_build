@@ -1,4 +1,0 @@
-build() {
-  cd $_pkgname-$pkgver
-  python3 setup.py build
-}

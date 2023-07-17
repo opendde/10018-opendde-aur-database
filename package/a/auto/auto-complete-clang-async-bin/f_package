@@ -1,5 +1,0 @@
-package() {
-  mkdir -p "${pkgdir}/usr/bin"
-
-  cp "${srcdir}/emacs-clang-complete-async/clang-complete" "${pkgdir}/usr/bin"
-}

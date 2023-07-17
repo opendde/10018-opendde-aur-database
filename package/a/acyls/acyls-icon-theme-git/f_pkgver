@@ -1,4 +1,0 @@
-pkgver() {
-  cd ${srcdir}/ACYLS
-    echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
-}

@@ -1,4 +1,0 @@
-package() {
-  cd akabeiclient
-  make DESTDIR=$pkgdir install
-}

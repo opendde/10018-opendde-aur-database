@@ -1,1 +1,0 @@
-("$pkgname-$pkgver::$url/releases/download/$pkgver/$_pkgname.$_goos.${arch/_/-}")

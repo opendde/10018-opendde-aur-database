@@ -1,7 +1,0 @@
-package() {
-  cd "${srcdir}/${pkgname%-git}/build"
-  make DESTDIR="${pkgdir}/" install
-
-  install -D "${srcdir}"/*.desktop -t "${pkgdir}"/usr/share/applications/
-  install -D "${srcdir}"/apple-logo.svg -t "${pkgdir}"/usr/share/applewin/common/
-}

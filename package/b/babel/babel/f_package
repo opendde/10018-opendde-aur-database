@@ -1,4 +1,0 @@
-package() {
-	cd "$srcdir/$pkgname-${pkgver//_/-}"
-	runhaskell Setup copy --destdir="$pkgdir/"
-}

@@ -1,4 +1,0 @@
-pkgver() {
-	cd "$srcdir/AnnePro2-Tools"
-	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-}

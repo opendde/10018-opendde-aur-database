@@ -1,8 +1,0 @@
-build() {
-  cd "$srcdir/$_pkgname"
-  # :git clone gnome:libgd
-  ./autogen.sh --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
-    --libexecdir=/usr/lib/$_pkgname --disable-static \
-	--disable-schemas-compile --disable-update-mimedb
-  make
-}

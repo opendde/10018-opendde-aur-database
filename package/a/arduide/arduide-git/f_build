@@ -1,9 +1,0 @@
-build() {
-  cd build
-  cmake -DCMAKE_INSTALL_PREFIX=/usr \
-        -DUSE_FHS_PATHS=ON \
-        -DCMAKE_BUILD_TYPE=Release \
-        -DQT_QMAKE_EXECUTABLE=qmake-qt4 \
-        ../${pkgname}
-  make
-}

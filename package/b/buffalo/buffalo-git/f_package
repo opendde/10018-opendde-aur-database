@@ -1,5 +1,0 @@
-package() {
-    cd "$pkgname"
-    install -Dm755 "dist/buffalo" "$pkgdir/usr/bin/buffalo"
-    install -Dm644 "LICENSE.txt" "$pkgdir/usr/share/licenses/buffalo/LICENSE"
-}

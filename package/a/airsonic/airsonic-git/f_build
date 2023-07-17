@@ -1,4 +1,0 @@
-build() {
-  cd "${srcdir}/airsonic"
-  mvn package -Dmaven.test.skip=true
-}

@@ -1,5 +1,0 @@
-build() {
-  cd $pkgname-$pkgver
-  ./configure --prefix=/usr --sysconf=/etc/btscanner --datadir=/usr/share/btscanner
-  make V=0
-}

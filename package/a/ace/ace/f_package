@@ -1,4 +1,0 @@
-package() {
-  cd $srcdir/ACE_wrappers/ace
-  make DESTDIR="$pkgdir/" install
-}

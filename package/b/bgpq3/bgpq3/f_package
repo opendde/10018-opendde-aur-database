@@ -1,8 +1,0 @@
-package() {
-  cd "$pkgname-$pkgver"
-
-  mkdir -p "$pkgdir/usr/bin"
-  make prefix="$pkgdir/usr" install
-  install -D -m644 COPYRIGHT "${pkgdir}/usr/share/licenses/$pkgname/LICENSE"
-  install -D -m644 README.md "${pkgdir}/usr/share/doc/$pkgname/README.md"
-}

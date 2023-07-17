@@ -1,7 +1,0 @@
-build() {
-  #cd "${srcdir}/${pkgname}"
-  export CFLAGS+=" ${CPPFLAGS}"
-  export CXXFLAGS+=" ${CPPFLAGS}"
-  cmake -B build -S "${srcdir}/${pkgname}"
-  make -C build g13d pbm2lpbm
-}

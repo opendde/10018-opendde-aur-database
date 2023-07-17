@@ -1,9 +1,0 @@
-build() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-  
-  # Ensure that openssl-1.0 is really used
-  CPPFLAGS+=" -I/usr/include/openssl-1.0" \
-  LDFLAGS+=" -L/usr/lib/openssl-1.0" \
-
-  make OPENSSL_INCLUDE="/usr/include/openssl-1.0/" OPENSSL_LIB="/usr/lib/openssl-1.0/"
-}

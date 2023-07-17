@@ -1,7 +1,0 @@
-package() {
-	cd "$srcdir/$_pkgname"
-	install -D -m644 -t "$pkgdir/usr/share/licenses/$pkgname" OFL.txt
-	install -D -m644 -t "$pkgdir/usr/share/doc/$pkgname" README.md
-	install -D -m644 -t "$pkgdir/usr/share/fonts/OTF" \
-		fonts/BebasNeue\(2018\)ByDhamraType/otf/*.otf
-}

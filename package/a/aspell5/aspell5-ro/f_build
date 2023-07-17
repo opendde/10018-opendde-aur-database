@@ -1,5 +1,0 @@
-build() {
-	cd "$pkgname-$pkgver"
-	./configure --vars DESTDIR="/usr"
-	make
-}

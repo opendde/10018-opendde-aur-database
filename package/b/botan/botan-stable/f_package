@@ -1,6 +1,0 @@
-package() {
-  cd Botan-${pkgver}
-  make DESTDIR="$pkgdir/usr" install
-  find "$pkgdir/usr/share/doc" -type f -exec chmod 0644 {} \;
-  install -Dm644 doc/license.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-}

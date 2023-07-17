@@ -1,5 +1,0 @@
-package() {
-	cp -dr --no-preserve=ownership ./usr "${pkgdir}"/
-	cp -dr --no-preserve=ownership ./opt "${pkgdir}"/
-	cp -dr --no-preserve=ownership ./var "${pkgdir}"/
-}

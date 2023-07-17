@@ -1,5 +1,0 @@
-pkgver() {
-  cd bees
-
-  git describe --long --tags | sed 's/^v//;s/-/.r/;s/-/./'
-}

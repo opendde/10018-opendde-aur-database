@@ -1,6 +1,0 @@
-build() {
-  cd "$srcdir/trunk"
-  autoreconf -fi
-  ./configure --prefix=/usr --sbindir=/usr/bin
-  make
-}

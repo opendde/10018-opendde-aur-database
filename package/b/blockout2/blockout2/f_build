@@ -1,6 +1,0 @@
-build () {
-  cd "${srcdir}/BL_SRC/ImageLib/src/"
-  make
-  cd "${srcdir}/BL_SRC/BlockOut/"
-  make
-} 

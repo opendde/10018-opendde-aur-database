@@ -1,9 +1,0 @@
-build() {
-
-	_COPTS="--enable-openblas --with-openblas-incdir=/usr/include"
-
-	cd $srcdir/${_pkgname}-${pkgver}
-	sh autogen.sh
-	./configure --prefix=/usr $_COPTS
-	make
-}

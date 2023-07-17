@@ -1,6 +1,0 @@
-package() {
-  cd ${pkgname%-git}
-
-  make DESTDIR="${pkgdir}" install install-bee
-  make -C manuals DESTDIR="${pkgdir}" install-bee
-}

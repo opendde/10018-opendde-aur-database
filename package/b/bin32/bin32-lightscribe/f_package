@@ -1,7 +1,0 @@
-package() {
-  cd $srcdir
-  mv etc usr $pkgdir
-  install -D -m644 $pkgdir/usr/share/doc/lightscribeLicense.rtf $pkgdir/usr/share/licenses/lightscribe/license.rtf
-  cd $pkgdir/usr/lib/lightscribe/
-  ln -s libstdc++.so.5.0.7 libstdc++.so.5
-}

@@ -1,8 +1,0 @@
-package() {
-  cd "$srcdir/$_rname-$pkgver"
-
-  make DESTDIR="$pkgdir" install
-
-  mkdir -p "$pkgdir/opt/kde/share/apps/konqueror/servicemenus/"
-  install -m644 "$srcdir/amarok_addaspodcast.desktop" "$pkgdir/opt/kde/share/apps/konqueror/servicemenus/"
-}

@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.zip::${url}/releases/download/${pkgver}/linux_no_tray.zip")

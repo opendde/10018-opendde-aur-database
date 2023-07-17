@@ -1,1 +1,0 @@
-("git+https://anonscm.debian.org/git/users/enrico/cfget.git#tag=debian/${pkgver}-${pkgrel}")

@@ -1,6 +1,0 @@
-package () {
-  bsdtar -xf data.tar.gz -C "${pkgdir}"
-  install -d "${pkgdir}/usr/bin"  
-  install -D -m644 "$srcdir"/arnold.desktop "$pkgdir"/usr/share/applications/arnold.desktop
-  install -D -m644 "$srcdir"/arnold.png "$pkgdir"/usr/share/pixmaps/arnold.png
-}

@@ -1,9 +1,0 @@
-package() {
-	install -dm755 $pkgdir/usr/bin
-	install -m755 "$srcdir/$_dirname/ac++" "$pkgdir/usr/bin"
-	install -m755 "$srcdir/$_dirname/ag++" "$pkgdir/usr/bin"
-
-	install -dm755 $pkgdir/usr/share/doc/aspectc++
-	cp -r "$srcdir/$_dirname/examples" "$pkgdir/usr/share/doc/aspectc++"
-	install -dm755 "$pkgdir/usr/share/doc/aspectc++"
-}

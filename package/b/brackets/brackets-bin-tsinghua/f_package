@@ -1,5 +1,0 @@
-package() {
-  cd $srcdir
-  msg2 "  -> Installing from package..."
-  sudo pacman -U ./brackets-1.12-2-x86_64.pkg.tar.xz
-}

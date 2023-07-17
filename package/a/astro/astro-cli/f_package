@@ -1,6 +1,0 @@
-package() {
-  cd "$srcdir"
-  tar xvfz astro_${pkgver/v/}_linux_amd64.tar.gz
-  mkdir -p $pkgdir/usr/local/bin/
-  mv astro $pkgdir/usr/local/bin/
-}

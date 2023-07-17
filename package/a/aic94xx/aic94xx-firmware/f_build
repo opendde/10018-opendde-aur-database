@@ -1,4 +1,0 @@
-build() {
-    bsdtar xvf "${_fwname}_seq-${pkgver}-1.noarch.rpm"
-    chmod 644  "${srcdir}/lib/firmware/${_fwname}-seq.fw"
-}

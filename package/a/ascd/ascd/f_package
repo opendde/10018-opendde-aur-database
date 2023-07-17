@@ -1,7 +1,0 @@
-package() {
-  cd ${pkgname}-${pkgver}+lib-src
-  make DESTDIR="$pkgdir" install install.man
-  cd libworkman
-  make LIBDIR="/usr/lib" DESTDIR="$pkgdir" install
-  chown -R root.root "$pkgdir/usr/share/AScd"
-}

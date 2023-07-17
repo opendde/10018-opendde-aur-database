@@ -1,8 +1,0 @@
-package() {
-  _destdir="${pkgdir}/opt/android-sdk/system-images/android-${_apilevel}/default"
-  mkdir -p "${_destdir}"
-  mv "${srcdir}/${_arch}" "${_destdir}"
-  install -Dm644 "${srcdir}/source.properties" "${_destdir}/${_arch}"
-
-  chmod -R ugo+rX "${pkgdir}/opt"
-}

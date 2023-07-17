@@ -1,5 +1,0 @@
-build() {
-    cd "$pkgname-$pkgver"
-
-    rebar3 as default compile
-}

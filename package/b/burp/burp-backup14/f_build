@@ -1,7 +1,0 @@
-build() {
-
-  cd $_pkgname-$pkgver
-  ./configure --sbindir=/usr/bin
-  make
-
-}

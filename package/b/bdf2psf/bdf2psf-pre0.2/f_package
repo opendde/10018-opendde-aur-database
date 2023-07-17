@@ -1,9 +1,0 @@
-package() {
-    set -x
-    chmod oga+x $srcdir/bdf2psf
-    mkdir -p $pkgdir/usr/bin/ 
-    mkdir -p $pkgdir/usr/share/licenses/$pkgname/
-    install -t $pkgdir/usr/bin/ $srcdir/bdf2psf
-    install -t $pkgdir/usr/share/licenses/$pkgname/ $srcdir/SOURCE.md
-    set +x
-}

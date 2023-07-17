@@ -1,5 +1,0 @@
-package() {
-  make -C "$pkgname-$pkgver-0" DESTDIR="$pkgdir" install
-  convmv --notest -f iso-8859-1 -t UTF-8 \
-    "$pkgdir"/usr/lib/aspell-0.60/bokm*l.alias
-}

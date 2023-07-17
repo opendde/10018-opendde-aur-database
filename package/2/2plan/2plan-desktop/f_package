@@ -1,9 +1,0 @@
-package() {
-  install_dir="${pkgdir}/usr/share/2-plan/"
-
-  install -d "$install_dir"
-  cp -r  "${srcdir}/2-plan/"* "$install_dir"
-
-  install -d "${pkgdir}/usr/bin"
-  ln -s "/usr/share/2-plan/2-plan" "${pkgdir}/usr/bin/2-plan"
-}

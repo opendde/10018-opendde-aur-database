@@ -1,5 +1,0 @@
-package() {
-	mkdir -p "${pkgdir}/usr/bin"
-	cp "${srcdir}/aurh/aurh" "${pkgdir}/usr/bin/aurh"
-	chmod a+x "${pkgdir}/usr/bin/aurh"
-}

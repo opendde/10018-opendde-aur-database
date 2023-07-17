@@ -1,7 +1,0 @@
-package() {
-    mkdir -p ${pkgdir}/usr/share/${pkgname}/  
-    mkdir -p ${pkgdir}/usr/share/${pkgname}/config
-    cd ${pkgname}-${pkgver}
-    install -Dm777 ${pkgname} ${pkgdir}/usr/bin/${pkgname}
-    cp AppInfo.json ${pkgdir}/usr/share/${pkgname}/config/
-}

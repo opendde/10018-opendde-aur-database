@@ -1,6 +1,0 @@
-build() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-  export CFLAGS="${CFLAGS} -fplt"
-  echo $CFLAGS
-  make KERNELPATH=/usr/lib/modules/$(uname -r)/build
-}

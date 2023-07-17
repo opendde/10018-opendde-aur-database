@@ -1,7 +1,0 @@
-package() {
-	install -dm755 "${pkgdir}/usr/src/${pkgbase}-${pkgver}/"
-
-	cp -r "${srcdir}"/batman-adv-legacy/* "${pkgdir}/usr/src/${pkgbase}-${pkgver}/"
-
-	sed -i "s/^PACKAGE_VERSION=.*$/PACKAGE_VERSION=${pkgver}/" "${pkgdir}/usr/src/${pkgbase}-${pkgver}/dkms.conf"
-}

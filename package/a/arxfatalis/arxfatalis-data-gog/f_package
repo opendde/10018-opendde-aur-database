@@ -1,4 +1,0 @@
-package() {
-    chmod +x arx-install-data
-    ./arx-install-data --batch "$_gamepkg" "$pkgdir/usr/share/arx"
-}

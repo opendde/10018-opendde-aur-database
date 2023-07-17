@@ -1,4 +1,0 @@
-package() {
-	cd "$_reponame-$pkgver"
-	install -Dm 755 "target/release/$pkgname" "$pkgdir/usr/bin/$pkgname"
-}

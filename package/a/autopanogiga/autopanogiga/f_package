@@ -1,9 +1,0 @@
-package() {
-  cd "$srcdir/AutopanoGiga"
-  install -dm755 $pkgdir/{opt/kolor/,usr/share/licenses/$pkgname/}
-  cp -r $srcdir/AutopanoGiga $pkgdir/opt/kolor/$pkgname
-  cp $srcdir/$pkgname.png $pkgdir/opt/kolor/$pkgname/Resources/UI/autopano_giga.png
-  mv $pkgdir/opt/kolor/$pkgname/copyright $pkgdir/usr/share/licenses/$pkgname/
-  install -Dm755 $srcdir/$pkgname $pkgdir/usr/bin/$pkgname
-  install -Dm644 "$srcdir/$pkgname.desktop" "$pkgdir/usr/share/applications/$pkgname.desktop"
-}

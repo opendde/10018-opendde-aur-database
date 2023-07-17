@@ -1,5 +1,0 @@
-package() {
-    cd "$srcdir/asciii-rs/"
-    target="$srcdir/asciii-rs/target/release/$_pkgname"
-    install -Dm755 $target "$pkgdir/usr/bin/$_pkgname"
-}

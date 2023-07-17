@@ -1,3 +1,0 @@
-package() {
-	install -Dm 755 "$srcdir/blimp-linux-$pkgver" "$pkgdir/usr/bin/blimp"
-}

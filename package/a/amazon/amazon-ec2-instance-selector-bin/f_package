@@ -1,4 +1,0 @@
-package() {
-  cd "${srcdir}/"
-  install -Dm755 "ec2-instance-selector" "${pkgdir}/usr/bin/ec2-instance-selector"
-}

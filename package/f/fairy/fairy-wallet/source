@@ -1,1 +1,0 @@
-("${url}/releases/download/v${Version}/${pkgname}_${Version}_amd64.deb")

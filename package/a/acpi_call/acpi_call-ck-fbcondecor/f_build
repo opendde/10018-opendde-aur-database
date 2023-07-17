@@ -1,7 +1,0 @@
-build() {
-  cd acpi_call-${pkgver}
-
-  _kernver="$(cat /usr/lib/modules/${_extramodules}/version)"
-
-  make KVERSION="${_kernver}"
-}

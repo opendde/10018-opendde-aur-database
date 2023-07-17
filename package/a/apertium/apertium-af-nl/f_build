@@ -1,9 +1,0 @@
-build() {
-  mkdir -p "$pkgdir/usr/share/apertium/modes"
-
-  cd "$srcdir/$pkgname-$pkgver"
-
-  ./configure --prefix=/usr
-  make || return 1
-  make DESTDIR="$pkgdir/" install || return 1
-}

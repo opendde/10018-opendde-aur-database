@@ -1,8 +1,0 @@
-package() {
-    install -D -m 755 "${srcdir}/usr/bin/qemu-android" "${pkgdir}/usr/bin/qemu-android-${android_codename}"
-
-    local file
-    for file in "${srcdir}/android-${android_ver}-${android_revision}/"*; do
-        install -D -m 755 "${file}" "${pkgdir}/android-${android_ver}-${android_revision}/$(basename "${file}")"
-    done
-}

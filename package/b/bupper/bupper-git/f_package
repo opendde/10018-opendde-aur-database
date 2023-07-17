@@ -1,5 +1,0 @@
-package() {
-    mkdir -p "$pkgdir/usr/bin"
-    chmod +x "$srcdir/$pkgname-$pkgver/bin/bupper"
-    cp "$srcdir/$pkgname-$pkgver/bin/bupper" "$pkgdir/usr/bin/"
-}

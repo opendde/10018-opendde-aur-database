@@ -1,9 +1,0 @@
-package() {
-  install -dm755 "$pkgdir/usr/include/as"
-  install -m644 "$srcdir/as/src/"*.h "$pkgdir/usr/include/as"
-
-  if [[ "$_doc_built" = "1" ]]; then
-    install -dm755 "$pkgdir/usr/share/doc/as"
-    cp -R "$srcdir/as/doc/"* "$pkgdir/usr/share/doc/as"
-  fi
-}

@@ -1,8 +1,0 @@
-prepare() {
-  cd "$srcdir/artillery"
-
-  # Ensure setup script installs to $pkgdir
-  # and not directly into the system.
-  sed -i "s|/var|$pkgdir/var|g" setup.py
-  sed -i "s|/etc|$pkgdir/etc|g" setup.py
-}

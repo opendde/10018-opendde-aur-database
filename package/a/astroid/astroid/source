@@ -1,1 +1,0 @@
-("${pkgname}-v${pkgver}.tar.gz::https://github.com/astroidmail/astroid/archive/v${pkgver}.tar.gz"

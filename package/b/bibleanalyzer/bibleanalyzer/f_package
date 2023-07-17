@@ -1,5 +1,0 @@
-package() {
-	tar -xf data.tar.xz -C "${pkgdir}"/
-	install -Dm644 "$pkgdir/usr/share/doc/bibleanalyzer/copyright" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-	
-}

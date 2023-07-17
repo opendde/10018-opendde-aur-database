@@ -1,5 +1,0 @@
-build() {
-  patch -p0 -i $srcdir/Makefile.patch
-  cd $srcdir/$_foldername/arib25/src
-  make PREFIX=/usr
-}

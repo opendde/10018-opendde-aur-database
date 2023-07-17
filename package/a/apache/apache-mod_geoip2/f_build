@@ -1,4 +1,0 @@
-build() {
-  cd "$srcdir"/geoip-api-mod_geoip2-$pkgver
-  apxs -lGeoIP -L/usr/lib -I/usr/include -c mod_geoip.c
-}

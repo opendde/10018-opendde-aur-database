@@ -1,1 +1,0 @@
-("https://github.com/lummie/${_pkgname}/releases/download/v${pkgver}/${_pkgname}-v${pkgver}-linux-amd64.tar.gz")

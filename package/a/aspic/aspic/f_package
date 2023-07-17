@@ -1,6 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname-$pkgver"
-  make BINDIR=$pkgdir/usr/bin DATADIR=$pkgdir/usr/share/$pkgname MANDIR=$pkgdir/usr/share/man install
-  install -Dm644 doc/aspic.pdf $pkgdir/usr/share/doc/$pkgname/aspic.pdf
-  install -Dm644 LICENCE $pkgdir/usr/share/licenses/$pkgname/LICENCE
-}

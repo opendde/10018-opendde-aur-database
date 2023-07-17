@@ -1,7 +1,0 @@
-prepare() {
-  cd apache-${_pkgbase}-${pkgver}
-  patch -Np1 < $srcdir/apache-ant-1.9.15-https-and-repo-urls.patch
-  mkdir -p ~/.ant/tempcache
-  cp $srcdir/NetRexx.zip ~/.ant/tempcache/.
-  sed -i 's|/usr/bin/python|/usr/bin/python2|' src/script/runant.py
-}

@@ -1,8 +1,0 @@
-package() {
-  cd "$pkgname-$pkgver"
-
-  install -Dm755 "target/release/aloevera" "$pkgdir/usr/bin/aloevera"
-  install -Dm644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
-  find docs -type f -exec install -Dm644 "{}" "$pkgdir/usr/share/doc/$pkgname/{}" \;
-  find samples -type f -exec install -Dm644 "{}" "$pkgdir/usr/share/doc/$pkgname/{}" \;
-}

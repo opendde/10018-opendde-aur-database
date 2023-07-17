@@ -1,8 +1,0 @@
-build() {
-	cd "${srcdir}/${pkgname}-${pkgver}"
-	# remove debug build flags
-	patch -p1 < ${srcdir}/makefile.patch
-	patch -p1 < ${srcdir}/memcpy.patch
-	CFLAGS="$(CFLAGS) -fPIC -D_FORTIFY_SOURCE=2" LDFLAGS="$(LDFLAGS) -Wl,-z,relro,-z,now -pie" make
-	gzip -c unix/bing.8 > unix/bing.8.gz
-}

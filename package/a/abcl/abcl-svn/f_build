@@ -1,4 +1,0 @@
-build() {
-  cd ${_svnmod}
-  ant
-}

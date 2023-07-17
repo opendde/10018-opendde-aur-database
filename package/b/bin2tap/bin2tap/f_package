@@ -1,5 +1,0 @@
-package() {
-	cd "$pkgname"
-	mkdir -p $pkgdir/usr/bin/
-	install "$pkgname" $pkgdir/usr/bin/
-}

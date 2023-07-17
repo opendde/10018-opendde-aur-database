@@ -1,1 +1,0 @@
-("${pkgname}-${_pkgver}.tar.gz::https://github.com/editorconfig/${pkgname}/archive/${_pkgver}.tar.gz"

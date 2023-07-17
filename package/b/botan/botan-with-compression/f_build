@@ -1,6 +1,0 @@
-build() {
-  cd "${_pkgname^}-$pkgver"
-
-  ./configure.py --prefix=/usr --with-bzip --with-zlib
-  make
-}

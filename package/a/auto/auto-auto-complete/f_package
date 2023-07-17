@@ -1,4 +1,0 @@
-package() {
-  cd "auto-auto-complete-${pkgver}"
-  make DESTDIR="$pkgdir" install
-}

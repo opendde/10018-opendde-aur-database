@@ -1,5 +1,0 @@
-prepare() {
-  cd "$srcdir/SRC-$pkgver"
-  # Patch contributed by Gentoo maintainer
-  patch -Np0 -i ../$pkgname-$pkgver-gcc4.patch
-}

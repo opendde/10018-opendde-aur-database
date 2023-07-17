@@ -1,7 +1,0 @@
-package() {
-  local srvpath=/srv/forge
-
-  install -Dm 2755 $srcdir/AoA3-1.19-3.6.10.jar $pkgdir$srvpath/mods/$pkgname.jar
-
-  install -Dm 644 $srcdir/LICENSE.md ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
-}

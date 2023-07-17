@@ -1,6 +1,0 @@
-package() {
-	cd ${srcdir}/${pkgname}
-	DESTDIR="${pkgdir}/usr/share/themes"
-	mkdir -p "$DESTDIR/"
-	cp -R Bromo "$DESTDIR/"
-}

@@ -1,8 +1,0 @@
-package() {
-	cd "${srcdir}"
-	install -d "${pkgdir}/usr/bin"
-	install arch.* "${pkgdir}/usr/bin"
-	install -d "${pkgdir}/var/lib/buildstuff"
-	install -Dm644 README "${pkgdir}/usr/share/${pkgname}/README"
-	install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}

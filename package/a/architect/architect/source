@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.deb::https://www.getarchitect.io/downloads/architect-stable_${_pkgver}_amd64.deb"

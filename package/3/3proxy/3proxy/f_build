@@ -1,4 +1,0 @@
-build() {
-    cd "$srcdir/$pkgname-$pkgver"
-    make prefix="$_prefix" DESTDIR="$pkgdir" ETCDIR="$_etcdir" INITDIR=$_initdir BINDIR="/usr/bin" -f Makefile.Linux
-}

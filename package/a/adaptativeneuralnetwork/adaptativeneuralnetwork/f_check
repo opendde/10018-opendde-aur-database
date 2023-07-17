@@ -1,5 +1,0 @@
-check() {
-    cd "$srcdir/$_fullname-$_fullver"
-    cd build
-    make check
-}

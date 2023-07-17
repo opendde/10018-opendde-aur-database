@@ -1,9 +1,0 @@
-build() {
-  cd $_basename-$pkgver
-  ./configure \
-    --prefix=/usr \
-    --sysconfdir=/etc \
-    --enable-maemo-plugin \
-    --enable-maemo-resource-manager
-  make
-}

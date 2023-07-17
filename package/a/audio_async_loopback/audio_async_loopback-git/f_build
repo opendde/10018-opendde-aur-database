@@ -1,7 +1,0 @@
-build() {
-  cd "$srcdir/${pkgname%-git}"
-  gcc -o audio_async_loopback main.c iec_61937.c pcm_sink.c ac3_sink.c -lpulse-simple -lsamplerate -lpthread -lavutil -lavcodec -Wall -O3 -flto
-  echo "${srcdir}"
-  echo "${pkgname%-git}"
-  echo "${pkgdir}"
-}

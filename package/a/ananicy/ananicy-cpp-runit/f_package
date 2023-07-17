@@ -1,6 +1,0 @@
-package() {
-  mkdir -p "$pkgdir/etc/runit/sv/ananicy-cpp"
-  install -D -m0755 "${srcdir}/ananicy-cpp-runit.finish" "${pkgdir}/etc/runit/sv/ananicy-cpp/finish"
-  install -D -m0755 "${srcdir}/ananicy-cpp-runit.run" "${pkgdir}/etc/runit/sv/ananicy-cpp/run"
-  install -D -m0755 "${srcdir}/ananicy-cpp-runit.start" "${pkgdir}/etc/runit/sv/ananicy-cpp/start"
-}

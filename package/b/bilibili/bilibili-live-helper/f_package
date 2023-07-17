@@ -1,6 +1,0 @@
-package() {
-	install -d "${pkgdir}/opt/${pkgname}"
-	cp -r ${srcdir}/${pkgname}/* "${pkgdir}/opt/${pkgname}"
-	install -Dm755 ./"${entryname}.desktop" "${pkgdir}/usr/share/applications/${entryname}.desktop"
-	install -Dm444 ./"${pkgname}.ico" "${pkgdir}/usr/share/icons/hicolor/128x128/${pkgname}.ico"
-}

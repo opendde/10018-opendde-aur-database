@@ -1,6 +1,0 @@
-package() {
-	msg2 "Compile..."
-	make $pkgname
-	msg2 "Install..."
-	install -Dm755 $pkgname "$pkgdir/usr/bin/$pkgname"
-}

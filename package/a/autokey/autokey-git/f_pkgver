@@ -1,4 +1,0 @@
-pkgver() {
-  cd "$pkgname2" || return
-  printf "%s" "$(git describe --long --tags | sed 's/^v//;s/\([^-]*-\)g/r\1/;s/-/./g')"
-}

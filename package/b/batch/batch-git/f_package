@@ -1,8 +1,0 @@
-package() {
-    cd "$pkgname"
-    bindir="$pkgdir/usr/bin"
-    sharedir="$pkgdir/usr/share/$pkgname"
-	mkdir -p "$sharedir" "$bindir"
-	install -Dm755 "${PWD}/bin/batch" "$bindir/batch_process"
-	install -Dm755 "${PWD}/scripts/rename" "${PWD}/scripts/convert" "${PWD}/scripts/relink" "$sharedir"
-}

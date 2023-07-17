@@ -1,3 +1,0 @@
-package() {
-	tar -xf clickshare-linux.tar.gz -C "$pkgdir/"
-}

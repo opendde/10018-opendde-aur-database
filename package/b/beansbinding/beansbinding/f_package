@@ -1,5 +1,0 @@
-package() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-  install -Dm644 dist/beansbinding.jar "${pkgdir}/usr/share/java/beansbinding-${pkgver}.jar"
-  ln -sf "/usr/share/java/beansbinding-${pkgver}.jar" "${pkgdir}/usr/share/java/beansbinding.jar"
-}

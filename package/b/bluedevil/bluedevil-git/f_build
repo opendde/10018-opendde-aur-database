@@ -1,6 +1,0 @@
-build() {
-  cmake -B build -S ${pkgname%-git} \
-    -DCMAKE_INSTALL_LIBEXECDIR=lib \
-    -DBUILD_TESTING=OFF
-  cmake --build build
-}

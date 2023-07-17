@@ -1,4 +1,0 @@
-build() {
-	cd $srcdir/BrewStillery-$pkgver
-	cargo build --release
-}

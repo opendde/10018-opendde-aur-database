@@ -1,1 +1,0 @@
-("$pkgname-v$pkgver.tar.gz"::"https://github.com/ArkScript-lang/Ark/releases/download/v$pkgver/linux-gcc-9.zip")

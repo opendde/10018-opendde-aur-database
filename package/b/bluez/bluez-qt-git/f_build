@@ -1,7 +1,0 @@
-build() {
-  cmake -B build -S ${pkgname%-git} \
-    -DUDEV_RULES_INSTALL_DIR=/usr/lib/udev/rules.d \
-    -DBUILD_TESTING=OFF \
-    -DBUILD_QCH=ON
-  cmake --build build
-}

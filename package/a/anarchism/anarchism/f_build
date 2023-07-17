@@ -1,5 +1,0 @@
-build() {
-  cd $srcdir
-  ar x $(basename $source)
-  tar xf data.tar.xz
-}

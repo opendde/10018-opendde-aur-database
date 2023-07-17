@@ -1,5 +1,0 @@
-build() {
-  cd ${pkgname}
-  ./configure
-  make
-}

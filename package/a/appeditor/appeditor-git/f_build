@@ -1,4 +1,0 @@
-build() {
-  arch-meson "${pkgname%-git}" build
-  meson compile -C build
-}

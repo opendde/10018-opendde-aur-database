@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}::git+https://github.com/mrichar1/clipster.git#tag=${pkgver}")

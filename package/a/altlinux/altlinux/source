@@ -1,1 +1,0 @@
-("${pkgname}_${pkgver}-${pkgrel}.tar.gz"::"https://github.com/maxasix/${pkgname}/archive/refs/tags/v${pkgver}-${pkgrel}.tar.gz"

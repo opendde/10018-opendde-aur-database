@@ -1,1 +1,0 @@
-(${pkgname}-${pkgver}.war::https://github.com/airsonic/airsonic/releases/download/v${pkgver}/${pkgname}.war

@@ -1,6 +1,0 @@
-build() {
-	cd "${srcdir}/${pkgname}"
-	[[ -f "makefile.conf" ]] && make mrproper
-	./configure --prefix=/usr
-	make -j$(nproc) all
-}

@@ -1,6 +1,0 @@
-pkgver() {
-  cd "$srcdir/$pkgname"
-  local rel="$(sed -n 's|Version \([^ ]\+\) *$|\1|p' Changes | head -n 1)"
-  local ver="$(svnversion)"
-  printf "%s.r%s" "$rel" "${ver//[[:alpha:]]}"
-}

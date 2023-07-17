@@ -1,6 +1,0 @@
-prepare() {
-  # link up directory
-  ln -sf BambuStudio-${pkgver} BambuStudio
-  # fix broken udev install reference
-  patch -p0 < "$srcdir/CMakeLists.txt.patch"
-}

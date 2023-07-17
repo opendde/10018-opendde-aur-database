@@ -1,1 +1,0 @@
-("${pkgname}_data_${pkgver}-${pkgrel}.zip::https://github.com/PQCraft/CaveCube/releases/download/${pkgver}/cavecube_data.zip")

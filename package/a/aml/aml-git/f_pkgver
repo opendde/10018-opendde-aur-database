@@ -1,3 +1,0 @@
-pkgver () {
-	git -C "$pkgname" describe --tags --abbrev=10 | sed 's/^v//; s/-/+/; s/-/./'
-}

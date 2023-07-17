@@ -1,1 +1,0 @@
-("${name}::git+${github_link}${fragment}")

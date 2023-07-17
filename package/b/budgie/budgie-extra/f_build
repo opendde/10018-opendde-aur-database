@@ -1,7 +1,0 @@
-build() {
-    cd "$srcdir/$pkgname-$pkgver"
-    mkdir -p build
-    cd "$srcdir/$pkgname-$pkgver/build"
-    meson --prefix /usr --buildtype=plain ..
-    ninja
-}

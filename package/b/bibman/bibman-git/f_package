@@ -1,4 +1,0 @@
-package() {
-	cd bibman
-	make DESTDIR="$pkgdir/" install
-}

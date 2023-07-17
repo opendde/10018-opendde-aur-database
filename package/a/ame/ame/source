@@ -1,1 +1,0 @@
-("${_pkgname}-${pkgver}::${url}/-/archive/v${pkgver}/${_pkgname}-v${pkgver}.tar.gz")

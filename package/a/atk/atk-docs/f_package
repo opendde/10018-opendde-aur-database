@@ -1,5 +1,0 @@
-package() {
-	install -d "$pkgdir"/usr/share/devhelp/books/atk
-  install -D -m 644 "$srcdir"/atk-${pkgver}/docs/html/* \
-                    "$pkgdir"/usr/share/devhelp/books/atk
-}

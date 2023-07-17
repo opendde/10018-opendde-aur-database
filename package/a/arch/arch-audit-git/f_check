@@ -1,4 +1,0 @@
-check() {
-  cd arch-audit
-  cargo test --release --locked
-}

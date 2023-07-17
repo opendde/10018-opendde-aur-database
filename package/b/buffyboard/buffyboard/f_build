@@ -1,8 +1,0 @@
-build() {
-  mkdir -p "${srcdir}/${pkgname}-${pkgver}/lvgl" "${srcdir}/${pkgname}-${pkgver}/lv_drivers" "${srcdir}/${pkgname}-${pkgver}/squeek2lvgl"
-  mv "${srcdir}/lvgl-${_lvgl_commit}/"* "${srcdir}/${pkgname}-${pkgver}/lvgl"
-  mv "${srcdir}/lv_drivers-${_lv_drivers_commit}/"* "${srcdir}/${pkgname}-${pkgver}/lv_drivers"
-  mv "${srcdir}/squeek2lvgl-${_squeek2lvgl_commit}/"* "${srcdir}/${pkgname}-${pkgver}/squeek2lvgl"
-  arch-meson ${pkgname}-${pkgver} _build
-  meson compile -C _build
-}

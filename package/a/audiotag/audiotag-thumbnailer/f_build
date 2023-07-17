@@ -1,6 +1,0 @@
-build() {
-	cd $srcdir
-	mkdir -p $pkgdir/usr/{share/gconf/schemas,bin}
-	install -m644 audiotag-thumbnailer.schemas $pkgdir/usr/share/gconf/schemas
-	install -m755 audiotag-thumbnailer $pkgdir/usr/bin
-}

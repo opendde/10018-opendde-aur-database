@@ -1,4 +1,0 @@
-pkgver() {
-    cd "$srcdir/${pkgname%-git}"
-    git tag | grep -E "^[0-9]" | sort -r | head -1
-}

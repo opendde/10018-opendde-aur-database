@@ -1,6 +1,0 @@
-package() {
-	cd acalc
-	sudo mv acalc /usr/bin/acalc
-	sudo mv acalc.py /etc/acalc.py
-	chmod +x /usr/bin/acalc
-}

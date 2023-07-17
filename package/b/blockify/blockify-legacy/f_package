@@ -1,5 +1,0 @@
-package() {
-    cd "$srcdir"/${gitname}-${pkgver}
-
-    python2 setup.py install --root="${pkgdir}"
-}

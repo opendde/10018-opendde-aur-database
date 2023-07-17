@@ -1,6 +1,0 @@
-package() {
-    cd "$pkgname-$pkgver/build/$pkgname"
-    make INSTALL_ROOT=$pkgdir install
-    cd "$srcdir/$pkgname-$pkgver"
-    install -Dm644 "$pkgname.desktop" "$pkgdir/usr/share/applications/$pkgname.desktop"
-}

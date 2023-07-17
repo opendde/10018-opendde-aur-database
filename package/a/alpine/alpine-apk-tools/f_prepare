@@ -1,4 +1,0 @@
-prepare() {
-  cd apk-tools-v$pkgver
-  patch -p1 < ../archlinux.patch
-}

@@ -1,1 +1,0 @@
-("fiat::git+https://bitbucket.org/adaptivesimulations/fiat-hpc.git#branch=${_branch}")

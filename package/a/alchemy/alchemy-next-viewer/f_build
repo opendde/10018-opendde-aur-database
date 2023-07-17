@@ -1,4 +1,0 @@
-build() {
-	cd "$pkgname/build-linux-64" || exit 1
-	ninja -j$(nproc)
-}

@@ -1,4 +1,0 @@
-package() {
-  cd "${pkgname}" || exit
-  make DESTDIR="${pkgdir}" RPM_BUILD_ROOT="${pkgdir}" install
-}

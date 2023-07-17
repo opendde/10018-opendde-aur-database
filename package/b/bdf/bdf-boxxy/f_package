@@ -1,7 +1,0 @@
-package() {
-  install -Dm644 ${srcdir}/boxxy.bdf \
-	${pkgdir}/usr/share/fonts/misc/boxxy.bdf
-  install -Dm644 ${srcdir}/boxxy-bold.bdf \
-	${pkgdir}/usr/share/fonts/misc/boxxy-bold.bdf
-
-}

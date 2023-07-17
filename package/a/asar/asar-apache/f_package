@@ -1,6 +1,0 @@
-package() {
-  cd "$srcdir"/python-asar/trunk/asar-apache-agent/
-  install -d "$pkgdir"/usr/sbin
-  install -Dm755 asar_apache_agent "$pkgdir"/usr/sbin/
-  install -Dm755 asar_apache_gather "$pkgdir"/usr/sbin/
-}

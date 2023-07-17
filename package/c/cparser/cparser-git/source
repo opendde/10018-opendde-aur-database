@@ -1,1 +1,0 @@
-("${_reponame}::git+http://pp.ipd.kit.edu/git/${_reponame}.git")

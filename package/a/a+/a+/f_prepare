@@ -1,3 +1,0 @@
-prepare() {
-  ar xv aplus-fsf_$pkgver.*.deb && bsdtar jxf data.tar.xz
-}

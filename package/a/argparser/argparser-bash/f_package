@@ -1,4 +1,0 @@
-package() {
-	cd "${srcdir}/argparser-${pkgver}"
-	make DESTDIR="$pkgdir" PKGNAME="$pkgname" install-bash install-license
-}

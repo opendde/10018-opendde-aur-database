@@ -1,5 +1,0 @@
-package() {
-  cd acetoneiso_${pkgver}/acetoneiso
-
-  make INSTALL_ROOT="${pkgdir}" install
-}

@@ -1,6 +1,0 @@
-package() {
-  cd "$pkgname-$pkgver"
-  for f in "${_files[@]}"; do
-    install -Dm644 "$f" "$pkgdir/usr/$f"
-  done
-}

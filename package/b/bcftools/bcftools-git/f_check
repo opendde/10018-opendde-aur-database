@@ -1,5 +1,0 @@
-check() {
-  cd "bcftools"
-
-  #make check
-}

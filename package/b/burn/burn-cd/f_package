@@ -1,5 +1,0 @@
-package() {
-  cd $pkgname-$pkgver
-  install -Dm 644 dotburn-cd.conf "$pkgdir"/etc/burn-cd.conf
-  install -Dm 755 $pkgname-$pkgver "$pkgdir"/usr/bin/$pkgname
-}

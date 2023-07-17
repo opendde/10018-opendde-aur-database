@@ -1,9 +1,0 @@
-package() {
-  cd "${srcdir}"
-
-  ar x "${pkgname}_${pkgver}_all.deb" > /dev/null
-  tar -xJf data.tar.xz -C "${pkgdir}"
-
-  install -d -m755 "${pkgdir}/usr/"
-
-}

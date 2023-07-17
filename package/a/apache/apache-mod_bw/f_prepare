@@ -1,6 +1,0 @@
-prepare() {
-  cd "$srcdir"
-
-  # fix for apache 2.4
-  patch < "$srcdir"/apache24.patch
-}

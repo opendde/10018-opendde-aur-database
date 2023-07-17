@@ -1,8 +1,0 @@
-check() {
-  DESTDIR="${PWD}/tmp_install" cmake --build build --target install
-  CMAKE_PREFIX_PATH="${srcdir}/tmp_install/usr/lib/cmake/${pkgname}" cmake \
-    -S ${pkgname}-${pkgver}/test/test_cmake \
-    -B build_test
-  cmake --build build_test
-  build_test/a.out
-}

@@ -1,1 +1,0 @@
-(${pkgname}-${pkgver}::https://storage.googleapis.com/container-diff/v${pkgver}/container-diff-linux-amd64)

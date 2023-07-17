@@ -1,8 +1,0 @@
-package() {
- install -D AnalyseSI-$pkgver.jar "$pkgdir"/usr/share/$pkgname/AnalyseSI-$pkgver.jar
- install -D $pkgname.svg "$pkgdir"/usr/share/pixmaps/$pkgname.svg
- install -D $pkgname.desktop "$pkgdir"/usr/share/applications/$pkgname.desktop
- install -D -m755 $pkgname "$pkgdir"/usr/bin/$pkgname
-
- sed -e "3 i ANALYSE_VER=$pkgver" -i "$pkgdir"/usr/bin/$pkgname
-}

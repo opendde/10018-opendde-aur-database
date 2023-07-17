@@ -1,5 +1,0 @@
-package() {
-  make -C build install
-  install -Dm 755 3dstool/bin/3dstool -t "${pkgdir}"/usr/bin/
-  install -Dm 644 3dstool/bin/ignore_3dstool.txt -t "${pkgdir}"/usr/share/3dstool/
-}

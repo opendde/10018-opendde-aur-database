@@ -1,5 +1,0 @@
-package() {
-  cd "$pkgname"
-  install -dm755 "$pkgdir"/usr/lib/alsa-lib
-  make DESTDIR="$pkgdir" install
-}

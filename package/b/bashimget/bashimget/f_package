@@ -1,4 +1,0 @@
-package() {
-	cd "$srcdir/bashimget"
-	make PREFIX=/usr DESTDIR="${pkgdir}" install
-}

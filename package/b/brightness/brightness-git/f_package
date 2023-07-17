@@ -1,6 +1,0 @@
-package() {
-  mkdir -p ${pkgdir}/usr/bin
-  mkdir -p ${pkgdir}/usr/lib/brightness
-  cp -r ${srcdir}/${_gitname}-build/src/* ${pkgdir}/usr/lib/brightness
-  install -m 755 ../brightness.run ${pkgdir}/usr/bin/brightness
-}

@@ -1,6 +1,0 @@
-package() {
-  cd "$srcdir"/hsrmbeamertheme
-  mkdir -p $pkgdir/usr/share/texmf-dist/tex/latex/beamer/themes/theme
-  install -m644 beamerthemehsrm.sty \
-    "$pkgdir/usr/share/texmf-dist/tex/latex/beamer/themes/theme/"
-}

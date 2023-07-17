@@ -1,8 +1,0 @@
-build() {
-	cd "$_pkgbase/build"
-	python ../CMake/generate.py -wm
-	cmake .. \
-		-DCMAKE_BUILD_TYPE=Release \
-		-DCMAKE_INSTALL_PREFIX=/usr
-	make
-}

@@ -1,4 +1,0 @@
-prepare() {
-  cd Avl
-  patch -Np1 -i "$startdir/avl.patch"
-}

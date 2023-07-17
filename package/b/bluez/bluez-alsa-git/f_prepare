@@ -1,3 +1,0 @@
-prepare() {
-  sed -i 's|bluez.service|bluetooth.service|' "${pkgname}/misc/systemd/bluealsa.service.in"
-}

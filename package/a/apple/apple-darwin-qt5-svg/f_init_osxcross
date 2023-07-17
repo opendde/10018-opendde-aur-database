@@ -1,7 +1,0 @@
-init_osxcross() {
-  # add osxcross toolchain to path
-  export PATH="${_osxcrossprefix}/bin:$PATH"
-  # enable use of ccache (if installed)
-  [[ -f /usr/bin/ccache ]] && \
-    export PATH="${_osxcrossprefix}/lib/ccache/bin:$PATH"
-}

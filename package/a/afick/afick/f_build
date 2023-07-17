@@ -1,5 +1,0 @@
-build() {
-  cd "${srcdir}"/$pkgbase-$pkgver
-
-  perl Makefile.pl Makefile_sys.in
-}

@@ -1,7 +1,0 @@
-package() {
-	install -d "${pkgdir}/opt/acestream.engine"
-	install -Dm644 "$srcdir/acestream-engine.service" "$pkgdir/usr/lib/systemd/system/acestream-engine.service"
-	cd "$srcdir/$pkgname"
-	cp -ar acestream.engine/* "${pkgdir}/opt/acestream.engine"
-	install -Dm644 "$srcdir/acestream.conf" "$pkgdir/opt/acestream.engine/androidfs/acestream.engine/acestream.conf"
-}

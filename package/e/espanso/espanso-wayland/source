@@ -1,1 +1,0 @@
-("git+https://github.com/federico-terzi/espanso.git#tag=v${_pkgver}")

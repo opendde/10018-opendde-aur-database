@@ -1,6 +1,0 @@
-build() {
-	cd "$srcdir/${pkgname}-${pkgver}"
-	patch -p1 < "${srcdir}"/plist.patch
-	./configure --prefix=/usr --with-udev-rules-dir=/usr/lib/udev/rules.d
-        make
-}

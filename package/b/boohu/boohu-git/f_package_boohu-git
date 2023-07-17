@@ -1,4 +1,0 @@
-package_boohu-git() {
-  install -Dm 755 "$srcdir/$pkgname/boohu" -t "$pkgdir/usr/bin";
-  install -Dm 644 "$srcdir/$pkgname/LICENSE" -t "$pkgdir/usr/share/licenses/$pkgname"
-}

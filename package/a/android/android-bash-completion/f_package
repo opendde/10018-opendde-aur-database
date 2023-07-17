@@ -1,8 +1,0 @@
-package() {
-  mkdir -p $pkgdir/usr/share/licenses/android-bash-completion/
-  mkdir -p $pkgdir/etc/bash_completion.d/
-  cd android-completion
-  tail -n 22 README.markdown >> $pkgdir/usr/share/licenses/android-bash-completion/LICENSE
-  cp android $pkgdir/etc/bash_completion.d/android
-  cp repo $pkgdir/etc/bash_completion.d/repo
-}

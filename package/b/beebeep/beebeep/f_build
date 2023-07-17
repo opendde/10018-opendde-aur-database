@@ -1,7 +1,0 @@
-build() {
-  cd beebeep-code-${_pkgver}
-  cd src && qmake-qt5
-  cd ../plugins && qmake-qt5
-  cd .. && qmake-qt5
-  make
-}

@@ -1,7 +1,0 @@
-build() {
-    cd "${srcdir}/aster-full-src-${_asterver}"
-    sed -e "s|should_continue()|# should_continue()|g" -i setup.py
-
-    # Change this with your favorite editor
-    echo "EDITOR='/usr/bin/emacs'" >> setup.cfg
-}

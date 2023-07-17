@@ -1,6 +1,0 @@
-package() {
-  local lpfx="/usr/share/licenses"
-  cd "$srcdir"
-  make -C "$_pkgname" DESTDIR="$pkgdir/" PREFIX=/usr install
-  install -m644 -D "$_pkgname/LICENSE" "$pkgdir/$lpfx/$pkgname/LICENSE"
-}

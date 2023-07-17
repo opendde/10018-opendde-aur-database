@@ -1,5 +1,0 @@
-check() {
-  cd "bluez-tools"
-
-  make check
-}

@@ -1,6 +1,0 @@
-prepare() {
-  cd "$pkgname"
-
-  patch -p1 -i ../fix_build_new_boost.patch
-  patch -p1 -i ../fix_format_security.patch
-}

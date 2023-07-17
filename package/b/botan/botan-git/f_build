@@ -1,8 +1,0 @@
-build() {
-  cd "botan"
-
-  ./configure.py \
-    --prefix="/usr" \
-    --with-zlib
-  make
-}

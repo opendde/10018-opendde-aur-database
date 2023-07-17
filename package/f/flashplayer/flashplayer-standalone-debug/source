@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz::https://fpdownload.macromedia.com/pub/${pkgname%-standalone-debug}/updaters/${pkgver%%.*}/flash_player_sa_linux_debug.${arch}.tar.gz")

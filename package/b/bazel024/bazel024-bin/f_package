@@ -1,5 +1,0 @@
-package() {
-  sh bazel-${pkgver}-installer-linux-x86_64.sh --prefix="${pkgdir}/usr"
-  rm "${pkgdir}"/usr/bin/bazel
-  cd "${pkgdir}"/usr/bin && ln -s ../lib/bazel/bin/bazel bazel
-}

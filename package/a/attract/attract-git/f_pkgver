@@ -1,5 +1,0 @@
-pkgver() {
-	cd "${_gitname}"
-	tag=$(git describe --abbrev=0)
-	printf "%s.r%s\n" "$(echo ${tag} | sed 's/^v//;s/-/./g')" "$(git rev-list --count ${tag}..HEAD)"
-}

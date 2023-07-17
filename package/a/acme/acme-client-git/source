@@ -1,1 +1,0 @@
-(${pkgname}::'git+https://github.com/kristapsdz/acme-client-portable.git'

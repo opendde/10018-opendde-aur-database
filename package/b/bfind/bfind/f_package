@@ -1,4 +1,0 @@
-package() {
-	cd "$srcdir/bfind"
-	make PREFIX=/usr DESTDIR="$pkgdir" install
-}

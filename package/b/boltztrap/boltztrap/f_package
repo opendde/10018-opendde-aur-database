@@ -1,4 +1,0 @@
-package() {
-  install -D -m755 "$srcdir/$pkgname-$pkgver/src/BoltzTraP" "$pkgdir/usr/bin/BoltzTraP"
-  install -D -m755 "$srcdir/$pkgname-$pkgver/src/x_trans" "$pkgdir/usr/bin/x_trans"
-}

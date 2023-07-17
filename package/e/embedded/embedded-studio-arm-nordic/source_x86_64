@@ -1,1 +1,0 @@
-("Setup_EmbeddedStudio_ARM_Nordic_v${pkgver/./}_linux_x64.tar.gz::https://dl2.segger.com/files/embedded-studio/EmbeddedStudio_ARM_Nordic_v${pkgver/./}_linux_x64.tar.gz")

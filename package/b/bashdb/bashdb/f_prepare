@@ -1,6 +1,0 @@
-prepare() {
-  set -u
-  cd "${_srcdir}"
-  sed -e "/^\s\+'5.0' / s:): | '5.1'&:g" -i 'configure'
-  set +u
-}

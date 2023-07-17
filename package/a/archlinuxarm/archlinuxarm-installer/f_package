@@ -1,5 +1,0 @@
-package() {
-  cd "$pkgname-$pkgver"
-  mkdir -p "$pkgdir/usr/bin/"
-  install -Dm755 src/archlinuxarm-installer "$pkgdir/usr/bin/"
-}

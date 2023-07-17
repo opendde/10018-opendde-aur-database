@@ -1,4 +1,0 @@
-build() {
-  cd "$srcdir/autopackage"
-  PATH="$PATH:$pkgdir/usr/bin" make PREFIX="$pkgdir/usr" install
-}

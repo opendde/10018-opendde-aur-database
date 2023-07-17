@@ -1,1 +1,0 @@
-("git+https://github.com/abbat/elfexec.git#tag=v${pkgver}")

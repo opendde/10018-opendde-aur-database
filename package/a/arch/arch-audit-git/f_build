@@ -1,4 +1,0 @@
-build() {
-  cd arch-audit
-  cargo build --release --locked
-}

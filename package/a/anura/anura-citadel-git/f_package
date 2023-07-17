@@ -1,8 +1,0 @@
-package() {
-  cd $_gitname
-
-  _installdir=$pkgdir/usr/share/anura-git/modules/citadel
-  install -DT -m644 module.cfg $_installdir/module.cfg
-  cp -r data images sounds evo $_installdir
-  install -D -m755 $srcdir/anura-citadel-git.sh $pkgdir/usr/bin/anura-citadel-git
-}

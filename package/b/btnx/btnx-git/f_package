@@ -1,4 +1,0 @@
-package() {
-  cd btnx
-  make DESTDIR="${pkgdir}" install
-}

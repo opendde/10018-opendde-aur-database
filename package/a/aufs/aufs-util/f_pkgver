@@ -1,4 +1,0 @@
-pkgver() {
-  cd "${srcdir}/${pkgname}"
-  date -d @$(git log -n1 --pretty=format:%ct) '+%Y%m%d'
-}

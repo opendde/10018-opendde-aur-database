@@ -1,7 +1,0 @@
-package() {
-  install -d "$pkgdir/usr/share/php/$_pkgname/" "$pkgdir/usr/bin/"
-  cp -a $_pkgname/* "$pkgdir/usr/share/php/$_pkgname/"
-  install -Dm644 $_pkgname/support/shell/hooks/bash-completion.sh "$pkgdir/usr/share/bash-completion/completions/arc"
-  ln -s ../share/php/$_pkgname/bin/arc "$pkgdir/usr/bin/arc"
-  ln -sf ../../../../../../etc/ssl/cert.pem "$pkgdir/usr/share/php/arcanist/resources/ssl/default.pem"
-}

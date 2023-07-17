@@ -1,5 +1,0 @@
-package() {
-  cd "${srcdir}/birtty"
-  install -Dm755 birtty "${pkgdir}/usr/bin/birtty"
-  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/$pkgname/LICENSE"
-}

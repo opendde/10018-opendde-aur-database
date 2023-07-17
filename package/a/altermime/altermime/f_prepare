@@ -1,4 +1,0 @@
-prepare() {
-  sed -i 's/^CFLAGS=-Wall -Werror -g -I. -O2 $(ALTERMIME_OPTIONS)/CFLAGS=-Wall $(ALTERMIME_OPTIONS)/' "${pkgname}-${pkgver}/Makefile"
-  sed -i 's/^	${CC} ${CFLAGS} altermime.c ${OBJS} -o altermime/	${CC} ${CFLAGS} ${LDFLAGS} altermime.c ${OBJS} -o altermime/' "${pkgname}-${pkgver}/Makefile"
-}

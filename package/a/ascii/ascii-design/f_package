@@ -1,7 +1,0 @@
-package() {
-  cd "$srcdir/Ascii-Design-$pkgver"
-  make DESTDIR="$pkgdir/" install
-
-  install -Dm644 README.md ${pkgdir}/usr/share/doc/${pkgname}/README
-  install -Dm644 COPYING.TXT ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
-}

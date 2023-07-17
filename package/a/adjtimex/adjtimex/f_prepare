@@ -1,4 +1,0 @@
-prepare() {
-        cd "$pkgname-debian-${pkgver//_/-}"
-        patch -p1 -i ../../Makefile.patch Makefile.in
-}

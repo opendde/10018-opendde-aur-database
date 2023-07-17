@@ -1,8 +1,0 @@
-_ensure_local_nvm() {
-    # Check if NVM is enabled (and, if so, disable it)
-    which nvm >/dev/null 2>&1 && nvm deactivate && nvm unload
-    # Use a temp folder as NVM dir to avoid ruining user config
-    export NVM_DIR="${srcdir}/.nvm"
-    # Load NVM with the temp path
-    source /usr/share/nvm/init-nvm.sh || [[ $? != 1 ]]
-}

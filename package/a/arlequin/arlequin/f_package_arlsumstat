@@ -1,5 +1,0 @@
-package_arlsumstat() {
-  pkgdesc="a modified version of Arlequin for computing summary statistics"
-  arch=('x86_64')
-  install -Dm 755 $srcdir/${pkg2}_linux/${pkg2}${pkgver//./}_64bit $pkgdir/usr/bin/$pkg2
-}

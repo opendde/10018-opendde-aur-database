@@ -1,3 +1,0 @@
-package() {
-	cp -r "${_gitname}-${pkgver}/Pkg/usr" "${pkgdir}/usr"
-}

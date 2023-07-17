@@ -1,8 +1,0 @@
-build() {
-  # Generate the extension
-  chromium --pack-extension=$pkgname
-
-  # Write the plugin metadata file
-  printf '%s\n' '{"external_crx": "'"$_installpath/$pkgname"'.crx", "external_version": "'"$(egrep '^\s*"version"' $pkgname/manifest.json | sed 's|^\s*"version": "||;s|",$||')"'"}' \
-    > pluginid.json
-}

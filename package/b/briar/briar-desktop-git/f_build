@@ -1,5 +1,0 @@
-build() {
-  cd "${_pkgname}"
-  export PATH="/usr/lib/jvm/java-17-openjdk/jre/bin/:$PATH"
-  ./gradlew -Dorg.gradle.java.home=/usr/lib/jvm/java-17-openjdk --no-daemon -PbuildType=${_build_type} packageUberJarForCurrentOS
-}

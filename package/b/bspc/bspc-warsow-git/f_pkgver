@@ -1,7 +1,0 @@
-pkgver() {
-	cd "$srcdir/$_srcname"
-
-	# Use timestamp, because there are no tags or other sorts of version information,
-	# to inform AUR helpers' update processes.
-	printf "%s.%s.%s" "$(git show -s --format=%ct HEAD)" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-}

@@ -1,4 +1,0 @@
-package() {
-  install -d "$pkgdir/usr/share/blender/$_blender_version/scripts/addons"
-  mv "$srcdir/import_runtime_mhx2" "$pkgdir/usr/share/blender/$_blender_version/scripts/addons"
-}

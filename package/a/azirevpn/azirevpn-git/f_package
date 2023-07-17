@@ -1,4 +1,0 @@
-package() {
-	cd "azclient"
-	make DESTDIR="$pkgdir/" install
-}

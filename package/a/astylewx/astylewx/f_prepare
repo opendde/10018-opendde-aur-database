@@ -1,4 +1,0 @@
-prepare() {
-    cd "${pkgname}_${pkgver}_linux/$pkgname/build/gcc"
-    patch -p3 -i "$srcdir"/astylewx-destdir.patch
-}

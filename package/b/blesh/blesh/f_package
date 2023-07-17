@@ -1,4 +1,0 @@
-package() {
-  mkdir -p "${pkgdir}/usr/share/blesh/"
-  cp -RpT "${_pkgname%.sh}-${pkgver}" "${pkgdir}/usr/share/blesh/"
-}

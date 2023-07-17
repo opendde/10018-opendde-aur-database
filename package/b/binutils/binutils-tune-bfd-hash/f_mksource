@@ -1,9 +1,0 @@
-mksource() {
-  mkdir ${_pkgname}-${_date}
-  cd ${_pkgname}-${_date}
-  export _TAG=binutils-2_22-branch
-  export 'CVSROOT=:pserver:anoncvs@sourceware.org:/cvs/src'
-  cvs -z9 co -r $_TAG binutils || return 1
-  mv src binutils
-  tar -cvjf ../binutils-${pkgver}_${_date}.tar.bz2 binutils/*
-}

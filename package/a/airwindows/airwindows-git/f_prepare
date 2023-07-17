@@ -1,8 +1,0 @@
-prepare() {
-  cd "${pkgname%-*}/plugins/LinuxVST"
-  # Fix cmake build, see:
-  # https://github.com/airwindows/airwindows/pull/5
-  rm -f build/CMakeCache.txt
-  mkdir -p include/vstsdk build
-  cp "${srcdir}/CMakeLists.txt" include/vstsdk/CMakeLists.txt
-}

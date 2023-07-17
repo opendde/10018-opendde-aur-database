@@ -1,5 +1,0 @@
-build() {
-  cd "$_srcname"
-
-  ninja -C builddir
-}

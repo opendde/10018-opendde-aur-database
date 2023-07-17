@@ -1,7 +1,0 @@
-package() {
-  cd "${srcdir}/${_pkgname}-${_pkgver}"
-
-  install -d "${pkgdir}/usr/share/emoticons/${pkgname}"
-  install -m644 * "${pkgdir}/usr/share/emoticons/${pkgname}"
-  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}

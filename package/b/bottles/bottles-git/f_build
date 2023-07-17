@@ -1,5 +1,0 @@
-build () {
-  cd "$srcdir/${pkgname%-git}"
-  arch-meson build
-  ninja -C build
-}

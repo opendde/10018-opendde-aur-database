@@ -1,4 +1,0 @@
-package() {
-  install -d "${pkgdir}/usr/share/fonts/${pkgname}"
-  cp -dpr --no-preserve=all "${srcdir}/ArzteSans_OTF_1.0/"*.otf "${pkgdir}/usr/share/fonts/${pkgname}"
-}

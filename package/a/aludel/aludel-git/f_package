@@ -1,4 +1,0 @@
-package() {
-	cd $_realname
-	make INSTALL_ROOT="$pkgdir" install
-} 

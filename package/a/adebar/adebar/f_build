@@ -1,6 +1,0 @@
-build() {
-    cd "${srcdir}/${pkgname}"
-    sed -i "/BINDIR=/d" adebar-cli
-    sed -i '/LIBDIR=/cLIBDIR=/usr/lib/adebar' adebar-cli
-    sed -i '/^\ \ USER_CONF=/c\ \ mkdir -p "$USER_CONF"' adebar-cli
-}

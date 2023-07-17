@@ -1,9 +1,0 @@
-build() {
-  cd bls
-
-  mkdir -p build
-  env -C build cmake \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    ..
-  make -C build
-}

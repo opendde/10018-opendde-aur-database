@@ -1,5 +1,0 @@
-package() {
-    install -Dm755 \
-    "${srcdir}/${_pkgname}/ubspc.sh" \
-    "${pkgdir}/usr/bin/ubspc"
-}

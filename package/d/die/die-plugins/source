@@ -1,1 +1,0 @@
-("$_name-$pkgver.tar.gz::https://github.com/DISTRHO/$_name/archive/refs/tags/v$pkgver.tar.gz"

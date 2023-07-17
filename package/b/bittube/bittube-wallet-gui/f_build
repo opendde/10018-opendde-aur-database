@@ -1,4 +1,0 @@
-build() {
-	cd "$srcdir/${pkgname}"
-	QT_SELECT=5 ./build.sh release
-}

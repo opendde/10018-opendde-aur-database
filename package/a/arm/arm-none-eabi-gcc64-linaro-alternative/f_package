@@ -1,9 +1,0 @@
-package() {
-  cd ${srcdir}/${_basedir}/build
-  make -j1 DESTDIR=${pkgdir} install
-
-  ln -s /usr/arm-none-eabi/bin/as ${pkgdir}/usr/arm-none-eabi-6.4/libexec/gcc/arm-none-eabi/6.4.1/as
-
-  # libiberty.a conflicts with host version
-  rm -f  $pkgdir/usr/lib/libiberty.a
-}

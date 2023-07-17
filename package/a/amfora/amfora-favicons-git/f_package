@@ -1,7 +1,0 @@
-package() {
-    cd "$srcdir/amfora-favicons"
-
-    mkdir -p "$pkgdir/usr/bin"
-    mkdir -p "$pkgdir/usr/share/applications"
-    make PREFIX="$pkgdir/usr" install
-}

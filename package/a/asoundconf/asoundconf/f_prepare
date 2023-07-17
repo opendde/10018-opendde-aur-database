@@ -1,6 +1,0 @@
-prepare() {
-    cd "$pkgname"
-    patch -p1 < "$srcdir"/0001-python3-syntax.patch
-    patch -p1 < "$srcdir"/0002-python3-spaces.patch
-    patch -p1 < "$srcdir"/0003-python3-gobject.patch
-}

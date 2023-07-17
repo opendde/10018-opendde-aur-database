@@ -1,5 +1,0 @@
-check() {
-cd ${srcdir}/${_basedir}
-cd build
-make -j5 check
-}

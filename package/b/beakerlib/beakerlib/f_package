@@ -1,4 +1,0 @@
-package() {
-	cd "${_srcdir}"
-	make DD="${pkgdir}" install
-}

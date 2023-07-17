@@ -1,1 +1,0 @@
-("${_appimage}::${url}/releases/download/continuous/${_pkgname}-aarch64.AppImage")

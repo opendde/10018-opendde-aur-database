@@ -1,1 +1,0 @@
-(${pkgname#emacs-}-${pkgver}.tar.gz::"https://github.com/auto-complete/popup-el/archive/v${pkgver}.tar.gz")

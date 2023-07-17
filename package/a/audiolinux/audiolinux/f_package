@@ -1,5 +1,0 @@
-package() {
-  install -d "$pkgdir/opt/$pkgname"
-  bsdtar xf audiolinux.tar.gz -C "$pkgdir/opt/"
-  chown -R root:root $pkgdir
-}

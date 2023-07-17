@@ -1,7 +1,0 @@
-package_firefox-extension-amber-bridge() {
-	depends=(amber-bridge)
-
-	install -dm755 "${pkgdir}/usr/lib/mozilla/native-messaging-hosts/"
-	jq '.path = "/usr/lib/com.paysonwallach.amber.bridge"' "${_pkgname}-${pkgver}/data/com.paysonwallach.amber.bridge.json" \
-	> "${pkgdir}/usr/lib/mozilla/native-messaging-hosts/com.paysonwallach.amber.bridge.json"
-}

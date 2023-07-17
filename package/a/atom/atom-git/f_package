@@ -1,9 +1,0 @@
-package () {
-  cd "${srcdir}/${pkgname}"
-  script/grunt install --build-dir "${srcdir}/atom-build" --install-dir "${pkgdir}/usr"
-  install -Dm 644 "${srcdir}/${pkgname}/LICENSE.md" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-  install -Dm 644 "${srcdir}/${pkgname}/README.md" "${pkgdir}/usr/share/doc/${pkgname}/README"
-  echo -e 'g/=/s/=.*usr/=\/usr/\nw' | ed -sv "${pkgdir}"/usr/share/applications/atom.desktop
-  # fix shebang
-  grep --color=never -rlZ -- '^#!.*python$' "${pkgdir}"/usr/share/atom/resources/app/apm/node_modules/npm/node_modules/node-gyp/gyp | xargs -0rx -I {} sh -c "echo -e 'g/^#!.*python$/s/python.*/python2/\nw' | ed -sv {}"
-}

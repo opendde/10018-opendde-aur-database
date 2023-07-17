@@ -1,8 +1,0 @@
-package() {
-    local dest="$pkgdir/usr/src/${_pkgbase}-$pkgver"
-    mkdir -p $dest
-    cd "${srcdir}/workdir/"
-    cp --preserve=all {alx.h,ethtool.c,hw.c,hw.h,main.c,reg.h} $dest
-    cd "${srcdir}"
-    cp --preserve=all Kbuild dkms.conf $dest
-}

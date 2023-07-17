@@ -1,1 +1,0 @@
-(${_pkgname}-${pkgver}.tar.bz2::http://deb.debian.org/debian/pool/main/d/dvdisaster/${_pkgname}_${pkgver}.orig.tar.bz2

@@ -1,5 +1,0 @@
-package() {
-  cd aMule-$pkgver
-
-  make DESTDIR=${pkgdir} install
-}

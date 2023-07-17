@@ -1,6 +1,0 @@
-check() {
-  export GOPATH="${srcdir}/_go"
-  cd "$GOPATH/src/${_importpath}"
-  # see https://github.com/snail007/goproxy/issues/156
-  #go test $(go list ./...)
-}

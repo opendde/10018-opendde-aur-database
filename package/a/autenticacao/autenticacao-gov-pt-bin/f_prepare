@@ -1,3 +1,0 @@
-prepare() {
-	tar --use-compress-program=unzstd -xvf data.tar.zst
-}

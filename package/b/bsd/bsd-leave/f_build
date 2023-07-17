@@ -1,5 +1,0 @@
-build() {
-	cd "$pkgname-$_debver"
-
-    gcc -o leave leave.c $CFLAGS $CPPFLAGS -D__COPYRIGHT\(x\)= -D__RCSID\(x\)= $LDFLAGS
-}

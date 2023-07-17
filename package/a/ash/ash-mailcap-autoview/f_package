@@ -1,5 +1,0 @@
-package() {
-    mkdir -p $pkgdir/usr/{bin,share/ash-mailcap-autoview}
-    cp "$srcdir/.go/bin/$pkgname" "$pkgdir/usr/bin"
-    cp "$srcdir/ash-mailcap-autoview/editor.template" "$pkgdir/usr/share/ash-mailcap-autoview/editor"
-}

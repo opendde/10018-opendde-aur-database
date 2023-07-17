@@ -1,1 +1,0 @@
-("http://download.autodesk.com/us/fbx/${pkgver:0:4}/${pkgver}/fbx${_verstr}_fbxextensionssdk_linux.tar.gz")

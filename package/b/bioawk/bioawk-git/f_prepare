@@ -1,4 +1,0 @@
-prepare() {
-  cd "$srcdir/bioawk"
-  echo "1.0.0.r$(git rev-list --count HEAD).$(git rev-parse --short HEAD)"
-}

@@ -1,1 +1,0 @@
-("buildkit-${pkgver}.tar.gz::https://github.com/moby/buildkit/archive/v${pkgver}.tar.gz")

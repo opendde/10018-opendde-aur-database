@@ -1,5 +1,0 @@
-prepare() {
-    cd austin
-    autoreconf --install
-    mkdir build
-}

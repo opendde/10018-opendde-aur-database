@@ -1,8 +1,0 @@
-package() {
-  local _dest="${pkgdir}/usr/share/${_distro}"
-  local _iso_name="/usr/share/${_distro}/${_pkgname}-x86_64.iso"
-  rm -rf "${_dest}"
-  mkdir -p "${_dest}"
-  cp "${_iso_name}" disk.raw
-  tar --format=oldgnu -Sczf "${_dest}/${_pkgname}.tar.gz" disk.raw 
-}

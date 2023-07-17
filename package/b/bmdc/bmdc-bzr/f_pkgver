@@ -1,4 +1,0 @@
-pkgver() {
-    cd "$pkgname"
-printf "r%s" "$(bzr revno)"
-}

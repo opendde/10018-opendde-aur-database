@@ -1,8 +1,0 @@
-package() {
-    cd "$srcdir/auto-cpufreq"
-    python setup.py install --root="$pkgdir" --optimize=1 --skip-build
-    install -Dm644 LICENSE "$pkgdir/usr/share/licenses/auto-cpufreq/LICENSE"
-    install -Dm644 README.md "$pkgdir/usr/share/doc/auto-cpufreq/README"
-    install -Dm755 scripts/cpufreqctl.sh -t "$pkgdir/usr/share/auto-cpufreq/scripts"
-    install -Dm644 "scripts/auto-cpufreq.service" -t "$pkgdir/usr/lib/systemd/system"
-}

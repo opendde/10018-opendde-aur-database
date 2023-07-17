@@ -1,7 +1,0 @@
-build() {
-  	cd "${srcdir}/${_pkgname}-${pkgver}"
-  	patch -p1 -i "${srcdir}"/ace14_fixes.patch
-  	patch -p1 -i "${srcdir}"/badmatch.patch
-  	LDFLAGS="$LDFLAGS -lpng -lz -lm" ./configure --prefix=/usr
-  	make
-}

@@ -1,8 +1,0 @@
-package() {
-  install -Dm755 ${_base} "${pkgdir}/usr/bin/${_base}"
-  installdir="${pkgdir}/opt/${pkgname}"
-  mkdir -p "${installdir}"
-  for dir in bin config lib plugins; do
-    cp -r "./${_base}-${pkgver}/${dir}" "${installdir}/"
-  done
-}

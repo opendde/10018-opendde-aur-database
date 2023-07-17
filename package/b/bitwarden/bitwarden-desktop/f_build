@@ -1,5 +1,0 @@
-build() {
-  sed -i -E \
-    "s|Exec=/opt/Bitwarden/bitwarden|Exec=/opt/bitwarden/bitwarden|" \
-    "$srcdir/dist/usr/share/applications/bitwarden.desktop"
-}

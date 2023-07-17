@@ -1,4 +1,0 @@
-check() {
-	cd "${srcdir}/${_pkgname}/build"
-	ctest -R 'global_ptr|hello_world|insert_find'
-}

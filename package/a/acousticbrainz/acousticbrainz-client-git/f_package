@@ -1,4 +1,0 @@
-package() {
-  cd "$srcdir/$_pkgname"
-  $_python setup.py install --root="$pkgdir/" --optimize=1
-}

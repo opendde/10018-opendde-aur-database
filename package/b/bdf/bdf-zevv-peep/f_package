@@ -1,7 +1,0 @@
-package () {
-	cd "${srcdir}"
-	mkdir -p "${pkgdir}/usr/share/fonts/zevv-peep"
-	for font in *.bdf ; do
-		install -Dm644 "${font}" "${pkgdir}/usr/share/fonts/zevv-peep"
-	done
-}

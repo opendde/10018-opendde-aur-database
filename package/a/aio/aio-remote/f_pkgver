@@ -1,3 +1,0 @@
-pkgver() {
-	cat version.txt
-}

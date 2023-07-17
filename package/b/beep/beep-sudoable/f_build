@@ -1,4 +1,0 @@
-build() {
-  cd "beep-${pkgver}"
-  make
-}

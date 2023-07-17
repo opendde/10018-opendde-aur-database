@@ -1,1 +1,0 @@
-("${_gitdir}::git+https://github.com/ShadowBlip/${_gitdir}.git")

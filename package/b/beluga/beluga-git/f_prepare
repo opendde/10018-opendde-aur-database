@@ -1,4 +1,0 @@
-prepare() {
-    mv "$srcdir/Beluga" "$srcdir/${pkgname%-git}"
-    cd "$srcdir/${pkgname%-git}"
-}

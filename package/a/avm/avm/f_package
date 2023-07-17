@@ -1,4 +1,0 @@
-package() {
-    make -C build DESTDIR="$pkgdir" install
-    install -D -m644 avm/{LICENSE,PATENTS} -t "${pkgdir}/usr/share/licenses/${pkgname}"
-}

@@ -1,9 +1,0 @@
-package() {
-  cp -r "${srcdir}/etc" "${pkgdir}/etc"
-  cp -r "${srcdir}/usr" "${pkgdir}/usr"
-  cp -r "${srcdir}/var" "${pkgdir}/var"
-  install -v -Dm0644 "${srcdir}/bitmeter.service"         "${pkgdir}/usr/lib/systemd/system/bitmeter.service"
-  install -v -Dm0644 "${srcdir}/bitmeter.target"          "${pkgdir}/usr/lib/systemd/system/bitmeter.target"
-  install -v -Dm0644 "${srcdir}/bitmeter-web.service"     "${pkgdir}/usr/lib/systemd/system/bitmeter-web.service"
-
-}

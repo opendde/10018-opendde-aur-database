@@ -1,7 +1,0 @@
-package() {
-  cd "${pkgname}-${pkgver}"
-  install -d "${pkgdir}/usr/bin/"
-  install -m 755 ${pkgname} "${pkgdir}/usr/bin/"
-  install -d "${pkgdir}/usr/share/licenses/${pkgname}"
-  install -m 644 LICENCE "${pkgdir}/usr/share/licenses/${pkgname}"
-}

@@ -1,4 +1,0 @@
-prepare() {
-  cd AlizaMS
-  [[ -d build ]] || mkdir build
-}

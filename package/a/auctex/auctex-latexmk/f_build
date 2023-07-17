@@ -1,8 +1,0 @@
-build() {
-  cd $pkgname-$pkgver
-  emacs -Q -batch \
-	-L . \
-	-L /usr/share/emacs/site-lisp/auctex \
-	-L /usr/share/emacs/site-lisp/ \
-	-f batch-byte-compile "$pkgname".el
-}

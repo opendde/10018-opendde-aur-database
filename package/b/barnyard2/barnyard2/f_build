@@ -1,6 +1,0 @@
-build() {
-    cd "$pkgname-2-$pkgver"
-    ./autogen.sh
-    ./configure --prefix=/usr --sysconfdir=/etc/barnyard2 --with-mysql --with-postgresql --disable-static
-    make
-}

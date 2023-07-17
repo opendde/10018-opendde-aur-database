@@ -1,6 +1,0 @@
-package() {
-  cd "${srcdir}/${_gitname}"
-
-  # Install the program
-  install -Dm755 geohash "${pkgdir}/usr/bin/geohash"
-}

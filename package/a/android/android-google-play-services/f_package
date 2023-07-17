@@ -1,6 +1,0 @@
-package() {
-  mkdir -p "${pkgdir}/opt/android-sdk/extras/google/"
-  cp -dpr --no-preserve=ownership "${srcdir}/google-play-services" "${pkgdir}/opt/android-sdk/extras/google/google_play_services"
-  chmod -R ugo+rX "${pkgdir}/opt"
-  install -Dm644 "${srcdir}/source.properties" "${pkgdir}/opt/android-sdk/extras/google/google_play_services/source.properties"
-}

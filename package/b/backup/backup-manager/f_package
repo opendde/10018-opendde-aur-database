@@ -1,7 +1,0 @@
-package() {
-	cd "$srcdir/Backup-Manager-$pkgver"
-	make PREFIX=/usr BINDIR=/usr/bin SBINDIR=/usr/bin VARDIR=/var DESTDIR="$pkgdir" install || return 1
-	mkdir -p "$pkgdir/etc"
-	mv "$pkgdir/usr/share/backup-manager/backup-manager.conf.tpl" "$pkgdir/etc/backup-manager.conf"
-	rmdir "$pkgdir/usr/share/backup-manager"
-}

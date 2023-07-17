@@ -1,7 +1,0 @@
-package() {
-  cd "$srcdir"/"$pkgname"-"$pkgver"
-  mkdir -p "$pkgdir/usr/share/berusky2/"
-  cp --recursive --no-preserve=mode,ownership * "$pkgdir/usr/share/berusky2/"
-  # Delete two ini files because berusky2 ships those:
-  rm "$pkgdir/usr/share/berusky2/"*.ini
-}

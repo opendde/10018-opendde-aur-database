@@ -1,9 +1,0 @@
-build() {
-    kernel_ver=$(cut -f1 -d'-' /usr/src/linux/version)
-    cpu=$( grep name /proc/cpuinfo  | uniq | cut -f2 -d: | cut -f2 -d' ')
-    cd "${srcdir}/${pkgbase}"
-    if [ "$cpu" = "AMD" ]; then
-        sed -i 's/PCI_VENDOR_ID_INTEL/PCI_VENDOR_ID_ATI/g' "${srcdir}/${pkgbase}"/bbswitch.c
-    fi
-    make KDIR=/usr/src/linux
-}

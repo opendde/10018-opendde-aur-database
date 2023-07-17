@@ -1,6 +1,0 @@
-prepare() {
-    rm -rf ${pkgname}-${pkgver}
-    mkdir -p ${pkgname}-${pkgver}
-    mv ${pkgname} ${pkgname}-${pkgver}
-    mv AppInfo.json ${pkgname}-${pkgver}
-}

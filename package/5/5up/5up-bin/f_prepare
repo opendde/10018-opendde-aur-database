@@ -1,4 +1,0 @@
-prepare() {
-
-  tar -xf data.tar.gz -C "$srcdir"
-}

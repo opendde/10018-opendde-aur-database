@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}::https://github.com/arsham/blush/releases/download/v${pkgver}/blush_linux_v${pkgver}.tar.gz"

@@ -1,5 +1,0 @@
-build() {
-    cd austin/build
-    ../configure --prefix=/usr
-    make
-}

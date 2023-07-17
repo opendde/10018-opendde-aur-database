@@ -1,9 +1,0 @@
-build() {
-  cd ${pkgname%-git}
-  ./autogen.sh
-  ./configure --enable-gc=system \
-	      --prefix=/usr \
-	      --enable-gl \
-	      --enable-texlive-build
-  make
-}

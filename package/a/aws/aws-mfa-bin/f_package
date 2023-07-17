@@ -1,3 +1,0 @@
-package() {
-	install -Dm 755 "${pkgname}-${pkgver}" "${pkgdir}/usr/bin/${_pkgname}"
-}

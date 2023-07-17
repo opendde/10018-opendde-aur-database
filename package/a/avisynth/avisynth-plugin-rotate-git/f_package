@@ -1,4 +1,0 @@
-package() {
-  cd "$srcdir/$_pkgname/build"
-  make -C "$srcdir/$_pkgname/build" DESTDIR="$pkgdir" install
-}

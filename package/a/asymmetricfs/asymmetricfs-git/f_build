@@ -1,8 +1,0 @@
-build() {
-  cd "$srcdir/$_gitname"
-  export CXX=clang++
-  export CC=clang
-  mkdir build
-  cd build
-  cmake .. && cmake --build .
-}

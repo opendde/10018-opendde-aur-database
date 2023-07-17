@@ -1,4 +1,0 @@
-package() {
-  cd "${srcdir}"
-  install -Dm755 awextract "${pkgdir}/usr/bin/awextract"
-}

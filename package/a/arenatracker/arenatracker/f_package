@@ -1,8 +1,0 @@
-package() {
-    cd Arena-Tracker
-    install -dm755 "$pkgdir"/usr/bin
-    install -dm755 "$pkgdir"/usr/share/{applications,pixmaps}
-    install -m755 build/ArenaTracker "$pkgdir"/usr/bin/
-    install -m644 build/ArenaTracker.png "$pkgdir"/usr/share/pixmaps/
-    install -m644 "$srcdir"/ArenaTracker.desktop "$pkgdir"/usr/share/applications/
-}

@@ -1,5 +1,0 @@
-package() {
-  cd src/github.com/wallix/awless
-  install -Dm755 awless "${pkgdir}/usr/bin/${pkgname}"
-  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}

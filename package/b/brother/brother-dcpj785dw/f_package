@@ -1,6 +1,0 @@
-package() {
-    install -d "$pkgdir"/usr/bin
-    install -d "$pkgdir"/var/spool/lpd
-    install -Dm755 "$srcdir"/usr/bin/brprintconf_dcpj785dw "$pkgdir"/usr/bin/
-    cp -R "$srcdir"/opt "$pkgdir"/opt
-}

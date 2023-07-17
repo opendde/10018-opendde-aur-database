@@ -1,4 +1,0 @@
-build() {
-    arch-meson "$pkgname" build
-    meson compile -C build
-}

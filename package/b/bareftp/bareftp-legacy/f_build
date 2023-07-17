@@ -1,6 +1,0 @@
-build() {
-  cd ${srcdir}/${_pkgname}-${pkgver}
-  export MONO_SHARED_DIR=$(pwd)
-  ./configure --prefix=/usr
-  make
-}

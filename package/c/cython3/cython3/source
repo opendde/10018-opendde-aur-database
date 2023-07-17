@@ -1,1 +1,0 @@
-($pkgname-$pkgver.tar.gz::"https://github.com/cython/cython/archive/$pkgver.tar.gz")

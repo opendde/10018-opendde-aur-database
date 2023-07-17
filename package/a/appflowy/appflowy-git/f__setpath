@@ -1,3 +1,0 @@
-_setpath() {
-	PATH="$PATH:$srcdir/flutter/bin:$HOME/.pub-cache/bin:$HOME/.cargo/bin"
-}

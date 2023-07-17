@@ -1,5 +1,0 @@
-build() {
-  export RUSTUP_TOOLCHAIN=stable
-  arch-meson "AudioSharing-$pkgver" build
-  meson compile -C build
-}

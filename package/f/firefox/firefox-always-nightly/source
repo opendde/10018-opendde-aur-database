@@ -1,1 +1,0 @@
-("${pkgname}-${_build[id]}.tar.bz2::${_build[url]}/${_build[tarball]}"

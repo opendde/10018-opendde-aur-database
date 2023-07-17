@@ -1,1 +1,0 @@
-("${_pkgname}-${_snapshot}.tar.gz::${url}/archive/${_snapshot}.tar.gz"

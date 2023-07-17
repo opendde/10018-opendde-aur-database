@@ -1,6 +1,0 @@
-package() {
-  cd "$srcdir/$_pkgname"
-  _create_package_envs
-  make -e package_linux
-  cp -a "$srcdir/$_pkgname/package/v$pkgver/." "$pkgdir/"
-}

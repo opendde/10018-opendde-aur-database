@@ -1,5 +1,0 @@
-prepare() {
-  # Fix icon location
-  cd "$srcdir"/$pkgname-$pkgver
-  sed -i 's|share/icons/hicolor/{s}x{s}|share/icons/hicolor/{s}x{s}/apps|g' setup.py
-}

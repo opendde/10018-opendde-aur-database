@@ -1,6 +1,0 @@
-build() {
-  cd "ALTMediaWriter-master"
-
-  qmake-qt5 PREFIX=/usr .
-  make
-}

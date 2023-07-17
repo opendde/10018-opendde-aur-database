@@ -1,9 +1,0 @@
-package() {
-  cd "${pkgdir}"
-  _ver=$(cat "${srcdir}/android-11/source.properties" |grep ^Pkg.Revision=|sed 's/Pkg.Revision=\([0-9.]*\).*/\1/')
-
-  install -Dm644 "${srcdir}/android-11/NOTICE.txt" usr/share/licenses/${pkgname}/NOTICE.txt
-  mkdir -p "opt/android-sdk/build-tools/${_ver}"
-  cp -r "${srcdir}/android-11/"* "${pkgdir}/opt/android-sdk/build-tools/${_ver}"
-  chmod +Xr -R "${pkgdir}/opt/android-sdk/build-tools/${_ver}"
-}

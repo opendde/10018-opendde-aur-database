@@ -1,9 +1,0 @@
-package() {
-cd $srcdir/$pkgname-$pkgver
-mkdir -p ${pkgdir}/usr/share/icons/hicolor
-install -Dm755 bournal $pkgdir/usr/bin/bournal
-install -Dm755 bournal-convert $pkgdir/usr/bin/bournal-convert
-install -Dm644 bournal.1.gz $pkgdir/usr/share/man/man1/bournal.1.gz
-install -Dm644 bournal.desktop $pkgdir/usr/share/applications/bournal.desktop
-cp -r icons/* ${pkgdir}/usr/share/icons/hicolor
-}

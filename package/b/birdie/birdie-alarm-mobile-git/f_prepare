@@ -1,4 +1,0 @@
-prepare() {
-    cd "$srcdir/birdie"
-    sed -i 's/\/lib\/systemd/\/usr\/lib\/systemd/' Makefile
-}

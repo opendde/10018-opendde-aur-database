@@ -1,1 +1,0 @@
-("${_pkgdownload}-x86_64::https://github.com/moncho/$_pkgname/releases/download/v${pkgver}/$_pkgname-linux-amd64")

@@ -1,5 +1,0 @@
-package() {
-    cd "$srcdir/aswrapper"
-    install -Dm755 "aswrap.py" "${pkgdir}/usr/bin/aswrap"
-    install -Dm644 "LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}

@@ -1,6 +1,0 @@
-prepare() {
-	cd "$srcdir/$pkgname"
-	echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
-	sed -i 's/oe_setup_addon service.system.acestreammedia/#oe_setup_addon service.system.acestreammedia/g' acestream.engine/acestream.start
-	sed -i 's/oe_setup_addon service.system.acestreammedia/#oe_setup_addon service.system.acestreammedia/g' acestream.engine/acestream.stop
-}

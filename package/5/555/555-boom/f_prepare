@@ -1,5 +1,0 @@
-prepare() {
-    echo "#!/bin/bash" >> 555-boom.sh
-    echo "cd /usr/share/555-boom/Game" >> 555-boom.sh
-    echo "python2 run_game.py" >> 555-boom.sh
-}

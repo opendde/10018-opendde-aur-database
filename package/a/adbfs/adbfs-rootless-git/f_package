@@ -1,5 +1,0 @@
-package() {
-  cd adbfs-rootless
-  install -Dm755 adbfs "${pkgdir}/usr/bin/adbfs"
-  install -Dm644 license "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}

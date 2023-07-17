@@ -1,5 +1,0 @@
-build() {
-  cd "${_name}-$pkgver"
-
-  python -m build --wheel --skip-dependency-check --no-isolation
-}

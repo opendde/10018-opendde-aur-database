@@ -1,4 +1,0 @@
-package() {
-    cd "${_pkgname}"
-    install -Dm755 "${srcdir}/${_pkgname}/${_pkgname}" "${pkgdir}/usr/bin/${_pkgname}"
-}

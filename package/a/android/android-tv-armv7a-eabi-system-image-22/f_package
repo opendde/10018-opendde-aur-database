@@ -1,7 +1,0 @@
-package() {
-  install -Dm644 "${srcdir}/armeabi-v7a/NOTICE.txt" "${pkgdir}/usr/share/licenses/$pkgname/NOTICE.txt"
-  mkdir -p "${pkgdir}/opt/android-sdk/system-images/android-${_sdkver}/android-tv"
-  cp -dpr --no-preserve=ownership "${srcdir}/armeabi-v7a" "${pkgdir}/opt/android-sdk/system-images/android-${_sdkver}/android-tv/armeabi-v7a"
-
-  chmod -R ugo+rX "${pkgdir}/opt"
-}

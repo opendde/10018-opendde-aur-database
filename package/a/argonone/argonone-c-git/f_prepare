@@ -1,7 +1,0 @@
-prepare() {
-	# Check if we are on Raspberry Pi:
-	if [[ ! -f /boot/config.txt ]]; then
-		echo "ERROR: 'config.txt' not found, are you on Raspberry Pi?"
-		exit 1
-	fi
-}

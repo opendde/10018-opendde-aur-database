@@ -1,6 +1,0 @@
-package() {
-  install -Dm644 battery-stats-collector.service ${pkgdir}/usr/lib/systemd/system/battery-stats-collector.service
-  install -Dm644 battery-stats-collector.timer ${pkgdir}/usr/lib/systemd/system/battery-stats-collector.timer
-  cd build
-  make DESTDIR="${pkgdir}" install
-}

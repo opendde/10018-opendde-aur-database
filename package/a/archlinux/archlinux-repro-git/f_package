@@ -1,4 +1,0 @@
-package() {
-  cd archlinux-repro
-  make PREFIX=/usr DESTDIR="$pkgdir" PROGNM=$pkgname install
-}

@@ -1,5 +1,0 @@
-package() {
-  mkdir -p "${pkgdir}/boot/grub/themes/${_gitname}"
-  cp -TR "${srcdir}/${_gitname}/theme" "${pkgdir}/boot/grub/themes/${_gitname}"
-  echo "$_arch_logo" | base64 -d > "${pkgdir}/boot/grub/themes/${_gitname}/arch_logo.png"
-}

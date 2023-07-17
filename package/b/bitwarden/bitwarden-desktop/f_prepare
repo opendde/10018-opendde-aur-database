@@ -1,4 +1,0 @@
-prepare() {
-  install -d "$srcdir"/dist
-  tar -xf "$srcdir"/data.tar.xz -C "$srcdir/dist"
-}

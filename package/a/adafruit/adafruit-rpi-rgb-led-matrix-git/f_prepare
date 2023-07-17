@@ -1,4 +1,0 @@
-prepare() {
-	cd "${srcdir}/${_pkgname}"
-	find -iname Makefile -exec sed -i "s/^\(CXXFLAGS=.*\)$/\1 -fPIC/g" {}  \;
-}

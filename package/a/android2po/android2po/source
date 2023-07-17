@@ -1,1 +1,0 @@
-("${_tarname}.tar.gz::${_repo_url_api}/tarball/${_repo_commit}")

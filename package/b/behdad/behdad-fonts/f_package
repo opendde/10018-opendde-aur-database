@@ -1,3 +1,0 @@
-package() {
-    install -Dt "${pkgdir}/usr/share/fonts/${pkgname%-fonts}" -m644 ./*.ttf
-}

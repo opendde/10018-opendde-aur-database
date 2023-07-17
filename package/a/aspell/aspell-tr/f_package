@@ -1,4 +1,0 @@
-package () {
-  cd "$pkgname-$pkgver-$_rel"
-  make DESTDIR="$pkgdir"/ install
-}

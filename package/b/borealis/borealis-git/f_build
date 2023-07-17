@@ -1,4 +1,0 @@
-build() {
-    cd borealis
-    cargo build --release
-}

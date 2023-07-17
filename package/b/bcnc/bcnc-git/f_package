@@ -1,9 +1,0 @@
-package() {
-    install -D -m755 "${pkgname}" "$pkgdir/usr/bin/${pkgname}"
-    install -D -m644 "${pkgname}.desktop" "$pkgdir/usr/share/applications/${pkgname}.desktop"
-    cd "$srcdir/bCNC/bCNC"
-    install -D -m644 "bCNC.png" "$pkgdir/usr/share/pixmaps/${pkgname}.png"
-
-    mkdir -p "${pkgdir}/usr/lib/python2.7/site-packages/bCNC-git"
-    cp -r * "${pkgdir}/usr/lib/python2.7/site-packages/bCNC-git"
-}

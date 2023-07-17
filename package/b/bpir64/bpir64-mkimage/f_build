@@ -1,7 +1,0 @@
-build() {
-    cd "${srcdir}/u-boot-${pkgver}"
-    patch -p1 -N -r - < "${srcdir}/mtkimage-buffer-inc.patch"
-    patch -p1 -N -r - < "${srcdir}/mtkimage-gpt-expand.patch"
-    ARCH=arm64 make mt7622_rfb_defconfig tools-only
-    cp -vf tools/mkimage tools/bpir64-mkimage
-}

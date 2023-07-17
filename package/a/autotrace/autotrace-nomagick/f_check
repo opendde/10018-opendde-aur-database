@@ -1,3 +1,0 @@
-check() {
-    make -C "autotrace-travis-${_date}.${_build}" check
-}

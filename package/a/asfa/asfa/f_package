@@ -1,7 +1,0 @@
-package() {
-    install -Dm755 "target/bin/$pkgname" \
-        -t "$pkgdir/usr/bin"
-    find target/release/man/man1 -type f -print0 \
-        | xargs -0 install -Dm644 -t "$pkgdir/usr/share/man/man1"
-    find "$pkgdir/usr/share/man/man1" -type f -print0 | xargs -0 gzip
-}

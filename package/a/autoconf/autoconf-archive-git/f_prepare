@@ -1,5 +1,0 @@
-prepare() {
-  cd "autoconf-archive"
-
-  git submodule add --force --depth 1 https://git.savannah.gnu.org/git/gnulib.git
-}

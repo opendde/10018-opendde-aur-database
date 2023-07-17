@@ -1,4 +1,0 @@
-prepare() {
-	cd "${srcdir}/${_appname}"
-	./bootstrap
-}

@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz::https://github.com/jarun/bcal/archive/v${pkgver//_/-}.tar.gz")

@@ -1,9 +1,0 @@
-package() {
-  install -D -m644 "40-a4tech-usb-devices.rules" "$pkgdir/usr/lib/udev/rules.d/40-a4tech-usb-devices.rules"
-  install -D -m755 "$_gitname/a4tool/a4tool" "$pkgdir/usr/bin/a4tool"
-  #daemon
-  install -D -m755 "$_gitname/a4toold/a4toold.sh" "$pkgdir/usr/share/a4tool/a4toold.sh"
-  install -D -m644 "$_gitname/a4toold/Mouse.png" "$pkgdir/usr/share/a4tool/Mouse.png"
-  install -D -m644 "$_gitname/a4toold/Keyboard.png" "$pkgdir/usr/share/a4tool/Keyboard.png"
-  install -D -m644 "$_gitname/a4toold/a4toold.conf" "$pkgdir/etc/a4toold.conf"
-}

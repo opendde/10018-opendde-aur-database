@@ -1,7 +1,0 @@
-build() {
-  cd "${srcdir}"/$pkgname-$pkgver-b198f67bd9249eec37b5bf32b8dadccca38ce14d
-
-  install -d ../build
-  arch-meson ../build
-  ninja -v -C ../build
-}

@@ -1,4 +1,0 @@
-build() {
-  cd "$srcdir"/"bootsplash-theme-manjaro-space-purple"
-  sh ./bootsplash-manjaro-space.sh
-}

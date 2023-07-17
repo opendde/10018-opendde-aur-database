@@ -1,4 +1,0 @@
-package() {
-  cd $pkgname-$pkgver/$pkgname
-  install -Dm755 bbrun "$pkgdir"/usr/bin/bbrun
-}

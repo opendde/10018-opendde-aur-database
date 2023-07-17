@@ -1,4 +1,0 @@
-package() {
-    install -Dm755 "${srcdir}/autofs.initd" "${pkgdir}/etc/init.d/autofs"
-    install -Dm644 "${srcdir}/autofs.confd" "${pkgdir}/etc/conf.d/autofs"
-}

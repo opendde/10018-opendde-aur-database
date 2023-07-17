@@ -1,7 +1,0 @@
-build() {
-  cd "$srcdir/$_name"
-  qmake-qt4 $_name.pro -r -config release \
-    "CONFIG+=LINUX_INTEGRATED" \
-    "INSTALL_ROOT_PATH=$pkgdir/usr/"
-   make  
-}

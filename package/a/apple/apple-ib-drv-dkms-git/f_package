@@ -1,6 +1,0 @@
-package() {
-    cd "$_pkgbase"
-
-    install -dm755 "$pkgdir/usr/src/$_pkgbase-$pkgver"
-    cp -rv --no-preserve=ownership * "$pkgdir/usr/src/$_pkgbase-$pkgver/"
-}

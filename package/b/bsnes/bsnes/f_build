@@ -1,5 +1,0 @@
-build() {
-  cd "bsnes-${pkgver}"
-
-  make -C bsnes
-}

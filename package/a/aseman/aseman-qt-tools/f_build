@@ -1,5 +1,0 @@
-build() {
-  cd ${pkgname}/build
-  qmake-qt5 -r QMAKE_CFLAGS_ISYSTEM= QT+=widgets QT+=multimedia QT+=dbus QT+=sensors QT+=positioning  ../asemantools.pro
-  make
-}

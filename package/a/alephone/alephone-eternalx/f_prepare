@@ -1,4 +1,0 @@
-prepare() {
-  # remove Mac OS metadata
-  find "Eternal $pkgver" -name .DS_Store -delete
-}

@@ -1,5 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname-${pkgver/./-}"
-  make DESTDIR="$pkgdir/" install
-  install -Dm755 ../$pkgname.sh "$pkgdir/etc/profile.d/$pkgname.sh"
-}

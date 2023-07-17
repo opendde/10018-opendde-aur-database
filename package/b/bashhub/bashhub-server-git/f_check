@@ -1,8 +1,0 @@
-check () {
-  cd "${srcdir}/src/${_repo_prefix}/${_repo_name}"
-  export GOPATH="${srcdir}/go"
-  export GOBIN="${GOPATH}/bin"
-  export PATH="${GOBIN}:${PATH}"
-
-  go test -v ./...
-}

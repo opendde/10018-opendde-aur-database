@@ -1,6 +1,0 @@
-build() {
-  for i in $srcdir/*.deb; do
-    ar -x $i
-    bsdtar xf data.tar.gz
-  done
-}

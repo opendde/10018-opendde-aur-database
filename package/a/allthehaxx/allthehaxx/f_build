@@ -1,6 +1,0 @@
-build() {
-    cd "$srcdir/AllTheHaxx-$pkgver/"
-    bam config installation_root="/"
-    bam client_release
-    #bam tools_release
-}

@@ -1,5 +1,0 @@
-package() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-  python setup.py install --prefix=/usr --root="${pkgdir}" --optimize=1 --skip-build
-  install -Dm644 "${srcdir}/${pkgname}-${pkgver}/LICENSE.md" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.md"
-}

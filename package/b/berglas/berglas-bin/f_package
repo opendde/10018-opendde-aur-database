@@ -1,3 +1,0 @@
-package() {
-  install -Dm755 "berglas_$pkgver" "$pkgdir/usr/bin/berglas"
-}

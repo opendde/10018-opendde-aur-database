@@ -1,4 +1,0 @@
-check() {
-  cd 8cc
-  make test
-}

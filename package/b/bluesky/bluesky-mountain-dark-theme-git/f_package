@@ -1,6 +1,0 @@
-package() {
-    # init dirs
-    install -d ${pkgdir}/usr/local/share/themes
-    # copy all files to package
-    cp -a ${srcdir}/${_pkgname}/BlueSky-Mountain-Dark ${pkgdir}/usr/local/share/themes
-}

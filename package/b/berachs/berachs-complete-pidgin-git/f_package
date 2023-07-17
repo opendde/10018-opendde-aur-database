@@ -1,5 +1,0 @@
-package() {
-	cd "$srcdir"
-        mkdir -p "$pkgdir"/usr/share/pixmaps/pidgin/emotes
-	cp -r "BERACHS_COMPLETE_PIDGIN" "$pkgdir"/usr/share/pixmaps/pidgin/emotes
-}

@@ -1,3 +1,0 @@
-package() {
-    install -Dm755 "${srcdir}/${pkgname}-${pkgver}/btrfs-snap" "${pkgdir}/usr/bin/btrfs-snap"
-}

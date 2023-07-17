@@ -1,4 +1,0 @@
-package() {
-  cd "${srcdir}"/AFFLIBv3-${pkgver}
-  make DESTDIR="${pkgdir}" install
-}

@@ -1,5 +1,0 @@
-package() {
-    install -Dm0755 \
-            "$srcdir/$pkgname-$pkgver/askpass-"* \
-            -t "$pkgdir/usr/bin/"
-}

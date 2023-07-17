@@ -1,7 +1,0 @@
-package() {
-	depends+=(caddy)
-
-	cd ${_reponame}
-
-	meson install -C build --destdir "${pkgdir}"
-}

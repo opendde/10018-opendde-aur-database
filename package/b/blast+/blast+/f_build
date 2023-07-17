@@ -1,4 +1,0 @@
-build() {
-    cd "$srcdir"/ncbi-blast-"$pkgver"+-src/c++ || exit
-    make
-}

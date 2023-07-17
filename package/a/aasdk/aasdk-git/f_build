@@ -1,7 +1,0 @@
-build() {
-  cd $pkgname
-  mkdir -p aasdk_build
-  cd aasdk_build
-  cmake -DCMAKE_BUILD_TYPE=Release ../  
-  make
-}

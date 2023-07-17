@@ -1,5 +1,0 @@
-package() {
-	mkdir -p "${pkgdir}/usr/share/ART/imageio/"
-	cd "${srcdir}/${pkgname}_${pkgver}"
-	find . -type f -exec install -Dm 755 "{}" "${pkgdir}/usr/share/ART/imageio/{}" \;
-}

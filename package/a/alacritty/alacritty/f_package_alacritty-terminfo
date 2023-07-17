@@ -1,8 +1,0 @@
-package_alacritty-terminfo() {
-  pkgdesc="Terminfo files for the alacritty terminal emulator"
-
-  cd "$_pkgname-$pkgver"
-
-  install -dm 755 "$pkgdir/usr/share/terminfo/a/"
-  tic -o "$pkgdir/usr/share/terminfo" alacritty.info
-}

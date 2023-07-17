@@ -1,1 +1,0 @@
-("ctrsigcheck_${pkgver}_armv6h.tar.gz::https://github.com/connesc/ctrsigcheck/releases/download/v$pkgver/ctrsigcheck_${pkgver}_linux_armv6.tar.gz")

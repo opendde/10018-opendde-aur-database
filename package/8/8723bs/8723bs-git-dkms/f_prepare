@@ -1,5 +1,0 @@
-prepare() {
-
-	cd "${srcdir}/rtl8723bs"
-
-}

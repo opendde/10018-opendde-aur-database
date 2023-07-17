@@ -1,4 +1,0 @@
-package() {
-    install -Dm755 "$srcdir/act" "$pkgdir/usr/bin/act"
-    install -Dm644 "$srcdir/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-}

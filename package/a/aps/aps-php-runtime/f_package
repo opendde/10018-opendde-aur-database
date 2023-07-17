@@ -1,7 +1,0 @@
-package() {
-   mkdir -p ${pkgdir}/usr/share/aps/php/aps/2/{formats,types}
-   install -D -m644 -t ${pkgdir}/usr/share/aps/php/aps/2/ ${srcdir}/aps/2/*.php 
-   install -D -m644 -t ${pkgdir}/usr/share/aps/php/aps/2/formats/ ${srcdir}/aps/2/formats/*.php
-   install -D -m644 -t ${pkgdir}/usr/share/aps/php/aps/2/types/ ${srcdir}/aps/2/types/*.php 
-   install -D -m644 -t ${pkgdir}/etc/php/conf.d/ ${srcdir}/aps.ini
-}

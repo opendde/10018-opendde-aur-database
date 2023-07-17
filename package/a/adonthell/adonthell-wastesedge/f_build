@@ -1,6 +1,0 @@
-build() {
-  cd "${srcdir}/wastesedge-${pkgver}"
-
-  ./configure --prefix=/usr
-  make
-}

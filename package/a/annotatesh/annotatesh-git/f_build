@@ -1,5 +1,0 @@
-build() {
-	cd "$_pkgname"
-	meson --prefix=/usr build/
-	ninja -C build/
-}

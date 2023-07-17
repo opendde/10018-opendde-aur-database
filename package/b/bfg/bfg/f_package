@@ -1,5 +1,0 @@
-package() {
-  cd "${srcdir}"
-  install -D -m755 "${pkgname}.sh" "${pkgdir}/usr/bin/${pkgname}"
-  install -D -m644 "${pkgname}-${pkgver}.jar" "${pkgdir}/usr/share/java/${pkgname}/${pkgname}.jar"
-}

@@ -1,4 +1,0 @@
-package() {
-  cd "$srcdir/${_gistid}" || exit 1
-  install -Dm755 "asciiquarium.pl" "${pkgdir}/usr/bin/asciiquarium"
-}

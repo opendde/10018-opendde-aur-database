@@ -1,9 +1,0 @@
-package() {
-    bsdtar xf data.tar.xz
-    chmod -R g-w opt
-    chmod -R g-w usr
-    mv opt "${pkgdir}"
-    mv usr "${pkgdir}"
-    mkdir -p ${pkgdir}/usr/bin
-    ln -s /opt/AKASHA/akasha ${pkgdir}/usr/bin/akasha
-}

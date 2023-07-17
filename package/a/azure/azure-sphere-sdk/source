@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz::https://software-download.microsoft.com/download/pr/Azure_Sphere_SDK_Bundle_${pkgmajor}${pkgminor}.tar.gz"

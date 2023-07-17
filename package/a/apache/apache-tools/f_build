@@ -1,5 +1,0 @@
-build() {
-    cd httpd-$pkgver/
-    ./configure --prefix=/usr --sbindir=/usr/bin --with-pcre=/usr
-    make -C support
-}

@@ -1,3 +1,0 @@
-package() {
-	bsdtar xvf "$srcdir/data.tar.xz" -C "$pkgdir"
-}

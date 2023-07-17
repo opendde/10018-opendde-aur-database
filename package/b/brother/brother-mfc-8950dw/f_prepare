@@ -1,7 +1,0 @@
-prepare() {
-    deb2targz *.deb >/dev/null || return 1
-    rm -f *.deb || return 1
-    cd $srcdir || return 1
-    [ -d "mfc${model}" ] || (mkdir mfc${model} || return 1)
-    for i in *.tar.gz;do tar xfz $i -C mfc${model};done || return 1
-}

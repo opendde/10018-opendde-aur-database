@@ -1,7 +1,0 @@
-package_adwaita-qt() {
-  pkgdesc="A style to bend Qt5 applications to look like they belong into GNOME Shell"
-  depends=('qt5-x11extras')
-  provides=('libadwaitaqtpriv.so=1' 'libadwaitaqt.so=1')
-
-  make -C build-qt5 DESTDIR="$pkgdir" install
-}

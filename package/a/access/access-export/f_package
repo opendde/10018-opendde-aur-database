@@ -1,6 +1,0 @@
-package() {
-	# compiled classes
-	install -Dm644 $pkgname.jar $pkgdir/usr/lib/$pkgname/$pkgname.jar
-	# starter shell script
-	install -Dm755 ../$pkgname $pkgdir/usr/bin/$pkgname
-}

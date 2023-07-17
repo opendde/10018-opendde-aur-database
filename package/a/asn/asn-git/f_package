@@ -1,5 +1,0 @@
-package() {
-  cd $_reponame
-  install -Dm755 $_reponame "$pkgdir"/usr/bin/$_reponame
-  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-}

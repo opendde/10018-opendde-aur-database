@@ -1,6 +1,0 @@
-build() {
-    cd acc-${pkgver}
-    mkdir -p build
-    cmake -B build -D CMAKE_BUILD_TYPE=Release
-    make -C build
-}

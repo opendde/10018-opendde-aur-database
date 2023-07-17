@@ -1,6 +1,0 @@
-package_metricbeat-oss() {
-    pkgdesc='Server monitoring agent that sends metrics to Elasticsearch OSS or OpenSearch'
-
-    _do_package_beat
-    cp -R modules.d "$pkgdir/etc/$pkgname/"
-}

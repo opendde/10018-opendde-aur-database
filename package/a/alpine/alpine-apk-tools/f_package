@@ -1,4 +1,0 @@
-package() {
-  cd apk-tools-v$pkgver
-  make install DESTDIR="$pkgdir"
-}

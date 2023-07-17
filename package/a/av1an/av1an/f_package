@@ -1,4 +1,0 @@
-package() {
-  cd "${pkgname}-${pkgver}"
-  install -Dm 755 target/release/av1an -t "${pkgdir}/usr/bin"
-}

@@ -1,1 +1,0 @@
-("${pkgname%-git}::git+https://git.code.sf.net/p/cvassistant/code.git")

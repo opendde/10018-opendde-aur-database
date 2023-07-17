@@ -1,6 +1,0 @@
-prepare() {
-  cd "$srcdir"/"$_realname"
-  git submodule init >> /dev/null
-  git config submodule.ArchipelAgent/archipel-core/archipelcore/xmpp.url "$srcdir"/xmpppy >> /dev/null
-  git submodule update "$srcdir"/Archipel/ArchipelAgent/archipel-core/archipelcore/xmpp >> /dev/null
-}

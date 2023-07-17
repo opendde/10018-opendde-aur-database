@@ -1,4 +1,0 @@
-build() {
-  # This auto-updater only works if the addon is installed via the Blender UI
-  sed '/addon_updater/d' -i "$srcdir/PBR-Materials-$pkgver"/__init__.py
-}

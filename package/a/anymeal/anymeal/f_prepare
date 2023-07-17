@@ -1,4 +1,0 @@
-prepare() {
-  cd "${pkgname}-${pkgver}"
-  sed -i "24s|googletest/googletest|googletest|" configure.ac
-}

@@ -1,8 +1,0 @@
-build() {
-    cd cubical-$pkgver
-    
-    runhaskell --ghc-arg=-dynamic ./Everythings.hs gen-except Core Foundations Codata Experiments
-    agda Cubical/README.agda
-    agda Cubical/WithK.agda
-
-}

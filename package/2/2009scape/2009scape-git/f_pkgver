@@ -1,6 +1,0 @@
-pkgver() {
-    cd "${srcdir}/09launcher/"
-
-    # Modified from the "If there are no tags then use number of revisions since beginning of the history" section of "https://wiki.archlinux.org/title/VCS_package_guidelines"
-    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-}

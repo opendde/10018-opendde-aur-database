@@ -1,5 +1,0 @@
-prepare() {
-  cd "$srcdir/$pkgname"
-
-  sed -i 's|$HOME/.local/share/source-highlight|/usr/share/source-highlight|g' less/rc_append.txt
-}

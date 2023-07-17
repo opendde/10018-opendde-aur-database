@@ -1,6 +1,0 @@
-package() {
-	mkdir -p ${pkgdir}/usr/share/cups/model/Brother
-	mkdir -p ${pkgdir}/usr/lib/cups/filter
-	cp ${srcdir}/opt/brother/Printers/BrGenML1/cupswrapper/brother-BrGenML1-cups-en.ppd ${pkgdir}/usr/share/cups/model/Brother
-	cp ${srcdir}/opt/brother/Printers/BrGenML1/cupswrapper/brother_lpdwrapper_BrGenML1 ${pkgdir}/usr/lib/cups/filter
-}

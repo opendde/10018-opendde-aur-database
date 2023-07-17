@@ -1,7 +1,0 @@
-package() {
-  cd $pkgname-$pkgver
-  make DESTDIR="${pkgdir}" install
-  # this is the only documentation
-  install -Dm644 README "${pkgdir}/usr/share/doc/${pkgname}/README"
-  install -Dm644 USAGE  "${pkgdir}/usr/share/doc/${pkgname}/USAGE"
-}

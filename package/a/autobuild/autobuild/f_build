@@ -1,9 +1,0 @@
-build() {
-  cd $srcdir/autobuild-${pkgver}
-
-  sed -i "s|pydot2|pydot|" $srcdir/autobuild-${pkgver}/setup.py
-  python2 setup.py install --root=$srcdir/autobuild-${pkgver}/build --optimize=1
-  sed -i -e "s|#![ ]*/usr/bin/python$|#!/usr/bin/python2|" \
-         -e "s|#![ ]*/usr/bin/env python$|#!/usr/bin/env python2|" \
-    $(find $srcdir/autobuild-${pkgver}/build -name '*.py')
-}

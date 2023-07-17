@@ -1,4 +1,0 @@
-prepare() {
-  mkdir -p "gopath/src/${_gopkg%/*}"
-  ln -rTsf "$_pkgname" "gopath/src/$_gopkg"
-}

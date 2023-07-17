@@ -1,6 +1,0 @@
-package_apparmor() {
-	pkgdesc='Linux application security framework - mandatory access control for programs (metapackage)'
-	depends=('apparmor-parser' 'apparmor-libapparmor' 'apparmor-utils' 'apparmor-profiles' 'apparmor-pam' 'apparmor-vim')
-	optdepends=('linux-apparmor: an arch kernel with AppArmor patches')
-	install='apparmor.install'
-}

@@ -1,1 +1,0 @@
-("${_pkgname}-${pkgver}.jar::https://cs.gmu.edu/~eclab/projects/${_pkgname}/${_pkgname}.jar"

@@ -1,5 +1,0 @@
-package() {
-    cargo install --root="$pkgdir" burning-sanders
-    mkdir "$pkgdir/usr"
-    mv "$pkgdir/bin" "$pkgdir/usr"
-}

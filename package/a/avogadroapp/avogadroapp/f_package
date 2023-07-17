@@ -1,7 +1,0 @@
-package() {
-  cd build
-  make DESTDIR="$pkgdir" install
-  install -dm755 "$pkgdir/usr/share/licenses/$pkgname"
-  install -m755 "$srcdir/$pkgname-$pkgver/LICENSE" \
-  "$pkgdir/usr/share/licenses/$pkgname"
-}

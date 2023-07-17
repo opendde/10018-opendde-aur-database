@@ -1,4 +1,0 @@
-build() {
-  cd "$_srcdir"
-  git checkout tags/v$pkgver -b v$pkgver
-}

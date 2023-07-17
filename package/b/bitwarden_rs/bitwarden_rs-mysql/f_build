@@ -1,7 +1,0 @@
-build() {
-	#build bitwarden_rs
-	cd "$srcdir/$_src"
-	patch -N -p1 -i "$srcdir/0001-Disable-Vault.patch"
-
-	cargo build --release --locked --no-default-features --features mysql
-}

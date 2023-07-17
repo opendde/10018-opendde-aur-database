@@ -1,4 +1,0 @@
-prepare() {
-  cd $_srcname
-  patch -Np1 -i ../use_state_separation.patch
-}

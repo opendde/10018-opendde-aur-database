@@ -1,6 +1,0 @@
-package() {
-  cd "$srcdir/$_gitname"
-
-  install -Dm 644 "LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-  install -Dm 755 "target/release/$_gitname" "$pkgdir/usr/bin/$_gitname"
-}

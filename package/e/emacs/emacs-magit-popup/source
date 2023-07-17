@@ -1,1 +1,0 @@
-("https://github.com/${_github_org}/${_github_repo}/archive/refs/tags/v${pkgver}.tar.gz")

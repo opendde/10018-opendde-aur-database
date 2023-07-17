@@ -1,4 +1,0 @@
-build() {
-  arch-meson -Dprofile=development "${pkgname%-git}" build
-  meson compile -C build
-}

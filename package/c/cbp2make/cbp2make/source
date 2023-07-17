@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz::https://master.dl.sourceforge.net/project/${pkgname}/${pkgname}-stl-rev${pkgver}.tar.gz"

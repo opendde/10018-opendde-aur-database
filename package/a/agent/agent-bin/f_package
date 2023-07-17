@@ -1,5 +1,0 @@
-package () {
-    install -Dm755 agent "$pkgdir/usr/bin/agent"
-    install -Dm644 agent.png "$pkgdir/usr/share/pixmaps/agent.png"
-    install -Dm644 agent.desktop "$pkgdir/usr/share/applications/agent.desktop"
-}

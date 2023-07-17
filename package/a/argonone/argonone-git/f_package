@@ -1,8 +1,0 @@
-package() {
-  install -Dm755 "${srcdir}"/"${_gitname}"/argonone-config "${pkgdir}"/usr/bin/argonone-config
-  install -Dm755 "${srcdir}"/"${_gitname}"/argononed-poweroff.py "${pkgdir}"/usr/lib/systemd/system-shutdown/argononed-poweroff.py
-  install -Dm644 "${srcdir}"/"${_gitname}"/argononed.conf "${pkgdir}"/etc/argononed.conf
-  install -Dm755 "${srcdir}"/"${_gitname}"/argononed.py "${pkgdir}"/usr/bin/argononed
-  install -Dm644 "${srcdir}"/"${_gitname}"/argononed.service "${pkgdir}"/usr/lib/systemd/system/argononed.service
-  install -Dm644 "${srcdir}"/argonone-i2c.conf "${pkgdir}"/etc/modules-load.d/argonone-i2c.conf
-}

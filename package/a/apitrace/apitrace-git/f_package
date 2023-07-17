@@ -1,8 +1,0 @@
-package() {
-  cd ${srcdir}/apitrace
-  make -C build DESTDIR="${pkgdir}/" install
-
-  mkdir -p "${pkgdir}"/usr/share/licenses/apitrace-git
-  cd "${pkgdir}"/usr/share/licenses/apitrace-git
-  ln -s ../../doc/apitrace/LICENSE.txt LICENSE
-}

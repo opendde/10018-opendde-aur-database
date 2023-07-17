@@ -1,4 +1,0 @@
-check() {
-    cd "${srcdir}/${ghpkgname}-${pkgver}/"
-    [ -f ./bcbasic ]
-}

@@ -1,5 +1,0 @@
-package() {
-	cd "$srcdir/arch-anywhere-lang-tool"
-	install -D arch-anywhere-lang-tool $pkgdir/usr/bin/arch-anywhere-lang-tool
-	install -D COPYING $pkgdir/usr/share/licenses/$pkgname/LICENSE
-}

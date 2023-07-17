@@ -1,1 +1,0 @@
-("etcher::git+https://github.com/balena-io/${_pkgname}.git#tag=v${pkgver}"

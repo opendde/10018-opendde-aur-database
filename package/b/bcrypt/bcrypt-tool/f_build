@@ -1,4 +1,0 @@
-build() {
-  cd "$srcdir/src/$_gourl/$pkgname"
-  GOPATH="$srcdir" PATH="$srcdir/bin:$PATH" go build ./
-}

@@ -1,6 +1,0 @@
-package() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-  make USE_GST= USE_GST_VIDEO= PREFIX="/usr" \
-    DESTDIR="$pkgdir/" install
-  install -Dm644 docs/COPYING "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
-}

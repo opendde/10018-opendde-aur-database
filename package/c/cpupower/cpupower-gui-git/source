@@ -1,1 +1,0 @@
-("${pkgname%-git}::git+https://github.com/vagnum08/cpupower-gui.git")

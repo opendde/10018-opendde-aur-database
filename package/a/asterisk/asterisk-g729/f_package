@@ -1,5 +1,0 @@
-package() {
-	cd "${_repouser}-${_reponame}-${_shortrev}"
-
-	make DESTDIR="${pkgdir}" install
-}

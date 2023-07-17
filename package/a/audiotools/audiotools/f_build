@@ -1,6 +1,0 @@
-build() {
-  cd $srcdir/$pkgname-$pkgver
-  sed 's/#include <cdio\/cdda.h>/#include <cdio\/paranoia\/cdda.h>/' -i src/cdiomodule.h
-  sed 's/#include <cdio\/paranoia.h>/#include <cdio\/paranoia\/paranoia.h>/' -i src/cdiomodule.h
-  python setup.py build
-}

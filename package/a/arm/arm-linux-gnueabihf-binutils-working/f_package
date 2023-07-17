@@ -1,8 +1,0 @@
-package() {
-  cd binutils-build
-  make prefix="$pkgdir/usr" tooldir="$pkgdir/usr" install
-
-  # Remove unwanted files
-  rm -rf "$pkgdir/usr/share"
-  rm -f "$pkgdir/usr/bin/"{ar,as,ld,nm,objdump,ranlib,readelf,strip,objcopy}
-}

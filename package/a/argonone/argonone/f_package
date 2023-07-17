@@ -1,8 +1,0 @@
-package() {
-  install -Dm755 "${srcdir}"/"${pkgname}"/argonone-config "${pkgdir}"/usr/bin/argonone-config
-  install -Dm755 "${srcdir}"/"${pkgname}"/argononed "${pkgdir}"/usr/bin/argononed
-  install -Dm755 "${srcdir}"/"${pkgname}"/argononed.py "${pkgdir}"/opt/argonone/bin/argononed.py
-  install -Dm755 "${srcdir}"/"${pkgname}"/argononed.shutdown "${pkgdir}"/usr/lib/systemd/system-shutdown/argononed.shutdown
-  install -Dm644 "${srcdir}"/"${pkgname}"/argononed.service "${pkgdir}"/usr/lib/systemd/system/argononed.service
-  install -Dm666 "${srcdir}"/"${pkgname}"/argononed.conf "${pkgdir}"/etc/argononed.conf
-}

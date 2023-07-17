@@ -1,1 +1,0 @@
-("aws-es-proxy-${pkgver}::${url}/releases/download/v${pkgver}/aws-es-proxy-${pkgver}-linux-amd64")

@@ -1,3 +1,0 @@
-package() {
-    install -Dm 755 "$srcdir/sbin/apk.static" "$pkgdir/usr/bin/apk.static"
-}

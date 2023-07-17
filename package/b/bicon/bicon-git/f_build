@@ -1,7 +1,0 @@
-build() {
-  cd $srcdir/$_pkgname
-  ./autogen.sh
-  ./configure --prefix=/usr --disable-static --enable-fribidi \
-      --mandir=/usr/share/man --with-gtk=2.0,3.0
-  make
-}

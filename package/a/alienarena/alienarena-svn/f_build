@@ -1,8 +1,0 @@
-build() {
-
-	cd trunk/
-
-	autoreconf --verbose --force --install
-	./configure --enable-maintainer-mode --prefix=/usr --datarootdir=/usr/share --datadir=/usr/share
-	make
-}

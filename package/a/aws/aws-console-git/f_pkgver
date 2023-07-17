@@ -1,5 +1,0 @@
-pkgver() {
-  cd "aws-console"
-
-  git describe --long | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
-}

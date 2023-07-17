@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz::https://github.com/blitzpp/${pkgname}/archive/${pkgver}.tar.gz")

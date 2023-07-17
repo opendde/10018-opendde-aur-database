@@ -1,5 +1,0 @@
-package() {
-  cd azure-sdk-for-cpp
-
-  cmake --build build --target install -- DESTDIR="$pkgdir"
-}

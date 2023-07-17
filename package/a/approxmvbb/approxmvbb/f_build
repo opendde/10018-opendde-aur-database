@@ -1,6 +1,0 @@
-build() {
-	cd "$srcdir/$_pkgname-$pkgver"
-	(( NJOB=$(nproc)-1 )) || NJOB=1
-	cmake -DCMAKE_INSTALL_PREFIX=/usr .
-	make
-}

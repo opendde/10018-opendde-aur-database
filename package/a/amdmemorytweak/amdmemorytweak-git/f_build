@@ -1,4 +1,0 @@
-build() {
-  cd "$srcdir/$_pkgbase"
-  g++ linux/AmdMemTweak.cpp $CPPFLAGS $CXXFLAGS $LDFLAGS -lpci -lresolv -o $_pkgbase
-}

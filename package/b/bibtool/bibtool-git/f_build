@@ -1,6 +1,0 @@
-build() {
-  cd ${pkgname%-git}
-  autoreconf
-  ./configure --prefix=/usr
-  make all doc
-}

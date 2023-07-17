@@ -1,6 +1,0 @@
-package_packetbeat-oss() {
-    pkgdesc='Analyzes network traffic and sends the data to Elasticsearch OSS or OpenSearch'
-    depends=('libpcap')
-
-    _do_package_beat
-}

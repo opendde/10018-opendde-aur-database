@@ -1,4 +1,0 @@
-package() {
-  install -d "$pkgdir/usr/share/icons"
-  cp -r Bibata*  "$pkgdir/usr/share/icons"
-}

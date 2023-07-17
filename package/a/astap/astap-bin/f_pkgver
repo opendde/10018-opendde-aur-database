@@ -1,7 +1,0 @@
-pkgver() {
-    if [[ "$CARCH" == "i686" ]]; then
-        echo "2022.1.17"
-    else
-        echo "${pkgver}"
-    fi
-}

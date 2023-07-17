@@ -1,1 +1,0 @@
-("$_projectname-$pkgver.tar.gz::https://github.com/Dougal-s/$_projectname/archive/refs/tags/v$pkgver.tar.gz"

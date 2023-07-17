@@ -1,1 +1,0 @@
-("git+https://github.com/bitstower/$_upstream.git#commit=$_commit")

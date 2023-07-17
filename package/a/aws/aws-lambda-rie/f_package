@@ -1,6 +1,0 @@
-package () {
-  cd "$srcdir"
-  ls -la
-
-  install -Dm755 aws-lambda-rie "$pkgdir/usr/bin/aws-lambda-rie"
-}

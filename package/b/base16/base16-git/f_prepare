@@ -1,6 +1,0 @@
-prepare() {
-	cd "$srcdir/${pkgname%-git}"
-    [ ! -e "./index" ] || rm index
-
-    patch -p1 < ../fix-vim.patch
-}

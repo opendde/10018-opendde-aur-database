@@ -1,4 +1,0 @@
-build() {
-  cd $srcdir/boxes
-  make GLOBALCONF=/etc/boxes-config
-}

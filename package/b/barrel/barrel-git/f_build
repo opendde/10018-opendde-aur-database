@@ -1,5 +1,0 @@
-build() {
-  cd "${srcdir}/barrel"
-  rm -rf "${srcdir}"/barrel/build/libs/barrel*.jar
-  ./gradlew bootJar
-}

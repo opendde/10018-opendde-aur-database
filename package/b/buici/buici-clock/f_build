@@ -1,7 +1,0 @@
-build() {
-	cd "$srcdir/buici"
-	patch -p1 < "$srcdir/fix-second-hand.diff"
-	./configure --prefix=/usr
-#	make _version.h
-	make #-j8
-}

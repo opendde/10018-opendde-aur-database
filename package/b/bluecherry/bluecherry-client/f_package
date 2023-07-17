@@ -1,7 +1,0 @@
-package() {
-	cd "${pkgname%-git}"
-	printf "${pkgdir}"
-	install -Dm644 "linux/bluecherry-client.desktop" "${pkgdir}/usr/share/applications/bluecherry-client.desktop"
-	install -Dm644 "res/bluecherry-client.png" "${pkgdir}/usr/share/icons/bluecherry-client.png"
-	make DESTDIR="${pkgdir}/" install
-}

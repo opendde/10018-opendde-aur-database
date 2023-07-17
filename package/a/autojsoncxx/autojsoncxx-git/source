@@ -1,1 +1,0 @@
-("${pkgname}::git+https://github.com/netheril96/autojsoncxx.git")

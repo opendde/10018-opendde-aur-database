@@ -1,3 +1,0 @@
-pkgver() {
-  "${srcdir}/adhocspot.sh" --version
-}

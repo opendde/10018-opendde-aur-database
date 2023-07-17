@@ -1,7 +1,0 @@
-prepare() {
-  cd "${srcdir}/${pkgname}-${pkgver}/badger"
-  mkdir -p $srcdir/go
-  export GOPATH="${srcdir}"/go
-  export PATH=$PATH:$GOPATH/bin
-  go get -d -v ./...
-}

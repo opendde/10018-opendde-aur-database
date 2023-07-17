@@ -1,9 +1,0 @@
-build() {
-  cmake -B aurbuild -G Ninja dumb-$pkgver \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DBUILD_SHARED_LIBS=ON \
-    -DBUILD_ALLEGRO4=ON \
-    -DBUILD_EXAMPLES=OFF
-  cmake --build aurbuild
-}

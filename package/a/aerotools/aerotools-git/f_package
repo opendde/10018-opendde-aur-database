@@ -1,4 +1,0 @@
-package() {
-  cd aerotools
-	make DESTDIR="$pkgdir" PREFIX=/usr install
-}

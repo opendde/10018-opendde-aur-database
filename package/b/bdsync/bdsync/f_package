@@ -1,5 +1,0 @@
-package() {
-  cd "$pkgname"
-  install -D -m755 bdsync "$pkgdir/usr/bin/bdsync"
-  install -D -m644 bdsync.1 "$pkgdir/usr/share/man/man1/bdsync.1"
-}

@@ -1,8 +1,0 @@
-package() {
-	mkdir "${pkgdir}/usr" \
-	&& tar \
-		--extract \
-		--file data.tar.gz \
-		--directory "${pkgdir}" \
-	&& mv "${pkgdir}/lib" "${pkgdir}/usr"
-}

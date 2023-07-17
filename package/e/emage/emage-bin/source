@@ -1,1 +1,0 @@
-("${pkgname%-bin}-${pkgver}.deb::https://github.com/douglasjunior/emage/releases/download/${pkgver}/emage_${pkgver}_amd64.deb"

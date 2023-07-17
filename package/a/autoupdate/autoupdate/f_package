@@ -1,6 +1,0 @@
-package() {
-  targetdir="$pkgdir/usr/lib/systemd/system/"
-  install -m 755 -d $targetdir
-
-  install -D -m644 autoupdate.{service,timer} $targetdir
-}

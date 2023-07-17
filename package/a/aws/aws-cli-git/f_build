@@ -1,6 +1,0 @@
-build() {
-  set -u
-  cd "${_srcdir}"
-  ${_pyver} setup.py build
-  set +u
-}

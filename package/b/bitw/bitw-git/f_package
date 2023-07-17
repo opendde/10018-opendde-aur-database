@@ -1,5 +1,0 @@
-package() {
-	cd "$srcdir/"
-	install -Dm755 "$_bindir/$_pkgname" "$pkgdir/usr/bin/$_pkgname"
-	install -Dm644 "$_sourcedirectory/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-}

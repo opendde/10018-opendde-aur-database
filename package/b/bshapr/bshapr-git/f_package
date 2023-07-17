@@ -1,7 +1,0 @@
-package() {
-  cd "${srcdir}/${_pkgname}"
-  make PREFIX="/usr" DESTDIR="$pkgdir/" install
-  install -vDm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
-  # remove license file in wrong location
-  find "${pkgdir}/usr/lib/" -type f -iname "*LICENSE*" -delete
-}

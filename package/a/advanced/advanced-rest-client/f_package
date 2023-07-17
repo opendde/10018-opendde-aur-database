@@ -1,4 +1,0 @@
-package() {
-	# Install
-	cp -dr --no-preserve=ownership {opt,usr} "${pkgdir}"/
-}

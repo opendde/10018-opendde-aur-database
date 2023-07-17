@@ -1,8 +1,0 @@
-build() {
-  export MONO_SHARED_DIR="${srcdir}/.wabi"
-  mkdir -p $MONO_SHARED_DIR
-  cd "${srcdir}/${pkgname}-${pkgver}"
-  sed -i -e 's|/lib|/lib/mono|' extras/boo.pc.in
-  ./configure --prefix=/usr --libdir=/usr/lib
-  make VERBOSE=1
-}

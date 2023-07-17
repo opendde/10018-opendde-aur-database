@@ -1,6 +1,0 @@
-prepare() {
-    cd "$srcdir"
-
-    # Extract icon
-    bsdcpio --quiet --extract --make-directories --insecure 'amidst/resources/icon*.png' < "$_jarfile_version"
-}

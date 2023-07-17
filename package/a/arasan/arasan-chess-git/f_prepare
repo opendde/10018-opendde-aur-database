@@ -1,6 +1,0 @@
-prepare() {
-	cd "$srcdir/$pkgname"
-	git submodule update --init --recursive
-	sed -i 's/$(GCCNEW)" "1"/$(GCCNEW)" "0"/' src/Makefile
-	sed -i '/^	ln -s/d' src/Makefile
-}

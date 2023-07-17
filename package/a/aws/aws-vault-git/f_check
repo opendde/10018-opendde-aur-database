@@ -1,8 +1,0 @@
-check() {
-	msg2 'aws-vault binary'
-	pushd ${srcdir}/${pkgname} >/dev/null
-	{
-		./aws-vault-git --version
-	}
-	popd >/dev/null
-}

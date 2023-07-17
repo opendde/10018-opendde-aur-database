@@ -1,6 +1,0 @@
-package() {
-  cd "${srcdir}/${_pkgname}"
-  for f in *; do
-    install -Dm 755 $f "$pkgdir/usr/share/bash-completion/completions/$f"
-  done
-}

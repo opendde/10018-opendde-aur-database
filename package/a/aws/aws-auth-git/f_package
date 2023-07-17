@@ -1,5 +1,0 @@
-package() {
-  cd "aws-auth"
-  install -Dm755 build/aws-auth "$pkgdir"/usr/bin/aws-auth
-  install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-}

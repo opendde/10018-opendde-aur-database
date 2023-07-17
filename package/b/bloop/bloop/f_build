@@ -1,5 +1,0 @@
-build() {
-  mkdir -p channel
-  mv "bloop-coursier-channel-$pkgver" "channel/bloop.json"
-  coursier install --install-dir "$srcdir" --default-channels=false --channel channel --only-prebuilt=true bloop
-}

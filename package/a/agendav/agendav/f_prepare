@@ -1,7 +1,0 @@
-prepare() {
-    cd "$srcdir/$pkgname-$pkgver"
-    sed -i 's|\$app\['\''log\.path'\''\] = .*|$app['\''log.path'\''] = '\''/var/log/agendav/'\'';|' \
-        web/config/default.settings.php
-    sed -i 's|__DIR__\.'\''/\.\./var/cache/twig'\''|'\''/var/cache/agendav/twig'\''|' \
-        web/config/prod.php
-}

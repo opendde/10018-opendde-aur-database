@@ -1,4 +1,0 @@
-package() {
-    cd "$srcdir/autopasswd-$pkgver"
-    make PREFIX=/usr DESTDIR="$pkgdir" install
-}

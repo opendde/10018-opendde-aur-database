@@ -1,8 +1,0 @@
-package() {
-  cd "$pkgname-$pkgver" || exit 1
-
-  install -Dm0755 atto          "$pkgdir/usr/bin/atto"
-  install -Dm0755 atto-safesign "$pkgdir/usr/bin/atto-safesign"
-  install -Dm0644 README.md     "$pkgdir/usr/share/doc/$pkgname/README.md"
-  install -Dm0644 LICENSE       "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-}

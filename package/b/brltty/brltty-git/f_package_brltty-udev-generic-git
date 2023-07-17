@@ -1,8 +1,0 @@
-package_brltty-udev-generic-git() {
-	pkgdesc="Generic udev rules for brltty (development version)"
-	depends=(brltty)
-	provides=(brltty-udev-generic)
-	conflicts=(brltty-udev-generic)
-
-	install -vDm 644 90-brltty-usb-generic.rules -t "$pkgdir/usr/lib/udev/rules.d/"
-}

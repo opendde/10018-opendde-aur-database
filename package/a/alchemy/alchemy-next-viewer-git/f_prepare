@@ -1,7 +1,0 @@
-prepare() {
-    cd "${pkgname}" || exit 1
-    #git fetch --prune
-    #git checkout main
-    #git pull --autostash
-    #git checkout "${AL_GIT_REVISION:-origin/main}"
-}

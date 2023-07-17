@@ -1,5 +1,0 @@
-package() {
-	install -Dm755 $_pkgname -t "$pkgdir/usr/bin/"
-	install -Dm644 $pkgname-$pkgver-README.mkd "$pkgdir/usr/share/doc/$pkgname/README.md"
-	install -Dm644 $pkgname-$pkgver-LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-}

@@ -1,4 +1,0 @@
-build() {
-    cd "$pkgname"
-    go build -o dist/buffalo ./buffalo
-}

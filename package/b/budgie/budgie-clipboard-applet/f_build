@@ -1,4 +1,0 @@
-build() {
-    arch-meson "$pkgname-$pkgver" build --prefix=/usr --libdir=/usr/lib
-    meson compile -C build
-}

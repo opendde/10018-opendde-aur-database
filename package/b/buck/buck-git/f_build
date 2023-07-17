@@ -1,5 +1,0 @@
-build() {
-  cd "${pkgname%-git}"
-  ant
-  ./bin/buck build buck
-}

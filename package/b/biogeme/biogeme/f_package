@@ -1,6 +1,0 @@
-package() {
-  cd biogeme-${pkgver}
-
-  make DESTDIR="$pkgdir/" install
-  install -D -m644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}

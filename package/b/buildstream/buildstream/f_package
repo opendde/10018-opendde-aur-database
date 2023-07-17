@@ -1,4 +1,0 @@
-package() {
-  cd BuildStream-$pkgver
-  python setup.py install --root="$pkgdir/" --optimize=1 --skip-build
-}

@@ -1,1 +1,0 @@
-("$pkgname-$pkgver::git+https://github.com/open-eid/firefox-pkcs11-loader.git?signed#tag=$_rls_tag")

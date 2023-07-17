@@ -1,5 +1,0 @@
-prepare() {
-  cd "$srcdir/$pkgname-$pkgver"
-  patch -p1 -i ../fix_makefile.patch
-  patch -p1 -i ../fix_source_code.patch
-}

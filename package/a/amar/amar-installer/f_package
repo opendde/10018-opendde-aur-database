@@ -1,3 +1,0 @@
-package() {
-        install -Dm644 "gbamar.txt" "${pkgdir}/opt/gbamar.txt"
-} 

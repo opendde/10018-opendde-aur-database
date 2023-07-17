@@ -1,4 +1,0 @@
-package() {
-	cd "$_gitname"
-	make DESTDIR="$pkgdir" PREFIX="/usr" install
-}

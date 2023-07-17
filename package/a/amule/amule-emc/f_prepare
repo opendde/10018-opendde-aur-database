@@ -1,5 +1,0 @@
-prepare() {
-  mkdir -p build
-
-  patch -d "amule-emc-${pkgver}" -p0 -i "${srcdir}/amule-emc_0.5.2-2.diff"
-}

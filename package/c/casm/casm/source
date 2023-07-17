@@ -1,1 +1,0 @@
-("$pkgname-$pkgver.tar.gz::https://github.com/casm-lang/casm/releases/download/${pkgver}/${pkgname}-linux-$CARCH.tar.gz")

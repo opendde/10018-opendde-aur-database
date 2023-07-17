@@ -1,5 +1,0 @@
-package() {
-	mkdir -p "${pkgdir}/usr/bin"
-	install -m755 BioProspector.linux "${pkgdir}/usr/bin/BioProspector"
-	install -m755 genomebg.linux "${pkgdir}/usr/bin/genomebg"
-}

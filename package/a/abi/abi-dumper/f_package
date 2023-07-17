@@ -1,5 +1,0 @@
-package() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-  install -d "${pkgdir}/usr"
-  perl Makefile.pl -install --prefix=/usr --destdir="${pkgdir}"
-}

@@ -1,4 +1,0 @@
-pkgver() {
-  cd $srcdir/boxes
-  echo "$(git rev-list --count HEAD)"
-}

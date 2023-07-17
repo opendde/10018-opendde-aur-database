@@ -1,5 +1,0 @@
-pkgver() {
-# shellcheck disable=SC2164
-  cd "$srcdir/blender"
-  printf "2.79b.r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-}

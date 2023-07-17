@@ -1,4 +1,0 @@
-package() {
-    cd bemenu-${pkgver}
-    make DESTDIR="$pkgdir" install
-}

@@ -1,6 +1,0 @@
-package() {
-	cd ${srcdir}/${pkgname}"/build/release"
-	
-	install -Dm755 AntScope2 $pkgdir/usr/bin/AntScope2
-	
-}

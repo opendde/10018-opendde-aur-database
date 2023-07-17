@@ -1,3 +1,0 @@
-package() {
-  install -D "$srcdir/$_pkgname/bozocrack.rb" "$pkgdir/usr/bin/bozocrack"
-}

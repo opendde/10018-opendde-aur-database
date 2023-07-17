@@ -1,4 +1,0 @@
-pkgver() {
-	cd "${_gitname}";
-	echo "4.$(git rev-list --count HEAD).$(git describe --always )"
-}

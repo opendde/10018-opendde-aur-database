@@ -1,3 +1,0 @@
-package() {
-  install -Dm 755 "${srcdir}/asmcli-${downloadver}" "${pkgdir}/usr/bin/asmcli"
-}

@@ -1,5 +1,0 @@
-package() {
-	cd "$srcdir/${_pkgname}"
-  # make install
-  install -Dm 755 "out/${_pkgname}" "$pkgdir/usr/local/bin/${_pkgname}"
-}

@@ -1,4 +1,0 @@
-prepare() {
-  cd "$_pkgname-$pkgver"
-  patch -p1 -i ../001-fix-test-test_tools-add-sleep-for-flaky-systems.patch
-}

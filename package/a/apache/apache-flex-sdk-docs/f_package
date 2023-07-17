@@ -1,4 +1,0 @@
-package() {
-  install -d "${pkgdir}"/opt/apache-flex-sdk
-  cp -r asdoc "${pkgdir}"/opt/apache-flex-sdk/
-}

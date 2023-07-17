@@ -1,4 +1,0 @@
-prepare() {
-  cd "${srcdir}"/"${pkgname}"/jni
-  make -f makefile.linux clean
-}

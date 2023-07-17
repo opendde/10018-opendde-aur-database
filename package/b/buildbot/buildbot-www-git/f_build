@@ -1,7 +1,0 @@
-build() {
-  for module in base waterfall_view console_view grid_view wsgi_dashboards badges
-  do
-    cd "$srcdir/buildbot/www/$module"
-    python setup.py build
-  done
-}

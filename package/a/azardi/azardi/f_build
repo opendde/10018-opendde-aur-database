@@ -1,7 +1,0 @@
-build() {
-	cd "$srcdir"
-	FILE_NAME=$(find . -name "data.*")
-	mkdir --parents "$_src_bin_dir"
-	tar --extract --auto-compress "--file=$FILE_NAME" -C "$_src_bin_dir"
-	sed -i "s/Categories=Application;/Categories=Office;Viewer;/" "$_src_bin_dir/usr/share/applications/AZARDI.desktop"
-}

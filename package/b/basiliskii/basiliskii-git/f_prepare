@@ -1,4 +1,0 @@
-prepare() {
-  cd macemu/BasiliskII/src/Unix
-  NO_CONFIGURE=1 ./autogen.sh
-}

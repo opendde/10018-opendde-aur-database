@@ -1,4 +1,0 @@
-prepare() {
-  cd "$srcdir/$pkgname"
-  sed -i '173,183'd Makefile
-}

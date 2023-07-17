@@ -1,5 +1,0 @@
-package() {
-  cd Bibata_Extra_Cursor-$pkgver
-  install -d "$pkgdir"/usr/share/icons
-  cp -r themes/Bibata-* "$pkgdir"/usr/share/icons/
-}

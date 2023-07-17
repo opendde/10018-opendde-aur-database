@@ -1,4 +1,0 @@
-package() {
-	cd "$srcdir/$_gitname/build_dir"
-	make DESTDIR="$pkgdir" install
-}

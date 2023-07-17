@@ -1,3 +1,0 @@
-pkgver() {
-	curl https://packages.debian.org/stable/bdf2psf | grep 'Package: bdf2psf (' | sed -e 's/.*(//' -e 's/).*//'
-}

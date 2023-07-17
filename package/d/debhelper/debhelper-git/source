@@ -1,1 +1,0 @@
-("${pkgname}"::"git+https://salsa.debian.org/debian//debhelper.git")

@@ -1,4 +1,0 @@
-build() {
-    cd "qtools"
-    make VIRTUALENV_ENABLED=0 PREFIX=/usr build
-}

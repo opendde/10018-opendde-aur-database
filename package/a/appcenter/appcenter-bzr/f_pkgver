@@ -1,5 +1,0 @@
-pkgver() {
-  cd appcenter
-
-  echo "r$(bzr revno)"
-}

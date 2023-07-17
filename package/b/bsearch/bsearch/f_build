@@ -1,8 +1,0 @@
-build() {
-	cd "$pkgname-$pkgver"
-    export GOPATH="${srcdir}/fakegopath"
-
-    go get -v github.com/jamesridgway/bsearch
-    cd "${GOPATH}"/src/github.com/jamesridgway/bsearch
-    go build -pkgdir "${pkgdir}"
-}

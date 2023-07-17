@@ -1,3 +1,0 @@
-package () {
-	"${srcdir}/${Name}/installer" "-install" "${pkgdir}"
-}

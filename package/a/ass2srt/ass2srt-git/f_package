@@ -1,4 +1,0 @@
-package() {
-    cd "$_pkgname"
-    install -D -m 755 "Converters/ass2srt.pl" "$pkgdir/usr/bin/ass2srt.pl"
-}

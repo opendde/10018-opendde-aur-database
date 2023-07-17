@@ -1,1 +1,0 @@
-("${_pkgname}-${pkgver}-x86_64.appimage::${url}/releases/download/${pkgver}/${_pkgname}-x86_64.AppImage")

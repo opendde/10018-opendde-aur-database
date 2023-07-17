@@ -1,4 +1,0 @@
-pkgver() {
-  cd "${_plug}"
-  echo "$(git describe --long --tags | sed 's|depan-||g' | tr - .)"
-}

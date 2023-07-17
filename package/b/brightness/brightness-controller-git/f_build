@@ -1,4 +1,0 @@
-build() {
-  cd "$srcdir/${pkgname%-git}/${pkgname%-git}-linux"
-  python -m build --wheel --no-isolation
-}

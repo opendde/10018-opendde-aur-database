@@ -1,8 +1,0 @@
-package() {
-	cd ${srcdir}/$pkgname-$pkgver
-
-	make prefix=${pkgdir}/usr install || return 1
-	mkdir -p ${pkgdir}/usr/share/licenses/$pkgname #Store the MIT license according to the Arch Packaging Standards
-	cp ${pkgdir}/usr/share/doc/$pkgname/COPYING ${pkgdir}/usr/share/licenses/$pkgname/COPYING
-  
-}

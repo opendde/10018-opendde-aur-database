@@ -1,5 +1,0 @@
-build() {
-    cd $srcdir/bennugd-code-r${pkgver}/modules
-    ./configure --prefix=/usr --build=i686-pc-linux-gnu
-    make
-}

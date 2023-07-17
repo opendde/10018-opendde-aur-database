@@ -1,6 +1,0 @@
-package() {
-    install=bloonix-core.install
-	cd "$srcdir"/$pkgname-$pkgver
-  perl Build install --destdir="$pkgdir" 
-
-}

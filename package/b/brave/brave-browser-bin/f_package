@@ -1,5 +1,0 @@
-package() {
-  echo "Dummy package. Pulls in the real binary release package."
-  # Naming this package "brave-browser-bin" was a miskake. This way it falls in line with opera and vivaldi.
-
-}

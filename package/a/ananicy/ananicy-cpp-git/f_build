@@ -1,4 +1,0 @@
-build() {
-	cd "$_pkgname"
-	cmake --build build --target ananicy-cpp
-}

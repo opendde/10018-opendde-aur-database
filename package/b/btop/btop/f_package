@@ -1,4 +1,0 @@
-package() {
-	cd "$_archive"
-	make DESTDIR="$pkgdir" PREFIX=/usr install
-}

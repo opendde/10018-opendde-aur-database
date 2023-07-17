@@ -1,3 +1,0 @@
-pkgver() {
-    printf '%s' "${_tag/-/.}"
-}

@@ -1,4 +1,0 @@
-package() {
-        cd bootableusb
-        make DESTDIR="$pkgdir" install
-}

@@ -1,5 +1,0 @@
-package() {
-    for file in "${srcdir}/medit-themes/"*.xml; do
-        install -m 755 -D "${file}" "${pkgdir}/usr/share/medit-1/language-specs/$(basename ${file})"
-    done
-}

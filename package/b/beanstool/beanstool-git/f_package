@@ -1,6 +1,0 @@
-package() {
-  cd "$srcdir/beanstool"
-  export  GOPATH="$srcdir/go"
-  install -D -m755 "beanstool" "${pkgdir}/usr/bin/beanstool"
-  
-}

@@ -1,4 +1,0 @@
-check() {
-  cd black-$pkgver
-  python -m unittest tests/test_black.py
-}

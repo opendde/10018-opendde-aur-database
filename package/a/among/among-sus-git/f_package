@@ -1,4 +1,0 @@
-package() {
-	cd "$srcdir/${_pkgname}"
-	install -Dm755 among-sus ${pkgdir}/usr/bin/among-sus
-}

@@ -1,3 +1,0 @@
-prepare() {
-	rm -r $_pkgname/konversation/themes/papirus{,-dark}/src
-}

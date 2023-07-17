@@ -1,7 +1,0 @@
-build() {
-  cd "anki-${pkgver}"
-
-  sed -i -e 's|#!/usr/bin/env python|#!/usr/bin/env python2|' anki
-  sed -i -e 's|#!/usr/bin/env python|#!/usr/bin/env python2|' \
-    $(find . -regex ".*.py\|.*.recipe")
-}

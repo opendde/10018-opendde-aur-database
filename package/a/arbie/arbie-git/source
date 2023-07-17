@@ -1,1 +1,0 @@
-("git+https://github.com/${_gitauthor}/${pkgname%-git}.git#branch=${_gitbranch}")

@@ -1,4 +1,0 @@
-prepare() {
-  cd "${_gitname}"
-  sed -i 's|/usr/bin/python|/usr/bin/python2|' src/script/runant.py
-}

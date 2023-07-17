@@ -1,6 +1,0 @@
-prepare() {
-  cd "${srcdir}/${_gitname}"
-  for _variant in ${_variants[*]}; do
-    rm -rf "${_variant}/out/"
-  done
-}

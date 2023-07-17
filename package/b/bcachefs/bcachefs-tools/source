@@ -1,1 +1,0 @@
-("git+https://evilpiepirate.org/git/bcachefs-tools.git#tag=v${pkgver}")

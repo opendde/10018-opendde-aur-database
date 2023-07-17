@@ -1,1 +1,0 @@
-("${_pool_url}/${pkgname::1}/${_pkgname}/${_pkgname}_${pkgver}~ubuntu${_dist_release}_all.deb")

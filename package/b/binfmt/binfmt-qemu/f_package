@@ -1,3 +1,0 @@
-package() {
-  install -Dm 644 "$srcdir/qemu.conf" "$pkgdir/usr/lib/binfmt.d/qemu.conf"
-}

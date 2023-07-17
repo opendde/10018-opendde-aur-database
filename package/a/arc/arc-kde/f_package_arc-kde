@@ -1,6 +1,0 @@
-package_arc-kde() {
-    optdepends+=('kvantum-theme-arc: Arc theme for Kvantum Qt style (recommended)')
-
-    cd ${pkgbase}-${pkgver}
-    DESTDIR=$pkgdir IGNORE=Kvantum make install
-}

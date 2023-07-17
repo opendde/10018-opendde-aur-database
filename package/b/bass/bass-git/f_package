@@ -1,3 +1,0 @@
-package() {
-    install -Dm755 "$srcdir/bass/bass/out/bass" "$pkgdir/usr/bin/bass"
-}

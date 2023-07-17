@@ -1,6 +1,0 @@
-package() {
-  cd $srcdir
-  mkdir -p $pkgdir/usr/lib/node_modules/
-  cd $pkgdir/usr/lib/node_modules/
-  npm install -g --prefix "$pkgdir/usr" $pkgname@$pkgver
-}

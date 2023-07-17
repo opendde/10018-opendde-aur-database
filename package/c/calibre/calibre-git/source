@@ -1,1 +1,0 @@
-("git+https://github.com/kovidgoyal/${pkgbase%-git}.git?signed"

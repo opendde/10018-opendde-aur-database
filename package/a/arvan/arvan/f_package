@@ -1,3 +1,0 @@
-package() {
-	install -Dm755 "${srcdir}/arvan" "${pkgdir}/usr/bin/arvan"
-}

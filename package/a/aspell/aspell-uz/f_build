@@ -1,5 +1,0 @@
-build() {
-  cd aspell6-uz-$pkgver-0
-  ./configure
-  make
-}

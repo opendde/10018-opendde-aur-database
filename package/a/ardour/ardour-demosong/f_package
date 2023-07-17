@@ -1,8 +1,0 @@
-package() {
-    install -dm755 "$pkgdir""$HOME"/Ardour/BBMM
-    cp -dr --no-preserve='ownership' BBMM/* "$pkgdir""$HOME"/Ardour/BBMM
-    chown -R $USER "$pkgdir""$HOME"/Ardour/BBMM
-       
-    # license
-    install -Dm644 51pv "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-}

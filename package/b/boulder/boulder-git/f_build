@@ -1,5 +1,0 @@
-build() {
-	cd "$srcdir/${pkgname%-git}"
-	meson --prefix=/usr --buildtype=plain build
-	meson compile -C build
-}

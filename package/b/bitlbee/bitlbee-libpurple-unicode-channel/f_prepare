@@ -1,4 +1,0 @@
-prepare() {
-  cd "${_pkgname}-$pkgver"
-  patch -p1 < $srcdir/unicode-channel.patch
-}

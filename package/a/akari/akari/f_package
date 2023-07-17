@@ -1,6 +1,0 @@
-package() {
-  _kernver="$(uname -r)"
-  install -D -m644 "${srcdir}/build/akari/akari.ko" \
-    "${pkgdir}/usr/lib/modules/${_kernver}/extramodules/akari.ko"
-  gzip "${pkgdir}/usr/lib/modules/${_kernver}/extramodules/"*.ko
-}

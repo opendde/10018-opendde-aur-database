@@ -1,5 +1,0 @@
-build() {
-    pushd ${srcdir}/src
-    python setup.py build
-    popd
-}

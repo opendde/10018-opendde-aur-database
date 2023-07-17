@@ -1,1 +1,0 @@
-("${pkgname%-git}::git+http://github.com/Bitcoin-Monster/BTCMonster.git"

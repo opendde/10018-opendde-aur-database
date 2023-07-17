@@ -1,3 +1,0 @@
-get_last() {
-    ls $1 | sort -V | tail -n 1
-}

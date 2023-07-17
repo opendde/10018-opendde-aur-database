@@ -1,1 +1,0 @@
-("http://dstats.net/download/http://www.stat.wisc.edu/~ane/bucky/v${pkgver%.*}/bucky-${pkgver}.tgz")

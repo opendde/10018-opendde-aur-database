@@ -1,3 +1,0 @@
-package() {
-    install -D $srcdir/ansi2html.sh $pkgdir/usr/bin/ansi2html
-}

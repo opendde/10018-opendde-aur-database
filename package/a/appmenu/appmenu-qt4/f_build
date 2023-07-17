@@ -1,7 +1,0 @@
-build() {
-  cd build
-  cmake ../appmenu-qt-$pkgver \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_BUILD_TYPE="Release"
-  make
-}

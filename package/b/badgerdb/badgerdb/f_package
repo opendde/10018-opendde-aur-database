@@ -1,4 +1,0 @@
-package() {
-  cd "${srcdir}/${_name}-${pkgver}/badger"
-  install -Dm755 build/badger "${pkgdir}/usr/bin/badger"
-}

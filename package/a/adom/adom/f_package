@@ -1,6 +1,0 @@
-package() {
-  cd ${srcdir}/adom
-
-  install -m755 -D adom ${pkgdir}/usr/bin/adom
-  install -m644 -D ${srcdir}/LICENSE ${pkgdir}/usr/share/licenses/adom/LICENSE
-}

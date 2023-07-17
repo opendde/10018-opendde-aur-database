@@ -1,5 +1,0 @@
-build() {
-	echo ${srcdir}
-	cd ${srcdir}/aurh
-	make
-}

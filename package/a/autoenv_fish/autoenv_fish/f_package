@@ -1,6 +1,0 @@
-package() {
-	cd "${pkgname}-${pkgver}"
-
-	install -Dm644 activate.fish "${pkgdir}/usr/share/${pkgname}/activate.fish"
-	install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}

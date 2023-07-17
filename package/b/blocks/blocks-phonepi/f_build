@@ -1,8 +1,0 @@
-build() {
-	cd "$srcdir/Phone/src/block-apps"
-	git submodule init
-	git submodule update
-
-	cmake . -DCMAKE_INSTALL_PREFIX=/usr
-	make
-}

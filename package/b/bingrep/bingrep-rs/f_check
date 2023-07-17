@@ -1,4 +1,0 @@
-check() {
-  cd "$srcdir/$_pkgname-$pkgver"
-  cargo test --release --locked
-}

@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}::https://github.com/microsoft/AirSim/archive/v$pkgver-linux.tar.gz"

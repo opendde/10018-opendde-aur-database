@@ -1,9 +1,0 @@
-package() {
-  depends=(
-    'anbox-git'
-    'systemd'
-    'python-xdg'
-  )
-  cd "$srcdir/${pkgname%-git}"
-   make DESTDIR="$pkgdir" SYSCONFDIR=/etc install
-}

@@ -1,6 +1,0 @@
-build() {
-  cd "$srcdir/$_pkgname/build"
-  # We are not building demo examples as they will not be installed
-  cmake -DCMAKE_INSTALL_PREFIX='/usr' ..
-  make
-}

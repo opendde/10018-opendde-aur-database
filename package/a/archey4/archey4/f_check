@@ -1,5 +1,0 @@
-check() {
-	cd "${srcdir}/${pkgname}-${pkgver}"
-
-	python3 -m unittest
-}

@@ -1,4 +1,0 @@
-build() {
-  cd Boop-GTK
-  cargo build --release --locked --all-features --target-dir=target
-}

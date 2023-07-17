@@ -1,7 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname-$pkgver/"
-  install -Dm 0644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-  install -Dm 0755 bluetooth-autoconnect "$pkgdir/usr/bin/bluetooth-autoconnect"
-  install -Dm 0644 bluetooth-autoconnect.service "$pkgdir/usr/lib/systemd/system/bluetooth-autoconnect.service"
-  install -Dm 0644 pulseaudio-bluetooth-autoconnect.service "$pkgdir/usr/lib/systemd/user/pulseaudio-bluetooth-autoconnect.service"
-}

@@ -1,5 +1,0 @@
-build() {
-export PATH=/usr/lib/jvm/java-8-openjdk/jre/bin/:$PATH
-	cd ${pkgname}
-	ant -Dnb.internal.action.name=build jar
-}

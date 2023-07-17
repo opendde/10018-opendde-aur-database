@@ -1,4 +1,0 @@
-build() {
-    cd $srcdir/Bother-1.0
-    python setup.py build
-}

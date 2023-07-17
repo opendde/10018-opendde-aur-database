@@ -1,5 +1,0 @@
-prepare() {
-	# Set name and version
-	sed -e "s/@PKGVER@/$pkgver/" \
-	    -e "s/@_PKGBASE@/$_pkgbase/" dkms.conf.in > dkms.conf
-}

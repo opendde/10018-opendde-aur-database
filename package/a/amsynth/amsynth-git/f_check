@@ -1,5 +1,0 @@
-check() {
-  cd "${srcdir}/${_pkgname}"
-  cp .libs/${_pkgname}_lv2*.so data/${_pkgname}.lv2/
-  lv2lint -Mpack -I "data/${_pkgname}.lv2" "${_plugin_uri}"
-}

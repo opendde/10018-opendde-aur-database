@@ -1,3 +1,0 @@
-prepare() {
-	mv Blightmud-$pkgver $pkgname-$pkgver
-}

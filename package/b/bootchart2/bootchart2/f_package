@@ -1,5 +1,0 @@
-package() {
-	cd "${srcdir}/${pkgname%2}-${pkgver}"
-
-	make PROGRAM_SUFFIX=2 DESTDIR="${pkgdir}" EARLY_PREFIX=/usr install
-}

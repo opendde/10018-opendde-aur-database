@@ -1,6 +1,0 @@
-package() {
-	cd $pkgname-$pkgver
-	install -m644 -D asciidoc.lang "$pkgdir"/usr/share/gtksourceview-2.0/language-specs/asciidoc.lang
-	install -m755 -d "$pkgdir"/usr/share/gtksourceview-3.0/language-specs
-	ln "$pkgdir"/usr/share/gtksourceview-{2,3}.0/language-specs/asciidoc.lang
-}

@@ -1,4 +1,0 @@
-build() {
-        cd iptv-${pkgver}
-        make
-}

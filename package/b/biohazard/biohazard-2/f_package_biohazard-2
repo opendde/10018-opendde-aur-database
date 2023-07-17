@@ -1,4 +1,0 @@
-package_biohazard-2() {
-  depends+=("${pkgbase}-leon"
-            "${pkgbase}-claire")
-}

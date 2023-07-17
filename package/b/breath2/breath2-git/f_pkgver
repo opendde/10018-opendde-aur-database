@@ -1,4 +1,0 @@
-pkgver() {
-  cd "$srcdir/$_pkgname"
-  echo r$(git rev-list --count $_commit).$(git rev-parse --short $_commit)
-}

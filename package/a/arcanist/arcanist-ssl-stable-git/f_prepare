@@ -1,4 +1,0 @@
-prepare() {
-  cd "$srcdir/arcanist"
-  patch -Np1 < "../updated-ssl.patch"
-}

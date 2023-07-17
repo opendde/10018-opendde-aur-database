@@ -1,6 +1,0 @@
-package_aerospike-client-python2() {
-  depends=('python2' 'python2-setuptools' 'openssl' 'aerospike-client-c-libuv')
-  cd "${srcdir}/aerospike-${pkgver}"
-  export DOWNLOAD_C_CLIENT=0
-  python2 setup.py install --root="${pkgdir}" --optimize=1
-}

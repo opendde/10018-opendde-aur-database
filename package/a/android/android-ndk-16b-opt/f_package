@@ -1,8 +1,0 @@
-package() {
-  install -d "$pkgdir/opt"
-  mv "$_pkg-${pkgver/_/}" "$pkgdir/opt/$_pkg-16b"
-
-  # Fix permissions
-  chmod -R o=g "$pkgdir/opt/$_pkg-16b"
-  find "$pkgdir/opt/$_pkg-16b" -perm 744 -exec chmod 755 {} +
-}

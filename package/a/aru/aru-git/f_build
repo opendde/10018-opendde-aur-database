@@ -1,6 +1,0 @@
-build() {
-    cd aru
-    git submodule update --init --recursive
-	make gen-assets
-	make release
-}

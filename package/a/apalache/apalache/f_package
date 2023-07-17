@@ -1,7 +1,0 @@
-package() {
-	install -Dt "$pkgdir/usr/bin" "bin/$pkgname-mc"
-	install -Dt "$pkgdir/opt/$pkgname" "mod-distribution/target/$pkgname-pkg-$pkgver-full.jar"
-	install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-
-	ln -s "/usr/bin/$pkgname-mc" "$pkgdir/usr/bin/$pkgname"
-}

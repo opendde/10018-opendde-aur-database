@@ -1,8 +1,0 @@
-package() {
-    cd "$srcdir/$pkgname-$pkgver/${_srcname}/build"
-    install -D --mode=0644 libbeegfs-common.a "${pkgdir}/usr/lib/beegfs/libbeegfs-common.a"
-    install -D --mode=0755 libbeegfs_ib.so "${pkgdir}/usr/lib/beegfs/libbeegfs_ib.so"
-
-    cd "$srcdir/$pkgname-$pkgver"
-    install -D --mode=0644 LICENSE.txt "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.txt"
-}

@@ -1,5 +1,0 @@
-prepare() {
-    cd "${pkgname%-*}"
-    git submodule update --init --recursive
-    ./waf configure --prefix="/usr" 
-}

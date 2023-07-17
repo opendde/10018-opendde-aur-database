@@ -1,5 +1,0 @@
-build() {
-    cd "${pkgname%%-git}"
-
-    git submodule update --init --recursive
-}

@@ -1,7 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname-$pkgver/src"
-for bin in bucky mbsum
-do
-  install -Dm 755 $bin $pkgdir/usr/bin/$bin
-done
-}

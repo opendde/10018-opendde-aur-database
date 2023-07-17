@@ -1,4 +1,0 @@
-prepare() {
-  cd "$pkgname-$pkgver"
-  sed -i -r 's#:(.*)checkstyle(.*)#:\1\2#g' makefile
-}

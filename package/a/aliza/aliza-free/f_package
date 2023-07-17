@@ -1,3 +1,0 @@
-package() {
-    cp -a usr ${pkgdir}
-}

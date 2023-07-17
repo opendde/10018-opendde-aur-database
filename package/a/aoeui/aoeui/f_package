@@ -1,4 +1,0 @@
-package() {
-  cd $pkgname
-  make INST_DIR="$pkgdir"/usr install
-}

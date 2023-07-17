@@ -1,9 +1,0 @@
-package() {
-    install -d $pkgdir/usr/share/man/man6/
-    install -m 644 $srcdir/$pkgname-$pkgver.orig/*.6fun \
-                                                    $pkgdir/usr/share/man/man6/
-
-    # Install the license
-    install -Dm 644 $srcdir/$pkgname-$pkgver.orig/debian/copyright \
-                                  $pkgdir/usr/share/licenses/$pkgname/copyright
-}

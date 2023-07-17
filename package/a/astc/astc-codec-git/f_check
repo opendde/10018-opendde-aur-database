@@ -1,6 +1,0 @@
-check() {
-    export LD_LIBRARY_PATH="${srcdir}/build/src/decoder"
-    export LD_LIBRARY_PATH+=":${srcdir}/build/googletest-build/googlemock"
-    export LD_LIBRARY_PATH+=":${srcdir}/build/googletest-build/googlemock/gtest"
-    make -C build test
-}

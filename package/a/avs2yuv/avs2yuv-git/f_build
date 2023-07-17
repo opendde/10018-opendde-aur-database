@@ -1,9 +1,0 @@
-build() {
-  cd build
-
-  cmake ../avs2yuv \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=usr
-
-  make
-}

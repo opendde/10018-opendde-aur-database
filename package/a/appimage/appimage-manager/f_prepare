@@ -1,5 +1,0 @@
-prepare() {
-  cd $_pkgname
-  git submodule update --init --recursive
-  go get -v -t -d ./...
-}

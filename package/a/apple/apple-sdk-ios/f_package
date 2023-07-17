@@ -1,7 +1,0 @@
-package() {
-	mkdir -p "$pkgdir/opt"
-	cp -r "$pkgname" "$pkgdir/opt/$pkgname"
-
-	find "$pkgdir/opt/$pkgname/" -type f -exec chmod 644 {} \;
-	chmod 755 "$pkgdir/opt/$pkgname"
-}

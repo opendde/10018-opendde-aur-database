@@ -1,6 +1,0 @@
-package() {
-    cd "$pkgname-$pkgver"
-    export RUSTUP_TOOLCHAIN=stable
-    cargo install --no-track  --all-features --root "$pkgdir/usr/" --path .
-    install -Dm644 "systemd.service" "${pkgdir}/etc/systemd/system/${pkgname}.service"
-}

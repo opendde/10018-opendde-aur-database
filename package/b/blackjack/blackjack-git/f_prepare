@@ -1,4 +1,0 @@
-prepare() {
- cd "$srcdir/BlackJack"
- patch -i "$srcdir/path.diff"
-}

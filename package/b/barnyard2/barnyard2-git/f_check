@@ -1,4 +1,0 @@
-check() {
-    cd "barnyard2"
-    make -k check
-}

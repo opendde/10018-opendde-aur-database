@@ -1,5 +1,0 @@
-prepare() {
-  cd "animation_nodes"
-  _blender_version=$(blender --version | sed -E -n -e 's/.*([0-9]+\.[0-9]+)\.[0-9]+.*/\1/p')
-  echo "{\"Copy Target\" : \"$pkgdir/usr/share/blender/$_blender_version/scripts/addons\"}" > conf.json
-}

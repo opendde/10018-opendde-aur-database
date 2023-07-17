@@ -1,8 +1,0 @@
-package() {
-  cd binutils-$pkgver
-
-  make DESTDIR="$pkgdir" install
-
-  # Remove info documents that conflict with host version
-  rm -r "$pkgdir"/usr/share/info
-}

@@ -1,5 +1,0 @@
-package() {
-   cp -r "${srcdir}/opt" "${pkgdir}/opt"
-   cp -r "${srcdir}/usr" "${pkgdir}/usr"
-   sed -i 's|/etc/init.d/cups|/etc/rc.d/cupsd|' "${pkgdir}/opt/brother/Printers/dcpj100/cupswrapper/cupswrapperdcpj100"
-}

@@ -1,9 +1,0 @@
-build() {
-    mkdir -p "$srcdir/tmp"
-    cd "$srcdir/bitcoinec-$_commit/"
-    ./autogen.sh
-    ./configure --prefix=/usr --enable-upnp-default --enable-hardening --with-gui=qt5
-    make DESTDIR="$srcdir/tmp"
-    make DESTDIR="$srcdir/tmp" install
-    cat contrib/debian/bitcoin-qt.desktop | sed 's/Name\=Bitcoin\ Core/Name\=Bitcoin\ Core\ \(EC\)/g' > contrib/debian/bitcoin-qt-2.desktop
-}

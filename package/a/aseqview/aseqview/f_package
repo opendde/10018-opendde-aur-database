@@ -1,7 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname-$pkgver"
-  make DESTDIR="$pkgdir/" install
-  install -D -m644 ChangeLog $pkgdir/usr/share/doc/${pkgname}/ChangeLog
-  install -D -m644 AUTHORS $pkgdir/usr/share/doc/${pkgname}/AUTHORS
-  install -D -m644 README $pkgdir/usr/share/doc/${pkgname}/README
-}

@@ -1,4 +1,0 @@
-build() {
-	mkdir -p ${pkgdir}/usr/share/blender/2.72/scripts/addons/
-	cp -r ${srcdir}/io_export_ogreDotScene.py ${pkgdir}/usr/share/blender/2.72/scripts/addons/
-}

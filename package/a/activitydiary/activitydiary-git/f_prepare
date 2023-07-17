@@ -1,9 +1,0 @@
-prepare() {
-  cd "${srcdir}"
-  # create work copy
-  rm -rf "${srcdir}/${_gitname}-build"
-  git clone "${srcdir}/${_gitname}" "${srcdir}/${_gitname}-build"
-  cd "${srcdir}/${_gitname}-build"
-  # patch qwt-paths in activitydiary.pro
-  patch "activitydiary.pro" "${srcdir}/activitydiary.pro.patch"
-}

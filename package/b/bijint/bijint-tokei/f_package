@@ -1,3 +1,0 @@
-package() {
-  install -Dm 0755 "${srcdir}/Scripts/tokei" "${pkgdir}/usr/bin/bijint-tokei"
-}

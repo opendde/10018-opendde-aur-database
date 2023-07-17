@@ -1,9 +1,0 @@
-prepare() {
-  cd $_projectname-$pkgver
-  # extract submodules
-  bsdtar -xf ../pugl-$_pugl_ref.tar.gz -C extern/pugl --strip-components 1
-  bsdtar -xf ../nanovg-$_nanovg_ref.tar.gz -C extern/nanovg --strip-components 1
-
-  # A crash is already fixed in master
-  patch -Np1 -i ../checkout-1162d0e.patch
-}

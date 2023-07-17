@@ -1,8 +1,0 @@
-package() {
-install -d "$pkgdir/opt"
-cp -R "$srcdir/opt" "$pkgdir/opt/astrapi"
-
-#  mkdir -p /opt/astrapi/bin
-#  mkdir -p /opt/astrapi/etc
-#  mkdir -p /opt/astrapi/log
-}

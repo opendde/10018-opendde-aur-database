@@ -1,3 +1,0 @@
-package_antora-cli() {
-  _package cli
-}

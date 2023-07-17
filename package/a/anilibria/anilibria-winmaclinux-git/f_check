@@ -1,4 +1,0 @@
-check() {
-	cd "$srcdir/${pkgname%-git}/src"
-	make -k check
-}

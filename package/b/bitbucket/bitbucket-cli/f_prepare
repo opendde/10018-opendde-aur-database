@@ -1,6 +1,0 @@
-prepare() {
-    #makepkg can't fetch git with https:// proto
-    git clone \
-        https://bitbucket.org/kovetskiy/stash-command-line-tools.git \
-        $srcdir/$pkgname
-}

@@ -1,5 +1,0 @@
-build() {
-  cd "$pkgname-$pkgver.orig"
-  LDFLAGS='-lX11' ./configure prefix=/usr --enable-tray-icon
-  make
-}

@@ -1,6 +1,0 @@
-package() {
-  set -u
-  cd "anitya-${pkgver}"
-  python2 setup.py install --root="${pkgdir}" --optimize=1
-  set +u
-}

@@ -1,7 +1,0 @@
-prepare() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-
-  sed -i "s/Comment=.*/Comment=Reference Image Viewer/" ${pkgname}.desktop
-  sed -i "s/Exec=.*/Exec=${pkgname}/" ${pkgname}.desktop
-  sed -i "s/Icon=.*/Icon=${_xdg_desktop_name}/" ${pkgname}.desktop
-}

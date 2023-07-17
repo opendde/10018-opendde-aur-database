@@ -1,6 +1,0 @@
-package() {
-	cd brainfuck-master
-	mkdir -p "$pkgdir"/usr/bin
-	cargo build --release
-	mv target/release/brainfuck "$pkgdir"/usr/bin/brainfuck
-}

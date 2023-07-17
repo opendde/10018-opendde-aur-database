@@ -1,3 +1,0 @@
-package() {
-  install -D -m 644 "g15composer.service" "${pkgdir}/usr/lib/systemd/system/g15composer.service"
-}

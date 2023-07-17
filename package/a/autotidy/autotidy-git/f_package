@@ -1,6 +1,0 @@
-package() {
-    mkdir -p $pkgdir/usr/bin
-    cd ${_pkgname}
-    ls
-    cp build/autotidy $pkgdir/usr/bin
-}

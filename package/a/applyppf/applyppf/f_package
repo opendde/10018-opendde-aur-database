@@ -1,3 +1,0 @@
-package() {
-	install -Dm0755 applyppf "$pkgdir"/usr/bin/applyppf
-}

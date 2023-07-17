@@ -1,5 +1,0 @@
-prepare() {
-  cd "${srcdir}/Arduino-Makefile-${pkgver}"
-
-  find -name ".gitignore" -delete
-}

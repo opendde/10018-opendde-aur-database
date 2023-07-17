@@ -1,5 +1,0 @@
-prepare() {
-  cd "${_name}"
-  cmake -DCMAKE_INSTALL_PREFIX=/usr
-  sed -i 's_lcairo_lcairo -lm_' CMakeFiles/asteroid.dir/link.txt
-}

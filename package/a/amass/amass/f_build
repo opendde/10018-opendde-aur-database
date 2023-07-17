@@ -1,9 +1,0 @@
-build() {
-  cd "Amass-$pkgver"
-
-  mkdir bin
-  go build \
-    -trimpath \
-    -ldflags "-extldflags $LDFLAGS" \
-    -v -o bin/ ./cmd/...
-}

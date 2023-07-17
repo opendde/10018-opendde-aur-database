@@ -1,4 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname-$pkgver"
-  install -D -m 0755 bmdcapture "$pkgdir/usr/bin/bmdcapture"
-}

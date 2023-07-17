@@ -1,7 +1,0 @@
-package() {
-  _destdir="${pkgdir}/opt/android-sdk/system-images/android-${_apilevel}/google_apis/"
-  mkdir -p "${_destdir}"
-  mv "${srcdir}/${_arch}" "${_destdir}/"
-
-  chmod -R ugo+rX "${pkgdir}/opt"
-}

@@ -1,4 +1,0 @@
-package() {
-  install -D -m644 "${srcdir}/BPGM_v${pkgver}/BlossomsPogoManager.jar" "${pkgdir}/usr/share/java/blossoms-pokemon-go-manager/BlossomsPogoManager.jar"
-  install -D -m755 "${srcdir}/bpgm" "${pkgdir}/usr/bin/bpgm"
-}

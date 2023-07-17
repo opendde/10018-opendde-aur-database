@@ -1,8 +1,0 @@
-build() {
-  cd "BIR-${pkgver}"
-  rm -rf build
-  mkdir build
-  cd "${srcdir}/BIR-${pkgver}/build"
-  qmake PREFIX=/usr ..
-  make
-}

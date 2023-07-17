@@ -1,1 +1,0 @@
-("electron.zip::https://github.com/electron/electron/releases/download/v${pkgver}/electron-v${pkgver}-linux-x64.zip")

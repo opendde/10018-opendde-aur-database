@@ -1,1 +1,0 @@
-("${pkgname}::git+https://github.com/Dygmalab/Bazecor.git#branch=${_branch}")

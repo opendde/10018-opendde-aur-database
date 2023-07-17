@@ -1,4 +1,0 @@
-package() {
-	  cd "$srcdir/${pkgname%-git}"
-    install -D -m755 bugit "$pkgdir"/usr/bin/bugit
-}

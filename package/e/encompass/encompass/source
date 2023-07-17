@@ -1,1 +1,0 @@
-("https://github.com/mazaclub/encompass/releases/download/v{$pkgver}/${pkgname^}-${pkgver}.tar.gz")

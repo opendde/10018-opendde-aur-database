@@ -1,1 +1,0 @@
-('alvr'::"git+https://github.com/alvr-org/ALVR.git#tag=${_tag}")

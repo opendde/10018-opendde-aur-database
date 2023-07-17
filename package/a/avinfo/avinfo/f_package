@@ -1,4 +1,0 @@
-package() {
-	cd ${srcdir}/src
-        install -D -c -s -m 755 avinfo ${pkgdir}/usr/bin/avinfo
-}

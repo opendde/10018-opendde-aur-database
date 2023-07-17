@@ -1,9 +1,0 @@
-build() {
-  cd build
-  cmake ../breeze-$pkgver \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
-    -DUSE_KDE4=ON \
-    -DBUILD_TESTING=OFF
-  make
-}

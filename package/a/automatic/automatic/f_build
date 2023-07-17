@@ -1,7 +1,0 @@
-build() {
-  cd "$srcdir/Automatic-$pkgver"
-
-  ./autogen.sh
-  ./configure --prefix=/usr --sysconfdir=/etc
-  make
-}

@@ -1,4 +1,0 @@
-package() {
-  cd $pkgname-$pkgver
-  make prefix="$pkgdir"/usr install
-}

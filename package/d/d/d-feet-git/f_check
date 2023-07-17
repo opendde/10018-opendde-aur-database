@@ -1,4 +1,0 @@
-check() {
-  cd "$srcdir/${PROJECT_DIR_NAME:-$_reponame-$pkgver}"
-  ninja check
-}

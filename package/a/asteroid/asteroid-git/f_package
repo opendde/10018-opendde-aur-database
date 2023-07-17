@@ -1,5 +1,0 @@
-package() {
-  cd "${_name}"
-  make DESTDIR="${pkgdir}" PREFIX=/usr install
-  find "${pkgdir}" -type d -name .git -exec rm -r '{}' +
-}

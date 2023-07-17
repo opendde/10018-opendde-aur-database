@@ -1,8 +1,0 @@
-package() {
-    cd "${_archive_name}"
-    install -Dm755 asfa -t "$pkgdir/usr/bin"
-    install -Dm644 LICENSE-APACHE "$pkgdir/usr/share/licenses/$pkgname/LICENSE-APACHE"
-    install -Dm644 LICENSE-MIT "$pkgdir/usr/share/licenses/$pkgname/LICENSE-MIT"
-    find man/man1 -type f -print0 \
-        | xargs -0 install -Dm644 -t "$pkgdir/usr/share/man/man1"
-}

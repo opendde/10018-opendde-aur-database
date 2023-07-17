@@ -1,6 +1,0 @@
-prepare () {
-  cd "$pkgname"
-
-  git cherry-pick -n 1886d97 # Fix GTK+3.24 compilation issues
-  git cherry-pick -n 0e0c582 # Fixes compilation errors with Vala 0.44
-}

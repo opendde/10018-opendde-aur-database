@@ -1,1 +1,0 @@
-("${pkgname}::git+https://github.com/springzfx/cgproxy#tag=v${pkgver}")

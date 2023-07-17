@@ -1,8 +1,0 @@
-build() {
-  cd build
-  cmake "../${pkgname}-${pkgver}" \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DSHARED=ON
-  make
-}

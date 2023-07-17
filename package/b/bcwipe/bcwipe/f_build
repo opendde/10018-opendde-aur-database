@@ -1,7 +1,0 @@
-build() {
-  cd "${_srcdir}"
-
-  ./configure --prefix='/usr'
-
-  nice make root="${pkgdir}"
-}

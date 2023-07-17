@@ -1,7 +1,0 @@
-package() {
-  install -D -m755 -t "$pkgdir/usr/bin" "$srcdir/aconfmgr/aconfmgr"
-  install -D -m644 -t "$pkgdir/usr/lib/aconfmgr" "$srcdir/aconfmgr/src/"*
-  install -D -m644 -t "$pkgdir/usr/share/doc/aconfmgr" "$srcdir/aconfmgr/README.md"
-  install -D -m644 -t "$pkgdir/usr/share/man/man1" "$srcdir/aconfmgr/aconfmgr.1"
-  install -D -m644 -t "$pkgdir/usr/share/licenses/$pkgname" license.txt
-}

@@ -1,1 +1,0 @@
-("git+https://gitlab.archlinux.org/archlinux/${pkgname%-git}.git?signed")

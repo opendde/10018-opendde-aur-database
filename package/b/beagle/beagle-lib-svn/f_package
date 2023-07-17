@@ -1,5 +1,0 @@
-package() {
-  cd $srcdir/$pkgname-trunk
-
-  make DESTDIR=$pkgdir install
-}

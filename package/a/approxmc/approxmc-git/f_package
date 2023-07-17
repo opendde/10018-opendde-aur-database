@@ -1,6 +1,0 @@
-package() {
-  cd ApproxMC
-  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-  cd build
-  make install DESTDIR="$pkgdir"
-}

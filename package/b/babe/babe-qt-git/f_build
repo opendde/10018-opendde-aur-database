@@ -1,5 +1,0 @@
-build() {
-  cd babe-qt
-  qmake-qt5
-  make
-}

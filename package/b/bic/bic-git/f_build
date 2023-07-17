@@ -1,6 +1,0 @@
-build() {
-  cd "$srcdir/$pkgname"
-  autoreconf -i
-  ./configure --prefix=/usr --enable-debug
-  make
-}

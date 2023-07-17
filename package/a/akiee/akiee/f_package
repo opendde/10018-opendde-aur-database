@@ -1,3 +1,0 @@
-package() {
-    sudo pacman -U "akiee-0.0.4.pacman"
-}

@@ -1,4 +1,0 @@
-package() {
-  cd audioconvert-$pkgver
-  make DESTDIR="$pkgdir" install
-}

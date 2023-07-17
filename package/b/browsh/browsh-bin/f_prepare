@@ -1,7 +1,0 @@
-prepare() {
-	cat ${provides[0]}_${pkgver}_linux_* > ${provides[0]}
-	if [ $(which upx 2>/dev/null) ]; then
-		echo Compressing ${provides[0]} with UPX...
-		chmod u+x ${provides[0]}
-		upx ${provides[0]}; fi
-}

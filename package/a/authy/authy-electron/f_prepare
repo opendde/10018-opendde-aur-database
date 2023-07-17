@@ -1,6 +1,0 @@
-prepare() {
-  unsquashfs -f -d "$srcdir/${pkgname%-*}" "${pkgname%-*}-$pkgver-$_snaprev.snap"
-
-  cd "$srcdir/${pkgname%-*}"
-  sed -i 's|${SNAP}/meta/gui/icon.png|authy|g' "meta/gui/${pkgname%-*}.desktop"
-}

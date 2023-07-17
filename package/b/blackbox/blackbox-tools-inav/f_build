@@ -1,4 +1,0 @@
-build() {
-  cd $_pkgname
-  make BLACKBOX_VERSION=$_bbversion
-}

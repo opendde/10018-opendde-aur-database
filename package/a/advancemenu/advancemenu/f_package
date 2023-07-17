@@ -1,9 +1,0 @@
-package() {
-  cd $srcdir/$pkgname-$pkgver
-  # Binary
-  install -D -m755 obj/menu/linux/blend/advmenu $pkgdir/usr/bin/advmenu
-  # Manpage
-  install -D -m644 doc/advmenu.1 $pkgdir/usr/share/man/man1/advmenu.1
-  # Documentation
-  install -D -m644 doc/advmenu.txt $pkgdir/usr/share/doc/advmenu/advmenu.txt
-}

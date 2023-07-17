@@ -1,7 +1,0 @@
-package() {
-    mkdir $pkgdir/usr/bin -p
-    cp $srcdir/batmon/batmond $pkgdir/usr/bin
-    chmod +x $pkgdir/usr/bin/batmond
-    mkdir $pkgdir/etc/systemd/system -p
-    cp $srcdir/batmon/batmond.service $pkgdir/etc/systemd/system
-}

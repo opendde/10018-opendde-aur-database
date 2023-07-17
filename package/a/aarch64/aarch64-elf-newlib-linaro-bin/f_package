@@ -1,4 +1,0 @@
-package() {
-	mkdir -p ${pkgdir}/usr/${_target}
-	cp -a ${srcdir}/sysroot-newlib-linaro-${_pkgdate}-${_target}/usr/* ${pkgdir}/usr/${_target}
-}

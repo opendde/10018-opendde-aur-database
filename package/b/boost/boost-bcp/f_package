@@ -1,8 +1,0 @@
-package() {
-    cd "${srcdir}/boost_${_boostver}"
-
-    install -Dm755 dist/bin/bcp "${pkgdir}/usr/bin/bcp"
-
-    install -Dm644 "${srcdir}/boost_${_boostver}/LICENSE_1_0.txt" \
-        "${pkgdir}/usr/share/licenses/boost-bcp/LICENSE_1_0.txt"
-} 

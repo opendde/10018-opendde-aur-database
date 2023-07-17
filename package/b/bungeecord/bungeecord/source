@@ -1,1 +1,0 @@
-("${pkgname}.${pkgver}.jar"::"https://ci.md-5.net/job/BungeeCord/${pkgver}/artifact/bootstrap/target/BungeeCord.jar"

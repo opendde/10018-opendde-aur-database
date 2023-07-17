@@ -1,3 +1,0 @@
-prepare() {
-  cd "$srcdir"/"$_pkgname" && rm {LICENSE.md,README.md}
-}

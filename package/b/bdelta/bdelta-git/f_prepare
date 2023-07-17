@@ -1,9 +1,0 @@
-prepare() {
-  _unpackeddir="${srcdir}/${_pkgname}"
-  cd "${_unpackeddir}"
-  
-  for _patch in "${srcdir}"/*.patch; do
-    echo "Applying patch '${_patch}' ..."
-    patch -p1 < "${_patch}"
-  done
-}

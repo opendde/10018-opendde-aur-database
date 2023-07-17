@@ -1,4 +1,0 @@
-prepare() {
-    cd $srcdir/${pkgname}/example
-    sed -i 's|/bin/bash|/usr/bin/env bash|;s|"\$DIR"/\.\./service/||' switch.sh
-}

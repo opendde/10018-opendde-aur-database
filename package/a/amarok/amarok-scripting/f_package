@@ -1,4 +1,0 @@
-package() {
-  cd "${srcdir}/amarok-${_commit}/build"
-  make DESTDIR="${pkgdir}" install
-}

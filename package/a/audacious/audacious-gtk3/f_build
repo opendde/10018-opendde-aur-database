@@ -1,8 +1,0 @@
-build() {
-  cd "$_pkgname"
-  ./configure \
-    --prefix=/usr \
-    --disable-qt \
-    --with-buildstamp='Arch Linux'
-  make
-}

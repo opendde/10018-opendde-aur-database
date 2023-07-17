@@ -1,3 +1,0 @@
-prepare() {
-  sed -i 's+executable="python"+executable="python2"+g' ${pkgname%-git}/build.xml
-}

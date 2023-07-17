@@ -1,5 +1,0 @@
-package() {
-    install -Dm755 "${srcdir}/${pkgname%-git}/audio_async_loopback" "${pkgdir}/usr/bin/audio_async_loopback"
-    install -Dm644 "${srcdir}/${pkgname%-git}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname%-git}/LICENSE"
-    install -Dm644 "${srcdir}/${pkgname%-git}/README.md" "${pkgdir}/usr/share/doc/${pkgname%-git}/README.md"
-}

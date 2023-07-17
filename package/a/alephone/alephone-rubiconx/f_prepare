@@ -1,3 +1,0 @@
-prepare() {
-  find "Rubicon X ƒ" -type f -name ".DS_Store" -delete
-}

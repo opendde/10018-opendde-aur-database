@@ -1,5 +1,0 @@
-prepare() {
-          cd "$srcdir"
-          ar p "BlueJ-linux-${pkgver//.}.deb" data.tar.xz | tar xJ
-          # patch --strip=1 < default_checks.patch
-}

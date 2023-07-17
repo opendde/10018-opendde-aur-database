@@ -1,6 +1,0 @@
-package() {
-    cd data
-    install -dm755 "$pkgdir/etc" && cp -av etc/{osquery,rsyslog.d,sysconfig} "$pkgdir/etc"
-    install -dm755 "$pkgdir"/var/log/osquery
-    cp -av usr "$pkgdir"
-}

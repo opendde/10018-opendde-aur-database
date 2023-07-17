@@ -1,6 +1,0 @@
-check() {
-  pushd ${_pkgname}-build
-  # Illegal instruction as of now, will look into it later
-  # QEMU_LD_PREFIX="/usr/${_target}/" LD_LIBRARY_PATH="/usr/${_target}/lib64" make check
-  popd
-}

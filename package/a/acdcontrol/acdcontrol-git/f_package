@@ -1,6 +1,0 @@
-package() {
-  mkdir -p "$pkgdir/usr/bin"
-  install -m755 "$srcdir/$_pkgname/acdcontrol" "$pkgdir/usr/bin/acdcontrol"
-  mkdir -p "$pkgdir/etc/udev/rules.d/"
-  install -m644 "$srcdir/$_pkgname/99-acdcontrol.rules" "$pkgdir/etc/udev/rules.d/99-acdcontrol.rules"
-}

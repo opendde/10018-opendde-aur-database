@@ -1,1 +1,0 @@
-("https://github.com/mlafeldt/chef-runner/releases/download/v${pkgver}/${pkgname}_${pkgver}_linux_${_pkgarch}.zip")

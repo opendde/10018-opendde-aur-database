@@ -1,5 +1,0 @@
-build() {
-	arch-meson . build
-
-	meson compile -C build
-}

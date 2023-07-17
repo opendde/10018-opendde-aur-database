@@ -1,5 +1,0 @@
-package() {
-  install -d $pkgdir/usr/share/arduino/hardware/keyboardio/avr/
-  cd $srcdir
-  cp -R  $pkgname/* $pkgdir/usr/share/arduino/hardware/keyboardio/avr/
-}

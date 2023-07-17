@@ -1,5 +1,0 @@
-build() {
-  cd "atelier"
-  cmake -DCMAKE_INSTALL_PREFIX=$(qtpaths --install-prefix) -DCMAKE_BUILD_TYPE=Release CMakeLists.txt 
-  make
-}

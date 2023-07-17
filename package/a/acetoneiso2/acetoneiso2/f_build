@@ -1,6 +1,0 @@
-build() {
-  cd acetoneiso_${pkgver}/acetoneiso
-
-  qmake-qt5
-  make
-}

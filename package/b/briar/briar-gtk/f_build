@@ -1,4 +1,0 @@
-build() {
-  arch-meson ${pkgname} _build
-  ninja -C _build all
-}

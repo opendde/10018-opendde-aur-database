@@ -1,7 +1,0 @@
-build() {
-    cd "multiload-ng-$pkgver"
-    patch -p1 -i $srcdir/build-fix.patch
-    ./autogen.sh
-    ./configure --prefix=/usr --with-gtk=2.0 --with-awn --enable-experimental --without-indicator --without-lxpanel --without-mate --without-standalone --without-systray --without-xfce4
-    make
-} 

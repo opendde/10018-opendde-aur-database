@@ -1,8 +1,0 @@
-package_bus1-headers-git() {
-  provides=('bus1-headers')
-  conflicts=('bus1-headers')
-
-  cd "${_pkgbase}"
-
-  install -Dm 0644 include/uapi/linux/bus1.h "${pkgdir}"/usr/include/linux/bus1.h
-}

@@ -1,1 +1,0 @@
-("v${pkgver}-64.tar.gz::https://www.bouml.fr/files/$pkgname-${pkgver%\.0}-CentOS7.x86_64.rpm")

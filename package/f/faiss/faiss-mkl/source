@@ -1,1 +1,0 @@
-(faiss-${pkgver}.zip::https://github.com/facebookresearch/faiss/archive/refs/tags/v${pkgver}.zip)

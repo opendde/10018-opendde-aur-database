@@ -1,7 +1,0 @@
-package() {
-  cd $_pkgname
-
-  install -Dm 755 src/blackmagic "$pkgdir"/usr/bin/blackmagic
-
-  install -Dm 644 driver/99-blackmagic.rules "$pkgdir"/usr/lib/udev/rules.d/99-blackmagic.rules
-}

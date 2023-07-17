@@ -1,9 +1,0 @@
-package_kvantum-theme-adapta() {
-    pkgdesc="Adapta theme for KDE Plasma 5"
-    depends=('kvantum-qt5')
-
-    cd ${pkgbase}-${pkgver}
-    install -d "${pkgdir}"/usr/share
-
-    cp -r Kvantum "${pkgdir}"/usr/share
-}

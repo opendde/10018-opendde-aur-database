@@ -1,7 +1,0 @@
-prepare() {
-  mkdir -p build
-
-  cd akonadi-$pkgver
-  # https://bugs.kde.org/show_bug.cgi?id=341884
-  patch -p1 -i ../dont-leak-old-external-payload-files.patch
-}

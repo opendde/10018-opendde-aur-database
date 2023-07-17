@@ -1,4 +1,0 @@
-package() {
-	msg2 "Extracting data from the deb file"
-	bsdtar -xf data.tar.gz -C "$pkgdir/"
-}

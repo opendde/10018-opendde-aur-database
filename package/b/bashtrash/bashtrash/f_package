@@ -1,6 +1,0 @@
-package() {
-  # Modified link handling, always use Trash beyond Home-Folder
-  # patch -p0 < link.patch                
-  # vimdiff trash $srcdir/bashtrash/trash # review if the patch worked as expected
-  install -D bashtrash/trash $pkgdir/usr/bin/trash
-} 

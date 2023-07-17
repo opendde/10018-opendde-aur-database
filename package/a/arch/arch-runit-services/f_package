@@ -1,9 +1,0 @@
-package() {
-	local d
-	cd "$srcdir/$pkgname"
-	install -dm0755 "$pkgdir/etc"
-	install -dm0755 "$pkgdir/etc/sv"
-	for d in *; do
-		[ -f "$d/run" ] && cp -pr $d $pkgdir/etc/sv/$x
-	done
-	}

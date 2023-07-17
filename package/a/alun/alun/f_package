@@ -1,4 +1,0 @@
-package() {
-    cd $srcdir
-    cp -a --no-preserve=ownership usr etc $pkgdir
-}

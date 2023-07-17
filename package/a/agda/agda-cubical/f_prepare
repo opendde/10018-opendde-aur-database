@@ -1,4 +1,0 @@
-prepare() {
-    cd cubical-$pkgver
-    rm cubical.agda-lib
-}

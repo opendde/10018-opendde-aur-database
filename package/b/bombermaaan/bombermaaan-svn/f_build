@@ -1,5 +1,0 @@
-build() {
-  cd $_pkgbase/src
-
-  make
-}

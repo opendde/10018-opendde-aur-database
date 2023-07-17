@@ -1,8 +1,0 @@
-package() {
-  bsdtar -xf data.tar.xz -C "${pkgdir}/"
-
-  # Fix Icon Path
-  sed -i "s@Icon=/usr/share/pixmaps/beditor_icon.png@Icon=/usr/share/icons/hicolor/scalable/apps/beditor.png@" "${pkgdir}/usr/share/applications/beditor.desktop"
-  install -Dm644 "${pkgdir}/usr/share/pixmaps/beditor_icon.png" "${pkgdir}/usr/share/icons/hicolor/scalable/apps/beditor.png"
-  rm -r "${pkgdir}/usr/share/pixmaps"
-}

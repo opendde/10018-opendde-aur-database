@@ -1,7 +1,0 @@
-check() {
-        cd "$pkgname-$pkgver"
-
-    ## Currently there are tests failing!
-    # rebar3 eunit
-    # rebar3 dialyzer
-}

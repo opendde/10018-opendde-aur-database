@@ -1,1 +1,0 @@
-("${pkgname}-v${pkgver}.tgz::https://github.com/CARTAvis/carta/releases/download/v${pkgver}-beta.3/CARTA-v${pkgver}-beta.3-ubuntu.tgz"

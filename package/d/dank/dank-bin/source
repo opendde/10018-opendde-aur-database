@@ -1,1 +1,0 @@
-("https://github.com/EricLemieux/dank/releases/download/v${pkgver}/dank-v${pkgver}-${CARCH}-linux.tar.gz")

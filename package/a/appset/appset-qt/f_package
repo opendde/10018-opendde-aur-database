@@ -1,7 +1,0 @@
-package() {
-  cd "${pkgname}-${pkgver}-sources"
-
-  make INSTALL_ROOT="${pkgdir}" install
-  # appset-helper daemon
-  install -D -m644 ../appset-helper.service "${pkgdir}/usr/lib/systemd/system/appset-helper.service"
-}

@@ -1,4 +1,0 @@
-package_acmt-acm70-docs () {
-	pkgdesc="ACM70 Mid-Range EQ (Documentation)"
-	install -Dm644 ${srcdir}/ACM70/manual.pdf ${pkgdir}/usr/share/doc/${pkgbase}/manual.pdf
-}

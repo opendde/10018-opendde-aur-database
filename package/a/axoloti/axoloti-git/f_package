@@ -1,8 +1,0 @@
-package() {
-    install -Dm644 "$srcdir/$_gitname/platform_linux/49-axoloti.rules" \
-        "$pkgdir/etc/udev/rules.d/49-axoloti.rules"
-    install -Dm644 "$srcdir/$_gitname/dist/Axoloti.jar" \
-        "$pkgdir/usr/share/$_gitname/Axoloti.jar"
-    install -Dm755 "$srcdir/axoloti.sh" "$pkgdir/usr/bin/axoloti"
-    install -Dm644 "$srcdir/$_gitname/license.txt" "$pkgdir/usr/share/licenses/axoloti/license.txt"
-}

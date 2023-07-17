@@ -1,4 +1,0 @@
-build() {
-    cd "${srcdir}/bumpversion-${pkgver}"
-    python setup.py build
-}

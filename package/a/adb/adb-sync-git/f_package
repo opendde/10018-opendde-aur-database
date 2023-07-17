@@ -1,3 +1,0 @@
-package() {
-  install -Dm755 $pkgname/{adb-sync,adb-channel} -t "$pkgdir/usr/bin"
-}

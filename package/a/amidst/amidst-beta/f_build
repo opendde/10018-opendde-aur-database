@@ -1,7 +1,0 @@
-build() {
-    cd "$srcdir"
-
-    #Create shell script to launch the application
-    echo "#!/bin/sh" > amidst.sh
-    echo "java -noverify -jar /usr/share/java/$_pkgname/AMIDST.jar" >> amidst.sh
-}

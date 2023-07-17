@@ -1,6 +1,0 @@
-package() {
-  cd "$_pkgname"
-  install -Dm755 acc "$pkgdir/usr/bin/acc"
-  install -d "$pkgdir/usr/share/acc"
-  install -Dm644 *.acs "$pkgdir/usr/share/acc/"
-}

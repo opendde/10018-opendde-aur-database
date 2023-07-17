@@ -1,6 +1,0 @@
-package() {
-  cd "$srcdir/$_pkgname-$pkgver"
-
-  make INSTALL_UDEV_RULES=0 DESTDIR="$pkgdir" install
-  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-}

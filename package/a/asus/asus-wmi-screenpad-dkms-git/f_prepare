@@ -1,4 +1,0 @@
-prepare() {
-	cd "${pkgname}"
-	sh prepare-for-current-kernel.sh
-}

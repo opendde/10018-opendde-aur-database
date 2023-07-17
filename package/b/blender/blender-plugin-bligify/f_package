@@ -1,7 +1,0 @@
-package() {
-    addons="$pkgdir/usr/share/blender/$(blender -v | head -n1 | cut -f2 -d ' ')/scripts/addons/"
-    if [ ! -d "$addons" ]; then
-        mkdir -p "$addons"
-    fi
-    unzip Bligify -d "$addons"
-}

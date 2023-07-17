@@ -1,6 +1,0 @@
-build() {
-  cd "$srcdir/boxfs2"
-  ln -s "$srcdir/libapp"
-  ln -s "$srcdir/libjson"
-  make static
-}

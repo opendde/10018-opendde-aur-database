@@ -1,5 +1,0 @@
-build() {
-  cd "${srcdir}"/$pkgname-$pkgver
-
-  make OPTFLAGS="${CXXFLAGS} -fpermissive" DATA_DIR=/usr/share/avanor/
-}

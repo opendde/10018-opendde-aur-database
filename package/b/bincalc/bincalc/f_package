@@ -1,4 +1,0 @@
-package() {
-    cd bincalc-${pkgver}
-    install -D -m755 bincalc -t "${pkgdir}/usr/bin"
-}

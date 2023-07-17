@@ -1,6 +1,0 @@
-package() {
-  cd "$srcdir/${pkgname%-git}"
-  install -d "${pkgdir}/usr/bin"
-  install -t "${pkgdir}/usr/bin" bin/bl-*
-  install -Dm644 bl-exitrc "${pkgdir}/etc/bl-exit/bl-exitrc"
-}

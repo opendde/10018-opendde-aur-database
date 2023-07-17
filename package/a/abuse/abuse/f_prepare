@@ -1,6 +1,0 @@
-prepare() {
-  cd abuse-$pkgver
-  gendesk -f -n --pkgname=$pkgname --pkgdesc="$pkgdesc"
-  # Fix crash when initializing audio
-  sed -i 's/AUDIO_S16SYS, 2, 128/MIX_DEFAULT_FORMAT, 2, 1024/g' src/sdlport/sound.cpp
-}

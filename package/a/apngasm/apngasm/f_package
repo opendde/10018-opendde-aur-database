@@ -1,6 +1,0 @@
-package() {
-  cd $pkgname/build
-  make DESTDIR="${pkgdir}" install
-  install -Dm644 "${pkgdir}"/usr/man/man1/apngasm.1 "${pkgdir}"/usr/share/man/man1/apngasm.1
-  rm -r "${pkgdir}"/usr/man
-}

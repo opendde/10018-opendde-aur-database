@@ -1,1 +1,0 @@
-("${pkgname}::git+https://chromium.googlesource.com/chromiumos/third_party/linux-firmware")

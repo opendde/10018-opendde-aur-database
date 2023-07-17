@@ -1,5 +1,0 @@
-pkgver() {
-    cd "$srcdir/asciii-rs/"
-    #git describe --long | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
-    echo $(git tag | tail -1).$(git rev-list --count HEAD)
-}

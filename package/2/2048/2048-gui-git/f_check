@@ -1,4 +1,0 @@
-check() {
-  # Test if compiled binary has correct MIME type
-	file --mime-type "${pkgname}-source/asm2048" | grep -qw 'application/x-pie-executable'
-}

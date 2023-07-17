@@ -1,5 +1,0 @@
-check() {
-  cd "$srcdir/${pkgname%-git}"
-  bash -n bl-include.cfg
-  bash -n yad-includes
-}

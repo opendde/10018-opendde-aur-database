@@ -1,7 +1,0 @@
-package() {
-  cd "buildcache"
-
-  mkdir -p "$pkgdir/usr"
-  cp -rf * "$pkgdir/usr"
-  install -Dm644 "$srcdir/LICENSE" -t "$pkgdir/usr/share/licenses/buildcache"
-}

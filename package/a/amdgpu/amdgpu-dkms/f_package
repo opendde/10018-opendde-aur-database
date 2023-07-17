@@ -1,6 +1,0 @@
-package() {
-    cd "${srcdir}/amdgpu-pro-${major}-${minor}-ubuntu-18.04"
-
-    cp -rf "${srcdir}/usr" "${pkgdir}"
-    cp -rf "${srcdir}/etc" "${pkgdir}"
-}

@@ -1,6 +1,0 @@
-package() {
-  cd "$srcdir/BOSSA-$pkgver"
-  mkdir -p "$pkgdir/usr/bin"
-  cp bin/bossa* "$pkgdir/usr/bin/"
-  install -Dm 644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/BSD-3-Clause"
-}

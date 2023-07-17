@@ -1,5 +1,0 @@
-pkgver() {
-  cd ${srcdir}/${_pkgname}
-  ver=$(grep -Po '(^|\s)+(public static var version =)(\s)+\"\K(([0-9|\.])+)' 'Sources/Main.hx')
-  printf "%s.r%s.g%s" "$ver" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-}

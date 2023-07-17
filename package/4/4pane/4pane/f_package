@@ -1,9 +1,0 @@
-package() {
-  cd ${srcdir}/${pkgname}-${pkgver}
-
-  make DESTDIR=${pkgdir} install
-
-  install -d -m755 ${pkgdir}/usr/share/applications
-  cd "${pkgdir}/usr/share/applications"
-  ln -s ../4Pane/rc/4Pane.desktop 4Pane.desktop
-}

@@ -1,9 +1,0 @@
-build() {
-  cd build
-  export PKG_CONFIG_PATH='/usr/lib/ffmpeg4.4/pkgconfig'
-
-  arch-meson ../d2vwitch \
-    --libdir /usr/lib/vapoursynth
-
-  LC_ALL=C ninja
-}

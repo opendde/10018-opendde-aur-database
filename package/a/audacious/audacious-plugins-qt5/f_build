@@ -1,8 +1,0 @@
-build() {
-  cd "$srcdir/$_pkgname-${pkgver/+/-}"
-
-  ./configure \
-    --prefix=/usr \
-    --enable-amidiplug
-  make
-}

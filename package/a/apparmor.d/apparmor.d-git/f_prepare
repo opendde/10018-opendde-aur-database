@@ -1,4 +1,0 @@
-prepare() {
-  cd "$srcdir/$pkgname"
-  ./configure --complain
-}

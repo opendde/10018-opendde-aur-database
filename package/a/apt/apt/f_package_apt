@@ -1,8 +1,0 @@
-package_apt() {
-  depends=('systemd-libs' 'libseccomp' 'perl' 'xxhash')
-  pkgdesc='Command-line package manager used on Debian-based systems'
-  cd "$srcdir/$pkgbase-$pkgver"
-  make -C build DESTDIR="${pkgdir}" install
-  rm -rf "${pkgdir}/usr/share/doc"
-  find "$pkgdir/usr/share/man" -type d -empty -delete
-}

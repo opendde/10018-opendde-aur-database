@@ -1,5 +1,0 @@
-build() {
-    cd "$srcdir/${pkgname}-${pkgver}"
-    waf configure --board sitl
-    waf copter
-}

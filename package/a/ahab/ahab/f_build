@@ -1,6 +1,0 @@
-build() {
- cd "$srcdir/${pkgname}-${pkgver}"
- EXTRA_GOFLAGS="-buildmode=pie -gcflags all=-trimpath=${PWD} -asmflags all=-trimpath=${PWD}" \
-  LDFLAGS="-linkmode external -extldflags \"${LDFLAGS}\"" \
-  make build
-}

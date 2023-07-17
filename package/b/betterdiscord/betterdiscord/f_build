@@ -1,4 +1,0 @@
-build() {
-    cd Installer-$_tag
-    yarn && yarn dist:dir
-}

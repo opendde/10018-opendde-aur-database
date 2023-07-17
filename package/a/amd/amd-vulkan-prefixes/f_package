@@ -1,9 +1,0 @@
-package() {
-    install -Dm755 "${srcdir}"/amd_vulkan_prefixes.sh "${pkgdir}"/usr/bin/vk_radv
-    install -Dm755 "${srcdir}"/amd_vulkan_prefixes.sh "${pkgdir}"/usr/bin/vk_amdvlk
-    install -Dm755 "${srcdir}"/amd_vulkan_prefixes.sh "${pkgdir}"/usr/bin/vk_pro
-    
-    install -Dm755 "${srcdir}"/amd_vulkan_prefixes.bash-completion "${pkgdir}"/usr/share/bash-completion/completions/vk_radv
-    install -Dm755 "${srcdir}"/amd_vulkan_prefixes.bash-completion "${pkgdir}"/usr/share/bash-completion/completions/vk_amdvlk
-    install -Dm755 "${srcdir}"/amd_vulkan_prefixes.bash-completion "${pkgdir}"/usr/share/bash-completion/completions/vk_pro
-}

@@ -1,9 +1,0 @@
-package() {
-	cd "$srcdir/bkcrack"
-	make DESTDIR="$pkgdir/" install
-
-	mkdir -p "$pkgdir/usr/share" "$pkgdir/usr/bin" "$pkgdir/usr/share/licenses/bkcrack"
-	mv "$pkgdir/usr/local" "$pkgdir/usr/share/bkcrack"
-	mv "$pkgdir/usr/share/bkcrack/bkcrack" "$pkgdir/usr/bin/bkcrack"
-	mv "$pkgdir/usr/share/bkcrack/license.txt" "$pkgdir/usr/share/licenses/bkcrack/license.txt"
-}

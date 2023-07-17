@@ -1,4 +1,0 @@
-build() {
-	cd "dxx-rebirth_$pkgver-src"
-	scons sharepath="/usr/share/$pkgname" d2x=1 sdlmixer=yes opengl=yes sdl2=yes
-}

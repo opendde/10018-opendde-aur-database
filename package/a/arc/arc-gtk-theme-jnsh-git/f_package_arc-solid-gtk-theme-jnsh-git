@@ -1,7 +1,0 @@
-package_arc-solid-gtk-theme-jnsh-git() {
-  pkgdesc="A flat theme suite without transparent elements. Fork maintained by jnsh."
-  conflicts=('arc-solid-gtk-theme' 'arc-solid-gtk-theme-git')
-
-  cd "${_pkgname}-solid"
-  make DESTDIR="$pkgdir/" install
-}

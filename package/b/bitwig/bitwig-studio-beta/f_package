@@ -1,6 +1,0 @@
-package() {
-	mv ${srcdir}/{opt,usr} ${pkgdir}/
-
-	# Install license
-	install -D -m644 ${pkgdir}/opt/${pkgname}/EULA.rtf ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
-}

@@ -1,1 +1,0 @@
-("${pkgname}_src::git+https://github.com/blmayer/astro.git")

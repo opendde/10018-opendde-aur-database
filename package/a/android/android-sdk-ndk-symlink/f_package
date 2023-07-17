@@ -1,4 +1,0 @@
-package() {
-	mkdir -p "$pkgdir/opt/android-sdk"
-	ln -s "../android-ndk" "$pkgdir/opt/android-sdk/ndk-bundle"
-}

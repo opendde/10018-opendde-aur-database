@@ -1,4 +1,0 @@
-package() {
-    cd "${srcdir}/${pkgname%-git}"
-    install -D -m0755 bluetooth_battery.py ${pkgdir}/usr/bin/bluetooth-headset-battery-level
-}

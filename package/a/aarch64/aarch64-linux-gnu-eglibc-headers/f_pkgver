@@ -1,5 +1,0 @@
-pkgver() {
-  cd eglibc
-  local ver="$(svnversion)"
-  printf "$_pkgver.r%s" "${ver//[[:alpha:]]}"
-}

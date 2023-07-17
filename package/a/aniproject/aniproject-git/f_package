@@ -1,5 +1,0 @@
-package() {
-	# Copy files to package
-	mkdir -p "${pkgdir}/usr/share/webapps/aniproject/"
-	cp -r "${_pkgname}"/* "${pkgdir}/usr/share/webapps/aniproject/"
-}

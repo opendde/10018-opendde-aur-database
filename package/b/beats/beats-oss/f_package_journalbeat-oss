@@ -1,5 +1,0 @@
-package_journalbeat-oss() {
-    pkgdesc='Data collector to ship systemd journal entries to Logstash or directly to Elasticsearch OSS or OpenSearch'
-
-    _do_package_beat
-}

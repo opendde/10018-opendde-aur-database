@@ -1,5 +1,0 @@
-build() {
-  cd blobby-code
-  cmake -DCMAKE_INSTALL_PREFIX=/usr .
-  make
-}

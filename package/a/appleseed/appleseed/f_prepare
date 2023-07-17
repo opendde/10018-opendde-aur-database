@@ -1,7 +1,0 @@
-prepare() {
-  for patch in "${srcdir}"/*.patch; do
-    msg2 "Applying patch: ${patch##*/}"
-    patch -d "${pkgname}-${_pkgver}" -Nfp1 -i "$patch" || true #silently drop failed chunks
-  done
-  sed '/python37/s/37/39/' -i "${srcdir}/${pkgname}-${_pkgver}"/src/appleseed.python/CMakeLists.txt
-}

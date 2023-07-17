@@ -1,5 +1,0 @@
-build() {
-    unar -e GBK "${srcdir}/${pkgname}-${pkgver}.rar"
-    cd "${srcdir}/IAP_Programmer_Console"
-    xbuild IAP_Programmer_Console.sln
-}

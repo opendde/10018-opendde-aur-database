@@ -1,1 +1,0 @@
-("$pkgname::git+https://gitlab.com/inivation/dv/${pkgname%-git}.git")

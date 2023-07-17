@@ -1,8 +1,0 @@
-package_adwaita-qt6-git() {
-  pkgdesc='A style to bend Qt6 applications to look like they belong into GNOME Shell, git version'
-  depends=(qt6-base)
-  conflicts=(adwaita-qt6)
-  provides=(adwaita-qt6)
-
-  DESTDIR="$pkgdir" cmake --install build-qt6
-}

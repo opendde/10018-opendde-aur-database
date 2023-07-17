@@ -1,6 +1,0 @@
-build() {
-  cd "$_pkgname"
-  lrelease-qt4 *.ts
-  qmake-qt4 PREFIX="$pkgdir/usr/bin"
-  make
-}

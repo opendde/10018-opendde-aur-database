@@ -1,7 +1,0 @@
-build() {
-  cd ${srcdir}
-  tar xvf athena-jot-9.0.tar.gz
-  cd ${srcdir}/${pkgname}-${pkgver}
-  ./configure
-  make
-}

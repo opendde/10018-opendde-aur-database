@@ -1,5 +1,0 @@
-check() {
-	cd "$opkgnm-$opkgnm-$pkgver"
-	make -C build test
-	# make check?
-}

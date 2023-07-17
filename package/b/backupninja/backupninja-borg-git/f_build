@@ -1,6 +1,0 @@
-build() {
-    cd "$srcdir/$_pkgname"
-    ./autogen.sh
-    ./configure --prefix=/usr --sbindir=/usr/bin --sysconfdir=/etc --mandir=/usr/share/man --localstatedir=/var
-    make
-}

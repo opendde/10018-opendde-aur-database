@@ -1,5 +1,0 @@
-package() {
-  cd "$srcdir/${pkgname%-git}"
-  make install DESTDIR="$pkgdir"
-  install -Dm755 "${srcdir}/ctypes_bash_profile.sh" "${pkgdir}/etc/profile.d/ctypes.sh"
-}

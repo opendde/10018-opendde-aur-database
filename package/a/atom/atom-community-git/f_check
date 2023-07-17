@@ -1,4 +1,0 @@
-check() {
-  cd ${_gitname}
-  node script/test.js
-}

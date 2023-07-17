@@ -1,7 +1,0 @@
-build() {
-  cd "${srcdir}/${_pkgname}"
-  #python setup.py build
-  
-  echo "#!/usr/bin/python" > "${srcdir}/${_pkgname}.py"
-  cat "${_pkgname}.py" >> "../${_pkgname}.py"
-}

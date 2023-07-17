@@ -1,6 +1,0 @@
-build() {
-	mkdir -p "$srcdir/build"
-	cd "$srcdir/build"
-	cmake -DCMAKE_INSTALL_PREFIX=/usr "../${pkgname%-git}"
-	make
-}

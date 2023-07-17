@@ -1,5 +1,0 @@
-prepare() {
-  cd "$srcdir/${pkgname%-git}"
-  autoreconf -vifs
-  ./configure --prefix=/usr
-}

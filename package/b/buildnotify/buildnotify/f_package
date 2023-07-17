@@ -1,8 +1,0 @@
-package() {
-  _installmodule
-
-  cd "${srcdir}/buildnotify-${pkgver}"
-
-  install -D -m 644 buildnotify.desktop "${pkgdir}/usr/share/applications/buildnotify.desktop"
-  install -D -m 644 buildnotify.svg "${pkgdir}/usr/share/pixmaps/buildnotify.svg"
-}

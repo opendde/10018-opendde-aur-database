@@ -1,7 +1,0 @@
-package() {
-  install -d $pkgdir/usr/share/themes
-  cp -r $srcdir/amigaos_xfwm4_themes-main/Amiga1.3 -t $pkgdir/usr/share/themes/
-  cp -r $srcdir/amigaos_xfwm4_themes-main/Amiga1.3_hidpi -t $pkgdir/usr/share/themes/
-  cp -r $srcdir/amigaos_xfwm4_themes-main/Amiga3.x -t $pkgdir/usr/share/themes/
-  cp -r $srcdir/amigaos_xfwm4_themes-main/Amiga3.x_hidpi -t $pkgdir/usr/share/themes/
-}

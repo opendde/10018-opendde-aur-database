@@ -1,7 +1,0 @@
-package() {
-  cd ${pkgname}-${pkgver}
-  
-  install -Dm755 built/389-console "${pkgdir}/usr/bin/389-console"
-  install -Dm644 built/389-console_en.jar "${pkgdir}/usr/share/java/389-console_en.jar"
-  install -Dm644 389-console.8 "${pkgdir}/usr/share/man/man8/389-console.8"
-}

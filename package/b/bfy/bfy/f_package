@@ -1,4 +1,0 @@
-package() {
-  cd "$pkgname-$pkgver"
-  sudo install -Dm0755 -t "/usr/bin/" "target/release/$pkgname"
-}

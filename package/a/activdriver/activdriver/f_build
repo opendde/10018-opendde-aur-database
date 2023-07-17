@@ -1,8 +1,0 @@
-build() {
-  echo " "
-  echo "Attention!"
-  echo "This build will fail if run in a directory with space(s) in its path due to an error in the upstream makefile."
-  echo " "
-  make -C /lib/modules/$(uname -r)/build M="$srcdir"/usr/src/promethean/kernel modules
-  BUILD=release make -C usr/src/promethean/activlc
-}

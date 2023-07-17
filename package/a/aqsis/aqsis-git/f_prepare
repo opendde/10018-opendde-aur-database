@@ -1,4 +1,0 @@
-prepare() {
-    cd "$srcdir/aqsis"
-    git submodule update --init
-}

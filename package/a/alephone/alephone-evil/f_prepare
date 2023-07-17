@@ -1,4 +1,0 @@
-prepare() {
-  # delete leftover
-  rm -rf "Marathon EVIL"/Themes/Default/CVS
-}

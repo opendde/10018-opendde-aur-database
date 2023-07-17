@@ -1,7 +1,0 @@
-package() {
-  cd "${srcdir}/${pkgname}-${pkgver}/build"
-  make DESTDIR="${pkgdir}" install
-  install -dm655 "${pkgdir}/usr/share/doc/${pkgname}"
-  rm -f "${pkgdir}"/usr/bin/*license.txt
-  mv "${pkgdir}"/usr/bin/*.txt "${pkgdir}/usr/share/doc/${pkgname}"
-}

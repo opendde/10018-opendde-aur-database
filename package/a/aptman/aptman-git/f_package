@@ -1,4 +1,0 @@
-package() {
-	cd aptman
-	make DESTDIR="$pkgdir/" install
-}

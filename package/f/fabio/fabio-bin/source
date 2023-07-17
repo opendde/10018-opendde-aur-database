@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}::https://github.com/fabiolb/fabio/releases/download/v${pkgver}/fabio-${pkgver}-go1.15-linux_amd64"

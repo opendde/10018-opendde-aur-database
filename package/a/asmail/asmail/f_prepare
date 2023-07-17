@@ -1,6 +1,0 @@
-prepare() {
-  cd "$srcdir/$pkgname-$pkgver"
-  patch -p1 -i ../${pkgname}_${pkgver}-${pkgrel}.diff
-  ./configure
-  sed -i "s@/usr/local@\$(DESTDIR)/usr@" Makefile
-}

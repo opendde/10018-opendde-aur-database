@@ -1,7 +1,0 @@
-package() {
-  cd "$pkgdir"
-  install -Dm644 "${srcdir}/$_android/NOTICE.txt" usr/share/licenses/$pkgname/NOTICE.txt
-  mkdir -p opt/$_sdk/build-tools/$_ver
-  cp -r "$srcdir/$_android/"* "$pkgdir/opt/$_sdk/build-tools/$_ver"
-  chmod +Xr -R "$pkgdir/opt/$_sdk/build-tools/$_ver"
-}

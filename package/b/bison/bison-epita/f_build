@@ -1,6 +1,0 @@
-build() {
-  cd "${srcdir}/${realpkgname}"
-
-  ./configure --prefix=/opt/bison-epita --datadir=/opt/bison-epita/share
-  make
-}

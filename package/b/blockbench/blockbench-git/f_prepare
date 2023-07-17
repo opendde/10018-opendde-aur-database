@@ -1,9 +1,0 @@
-prepare() {
-  cd "$srcdir"/$_pkgname
-  # apply our custom patch
-  # * BrowserWindow's icon uses nativeImage.createFromPath (https://github.com/electron/electron/issues/24221)
-  # * Removing code pertaining to electron-updater (because we dont need it)
-  git apply "$srcdir"/$_pkgname.patch
-  # installs all dependencies except electron-updater
-  npm remove electron-updater
-}

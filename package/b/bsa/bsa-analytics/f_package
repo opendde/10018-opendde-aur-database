@@ -1,9 +1,0 @@
-package() {
-  cd ${srcdir}/BSA-Analytics/build
-
-  mkdir -p $pkgdir/usr/bin
-  mkdir -p $pkgdir/usr/share/doc/bsa-analytics
-
-  cp -f BSA-Analytics $pkgdir/usr/bin/bsa-analytics
-  cp -f ../docs/HandBook.pdf $pkgdir/usr/share/doc/bsa-analytics/
-}

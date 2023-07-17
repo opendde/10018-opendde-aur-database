@@ -1,1 +1,0 @@
-("https://github.com/${_organization}/${_reponame}/releases/download/v${pkgver}/${_reponame}-v${pkgver}-linux64.tar.gz")

@@ -1,3 +1,0 @@
-package() {
-	install -Dm0755 $pkgname "$pkgdir/usr/bin/$pkgname"
-}

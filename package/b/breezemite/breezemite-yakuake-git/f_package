@@ -1,6 +1,0 @@
-package() {
-make -C ${srcdir}/yakuake/build DESTDIR="${pkgdir}" install
-mkdir -p  ${pkgdir}/usr/share/yakuake/skins/{breezemite,breezemite_dark,breezemite_dark_rhs}
-cp -r ${srcdir}/breezemite-yakuake/{breezemite,breezemite_dark,breezemite_dark_rhs} ${pkgdir}/usr/share/yakuake/skins/
-
-}

@@ -1,3 +1,0 @@
-package() {
-	python -m installer --destdir="$pkgdir" "$_pkgname"-"$pkgver"-py3-none-any.whl
-}

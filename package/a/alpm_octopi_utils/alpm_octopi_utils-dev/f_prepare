@@ -1,3 +1,0 @@
-prepare() {
-    cd "${_pkgrealbase}-${_commit}"
-}

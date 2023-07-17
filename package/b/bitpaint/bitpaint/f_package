@@ -1,4 +1,0 @@
-package() {
-  cd "$srcdir"
-  install -D -m755 bitpaint.py "${pkgdir}/usr/bin/bitpaint"
-}

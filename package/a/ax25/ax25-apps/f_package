@@ -1,5 +1,0 @@
-package() {
-	cd $srcdir/$pkgname-$_pkgver
-	make install DESTDIR=$pkgdir
-	make installconf DESTDIR=$pkgdir
-}

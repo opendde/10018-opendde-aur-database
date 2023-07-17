@@ -1,8 +1,0 @@
-package() {
-	local jar_file=$(cat jar_file.txt)
-	install -Dm644 ${jar_file} "$pkgdir/usr/share/java/$pkgname/${jar_file}"
-	install -Dm644 "config.ini" "$pkgdir/usr/share/doc/$pkgname/config.ini.example"
-	install -Dm644 "${pkgname}.png" "$pkgdir/usr/share/pixmaps/${pkgname}.png"
-	install -Dm755 ${pkgname} "$pkgdir/usr/bin/${pkgname}"
-	install -Dm644 ${pkgname}.desktop "$pkgdir/usr/share/applications/${pkgname}.desktop"
-}

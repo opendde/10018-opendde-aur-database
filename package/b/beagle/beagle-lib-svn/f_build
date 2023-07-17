@@ -1,9 +1,0 @@
-build() {
-  cd $srcdir/$pkgname-trunk
-
-  ./configure \
-    --prefix=/usr \
-    --enable-openmp
-
-  make
-}

@@ -1,3 +1,0 @@
-post_install() {
-    type update-desktop-database && update-desktop-database -q
-}

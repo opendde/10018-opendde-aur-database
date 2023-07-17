@@ -1,5 +1,0 @@
-build() {
-	cd "$pkgname-$pkgver"
-	cmake -DENABLE_TESTS=0 -DCMAKE_INSTALL_PREFIX=/usr .
-	make
-}

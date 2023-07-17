@@ -1,5 +1,0 @@
-pkgver() {
-  cd $_pkgname
-
-  printf "1.9.93.r%s" "$(svnversion)"
-}

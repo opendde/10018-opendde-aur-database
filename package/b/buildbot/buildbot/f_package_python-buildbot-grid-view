@@ -1,8 +1,0 @@
-package_python-buildbot-grid-view() {
-  python="python"
-  depends=('buildbot')
-  pkgdesc="Buildbot Grid View plugin"
-  _name=${_names[5]}
-  extraver="-py2.py3"
-  install_whl
-}

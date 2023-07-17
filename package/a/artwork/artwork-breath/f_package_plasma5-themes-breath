@@ -1,8 +1,0 @@
-package_plasma5-themes-breath() {
-  pkgdesc='Breath theme for KDE Plasma 5'
-  depends=('breeze' 'plasma5-themes-breath-migration')
-  conflicts=('plasma5-themes-breath2' 'breath2-icon-themes')
-  replaces=('plasma5-themes-breath2' 'breath2-icon-themes')
-
-  make -C build-breath DESTDIR="${pkgdir}" install
-}

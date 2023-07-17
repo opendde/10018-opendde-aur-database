@@ -1,5 +1,0 @@
-package() {
-    cmake -DCMAKE_INSTALL_PREFIX="$pkgdir/usr"
-    make install
-    find "$pkgdir" -type d -name ".git" -exec rm -r '{}' +
-}

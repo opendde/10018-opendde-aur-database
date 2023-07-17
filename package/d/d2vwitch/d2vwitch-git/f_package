@@ -1,4 +1,0 @@
-package() {
-cd ${srcdir}/
-	make DESTDIR=${pkgdir} install
-}

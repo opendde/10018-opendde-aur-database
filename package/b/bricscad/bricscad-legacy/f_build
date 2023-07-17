@@ -1,5 +1,0 @@
-build() {
-    # Extract the tarball
-    cd ${srcdir}
-    tar xzf bricscadv13.2.17.tar.gz
-}

@@ -1,8 +1,0 @@
-package() {
-  cd "${srcdir}/${pkgname}3-releases"
-
-  make install DESTDIR="${pkgdir}"
-
-  install -d ${pkgdir}/usr/share/doc/${pkgname}
-  install doc/*.pdf ${pkgdir}/usr/share/doc/${pkgname}
-}

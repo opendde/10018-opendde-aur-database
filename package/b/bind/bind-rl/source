@@ -1,1 +1,0 @@
-("https://ftp.isc.org/isc/bind9/${_pkgver}/bind-${_pkgver}.tar.xz"{,.asc}

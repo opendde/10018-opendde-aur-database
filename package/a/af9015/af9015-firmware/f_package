@@ -1,4 +1,0 @@
-package() {
-   mkdir -p ${pkgdir}/usr/lib/firmware
-   install -m644 dvb-usb-af9015.fw ${pkgdir}/usr/lib/firmware
-}

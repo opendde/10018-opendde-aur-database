@@ -1,5 +1,0 @@
-build() {
-  cd "AriaSrc-$pkgver"
-
-  python2 scons/scons.py
-}

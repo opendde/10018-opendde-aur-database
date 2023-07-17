@@ -1,1 +1,0 @@
-(buildscripts-$_buildscriptsver.tar.gz::"https://github.com/devkitPro/buildscripts/archive/v$_buildscriptsver.tar.gz"

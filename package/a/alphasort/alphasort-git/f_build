@@ -1,6 +1,0 @@
-build() {
-  cd "$pkgname"
-  export DESTDIR="$pkgdir"
-  export PREFIX="/usr"
-  make build
-}

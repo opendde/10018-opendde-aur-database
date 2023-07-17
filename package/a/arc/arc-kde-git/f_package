@@ -1,4 +1,0 @@
-package() {
-	# shellcheck disable=SC2154
-	make -C $_pkgname DESTDIR="$pkgdir" install
-}

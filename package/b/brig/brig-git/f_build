@@ -1,5 +1,0 @@
-build() {
-    cd "${_pkgname}"
-    git checkout develop
-    GOBIN="${srcdir}/${_pkgname}" go run mage.go b
-}

@@ -1,6 +1,0 @@
-prepare() {
-	sed -e "s|(\"Agda_datadir\", agda_datadir) : e|[(\"Agda_datadir\",agda_datadir), (\"LD_LIBRARY_PATH\", \"$pkgdir/usr/lib\")] ++ e|" \
-		-i "${pkgname%-git}/Setup.hs"
-
-	sed -i 's/== 0.5/>= 0.5/' "${pkgname%-git}/Agda.cabal"
-}

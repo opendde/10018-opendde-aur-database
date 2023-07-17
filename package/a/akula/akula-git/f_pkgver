@@ -1,5 +1,0 @@
-pkgver() {
-  cd "${srcdir}/${_pkgname}"
-  echo "0.1.0.r$(git rev-list --all --count)"
-  # git describe --long --tags | sed -r 's/^v//;s/([^-]*-g)/r\1/;s/-/./g'
-}

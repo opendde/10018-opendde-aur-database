@@ -1,7 +1,0 @@
-prepare() {
-	mkdir "Arduino Pro IDE-v$pkgver-linux"
-	bsdtar xf "arduino-pro-ide_${pkgver}_Linux_64bit.zip") -C "Arduino Pro IDE-v$pkgver-linux"
-	gendesk -f --pkgname "arduino-pro-ide" --name "Arduino Pro IDE" --pkgdesc "$pkgdesc"
-	ronn -r --manual=arduino-pro-ide "arduino-pro-ide/README.md"
-	
-}

@@ -1,4 +1,0 @@
-pkgver() {
-    cd "$srcdir"/bcrawl
-    git describe | sed 's#-#.#g'
-}

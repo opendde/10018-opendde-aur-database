@@ -1,1 +1,0 @@
-("${pkgname%-git}::git+http://github.com/wutzi15/Benelib.git")

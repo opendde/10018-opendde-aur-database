@@ -1,1 +1,0 @@
-("${pkgname%-git}::git+https://gitlab.com/hrdwrrsk/AdwMod-theme.git")

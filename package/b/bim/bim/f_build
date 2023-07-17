@@ -1,4 +1,0 @@
-build() {
-	cd "${pkgname}-${pkgver}"
-	make prefix='/usr' LDLIBS='-lkuroko' LDFLAGS="${LDFLAGS} -rdynamic"
-}

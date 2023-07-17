@@ -1,8 +1,0 @@
-prepare() {
-  cd ${srcdir}/binutils-gdb
-
-  # hack! - libiberty configure tests for header files using "$CPP $CPPFLAGS"
-  sed -i "/ac_cpp=/s/\$CPPFLAGS/\$CPPFLAGS -O2/" libiberty/configure
-
-  mkdir ${srcdir}/binutils-build
-}

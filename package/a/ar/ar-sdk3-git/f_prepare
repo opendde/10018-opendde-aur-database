@@ -1,5 +1,0 @@
-prepare() {
-  cd "${srcdir}"
-  repo init -u "https://github.com/Parrot-Developers/arsdk_manifests.git"
-  repo sync --force-sync
-}

@@ -1,4 +1,0 @@
-build() {
-  cd "$srcdir/apron-$pkgver"
-  make -j1
-}

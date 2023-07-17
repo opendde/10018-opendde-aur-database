@@ -1,4 +1,0 @@
-pkgver() {
-    cd "$srcdir/${pkgname%-git}"
-    printf "%s" "$(git describe --long | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g')"
-}

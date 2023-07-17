@@ -1,4 +1,0 @@
-package() {
-   cd "${srcdir}/3bc" 
-   install -Dm755 3bc "${pkgdir}/usr/bin/3bc"
-}

@@ -1,4 +1,0 @@
-build() {
-  cd "$srcdir/${pkgname%-git}"
-  CC=arm-none-eabi-gcc make
-}

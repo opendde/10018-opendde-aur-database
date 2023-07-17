@@ -1,9 +1,0 @@
-build() {
-  cd ${pkgname%-git} 
-  go build \
-    -o=vhd \
-    -trimpath \
-    -buildmode=pie \
-    -mod=readonly \
-    .
-}

@@ -1,6 +1,0 @@
-prepare() {
-  cd blockattack-$pkgver
-
-  # patch the Makefile
-  patch -p0 -i ../block-attack.patch
-}

@@ -1,4 +1,0 @@
-pkgver() {
-  cd "$srcdir/$_gitname"
-  git describe | sed -r 's/([^-]*-g)/r\1/;s/-/./g;s/v//'
-}

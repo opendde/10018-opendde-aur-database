@@ -1,9 +1,0 @@
-package() {
-    cd "${pkgname}-${pkgver}"
-    sed -i '6 s/#Type=exec/Type=exec/'            "acme.sh.service"
-    sed -i '7 s/Type=simple/#Type=simple/'        "acme.sh.service"
-    install -Dm644 "acme.sh.service" -t           "${pkgdir}/usr/lib/systemd/system"
-    install -Dm644 "acme.sh.timer" -t             "${pkgdir}/usr/lib/systemd/system"
-#    install -Dm640 "account.conf" -t              "${pkgdir}/etc/acme.sh"
-    mkdir -pm 0700 ${pkgdir}/{etc,var/log}/acme.sh
-}

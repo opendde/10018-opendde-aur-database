@@ -1,6 +1,0 @@
-build() {
-	cd "$srcdir/btor2tools"
-	CFLAGS="" ./configure.sh 
-	cd build
-	make
-}

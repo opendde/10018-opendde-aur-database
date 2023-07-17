@@ -1,7 +1,0 @@
-prepare() {
-  cd "$srcdir"
-  mkdir -p go
-  export GOPATH="$srcdir/go"
-  go get github.com/azer/boxcars
-  go get github.com/azer/boxcars/json-config
-}

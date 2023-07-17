@@ -1,5 +1,0 @@
-build() {
-  cd "$pkgname"
-  cmake -DCMAKE_INSTALL_PREFIX=/usr/bin/ -DCMAKE_BUILD_TYPE=Release .
-  make
-}

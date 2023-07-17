@@ -1,6 +1,0 @@
-build() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-
-  # Build it!
-  make
-}

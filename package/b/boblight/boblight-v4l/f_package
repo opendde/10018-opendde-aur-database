@@ -1,5 +1,0 @@
-package() {
-  cd "$srcdir/trunk"
-  make DESTDIR="${pkgdir}" install
-  install -Dm644 "$srcdir/boblight.service" "$pkgdir/usr/lib/systemd/system/boblight.service"
-}

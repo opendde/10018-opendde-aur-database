@@ -1,8 +1,0 @@
-package_algorithms-library-gui-git() {
-	depends=('libxml2' 'qt5-base>=5.7' 'graphviz' 'jsoncpp' "algorithms-library-git>=$pkgver" "algorithms-library-git<=$pkgver")
-	provides=('algorithms-library-gui')
-	conflicts=('algorithms-library-gui')
-
-	cd "$_pkgbase/build"
-	mv gui/* $pkgdir
-}

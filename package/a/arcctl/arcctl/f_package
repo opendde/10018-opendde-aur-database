@@ -1,7 +1,0 @@
-package() {
-  if [ $CARCH == x86_64 ]; then
-    install -Dm755 linuxcli_V${pkgver}_${_buildver}/x86_64/cli64 "$pkgdir"/usr/bin/arcctl
-  else
-    install -Dm755 linuxcli_V${pkgver}_${_buildver}/i386/cli32 "$pkgdir"/usr/bin/arcctl
-  fi
-}

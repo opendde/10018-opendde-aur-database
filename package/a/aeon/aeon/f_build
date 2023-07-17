@@ -1,5 +1,0 @@
-build() {
-  cd "${pkgname}-${pkgver}-${pkgname}"
-  cmake -DMANUAL_SUBMODULES=1
-  make
-}

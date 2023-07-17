@@ -1,4 +1,0 @@
-package() {
-  cd "$_pkgname-$pkgver"
-  install -Dm755 target/release/game-2048 "$pkgdir/usr/bin/2048"
-}

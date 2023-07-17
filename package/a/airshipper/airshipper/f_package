@@ -1,5 +1,0 @@
-package() {
-    install -D "$srcdir/airshipper" -t "$pkgdir/usr/bin/"
-    install -Dm 644 "$srcdir/veloren.png" -t "$pkgdir/usr/share/pixmaps/"
-    install -D "$srcdir/airshipper.desktop" -t "$pkgdir/usr/share/applications"
-}

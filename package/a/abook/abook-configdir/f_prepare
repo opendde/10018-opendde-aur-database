@@ -1,7 +1,0 @@
-prepare() {
-	cd "${srcdir}/${_pkgname}-${pkgver}"
-	aclocal && automake --add-missing && autoconf
-	sed 's/0.18/0.20/g' -i po/Makefile.in.in
-	patch -p1 -i ../gcc5.patch
-	patch -p1 -i ../configdir.patch
-}

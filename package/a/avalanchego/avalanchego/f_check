@@ -1,4 +1,0 @@
-check() {
-  cd "$srcdir/${pkgname}-${pkgver}"
-  [[ -f avalanchego ]] && [[ -f plugins/evm ]]
-}

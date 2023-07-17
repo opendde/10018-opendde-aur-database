@@ -1,5 +1,0 @@
-package() {
-  cd "$srcdir"/$pkgname
-  make INSTDIR="$pkgdir"/usr install
-  install -D -m644 COPYRIGHT "$pkgdir"/usr/share/licenses/$pkgname/COPYRIGHT
-}

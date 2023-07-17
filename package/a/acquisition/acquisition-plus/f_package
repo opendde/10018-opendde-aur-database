@@ -1,7 +1,0 @@
-package() {
-    cd "$srcdir/acquisitionplus-${pkgver}"
-    install -Dm755 acquisition            "$pkgdir/usr/bin/acquisitionplus"
-    install -Dm644 assets/icon.svg        "$pkgdir/usr/share/icons/hicolor/scalable/apps/acquisitionplus.svg"
-    install -Dm644 ../acquisition.desktop "$pkgdir/usr/share/applications/acquisitionplus.desktop"
-    install -Dm644 COPYING                "$pkgdir/usr/share/licenses/$pkgname"
-}

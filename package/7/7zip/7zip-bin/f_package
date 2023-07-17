@@ -1,6 +1,0 @@
-package() {
-	install -Dt ${pkgdir}/usr/bin -m755 7zz
-	install -Dt ${pkgdir}/usr/share/doc/${pkgname%-bin} -m644 History.txt readme.txt
-	cp -r MANUAL ${pkgdir}/usr/share/doc/${pkgname%-bin}/manual
-	install -Dm644 License.txt ${pkgdir}/usr/share/licenses/${pkgname%-bin}/LICENSE
-}

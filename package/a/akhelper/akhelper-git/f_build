@@ -1,4 +1,0 @@
-build() {
-  cd $_srcname/vendor/penguin_client
-  python setup.py build
-}

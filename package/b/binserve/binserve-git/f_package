@@ -1,5 +1,0 @@
-package() {
-    cd "$_pkgname"
-    mkdir -p "$pkgdir/usr/bin"
-    cp "target/release/binserve" "$pkgdir/usr/bin"
-}

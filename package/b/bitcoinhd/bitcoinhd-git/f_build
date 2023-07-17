@@ -1,6 +1,0 @@
-build() {
-	cd btchd
-	./autogen.sh
-	./configure --with-zmq --with-qrencode --without-gui # --with-gui=qt5
-	make
-}

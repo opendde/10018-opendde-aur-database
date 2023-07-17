@@ -1,6 +1,0 @@
-prepare() {
-  mkdir -p "${srcdir}/${_pkgbase}" && cd "${srcdir}/${_pkgbase}"
-
-  cp ../dkms.conf ../Makefile .
-  cp ../i2c-nct6775.c i2c-nct6775.c
-}

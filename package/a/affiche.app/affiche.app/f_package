@@ -1,5 +1,0 @@
-package() {
-  cd "affiche-$pkgver.orig"
-  make DESTDIR="$pkgdir" install
-  install -Dm644 "$pkgdir/usr/lib/GNUstep/Applications/$_pkgname.app/Resources/$_pkgname.desktop" "$pkgdir/usr/share/applications/$_pkgname.desktop"
-}

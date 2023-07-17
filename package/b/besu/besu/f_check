@@ -1,3 +1,0 @@
-check() {
-  "$pkgname-$pkgver/bin/$pkgname" --version
-}

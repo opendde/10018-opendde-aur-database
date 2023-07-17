@@ -1,7 +1,0 @@
-build() {
-  cd "$pkgname-$pkgver"
-
-  yarn install --no-progress
-  yarn run webpack --env.BUILD_ENV=production
-  yarn run electron-builder build --linux dir --x64
-}

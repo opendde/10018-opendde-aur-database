@@ -1,5 +1,0 @@
-package() {
-  cd "$srcdir/$_gitname"
-  install -Dm755 buckle "$pkgdir"/usr/bin/buckle
-  install -Dm644 -t "$pkgdir"/usr/share/bucklespring/ wav/*
-}

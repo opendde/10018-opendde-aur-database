@@ -1,5 +1,0 @@
-package() {
-  cd "${srcdir}"/Arrongin-$pkgver
-  install -d "$pkgdir"/usr/share/themes/Arrongin
-  cp -rf gtk-* "$pkgdir"/usr/share/themes/Arrongin
-}

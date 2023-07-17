@@ -1,5 +1,0 @@
-package() {
-	install -Dm644 ../LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-	cd "akmey-client-$pkgver-alpha"
-	install -Dm755 akmey-client "$pkgdir/usr/bin/akmey"
-}

@@ -1,7 +1,0 @@
-build() {
-  cd ${pkgname}-${pkgver}
-  patch -p1 <"${srcdir}/libpng12.patch"
-
-  ./configure CPPFLAGS="-I/usr/include/libpng12 $CPPFLAGS" --prefix=/usr
-  make || return 1
-}

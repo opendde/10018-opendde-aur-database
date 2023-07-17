@@ -1,7 +1,0 @@
-package() {
-    cd $srcdir/
-    mkdir -p $pkgdir/usr/bin/
-    mkdir -p $pkgdir/usr/lib/systemd/system/
-    install -m 0755 $srcdir/amdvold $pkgdir/usr/bin
-    install -m 0755 $srcdir/amdvold.service "$pkgdir/usr/lib/systemd/system/amdvold.service"
-}

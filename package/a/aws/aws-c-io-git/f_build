@@ -1,6 +1,0 @@
-build() {
-	cd "${srcdir}/${pkgname}"
-
-    cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_SHARED_LIBS=ON -S . -B build
-    cmake --build build
-}

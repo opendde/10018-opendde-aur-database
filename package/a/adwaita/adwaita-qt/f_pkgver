@@ -1,4 +1,0 @@
-pkgver() {
-  cd "$srcdir/$pkgbase"
-  git describe --tags | sed 's/-/+/g'
-}

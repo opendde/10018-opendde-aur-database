@@ -1,5 +1,0 @@
-build() {
-  cd "$srcdir/$pkgname-$pkgver"
-  cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_CORE_LIBRARY_STATIC=true -DCMAKE_INSTALL_PREFIX="/usr" .
-  make 
-}

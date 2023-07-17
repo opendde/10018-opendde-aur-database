@@ -1,4 +1,0 @@
-check() {
-  cd "$pkgname"
-  env _ARC_UNPACKER_TESTS=1 ./run_tests
-}

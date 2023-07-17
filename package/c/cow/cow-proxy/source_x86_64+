@@ -1,1 +1,0 @@
-(cow-x86_64-$pkgver.gz::https://github.com/cyfdecyf/cow/releases/download/$pkgver/cow-linux64-$pkgver.gz)

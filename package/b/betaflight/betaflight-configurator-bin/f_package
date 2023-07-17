@@ -1,7 +1,0 @@
-package() {
-  mkdir -p "$pkgdir/opt/betaflight"
-  mkdir -p "$pkgdir/usr/bin"
-  install -Dm644 "$srcdir/Betaflight Configurator/$_pkgname.desktop" "$pkgdir/usr/share/applications/$_pkgname.desktop"
-  cp -dpr --no-preserve=ownership "$srcdir/Betaflight Configurator" "$pkgdir/opt/betaflight/betaflight-configurator"
-  ln -s "/opt/betaflight/betaflight-configurator/$_pkgname" "$pkgdir/usr/bin/$_pkgname"
-}

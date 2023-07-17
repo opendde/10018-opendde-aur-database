@@ -1,4 +1,0 @@
-pkgver() {
-  cd $pkgbase
-  echo "r$(git rev-list HEAD --count)_$(git rev-parse HEAD | cut -c 1-9)"
-}

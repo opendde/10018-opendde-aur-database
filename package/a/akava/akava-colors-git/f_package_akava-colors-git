@@ -1,8 +1,0 @@
-package_akava-colors-git() {
-    provides=('akava-colors')
-
-    cd $_pkgname
-    install -d "${pkgdir}/usr/share"
-    mkdir -p "${pkgdir}/usr/share/color-schemes"
-    cp -r Akava.colors "${pkgdir}/usr/share/color-schemes"
-}

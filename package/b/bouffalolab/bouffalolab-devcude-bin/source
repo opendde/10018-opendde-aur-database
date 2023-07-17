@@ -1,1 +1,0 @@
-("${pkgname%-bin}-${pkgver}.zip::https://dev.bouffalolab.com/media/upload/download/BouffaloLabDevCube-v${pkgver}.zip")

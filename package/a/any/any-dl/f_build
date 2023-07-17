@@ -1,4 +1,0 @@
-build() {
-cd ${srcdir}/${pkgname}-v.${pkgver}
-make
-}

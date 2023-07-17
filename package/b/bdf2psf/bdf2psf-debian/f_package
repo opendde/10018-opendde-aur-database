@@ -1,6 +1,0 @@
-package() {
-    set -x
-    tar -xvf data.tar.xz
-    mv $srcdir/usr $pkgdir
-    set +x
-}

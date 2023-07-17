@@ -1,5 +1,0 @@
-build() {
-  cd "$pkgname"
-  chmod +x ./update-script && ./update-script all
-  sed -i "s/#Server/Server/g" archlinuxcn-mirrorlist
-}

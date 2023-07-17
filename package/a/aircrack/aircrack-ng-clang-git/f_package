@@ -1,4 +1,0 @@
-package() {
-  cd "aircrack-ng"
-  make DESTDIR="${pkgdir}" install
-}

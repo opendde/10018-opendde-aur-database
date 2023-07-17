@@ -1,9 +1,0 @@
-build() {
-	cd "${srcdir}/${pkgname}-${pkgver}"
-
-	sed -i 's?/usr/local?/usr?g' Makefile
-	sed -i 's?man/man1?share/man/man1?g' Makefile
-	sed -i 's?LDADD = -lsndio?LDADD = -lbsd\nLDADD += -lsndio?' Makefile
-
-	make
-}

@@ -1,6 +1,0 @@
-build() {
-  cd $srcdir/aseba
-  mkdir -p build && cd build
-  cmake -GNinja -DMOBSYA_WEBAPPS_ROOT_DIR=share/ -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF ..
-  ninja
-}

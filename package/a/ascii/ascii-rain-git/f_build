@@ -1,4 +1,0 @@
-build() {
-  cd "$srcdir/${pkgname%-git}"
-  gcc -lncurses -O0 -Wl,-z,relro,-z,now -o rain rain.c
-}

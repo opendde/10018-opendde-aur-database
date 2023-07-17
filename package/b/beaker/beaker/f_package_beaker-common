@@ -1,7 +1,0 @@
-package_beaker-common() {
-	pkgdesc="Full-stack software and hardware integration testing system - common files"
-
-	export BKR_PY3="$(which python3)"
-	cd "$pkgbase-$pkgbase-$pkgver"
-	make DESTDIR="$pkgdir/" -C Common install
-}

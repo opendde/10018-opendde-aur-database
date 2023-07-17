@@ -1,5 +1,0 @@
-package() {
-	cd "${pkgname}"
-	make DEST="${pkgdir}/" LIBDIR="/usr/lib" install
-	install -D LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
-}

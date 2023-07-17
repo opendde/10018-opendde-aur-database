@@ -1,6 +1,0 @@
-prepare() {
-  cd "$_pkgname-$pkgver"
-  for patch in ../debian/patches/*.patch; do 
-    patch -p1 < $patch
-  done
-}

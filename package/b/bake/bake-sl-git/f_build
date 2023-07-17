@@ -1,5 +1,0 @@
-build() {
-	cd "$srcdir/${pkgname%-sl-git}"
-	make
-    ./bake-bootstrap --configure install-directory="$pkgdir/"
-}

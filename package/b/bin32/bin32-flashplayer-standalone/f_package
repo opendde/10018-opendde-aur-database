@@ -1,8 +1,0 @@
-package() {
-  install -Dm644 "$srcdir"/flashplayer.desktop \
-    "$pkgdir"/usr/share/applications/flashplayer.desktop
-  install -Dm644 "$srcdir"/PlatformClients_PC_WWEULA-MULTI-20110809_1357.pdf \
-    "$pkgdir"/usr/share/licenses/$pkgname/PlatformClients_PC_WWEULA-MULTI-20110809_1357.pdf
-  install -Dm755 "$srcdir"/flashplayer \
-    "$pkgdir"/usr/bin/flashplayer
-}

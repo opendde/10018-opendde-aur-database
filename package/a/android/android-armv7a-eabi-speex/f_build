@@ -1,9 +1,0 @@
-build() {
-    cd "${srcdir}"/speex-${pkgver}
-    source android-env ${_android_arch}
-
-    android-${_android_arch}-configure \
-        --disable-binaries
-
-    make $MAKEFLAGS
-}

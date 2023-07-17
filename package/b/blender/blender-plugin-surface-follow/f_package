@@ -1,8 +1,0 @@
-package() {
-  _blender=$(pacman -Sddp --print-format %v blender|grep -oP '(?<=\:)[[:digit:]]+\.[[:digit:]]+(?=\.)')
-  cd ${name}
-  addons="$pkgdir/usr/share/blender/${_blender}/scripts/addons"
-  install -dm755 ${addons}
-  for file in  ${files[@]} ; do install -m 755 ${file} ${addons}/${file} ; done
-  install -Dm644 LICENSE ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
-}

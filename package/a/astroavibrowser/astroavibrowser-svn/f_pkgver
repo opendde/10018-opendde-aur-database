@@ -1,4 +1,0 @@
-pkgver() {
-	cd "$SRCDEST/${_svnname}"
-	svnversion | tr -d [A-z]
-}

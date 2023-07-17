@@ -1,7 +1,0 @@
-package() {
-	cd "$srcdir/$pkgname-$pkgver"
-	install -d "${pkgdir}/usr/bin"
-	install -d "${pkgdir}/usr/share/doc/${pkgname}/"
-	install -m 644 pyramid logo README COPYING "${pkgdir}/usr/share/doc/${pkgname}/"
-	install -m 755 -t "${pkgdir}/usr/bin/" aa3d
-}

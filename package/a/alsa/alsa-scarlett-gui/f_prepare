@@ -1,9 +1,0 @@
-prepare() {
-  cd "$pkgname"
-
-  # remove incorrect keys in desktop file
-  sed \
-    -i src/vu.b4.alsa-scarlett-gui.desktop.template \
-    -e '/^Value=.*/d' \
-    -e '/^Encoding=.*/d'
-}

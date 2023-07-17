@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz::https://github.com/greyltc/bitrock-unpacker/archive/v${pkgver}.tar.gz")

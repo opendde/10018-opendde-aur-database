@@ -1,7 +1,0 @@
-package() {
-	cd "${srcdir}/${_pkgname}-${pkgver}"
-	make DESTDIR="$pkgdir/" install-strip
-	for G in "${srcdir}"/*.desktop; do 
-	    install -Dm644 $G "${pkgdir}"/usr/share/applications/$(basename $G)
-	done
-}

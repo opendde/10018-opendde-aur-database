@@ -1,3 +1,0 @@
-package() {
-    mv opt usr var $pkgdir/
-}

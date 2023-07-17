@@ -1,4 +1,0 @@
-check() {
-	cd "${pkgname}-v${pkgver}"
-	make -k check
-}

@@ -1,7 +1,0 @@
-prepare() {
-  cd "$srcdir/$pkgname-$pkgver"
-  patch -p1 < ../libav10.patch
-  patch -p1 < ../CodecID.patch
-  patch -p1 < ../taglib10.patch
-  patch -p1 < ../Fix-build-failure-on-gcc-6.patch
-}

@@ -1,3 +1,0 @@
-package() {
-    make -C $srcdir/bennugd-code-r${pkgver}/modules DESTDIR=${pkgdir} install
-}

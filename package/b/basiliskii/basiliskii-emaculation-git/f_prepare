@@ -1,7 +1,0 @@
-prepare() {
-  cd emaculation-macemu
-  patch -Np1 -i ../basiliskii-emaculation-fix-unnecessary-AM_GNU_GETTEXT-in-configure.ac.patch
-
-  cd BasiliskII/src/Unix
-  NO_CONFIGURE=1 ./autogen.sh
-}

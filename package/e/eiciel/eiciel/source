@@ -1,1 +1,0 @@
-(${pkgname}::git+https://github.com/rofirrim/${pkgname}.git#tag=${pkgver})

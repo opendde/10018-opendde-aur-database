@@ -1,4 +1,0 @@
-check() {
-  cd build
-  make -k test
-}

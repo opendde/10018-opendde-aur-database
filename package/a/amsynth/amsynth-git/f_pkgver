@@ -1,5 +1,0 @@
-pkgver() {
-  cd "${srcdir}/${_pkgname}"
-  ver=$(git describe --tags `git rev-list --tags --max-count=1` | cut -f 2 -d -)
-  echo $ver.r$(git rev-list --count HEAD).$(git rev-parse --short HEAD)
-}

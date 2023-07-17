@@ -1,1 +1,0 @@
-("git+https://github.com/pytorch/pytorch.git#tag=v${_pytorchver}"

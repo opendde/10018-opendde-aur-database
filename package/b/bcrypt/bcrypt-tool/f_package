@@ -1,4 +1,0 @@
-package() {
-  cd "$srcdir/src/$_gourl/$pkgname"
-  install -Dm755 bcrypt-tool "$pkgdir/usr/bin/bcrypt-tool"
-}

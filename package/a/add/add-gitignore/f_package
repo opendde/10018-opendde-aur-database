@@ -1,3 +1,0 @@
-package() {
-  npm install -g --user root --prefix "${pkgdir}/usr" "${srcdir}/${pkgname}-${pkgver}.tar.gz"
-}

@@ -1,5 +1,0 @@
-build() {
-	cd "$srcdir/bebop_mavlink_ctrl"
-	mavgen.py --lang C -o out/ /usr/lib/python2.7/site-packages/pymavlink/dialects/v10/common.xml
-	make all tests
-}

@@ -1,3 +1,0 @@
-prepare() {
-  cd at-spi2-atk
-}

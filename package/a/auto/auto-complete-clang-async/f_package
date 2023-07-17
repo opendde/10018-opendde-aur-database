@@ -1,8 +1,0 @@
-package() {
-  mkdir -p "${pkgdir}/usr/share/emacs/site-lisp/"
-  mkdir -p "${pkgdir}/usr/bin"
-
-  cp "${srcdir}/emacs-clang-complete-async/clang-complete" "${pkgdir}/usr/bin"
-  cp -rp "${srcdir}/emacs-clang-complete-async/auto-complete-clang-async.el" \
-    "${pkgdir}/usr/share/emacs/site-lisp"
-}

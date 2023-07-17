@@ -1,9 +1,0 @@
-package() {
-  cd "${srcdir}/${pkgname}-${pkgver}-unix/sources/"
-	install -D -m644 "../COPYING" "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
-  install -d "${pkgdir}/usr/"{share/doc/4th,lib,bin}
-  make BINARIES="${pkgdir}/usr/bin" \
-       LIBRARIES="${pkgdir}/usr/lib" \
-       DOCDIR="${pkgdir}/usr/share/doc" \
-       MANDIR="${pkgdir}/usr/share/man" install
-}

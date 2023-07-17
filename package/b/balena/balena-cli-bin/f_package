@@ -1,7 +1,0 @@
-package() {
-   install -dm755 "${pkgdir}/opt/"
-   cp -r "${srcdir}/balena-cli" "${pkgdir}/opt/"
-   install -dm755 "${pkgdir}/usr/bin/"
-   ln -s ../../opt/balena-cli/balena "${pkgdir}/usr/bin/balena"
-   install -Dm644 "${srcdir}/balena-completion.bash" "${pkgdir}/usr/share/bash-completion/completions/balena"
-}

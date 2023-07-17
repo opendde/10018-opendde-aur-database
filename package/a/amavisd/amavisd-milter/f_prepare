@@ -1,5 +1,0 @@
-prepare() {
-    cd "${srcdir}/${pkgname}-${pkgver}"
-    # change upstream default paths (must match those of amavisd-new)
-    sed -i 's|/var/amavis|/var/spool/amavis|g' "${pkgname}/amavisd-milter.8"
-}

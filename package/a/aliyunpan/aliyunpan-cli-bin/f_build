@@ -1,4 +1,0 @@
-build() {
-  cd ${_pkgname}-${pkgver}
-  pyinstaller -F aliyunpan/main.py -n aliyunpan-cli
-}

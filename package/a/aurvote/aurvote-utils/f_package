@@ -1,5 +1,0 @@
-package() {
-	cd "aurvote-utils-${pkgver}"
-	install -D aur-vote "${pkgdir}/usr/bin/aur-vote"
-	install aur-autovote "${pkgdir}/usr/bin/aur-autovote"
-}

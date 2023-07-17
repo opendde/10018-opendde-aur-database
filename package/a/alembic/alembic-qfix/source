@@ -1,1 +1,0 @@
-(${pkgname%-qfix}-$pkgver.tar.gz::https://github.com/alembic/alembic/archive/${pkgver}.tar.gz)

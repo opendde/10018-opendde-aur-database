@@ -1,1 +1,0 @@
-("$pkgbase-web::git+$_repo.git#commit=$_commit")

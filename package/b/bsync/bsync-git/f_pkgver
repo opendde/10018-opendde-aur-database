@@ -1,4 +1,0 @@
-pkgver() {
-	cd "$srcdir/bsync"
-	echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
-}

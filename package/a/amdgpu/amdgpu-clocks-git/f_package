@@ -1,6 +1,0 @@
-package() {
-  cd "$pkgname"
-  install -Dm755 amdgpu-clocks "$pkgdir/usr/bin/amdgpu-clocks"
-  install -Dm644 amdgpu-clocks.service "$pkgdir/usr/lib/systemd/system/amdgpu-clocks.service"
-  install -Dm755 amdgpu-clocks-resume "$pkgdir/usr/lib/systemd/system-sleep/amdgpu-clocks-resume"
-}

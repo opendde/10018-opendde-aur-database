@@ -1,4 +1,0 @@
-prepare() {
-  cd $_pkgname
-	sed 's/usr\/local/usr/g' libaisl.pc.example > libaisl.pc
-}

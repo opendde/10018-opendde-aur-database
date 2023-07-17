@@ -1,3 +1,0 @@
-prepare() {
-  bsdtar -O -x -f axolotl_${deb_pkgver}_arm64.deb data.tar.xz | bsdtar -x -f -
-}

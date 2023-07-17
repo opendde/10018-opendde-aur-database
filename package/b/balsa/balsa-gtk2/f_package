@@ -1,4 +1,0 @@
-package() {
-  cd "${srcdir}/${_pkgname}-${pkgver}"
-  make GTK_UPDATE_ICON_CACHE=/bin/true DESTDIR="${pkgdir}" install
-}

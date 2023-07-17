@@ -1,6 +1,0 @@
-package() {
-    cd $srcdir/${_gitname}
-    mkdir -p $pkgdir/usr/bin
-    install -m755 supergenpass.sh $pkgdir/usr/bin/supergenpass
-    chmod +x $pkgdir/usr/bin/supergenpass
-}

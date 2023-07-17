@@ -1,1 +1,0 @@
-("algernon-$pkgver.tar.gz::https://github.com/xyproto/algernon/releases/download/v$pkgver/algernon-${pkgver}-linux_${CARCH}_static.tar.xz")

@@ -1,6 +1,0 @@
-build() {
-  cd "${srcdir}/aspell-bn-master"
-
-  ./configure
-  make &>/dev/null
-}

@@ -1,7 +1,0 @@
-package_resident-evil-2-leon-en() {
-  depends+=("${_pkgbase}-leon")
-  local _lang="en"
-  local _uuid="${_uuid_leon[$_lang]}"
-  local _app_id="$(_app_id_variant "${_app_id}" "Leon")"
-  _package "${_uuid}" "${_lang}" "${_title} (USA) (Disc 1)" "${_app_id}"
-}

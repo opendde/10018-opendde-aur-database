@@ -1,8 +1,0 @@
-package() {
-  cd $srcdir/$pkgname-$pkgver
-  install -m755 -d $pkgdir/usr/{bin,share/man/man1,share/pixmaps,share/applications}
-  install -m755 alevt alevt-cap alevt-date $pkgdir/usr/bin
-  install -m644 alevt.1x alevt-date.1 alevt-cap.1 $pkgdir/usr/share/man/man1
-  install -m644 contrib/mini-alevt.xpm $pkgdir/usr/share/pixmaps
-  install -m644  $srcdir/alevt.desktop $pkgdir/usr/share/applications/
-}

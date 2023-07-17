@@ -1,3 +1,0 @@
-check() {
-  make -C $pkgname-$_basever check
-}

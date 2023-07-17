@@ -1,1 +1,0 @@
-("${_appimage_dst}::https://cernphone-sw.web.cern.ch/cernphone-sw/releases/cern-phone-app-${pkgver}-x86_64-linux.AppImage.d/${_appimage}")

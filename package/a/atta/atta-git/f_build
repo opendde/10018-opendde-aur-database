@@ -1,7 +1,0 @@
-build() {
-	echo "----- Build ----- "
-	cd Atta
-	pwd
-	#./configure --prefix=/usr
-	#make
-}

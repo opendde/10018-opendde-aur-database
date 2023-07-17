@@ -1,3 +1,0 @@
-prepare() {
-  patch --directory="$pkgname-$pkgver" --forward --strip=1 --input="${srcdir}/0001-red-Handle-service-provider-country-codes-missing-in.patch"
-}

@@ -1,5 +1,0 @@
-package() {
-	cd "$srcdir/Acquire_rs-$pkgver"
-	install -Dm755 target/release/acquire_rs "${pkgdir}/usr/bin/acquire_rs"
-	install -Dm644 "LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}

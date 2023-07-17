@@ -1,6 +1,0 @@
-prepare() {
-  mkdir -p "$srcdir/build"
-
-  cd "$srcdir/${pkgname}-${pkgver}"
-  #patch -Np1 -i "$srcdir/cmake.patch"
-}

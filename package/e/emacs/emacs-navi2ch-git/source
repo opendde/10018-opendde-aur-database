@@ -1,1 +1,0 @@
-("${pkgname%-git}"::'git://github.com/naota/navi2ch.git')

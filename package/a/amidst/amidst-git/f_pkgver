@@ -1,6 +1,0 @@
-pkgver() {
-	cd "$pkgname" || exit
-	local _ver
-	_ver="$(git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g')"
-	printf '%s\n' "${_ver#v}"
-}

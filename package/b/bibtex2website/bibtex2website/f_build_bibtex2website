@@ -1,9 +1,0 @@
-build_bibtex2website() {
-    cd "$srcdir/build"
-
-    cmake -DCMAKE_INSTALL_PREFIX:PATH="/usr" \
-        -DCMAKE_BUILD_TYPE=Release \
-	"../bibtex2website-${pkgver}"
-
-    make
-}

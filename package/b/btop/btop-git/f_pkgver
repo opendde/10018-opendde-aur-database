@@ -1,6 +1,0 @@
-pkgver() {
-  cd "${srcdir}/${pkgname}"
-  _pkgver="$(cat CHANGELOG.md | grep '^##' | sed 's/## v//g' | head -1)"
-
-  printf "${_pkgver}.r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-}

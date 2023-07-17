@@ -1,6 +1,0 @@
-build() {
-	cd $srcdir/$pkgname
-
-	# Generate release files
-	yarn && yarn release
-}

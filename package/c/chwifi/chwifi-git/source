@@ -1,1 +1,0 @@
-("${_pkgname}-$pkgver::git+https://github.com/cogitantium/chwifi.git")

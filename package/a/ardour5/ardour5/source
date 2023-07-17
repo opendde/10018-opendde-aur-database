@@ -1,1 +1,0 @@
-("${_pkgname}-${pkgver}::git://github.com/Ardour/ardour.git#tag=${pkgver}"

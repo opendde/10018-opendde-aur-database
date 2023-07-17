@@ -1,6 +1,0 @@
-build() {
-	cd "${pkgname}-${pkgver}"
-
-	./configure --mandir='/usr/share/man' --prefix='/usr'
-	make bibclean
-}

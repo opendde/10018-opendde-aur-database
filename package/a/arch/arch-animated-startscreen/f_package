@@ -1,5 +1,0 @@
-package() {
-    export LD_PRELOAD='/usr/lib/libfakeroot/libfakeroot.so'
-	cd "Arch-Aurora-Borealis-Startscreen-master"
-	make DESTDIR="$pkgdir/" install
-}

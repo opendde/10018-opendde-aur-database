@@ -1,5 +1,0 @@
-build() {
-	cd "$pkgname-$pkgver"
-	env CFLAGS="$CFLAGS $LDFLAGS" ./configure.sh
-	make
-}

@@ -1,5 +1,0 @@
-prepare() {
-  cd ${srcdir}/build-${pkgver}/
-
-  ./bootstrap.sh
-}

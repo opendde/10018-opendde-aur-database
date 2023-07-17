@@ -1,3 +1,0 @@
-check() {
-  ./"argo_${pkgver}_${CARCH}" version
-}

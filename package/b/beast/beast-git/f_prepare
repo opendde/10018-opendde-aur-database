@@ -1,4 +1,0 @@
-prepare() {
-  cd "beast"
-  make default prefix=/usr
-}

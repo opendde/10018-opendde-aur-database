@@ -1,4 +1,0 @@
-package() {
-  mkdir -p ${pkgdir}/usr/bin
-  install -m0755 ${srcdir}/${pkgname}_${pkgver}/${pkgname} ${pkgdir}/usr/bin/${pkgname}
-}

@@ -1,6 +1,0 @@
-package() {
-  cd "$srcdir"/$pkgname-$pkgversion
-
-  install -Dm0755 .libs/mod_form.so $pkgdir/usr/lib/httpd/modules/mod_form.so
-  install -Dm0644 mod_form.h $pkgdir/usr/include/httpd/mod_form.h
-}

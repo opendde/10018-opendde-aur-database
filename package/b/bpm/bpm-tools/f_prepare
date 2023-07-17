@@ -1,5 +1,0 @@
-prepare() {
-    cd "${pkgname}-${pkgver}"
-    patch -i "${srcdir}/fix-bpm-graph-man.patch" bpm-graph.1
-    patch -i "${srcdir}/fix-bpm-tag-id3v2.patch" bpm-tag
-}

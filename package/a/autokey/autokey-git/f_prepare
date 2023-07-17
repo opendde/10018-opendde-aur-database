@@ -1,3 +1,0 @@
-prepare() {
-  cd "$pkgname2" || return
-}

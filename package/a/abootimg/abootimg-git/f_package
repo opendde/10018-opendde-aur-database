@@ -1,7 +1,0 @@
-package() {
-  cd "${srcdir}/abootimg"
-
-  install -d "${pkgdir}/usr/bin" "${pkgdir}/usr/share/man/man1/"
-  install -t "${pkgdir}/usr/bin" abootimg abootimg-pack-initrd abootimg-unpack-initrd
-  install -t "${pkgdir}/usr/share/man/man1/" debian/abootimg.1.gz
-}

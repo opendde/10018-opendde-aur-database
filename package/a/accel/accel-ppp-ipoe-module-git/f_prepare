@@ -1,7 +1,0 @@
-prepare() {
-    cd "$srcdir"
-	# dkms need modification to be run as user
-	mkdir dkms
-	cp -r /var/lib/dkms/accel-ppp-ipoe dkms
-	echo "dkms_tree='$srcdir/dkms'" > dkms.conf
-}

@@ -1,9 +1,0 @@
-package() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-  make DESTDIR="${pkgdir}" install
-  echo ""
-  echo "This package doesn't come with an init, you should install one:"
-  echo "g15daemon-runit"
-  echo "g15daemon-openrc"
-  echo "g15daemon-systemd"
-}

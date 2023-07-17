@@ -1,8 +1,0 @@
-build() {
-	cd $srcdir/BetterSpades-${pkgver}-beta/build
-	make
-	cp -v $srcdir/bsresources.zip bin/
-	cd bin
-	unzip -u bsresources.zip
-	rm bsresources.zip
-}

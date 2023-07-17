@@ -1,1 +1,0 @@
-("https://launchpad.net/~${pkgname}/+archive/ubuntu/ppa/+sourcefiles/${pkgname}/${pkgver}~${_ubuntucodename}/${pkgname}_${pkgver}~${_ubuntucodename}.tar.gz")

@@ -1,8 +1,0 @@
-package_aescrypt() {
-  pkgdesc="Command line utility for encrypting files using AES"
-
-  install -Dm755 "${srcdir}/${pkgbase}-${pkgver}/src/aescrypt" "${pkgdir}/usr/bin/aescrypt"
-  install -Dm755 "${srcdir}/${pkgbase}-${pkgver}/src/aescrypt_keygen" "${pkgdir}/usr/bin/aescrypt_keygen"
-  install -Dm644 "${srcdir}/${pkgbase}-${pkgver}/man/aescrypt.1" "${pkgdir}/usr/share/man/man1/aescrypt.1"
-
-}

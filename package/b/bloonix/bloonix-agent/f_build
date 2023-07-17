@@ -1,9 +1,0 @@
-build() {
-    cd "$srcdir"/$pkgname-$pkgver
-    #perl Configure.PL
-    perl Configure.PL --prefix /usr --without-perl --ssl-ca-path /etc/ssl/certs --build-package
-    make
-    pod2man bin/bloonix-agent >bin/bloonix-agent.1
-    cd perl && perl Build.PL installdirs=vendor && cd ..
-    cd perl && perl Build
-}

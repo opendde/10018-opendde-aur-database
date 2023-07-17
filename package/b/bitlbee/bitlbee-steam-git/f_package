@@ -1,3 +1,0 @@
-package() {
-  make -C "bitlbee-steam" DESTDIR="$pkgdir" install
-}

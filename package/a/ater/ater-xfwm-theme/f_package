@@ -1,4 +1,0 @@
-package() {
-  /usr/bin/mkdir -p ${pkgdir}/usr/share/themes
-	/usr/bin/mv ./Ater ${pkgdir}/usr/share/themes
-}

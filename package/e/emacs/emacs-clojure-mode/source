@@ -1,1 +1,0 @@
-("${pkgname#emacs-}-$pkgver.tar.gz::$url/archive/${pkgver}.tar.gz")

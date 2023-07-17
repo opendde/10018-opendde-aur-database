@@ -1,1 +1,0 @@
-("git+https://github.com/githaff/embox.git#tag=v${pkgver}")

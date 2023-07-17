@@ -1,7 +1,0 @@
-check() {
-	cd $srcdir/$pkgname
-
-	make check
-#	make -k check
-#	make -i check
-}

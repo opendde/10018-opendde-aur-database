@@ -1,5 +1,0 @@
-build() {
-    cd "${srcdir}/${pkgname}-${pkgver}"
-    qmake-qt5 QMAKE_DEFAULT_INCDIRS="" ${pkgname}.pro
-    make
-}

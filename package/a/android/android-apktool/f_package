@@ -1,4 +1,0 @@
-package() {
-  install -Dm 0755 "${srcdir}/apktool" "${pkgdir}/usr/bin/apktool"
-  install -Dm 0644 "${srcdir}/apktool_${pkgver}.jar" "${pkgdir}/usr/share/${pkgname}/apktool.jar"
-}

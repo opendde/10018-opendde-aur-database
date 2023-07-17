@@ -1,4 +1,0 @@
-pkgver() {
-  cd "$_dir"
-  git describe --long | sed 's/^bustle-//;s/\([^-]*-g\)/r\1/;s/-/./g'
-}

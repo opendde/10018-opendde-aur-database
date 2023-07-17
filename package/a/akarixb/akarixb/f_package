@@ -1,3 +1,0 @@
-package() {
-        cp -dr --no-preserve=ownership ./usr "${pkgdir}"/
-}

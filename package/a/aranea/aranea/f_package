@@ -1,8 +1,0 @@
-package() {
-	cd "${srcdir}/${pkgname}-master"
-        install -dm755 "${pkgdir}/usr/bin"
-        install -dm755 "${pkgdir}/usr/share/${pkgname}"
-        cp * "${pkgdir}/usr/share/${pkgname}/"
-        ln -s "/usr/share/${pkgname}/${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
-
-}

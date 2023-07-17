@@ -1,4 +1,0 @@
-pkgver() {
-	cd "${srcdir}/batman-adv"
-	git describe --tags | sed 's/-/./g'
-}

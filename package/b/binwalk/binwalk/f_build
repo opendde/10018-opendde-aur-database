@@ -1,5 +1,0 @@
-build() {
-  cd ${pkgname}-${pkgver}
-  ./configure --disable-bundles --prefix="${pkgdir}/usr"
-  make build
-}

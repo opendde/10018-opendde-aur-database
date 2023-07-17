@@ -1,6 +1,0 @@
-prepare() {
-    cd $pkgname
-    git submodule update --init --recursive
-    sed -i 's/\(^git+[^ <]*\)\(.*\)//' requirements.txt
-    sed -i 's/=.*//' requirements.txt
-}

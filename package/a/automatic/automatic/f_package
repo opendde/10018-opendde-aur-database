@@ -1,8 +1,0 @@
-package () {
-  cd "$srcdir/Automatic-$pkgver"
-  
-  make DESTDIR="$pkgdir/" install
-  install -D -m644 "src/automatic.conf-sample" "$pkgdir/etc/automatic.conf"
-  install -D -m644 "$srcdir/automaticd.conf" "$pkgdir/etc/conf.d/automaticd"
-  install -D -m644 "$srcdir/automatic.service" "$pkgdir/usr/lib/systemd/system/automatic.service"
-}

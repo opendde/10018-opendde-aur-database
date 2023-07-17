@@ -1,8 +1,0 @@
-package() {
-	cd "${srcdir}/${_pkgname}"
-	make DESTDIR=${pkgdir} install 
-	mkdir ${pkgdir}/usr/bin/ ${pkgdir}/usr/share/
-	mv ${pkgdir}/usr/local/sbin/* ${pkgdir}/usr/bin/
-	mv ${pkgdir}/usr/local/share/* ${pkgdir}/usr/share/
-	rm -R ${pkgdir}/usr/local
-}

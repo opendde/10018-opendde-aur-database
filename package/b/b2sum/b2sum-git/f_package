@@ -1,5 +1,0 @@
-package() {
-    cd "${srcdir}/${_pkgname}/b2sum"
-    install -d "${pkgdir}/usr/bin"
-    install -Dm 755 b2sum "${pkgdir}/usr/bin"
-}

@@ -1,4 +1,0 @@
-pkgver() {
-  cd "${srcdir}/${pkgname%-git}"
-  printf '0.1.%s\n' "$(git log -n1 --pretty=format:%ai | cut -d' ' -f1 | tr -d '-')"
-}

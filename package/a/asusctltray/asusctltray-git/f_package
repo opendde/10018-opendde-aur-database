@@ -1,6 +1,0 @@
-package() {
-	cd "${pkgname%-git}"
-	install -D asusctltray "${pkgdir}/usr/local/bin/asusctltray"
-	install -D asusctltray.svg "${pkgdir}/usr/share/pixmaps/asusctltray.svg"
-	install -D asusctltray.desktop "${pkgdir}/usr/share/applications/asusctltray.desktop"
-}

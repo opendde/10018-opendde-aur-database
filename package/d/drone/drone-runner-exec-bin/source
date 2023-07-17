@@ -1,1 +1,0 @@
-("https://github.com/drone-runners/${_pkgname}/releases/download/v${_pkgver}/drone_runner_exec_linux_amd64.tar.gz"

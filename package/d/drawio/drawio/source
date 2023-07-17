@@ -1,1 +1,0 @@
-("draw-${pkgver}.war::https://github.com/jgraph/drawio/releases/download/v${pkgver}/draw.war")

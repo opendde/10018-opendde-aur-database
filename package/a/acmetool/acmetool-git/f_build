@@ -1,3 +1,0 @@
-build() {
-	GOPATH="$srcdir" go get -v -x github.com/hlandau/acme/cmd/acmetool
-}

@@ -1,8 +1,0 @@
-prepare() {
-    cd "${srcdir}/apache-ant-${pkgver}"
-    unset  ANT_HOME
-    export ANT_OPTS="-Duser.home=${srcdir}"
-
-    ./bootstrap.sh
-    bootstrap/bin/ant -Ddest=optional -f fetch.xml
-}

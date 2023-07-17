@@ -1,5 +1,0 @@
-build() {
-	cd $_realname
-	qmake $_realname.pro
-	make
-}

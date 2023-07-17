@@ -1,3 +1,0 @@
-prepare() {
-    chmod +x "${srcdir}/an-anime-game-launcher_${pkgver}"
-}

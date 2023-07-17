@@ -1,5 +1,0 @@
-pkgver() {
-  cd "$srcdir/$pkgname"
-  # Use the tag of the last commit
-  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-}

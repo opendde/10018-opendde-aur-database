@@ -1,6 +1,0 @@
-pkgver() {
-    cd "autosuspend"
-    rev="$(git rev-list --count HEAD)"
-    base="$(cat VERSION | tail -n 1 | sed 's/\.dev.*//')"
-    echo -n "${base}.${rev}"
-}

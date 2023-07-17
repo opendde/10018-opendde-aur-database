@@ -1,4 +1,0 @@
-prepare() {
-  cd "$_pkgbase"
-  patch -p1 -i $srcdir/Report-Pause-Play-Hack.patch
-}

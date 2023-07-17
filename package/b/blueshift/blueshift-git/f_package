@@ -1,4 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname"
-  make DESTDIR="$pkgdir/" LIBEXEC="/lib/blueshift/" install
-}

@@ -1,4 +1,0 @@
-package() {
-  cd "$srcdir/"
-  install -D -m755 "beanstalkd-cli" "${pkgdir}/usr/bin/beanstalkd-cli"
-}

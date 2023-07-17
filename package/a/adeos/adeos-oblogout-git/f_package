@@ -1,6 +1,0 @@
-package() {
-  mkdir -p ${pkgdir}/usr/share/themes/
-  cd "$srcdir/${pkgname}"
-  cp -r adeos-branco "$pkgdir/usr/share/themes"
-  cp -r adeos-cores "$pkgdir/usr/share/themes"
-}

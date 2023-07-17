@@ -1,3 +1,0 @@
-build() {
-  bash ${_scriptname}${_bits}.sh --noexec --target ${srcdir}/${_subdir}
-}

@@ -1,4 +1,0 @@
-package() {
-  cd "$pkgname-$pkgver"
-  install -Dm755 "target/release/bins" -t "$pkgdir/usr/bin"
-}

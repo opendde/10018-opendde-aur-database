@@ -1,5 +1,0 @@
-package() {
-  cd "$pkgname-$pkgver";
-  sudo ./install.sh local;
-  #make PREFIX=/usr DESTDIR="$pkgdir" install
-}

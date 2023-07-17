@@ -1,1 +1,0 @@
-("${pkgname%-bin}-${pkgver}.deb::https://github.com/ecency/esteem-surfer/releases/download/${pkgver}/esteem-surfer_${pkgver}_amd64.deb"

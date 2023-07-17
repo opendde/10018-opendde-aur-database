@@ -1,8 +1,0 @@
-build() {
-	# Make sure to use python 2 with scripts: they fail with v3.6+
-	mkdir "$srcdir/bin" || true
-	ln -s /usr/bin/python2 "$srcdir/bin/python"
-	export PATH="$srcdir/bin":$PATH
-
-	"$srcdir"/build.sh -p arsdk-native -t build-sdk -j
-}

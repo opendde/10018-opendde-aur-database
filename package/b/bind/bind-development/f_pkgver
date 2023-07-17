@@ -1,5 +1,0 @@
-pkgver() {
-  cd bind9
-
-  git describe --tags | sed "s/^[Vv]//;s/_/./g"
-}

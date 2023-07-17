@@ -1,6 +1,0 @@
-package() {
-    cd "${pkgname%cli}-$pkgver"
-
-    install -Dm755 "${pkgname%cli}" "$pkgdir/usr/bin/${pkgname%cli}"
-    install -Dm644 "LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-}

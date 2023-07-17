@@ -1,5 +1,0 @@
-build() {
-  cd "$srcdir/$pkgname/$pkgname"
-  export GOPATH="$srcdir/go"
-  go build -o $pkgname boxcars.go
-}

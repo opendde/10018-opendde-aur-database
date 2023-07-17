@@ -1,3 +1,0 @@
-prepare() {
-  patch -Np0 -i git-fixes.patch
-}

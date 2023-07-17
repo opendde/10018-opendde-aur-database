@@ -1,4 +1,0 @@
-pkgver() {
-    cd "$_pkgname"
-    printf "%s" "$(awk -F '=' '/^version/ {print $2}' Makefile)"
-}

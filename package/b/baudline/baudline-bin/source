@@ -1,1 +1,0 @@
-("http://www.baudline.com/${pkgname/-bin/}_${pkgver}_linux_${CARCH}.tar.gz"

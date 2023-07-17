@@ -1,5 +1,0 @@
-package() {
-    install -Dm 755 "$srcdir/bower/bower" "$pkgdir/usr/bin/bower"
-    install -Dm 644 "$srcdir/bower/bower.1.gz" \
-      "$pkgdir/usr/share/man/man1/bower.1.gz"
-}

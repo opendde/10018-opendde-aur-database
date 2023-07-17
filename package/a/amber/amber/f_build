@@ -1,5 +1,0 @@
-build() {
-  cd "amber-$pkgver"
-  shards --production
-  make build
-}

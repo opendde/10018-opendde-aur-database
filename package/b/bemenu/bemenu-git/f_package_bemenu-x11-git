@@ -1,9 +1,0 @@
-package_bemenu-x11-git() {
-	pkgdesc='X11 renderer for bemenu'
-	provides=(bemenu-renderer-git bemenu-x11)
-	conflicts=(bemenu-x11)
-	depends=(libbemenu-git libxinerama pango)
-
-	cd "$_pkgbase"
-	make DESTDIR="$pkgdir" PREFIX=/usr install-x11
-}

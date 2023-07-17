@@ -1,4 +1,0 @@
-build() {
-  make CFLAGS+=" -Wall -pedantic -g -Wl,-z,relro,-z,now" \
-       LDFLAGS+=" -Wall -pedantic -g -Wl,-z,relro,-z,now" 
-}

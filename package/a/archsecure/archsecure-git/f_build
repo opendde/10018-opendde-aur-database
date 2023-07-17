@@ -1,9 +1,0 @@
-build() {
-  mkdir -p "${srcdir}/go/src/${_gourl}/${_pkgname}"
-  mv "${srcdir}/${_pkgname}" "${srcdir}/go/src/${_gourl}"
-
-  export GOPATH="$srcdir/go"
-
-  cd ${srcdir}/go/src/${_gourl}/${_pkgname}
-  go build -o archsecure
-}

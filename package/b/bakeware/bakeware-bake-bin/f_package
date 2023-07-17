@@ -1,3 +1,0 @@
-package() {
-    install -m755 "${srcdir}/bake" -Dt "$pkgdir/usr/bin/"
-}

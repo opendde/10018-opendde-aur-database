@@ -1,7 +1,0 @@
-package() {
-  cd $pkgname-$pkgver
-  install -Dm755 target/release/$pkgname "$pkgdir"/usr/bin/$pkgname
-  #install -Dm644 doc/$pkgname.1 "$pkgdir"/usr/share/man/man1/$pkgname.1
-  install -Dm644 LICENSE-APACHE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE-APACHE
-  install -Dm644 LICENSE-MIT "$pkgdir"/usr/share/licenses/$pkgname/LICENSE-MIT
-}

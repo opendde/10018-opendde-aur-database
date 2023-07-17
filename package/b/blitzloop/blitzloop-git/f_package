@@ -1,6 +1,0 @@
-package() {
-  cd $_pkgname
-  python setup.py install --root="$pkgdir/" --optimize=1
-  install -d $pkgdir/usr/share/doc/blitzloop
-  install -Dm644 docs/*md docs/*conf $pkgdir/usr/share/doc/blitzloop
-}

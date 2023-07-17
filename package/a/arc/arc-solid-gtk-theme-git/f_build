@@ -1,7 +1,0 @@
-build() {
-    cd ${_pkgname}
-    ./autogen.sh --prefix=/usr
-
-    cd ../${_pkgname}
-    ./autogen.sh --prefix=/usr --disable-transparency
-}

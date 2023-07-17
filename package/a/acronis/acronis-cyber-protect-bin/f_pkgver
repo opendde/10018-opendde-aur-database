@@ -1,5 +1,0 @@
-pkgver() {
-  exe=$(strings -d "$setup" | sed -nr '/AcronisBackupLinuxStandaloneComponents-15\.0\.(([0-9_])+)/{p;q}')
-  ver=$(echo $exe | cut -d '-' -f 2,3 | cut -d '.' -f 1-3)
-  echo ${ver//-/_}
-}

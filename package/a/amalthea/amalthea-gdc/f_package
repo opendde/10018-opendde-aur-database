@@ -1,4 +1,0 @@
-package() {
-    cd "amalthea-v$pkgver"
-    make DESTDIR=$pkgdir install DC=${DC} || return 1
-}

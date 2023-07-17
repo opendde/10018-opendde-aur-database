@@ -1,6 +1,0 @@
-package() {
-    cd "${_pkgname}"
-    make DESTDIR="${pkgdir}/" install
-    install -Dm755 "${srcdir}/atari800.desktop" "${pkgdir}/usr/share/applications/atari800.desktop"
-    install -Dm755 "${srcdir}/atari800/data/atari2.png" "${pkgdir}/usr/share/pixmaps/atari800.png"
-}

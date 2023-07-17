@@ -1,5 +1,0 @@
-check() {
-    cd ayo
-
-    make test || warning "Tests failed"
-}

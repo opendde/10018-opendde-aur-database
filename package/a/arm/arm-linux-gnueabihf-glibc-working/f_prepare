@@ -1,5 +1,0 @@
-prepare() {
-  mkdir -p glibc-build
-
-  [[ -d glibc-$pkgver ]] && ln -s glibc-$pkgver glibc
-}

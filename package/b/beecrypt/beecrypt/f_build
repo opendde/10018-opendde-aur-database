@@ -1,7 +1,0 @@
-build() {
-  cd "${srcdir}"/$pkgname-$pkgver
-
-  CXXFLAGS=-fpermissive
-  ./configure --prefix=/usr --sysconfdir=/etc --without-java --disable-openmp --with-python=python2
-  make
-}

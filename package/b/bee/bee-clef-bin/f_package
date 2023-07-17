@@ -1,6 +1,0 @@
-package() {
-	install -Dm644 etc/bee-clef/{4byte.json,rules.js} -t "$pkgdir/etc/bee-clef"
-	install -Dm644 lib/systemd/system/bee-clef.service -t "$pkgdir/usr/lib/systemd/system"
-	install -Dm755 usr/bin/bee-clef-{keys,service} -t "$pkgdir/usr/bin"
-	install -Dm755 usr/bin/clef -t "$pkgdir/usr/bin"
-}

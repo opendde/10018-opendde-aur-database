@@ -1,7 +1,0 @@
-build() {
-		cd "$srcdir/build"
-		qmake-qt5 ../${_gitname}/BiliLocal.pro
-		make
-		cp ${srcdir}/bililocal-osx/res/*.ts ./
-		lrelease-qt5 *.ts        
-}

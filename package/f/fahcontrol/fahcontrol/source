@@ -1,1 +1,0 @@
-("https://download.foldingathome.org/releases/public/release/${pkgname}/centos-6.7-64bit/v${pkgver%.*}/${pkgname}-${pkgver}-1.noarch.rpm")

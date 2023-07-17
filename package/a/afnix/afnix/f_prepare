@@ -1,3 +1,0 @@
-prepare() {
-  patch -p0 -i ../${pkgname}.patch
-}

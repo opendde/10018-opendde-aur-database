@@ -1,7 +1,0 @@
-package() {
-  install -dm755 "$pkgdir/usr/share/blender/$_blenderver/scripts/addons/edgeflow/"
-  install -Dm644 "$srcdir/EdgeFlow"/* "$pkgdir/usr/share/blender/$_blenderver/scripts/addons/edgeflow/"
-
-  install -dm755 "$pkgdir/usr/share/licenses/$pkgname"
-  install -Dm644 "$srcdir/EdgeFlow/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-}

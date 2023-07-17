@@ -1,6 +1,0 @@
-build() {
-	cd "$_pkgname"
-	echo "If the build fails try 'rustup update stable'"
-	env CARGO_INCREMENTAL=0 cargo build --release --locked
-	cargo run --bin updater
-}

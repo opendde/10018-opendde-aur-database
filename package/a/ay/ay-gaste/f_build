@@ -1,5 +1,0 @@
-build() {
-cd ${srcdir}/${pkgname}
-qmake-qt5 ay-gaste.pro -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug 
-make
-}

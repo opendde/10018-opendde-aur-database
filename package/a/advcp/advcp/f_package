@@ -1,9 +1,0 @@
-package() {
-    cd "${_pkgname}-${pkgver}"
-    install -D src/cp "${pkgdir}/usr/bin/advcp"
-    ln -s advcp "${pkgdir}/usr/bin/acp"
-    ln -s advcp "${pkgdir}/usr/bin/cpg"
-    install -D src/mv "${pkgdir}/usr/bin/advmv"
-    ln -s advmv "${pkgdir}/usr/bin/amv"
-    ln -s advmv "${pkgdir}/usr/bin/mvg"
-}

@@ -1,1 +1,0 @@
-("${pkgname%-*}::git://github.com/Ardour/ardour.git"

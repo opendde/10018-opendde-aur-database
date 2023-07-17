@@ -1,5 +1,0 @@
-build() {
-    cd "${_gitname}/"
-    meson . _build --prefix=/usr
-    ninja -C _build
-}

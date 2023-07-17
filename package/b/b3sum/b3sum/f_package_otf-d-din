@@ -1,5 +1,0 @@
-package_otf-d-din() {
-	pkgdesc+=' OTF'
-	install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname" OFL-1.1.txt
-	install -Dm644 -t "$pkgdir/usr/share/fonts/${_fontname}-otf" *.otf
-}

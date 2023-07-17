@@ -1,9 +1,0 @@
-prepare() {
-	rm -rf "$srcdir/build"
-	mkdir -p "$srcdir/build"
-	cd "$srcdir/build"
-
-	cmake "$srcdir/$_dir" \
-		-DCMAKE_INSTALL_PREFIX=/usr \
-		-DCMAKE_INSTALL_LIBDIR=lib
-}

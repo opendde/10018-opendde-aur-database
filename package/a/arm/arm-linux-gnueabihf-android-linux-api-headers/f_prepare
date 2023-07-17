@@ -1,4 +1,0 @@
-prepare() {
-	cd linux-$_basever
-	[ $pkgver != $_basever ] && patch -p1 -i $srcdir/patch-$pkgver || true
-}

@@ -1,1 +1,0 @@
-("$pkgname-$pkgver-x86_64.tar.gz::$url/releases/download/${_pkg}%40${pkgver}/$_pkg-$pkgver-x86_64-unknown-linux-gnu.tar.gz")

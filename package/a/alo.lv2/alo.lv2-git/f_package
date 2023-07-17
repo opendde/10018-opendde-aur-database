@@ -1,5 +1,0 @@
-package() {
-  cd "${srcdir}/${_pkgname}"
-  mkdir -p $pkgdir/usr/lib/lv2
-  cp -r source/alo.lv2 $pkgdir/usr/lib/lv2
-}

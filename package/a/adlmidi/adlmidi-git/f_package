@@ -1,3 +1,0 @@
-package() {
-  install -Dm755 "${pkgname%-git}/adlmidi" "$pkgdir/usr/bin/adlmidi"
-}

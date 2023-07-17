@@ -1,8 +1,0 @@
-package() {
-
-	# Change directory to source directory
-	cd $pkgname-$pkgver
-
-	# Install files
-	make DESTDIR=$pkgdir install
-}

@@ -1,6 +1,0 @@
-package() {
-  cd "${srcdir}/${_pkgname}"
-  install -d "${pkgdir}/usr/share/themes/${_pkgname}-clone"
-  tar -xf aero-clone.tar.gz -C "${pkgdir}/usr/share/themes"
-  find "${pkgdir}" -name '*~' -delete
-}

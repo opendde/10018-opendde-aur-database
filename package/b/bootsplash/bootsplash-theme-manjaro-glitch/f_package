@@ -1,7 +1,0 @@
-package() {
-  pkgdesc="Simple Manjaro Bootsplash with cool glitch effect"
-  cd "$srcdir"
-
-  install -Dm644 "$srcdir/bootsplash-theme-manjaro-glitch/bootsplash-manjaro-glitch" "$pkgdir/usr/lib/firmware/bootsplash-themes/manjaro-glitch/bootsplash"
-  install -Dm644 "$srcdir/bootsplash-theme-manjaro-glitch/bootsplash-manjaro-glitch.initcpio_install" "$pkgdir/usr/lib/initcpio/install/bootsplash-manjaro-glitch"
-}

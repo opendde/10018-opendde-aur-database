@@ -1,5 +1,0 @@
-package() {
-    cd annie
-    install -Dm755 annie -t "$pkgdir/usr/bin"
-    install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname"
-}

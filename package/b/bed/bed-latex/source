@@ -1,1 +1,0 @@
-("bed-$pkgver.tar.gz::https://framagit.org/delisle/bed/-/archive/v${pkgver}/bed-v${pkgver}.tar.gz")

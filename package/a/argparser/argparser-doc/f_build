@@ -1,4 +1,0 @@
-build() {
-	cd "${srcdir}/argparser-${pkgver}"
-	make DESTDIR="$pkgdir" doc
-}

@@ -1,4 +1,0 @@
-pkgver() {
-  cd adchpp
-  echo "$(bzr revno)"
-}

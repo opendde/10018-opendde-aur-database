@@ -1,9 +1,0 @@
-build() {
-  nativefier \
-    --name "bilibili" \
-    --verbose \
-    --single-instance \
-    --tray \
-    "$url" \
-    "bilibili"
-}

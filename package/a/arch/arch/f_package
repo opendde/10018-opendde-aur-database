@@ -1,4 +1,0 @@
-package() {
-  cd "${srcdir}/tla-${pkgver}/build"
-  make prefix="${pkgdir}/usr" install
-}

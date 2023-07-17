@@ -1,4 +1,0 @@
-build() {
-    cd "${srcdir}"
-    sed -i '/^\s*set_bit(HCI_QUIRK_INVALID_BDADDR, &hdev->quirks);\s*$/d' *.c
-}

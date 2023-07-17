@@ -1,4 +1,0 @@
-package() {
-  mkdir -p "${pkgdir}/usr/include"
-  cp -r compute-${pkgver}/include "${pkgdir}/usr/"
-}

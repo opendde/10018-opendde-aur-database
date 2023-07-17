@@ -1,5 +1,0 @@
-package() {
-mkdir -p "${pkgdir}/usr/bin"
-cp "${srcdir}/aurhelper.sh" "${pkgdir}/usr/bin/aurhelper"
-chmod +x "${pkgdir}/usr/bin/aurhelper"
-}

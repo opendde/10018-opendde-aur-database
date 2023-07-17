@@ -1,4 +1,0 @@
-package() {
-   install -Dm644 ${srcdir}/django_bash_completion  ${pkgdir}/etc/bash_completion.d/django
-
-}

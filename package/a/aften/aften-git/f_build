@@ -1,9 +1,0 @@
-build() {
-  cd build
-  cmake ../aften \
-    -DCMAKE_BUILD_TYPE=None \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DSHARED=ON
-
-  make
-}

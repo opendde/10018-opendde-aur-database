@@ -1,3 +1,0 @@
-package() {
-  install -D -m755 "${srcdir}/boldline/target/release/boldline" "${pkgdir}/usr/bin/boldline"
-}

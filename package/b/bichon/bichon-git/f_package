@@ -1,4 +1,0 @@
-package() {
-  cd "$_pkgname" || exit 1
-  GOBIN="$pkgdir"/usr/bin/ go install
-}

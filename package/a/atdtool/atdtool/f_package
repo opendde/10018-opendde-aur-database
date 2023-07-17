@@ -1,6 +1,0 @@
-package() {
-  cd "${srcdir}/${pkgname}-upstream-${pkgver}"
-  python2 setup.py install --root="$pkgdir" --optimize=1 --skip-build
-  mkdir -p "$pkgdir/usr/share/licenses/$pkgname"
-  install -D -m644 "${srcdir}/${pkgname}-upstream-${pkgver}/COPYING" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-}

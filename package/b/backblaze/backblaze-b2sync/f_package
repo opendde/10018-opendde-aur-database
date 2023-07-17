@@ -1,5 +1,0 @@
-package() {
-    cd ${srcdir}/b2sync_src
-
-    install -D b2sync ${pkgdir}/usr/bin/b2sync
-}

@@ -1,4 +1,0 @@
-package() {
-	cd "$srcdir/${pkgname%-git}/src"
-	INSTALL_ROOT="$pkgdir/" make DESTDIR="$pkgdir/" install
-}

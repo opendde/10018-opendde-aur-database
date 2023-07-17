@@ -1,5 +1,0 @@
-package() {
-  install -Dm644 "${srcdir}/arxiv-open.desktop" "${pkgdir}/usr/share/applications/arxiv-open.desktop"
-  install -Dm755 "${srcdir}/arxiv-open" "${pkgdir}/usr/bin/arxiv-open"
-  install -Dm644 "${srcdir}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}

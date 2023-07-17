@@ -1,4 +1,0 @@
-build() {
-	cd "$srcdir/$_pkgname"
-	faust2lv2 ABswitchStereo.dsp
-}

@@ -1,4 +1,0 @@
-pkgver() {
-    cd amarok
-    git describe --always | sed 's|-|.|g'
-}

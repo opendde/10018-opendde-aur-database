@@ -1,4 +1,0 @@
-check() {
-  cd "${srcdir}/airsonic-advanced"
-  mvn test
-}

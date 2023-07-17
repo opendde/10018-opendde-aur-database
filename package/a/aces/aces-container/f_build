@@ -1,8 +1,0 @@
-build() {
-  mkdir -p "${srcdir}/build" && cd "${srcdir}/build"
-  cmake "../${_srcname}-${pkgver}" \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
-    -DCMAKE_BUILD_TYPE=Release
-  make
-}

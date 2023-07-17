@@ -1,5 +1,0 @@
-package() {
-    cd "${srcdir}/${_pkgname}"
-    install -Dm 755 "target/release/${_shortname}" "${pkgdir}/usr/bin/${_shortname}"
-    install -Dm 644 README.md "${pkgdir}/usr/share/doc/${_shortname}/README.md"
-}

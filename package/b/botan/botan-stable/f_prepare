@@ -1,4 +1,0 @@
-prepare() {
-  # Use python2 for the installation scripts
-  find . -name '*.py' -exec sed -i -e '1s,python$,python2,' {} +
-}

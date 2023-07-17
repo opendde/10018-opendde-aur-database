@@ -1,7 +1,0 @@
-build() {
-    if [[ "$CARCH" == "i686" ]]; then
-      ar x "${srcdir}/${_pkgname}_i386.deb"
-    else
-      ar x "${srcdir}/${_pkgname}_amd64.deb"
-    fi
-}

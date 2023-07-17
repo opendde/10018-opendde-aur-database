@@ -1,7 +1,0 @@
-package() {
-  local _game="${pkgdir}/usr/games/${_app_id}"
-  install -Dm644 "${_uuid}.bin" "${_game}/${_uuid}.bin"
-  install -Dm644 "${_uuid}.cue" "${_game}/${_uuid}.cue"
-  install -Dm755 "${_app_id}.desktop" "${pkgdir}/usr/share/applications/${_app_id}.desktop"
-  install -Dm644 "${_app_id}.png" "${pkgdir}/usr/share/icons/${_app_id}.png"
-}

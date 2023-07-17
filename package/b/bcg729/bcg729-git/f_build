@@ -1,7 +1,0 @@
-build() {
-  cd ${_pkgname}
-  cmake -DCMAKE_INSTALL_PREFIX=/usr \
-      -DENABLE_STATIC=NO \
-      -DCMAKE_INSTALL_LIBDIR="/usr/lib" .
-  make
-}

@@ -1,5 +1,0 @@
-build() {
-  cd $pkgname
-  export PREFIX=/usr
-  make 
-}

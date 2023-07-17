@@ -1,4 +1,0 @@
-check() {
-  cd aria2-${pkgver}
- # make check
-}

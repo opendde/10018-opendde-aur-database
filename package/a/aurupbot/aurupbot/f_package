@@ -1,6 +1,0 @@
-package() {
-  mkdir -p "$pkgdir/usr/bin"
-  install "$srcdir/$pkgname-$pkgver/aurupbot" "$pkgdir/usr/bin/aurupbot" -m 755 || return 1
-  mkdir -p "$pkgdir/etc"
-  install "$srcdir/$pkgname-$pkgver/aurupbotrc" "$pkgdir/etc/$aurupbotrc" -m 644 || return 1
-}

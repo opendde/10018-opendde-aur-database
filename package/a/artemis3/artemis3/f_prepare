@@ -1,5 +1,0 @@
-prepare() {
-  cd "${srcdir}/Artemis-${pkgver}"
-
-  patch -Np0 -i "${srcdir}/fixbuild.patch"
-}

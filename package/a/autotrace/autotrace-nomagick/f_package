@@ -1,3 +1,0 @@
-package() {
-    make -C "autotrace-travis-${_date}.${_build}" DESTDIR="$pkgdir" install
-}

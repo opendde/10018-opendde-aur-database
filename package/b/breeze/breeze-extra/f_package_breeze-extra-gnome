@@ -1,4 +1,0 @@
-package_breeze-extra-gnome() {
-  install -d "$pkgdir/usr/share/icons/"
-  cp -r "$pkgbase/$pkgname" "$pkgdir/usr/share/icons/"
-}

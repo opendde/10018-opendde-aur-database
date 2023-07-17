@@ -1,5 +1,0 @@
-build() {
-  cd "$srcdir/$_gitname"
-
-  cargo build --release
-}

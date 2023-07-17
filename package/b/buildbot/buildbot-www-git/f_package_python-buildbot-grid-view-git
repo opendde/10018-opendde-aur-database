@@ -1,9 +1,0 @@
-package_python-buildbot-grid-view-git() {
-  pkgdesc="Buildbot Grid View plugin"
-  depends=('buildbot-git')
-  provides=("python-buildbot-grid-view=$pkgver")
-  conflicts=('python-buildbot-grid-view')
-
-  cd buildbot/www/grid_view
-  python setup.py install --root="$pkgdir" --optimize=1 --skip-build
-}

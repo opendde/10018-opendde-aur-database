@@ -1,1 +1,0 @@
-(${pkgname}::git+${_github_url}.git)

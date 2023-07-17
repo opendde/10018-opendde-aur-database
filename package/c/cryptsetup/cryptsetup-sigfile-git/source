@@ -1,1 +1,0 @@
-("https://www.kernel.org/pub/linux/utils/${_pkgbase}/v${pkgver%.*}/${_pkgbase}-${pkgver}.tar."{xz,sign}

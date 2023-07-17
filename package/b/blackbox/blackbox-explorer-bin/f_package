@@ -1,6 +1,0 @@
-package() {
-  mkdir -p "${pkgdir}/opt/${_pkgname}"
-  mkdir -p "${pkgdir}/usr/bin"
-  cp -r --preserve=all "${srcdir}/Betaflight Blackbox Explorer/." "${pkgdir}/opt/${_pkgname}"
-  ln -s "/opt/${_pkgname}/betaflight-blackbox-explorer" "$pkgdir/usr/bin/${_pkgname}"
-}

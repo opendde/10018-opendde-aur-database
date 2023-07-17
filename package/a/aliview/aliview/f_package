@@ -1,6 +1,0 @@
-package() {
-	cd "$srcdir/aliview"
-	mkdir -p $pkgdir/usr/bin
-	mkdir -p $pkgdir/usr/share
-	./install.sh
-}

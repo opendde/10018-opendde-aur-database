@@ -1,4 +1,0 @@
-build() {
-	cd "$srcdir/$pkgname-$pkgname-$pkgver"
-	JAVA_HOME=/usr/lib/jvm/java-11-openjdk mvn package -Djacoco.skip=true
-}

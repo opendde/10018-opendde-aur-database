@@ -1,5 +1,0 @@
-package() {
-    cd ${srcdir}/${pkgname}-${pkgver}
-    cp -fr etc ${pkgdir}/
-    cp -fr usr ${pkgdir}/
-}

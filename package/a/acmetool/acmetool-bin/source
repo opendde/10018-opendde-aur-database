@@ -1,1 +1,0 @@
-("${pkgname}-v${pkgver}.tar.gz::https://github.com/hlandau/acme/releases/download/v${pkgver}/acmetool-v${pkgver}-linux_amd64_cgo.tar.gz"

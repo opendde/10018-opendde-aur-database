@@ -1,4 +1,0 @@
-build() {
-    cd $srcdir/
-    tar -xvf $srcdir/amdguid-glow-1.0.11.tar.gz
-}

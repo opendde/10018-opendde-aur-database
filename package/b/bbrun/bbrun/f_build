@@ -1,4 +1,0 @@
-build() {
-  cd $pkgname-$pkgver/$pkgname
-  make LIBS="-lXpm `pkg-config --libs gtk+-2.0` -lX11 -lXext"
-}

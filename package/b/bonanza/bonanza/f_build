@@ -1,5 +1,0 @@
-build() {
-  cd ${pkgname}_v$pkgver/src/client
-
-  make gcc
-}

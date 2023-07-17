@@ -1,5 +1,0 @@
-check() {
-  cd "$pkgname-$_releasever"
-
-  ./aws-saml --version
-}

@@ -1,1 +1,0 @@
-("$pkgname-$pkgver.tar.gz::https://github.com/venth/aws-adfs/releases/download/v$pkgver/aws_adfs-$pkgver.tar.gz")

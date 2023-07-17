@@ -1,5 +1,0 @@
-install_files() {
-    _pkgname="${pkgname}"
-    cd "${srcdir}/${extracted}/${_pkgname}"
-    install -m 755 -D "${_pkgname}" "${pkgdir}/usr/bin/${_pkgname}"
-}

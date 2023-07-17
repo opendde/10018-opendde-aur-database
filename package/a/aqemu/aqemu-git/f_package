@@ -1,4 +1,0 @@
-  package() {
-    cd "$srcdir/aqemu/builddir"
-    DESTDIR="$pkgdir" ninja install
-}

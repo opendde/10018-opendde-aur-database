@@ -1,4 +1,0 @@
-package() {
-    cd "${pkgname}-${pkgver}+${_launchpad_rel}"
-    DESTDIR="${pkgdir}" ninja -C build install
-}

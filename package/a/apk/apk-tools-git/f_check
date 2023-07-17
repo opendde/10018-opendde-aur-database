@@ -1,5 +1,0 @@
-check() {
-  cd "apk-tools"
-
-  meson test -C "_build"
-}

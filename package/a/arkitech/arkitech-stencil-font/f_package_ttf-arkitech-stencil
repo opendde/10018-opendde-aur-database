@@ -1,4 +1,0 @@
-package_ttf-arkitech-stencil() {
-	install -Dm0644 -t "$pkgdir/usr/share/fonts/TTF/" *.ttf
-	install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname/" FFPU.txt
-}

@@ -1,5 +1,0 @@
-install_license() {
-    _pkgname="${pkgname}"
-    cd "${srcdir}/${extracted}/"
-    install -m 755 -D "LICENSE.md" "${pkgdir}/usr/share/licenses/${_pkgname}/LICENSE.md"
-}

@@ -1,3 +1,0 @@
-package() {
-    cp -r ${srcdir}/${pkgfolder}/_build/_package/* ${pkgdir}
-}

@@ -1,5 +1,0 @@
-_fn_post_install() {
-  echo "Test the system with"
-  echo "  sudo -u '\${_amandauser}' amcheck 'MyConfig'"
-  echo "  su -c \"su \${_amandauser} -c 'amcheck MyConfig'\""
-}

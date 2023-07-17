@@ -1,4 +1,0 @@
-package() {
-    cd 1oom
-    make PREFIX="/usr" DESTDIR="${pkgdir}" install
-}

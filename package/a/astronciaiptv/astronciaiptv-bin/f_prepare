@@ -1,4 +1,0 @@
-prepare() {
-        cd astronciaiptv-${pkgver}
-        sed -i "s/__DEB_VERSION__/${pkgver}/g" usr/lib/astronciaiptv/astroncia_iptv.py
-}

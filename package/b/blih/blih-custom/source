@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz::https://github.com/Seres67/${pkgname}/releases/download/v${pkgver}/v${pkgver}.tar.gz")

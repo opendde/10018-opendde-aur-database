@@ -1,5 +1,0 @@
-pkgver() {
-    cd "$pkgname"
-    git describe --long --tags --abrev=7 |
-        sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
-}

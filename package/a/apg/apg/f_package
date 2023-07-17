@@ -1,8 +1,0 @@
-package() {
-  cd "$srcdir"/$pkgname-$pkgver
-  for i in apg apgbfm; do
-    install -D -m755 $i "$pkgdir"/usr/bin/$i
-    install -D -m644 doc/man/$i.1 "$pkgdir"/usr/share/man/man1/$i.1
-  done
-  install -D -m 644 COPYING "$pkgdir"/usr/share/licenses/$pkgname/COPYING
-}

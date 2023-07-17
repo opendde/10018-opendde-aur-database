@@ -1,5 +1,0 @@
-package() {
-    local prefix="/usr/share/aegisub/automation"
-
-    install -D -m644 "Yutils-${pkgver}.lua" "${pkgdir}${prefix}/include/Yutils.lua"
-}

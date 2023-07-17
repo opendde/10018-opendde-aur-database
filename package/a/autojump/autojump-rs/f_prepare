@@ -1,5 +1,0 @@
-prepare() {
-    cd "autojump-release-v${_autojump_version}"
-    sed -i "s:/env python:/python3:g" bin/autojump
-    sed -i "/print('\\\\n\\\\t' + source_msg)/ s@source_msg@source_msg.replace('$pkgdir', '')@" install.py
-}

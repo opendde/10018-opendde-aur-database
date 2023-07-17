@@ -1,4 +1,0 @@
-package() {
-	cd "$srcdir/afpfs-ng"
-	make DESTDIR="$pkgdir/" prefix="/usr/" install
-}

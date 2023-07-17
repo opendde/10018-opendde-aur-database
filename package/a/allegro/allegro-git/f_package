@@ -1,8 +1,0 @@
-package() {
-  cd build
-  make DESTDIR="$pkgdir" install
-  install -Dm644 "$srcdir"/allegro5/LICENSE.txt -t "$pkgdir"/usr/share/licenses/allegro
-
-  # Fix man path
-  mv -v -f "$pkgdir/usr/man" "$pkgdir/usr/share/man"
-}

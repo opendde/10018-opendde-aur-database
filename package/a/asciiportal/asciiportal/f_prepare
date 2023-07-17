@@ -1,5 +1,0 @@
-prepare() {
-  # Generate desktop shortcut and icon
-  gendesk -n -f --pkgname "$pkgname" --pkgdesc "$pkgdesc" --name 'ASCIIpOrtal' --exec "$pkgname"
-  convert "${pkgname}0.png" -resize 48x48\! "$pkgname.png"
-}

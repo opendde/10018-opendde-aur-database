@@ -1,3 +1,0 @@
-check() {
-  GOPATH="$GOPATH:$srcdir" go test -v -x ${_gourl}
-}

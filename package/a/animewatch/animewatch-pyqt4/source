@@ -1,1 +1,0 @@
-("https://github.com/kanishka-linux/"${_pkgname}"/archive/v"${pkgver}-${pkgrel}".zip")

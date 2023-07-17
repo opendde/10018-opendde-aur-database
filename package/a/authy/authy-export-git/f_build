@@ -1,9 +1,0 @@
-build() {
-    cd ${srcdir}/${_gitname}
-    go build \
-        -buildmode=pie \
-        -trimpath \
-        -mod=readonly \
-        -modcacherw \
-        -v -o $_bin cmd/authy-export/authy-export.go
-}

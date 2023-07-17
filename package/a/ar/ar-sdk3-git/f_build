@@ -1,5 +1,0 @@
-build() {
-  cd "${srcdir}"
-   ./build.sh -p arsdk-native -t build-sdk -j
-   # out/arsdk-native/staging
-}

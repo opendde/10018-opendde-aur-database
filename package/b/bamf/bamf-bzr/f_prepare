@@ -1,5 +1,0 @@
-prepare() {
-  cd bamf
-
-  sed -i 's|^#!.*python$|#!/usr/bin/python2|' tests/gtester2xunit.py
-}

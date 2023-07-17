@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz::https://github.com/guptarohit/asciigraph/releases/download/v${pkgver}/asciigraph_${pkgver}_Linux_${arch}.tar.gz")

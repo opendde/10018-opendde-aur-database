@@ -1,6 +1,0 @@
-prepare() {
-	_clang=$(which clang)
-	_gcc=$(which gcc)
-	_clangcxx=$(which clang++)
-	_onlinecpus=$(nproc --all)
-}

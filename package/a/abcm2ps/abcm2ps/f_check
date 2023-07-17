@@ -1,5 +1,0 @@
-check() {
-  cd $pkgname-$pkgver
-  rm -f *.ps
-  make -j1 test
-}

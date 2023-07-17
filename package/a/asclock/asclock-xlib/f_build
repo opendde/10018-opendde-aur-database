@@ -1,5 +1,0 @@
-build() {
-  cd "$srcdir/$_pkgname-$pkgver"
-  make clean
-  make
-}

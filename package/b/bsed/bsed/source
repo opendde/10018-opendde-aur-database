@@ -1,1 +1,0 @@
-("bsed-${pkgver}.tar.gz::https://github.com/andrewbihl/bsed/archive/${pkgver}.tar.gz")

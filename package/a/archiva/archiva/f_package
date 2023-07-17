@@ -1,8 +1,0 @@
-package() {
-  cd "$srcdir"
-  sed -i 's/8080/8081/' apache-archiva-$pkgver/conf/jetty.xml
-  mkdir -p "$pkgdir/usr/share/java/archiva"
-  cp -r apache-archiva-$pkgver/* "$pkgdir/usr/share/java/archiva"
-  chmod 444 "$pkgdir/usr/share/java/archiva"
-  install -Dm644 archiva.service "$pkgdir/usr/lib/systemd/system/archiva.service"
-}

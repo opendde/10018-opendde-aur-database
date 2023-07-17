@@ -1,5 +1,0 @@
-build() {
-	cd "${srcdir}/${pkgname}"
-  make os=linux libantumbra.so
-  make os=linux antumbratool
-}

@@ -1,5 +1,0 @@
-check() {
-  cd "c-blosc"
-
-  #make tests
-}

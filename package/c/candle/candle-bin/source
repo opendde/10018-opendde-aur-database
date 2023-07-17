@@ -1,1 +1,0 @@
-("${pkgname%-bin}-${pkgver}.tar.gz::https://github.com/Denvi/Candle/releases/download/v1.1/Candle_${pkgver}.tar.gz")

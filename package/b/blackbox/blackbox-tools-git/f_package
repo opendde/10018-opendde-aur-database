@@ -1,7 +1,0 @@
-package() {
-  # executable
-   cd $_pkgname
-   install -Dm755 obj/blackbox_decode "$pkgdir/usr/bin/blackbox_decode"
-   install -Dm755 obj/blackbox_render "$pkgdir/usr/bin/blackbox_render"
-   install -Dm755 obj/encoder_testbed "$pkgdir/usr/bin/encoder_testbed"
-}

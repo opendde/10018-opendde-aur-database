@@ -1,6 +1,0 @@
-prepare() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-
-  ./autogen.sh
-  patch -Np1 -i "${srcdir}/fix-20.patch"
-}

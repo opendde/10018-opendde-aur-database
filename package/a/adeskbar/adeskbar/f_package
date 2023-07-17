@@ -1,7 +1,0 @@
-package() {
-  mkdir -p "$pkgdir/usr/share/$pkgname"
-  cp -R "$srcdir/$pkgname/src/"* "$pkgdir/usr/share/$pkgname"
-  patch "$pkgdir/usr/share/$pkgname/default.cfg" < "$srcdir/remove_launcher_menu.patch"
-  install -Dm755 "$srcdir/adeskbar.sh" "$pkgdir/usr/bin/adeskbar"
-  install -Dm644 "$srcdir/$pkgname/adeskbar.desktop" "$pkgdir/usr/share/applications/adeskbar.desktop"
-}

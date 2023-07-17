@@ -1,9 +1,0 @@
-package() {
-    cd "$srcdir/ada_libfswatch"
-
-	make install DESTDIR="$pkgdir/usr"
-
-    # gprinstall installs a soft link for /usr/lib/libfswatch.so which is already owned by fswatch
-    # Remove it
-    rm "$pkgdir/usr/lib/libfswatch.so"
-}

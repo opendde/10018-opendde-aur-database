@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.xz::https://github.com/flatpak/flatpak-xdg-utils/releases/download/${pkgver}/flatpak-xdg-utils-${pkgver}.tar.xz")

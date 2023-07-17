@@ -1,5 +1,0 @@
-build() {
-  cd "bikeshed"
-
-  python setup.py build
-}

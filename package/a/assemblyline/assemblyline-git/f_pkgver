@@ -1,5 +1,0 @@
-pkgver() {
-  cd "${pkgname%-git}"
-  version=$(grep AC_INIT <./configure.ac | awk -F'[\\[\\]]' '{print $4}')
-  printf "${version}.r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)" | tr "-" "_"
-}

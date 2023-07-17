@@ -1,5 +1,0 @@
-package() {
-  cd "$srcdir/${pkgname}"
-  install -d "${pkgdir}/usr/bin"
-  install -t "${pkgdir}/usr/bin" bl-*
-}

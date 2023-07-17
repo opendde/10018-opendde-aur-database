@@ -1,5 +1,0 @@
-package() {
-  mkdir -p "$pkgdir/opt" "$pkgdir/usr/bin"
-  mv "$pkgname-$pkgver/dist/production/linux-unpacked" "$pkgdir/opt/bdash"
-  ln -s /opt/bdash/bdash "$pkgdir/usr/bin/bdash"
-}

@@ -1,8 +1,0 @@
-build() {
-  cd "$_pkgname-$pkgver"
-  export CC="$_target-gcc"
-  ./configure --prefix="$_sysroot" --sysroot="$_sysroot" \
-    --bindir=/usr/bin --target="$_target" \
-    --enable-wrapper=all
-  make
-}

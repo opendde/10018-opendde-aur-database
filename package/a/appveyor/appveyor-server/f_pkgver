@@ -1,3 +1,0 @@
-pkgver() {
-    bash "${srcdir}/${source[1]}" out
-}

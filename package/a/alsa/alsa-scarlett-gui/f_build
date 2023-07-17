@@ -1,8 +1,0 @@
-build() {
-  cd "$pkgname"
-
-  make \
-    -C src \
-    PREFIX=/usr \
-    VERSION="$pkgver"
-}

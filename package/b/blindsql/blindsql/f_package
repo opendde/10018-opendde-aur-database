@@ -1,9 +1,0 @@
-package() {
-	cd "${srcdir}/blindsql.v1.0"
-	install -dm755 "${pkgdir}/usr/bin"
-        install -dm755 "${pkgdir}/usr/share/${pkgname}"
-        chmod +x "sqldata.sh" && chmod +x "sqlcheck.sh"
-        cp "sqldata.sh" "${pkgdir}/usr/bin/sqldata"
-        cp "sqlcheck.sh" "${pkgdir}/usr/bin/sqlcheck"
-        cp "readme.txt" "${pkgdir}/usr/share/${pkgname}/"
-}

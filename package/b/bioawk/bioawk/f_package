@@ -1,4 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname-${pkgver}"
-  install -Dm755 bioawk "$pkgdir/usr/bin/bioawk"
-}

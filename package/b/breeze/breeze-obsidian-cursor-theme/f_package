@@ -1,8 +1,0 @@
-package() {
-    cd $srcdir/Breeze_Obsidian
-    install -d $pkgdir/usr/share/icons/Breeze_Obsidian
-    cp -rf *   $pkgdir/usr/share/icons/Breeze_Obsidian
-    chmod -R 644 $pkgdir/usr/share/icons/Breeze_Obsidian/*
-    chmod 755 $pkgdir/usr/share/icons/Breeze_Obsidian
-    chmod 755 $pkgdir/usr/share/icons/Breeze_Obsidian/cursors
-}

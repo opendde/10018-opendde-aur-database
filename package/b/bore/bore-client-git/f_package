@@ -1,4 +1,0 @@
-package() {
-    cd bore
-    install -Dm755 build/bore "${pkgdir}"/usr/bin/bore
-}

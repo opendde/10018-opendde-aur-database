@@ -1,8 +1,0 @@
-package() {
-  mkdir -p "${pkgdir}/usr/local/bin"
-  cd "${pkgname}-v${pkgver}-x86_64-unknown-linux-gnu"
-  install -Dm755 "${pkgname}" "$pkgdir/usr/local/bin/${pkgname}"
-  install -Dvm644 'README.md' -t "${pkgdir}/usr/share/doc/${pkgname}"
-  install -Dvm644 'LICENSE-APACHE' -t "${pkgdir}/usr/share/licenses/${pkgname}"
-  install -Dvm644 'LICENSE-MIT' -t "${pkgdir}/usr/share/licenses/${pkgname}"
-}

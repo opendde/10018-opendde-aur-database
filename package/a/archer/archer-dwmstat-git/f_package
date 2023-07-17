@@ -1,4 +1,0 @@
-package() {
-	cd archer-dwmstat
-	make PREFIX=/usr DESTDIR="$pkgdir/" install
-}

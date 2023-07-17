@@ -1,6 +1,0 @@
-build() {
-  mkdir -p "$srcdir/$pkgname-$pkgver/build/"
-  cd "$srcdir/$pkgname-$pkgver/build/"
-  qmake ../bbswitch-monitor.pro PREFIX=/usr/local
-  make VERSION=$pkgver DESTDIR="$pkgdir" PREFIX=/usr/local
-}

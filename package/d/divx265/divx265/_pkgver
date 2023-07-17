@@ -1,1 +1,0 @@
-"${pkgver:0:1}_${pkgver:2:1}_${pkgver:4:1}"

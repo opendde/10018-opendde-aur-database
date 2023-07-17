@@ -1,4 +1,0 @@
-package() {
-    mv "${srcdir}/${pkgname}/dist/usr" "${pkgdir}/usr"
-    mv "${srcdir}/${pkgname}/dist/opt" "${pkgdir}/opt"
-}

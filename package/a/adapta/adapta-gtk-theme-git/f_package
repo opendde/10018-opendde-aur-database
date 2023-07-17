@@ -1,8 +1,0 @@
-package() {
-  cd adapta-gtk-theme
-
-  make DESTDIR="${pkgdir}" install
-
-  install -dm 755 "${pkgdir}"/usr/share/plank/themes
-  ln -s /usr/share/themes/Adapta/plank "${pkgdir}"/usr/share/plank/themes/Adapta
-}

@@ -1,4 +1,0 @@
-package() {
-    install -m 755 -D "${srcdir}/${pkgname}-${pkgver}/autobright.initd" "$pkgdir/etc/init.d/autobright"
-    install -m 755 -D "${srcdir}/${pkgname}-${pkgver}/autobright.confd" "$pkgdir/etc/conf.d/autobright"
-}

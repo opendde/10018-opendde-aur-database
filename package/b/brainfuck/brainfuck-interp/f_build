@@ -1,4 +1,0 @@
-build() {
-	cd brainfuck-master
-	cargo build --release
-}

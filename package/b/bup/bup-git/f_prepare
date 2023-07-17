@@ -1,6 +1,0 @@
-prepare() {
-	cd "${srcdir}/${pkgname}"
-
-	# Configure the program to use python3 everywhere
-	PYTHON=/usr/bin/python3 ./configure
-}

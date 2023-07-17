@@ -1,4 +1,0 @@
-build() {
-  cd "$srcdir/boolector-java-3.2.6"
-  make
-}

@@ -1,7 +1,0 @@
-build() {
-  cd "$srcdir"
-  local _type
-  for _type in bold italic bolditalic; do
-    "mk$_type" "unifont-$pkgver.bdf" | gzip -c >"unifont-$_type-$pkgver.bdf.gz"
-  done
-}

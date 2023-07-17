@@ -1,5 +1,0 @@
-prepare() {
-    cd "${srcdir}"
-    chmod -R a=r,a+X,u+w .
-    patch -p0 --binary -i "${source[1]}"
-}

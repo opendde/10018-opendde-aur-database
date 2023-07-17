@@ -1,7 +1,0 @@
-build() {
-  cd "${pkgname}"
-  
-  # static build is necessary for some packages and programs (e. g. GAMESS)
-  ./configure --prefix=/usr --enable-static --enable-shared --enable-threading=openmp auto
-  make
-}

@@ -1,4 +1,0 @@
-pkgver() {
-    cd "$srcdir/glTF-Blender-Exporter"
-    git describe --long --always | sed -r 's/([^-]*-g)/r\1/;s/-/./g'
-}

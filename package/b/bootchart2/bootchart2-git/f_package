@@ -1,5 +1,0 @@
-package() {
-	cd "${srcdir}/${pkgname%2-git}"
-
-	make PROGRAM_SUFFIX=2 DESTDIR="${pkgdir}" PYTHON=python2 PY_LIBDIR=/usr/lib/python2.7 EARLY_PREFIX=/usr install
-}

@@ -1,6 +1,0 @@
-prepare() {
-  cd $pkgname
-
-  # Remove unnecessary init.d directory
-  sed -i '/init\.d/s|^|#|' misc/Makefile.in
-}

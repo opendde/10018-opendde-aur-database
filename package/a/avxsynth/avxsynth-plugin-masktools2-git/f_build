@@ -1,5 +1,0 @@
-build() {
-
-  LDFLAGS+=",-z,noexecstack"
-  make -C "${_plug}"
-}

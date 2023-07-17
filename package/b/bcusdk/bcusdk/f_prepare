@@ -1,4 +1,0 @@
-prepare() {
-    cd "${srcdir}/${pkgbase}-${pkgver}"
-    patch -p1 -i ${srcdir}/eibd.patch
-}

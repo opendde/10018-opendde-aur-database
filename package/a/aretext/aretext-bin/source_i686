@@ -1,1 +1,0 @@
-("$url/releases/download/v$pkgver/${_pkgname}_${pkgver}_linux_386.tar.gz")

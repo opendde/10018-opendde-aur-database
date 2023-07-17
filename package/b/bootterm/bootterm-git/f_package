@@ -1,4 +1,0 @@
-package() {
-	cd "$srcdir/bootterm"
-	make V=1 DESTDIR="$pkgdir" PREFIX=/usr install
-}

@@ -1,6 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname"
-  mkdir -p ~/".$pkgname"/users
-  cp -u "$pkgname"/users/* ~/".$pkgname"/users
-  python setup.py install --prefix=/usr --root="$pkgdir"
-}

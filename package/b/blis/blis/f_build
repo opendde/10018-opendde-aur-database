@@ -1,5 +1,0 @@
-build() {
-  cd $pkgname-$pkgver
-  CFLAGS+=" -fPIC" ./configure -p "${pkgdir}"/usr auto
-  make
-}

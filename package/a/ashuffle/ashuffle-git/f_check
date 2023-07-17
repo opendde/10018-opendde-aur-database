@@ -1,5 +1,0 @@
-check() {
-  cd "ashuffle"
-
-  ninja -C builddir test
-}

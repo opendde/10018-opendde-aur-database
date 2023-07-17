@@ -1,8 +1,0 @@
-build() {
-   cd ${srcdir}/${_gitname}
-   mkdir build && cd build
-   cmake .. 
-   
-   make
-   
-}

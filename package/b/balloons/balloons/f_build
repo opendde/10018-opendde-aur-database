@@ -1,9 +1,0 @@
-build() {
-  cd $pkgname-0.1.8-3
-
-  LIBS="$LIBS $(sdl-config --libs)" \
-  CXXFLAGS="$CXXFLAGS $(sdl-config --cflags)" \
-    ./configure --prefix=/usr
-
-  make
-}

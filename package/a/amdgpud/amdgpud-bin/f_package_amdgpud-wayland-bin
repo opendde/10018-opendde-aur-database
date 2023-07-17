@@ -1,8 +1,0 @@
-package_amdgpud-wayland-bin() {
-	pkgdesc+=' -- Wayland version'
-	provides+=('amdguid-wayland')
-	conflicts+=('amdguid-glow')
-
-	install -D wayland/amdguid -t "$pkgdir/usr/bin/"
-	_package
-}

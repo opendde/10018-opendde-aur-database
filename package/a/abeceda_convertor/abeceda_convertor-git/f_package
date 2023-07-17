@@ -1,6 +1,0 @@
-package() {
-  cd $srcdir/$_pkgname
-  install -Dm755 abeceda.py ${pkgdir}/usr/bin/abeceda.py
-  install -Dm644 abeceda_convertor.desktop ${pkgdir}/usr/share/applications/abeceda_convertor.desktop
-  install -Dm644 abeceda_convertor.svg ${pkgdir}/usr/share/pixmaps/abeceda_convertor.desktop.svg
-}

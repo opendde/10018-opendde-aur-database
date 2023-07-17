@@ -1,1 +1,0 @@
-("${pkgname}::git+https://github.com/ritze/dup.git#branch=master")

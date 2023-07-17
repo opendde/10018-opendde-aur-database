@@ -1,5 +1,0 @@
-prepare() {
-  cd "$srcdir/asc-${pkgver}.0"
-  # Music files are provided separately by upstream.
-  cp "$srcdir"/*.ogg data/music/
-}

@@ -1,5 +1,0 @@
-package() {
-  cd "$pkgname"
-  sed -i 's_/usr/games_/usr/bin_g' Makefile
-  make DESTDIR="$pkgdir/" install
-}

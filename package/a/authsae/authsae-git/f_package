@@ -1,8 +1,0 @@
-package() {
-  cd "${srcdir}/${_pkgname}"
-  make DESTDIR="${pkgdir}" install
-
-  for _docfile in 'PORTING.md' 'README.md'; do
-    install -D -v -m644 "${_docfile}" "${pkgdir}/usr/share/doc/${_pkgname}/${_docfile}"
-  done
-}

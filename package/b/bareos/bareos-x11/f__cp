@@ -1,4 +1,0 @@
-_cp() {
-  mkdir -p "$(dirname $2)"
-  cp -a "$1" "$2"
-}

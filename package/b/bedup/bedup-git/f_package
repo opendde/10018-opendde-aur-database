@@ -1,4 +1,0 @@
-package() {
-  cd "${srcdir}/bedup.git"
-  python setup.py install --root "${pkgdir}"
-}

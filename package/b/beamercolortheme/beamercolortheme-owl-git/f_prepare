@@ -1,5 +1,0 @@
-prepare() {
-    # Fix Makefile dependencies / rule order of execution
-    cd "$srcdir/${_pkgname}"
-    git apply $srcdir/0001-Makefile-fix-order-of-execution.patch
-}

@@ -1,3 +1,0 @@
-package() {
-    install -D booklet $pkgdir/usr/bin/booklet
-}

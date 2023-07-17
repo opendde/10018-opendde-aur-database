@@ -1,8 +1,0 @@
-build() {
-  cd "$srcdir/trunk"
-
-  ./configure --prefix=/usr \
-              --disable-static \
-		--with-ffmpeg
-  make
-}

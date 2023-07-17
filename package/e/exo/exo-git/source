@@ -1,1 +1,0 @@
-("${_pkgname}::git+https://gitlab.xfce.org/xfce/${_pkgname}.git")

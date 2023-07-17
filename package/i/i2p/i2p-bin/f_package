@@ -1,8 +1,0 @@
-package() {
-	cd "$srcdir/h2o"
-
-	install -Dm 644 LICENSE "$pkgdir/usr/share/licenses/h2o/LICENSE"
-	install -Dm 644 "$srcdir/h2o.service" "$pkgdir/usr/lib/systemd/system/h2o.service"
-	install -Dm 644 examples/h2o/h2o.conf "$pkgdir/etc/h2o.conf"
-	make DESTDIR="$pkgdir" install
-}

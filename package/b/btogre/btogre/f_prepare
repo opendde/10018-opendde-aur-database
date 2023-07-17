@@ -1,6 +1,0 @@
-prepare() {
-  cd "${srcdir}/${pkgname}"
-
-  patch -Np1 -i "${srcdir}/cmake-targets.patch"
-  patch "${srcdir}/${pkgname}/BtOgre.cpp" "${srcdir}/BtOgre.cpp.patch"
-}

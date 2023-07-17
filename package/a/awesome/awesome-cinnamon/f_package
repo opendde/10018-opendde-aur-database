@@ -1,6 +1,0 @@
-package() {
-    cd $srcdir
-    install -Dm644 $srcdir/${source[2]} $pkgdir/usr/share/cinnamon-session/sessions/${source[2]}
-    install -Dm644 $srcdir/${source[1]} $pkgdir/usr/share/applications/${source[1]}
-    install -Dm644 $srcdir/${source[0]} $pkgdir/usr/share/xsessions/${source[0]}
-}

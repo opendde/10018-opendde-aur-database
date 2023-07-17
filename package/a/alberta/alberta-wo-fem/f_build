@@ -1,8 +1,0 @@
-build() {
-    cd "${_pkgname}-${pkgver}"
-
-    ./configure --prefix=/usr --libexecdir=/usr/lib \
-        --disable-fem-toolbox --disable-graphics --disable-dependency-tracking --disable-debug
-
-    make
-}

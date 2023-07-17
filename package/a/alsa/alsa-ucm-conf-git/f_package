@@ -1,8 +1,0 @@
-package() {
-  cd $srcdir/${pkgbasename}
-  install -vdm 755 "${pkgdir}/usr/share/alsa/"
-  cp -av ucm2 "${pkgdir}/usr/share/alsa/"
-  install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgbasename"
-  install -vDm 644 README.md -t "$pkgdir/usr/share/doc/$pkgbasename"
-  install -vDm 644 ucm2/README.md -t "$pkgdir/usr/share/doc/$pkgbasename/ucm2"
-}

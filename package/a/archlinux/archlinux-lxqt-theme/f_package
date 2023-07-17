@@ -1,5 +1,0 @@
-package() {
-	cd ${srcdir}/${_pkgname}-${pkgver}
-  install -dm 755 "${pkgdir}"/usr/share/lxqt/themes/${_pkgname}
-  cp -a --no-preserve='ownership' * "${pkgdir}"/usr/share/lxqt/themes/${_pkgname}
-}

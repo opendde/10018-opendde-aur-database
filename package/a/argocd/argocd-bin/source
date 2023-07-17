@@ -1,1 +1,0 @@
-("${_pkgname}_${pkgver}::https://github.com/argoproj/argo-cd/releases/download/v${pkgver}/${_pkgname}-linux-amd64")

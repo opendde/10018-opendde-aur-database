@@ -1,9 +1,0 @@
-package() {
-	install -d "$pkgdir/opt/"
-    cp -r "$srcdir/bin" "$pkgdir/opt/$_pkgname"
-    printf "#\041/bin/sh\nexec \"/opt/$_pkgname/$_pkgname\" \"\$@\"" > "$pkgdir/opt/$_pkgname/$_pkgname.sh"
-    chmod 755 "$pkgdir/opt/$_pkgname/"{"$_pkgname.sh","$_pkgname","libsteam_api.so"}
-
-    install -d "$pkgdir/usr/bin"
-    ln -s "/opt/$_pkgname/$_pkgname.sh" "$pkgdir/usr/bin/$_pkgname"
-}

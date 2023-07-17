@@ -1,4 +1,0 @@
-prepare() {
-  cd  "$srcdir"/apngasm-${_apngasm_pkgver}
-  patch -Np1 < "$srcdir"/cli.patch
-}

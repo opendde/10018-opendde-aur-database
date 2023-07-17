@@ -1,5 +1,0 @@
-build() {
-    cd ${pkgname%-git}/src
-    qmake
-    make -j$(nproc)  # Read user's option from makepkg.conf? Example in notepadqq-git.
-}

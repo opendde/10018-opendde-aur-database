@@ -1,7 +1,0 @@
-package() {
-  tar xfJ ${srcdir}/data.tar.xz -C ${pkgdir}
-  install -d ${pkgdir}/usr/bin/
-  ln -s /opt/Kuro/kuro ${pkgdir}/usr/bin/kuro
-  install -Dm 644 "${pkgdir}/usr/share/icons/hicolor/256x256/apps/kuro.png" "${pkgdir}/usr/share/pixmaps/kuro.png"
-  rm -rfv "${pkgdir}/usr/share/icons/hicolor"
-}

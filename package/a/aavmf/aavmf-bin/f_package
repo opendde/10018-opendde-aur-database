@@ -1,6 +1,0 @@
-package() {
-	bsdtar -xv -C "$pkgdir" -f "$srcdir/data.tar.xz"
-	rm -rf "$pkgdir/usr/share/doc"
-	mkdir -p "$pkgdir/usr/share/edk2"
-	mv "$pkgdir/usr/share/qemu-efi-aarch64" "$pkgdir/usr/share/edk2/aarch64"
-}

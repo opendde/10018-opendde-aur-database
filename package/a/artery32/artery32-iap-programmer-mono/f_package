@@ -1,8 +1,0 @@
-package() {
-    cd "${srcdir}/IAP_Programmer_Console/IAP_Programmer_Console/bin/Debug/"
-    install -Dm0755 IAP_Programmer_Console.exe "${pkgdir}/opt/Artery32/${pkgname}/${pkgname}.exe"
-    install -Dm0755 /dev/stdin "${pkgdir}/usr/bin/${pkgname}" << EOF
-#!/bin/bash
-mono /opt/Artery32/${pkgname}/${pkgname}.exe "\$@"
-EOF
-}

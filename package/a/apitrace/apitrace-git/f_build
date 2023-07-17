@@ -1,8 +1,0 @@
-build() {
-  cd ${srcdir}/apitrace
-
-  cmake . -Bbuild -DCMAKE_INSTALL_PREFIX=/usr \
-    -DPYTHON_EXECUTABLE=/usr/bin/python2.7 \
-    -DENABLE_GUI=TRUE
-  make -C build
-}

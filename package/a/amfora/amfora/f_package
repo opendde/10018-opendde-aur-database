@@ -1,6 +1,0 @@
-package() {
-    cd "$pkgname-$pkgver"
-    install -D amfora "$pkgdir/usr/bin/amfora"
-    install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-    install -D amfora.desktop "$pkgdir/usr/share/applications/amfora.desktop"
-}

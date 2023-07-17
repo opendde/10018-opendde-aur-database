@@ -1,5 +1,0 @@
-package() {
-    cd "$srcdir/$pkgname"
-    mkdir -p "$pkgdir/usr/bin" "$pkgdir/usr/share/man/man1"
-    make prefix="$pkgdir/usr" etc_dir="$pkgdir/etc/authbind" install install_man
-}

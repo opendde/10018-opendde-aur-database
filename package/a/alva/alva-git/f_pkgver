@@ -1,5 +1,0 @@
-pkgver() {
-  cd "$srcdir/$pkgname"
-# Use latest tag
-  git tag|tail -n 1
-}

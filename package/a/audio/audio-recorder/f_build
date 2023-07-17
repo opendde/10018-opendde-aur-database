@@ -1,5 +1,0 @@
-build() {
-  cd "${srcdir}/trunk"
-  ./configure --prefix=/usr
-  make
-}

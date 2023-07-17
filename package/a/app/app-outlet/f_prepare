@@ -1,5 +1,0 @@
-prepare() {
-  _ensure_local_nvm
-  cd ${pkgname}-${pkgver}
-  nvm install 10.16.3
-}

@@ -1,4 +1,0 @@
-build() {
-  cd "${srcdir}/src/github.com/Azure/azure-storage-azcopy"
-  go build -buildmode=pie
-}

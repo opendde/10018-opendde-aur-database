@@ -1,9 +1,0 @@
-_prepare_variant() {
-  local app_id=${1}
-  local variant="${2}"
-  local fallback="${3}"
-  local title="${4}"
-  app_id="$(_app_id_variant "${app_id}" "${variant}")"
-  title="$(_title_variant "${title}" "${variant}")"
-  _prepare "${app_id}" "${title}" "${pkgbase}" "${pkgdesc}" "${app_id}" "${fallback}"
-}

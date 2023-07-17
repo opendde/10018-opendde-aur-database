@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz"::"https://github.com/serge-rider/dbeaver/archive/${pkgver}.tar.gz"

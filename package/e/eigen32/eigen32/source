@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.bz2::https://gitlab.com/libeigen/eigen/-/archive/${pkgver}/eigen-${pkgver}.tar.bz2")

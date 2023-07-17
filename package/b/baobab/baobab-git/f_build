@@ -1,4 +1,0 @@
-build() {
-  arch-meson baobab build
-  ninja -C build
-}

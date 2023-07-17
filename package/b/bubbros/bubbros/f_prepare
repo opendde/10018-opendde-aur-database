@@ -1,9 +1,0 @@
-prepare() {
-  # save to home dir
-  patch -Np0 -i bubbros-config-in-home.patch
-  # use python2
-  patch -Np0 -i bubbros-use-python2.patch
-  # generate desktop file
-  gendesk -f -n --pkgname=$pkgname --pkgdesc="$pkgdesc" \
-    --name=Bub-n-Bros --categories=Game
-}

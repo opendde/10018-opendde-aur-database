@@ -1,1 +1,0 @@
-("$pkgname-$pkgver.taz.gz::https://github.com/yoshiki/${pkgname#emacs-}/archive/$pkgver.tar.gz")

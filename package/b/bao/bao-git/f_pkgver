@@ -1,8 +1,0 @@
-pkgver() {
-  cd "bao"
-
-  _tag=$(git tag -l --sort -v:refname | head -n1)
-  _rev=$(git rev-list --count $_tag..HEAD)
-  _hash=$(git rev-parse --short HEAD)
-  printf "%s.r%s.g%s" "$_tag" "$_rev" "$_hash"
-}

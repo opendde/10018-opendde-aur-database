@@ -1,4 +1,0 @@
-package() {
-	cd "$srcdir/auto-display-manager-cr"
-	PREFIX="$pkgdir/usr" ./install.sh
-}

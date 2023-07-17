@@ -1,5 +1,0 @@
-build() {
-  cd "$srcdir"/${_pkgname}.${_pkgver}.linux
-  find -type f -a -name '*.so*' -exec chrpath -d '{}' ';'
-  convert ../Black_Silk_Logo_Big.png -resize 128 ../blacksilk.png
-}

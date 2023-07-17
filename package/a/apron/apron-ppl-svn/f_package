@@ -1,5 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname"
-  make APRON_PREFIX="$pkgdir"/usr install
-  rm "$pkgdir"/usr/lib/*.idl # remove ocaml stuff
-}

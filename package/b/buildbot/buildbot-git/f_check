@@ -1,4 +1,0 @@
-check() {
-  cd buildbot/master
-  TZ=UTC python setup.py test --rterrors
-}

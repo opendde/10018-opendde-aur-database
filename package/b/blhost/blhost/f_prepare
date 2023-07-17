@@ -1,7 +1,0 @@
-prepare() {
-  makefile=$srcdir/$pkgname_pkgver/proj/blhost/gcc/Makefile
-  # install -D common.mk -t $srcdir/${pkgname}_$pkgver/mk
-  sed -i '/mk\/common.mk/d' $makefile
-  # bug in the Makefile
-  sed -i 's|/tools/blhost/src/blhost.cpp|/proj/blhost/src/blhost.cpp|g' $makefile
-}

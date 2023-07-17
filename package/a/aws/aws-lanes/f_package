@@ -1,4 +1,0 @@
-package() {
-  install -Dm755 ../lanes_linux_amd64 "${pkgdir}/usr/bin/lanes"
-  install -Dm644 ../LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}

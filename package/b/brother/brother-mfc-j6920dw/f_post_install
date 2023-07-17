@@ -1,4 +1,0 @@
-post_install() {
-	/opt/brother/Printers/${_pkgname}/inf/setupPrintcapij ${_pkgname} -i
-	/opt/brother/Printers/${_pkgname}/cupswrapper/cupswrapper${_pkgname}
-}

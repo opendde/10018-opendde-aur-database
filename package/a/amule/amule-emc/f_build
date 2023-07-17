@@ -1,8 +1,0 @@
-build() {
-
-  cd build
-  ../"amule-emc-${pkgver}"/configure \
-    --prefix=/usr
-
-  make
-}

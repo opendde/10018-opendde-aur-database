@@ -1,3 +1,0 @@
-package() {
-  install -Dm 755 "$srcdir/$pkgname/build/auger" "$pkgdir/usr/bin/auger"
-}

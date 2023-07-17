@@ -1,5 +1,0 @@
-build() {
-  cd akabeiclient
-  cmake . -DCMAKE_INSTALL_PREFIX=/usr 
-  make
-}

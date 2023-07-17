@@ -1,4 +1,0 @@
-pkgver() {
-    cd "$srcdir/$_gitname"
-    git show -s --format="%ci" HEAD | sed -e 's/-//g' -e 's/ .*//'
-}

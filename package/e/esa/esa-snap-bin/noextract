@@ -1,1 +1,0 @@
-("${pkgname/-bin/}_all_unix_${pkgver//./_}.sh")

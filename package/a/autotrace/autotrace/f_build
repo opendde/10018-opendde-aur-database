@@ -1,8 +1,0 @@
-build() {
-  cd "$pkgname"
-  autoreconf -ivf
-  intltoolize --force
-  aclocal
-  ./configure --prefix=/usr --with-pstoedit --with-graphicsmagick
-  make
-}

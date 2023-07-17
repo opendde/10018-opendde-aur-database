@@ -1,4 +1,0 @@
-build() {
-  export GOPATH="$srcdir"
-  go get ${_gourl}
-}

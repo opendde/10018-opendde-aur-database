@@ -1,1 +1,0 @@
-("https://github.com/EdgeTX/flasher/releases/download/latest/${pkgname%%-bin}-linux-${pkgver##*.}.deb")

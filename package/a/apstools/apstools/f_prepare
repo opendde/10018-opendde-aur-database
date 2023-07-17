@@ -1,3 +1,0 @@
-prepare() {
-    rpmextract.sh apstools-${pkgver}-${subversion}.noarch.rpm
-}

@@ -1,1 +1,0 @@
-("${pkgname}::https://github.com/Jorengarenar/${pkgname}/archive/refs/tags/v${pkgver}.tar.gz")

@@ -1,8 +1,0 @@
-build() {
-  cd "${srcdir}/${pkgname}-${pkgver}/build"
-  cmake .. -Wno-dev \
-    -DBUILD_TESTS=Yes \
-    -DCMAKE_BUILD_TYPE=None \
-    -DCMAKE_INSTALL_PREFIX=/usr
-  make
-}

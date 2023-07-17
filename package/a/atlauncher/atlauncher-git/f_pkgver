@@ -1,4 +1,0 @@
-pkgver() {
-	cd "$srcdir/ATLauncher"
-	git describe --long | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
-}

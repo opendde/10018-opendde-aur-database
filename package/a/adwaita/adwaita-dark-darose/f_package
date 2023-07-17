@@ -1,6 +1,0 @@
-package() {
-    cd "${srcdir}/"
-
-    install -d -m 755 "${pkgdir}/usr/share/themes/"
-    cp -r "${pkgname}" "${pkgdir}/usr/share/themes/"
-}

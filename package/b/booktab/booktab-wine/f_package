@@ -1,7 +1,0 @@
-package() {
-    mkdir -p $pkgdir/opt/${_pkgname}
-    cp -r $srcdir/app/* $pkgdir/opt/${_pkgname}/
-    install -Dm644 "${srcdir}/BooktabZ_6_256x256x32.png" "${pkgdir}/usr/share/pixmaps/${_pkgname}.png"
-    install -D -m 644 $srcdir/${_pkgname}.desktop $pkgdir/usr/share/applications/${_pkgname}.desktop
-    install -D -m 755 $srcdir/${_pkgname}.sh $pkgdir/usr/bin/${_pkgname}
-}

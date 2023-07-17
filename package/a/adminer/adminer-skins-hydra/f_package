@@ -1,3 +1,0 @@
-package() {
-	install -Dm644 "${srcdir}/adminer.css" "${pkgdir}/usr/share/webapps/adminer/adminer.css"
-}

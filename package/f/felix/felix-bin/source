@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}::https://github.com/projectcalico/felix/releases/download/v${pkgver}/calico-felix-amd64")

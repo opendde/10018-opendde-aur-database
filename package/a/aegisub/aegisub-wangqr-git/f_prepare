@@ -1,7 +1,0 @@
-prepare() {
-  mkdir -vp build/
-  cd Aegisub
-
-  # Ensures Aegisub runs under Xwayland, since it doesn't support Wayland properly
-  sed 's/^Exec=/Exec=env GDK_BACKEND=x11 /' -i packages/desktop/aegisub.desktop.template.in
-}

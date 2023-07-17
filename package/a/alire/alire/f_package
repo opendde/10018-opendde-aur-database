@@ -1,5 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname-$pkgver"
-  gprinstall -P alr_env -p --prefix="$pkgdir/usr"
-  install -D scripts/alr-completion.bash "$pkgdir/usr/share/bash-completion/completions/alr"
-}

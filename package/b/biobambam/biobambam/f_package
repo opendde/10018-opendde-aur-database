@@ -1,4 +1,0 @@
-package() {
-  cd "${srcdir}"/"${pkgname}2"-"${pkgver//_/-}"
-  make install
-}

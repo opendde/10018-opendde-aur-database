@@ -1,4 +1,0 @@
-package() {
-  cd "$srcdir/${pkgname%-git}"
-  cp -vr usr etc "$pkgdir"
-}

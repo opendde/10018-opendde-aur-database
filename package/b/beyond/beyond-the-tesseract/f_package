@@ -1,5 +1,0 @@
-package() {
-	cd "tess"
-    mkdir -p "$pkgdir/usr/bin/"
-    install -Dm755 "tess" "$pkgdir/usr/bin/"
-}

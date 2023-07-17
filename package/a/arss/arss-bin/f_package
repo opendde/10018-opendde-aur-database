@@ -1,7 +1,0 @@
-package() {
-	tar zxf arss-0.2.3-linux-binary.tar.gz
-	cd "$srcdir"
-	mkdir -p "${pkgdir}/usr/bin"
-	cp arss ${pkgdir}/usr/bin/arss
-	
-}

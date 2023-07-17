@@ -1,4 +1,0 @@
-package() {
-    # install the Rust binary
-    install -Dm755 "${srcdir}/bombadil" "${pkgdir}/usr/bin/bombadil"
-}

@@ -1,6 +1,0 @@
-package() {
-  cd "$pkgname-$pkgver"
-  mkdir -p "$pkgdir/usr/share/licenses/$pkgname"
-  cp COPYING "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-  make prefix="$pkgdir/usr/" install
-}

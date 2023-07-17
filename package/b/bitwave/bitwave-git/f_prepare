@@ -1,4 +1,0 @@
-prepare() {
-  cd $_name
-  git submodule update --init --recursive
-}

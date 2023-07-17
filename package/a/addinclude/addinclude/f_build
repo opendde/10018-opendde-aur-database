@@ -1,4 +1,0 @@
-build() {
-  cd $pkgname-$pkgver
-  go build -v -mod=vendor -trimpath -buildmode=pie -ldflags="-s -w -extldflags \"${LDFLAGS}\""
-}

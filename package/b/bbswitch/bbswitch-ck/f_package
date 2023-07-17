@@ -1,5 +1,0 @@
-package() {
-  cd ${srcdir}/${_realname}-${pkgver}
-  install -Dm644 bbswitch.ko "${pkgdir}"/usr/lib/modules/${_kernver}/bbswitch.ko
-  gzip "${pkgdir}/usr/lib/modules/${_kernver}/bbswitch.ko"
-}

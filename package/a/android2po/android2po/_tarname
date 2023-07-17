@@ -1,1 +1,0 @@
-"${_repo_owner}-${pkgname}-${_repo_commit::7}"

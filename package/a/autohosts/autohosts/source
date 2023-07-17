@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.deb::https://github.com/angela-d/autohosts/releases/download/${pkgver}/autohosts.deb")

@@ -1,7 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname-$pkgver"
-
-  DESTDIR="${pkgdir}" ninja -C build install
-  python -m compileall "${pkgdir}/usr/share/blender"
-  python -O -m compileall "${pkgdir}/usr/share/blender"
-}

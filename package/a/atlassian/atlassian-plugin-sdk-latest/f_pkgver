@@ -1,3 +1,0 @@
-pkgver() {
-    echo "${version}" | sed -r 's/[-:]/./g'
-}

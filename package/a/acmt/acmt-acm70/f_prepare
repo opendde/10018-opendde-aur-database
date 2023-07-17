@@ -1,6 +1,0 @@
-prepare () {
-	_archive="`xdg-user-dir DOWNLOAD`/acm-plugins-ACM70.tar.gz"
-	ln -srf "${_archive}" "$srcdir/`basename "${_archive}"`"
-	tar -xvzf "${srcdir}/acm-plugins-ACM70.tar.gz"
-	tar -xvzf "${srcdir}/ACM70/x86-64/plugin-binaries.tar.gz"
-}

@@ -1,7 +1,0 @@
-build() {
-	cd "$srcdir/beatoraja${pkgver}-modernchic"
-	rm beatoraja-config.bat
-	rm beatoraja-config.command
-	rm jportaudio_x64.dll
-	rm portaudio_x64.dll
-}

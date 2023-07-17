@@ -1,4 +1,0 @@
-check() {
-	cd "acorn-$pkgver"
-	./bin/acorn -v
-}

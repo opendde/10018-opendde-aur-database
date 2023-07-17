@@ -1,9 +1,0 @@
-package() {
-    cd "${_pkgname}"
-
-    install -Dm755 xbacklight ${pkgdir}/usr/bin/xbacklight
-    install -Dm644 xbacklight.1 "${pkgdir}/usr/share/man/man1/xbacklight.1"
-
-    install -Dm644 90-backlight.rules \
-        ${pkgdir}/etc/udev/rules.d/90-backlight.rules
-}

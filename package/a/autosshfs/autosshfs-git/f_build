@@ -1,4 +1,0 @@
-build() {
-  cd $_gitname/src
-  PREFIX="/usr" make -e
-}

@@ -1,9 +1,0 @@
-build() {
-  cd "${srcdir}/${pkgname%-git}"
-  if [ `check_option debug`=y ]
-  then
-    make linux-debug64
-  else
-    make linux-release64
-  fi
-}

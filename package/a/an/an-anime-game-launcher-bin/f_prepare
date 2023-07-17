@@ -1,4 +1,0 @@
-prepare() {
-    chmod +x "${srcdir}/An_Anime_Game_Launcher_${pkgver}.AppImage"
-    "${srcdir}/An_Anime_Game_Launcher_${pkgver}.AppImage" --appimage-extract
-}

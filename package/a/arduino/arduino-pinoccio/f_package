@@ -1,8 +1,0 @@
-package() {
-  install -d $pkgdir/usr/share/arduino/libraries/
-  install -d $pkgdir/usr/share/arduino/hardware/
-  cd $srcdir
-  find -type f -exec chmod 644 {} \;
-  cp -R  firmware-pinoccio/libraries/* $pkgdir/usr/share/arduino/libraries/
-  cp -R  firmware-pinoccio/hardware/*  $pkgdir/usr/share/arduino/hardware/
-}

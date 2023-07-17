@@ -1,3 +1,0 @@
-package() {
-  make -C "${_pkgbase}-$pkgver" DESTDIR"=$pkgdir" install
-}

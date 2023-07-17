@@ -1,4 +1,0 @@
-package() {
-  install -m 755 -D cmake.sh "$pkgdir"/usr/bin/aarch64-linux-gnu-cmake
-  install -m 755 -D toolchain.cmake "$pkgdir"/usr/share/aarch64/toolchain.cmake
-}

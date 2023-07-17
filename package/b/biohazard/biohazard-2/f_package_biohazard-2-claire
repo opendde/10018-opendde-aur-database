@@ -1,5 +1,0 @@
-package_biohazard-2-claire() {
-  local uuid="${_uuid_claire["fallback"]}"
-  _prepare_variant "${app_id}" "Claire" "${uuid}" "${title}"
-  _package_common "$(_app_id_variant "${app_id}" "Claire")" "${pkgbase}"
-}

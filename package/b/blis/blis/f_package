@@ -1,7 +1,0 @@
-package() {
-  install -d "$pkgdir"/etc/profile.d
-  cd $pkgname-$pkgver
-  make install BLIS_ENABLE_DYNAMIC_BUILD:=yes
-  install -Dm755 "$srcdir"/blis_profile.sh "${pkgdir}"/etc/profile.d/blis.sh
-  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/${pkgname}/LICENSE
-}

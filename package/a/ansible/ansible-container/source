@@ -1,1 +1,0 @@
-("$pkgname-$pkgver.tar.gz::https://github.com/ansible/ansible-container/archive/release-$pkgver.tar.gz"

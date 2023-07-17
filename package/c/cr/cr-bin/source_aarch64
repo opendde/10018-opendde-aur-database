@@ -1,1 +1,0 @@
-("${url}/releases/download/v${pkgver}/chart-releaser_${pkgver}_linux_arm64.tar.gz")

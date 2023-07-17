@@ -1,4 +1,0 @@
-build() {
-    cd $pkgname-$pkgver
-    cargo build --release --locked --no-default-features
-}

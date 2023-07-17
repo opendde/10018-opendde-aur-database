@@ -1,6 +1,0 @@
-prepare() {
-    cd "${srcdir}"/libvorbis-${pkgver}
-    source android-env ${_android_arch}
-
-    patch -Np1 -i "../configure.patch"
-}

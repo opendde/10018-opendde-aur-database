@@ -1,1 +1,0 @@
-("${_pkgbasename}::git+https://github.com/DISTRHO/DISTRHO-Ports.git#branch=master")

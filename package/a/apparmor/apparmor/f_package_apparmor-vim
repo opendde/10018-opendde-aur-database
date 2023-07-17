@@ -1,7 +1,0 @@
-package_apparmor-vim() {
-	pkgdesc='AppArmor VIM support'
-	depends=('vim')
-
-	cd "${srcdir}/${pkgbase}-${_majorver}/utils/vim"
-	install -D -m644 apparmor.vim "${pkgdir}/usr/share/vim/vimfiles/syntax/apparmor.vim"
-}

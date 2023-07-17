@@ -1,5 +1,0 @@
-build() {
-  cd ${pkgbase%-git}
-  make
-  make xae
-}

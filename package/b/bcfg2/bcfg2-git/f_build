@@ -1,5 +1,0 @@
-build() {
-  cd bcfg2
-
-  python2 setup.py build
-}

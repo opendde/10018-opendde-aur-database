@@ -1,4 +1,0 @@
-package() {
-  cd $pkgname
-  stack install --local-bin-path "$pkgdir/usr/bin"
-}

@@ -1,5 +1,0 @@
-package_acmt-acm5a-vst() {
-	groups=('pro-audio' 'vst-plugins')
-	pkgdesc="ACM-5A Mid-Range EQ (VST)"
-	install -Dm755 ${srcdir}/plugin-binaries/VST/ACM-5A.so ${pkgdir}/usr/lib/vst/ACM-5A.so
-}

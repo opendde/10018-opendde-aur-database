@@ -1,6 +1,0 @@
-prepare() {
-  cd $srcdir/${pkgname#python-}-$pkgver
-
-  msg 'Fixing Jinja version...'
-  sed -i 's#Jinja2==2.6#Jinja2>=2.6#g' setup.py dev-requirements.txt test-requirements.txt
-}

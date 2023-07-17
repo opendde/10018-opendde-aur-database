@@ -1,7 +1,0 @@
-package() {
-	cd ${pkgname}/build
-	make DESTDIR="${pkgdir}" install
-
-	cd ..
-	install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}

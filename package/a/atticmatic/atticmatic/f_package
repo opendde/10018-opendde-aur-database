@@ -1,9 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname-$pkgver"
-  install -D -m644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-  install -D -m644 sample/config "$pkgdir/etc/$pkgname/config.example"
-  install -D -m644 sample/excludes "$pkgdir/etc/$pkgname/excludes.example"
-  install -D -m644 sample/atticmatic.cron "$pkgdir/etc/$pkgname/atticmatic.cron.example"
-  install -D -m644 sample/borgmatic.cron "$pkgdir/etc/$pkgname/borgmatic.cron.example"
-  python setup.py -q install --root="$pkgdir" --optimize=1
-}

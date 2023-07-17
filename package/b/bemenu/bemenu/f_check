@@ -1,4 +1,0 @@
-check() {
-    cd bemenu-${pkgver}
-    make test
-}

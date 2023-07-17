@@ -1,4 +1,0 @@
-build() {
-	cd "alerta-$pkgver"
-	python setup.py build
-}

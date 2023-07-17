@@ -1,5 +1,0 @@
-prepare() {
-	cd "${srcdir}/${_prefix}${pkgver}/b2sum"
-    sed -i "s# -fopenmp##" makefile
-    make clean
-}

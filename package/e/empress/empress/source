@@ -1,1 +1,0 @@
-("$pkgname-$_semver.tar.gz::$url/archive/v$_semver.tar.gz")

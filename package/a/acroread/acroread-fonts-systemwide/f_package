@@ -1,7 +1,0 @@
-package() {
-  cd "$srcdir"
-
-  install -d "$pkgdir/usr/share/fonts/OTF"
-  install -m644 *.otf "$pkgdir/usr/share/fonts/OTF"
-  install -Dm644 license.html19 "$pkgdir/usr/share/licenses/$pkgname/license.html"
-}

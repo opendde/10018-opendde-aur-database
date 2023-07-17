@@ -1,7 +1,0 @@
-build() {
-  cd ${pkgname%-hg}/${pkgname%-hg}-current
-  autoreconf
-  ./configure --prefix=/usr --enable-ffmpeg --enable-libvolpack \
-	      --enable-libdcmdata --with-xmedcon-exec-prefix=/usr/bin
-  make
-}

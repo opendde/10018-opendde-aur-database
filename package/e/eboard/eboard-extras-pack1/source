@@ -1,1 +1,0 @@
-("${_pkg}-${_ver}.tar.gz::http://sourceforge.net/projects/eboard/files/${_pkg}/${_pack}/${_pkg}-${_ver}.tar.gz/download")

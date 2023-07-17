@@ -1,8 +1,0 @@
-build() {
-  cd "${srcdir}/${_pkgname}-${pkgver}"
-
-  ./configure --prefix=/usr --sysconfdir=/etc/autofs --sbindir=/usr/bin \
-    --with-mapdir=/etc/autofs --without-hesiod \
-    --enable-ignore-busy --with-systemd
-  make
-}

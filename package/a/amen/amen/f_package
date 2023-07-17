@@ -1,4 +1,0 @@
-package() {
-    cd "$srcdir/$pkgname"
-    install -Dm0755 -t "$pkgdir/usr/bin/" "target/release/$pkgname"
-}

@@ -1,7 +1,0 @@
-package() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-  make DESTDIR="${pkgdir}" install
-  echo ""
-  echo "You need to install an init script depending on what you're using it."
-  echo ""
-}

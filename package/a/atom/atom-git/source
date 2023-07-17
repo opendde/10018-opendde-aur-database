@@ -1,1 +1,0 @@
-("${pkgname}::git://${_githost}/${_gitrep}#branch=1.6-releases")

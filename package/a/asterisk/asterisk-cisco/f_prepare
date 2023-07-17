@@ -1,4 +1,0 @@
-prepare() {
-  cd ${srcdir}/asterisk-${pkgver}
-  patch -p1 -i "${srcdir}/cisco-usecallmanager-${pkgver}.patch"
-}

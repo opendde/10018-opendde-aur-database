@@ -1,4 +1,0 @@
-prepare() {
-  cd "$srcdir/arc-firefox-theme-$_pkgver"
-  patch -p1 -i ../arc-cyberfox-theme.patch
-}

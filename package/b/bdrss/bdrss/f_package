@@ -1,8 +1,0 @@
-package() {
-	cd "${srcdir}/${pkgname}-${pkgver}"
-
-	install -d "${pkgdir}/usr/bin/"
-	install -m 755 "bdrss" "${pkgdir}/usr/bin/${pkgname}"
-	install -m 755 -d "${pkgdir}/usr/share/man/man1/"
-	install -m 644 "bdrss.1" "${pkgdir}/usr/share/man/man1/bdrss.1"
-}

@@ -1,3 +1,0 @@
-prepare() {
-    cargo fetch --target "$CARCH-unknown-linux-gnu"
-}

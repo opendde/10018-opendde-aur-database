@@ -1,8 +1,0 @@
-prepare() {
-    mkdir -p $srcdir/${_pkgname}
-
-    # Use steamcmd to get data.
-    printf "Enter your Steam username:"
-    read steam_username
-    steamcmd +@sSteamCmdForcePlatformType linux +@ShutdownOnFailedCommand 1 +force_install_dir $srcdir/${_pkgname} +login $steam_username "+app_update ${_steamid} validate" +quit
-}

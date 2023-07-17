@@ -1,5 +1,0 @@
-package() {
-  cd atf-atf-$pkgver
-  make install DESTDIR="$pkgdir"
-  install -Dm644 COPYING "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
-}

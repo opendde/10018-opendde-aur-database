@@ -1,4 +1,0 @@
-package() {
-    cd "${srcdir}/blockbar-${module}"
-    make PREFIX="$pkgdir/usr" install
-}

@@ -1,4 +1,0 @@
-build() {
-  cd "bCNC-${pkgver}"
-  python setup.py build
-}

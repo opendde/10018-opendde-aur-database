@@ -1,4 +1,0 @@
-prepare() {
-    cd "$srcdir/$_pkgname_origin-$pkgver"
-    patch -p1 -i "$srcdir/apcupsd-3.14.4-shutdown.patch"
-}

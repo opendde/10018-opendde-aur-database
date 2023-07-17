@@ -1,9 +1,0 @@
-package() {
-  cd "$srcdir"/Kalgan-Mule-template
-  mkdir -p $pkgdir/usr/share/texmf-dist/tex/latex/beamer/themes/{color,theme}
-  install -m644 beamercolorthememule.sty \
-    "$pkgdir/usr/share/texmf-dist/tex/latex/beamer/themes/color/"
-
-  install -m644 beamerthemeKalgan.sty \
-    "$pkgdir/usr/share/texmf-dist/tex/latex/beamer/themes/theme/"
-}

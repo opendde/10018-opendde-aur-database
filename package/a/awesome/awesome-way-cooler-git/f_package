@@ -1,5 +1,0 @@
-package() {
-    cd "$pkgname"
-    make -C build DESTDIR="$pkgdir" install
-    install -Dm644 -t "$srcdir/$pkgname/" "$pkgdir/usr/share/xsessions/awesome.desktop"
-}

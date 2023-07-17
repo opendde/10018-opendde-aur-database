@@ -1,4 +1,0 @@
-package() {
-    cd ${_pkgfqn}
-    make INSTALL_ROOT=${pkgdir} install
-}

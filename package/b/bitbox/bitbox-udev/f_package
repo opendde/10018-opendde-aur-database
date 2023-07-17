@@ -1,7 +1,0 @@
-package() {
-  install -Dm 644 51-hid-digitalbitbox.rules "$pkgdir"/usr/lib/udev/rules.d/51-hid-digitalbitbox.rules
-  install -Dm 644 52-hid-digitalbitbox.rules "$pkgdir"/usr/lib/udev/rules.d/52-hid-digitalbitbox.rules
-  install -Dm 644 53-hid-bitbox02.rules "$pkgdir"/usr/lib/udev/rules.d/53-hid-bitbox02.rules
-  install -Dm 644 54-hid-bitbox02.rules "$pkgdir"/usr/lib/udev/rules.d/54-hid-bitbox02.rules
-  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-}

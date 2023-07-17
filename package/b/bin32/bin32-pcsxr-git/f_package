@@ -1,5 +1,0 @@
-package() {
-  cd pcsxr/pcsxr
-
-  make DESTDIR="${pkgdir}" install
-}

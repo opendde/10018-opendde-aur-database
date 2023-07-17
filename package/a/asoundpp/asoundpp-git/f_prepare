@@ -1,7 +1,0 @@
-prepare() {
-    cd "$_pkgname"
-    git apply ../cmake.patch
-    mkdir -p build
-    cd build
-    cmake ../ -DCMAKE_INSTALL_PREFIX:PATH=/usr -Wno-dev
-}

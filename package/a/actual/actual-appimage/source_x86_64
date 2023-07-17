@@ -1,1 +1,0 @@
-("${_appimage}::https://github.com/actualbudget/releases/releases/download/${pkgver}/${_Pkgname}-${pkgver}-x86_64.AppImage")

@@ -1,1 +1,0 @@
-("https://github.com/blt4linux/blt4l/releases/download/${pkgver//_/-}/${__filename}.tar.xz")

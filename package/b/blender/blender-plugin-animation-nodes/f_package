@@ -1,9 +1,0 @@
-package() {
-# _blender=$(pacman -Sddp --print-format %v blender-2.7|grep -oP '(?<=\:)[[:digit:]]{1}\.[[:digit:]]{2}(?=)')
-  depends+=(blender-2.7)
-  _blender="2.79"
-  cd ${srcdir}
-  addons="$pkgdir/usr/share/blender/${_blender}/scripts/addons"
-  install -dm755 ${addons}/${name}
-  cp -a -t ${addons}/${name} ${name}-${pkgver}/${name}/*
-}

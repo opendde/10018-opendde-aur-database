@@ -1,5 +1,0 @@
-package() {
-	cd karlb-$pkgname-034aca498e89
-	./configure --prefix=/usr --localstatedir=/var --sysconfdir=/etc --sbindir=/usr/bin
-	make DESTDIR="$pkgdir/" install
-}

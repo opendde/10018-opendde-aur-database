@@ -1,7 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname-$pkgver"
-  install -m 755 -d "$pkgdir/usr/bin"
-  install -m 755 -t "$pkgdir/usr/bin" 9pfuse
-  install -m 755 -d "$pkgdir/usr/share/man/man4"
-  install -m 644 -t "$pkgdir/usr/share/man/man4" 9pfuse.4.gz
-}

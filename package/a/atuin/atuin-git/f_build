@@ -1,7 +1,0 @@
-build() {
-  cd "${pkgname%-git}"
-  cargo build --release --frozen --all-features
-  for sh in 'bash' 'fish' 'zsh'; do
-    "target/release/${pkgname%-git}" gen-completions -s "$sh" -o completions/
-  done
-}

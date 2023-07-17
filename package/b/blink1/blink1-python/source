@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz::https://github.com/todbot/blink1-python/archive/${pkgver}.tar.gz")

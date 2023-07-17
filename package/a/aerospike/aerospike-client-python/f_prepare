@@ -1,4 +1,0 @@
-prepare() {
-  cd "${srcdir}/aerospike-${pkgver}"
-  patch -Np1 -i "${srcdir}/${pkgbase}.patch"
-}

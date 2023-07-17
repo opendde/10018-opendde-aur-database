@@ -1,5 +1,0 @@
-build() {
-	cd "acorn-$pkgver"
-	export CGO_ENABLED=0 
-	go build -o bin/acorn -ldflags "-s -w -X 'github.com/acorn-io/acorn/pkg/version.Tag=$pkgver'"
-}

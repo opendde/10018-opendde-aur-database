@@ -1,5 +1,0 @@
-_installmodule() {
-  pushd "${srcdir}/buildnotify"
-  /usr/bin/python3 setup.py install --root="${pkgdir}/" --optimize=1
-  popd
-}

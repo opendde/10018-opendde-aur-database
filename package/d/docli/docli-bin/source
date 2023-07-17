@@ -1,1 +1,0 @@
-("http://wod.twentyfives.net/bin/${_pkgname}/${_pkgname}-${pkgver//_/-}-${CARCH}-linux.tar.gz")

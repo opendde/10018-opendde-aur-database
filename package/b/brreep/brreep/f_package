@@ -1,3 +1,0 @@
-package() {
-	install -D $srcdir/brreep.service "$pkgdir/usr/lib/systemd/system/brreep.service"
-}

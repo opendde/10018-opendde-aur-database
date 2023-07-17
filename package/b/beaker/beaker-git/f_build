@@ -1,7 +1,0 @@
-build() {
-  cd beaker
-  npm i
-  npm run build
-  npm run rebuild
-  npx electron-builder --dir
-}

@@ -1,6 +1,0 @@
-package() {
-  install -Dm644 music_*.flac -t "$pkgdir"/usr/share/bass-flac
-  ln -s ../bass/sky.{cpt,dnr,dsk} "$pkgdir"/usr/share/bass-flac
-
-  install -Dm644 readme.txt -t "$pkgdir"/usr/share/licenses/$pkgname
-}

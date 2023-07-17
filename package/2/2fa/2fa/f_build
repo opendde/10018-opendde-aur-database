@@ -1,4 +1,0 @@
-build() {
-  cd src/rsc.io/2fa
-  env GOPATH="${srcdir}" go mod vendor && go build
-}

@@ -1,4 +1,0 @@
-build() {
-    cd "$_srcname"
-    make SERVER=119.29.29.29 bind
-}

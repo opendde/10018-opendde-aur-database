@@ -1,5 +1,0 @@
-package() {
-  cd "$pkgname-$pkgver"
-
-  python2 waf --destdir="$pkgdir/" install
-}

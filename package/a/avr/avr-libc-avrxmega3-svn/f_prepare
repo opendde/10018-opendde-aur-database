@@ -1,6 +1,0 @@
-prepare() {
-  cd "$srcdir/$_pkgname"
-
-  # https://savannah.nongnu.org/patch/?9543
-  xzcat "$srcdir/avrxmega3-v12.diff.xz" | patch -p0
-}

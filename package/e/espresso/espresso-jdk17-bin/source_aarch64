@@ -1,1 +1,0 @@
-("https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-${pkgver}/espresso-installable-svm-java${java_}-linux-aarch64-${pkgver}.jar")

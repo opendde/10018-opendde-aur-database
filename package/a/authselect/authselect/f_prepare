@@ -1,4 +1,0 @@
-prepare() {
-	cd "${_srcdir}"
-	autoreconf -i
-}

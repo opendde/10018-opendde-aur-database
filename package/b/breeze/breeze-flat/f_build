@@ -1,4 +1,0 @@
-build() {
-    cd ${srcdir}/${pkgbase}-v${pkgver}
-    sh scripts/symlink.sh
-}

@@ -1,7 +1,0 @@
-build() {
-    cd "$pkgname-$pkgver"/sources
-
-    ./configure --prefix=/usr
-    make
-    make gui
-}

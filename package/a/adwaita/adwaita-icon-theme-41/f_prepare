@@ -1,4 +1,0 @@
-prepare() {
-  cd $basename
-  autoreconf -fvi
-}

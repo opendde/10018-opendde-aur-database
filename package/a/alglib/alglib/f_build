@@ -1,5 +1,0 @@
-build() {
-    cd ${srcdir}/cpp/build
-    cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=lib ..
-    make VERBOSE=1
-}

@@ -1,5 +1,0 @@
-package() {
-    cd "${srcdir}/${pkgname}-${pkgver}/src"
-
-    make install DESTDIR="${pkgdir}" prefix=/usr
-}

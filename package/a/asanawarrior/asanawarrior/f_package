@@ -1,5 +1,0 @@
-package() {
-  cd "$pkgname-$pkgver"
-
-  install -Dm755 "$pkgname-$pkgver" "$pkgdir/usr/bin/$pkgname"
-}

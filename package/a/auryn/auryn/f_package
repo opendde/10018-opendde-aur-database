@@ -1,5 +1,0 @@
-package() {
-    mkdir -p "${pkgdir}/usr/bin"
-    cp "${srcdir}/auryn.sh" "${pkgdir}/usr/bin/auryn"
-    chmod +x "${pkgdir}/usr/bin/auryn"
-}

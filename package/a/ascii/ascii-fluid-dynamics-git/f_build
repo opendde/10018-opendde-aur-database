@@ -1,5 +1,0 @@
-build() {
-	cd "${srcdir}/${pkgname}/2012/endoh1"
-	make endoh1
-	make endoh1_color
-}

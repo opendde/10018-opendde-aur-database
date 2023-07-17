@@ -1,5 +1,0 @@
-package() {
-  cd astreamfs
-  install -Dm755 astreamfs "${pkgdir}/usr/bin/astreamfs"
-  install -Dm755 1fichier "${pkgdir}/usr/bin/1fichier"
-}

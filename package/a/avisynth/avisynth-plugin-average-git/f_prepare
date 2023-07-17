@@ -1,5 +1,0 @@
-prepare() {
-  mkdir -p build
-
-  rm -fr average/Average/{avs*,avi*}
-}

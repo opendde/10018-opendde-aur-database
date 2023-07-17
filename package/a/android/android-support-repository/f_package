@@ -1,6 +1,0 @@
-package() {
-  mkdir -p "${pkgdir}/opt/android-sdk/extras/android/"
-  cp -dpr --no-preserve=ownership "${srcdir}/m2repository" "${pkgdir}/opt/android-sdk/extras/android/m2repository"
-
-  chmod -R ugo+rX "${pkgdir}/opt"
-}

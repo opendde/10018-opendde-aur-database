@@ -1,3 +1,0 @@
-package() {
-  install -D $srcdir/${_up_pkgname}${pkgver}/source/${pkgname}_${pkgver} $pkgdir/usr/bin/${pkgname}
-}

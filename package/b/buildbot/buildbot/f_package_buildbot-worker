@@ -1,8 +1,0 @@
-package_buildbot-worker() {
-  python="python"
-  pkgdesc="Buildbot Worker Daemon"
-  depends=('python-twisted' 'python-future')
-  _name=${_names[2]}
-  extraver="-py2.py3"
-  install_whl
-}

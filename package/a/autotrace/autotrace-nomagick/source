@@ -1,1 +1,0 @@
-("autotrace-${pkgver}.tar.gz"::"https://github.com/autotrace/autotrace/archive/travis-${_date}.${_build}.tar.gz"

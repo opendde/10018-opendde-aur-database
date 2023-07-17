@@ -1,9 +1,0 @@
-package() {
-  cd "$srcdir"
-  install -D -m755 aladin.run "$pkgdir"/usr/bin/aladin
-  install -D -m644 Aladin/Aladin.jar -t "$pkgdir"/usr/share/java
-  install -D -m644 Aladin/COPYRIGHT -t ${pkgdir}/usr/share/licenses/${pkgname}
-  install -D -m644 Aladin/FAQ.html -t "$pkgdir"/usr/share/aladin
-  install -D -m755 aladin.desktop -t "$pkgdir"/usr/share/applications
-  install -D -m755 aladin.png -t "$pkgdir"/usr/share/pixmaps
-}

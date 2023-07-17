@@ -1,7 +1,0 @@
-pkgver() {
-  cd "$_pkgname"
-  printf "%s.r%s.%s" \
-    "$(sed -n 's/-/_/g;s/^FULLVER[[:space:]]*:=[[:space:]]*//p' GNUmakefile)" \
-    "$(git rev-list --count HEAD)" \
-    "$(git rev-parse --short HEAD)"
-}

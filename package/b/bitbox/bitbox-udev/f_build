@@ -1,4 +1,0 @@
-build() {
-  chmod +x ${srcdir}/deb-afterinstall.sh
-  ${srcdir}/deb-afterinstall.sh
-}

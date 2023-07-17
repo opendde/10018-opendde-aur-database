@@ -1,8 +1,0 @@
-build() {
-	cd "$srcdir/${pkgname}-${pkgver}"
-
-	# Parallel builds don't work in v1.0.0.  Appears to be fixed in git so the
-	# next release should be ok.
-	#make ${MAKEFLAGS}
-	make -j1
-}

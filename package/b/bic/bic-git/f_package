@@ -1,9 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname"
-  make DESTDIR="$pkgdir/" install
-  mkdir -p $pkgdir/usr/share/doc/${pkgname%-*}/img
-  cp -a doc/img/* "$pkgdir/usr/share/doc/${pkgname%-*}/img"
-  sed -i 's@doc/img/@img/@g' README.org
-  install -D -m644 README.org $pkgdir/usr/share/doc/${pkgname%-*}/README.org
-  install -D -m644 LICENSE $pkgdir/usr/share/licenses/${pkgname%-*}/LICENSE
-}

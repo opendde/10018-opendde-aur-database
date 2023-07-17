@@ -1,4 +1,0 @@
-prepare() {
-  cd "$_pkgname-$pkgver"
-  patch -Np1 -i "$srcdir/01-runpath_fix.patch"
-}

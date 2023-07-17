@@ -1,4 +1,0 @@
-package() {
-	install -Dm755 brename "$pkgdir/usr/bin/brename"
-	install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-}

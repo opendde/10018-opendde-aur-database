@@ -1,7 +1,0 @@
-check() {
-  cd "$pkgname-$pkgver"
-
-  export RUSTUP_TOOLCHAIN=stable
-  cargo test --frozen --all-features -- \
-  --skip problem::test::* # This tests will fail under chroot
-}

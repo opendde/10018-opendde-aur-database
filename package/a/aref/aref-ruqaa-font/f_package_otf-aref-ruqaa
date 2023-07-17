@@ -1,6 +1,0 @@
-package_otf-aref-ruqaa() {
-	cd "$_pname-$pkgver"
-	install -Dm0644 -t "$pkgdir/usr/share/fonts/OTF/" *.otf
-	install -Dm0644 -t "$pkgdir/usr/share/doc/$pkgname/" README.md
-	install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname" OFL.txt
-}

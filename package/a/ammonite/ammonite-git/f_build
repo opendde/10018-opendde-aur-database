@@ -1,4 +1,0 @@
-build() {
-  cd $srcdir/$_pkgname
-  mill -i amm[$_scalaversion].assembly
-}

@@ -1,7 +1,0 @@
-package() {
-	cd "$srcdir/$pkgname"
-	mkdir -p "$pkgdir/usr/bin"
-	mkdir -p "$pkgdir/usr/lib/systemd/system"
-	install -m 540 $pkgname "$pkgdir/usr/bin"
-	install -m 644 "${pkgname}.service" "$pkgdir/usr/lib/systemd/system"
-}

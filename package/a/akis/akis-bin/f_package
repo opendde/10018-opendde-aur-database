@@ -1,3 +1,0 @@
-package() {
-	mv $srcdir/usr $pkgdir/usr
-}

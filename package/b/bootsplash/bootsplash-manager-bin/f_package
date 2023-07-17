@@ -1,3 +1,0 @@
-package() {
-     bsdtar -xf "$srcdir/bootsplash-manager-$pkgver.tar.gz" -C "$pkgdir"
-}

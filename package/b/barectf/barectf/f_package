@@ -1,6 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname-$pkgver"
-  python setup.py install --prefix=/usr --root="$pkgdir/" --optimize=1
-  install -Dm644 "doc/man/barectf.1" "$pkgdir/usr/share/man/man1/barectf.1"
-  install -Dm644 "extra/barectf-tracepoint.h" "$pkgdir/usr/include/barectf-tracepoint.h"
-}

@@ -1,4 +1,0 @@
-package() {
-    install -d ${pkgdir}/usr/bin
-    install -Dm755 ${srcdir}/apigee*/apigeectl ${pkgdir}/usr/bin/apigeectl
-}

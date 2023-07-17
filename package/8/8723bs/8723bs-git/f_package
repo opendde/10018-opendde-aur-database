@@ -1,6 +1,0 @@
-package() {
-	cd "${srcdir}/${_pkgname}/"
-	_kver=$(uname -r)
-	mkdir -p "${pkgdir}/usr/lib/modules/${_kver}/kernel/drivers/net/wireless/rtl8723bs/"
-	install -p -m 644 8723bs.ko "${pkgdir}/usr/lib/modules/${_kver}/kernel/drivers/net/wireless/rtl8723bs/"
-}

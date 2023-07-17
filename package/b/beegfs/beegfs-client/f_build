@@ -1,9 +1,0 @@
-build() {
-    cd "$srcdir/$pkgname-$pkgver"
-
-    make helperd-all
-
-    cd "$srcdir/$pkgname-$pkgver"
-
-    make client
-}

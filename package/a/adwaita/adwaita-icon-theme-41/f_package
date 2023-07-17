@@ -1,7 +1,0 @@
-package() {
-  cd $basename
-  make DESTDIR="$pkgdir" install
-  mv -v "${pkgdir}/usr/share/pkgconfig/adwaita-icon-theme.pc" "${pkgdir}/usr/share/pkgconfig/adwaita-icon-theme-41.pc"
-  mv -v "${pkgdir}/usr/share/icons/Adwaita" "${pkgdir}/usr/share/icons/Adwaita41"
-  sed -i 's/^Name=Adwaita$/Name=Adwaita41/' "${pkgdir}/usr/share/icons/Adwaita41/index.theme"
-}

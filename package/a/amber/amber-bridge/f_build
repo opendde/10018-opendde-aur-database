@@ -1,4 +1,0 @@
-build() {
-	arch-meson --wrap-mode default "${_pkgname}-${pkgver}" build
-	meson compile -C build
-}

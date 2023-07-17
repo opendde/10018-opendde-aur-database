@@ -1,1 +1,0 @@
-("git+https://github.com/canonical/${_realname}.git#tag=v${pkgver}"

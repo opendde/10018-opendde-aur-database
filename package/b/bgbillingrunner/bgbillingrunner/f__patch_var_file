@@ -1,5 +1,0 @@
-_patch_var_file() {
-	local file="$1"
-	v2="s/\\\${pkgver}/${pkgver}/g"
-	sed -i "$v2" $file
-}

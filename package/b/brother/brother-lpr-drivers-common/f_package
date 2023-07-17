@@ -1,4 +1,0 @@
-package() {
- cd $pkgdir || return 1
- tar -xzf ${srcdir}/data.tar.gz || return 1
-}

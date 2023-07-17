@@ -1,9 +1,0 @@
-package() {
-  cd ${srcdir}/${pkgname}-${pkgver}
-  echo $(pwd)
-  install -Dm755 target/release/apnotes-tui -t "${pkgdir}/usr/bin"
-  install -Dm755 target/release/apnotes -t "${pkgdir}/usr/bin"
-  install -Dm644 target/release/apnotes.1.gz -t "${pkgdir}/usr/share/man/man1"
-  install -Dm644 target/release/apnotes.5.gz -t "${pkgdir}/usr/share/man/man5"
-  install -Dm644 target/release/apnotes-tui.1.gz -t "${pkgdir}/usr/share/man/man1"
-}

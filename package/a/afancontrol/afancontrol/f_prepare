@@ -1,7 +1,0 @@
-prepare() {
-	cd "$pkgname-$pkgver"
-	sed -i \
-		-e '/etc\/afancontrol/d' \
-		-e 's|etc/systemd|lib/systemd|g' setup.py
-	sed -i 's|usr/local|usr|g' "pkg/$pkgname.conf"
-}

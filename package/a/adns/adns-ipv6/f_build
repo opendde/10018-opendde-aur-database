@@ -1,6 +1,0 @@
-build() {
-  cd $srcdir/$_pkgname-$pkgver
-  patch -p1 < $srcdir/adns-ipv6.patch
-  ./configure --prefix=/usr
-  make
-}

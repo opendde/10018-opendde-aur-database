@@ -1,7 +1,0 @@
-prepare() {
-	cd "${srcdir}/${pkgname}-${pkgver}"
-	rm .gitignore
-	rm README.md
-	rm package.sh
-	rm -r img
-}

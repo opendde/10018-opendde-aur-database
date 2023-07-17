@@ -1,8 +1,0 @@
-package() {
-    cd "$srcdir/blackmarket"
-    install -dm755 "${pkgdir}/usr/share/java/${pkgname}"
-
-    install -Dm644 lib/jars/*        "${pkgdir}/usr/share/java/${pkgname}/"
-    install -Dm755 ../${pkgname}.sh  "${pkgdir}/usr/bin/${pkgname}"
-    install -Dm644 ../icon-48x48.png "${pkgdir}/usr/share/icons/hicolor/48x48/apps/${pkgname}.png"
-}

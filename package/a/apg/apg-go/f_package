@@ -1,9 +1,0 @@
-package() {
-    # binary
-    install -D -m755 "${srcdir}/${pkgname}-${pkgver}/build/${pkgname}" \
-        "${pkgdir}/usr/bin/apg"
-
-    # license
-    install -Dm644 "${srcdir}/${pkgname}-${pkgver}/LICENSE" \
-        "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}

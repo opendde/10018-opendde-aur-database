@@ -1,5 +1,0 @@
-build() {
-	cd "${_srcdir}"
-	./configure --prefix=/usr --localstatedir=/var --sbindir=/usr/bin --sysconfdir=/etc
-	make
-}

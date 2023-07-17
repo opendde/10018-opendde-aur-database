@@ -1,7 +1,0 @@
-build() {
-  cd "${srcdir}/${_pkgname}"
-  cargo build --release
-  sed -i -e "s/^bat/.\/target\/release\/${_pkgname}/g" assets/create.sh
-  sed -i -e "s/submodule_prompt=unspecified/submodule_prompt=yes/g" assets/create.sh
-  bash assets/create.sh
-}

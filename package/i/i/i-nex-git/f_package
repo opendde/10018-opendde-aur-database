@@ -1,4 +1,0 @@
-package() {
-    cd "${srcdir}/${_pkgname}"
-    MAGICK_OCL_DEVICE=OFF make -j1 DESTDIR="${pkgdir}/" install
-}

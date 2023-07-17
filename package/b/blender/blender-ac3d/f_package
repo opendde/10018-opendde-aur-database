@@ -1,4 +1,0 @@
-package() {
-    mkdir -p ${pkgdir}/usr/share/blender/$blender_version/scripts/addons
-    cp -r ${srcdir}/Blender-AC3D/io_scene_ac3d/ ${pkgdir}/usr/share/blender/$blender_version/scripts/addons/
-}

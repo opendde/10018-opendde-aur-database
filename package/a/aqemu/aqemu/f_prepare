@@ -1,4 +1,0 @@
-prepare() {
-    # explicit import needed for gcc10
-    sed -i 's|#include <vector>|#include <vector>\n#include <stdexcept>|' "$srcdir"/$pkgname-$pkgver/src/docopt/docopt_value.h
-}

@@ -1,8 +1,0 @@
-build() {
-    # Fix the executable name in the desktop file
-    sed -i "s|/usr/bin/AZ-Launcher|/usr/bin/azlauncher|g" \
-        "${srcdir}/squashfs-root/${pkgname}.desktop"
-
-    # Fix permissions; .AppImage permissions are 700 for all directories
-    chmod -R a-x+rX squashfs-root/usr
-}

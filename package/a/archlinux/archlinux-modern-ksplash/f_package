@@ -1,5 +1,0 @@
-package() {
-  cd $srcdir/${pkgname}-${pkgver}
-  mkdir -p        $pkgdir/usr/share/apps/ksplash/Themes
-  mv archlinux-*/ $pkgdir/usr/share/apps/ksplash/Themes
-}

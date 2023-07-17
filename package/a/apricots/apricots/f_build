@@ -1,5 +1,0 @@
-build() {
-  cd $pkgname
-  ./configure --prefix=/usr --sysconfdir=/etc
-  make
-}

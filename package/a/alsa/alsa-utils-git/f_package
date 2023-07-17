@@ -1,9 +1,0 @@
-package() {
-  depends+=('libasound.so' 'libatopology.so' 'libformw.so' 'libmenuw.so'
-  'libncursesw.so' 'libpanelw.so' 'libsamplerate.so')
-  cd alsa-utils
-  make DESTDIR="${pkgdir}" install
-  install -vDm 644 README.md -t "${pkgdir}/usr/share/doc/alsa-utils"
-  # dir where to save ALSA state
-  install -d "${pkgdir}/var/lib/alsa"
-}

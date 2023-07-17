@@ -1,6 +1,0 @@
-package() {
-  cd $pkgname
-  make install
-  install -Dm644 COPYRIGHT "$pkgdir"/usr/share/licenses/$pkgname/COPYRIGHT
-  install -Dm644 README.md "$pkgdir"/usr/share/doc/$pkgname/README.md
-}

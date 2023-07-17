@@ -1,5 +1,0 @@
-package() {
-    cd "${srcdir}/argos-installer"
-    install -Dm755 "add-argos" "$pkgdir/usr/bin/add-argos"
-    install -Dm644 "argos.desktop" "$pkgdir/usr/share/applications/argos.desktop"
-}

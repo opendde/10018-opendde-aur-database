@@ -1,8 +1,0 @@
-prepare() {
-  rm -rf "${srcdir}/${_srcname}/cmake"
-  cd "${srcdir}/cmake-vala"
-  cp -r . "${srcdir}/${_srcname}/cmake"
-
-  cd "${srcdir}/${_srcname}"
-  mkdir -p build
-}

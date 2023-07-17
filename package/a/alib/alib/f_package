@@ -1,4 +1,0 @@
-package() {
-	cd "ALib"
-	make install
-}

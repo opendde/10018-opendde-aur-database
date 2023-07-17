@@ -1,7 +1,0 @@
-build() {
-  cd "${srcdir}"/$pkgname-$pkgver
-
-  autoreconf -fi
-  ./configure --prefix=/usr --with-x=yes --with-sdl=yes --disable-rpath --disable-sdltest
-  make
-}

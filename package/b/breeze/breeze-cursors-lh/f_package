@@ -1,4 +1,0 @@
-package() {
-	mkdir -p ${pkgdir}/usr/share/icons
-	cp -dr --no-preserve='ownership' ${srcdir}/Breeze-[A-Z]* "$pkgdir"/usr/share/icons
-}

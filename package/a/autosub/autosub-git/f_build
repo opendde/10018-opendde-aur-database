@@ -1,4 +1,0 @@
-build() {
-  cd autosub
-  python setup.py build
-}

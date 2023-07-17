@@ -1,8 +1,0 @@
-package() {
-    cd "$srcdir/$_svnname"
-    tgt_dir=$pkgdir/usr/include
-    for header in $(find boost -name '*.hpp' -o -name '*.h'); do
-        mkdir -p $(dirname $tgt_dir/$header)
-        cp $header $tgt_dir/$header
-    done
-}

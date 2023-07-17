@@ -1,8 +1,0 @@
-build() {
-	cd "${srcdir}/afl-${pkgver}/qemu_mode/qemu-${qemu_version}"
-	CFLAGS="-O3 -ggdb" ./configure --disable-system \
-	  --enable-linux-user --disable-gtk --disable-sdl --disable-vnc \
-	  --target-list="x86_64-linux-user" --enable-pie --enable-kvm \
-	  --python=/usr/bin/python2
-	make PREFIX=/usr
-}

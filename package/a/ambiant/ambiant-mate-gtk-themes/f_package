@@ -1,4 +1,0 @@
-package() {
-    tar xf data.tar.zst
-    mv usr $pkgdir/
-}

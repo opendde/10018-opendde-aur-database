@@ -1,6 +1,0 @@
-build() {
-	cd ${srcdir}
-	mv Bilibili直播弹幕库-linux-x64 ${pkgname}
-	cd ${pkgname}
-	mv Bilibili直播弹幕库 bilibili-live-helper
-}

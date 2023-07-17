@@ -1,7 +1,0 @@
-build() {
- cd $pkgname-$pkgver || return 1
-  ./configure
-  make 
-  mkdir -p $pkgdir/usr/bin
-  cp as6edriver/as6edriver $pkgdir/usr/bin/
-}

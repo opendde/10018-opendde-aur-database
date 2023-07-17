@@ -1,5 +1,0 @@
-build() {
-  cd "$srcdir/adplug"
-  ./configure --prefix=/usr --enable-maintainer-mode
-  make
-}

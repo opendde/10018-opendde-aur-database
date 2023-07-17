@@ -1,6 +1,0 @@
-package() {
-  install -D -m644 "amuled.systemd" "${pkgdir}/usr/lib/systemd/system/amuled.service"
-  install -D -m644 "amuleweb.systemd" "${pkgdir}/usr/lib/systemd/system/amuleweb.service"
-  cd "${pkgname}-${pkgver}-dlp"
-  make DESTDIR=${pkgdir} install
-}

@@ -1,5 +1,0 @@
-package() {
-  mkdir -p "${pkgdir}/usr/share/java"
-  install -m 644 -D "${srcdir}/${_binname}-${pkgver}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
-  mv "${srcdir}/${_binname}-${pkgver}" "${pkgdir}/usr/share/java/${pkgname}"
-}

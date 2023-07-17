@@ -1,3 +1,0 @@
-prepare() {
-	bsdtar -xf data.tar.gz
-}

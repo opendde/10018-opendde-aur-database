@@ -1,6 +1,0 @@
-build() {
-  cd "$srcdir/${pkgname%-git}"
-  mkdir -p build
-  meson setup build -Dlv2dir=/usr/lib/lv2
-  meson compile -C $srcdir/${pkgname%-git}/build
-}

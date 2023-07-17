@@ -1,5 +1,0 @@
-package() {
-	_srcdir="$srcdir/${_pkgname}-${pkgver}"
-	mkdir -p "$pkgdir/usr/bin"
-    cp "$_srcdir/$_binname" "$pkgdir/usr/bin/$_binname"
-}

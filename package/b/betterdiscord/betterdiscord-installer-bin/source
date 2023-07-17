@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.${CARCH}.AppImage::https://github.com/BetterDiscord/Installer/releases/download/v${pkgver}/BetterDiscord-Linux.AppImage"

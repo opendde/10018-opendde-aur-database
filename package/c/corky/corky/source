@@ -1,1 +1,0 @@
-("$pkgname::git+https://gitlab.com/goeb/$pkgname.git#tag=$pkgver")

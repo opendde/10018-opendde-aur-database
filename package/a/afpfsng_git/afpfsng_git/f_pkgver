@@ -1,4 +1,0 @@
-pkgver() {
-  cd "$srcdir/afpfs-ng"
-  git describe --always
-}

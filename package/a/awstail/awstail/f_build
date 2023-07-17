@@ -1,4 +1,0 @@
-build() {
-	cd aws-logs
-	./gradlew clean build
-}

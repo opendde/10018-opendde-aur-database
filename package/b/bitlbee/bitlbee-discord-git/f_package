@@ -1,4 +1,0 @@
-package() {
-    cd "bitlbee-discord"
-    make DESTDIR="$pkgdir" install
-}

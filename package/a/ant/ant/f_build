@@ -1,4 +1,0 @@
-build() {
-    cd "${srcdir}/${pkgname}"
-    LDFLAGS+=" -lm" make
-}

@@ -1,6 +1,0 @@
-package() {
-  install -D -m 644 \
-    ${srcdir}/${_apachename}-${pkgver}/${_apachename}-${pkgver}.jar \
-    ${pkgdir}/usr/share/java/${_apachename}-${pkgver}.jar
-  ln -s ${_apachename}-${pkgver}.jar ${pkgdir}/usr/share/java/${_apachename}.jar
-}

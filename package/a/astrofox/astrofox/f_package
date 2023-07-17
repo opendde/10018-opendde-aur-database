@@ -1,7 +1,0 @@
-package() {
-    cd $srcdir/${pkgname}-${pkgver}
-    install -Dm755 $srcdir/${pkgname}.sh           ${pkgdir}/usr/bin/${pkgname}
-    install -Dm644 ${pkgname}.asar      ${pkgdir}/usr/share/${pkgname}/${pkgname}.asar
-    install -Dm644 build/icons/512x512.png  ${pkgdir}/usr/share/icons/hicolor/512x512/apps/${pkgname}.png
-    install -Dm644 $srcdir/${pkgname}.desktop       ${pkgdir}/usr/share/applications/${pkgname}.desktop
-}

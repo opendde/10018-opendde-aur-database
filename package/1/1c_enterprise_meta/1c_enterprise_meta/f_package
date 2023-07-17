@@ -1,4 +1,0 @@
-package() {
-	install -dm755 ${pkgdir}/usr/lib
-	ln -s /usr/lib/libenchant-2.so ${pkgdir}/usr/lib/libenchant.so.1
-}

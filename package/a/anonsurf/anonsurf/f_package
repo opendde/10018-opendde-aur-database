@@ -1,9 +1,0 @@
-package() {
-           cd "${srcdir}"
-           install -dm755 "${pkgdir}/usr/share/licenses/${pkgname}"
-           install -dm755 "${pkgdir}/usr/bin/"
-           install -dm755 "${pkgdir}/etc/${pkgname}"
-           cp -rf usr/bin/anonsurf "${pkgdir}/usr/bin/anonsurf"
-           cp torrc "${pkgdir}/etc/${pkgname}/torrc"
-           cp usr/share/doc/anonsurf/copyright "${pkgdir}/usr/share/licenses/${pkgname}/COPYRIGHT"
-}

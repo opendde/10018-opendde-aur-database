@@ -1,5 +1,0 @@
-package() {
-  install -dm 755 "${pkgdir}"/usr/lib/initcpio/install
-  sed "s/_arch/$CARCH/" -i bbswitch
-  install -m 644 bbswitch "${pkgdir}"/usr/lib/initcpio/install/
-}

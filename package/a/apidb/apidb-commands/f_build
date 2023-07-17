@@ -1,7 +1,0 @@
-build() {
-    cd apidb-${pkgver}-beta
-    mkdir build
-    cd build
-    cmake -DCMAKE_INSTALL_PREFIX=/usr -DAPIDB_VERSION_STAGE=beta -DPLATFORM=LINUX_ARCH -DAPIDBBUILD="CORE;COMMANDS" -DAPIDBINSTALL="COMMANDS" ..
-    make
-}

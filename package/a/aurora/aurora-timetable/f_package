@@ -1,6 +1,0 @@
-package() {
-  tar xvf data.tar.gz -C "${pkgdir}/"
-  install -d "${pkgdir}/usr/share/java"
-  mv "${pkgdir}/usr/share/aurora-orarend" "${pkgdir}/usr/share/java/"
-  sed -i "3s|aurora-orarend|java/aurora-orarend|" "${pkgdir}/usr/bin/aurora-orarend"
-}

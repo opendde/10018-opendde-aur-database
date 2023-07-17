@@ -1,4 +1,0 @@
-package() {
-  cd budgie-desktop-view-${pkgver}
-  DESTDIR="${pkgdir}" ninja -C build install
-}

@@ -1,1 +1,0 @@
-("git+https://github.com/tpoechtrager/${_pkgname}.git#commit=${_osxcrosscommit}"

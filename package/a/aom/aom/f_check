@@ -1,5 +1,0 @@
-check() {
-  cd "$srcdir/_build"
-
-  #make runtests
-}

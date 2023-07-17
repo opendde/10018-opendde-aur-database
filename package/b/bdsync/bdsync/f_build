@@ -1,6 +1,0 @@
-build() {
-  cd "$pkgname"
-
-  CFLAGS="${CFLAGS//-O2/-O3}"
-  make
-}

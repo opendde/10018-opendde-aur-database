@@ -1,4 +1,0 @@
-package() {
-  cd "${pkgname}"-"${_commit:0:7}"
-  make DESTDIR="${pkgdir}" PREFIX="/usr" install
-}

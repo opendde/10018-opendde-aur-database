@@ -1,8 +1,0 @@
-package() {
-	cd "${srcdir}/build"
-	install -Dm755 "src/SampleApp" "${pkgdir}/usr/bin/avs-alexa-sampleapp"
-	mkdir -p "${pkgdir}/var/lib/avs-alexa-sampleapp"
-	install -D "${srcdir}/avs-device-sdk-${pkgver}/Integration/AlexaClientSDKConfig.json" "${pkgdir}/var/lib/avs-alexa-sampleapp/Integration/AlexaClientSDKConfig.json"
-	install -D "${srcdir}/avs-device-sdk-${pkgver}/LICENSE.txt" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-	install -Dm644 "${srcdir}/avs-alexa-sampleapp.service" "${pkgdir}/usr/lib/systemd/system/avs-alexa-sampleapp.service"
-}

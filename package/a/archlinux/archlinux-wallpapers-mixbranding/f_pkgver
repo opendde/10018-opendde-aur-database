@@ -1,4 +1,0 @@
-pkgver() {
-  cd $pkgname
-  git describe --tags | sed 's/-/+/g'
-}

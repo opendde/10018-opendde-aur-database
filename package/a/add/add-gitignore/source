@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz::https://github.com/TejasQ/add-gitignore/archive/v${pkgver}.tar.gz")

@@ -1,6 +1,0 @@
-package() {
-  cd algernon-${pkgver}-linux_${CARCH}_static
-  install -Dm755 algernon "$pkgdir/usr/bin/algernon"
-  install -Dm644 algernon.1.gz "$pkgdir/usr/share/man/man1/algernon.1.gz"
-  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/algernon/LICENSE"
-}

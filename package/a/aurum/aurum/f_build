@@ -1,4 +1,0 @@
-build() {
-    cd "$pkgname"
-    cargo build --release --locked
-}

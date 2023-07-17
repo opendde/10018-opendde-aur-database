@@ -1,4 +1,0 @@
-prepare() {
-	cd "$srcdir/Bracmat/src"
-	patch -i "$srcdir/path-to-help.patch"
-}

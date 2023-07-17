@@ -1,9 +1,0 @@
-package() {
-   mkdir -p "$pkgdir/usr/share/cups/model/"
-   mkdir -p "$pkgdir/usr/lib/cups/filter/"
-
-   cp "$srcdir/opt/brother/Printers/HL1218W/cupswrapper/brother-HL1218W-cups-en.ppd" "$pkgdir/usr/share/cups/model/brother-HL1218W-cups-en.ppd"
-   cp "$srcdir/opt/brother/Printers/HL1218W/cupswrapper/brother_lpdwrapper_HL1218W"  "$pkgdir/usr/lib/cups/filter/brother_lpdwrapper_HL1218W"
-   cp -r "$srcdir/opt/" "$pkgdir/opt/"
-
-}

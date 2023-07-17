@@ -1,4 +1,0 @@
-package() {
-	cd "$srcdir/${pkgname%-git}"
-	install -Dm 755 target/release/blkdevsync -t "${pkgdir}/usr/bin"
-}

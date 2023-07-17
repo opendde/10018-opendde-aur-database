@@ -1,6 +1,0 @@
-package() {
-  cd bbswitch-${pkgver}
-  _extradir="/usr/lib/modules/${_kernname}/extramodules"
-  install -Dt "${pkgdir}${_extradir}" -m644 *.ko
-  find "${pkgdir}" -name '*.ko' -exec xz {} +
-}

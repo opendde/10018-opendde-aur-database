@@ -1,9 +1,0 @@
-package() {
-    # Extract package data
-    tar xf data.tar.xz -C "${pkgdir}"
-
-    install -d "${pkgdir}/usr/bin"
-    ln -sf "/opt/${_pkgname}/${pkgname%-bin}" "${pkgdir}/usr/bin/${pkgname%-bin}"
-
-    install -D -m644 "${pkgdir}/opt/${_pkgname}/resources/app/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname%-bin}/LICENSE"
-}

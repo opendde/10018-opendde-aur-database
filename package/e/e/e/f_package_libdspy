@@ -1,7 +1,0 @@
-package_libdspy() {
-	pkgdesc='D-Spy library for IDE integration'
-	license=('LGPL3')
-	depends=('glib2')
-
-	mv library/* "$pkgdir"
-}

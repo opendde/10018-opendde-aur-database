@@ -1,5 +1,0 @@
-package() {
-  cd appcenter/build
-
-  make DESTDIR="${pkgdir}" install
-}

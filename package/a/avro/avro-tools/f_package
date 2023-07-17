@@ -1,9 +1,0 @@
-package() {
-	cd "${srcdir}"
-
-	msg2 "Install Java libraries in /usr/share/java/${pkgname}..."
-	install -D "avro-tools-${pkgver}.jar" "${pkgdir}/usr/share/java/${pkgname}/${pkgname}.jar"
-
-	msg2 "Install an executable at /usr/bin/..."
-	install -D ${pkgname}-launcher.sh "${pkgdir}/usr/bin/${pkgname}"
-}

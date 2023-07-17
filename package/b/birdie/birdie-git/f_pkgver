@@ -1,4 +1,0 @@
-pkgver() {
-  cd ${pkgname%-git}
-  echo $(git describe --tags | sed s/+git./.r/ | sed s'/v\.//;s/-/./g')
-}

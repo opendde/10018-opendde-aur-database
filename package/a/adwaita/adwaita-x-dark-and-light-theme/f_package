@@ -1,6 +1,0 @@
-package() {
-    cd $srcdir
-    for i in Adwaita-X*; do
-        find "$i" -type f -not -name *~ -exec install -Dm644 '{}' "$pkgdir/usr/share/themes/{}" \;
-    done
-}

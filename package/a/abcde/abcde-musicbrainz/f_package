@@ -1,3 +1,0 @@
-package() {
-  make -C "${_pkgname}-${pkgver}" DESTDIR="${pkgdir}" prefix=/usr sysconfdir=/etc install
-}

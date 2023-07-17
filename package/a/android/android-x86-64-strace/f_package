@@ -1,6 +1,0 @@
-package() {
-  cd $_pkgname-$pkgver
-  make DESTDIR="$pkgdir" install-exec
-  rm -v "$pkgdir"/opt/android-libs/${_pkg_arch/_/-}/bin/strace-*
-  install -Dm644 COPYING "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-}

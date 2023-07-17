@@ -1,1 +1,0 @@
-("$pkgname::git+https://github.com/udoprog/${pkgname%-git}.git")

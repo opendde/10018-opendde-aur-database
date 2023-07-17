@@ -1,4 +1,0 @@
-package() {
-	cd "$srcdir"
-	tar axfv data.tar.xz -C "${pkgdir}"
-}

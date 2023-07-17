@@ -1,3 +1,0 @@
-pkgver() {
-    grep Version control | cut -d" " -f2
-}

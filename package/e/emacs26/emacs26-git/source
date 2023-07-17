@@ -1,1 +1,0 @@
-("emacs-git::git+https://github.com/emacs-mirror/emacs.git#branch=$BRANCH")

@@ -1,9 +1,0 @@
-build() {
-  cd $srcdir/${_pkgname}-$pkgver
-
-  sed 's|pgsql/\(libpq-fe.h\)|\1|' < passwd.c > passwd.tmp && mv passwd.tmp passwd.c
-  sed 's|pgsql/\(libpq-fe.h\)|\1|' < shadow.c > shadow.tmp && mv shadow.tmp shadow.c
-  sed 's|pgsql/\(libpq-fe.h\)|\1|' < group.c > group.tmp && mv group.tmp group.c
-
-  make
-}

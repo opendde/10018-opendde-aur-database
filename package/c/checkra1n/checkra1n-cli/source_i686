@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}-${pkgrel}-i686::https://assets.checkra.in/downloads/linux/cli/i486/${sha256sums_i686[0]}/checkra1n")

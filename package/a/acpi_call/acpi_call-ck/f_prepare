@@ -1,9 +1,0 @@
-prepare() {
-  cd ${pkgname%%-*}-${pkgver}
-
-  # Fix build with Linux >= 3.17
-  sed -i 's|acpi/acpi.h|linux/acpi.h|' acpi_call.c
-
-  # Fix build with Linux >= 4.12
-  sed -i 's|asm/uaccess.h|linux/uaccess.h|' acpi_call.c
-}

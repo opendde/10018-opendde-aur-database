@@ -1,4 +1,0 @@
-prepare() {
-	cd BitChatClient
-	sed -i '/SocketOptionName.IPv6Only/d' BitChatCore/Network/{LocalPeerDiscovery.cs,Connections/ConnectionManager.cs}
-}

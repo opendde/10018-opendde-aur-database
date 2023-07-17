@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz::https://github.com/cmauri/eviacam/archive/v${pkgver}.tar.gz"

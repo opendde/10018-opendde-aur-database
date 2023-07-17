@@ -1,6 +1,0 @@
-package() {
-    _inst_sv "${_pkgname}"
-    install -Dm755 "$srcdir/runsvdir-activemq" "$pkgdir/etc/runit/sv/runsvdir-activemq/run"
-    install -Dm644 "$srcdir/activemq.conf" "$pkgdir/opt/activemq/runit/sv/activemq/conf"
-    mkdir "$pkgdir/opt/activemq/runit/service"
-}

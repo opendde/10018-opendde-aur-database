@@ -1,7 +1,0 @@
-prepare() {
-    cd ${pkgname}-${_pkgver}
-    # Don't treat warnings as errors.
-    sed -i 's/-Werror//g' src/Makefile.in
-    # Make the sample configuration reflect the PKGBUILD defaults
-    sed -i 's:/var/proxy/logs:/var/log/bip:' samples/$pkgname.conf
-}

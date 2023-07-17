@@ -1,6 +1,0 @@
-build() {
-    cd "$srcdir/bower-$pkgver"
-    make PARALLEL=$MAKEFLAGS
-    make man
-    gzip -f bower.1
-}

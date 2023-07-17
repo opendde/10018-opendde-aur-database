@@ -1,5 +1,0 @@
-build() {
-    cd "$srcdir"/abcmidi
-    ./configure --prefix=/usr
-    make
-}

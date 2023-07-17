@@ -1,5 +1,0 @@
-prepare() {
-    cd "$srcdir/${pkgname%-git}"
-    git apply "$srcdir/00-do-not-pin-requirements.patch"
-    git apply "$srcdir/286.patch"
-}

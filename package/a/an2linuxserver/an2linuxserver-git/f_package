@@ -1,4 +1,0 @@
-package() {
-  install -Dm755 "${srcdir}/${_pkgname}/an2linuxserver.py" "${pkgdir}/usr/bin/an2linuxserver.py"
-  install -Dm644 an2linuxserver.service ${pkgdir}/usr/lib/systemd/user/an2linuxserver.service
-}

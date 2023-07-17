@@ -1,9 +1,0 @@
-package() {
-  cd ${srcdir}/${_basename}-${pkgver}
-  install -Dm644 bbswitch.ko "${pkgdir}"/usr/lib/modules/${_extramodules}/bbswitch.ko
-  gzip "${pkgdir}/usr/lib/modules/${_extramodules}/bbswitch.ko"
-  cd $startdir
-  cp -f $install ${install}.pkg
-  true && install=${install}.pkg
-  sed -i "s/EXTRAMODULES=.*/EXTRAMODULES=$_extramodules/" $install
-}

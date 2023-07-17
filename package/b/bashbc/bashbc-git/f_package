@@ -1,3 +1,0 @@
-package() {
-  install -Dm755 "${_pkgname}/${_pkgname}.sh" "${pkgdir}/usr/bin/${_pkgname}"
-}

@@ -1,8 +1,0 @@
-package() {
-  cd "$srcdir/$pkgver"
-  # Unclean packaging
-  rmdir "AVDump2 Build 7100 Public"
-  install -m 755 -d "$pkgdir"/opt/avdump2
-  install -m 644 -t "$pkgdir"/opt/avdump2 -- *
-  install -Dm 755 "$srcdir"/avdump2 "$pkgdir"/usr/bin/avdump2
-}

@@ -1,8 +1,0 @@
-package() {
-        cd "$src"
-	#install -Dm 755 "blocky_v${pkgver}_linux_${_CARCH}" "$pkgdir"/usr/bin/blocky
-	install -Dm 755 blocky "$pkgdir"/usr/bin/blocky
-        install -Dm 644 blocky.yml "$pkgdir"/etc/blocky/blocky.yml
-        install -Dm 644 blocky.service "$pkgdir"/usr/lib/systemd/system/blocky.service
-        install -Dm 644 blocky.sysusers "$pkgdir"/usr/lib/sysusers.d/blocky.conf
-}

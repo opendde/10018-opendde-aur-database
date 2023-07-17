@@ -1,4 +1,0 @@
-pkgver() {
-  cd alsa-utils
-  git describe --tags | sed 's/-/+/g'
-}

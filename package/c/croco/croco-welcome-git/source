@@ -1,1 +1,0 @@
-("repo::git+https://gitlab.com/croco-os/applications/${_pkgname}.git")

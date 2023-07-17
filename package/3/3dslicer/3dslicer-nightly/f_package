@@ -1,8 +1,0 @@
-package() {
-  install -d "$pkgdir"/opt/3dslicer "$pkgdir"/usr/bin
-  mv "$srcdir/Slicer-${pkgver//_/-}-linux-amd64/"* "$pkgdir/opt/3dslicer"
-  ln -s /opt/3dslicer/Slicer "$pkgdir/usr/bin"
-  install -Dm644 "${srcdir}/3dslicer.desktop" "${pkgdir}/usr/share/applications/3dslicer.desktop"
-  # https://www.slicer.org/slicerWiki/index.php/Slicer3:Slicer3Brand
-  install -Dm644 "${srcdir}/3dslicer.png" "${pkgdir}/usr/share/pixmaps/3dslicer.png"
-}

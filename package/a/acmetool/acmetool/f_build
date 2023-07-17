@@ -1,6 +1,0 @@
-build() {
-    export GOPATH="${srcdir}/build"
-    cd "${GOPATH}/src/github.com/hlandau/acme/cmd/acmetool"
-    go build -pkgdir "${pkgdir}" \
-        -ldflags "-X github.com/hlandau/acme/responder.StandardWebrootPath=\"/run/acme/acme-challenge\""
-}

@@ -1,7 +1,0 @@
-package() {
-	cd "$srcdir/arcolinux-betterlockscreen-${_pkgver}/usr"
-    install -Dm775 local/bin/arcolinux-betterlockscreen      -T ${pkgdir}/usr/local/bin/arcolinux-betterlockscreen
-    install -Dm644 share/applications/arcolinux-betterlockscreen.desktop -T ${pkgdir}/usr/share/applications/arcolinux-betterlockscreen.desktop
-    install -Dm644 share/arcolinux-betterlockscreen/*.py -t ${pkgdir}/usr/share/arcolinux-betterlockscreen
-    install -Dm644 share/arcolinux-betterlockscreen/images/* -t ${pkgdir}/usr/share/arcolinux-betterlockscreen/images
-}

@@ -1,9 +1,0 @@
-package() {
-	cd "$pkgname-$pkgname-$pkgver"
-	mkdir -p $pkgdir/usr/bin
-	license_dir="${pkgdir}/usr/share/licenses/${pkgname}"
-	mkdir -p "${license_dir}"
-	install -m 0644 LICENSE "${license_dir}"
-	make DESTDIR="$pkgdir" install
-	rm -rf $pkgdir/usr/share/batwarn
-}

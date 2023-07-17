@@ -1,9 +1,0 @@
-package() {
-	cd "${srcdir}/${realname}-${pkgver}"
-
-	# Directories
-	install -d "${pkgdir}/usr/lib/firmware/"
-
-	# Application
-	b43-fwcutter -w ""${pkgdir}/usr/lib/firmware/"" "driver/wl_apsta/wl_prebuilt.o"
-}

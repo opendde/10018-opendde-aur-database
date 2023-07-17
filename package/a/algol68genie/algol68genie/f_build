@@ -1,5 +1,0 @@
-build() {
-  cd "$srcdir/algol68g-$pkgver"
-  CFLAGS="$CFLAGS -O3 -fomit-frame-pointer -funroll-loops" ./configure --prefix=/usr
-  make
-}

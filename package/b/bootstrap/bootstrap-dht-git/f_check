@@ -1,9 +1,0 @@
-check() {
-  cd "bootstrap-dht/tests"
-
-  b2 \
-    cflags="$CFLAGS" \
-    cxxflags="$CXXFLAGS" \
-    linkflags="$LDFLAGS" \
-    release
-}

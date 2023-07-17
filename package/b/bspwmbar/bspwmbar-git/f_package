@@ -1,6 +1,0 @@
-package() {
-  cd ${pkgname%-git}
-  install -Dm755 ${pkgname%-git} "$pkgdir"/usr/bin/${pkgname%-git}
-#  install -Dm644 docs/LICENSE "$pkgdir"/usr/share/licenses/${pkgname}/LICENSE
-  install -Dm644 docs/${pkgname%-git}.png  "$pkgdir"/usr/share/pixmaps/${pkgname%-git}.png
-}

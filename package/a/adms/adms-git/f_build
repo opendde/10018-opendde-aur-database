@@ -1,6 +1,0 @@
-build() {
-  cd "${srcdir}/${_pkgname}"
-  ./bootstrap.sh
-  ./configure --enable-maintainer-mode --prefix=/usr
-  make
-}

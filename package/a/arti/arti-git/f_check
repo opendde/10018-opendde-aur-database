@@ -1,7 +1,0 @@
-check() {
-  cd "arti"
-
-  #cargo test \
-  #  --locked \
-  #  --release
-}

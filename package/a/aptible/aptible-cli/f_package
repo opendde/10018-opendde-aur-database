@@ -1,6 +1,0 @@
-package() {
-    msg2 "Extracting data.tar.gz..."
-    tar xf data.tar.gz -C "$pkgdir/"
-    mkdir -p "$pkgdir/usr/bin"
-    ln -s /opt/aptible-toolbelt/bin/aptible "$pkgdir/usr/bin/aptible"
-}

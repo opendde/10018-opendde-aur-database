@@ -1,3 +1,0 @@
-pkgver() {
-  git -C "$srcdir"/blender describe --long --tags | sed -r 's/^v//;s/([^-]*-g)/r\1/;s/-/./g'
-}

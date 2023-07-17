@@ -1,4 +1,0 @@
-build() {
-	cd ${srcdir}/${pkgname}-${pkgver}
-	go build -o aretext -ldflags="-X 'main.commit=7b2e0c0c9dc98c85f26f6149bcae2044ce2e9a4f' -X 'main.version=${pkgver}'" main.go
-}

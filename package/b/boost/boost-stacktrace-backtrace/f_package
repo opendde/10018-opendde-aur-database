@@ -1,5 +1,0 @@
-package() {
-  cd boost_$_boostver
-  install -d "${pkgdir}"/usr/lib
-  cp -P stage/lib/libboost_stacktrace_backtrace.* "${pkgdir}"/usr/lib
-}

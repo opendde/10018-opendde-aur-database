@@ -1,5 +1,0 @@
-package_bbswitch-ati-dkms-git() {
-    depends=('dkms')
-    cd ${srcdir}/${pkgbase}
-    install -Dt "${pkgdir}/usr/src/${pkgbase}" -m644 Makefile bbswitch.c dkms/dkms.conf
-}

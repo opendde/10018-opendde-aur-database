@@ -1,4 +1,0 @@
-prepare() {
-  cd avahi
-  NOCONFIGURE=1 ./autogen.sh
-}

@@ -1,4 +1,0 @@
-pkgver() {
-    cd "$srcdir/$_gitname"
-    printf "%s.r%s" "$(git describe --tags $(git rev-list --tags --max-count=1) | sed "s/-/./g")" "$(git rev-list --count HEAD)"
-}

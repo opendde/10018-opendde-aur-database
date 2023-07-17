@@ -1,3 +1,0 @@
-package() {
-  cp -a $srcdir/autobuild-${pkgver}/build/usr $pkgdir
-}

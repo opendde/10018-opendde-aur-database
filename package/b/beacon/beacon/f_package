@@ -1,7 +1,0 @@
-package() {
-  cd $pkgname-$pkgver
-  install -Dm755 $pkgname "$pkgdir"/usr/bin/$pkgname
-  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-  install -Dm644 config.yml.example "$pkgdir/etc/beacon/config.yml"
-  install -Dm644 "$srcdir/beacon.service" "$pkgdir/usr/lib/systemd/system/beacon.service"
-}

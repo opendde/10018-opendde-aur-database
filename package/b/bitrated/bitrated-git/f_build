@@ -1,9 +1,0 @@
-build() {
-  cd ${pkgname%-git}
-
-  msg 'Installing NPM dependencies...'
-  npm install -d
-
-  msg 'Building static pages...'
-  TARGET=static npm run build-static
-}

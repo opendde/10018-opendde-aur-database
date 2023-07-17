@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz::$url/archive/rel_$_pkgver.tar.gz"

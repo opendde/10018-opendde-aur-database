@@ -1,5 +1,0 @@
-prepare() {
-	cd ${srcdir}
-    chmod a+x ${_sourcename}
-	${srcdir}/${_sourcename} --appimage-extract > /dev/null
-}

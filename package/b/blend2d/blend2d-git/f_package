@@ -1,9 +1,0 @@
-package() {
-  cd "$_pkgname"/build
-  make DESTDIR="$pkgdir" install
-
-  # Do not include the unit test program
-  rm -rf "$pkgdir"/usr/bin
-
-  install -Dm644 -t "$pkgdir"/usr/share/licenses/"$pkgname" ../LICENSE.md
-}

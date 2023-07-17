@@ -1,6 +1,0 @@
-build() {
-  cd ${pkgname}
-
-  qmake-qt4
-  make
-}

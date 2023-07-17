@@ -1,1 +1,0 @@
-("ddclient-${pkgver}.tar.gz::https://github.com/ddclient/ddclient/archive/v${pkgver}.tar.gz"

@@ -1,1 +1,0 @@
-("${pkgname}"::'git+https://git.alchemyviewer.org/alchemy/alchemy-next.git#branch=main'

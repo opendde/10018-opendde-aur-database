@@ -1,5 +1,0 @@
-package() {
-  cd "${srcdir}/bluetoother"
-
-  ./scripts/priv/dd_install_bluetoother.py -b=Release  --installdir="/usr" --destdir="${pkgdir}" --no-configure --no-make --no-sudo
-}

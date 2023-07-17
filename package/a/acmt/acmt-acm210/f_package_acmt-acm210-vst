@@ -1,5 +1,0 @@
-package_acmt-acm210-vst() {
-	groups=('pro-audio' 'vst-plugins')
-	pkgdesc="ACM210 Graphical EQ (VST)"
-	install -Dm755 ${srcdir}/plugin-binaries/VST/ACM210.so ${pkgdir}/usr/lib/vst/ACM210.so
-}

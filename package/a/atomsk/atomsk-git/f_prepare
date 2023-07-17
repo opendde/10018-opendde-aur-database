@@ -1,4 +1,0 @@
-prepare() {
-    mkdir -p ${srcdir}/atomsk/${_pkgname}
-    cp -r ${srcdir}/atomsk/src ${srcdir}/atomsk/${_pkgname}
-}

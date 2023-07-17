@@ -1,4 +1,0 @@
-package() {
-    install -d "$pkgdir/usr/bin/"
-    install "3dsconv/3dsconv/3dsconv.py" "$pkgdir/usr/bin/3dsconv"
-} 

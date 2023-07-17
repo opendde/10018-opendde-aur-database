@@ -1,4 +1,0 @@
-build() {
-    cd "$srcdir/bootcleanse-$pkgver"
-    make
-}

@@ -1,4 +1,0 @@
-prepare() {
-  export GOPATH="$srcdir"
-  go get -d $_gourl
-}

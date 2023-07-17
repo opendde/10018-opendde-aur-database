@@ -1,7 +1,0 @@
-package_adwaita-qt6() {
-  pkgdesc="A style to bend Qt6 applications to look like they belong into GNOME Shell"
-  depends=('libxcb' 'qt6-base')
-  provides=('libadwaitaqt6priv.so=1' 'libadwaitaqt6.so=1')
-
-  make -C build-qt6 DESTDIR="$pkgdir" install
-}

@@ -1,7 +1,0 @@
-package() {
-    cd "barchart-${pkgver}"
-
-    install -Dm755 target/release/barchart "${pkgdir}/usr/bin/barchart"
-    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/barchart/LICENSE"
-    install -Dm644 README.md "${pkgdir}/usr/share/doc/barchart/README.md"
-}

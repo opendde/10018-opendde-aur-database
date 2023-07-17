@@ -1,6 +1,0 @@
-build() {
-	cd "$_srcname"
-	cd Release-Linux
-	cmake -S .. -B . -DCMAKE_BUILD_TYPE=Release
-	make
-}

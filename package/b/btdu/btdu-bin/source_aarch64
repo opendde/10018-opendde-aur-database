@@ -1,1 +1,0 @@
-(${pkgname}::https://github.com/CyberShadow/btdu/releases/download/v$pkgver/btdu-glibc-aarch64)

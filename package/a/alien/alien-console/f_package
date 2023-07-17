@@ -1,8 +1,0 @@
-package() {
-	cd "$pkgname-$pkgver"
-	install -Dvm755 "$pkgname" "$pkgdir/usr/bin/$pkgname"
-	mkdir -p "$pkgdir/usr/share/$pkgname"
-	install -Dvm644 etc/* "$pkgdir/usr/share/$pkgname"
-	mkdir -p "$pkgdir/usr/share/licenses/alien-console"
-	install -Dvm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/"
-}

@@ -1,5 +1,0 @@
-package() {
-        cd "$pkgname-$pkgver"
-        python setup.py install --prefix=/usr --root="$pkgdir" --optimize 1
-        ln -s /usr/share/pixmaps/bookletimposer.svg $pkgdir/usr/share/bookletimposer/bookletimposer.svg
-}

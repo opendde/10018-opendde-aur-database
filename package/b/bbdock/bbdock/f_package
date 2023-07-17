@@ -1,5 +1,0 @@
-package() {
-  cd ${pkgname}-${pkgver}
-  make DESTDIR="$pkgdir" install
-  install -Dm655 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
-}

@@ -1,1 +1,0 @@
-("http://downloads.sourceforge.net/project/${_upstream}/${_pkgver}/src-${_upstream}-${pkgver}.tar.gz")

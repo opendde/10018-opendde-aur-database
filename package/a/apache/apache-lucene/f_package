@@ -1,6 +1,0 @@
-package() {
-	cd "${srcdir}/$_pkgname-$pkgver"
-	mkdir -p $pkgdir/usr/share/java/$pkgname
-	find . -type f -name '*.jar' -exec mv {} $pkgdir/usr/share/java/$pkgname \;
-	install -Dm644 "LICENSE.txt" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}

@@ -1,4 +1,0 @@
-prepare() {
-    echo "If you want to enable any extra modules before building Anope,"
-    echo "please run the 'extras' script in the ${srcdir} directory."
-}

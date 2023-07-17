@@ -1,1 +1,0 @@
-("$_mirror/datatools/updates/${pkgver%.*}/${pkgver}.${_pkgdate}/dtp-repository-${pkgver}.${_pkgdate}.zip")

@@ -1,4 +1,0 @@
-package() {
-    cd $srcdir/$pkgname-$pkgver
-    make INSTPREFIX=$pkgdir/usr LICENSEDIR=$pkgdir/usr/share/licenses DOCSDIR=$pkgdir/usr/share/doc install
-}

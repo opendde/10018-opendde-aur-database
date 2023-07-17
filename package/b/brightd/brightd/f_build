@@ -1,9 +1,0 @@
-build() {
-    cd "${srcdir}/$pkgname-$pkgver"
-
-    # fixes AC-detection by moving to /sys, blocks intel_backlight
-    # and makes fade smoother
-    patch -p1 -i ${srcdir}/proposal.patch
-
-    make
-}

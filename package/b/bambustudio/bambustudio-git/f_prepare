@@ -1,4 +1,0 @@
-prepare() {
-  # fix broken udev install reference
-  patch -p0 < "$srcdir/CMakeLists.txt.patch"
-}

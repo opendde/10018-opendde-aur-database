@@ -1,6 +1,0 @@
-package() {
-  cd "$srcdir/$_gitname/build"
-  make DESTDIR="$pkgdir" install
-  install -Dm644 "../airspy-tools/52-airspy.rules" "$pkgdir/usr/lib/udev/rules.d/52-airspy.rules"
-  install -Dm644 "$srcdir/airspy.conf" "$pkgdir/etc/modprobe.d/airspy.conf"
-}

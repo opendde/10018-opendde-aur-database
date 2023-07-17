@@ -1,5 +1,0 @@
-prepare() {
-  cd "${pkgname}-${pkgver}"
-  patch -Np1 -i "${srcdir}/${pkgname}.patch"
-  patch -Np1 -i "${srcdir}/${pkgname}_sprintf.patch"
-}

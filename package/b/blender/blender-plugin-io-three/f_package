@@ -1,6 +1,0 @@
-package() {
-  cd ${srcdir}/${name}
-  addons="$pkgdir/usr/share/blender/$(blender -v | head -n1 | cut -f2 -d ' ')/scripts/addons"
-  mkdir -p ${addons}
-  cp -r utils/exporters/blender/addons/io_three ${addons} 
-}

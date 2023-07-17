@@ -1,6 +1,0 @@
-build() {
-  cd AV-98-offline || exit 1
-
-  umask 0022
-  python setup.py build
-}

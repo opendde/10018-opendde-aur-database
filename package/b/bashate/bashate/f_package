@@ -1,9 +1,0 @@
-package() {
-    cd ${srcdir}/${pkgname}-${pkgver}
-    PBR_VERSION=$pkgver \
-    python setup.py install \
-        --skip-build \
-        --optimize=1 \
-        --prefix=/usr \
-        --root=${pkgdir}
-}

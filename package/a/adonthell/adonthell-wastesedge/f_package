@@ -1,5 +1,0 @@
-package() {
-  cd "${srcdir}/wastesedge-${pkgver}"
-
-  make DESTDIR="${pkgdir}" install
-}

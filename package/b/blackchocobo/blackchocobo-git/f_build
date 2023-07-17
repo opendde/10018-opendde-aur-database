@@ -1,4 +1,0 @@
-build() {
-  cmake -Sblackchocobo -Bbuild -DCMAKE_INSTALL_PREFIX=/usr -DQT_DEFAULT_MAJOR_VERSION=6
-  cmake --build build
-}

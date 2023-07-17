@@ -1,6 +1,0 @@
-prepare() {
-	cd "${pkgbase%-git}"
-	patch -Np1 -i ../"${pkgname%-git}-6.2-systemd_sysusers_groups.patch"
-	patch -Np1 -i ../"${pkgname%-git}-6.4-x11_autostart.patch"
-	./autogen
-}

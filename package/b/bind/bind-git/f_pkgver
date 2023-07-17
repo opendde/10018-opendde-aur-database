@@ -1,6 +1,0 @@
-pkgver() {
-    cd "${srcdir}/${reponame}"
-    # git describe does not produce meaningful results
-    # (because of the way how upstream tags releases)
-    echo -n "9.main.r$(git log --oneline | wc -l).$(git log -1 --format="%h")"
-}

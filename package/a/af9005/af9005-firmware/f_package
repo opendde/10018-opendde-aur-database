@@ -1,4 +1,0 @@
-package() {
-   mkdir -p ${pkgdir}/usr/lib/firmware
-   install -m644 af9005.fw-$pkgver ${pkgdir}/usr/lib/firmware/af9005.fw
-}

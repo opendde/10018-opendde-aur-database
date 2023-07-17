@@ -1,4 +1,0 @@
-prepare() {
-    # fix the folder name
-    mv "AMGX-${pkgver}" "$pkgname-$pkgver"
-}

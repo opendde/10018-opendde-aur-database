@@ -1,9 +1,0 @@
-package_bluez-cups-noudev() {
-  pkgdesc="CUPS printer backend for Bluetooth printers"
-  conflicts=( 'bluez-cups' )
-  provides=( 'bluez-cups' )
-  depends=('cups')
-
-  cd "${_pkgbase}"-${pkgver}
-  make DESTDIR="${pkgdir}" install-cupsPROGRAMS
-}

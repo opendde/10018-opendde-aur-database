@@ -1,5 +1,0 @@
-prepare() {
-	cd ${srcdir}/BililiveRecorder
-
-	git submodule update --init --recursive
-}

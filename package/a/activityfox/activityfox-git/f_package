@@ -1,4 +1,0 @@
-package() {
-  cd "$srcdir/$_pkgname"
-  install -D -t ${pkgdir}/usr/bin activityfox activityfox.shell
-}

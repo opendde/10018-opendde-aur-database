@@ -1,5 +1,0 @@
-build() {
-    cd "${srcdir}/${pkgname}-${pkgver}/src"
-
-    CFLAGS=-I/usr/include/openssl-1.0 LDFLAGS="-l:libssl.so.1.0.0 -l:libcrypto.so.1.0.0" make
-}

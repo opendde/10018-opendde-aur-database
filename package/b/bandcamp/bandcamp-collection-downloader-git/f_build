@@ -1,4 +1,0 @@
-build() {
-  cd bandcamp-collection-downloader
-  gradle -Dorg.gradle.daemon=false fatjar
-}

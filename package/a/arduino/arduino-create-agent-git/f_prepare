@@ -1,7 +1,0 @@
-prepare() {
-  mkdir -p gopath/src/github.com/arduino
-  ln -rTsf ${_gitname} gopath/src/github.com/arduino/${_gitname}
-  cd gopath/src/github.com/arduino/${_gitname}
-  git submodule init
-  git submodule update
-}

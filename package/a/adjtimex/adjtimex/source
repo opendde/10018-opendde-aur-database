@@ -1,1 +1,0 @@
-("$pkgname-${pkgver//_/-}.tar.gz::https://github.com/rogers0/adjtimex/archive/debian/${pkgver//_/-}.tar.gz"

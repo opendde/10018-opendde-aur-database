@@ -1,4 +1,0 @@
-build() {
-  cd $_pkgname-$pkgver
-  make SAMTOOLS=/usr/include/bam PREFIX="$pkgdir"/usr INSTALLDIR=${pkgdir}/usr/lib/augustus
-}

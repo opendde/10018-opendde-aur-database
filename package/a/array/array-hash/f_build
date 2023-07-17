@@ -1,7 +1,0 @@
-build() {
-  cd $pkgname-$pkgver
-  cmake . \
-      -Bbuild \
-      -DCMAKE_INSTALL_PREFIX=/usr
-  make -C build
-}

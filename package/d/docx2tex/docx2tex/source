@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.zip::https://github.com/transpect/docx2tex/releases/download/v.${pkgver}/docx2tex-${pkgver}-release.zip")

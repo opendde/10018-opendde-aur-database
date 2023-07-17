@@ -1,4 +1,0 @@
-package() {
-	# package
-	install -D -m755 "$srcdir/actionlint" "$pkgdir/usr/bin/actionlint"
-}

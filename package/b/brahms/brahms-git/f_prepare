@@ -1,7 +1,0 @@
-prepare() {
-	cd "brahms"
-	rm -rf build
-	mkdir build
-	cd build
-	cmake -DSTANDALONE_INSTALL=ON -DCOMPILE_WITH_X11=OFF -DCMAKE_INSTALL_PREFIX=/usr ..
-}

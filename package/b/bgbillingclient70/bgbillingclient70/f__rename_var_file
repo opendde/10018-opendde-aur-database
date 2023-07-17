@@ -1,7 +1,0 @@
-_rename_var_file() {
-	local file="$1"
-	local basefile=$(basename "$file")
-	v1="s/{_versuf}/${_versuf}/g"
-	local replace=$(echo $basefile | sed "$v1")
-	rename $basefile $replace $file
-}

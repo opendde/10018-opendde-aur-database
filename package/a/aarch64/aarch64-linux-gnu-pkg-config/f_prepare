@@ -1,9 +1,0 @@
-prepare() {
-  cd "$_pkgname-$pkgver"
-  patch -p1 -i "$srcdir/2ad16fa7ac9e951bfd8982835df1e7ea5c9ffb57.patch"
-  sed -i "s,prefix=/usr$,prefix=/usr/${_target:?}," check/*.pc
-  sed -i "s,/usr/include/somedir,/usr/${_target:?}/include/somedir," check/check-*
-  sed -i "s,/usr/white\([^s]*\)space,/usr/${_target:?}/white\1space," check/check-whitespace
-  sed -i "s,/usr\([/\"]\),/usr/${_target:?}\1," check/check-variable-override
-  sed -i "s,/usr/\(include\|lib\),/usr/${_target:?}/\1," check/check-system-flags
-}

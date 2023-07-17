@@ -1,4 +1,0 @@
-package() {
-  cd "$_gitname"
-  python setup.py install --root=$pkgdir
-}

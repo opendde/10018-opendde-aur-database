@@ -1,4 +1,0 @@
-package() {
-    install -Dm644 "atlas/atlas.jar" "$pkgdir/usr/share/java/atlas-maps/atlas.jar"
-    install -Dm755 atlas-maps.sh "$pkgdir/usr/bin/atlas-maps"
-}

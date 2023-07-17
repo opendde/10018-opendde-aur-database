@@ -1,1 +1,0 @@
-("git+https://github.com/mattydebie/${pkgname%-git}.git")

@@ -1,5 +1,0 @@
-package() {
-  meson install -C build --destdir "$pkgdir"
-
-  ln -s /usr/bin/${_app_id} "$pkgdir/usr/bin/${pkgname%-git}"
-}

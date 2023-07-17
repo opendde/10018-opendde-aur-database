@@ -1,3 +1,0 @@
-prepare() {
-    mkdir data && tar -xvf data.tar.gz -C data
-}

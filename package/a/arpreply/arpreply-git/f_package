@@ -1,6 +1,0 @@
-package() {
-  cd "$srcdir/arpreply"
-
-  mkdir -p "${pkgdir}/usr/bin"
-  install -Dm755 arpreply.py "${pkgdir}/usr/bin/arpreply"
-}

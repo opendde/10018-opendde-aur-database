@@ -1,6 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname-$pkgver"
-  make DESTDIR="$pkgdir" install
-  ln -s bindfs "$pkgdir/usr/bin/mount.bindfs"
-  ln -s bindfs "$pkgdir/usr/bin/mount.fuse.bindfs"
-}

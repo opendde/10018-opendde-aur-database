@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz::https://github.com/phuhl/bspwm-rounded/archive/${_git_ref}.tar.gz")

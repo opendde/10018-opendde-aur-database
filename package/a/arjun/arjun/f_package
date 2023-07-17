@@ -1,5 +1,0 @@
-package() {
-  cd "$_pkgname-$pkgver"
-  python setup.py install --root="$pkgdir" --prefix=/usr -O1 --skip-build
-  install -Dm644 README.md CHANGELOG.md -t "$pkgdir/usr/share/doc/$pkgname/"
-}

@@ -1,8 +1,0 @@
-function:pkgver () {
-  local _anbox_rel _gapps_rel
-
-  _anbox_rel="$(curl --config /dev/null -o /dev/null -Ls https://github.com/thdaemon/anbox/releases/latest -w '%{url_effective}\n'|xargs basename)"
-  _gapps_rel="$(curl -s -L https://api.opengapps.org/list | sed -r 's/.*-x86_64-7.1-pico-([0-9]+).zip'\"'.*/\1/')"
-
-  echo "${_anbox_rel#*v}.gapps.$_gapps_rel"
-}

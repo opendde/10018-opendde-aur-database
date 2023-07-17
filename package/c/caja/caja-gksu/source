@@ -1,1 +1,0 @@
-("https://pub.mate-desktop.org/releases/${pkgver%.*}/${_pkgbase}-${pkgver}.tar.xz")

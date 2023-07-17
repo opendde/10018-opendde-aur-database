@@ -1,4 +1,0 @@
-build() {
-  cd ${srcdir}/${_up_pkgname}${pkgver}/source
-  make
-}

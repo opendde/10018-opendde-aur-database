@@ -1,7 +1,0 @@
-prepare() {
-  cd ${_srcname}
-  # https://github.com/boostorg/ublas/pull/97
-  patch -Np2 -i ../$_pkgname-ublas-c++20-iterator.patch
-
-  patch -i ../no-versioned-shlibs.patch
-}

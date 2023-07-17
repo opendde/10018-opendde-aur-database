@@ -1,6 +1,0 @@
-build() {
-	cd "$srcdir/${pkgname%-git}"
-  export CARGO_TARGET_DIR=target
-  export RUSTUP_TOOLCHAIN=stable
-  cargo build --release --frozen --all-features
-}

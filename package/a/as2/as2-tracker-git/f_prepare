@@ -1,4 +1,0 @@
-prepare() {
-  cd "$srcdir/AS2_Tracker_Python"
-  sed -i '1s;^;\#!/bin/python3\n;' "tracker.py"
-}

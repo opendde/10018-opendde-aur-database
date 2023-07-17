@@ -1,3 +1,0 @@
-pkgver() {
-	curl -s https://binary.ninja/js/changelog.js | perl -pe 's/.*?version":\s"(\d+\.\d+\.\d+)".*/$1/'
-}

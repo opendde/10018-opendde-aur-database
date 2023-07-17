@@ -1,9 +1,0 @@
-package() {
-  cd "${srcdir}/borgweb"
-
-  python setup.py install --root="$pkgdir/" --optimize=1
-
-  cd js
-  npm install
-
-}

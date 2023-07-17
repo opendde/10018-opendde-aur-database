@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}-${pkgrel}-x86_64::https://assets.checkra.in/downloads/linux/cli/x86_64/${sha256sums_x86_64[0]}/checkra1n")

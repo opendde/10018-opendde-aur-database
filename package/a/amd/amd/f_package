@@ -1,5 +1,0 @@
-package() {
-	mkdir -p "${pkgdir}/usr/bin"
-	cd "${srcdir}/source"
-	install -m755 AMD "${pkgdir}/usr/bin"
-}

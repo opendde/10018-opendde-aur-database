@@ -1,7 +1,0 @@
-package() {
-  pushd ${_pkgname}-build
-  make DESTDIR="${pkgdir}" install
-  install -Dm 644 ${srcdir}/${_pkgname}-${pkgver}/COPYING -t "${pkgdir}/usr/${_target}/usr/share/licenses/${_pkgname}"
-  popd
-  rm -rf ${_pkgname}-build
-}

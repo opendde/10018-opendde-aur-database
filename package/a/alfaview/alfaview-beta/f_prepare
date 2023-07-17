@@ -1,7 +1,0 @@
-prepare() {
-    mkdir -p deb-data
-    bsdtar -O -xf "alfaview_${pkgver}.deb" data.tar.xz | bsdtar -C ./deb-data -xJf -
-    # Adding beta update chennel to settings to avoid update notification on startup
-    mkdir -p ~/.local/share/alfaview/settings
-    echo $'[General]\nDeployChannel=beta' > ~/.local/share/alfaview/settings/core_settings_local.ini
-}

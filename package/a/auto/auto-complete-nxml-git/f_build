@@ -1,4 +1,0 @@
-build() {
-  cd $_gitname
-  emacs -q -batch -f batch-byte-compile "$_elfile".el
-}

@@ -1,8 +1,0 @@
-pkgver() {
-cd "$srcdir/$pkgname"
-VER=$(grep "BROGUE_DUNGEON_VERSION_STRING" src/brogue/Rogue.h | grep -o '[0-9.]\{1,\}')
-PAT=$(grep "BROGUE_PATCH" src/brogue/Rogue.h | grep -o '[0-9]\{1,\}')
-REV="$(git rev-list $(git describe --abbrev=0)..HEAD --count)"
-EXT="dev.$(git log -1 --format='%h')"
-echo ${VER}.${PAT}.r${REV}.${EXT}
-}

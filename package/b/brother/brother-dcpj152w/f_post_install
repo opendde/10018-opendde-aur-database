@@ -1,3 +1,0 @@
-post_install() {
-	/opt/brother/Printers/dcpj152w/cupswrapper/cupswrapperdcpj152w
-}

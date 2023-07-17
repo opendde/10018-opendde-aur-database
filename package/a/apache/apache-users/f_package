@@ -1,8 +1,0 @@
-package() {
-	   cd "${srcdir}/apache_users"
-           install -dm755 "${pkgdir}/usr/share/${pkgname}/"
-           install -dm755 "${pkgdir}/usr/bin/"
-           cp -rf * "${pkgdir}/usr/share/${pkgname}/"
-           chmod +x "${pkgdir}/usr/share/${pkgname}/apache2.1.pl"
-           ln -s "/usr/share/${pkgname}/apache2.1.pl" "${pkgdir}/usr/bin/${pkgname}"
-}

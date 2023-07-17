@@ -1,5 +1,0 @@
-package() {
-    cd "$srcdir/$pkgname"
-    install -Dm755 "build/$_pkgname" -t "$pkgdir/usr/bin/"
-    install -Dm644 *.md -t "$pkgdir/usr/share/doc/$pkgname" 
-}

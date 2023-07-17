@@ -1,6 +1,0 @@
-build() {
-	#mv journal.pone.0024576.s004 journal.pone.0024576.s004.rar
-	unrar x -y "journal.pone.0024576.s004.rar"
-	cd "${srcdir}/source"
-	make
-}

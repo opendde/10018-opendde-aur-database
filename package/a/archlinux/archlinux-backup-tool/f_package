@@ -1,5 +1,0 @@
-package() {
-	install -d "${pkgdir}/usr/bin"
-	mv "${pkgname}-${pkgver}/${pkgname%-tool}.sh" "${pkgdir}/usr/bin/${pkgname%-tool}"
-	chmod 755 "${pkgdir}/usr/bin/${pkgname%-tool}"
-}

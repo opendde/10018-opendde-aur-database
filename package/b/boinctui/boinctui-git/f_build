@@ -1,6 +1,0 @@
-build() {
-	cd "$srcdir/$_gitname"
-	autoconf
-	./configure --without-gnutls
-	make PREFIX=/usr
-}

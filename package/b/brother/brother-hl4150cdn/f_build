@@ -1,7 +1,0 @@
-build() {
-  for n in *.rpm; do
-    bsdtar xf ${n}
-  done
-
-  patch -p1 < 0001-brother-hl4150cdn.patch
-}

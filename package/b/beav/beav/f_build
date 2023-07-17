@@ -1,5 +1,0 @@
-build() {
-	_mypkgver=${pkgver/./}
-	cd "$srcdir/beav-$_mypkgver"
-	make
-}

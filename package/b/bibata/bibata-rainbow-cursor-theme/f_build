@@ -1,7 +1,0 @@
-build() {
-  cd Bibata_Cursor_Rainbow-$pkgver
-
-  pushd builder
-  make build_unix
-  popd
-}

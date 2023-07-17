@@ -1,8 +1,0 @@
-package() {
-	cd "${pkgname}-${pkgver}"
-
-	make DESTDIR="${pkgdir}/" prefix='/usr' install-{bibclean,man}
-
-	# remove duplicates (e.g. bibclean-$pkgver)
-	rm $(find "${pkgdir}" -name "*-${pkgver}*")
-}

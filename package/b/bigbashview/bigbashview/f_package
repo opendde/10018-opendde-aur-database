@@ -1,7 +1,0 @@
-package() {
-    mkdir -p "${pkgdir}/usr" "${pkgdir}/usr/lib"
-    cp -r "${srcdir}/bigbashview/bigbashview/usr/" "${pkgdir}/"
-    mv "${pkgdir}/usr/lib/python3/dist-packages/bbv/" "${pkgdir}/usr/lib/bbv/"
-    rm -Rf "${pkgdir}/usr/lib/python3"
-    sed -i 's|/usr/lib/python3/dist-packages/bbv/|/usr/lib/bbv/|g' "${pkgdir}/usr/bin/bigbashview"
-}

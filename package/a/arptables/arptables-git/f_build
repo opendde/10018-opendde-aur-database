@@ -1,5 +1,0 @@
-build() {
-  cd "arptables"
-
-  make
-}

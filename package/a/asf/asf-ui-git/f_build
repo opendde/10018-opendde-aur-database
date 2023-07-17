@@ -1,5 +1,0 @@
-build() {
-    cd asf-ui
-    npm ci
-    npm run-script deploy
-}

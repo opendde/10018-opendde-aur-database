@@ -1,3 +1,0 @@
-prepare() {
-	sed -i 's/-O2//' $_pkgname/CMakeLists.txt
-}

@@ -1,6 +1,0 @@
-build() {
-  cd afew
-  python setup.py build egg_info
-  export SETUPTOOLS_SCM_PRETEND_VERSION=1
-  python setup.py build_sphinx -b man --version $pkgver
-}

@@ -1,8 +1,0 @@
-build() {
-  cd $pkgname-stable-$pkgver
-  go build \
-    -gcflags "all=-trimpath=$PWD" \
-    -asmflags "all=-trimpath=$PWD" \
-    -ldflags "-extldflags $LDFLAGS" \
-    -o $pkgname .
-}

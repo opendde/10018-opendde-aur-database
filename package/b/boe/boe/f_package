@@ -1,5 +1,0 @@
-package() {
-  rm -R usr/lib/boe/server 
-  rm usr/bin/boe-server
-  cp -R usr/ $pkgdir
-}

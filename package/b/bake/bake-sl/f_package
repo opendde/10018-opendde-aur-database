@@ -1,4 +1,0 @@
-package() {
-    cd "$srcdir/${pkgname%-sl}-$pkgver" 
-    ./bake-bootstrap install
-}

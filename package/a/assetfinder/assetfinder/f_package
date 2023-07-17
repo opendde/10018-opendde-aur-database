@@ -1,4 +1,0 @@
-package() {
-    mkdir -p ${pkgdir}/usr/bin
-    install ${srcdir}/assetfinder ${pkgdir}/usr/bin/${pkgname}
-}

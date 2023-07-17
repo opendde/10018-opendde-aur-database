@@ -1,3 +1,0 @@
-prepare() {
-    mv "$srcdir/blastem-$_prever" "$srcdir/$pkgname"
-}

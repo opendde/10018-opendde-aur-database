@@ -1,1 +1,0 @@
-("${_pkgname}::git+https://gitlab.com/ubports/core/${_pkgname}.git")

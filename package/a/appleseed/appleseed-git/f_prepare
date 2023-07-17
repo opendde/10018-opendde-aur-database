@@ -1,4 +1,0 @@
-prepare() {
-  git -C "${srcdir}/${pkgname}" apply -v "${srcdir}"/{boost_107400,cmake.extra.install.dirs.remove,osl_1.11.8,oiio_cxx_std_14,open{exr3,colorio1,imageio}}.patch
-  sed '/python37/s/37/310/' -i "${srcdir}/${pkgname}"/src/appleseed.python/CMakeLists.txt
-}

@@ -1,4 +1,0 @@
-package() {
-  DESTDIR="$pkgdir" cmake --install build
-  install -Dm644 "$srcdir/aMule-SVN-r${pkgver}"/amulegui.xpm "$pkgdir"/usr/share/pixmaps/amulegui.xpm
-}

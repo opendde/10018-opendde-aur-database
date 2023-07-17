@@ -1,5 +1,0 @@
-pkgver() {
-	grep 'moz_app_version' "${srcdir}"/basilisk-${_buildid}.linux-x86_64.json | sed -e 's/.*:[\ \t]*"//;s/"[,]*[\ \t]*$//'
-#	cd "$srcdir"/basilisk
-#	./basilisk --version | grep -o -E '[0-9\.]+$'
-}

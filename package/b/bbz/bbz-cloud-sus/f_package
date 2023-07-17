@@ -1,6 +1,0 @@
-package() {
-  tar -xJv -C "${pkgdir}" -f "${srcdir}/${_filename}" usr opt
-  mkdir "$pkgdir/usr/bin"
-  ln -s "/opt/BBZ Cloud/bbzcloud" "$pkgdir/usr/bin/bbzcloud"
-  sed -i -e "s/Icon=bbzcloud/Icon=\/usr\/share\/icons\/hicolor\/0x0\/apps\/bbzcloud.png/" "$pkgdir"/usr/share/applications/bbzcloud.desktop
-}

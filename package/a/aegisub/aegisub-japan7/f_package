@@ -1,6 +1,0 @@
-package() {
-  cd aegisub
-
-  make DESTDIR="${pkgdir}" install
-  install -Dm 644 LICENCE -t "${pkgdir}"/usr/share/licenses/aegisub-git/
-}

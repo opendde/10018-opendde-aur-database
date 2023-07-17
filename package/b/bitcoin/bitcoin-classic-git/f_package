@@ -1,4 +1,0 @@
-package() {
-    echo "******* Classic is discontinued http://bitcoinclassic.com/news/closing.html"
-    exit 1
-}

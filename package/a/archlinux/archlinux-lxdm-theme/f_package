@@ -1,4 +1,0 @@
-package() {
-  install -d "$pkgdir/usr/share/lxdm/themes/Archlinux"
-  cp -dpr --no-preserve=ownership AUTHORS README TRADEMARKS gtkrc *.png greeter.ui "$pkgdir/usr/share/lxdm/themes/Archlinux"
-}

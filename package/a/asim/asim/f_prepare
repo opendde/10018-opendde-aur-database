@@ -1,3 +1,0 @@
-prepare() {
-	mkdir -pv $srcdir/opt/$pkgname $srcdir/usr/{share/applications,bin}
-}

@@ -1,4 +1,0 @@
-prepare() {
-	rmdir "${gitname}/tomlc99"
-	ln -sf "${srcdir}/tomlc99" "${gitname}/tomlc99"
-}

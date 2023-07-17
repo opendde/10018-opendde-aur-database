@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}-${pkgrel}.deb::https://github.com/DraqueT/PolyGlot/releases/download/${pkgver}/PolyGlot-Ins-Lin.deb")

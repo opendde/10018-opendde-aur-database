@@ -1,4 +1,0 @@
-build() {
-    cd "${srcdir}/${pkgname}/build"
-    ant clean build -Dlight_bundle=true
-}

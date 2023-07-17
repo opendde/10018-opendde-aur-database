@@ -1,3 +1,0 @@
-check() {
-    LIBAOM_TEST_DATA_PATH="${PWD}/testdata" make -C build runtests
-}

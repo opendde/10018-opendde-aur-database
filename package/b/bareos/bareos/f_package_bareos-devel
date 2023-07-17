@@ -1,7 +1,0 @@
-package_bareos-devel() {
-  pkgdesc="${pkgdesc} - Devel headers"
-  arch=(any)
-  # TODO
-  install -d ${pkgdir}/usr/include/bareos
-  install -m640 ${srcdir}/bareos/core/src/lib/*.h ${pkgdir}/usr/include/bareos
-}

@@ -1,5 +1,0 @@
-package() {
-  cd "${srcdir}/asroot"
-  make DESTDIR="${pkgdir}/" PREFIX=/usr install
-  make DESTDIR="${pkgdir}/" PREFIX=/usr post-install
-}

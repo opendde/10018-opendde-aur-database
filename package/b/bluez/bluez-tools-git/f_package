@@ -1,5 +1,0 @@
-package() {
-  cd "bluez-tools"
-
-  make DESTDIR="$pkgdir" install
-}

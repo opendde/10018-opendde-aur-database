@@ -1,1 +1,0 @@
-("git+https://github.com/kubernetes-sigs/cri-tools#tag=v${pkgver}"

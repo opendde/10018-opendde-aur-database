@@ -1,9 +1,0 @@
-package() {
-  make -C "$srcdir/$pkgname-$pkgver" DESTDIR="$pkgdir" install
-  rm "$pkgdir/usr/bin/last" "$pkgdir/usr/share/man/man1/last.1"
-  install -Dm644 "${srcdir}/$pkgname-$pkgver/COPYING" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-  install -dm700 "${pkgdir}/var/log/account"
-  install -Dm644 "${pkgname}" "${pkgdir}/etc/logrotate.d/${pkgname}"
-  install -Dm755 "${pkgname}on-create" "${pkgdir}/usr/lib/${pkgname}/${pkgname}on-create"
-  install -Dm644 "${pkgname}.service" "${pkgdir}/usr/lib/systemd/system/${pkgname}.service"
-}

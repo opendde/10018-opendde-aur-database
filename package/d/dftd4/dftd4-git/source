@@ -1,1 +1,0 @@
-("${pkgname}::git+https://github.com/dftd4/dftd4.git#branch=main")

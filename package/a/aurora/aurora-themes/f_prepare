@@ -1,7 +1,0 @@
-prepare() {
-  source=("https://dl.opendesktop.org/api/files/download/id/$(meta id)/Dark-Aurora.tar.xz")
-  sha256sums=('3259a8be44493ab5f3b2b455b6dae7725e0646b160c2b9a83968bf81feb3eaaa')
-  download_sources
-  check_source_integrity
-  extract_sources
-}

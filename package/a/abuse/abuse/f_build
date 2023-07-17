@@ -1,9 +1,0 @@
-build() {
-  cd abuse-$pkgver
-  ./configure \
-    --prefix=/usr \
-    --with-assetdir="/usr/share/$pkgname/orig" \
-    --with-x \
-    --enable-debug # Fix for FS#52915
-  make
-}

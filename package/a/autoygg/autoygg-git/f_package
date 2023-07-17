@@ -1,9 +1,0 @@
-package() {
-	cd "$srcdir/$_pkgname"
-	install -Dm755 "$srcdir/$_pkgname/cmd/autoygg-server/autoygg-server" "${pkgdir}/usr/bin/autoygg-server"
-	install -Dm755 "$srcdir/$_pkgname/cmd/autoygg-client/autoygg-client" "${pkgdir}/usr/bin/autoygg-client"
-	install -Dm644 "$srcdir/$_pkgname/cmd/autoygg-server/server.yaml" "${pkgdir}/etc/autoygg/server.yaml.example"
-	install -Dm644 LICENSE -t "${pkgdir}/usr/share/licenses/${_pkgname}"
-	install -Dm644 systemd/autoygg-server.service -t "${pkgdir}/usr/lib/systemd/system"
-	install -Dm644 systemd/autoygg-client.service -t "${pkgdir}/usr/lib/systemd/system"
-}

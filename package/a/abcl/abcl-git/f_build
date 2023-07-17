@@ -1,4 +1,0 @@
-build() {
-  cd ${pkgname%-git}.git
-  ant
-}

@@ -1,5 +1,0 @@
-package() {
-  cd "${pkgname}"
-  install -d $pkgdir/etc/ananicy.d
-  cp -rf $srcdir/$pkgname/* $pkgdir/etc/ananicy.d
-}

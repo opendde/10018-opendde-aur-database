@@ -1,8 +1,0 @@
-package() {
-  cd gcc-build
-
-  make install-strip-gcc install-strip-target-libgcc DESTDIR="$pkgdir"
-  # Remove files that conflict with host gcc package
-  rm -r "$pkgdir"/usr/{include,share}
-
-}

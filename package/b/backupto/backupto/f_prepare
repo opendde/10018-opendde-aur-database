@@ -1,6 +1,0 @@
-prepare() {
-    cd "$srcdir/$_name"
-    sed -i 's~QRect Rect= QApplication::screens()~// QRect Rect= QApplication::screens()~g' "qfmainwindow.cpp"
-    sed -i 's~move(Rect.center()~// move(Rect.center()~g' "qfmainwindow.cpp" 
-    sed -i 's~Simulation || QDPathSource.removeRecursively()~Simulation ~g' "qthsynchronize.cpp"
-}

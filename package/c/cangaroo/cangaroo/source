@@ -1,1 +1,0 @@
-("$pkgname::git+https://github.com/HubertD/cangaroo.git#tag=$pkgver")

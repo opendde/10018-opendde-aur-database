@@ -1,6 +1,0 @@
-package() {
-  mkdir -p "$pkgdir/opt/dwarffortress/armok-vision"
-  unzip -q "$pkgname-$pkgver.zip" -d "$pkgdir/opt/dwarffortress/armok-vision/"
-  chmod 755 "$pkgdir/opt/dwarffortress/armok-vision/Armok Vision Linux.x86_64"
-  install -Dm755 armok-vision "$pkgdir/usr/bin/armok-vision"
-}

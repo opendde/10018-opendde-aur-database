@@ -1,4 +1,0 @@
-package() {
-	cd axon
-	install -Dm755 target/release/axon "$pkgdir"/usr/bin/axon
-}

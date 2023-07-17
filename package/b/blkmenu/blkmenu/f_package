@@ -1,5 +1,0 @@
-package() {
-	install -Dm755 "${_pkgname}/blkmenu" "${pkgdir}/usr/bin/blkmenu"
-	install -Dm644 "${_pkgname}/blkmenu.1" "${pkgdir}/usr/share/man/man1/blkmenu.1"
-	install -Dm644 "${_pkgname}/LICENSE.txt" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.txt"
-}

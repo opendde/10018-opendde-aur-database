@@ -1,8 +1,0 @@
-package() {
-	mkdir -p "$pkgdir"/usr/lib/frei0r-1
-        mkdir -p "$pkgdir"/share/shotcut/qml/filters/
-	cd "$builddir"
-        cd "$_srcname"
-        cp -rp Release-Linux/bigsh0t-$(echo $pkgver | cut -s -d"." -f1,2)-linux/lib/frei0r-1/* $pkgdir/usr/lib/frei0r-1/
-	cp -rp Release-Linux/bigsh0t-$(echo $pkgver | cut -s -d"." -f1,2)-linux/shotcut/share/shotcut/qml/filters/* $pkgdir/share/shotcut/qml/filters/
-}

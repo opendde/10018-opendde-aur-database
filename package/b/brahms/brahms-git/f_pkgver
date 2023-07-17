@@ -1,4 +1,0 @@
-pkgver() {
-	cd "brahms"
-	echo 0.7.3+git$(git rev-parse --short HEAD)
-}

@@ -1,5 +1,0 @@
-prepare() {
-	gendesk -f --pkgname "$pkgname" --name "Arduino Pro IDE" --pkgdesc "$pkgdesc"
-	ronn -r --manual=$pkgname "$pkgname/README.md"
-	
-}

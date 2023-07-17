@@ -1,1 +1,0 @@
-("https://github.com/ButterFlight/butterflight-configurator/releases/download/v$pkgver${pkgsuffix^^}/butterflight-configurator_"$pkgver"_linux64.zip")

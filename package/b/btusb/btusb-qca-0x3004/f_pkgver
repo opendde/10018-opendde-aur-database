@@ -1,3 +1,0 @@
-pkgver() {
- printf "0.9.%s" "$(uname -r | cut -d- -f1)"
-}

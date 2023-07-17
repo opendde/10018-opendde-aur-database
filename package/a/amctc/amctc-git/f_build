@@ -1,4 +1,0 @@
-build() {
-  cd $pkgbase
-  make debug="$CFLAGS" SDL_TARGET=2
-}

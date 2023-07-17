@@ -1,5 +1,0 @@
-package() {
-    mkdir -p "$pkgdir/opt"
-    cp -r "$srcdir/zeppelin-$pkgver-bin-all" "$pkgdir/opt/apache-zeppelin"
-    install -Dm644 "$srcdir/apache-zeppelin.service" "$pkgdir/usr/lib/systemd/system/apache-zeppelin.service"
-}

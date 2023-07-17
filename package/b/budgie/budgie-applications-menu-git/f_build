@@ -1,6 +1,0 @@
-build() {
-  arch-meson $srcdir/budgie-extras/budgie-applications-menu/applications-menu build \
-    -D b_pie=false \
-    -D with-unity=false
-  ninja -C build
-}

@@ -1,1 +1,0 @@
-(${_pkg}.zip::https://dist.ballerina.io/downloads/${pkgver}/ballerina-${pkgver}.zip)

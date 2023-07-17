@@ -1,7 +1,0 @@
-prepare() {
-  # Replace the placeholder with pkgver to automatically point at the source folder
-  sed -i "s/PLACEHOLDER/${pkgver}/g" "${srcdir}/ares-paths.patch"
-
-  # Patch Ares so that it can look for its files that are installed system-wide here
-  patch -Np1 -i "${srcdir}/ares-paths.patch"
-}

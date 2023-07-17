@@ -1,7 +1,0 @@
-package() {
-  cd "${srcdir}/${pkgname}-${pkgver}/build"
-  make DESTDIR="${pkgdir}" install
-	
-	install -dm755 "${pkgdir}/etc/initcpio/install"
-	install -m644 "${srcdir}/breeze-plymouth.cpiohook" "${pkgdir}/etc/initcpio/install/breeze-plymouth"
-}

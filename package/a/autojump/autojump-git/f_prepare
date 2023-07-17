@@ -1,4 +1,0 @@
-prepare() {
-    cd ${_gitname}
-    sed -i 's$#!/usr/bin/env python$#!/usr/bin/env python3$' bin/autojump bin/*.py
-}

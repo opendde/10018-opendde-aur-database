@@ -1,4 +1,0 @@
-prepare () {
-    cd "${pkgname%-git}"
-    sed -i -e 's/==/>=/g;s/,<=[0-9.]\+//' requirements.txt
-}

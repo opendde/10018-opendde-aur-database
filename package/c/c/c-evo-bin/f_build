@@ -1,9 +1,0 @@
-build() {
-	cd "$srcdir"
-
-	msg2 "Generate executable script..."
-	cat > ${pkgname}-console.sh << EOF
-#!/bin/sh
-/usr/bin/java -cp "/usr/share/java/$pkgname/$pkgname.jar:\$H2DRIVERS:\$CLASSPATH" org.h2.tools.Console "\$@"
-EOF
-}

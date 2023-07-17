@@ -1,5 +1,0 @@
-build() {
-  cd $gitdir
-
-  make -f Makefile.unix
-}

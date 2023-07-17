@@ -1,4 +1,0 @@
-package() {
-  cd "$_rootname"
-  install -Dm755 bandicoot-v3/bandicoot "$pkgdir/usr/bin/bandicoot"
-}

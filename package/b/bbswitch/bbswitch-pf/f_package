@@ -1,8 +1,0 @@
-package() {
-  cd ${_pkgname}-${pkgver}
-  _kernver="$(</usr/src/linux-pf/version)"
-  _extradir="/usr/lib/modules/${_kernver}/extramodules"
-  install -Dt "${pkgdir}${_extradir}" -m644 *.ko
-  find "${pkgdir}" -name '*.ko' -exec strip --strip-debug {} +
-  find "${pkgdir}" -name '*.ko' -exec xz {} +
-}

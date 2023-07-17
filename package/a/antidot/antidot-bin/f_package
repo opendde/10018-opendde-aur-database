@@ -1,3 +1,0 @@
-package() {
-  install -Dm 0755 "$srcdir/antidot" "$pkgdir/usr/bin/antidot"
-}

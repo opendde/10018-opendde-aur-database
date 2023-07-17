@@ -1,5 +1,0 @@
-package() {
-  make -C asp-$pkgver PREFIX=/usr DESTDIR="$pkgdir" install
-
-  install -Dm644 asp-$pkgver/LICENSE "$pkgdir"/usr/share/licenses/asp/LICENSE
-}

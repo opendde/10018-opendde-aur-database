@@ -1,4 +1,0 @@
-prepare() {
-  cd "aws-toolkit-vscode-$pkgver"
-  npm install
-}

@@ -1,6 +1,0 @@
-package() {
-        install -d ${pkgdir}/usr/{bin,share/{pixmaps,applications}}
-	install -Dm 755 ${srcdir}/${pkgname}-${pkgver}/bin/aria2fe ${pkgdir}/usr/bin/
-	install -D ${srcdir}/${pkgname}-${pkgver}/src/pixmaps/download_32x32.png ${pkgdir}/usr/share/pixmaps/${pkgname}.png
-	install -D ${srcdir}/${pkgname}.desktop ${pkgdir}/usr/share/applications/
-}

@@ -1,6 +1,0 @@
-package() {
-  cd ${pkgname%-git}
-  install -D -m755 bh "${pkgdir}/usr/bin/bh"
-  install -D -m644 LICENSE \
-	  "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}

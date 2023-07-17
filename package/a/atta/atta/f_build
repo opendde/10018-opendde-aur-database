@@ -1,7 +1,0 @@
-build() {
-	cd $pkgname
-	mkdir -p build
-	cd build
-	cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=../../../pkg/atta/usr -D ATTA_GENERATE_PACKAGE_INSTALL=1 ..
-	make -j
-}

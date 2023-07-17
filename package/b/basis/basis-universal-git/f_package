@@ -1,4 +1,0 @@
-package() {
-  cd basis_universal
-  DESTDIR="$pkgdir" ninja install
-}

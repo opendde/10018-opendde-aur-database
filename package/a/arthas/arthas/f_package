@@ -1,8 +1,0 @@
-package() {
-    mkdir -p "$pkgdir"/opt/arthas/{async-profiler,lib}
-    cp -rp "$srcdir"/arthas-*.jar "$srcdir"/arthas.properties "$srcdir"/logback.xml "$pkgdir"/opt/arthas/
-    cp -rp "$srcdir"/async-profiler/*linux-x64* "$pkgdir"/opt/arthas/async-profiler/
-    cp -rp "$srcdir"/lib/*.so "$pkgdir"/opt/arthas/lib/
-    rm -f "$pkgdir"/opt/arthas/arthas-demo.jar
-    install -Dm755 arthas.sh "$pkgdir"/usr/bin/arthas
-}

@@ -1,5 +1,0 @@
-build() {
-	cd "$pkgname"
-	make build
-	gzip "$pkgname.8"
-}

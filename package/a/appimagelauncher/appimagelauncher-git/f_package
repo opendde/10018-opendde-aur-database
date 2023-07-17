@@ -1,9 +1,0 @@
-package() {
-  cd "$srcdir/${pkgname%-git}"
-  make DESTDIR="$pkgdir" install
-  install -Dm644 LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-  install -Dm644 ../appimage-binfmt-remove.hook "$pkgdir"/usr/share/libalpm/hooks/appimage-binfmt-remove.hook
-
-  chrpath --delete "${pkgdir}/usr/lib/appimagelauncher/libappimageupdate-qt.so"
-  chrpath --delete "${pkgdir}/usr/lib/appimagelauncher/libappimageupdate.so"
-}

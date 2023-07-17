@@ -1,5 +1,0 @@
-build() {
-  cd audioconvert-$pkgver
-  ./configure --prefix=/usr
-  make
-}

@@ -1,8 +1,0 @@
-package() {
-  cd "$srcdir"/3dgamecpp/
-  install -dm755 "$pkgdir"/usr/{lib,share}/3dgame/ "$pkgdir"/usr/bin/
-
-  cp -r -- *.conf *.txt *.yml fonts/ img/ res/ shaders/ sounds/ "$pkgdir"/usr/share/3dgame/
-  install -m755 bin/release/3dgame "$pkgdir"/usr/lib/3dgame/
-  install -m755 ../3dgame "$pkgdir"/usr/bin/
-}

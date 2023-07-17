@@ -1,3 +1,0 @@
-package() {
-  install -Dm 755 "bato/target/release/bato" -t "${pkgdir}/usr/bin"
-}

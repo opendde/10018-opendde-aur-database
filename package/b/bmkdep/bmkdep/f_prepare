@@ -1,6 +1,0 @@
-prepare() {
-  cd $pkgname-$pkgver
-
-  msg2 'Fixing Makefile...'
-  sed -i 's/MANDIR=/MANDIR?=/' Makefile
-}

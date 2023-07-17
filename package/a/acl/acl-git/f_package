@@ -1,5 +1,0 @@
-package() {
-  cd "acl"
-
-  make DESTDIR="$pkgdir" install
-}

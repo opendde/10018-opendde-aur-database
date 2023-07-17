@@ -1,7 +1,0 @@
-package() {
-	cd "$srcdir/${pkgname}-${_pkgver}"
-	# pre-create the directories because the makefile is crap
-	mkdir -p ${pkgdir}/usr/bin
-	make install DESTDIR=$pkgdir || return 1
-	make installconf DESTDIR=$pkgdir || return 1
-}

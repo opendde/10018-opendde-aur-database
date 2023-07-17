@@ -1,4 +1,0 @@
-prepare() {
-  sed -ie '47,53c my $basedir = "/opt/brother/Printers/DCPL2540DN";' \
-    ${srcdir}/opt/brother/Printers/DCPL2540DN/cupswrapper/brother_lpdwrapper_DCPL2540DN
-}

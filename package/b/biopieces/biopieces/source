@@ -1,1 +1,0 @@
-("${pkgname}"-"${pkgver}".tar.gz::https://github.com/maasha/"${pkgname}"/archive/"${pkgver}".tar.gz)

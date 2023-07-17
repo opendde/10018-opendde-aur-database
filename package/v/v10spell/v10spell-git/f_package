@@ -1,7 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname"
-  make PREFIX="${pkgdir}/usr" LIBDIR="${pkgdir}/usr/lib/v10spell" install
-  install -D -m644 README $pkgdir/usr/share/doc/${pkgname%-*}/README
-  install -D -m644 README.md $pkgdir/usr/share/doc/${pkgname%-*}/README.md
-  install -D -m644 spell.pdf $pkgdir/usr/share/doc/${pkgname%-*}/spell.pdf
-}

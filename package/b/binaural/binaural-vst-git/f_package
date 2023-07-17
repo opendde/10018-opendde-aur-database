@@ -1,4 +1,0 @@
-package() {
-	cd "$srcdir/${pkgname%-git}"
-	install -D -t "$pkgdir/usr/lib/vst/"   -m "u=rwx,go=rx" JUCE/Builds/LinuxMakefile/build/binaural-vst.so
-}

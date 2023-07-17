@@ -1,4 +1,0 @@
-package() {
-    cd $_pkgname-$pkgver-full
-    DESTDIR=$pkgdir ninja -C build install
-}

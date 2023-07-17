@@ -1,9 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname"
-  mkdir -p $pkgdir/usr/include/
-  mkdir -p $pkgdir/usr/lib/
-  install -Dm655 output/lib/libbrpc.so $pkgdir/usr/lib/
-  install -Dm644 output/lib/libbrpc.a $pkgdir/usr/lib/
-  ls -al "$pkgdir"
-  cp -r output/include/* $pkgdir/usr/include/
-}

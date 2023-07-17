@@ -1,3 +1,0 @@
-strip() {
-  ${_target}-strip "$@"
-}

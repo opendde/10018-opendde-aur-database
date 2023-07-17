@@ -1,5 +1,0 @@
-package() {
-  #cd ${pkgname}
-  cd $pkgname-$pkgver
-  PREFIX=$pkgdir make install
-}

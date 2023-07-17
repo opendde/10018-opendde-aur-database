@@ -1,3 +1,0 @@
-prepare() {
-  unzip -qq -o -d bazarr-${pkgver} bazarr-${pkgver}.zip
-}

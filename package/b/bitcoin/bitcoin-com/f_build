@@ -1,7 +1,0 @@
-build() {
-    cd "${srcdir}/${pkgname}-${pkgver}"
-
-    npm run clean-all
-    npm run apply:bitcoincom
-    npm run build:desktop
-}

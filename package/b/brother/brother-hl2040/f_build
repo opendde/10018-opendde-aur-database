@@ -1,7 +1,0 @@
-build() {
-  cd "$srcdir/usr"
-  patch -p1 -i "$srcdir/$pkgname.patch"
-
-  cd "$srcdir"
-  "$srcdir/usr/local/Brother/cupswrapper/cupswrapperHL2040-$pkgver"
-}

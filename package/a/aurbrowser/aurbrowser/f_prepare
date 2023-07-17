@@ -1,6 +1,0 @@
-prepare() {
-	cd "${pkgname}-v${pkgver}"
-	patch -p0 < ${startdir}/appname.patch
-	sed -i 's/Path=\/usr\/local\/bin/Path=\/usr\/bin/g' AUR-Browser.desktop
-	qmake "INSTALL_PREFIX=${pkgdir}/usr"
-}

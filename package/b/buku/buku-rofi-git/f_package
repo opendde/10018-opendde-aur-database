@@ -1,6 +1,0 @@
-package() {
-    cd "${_pkgname}"
-    make DESTDIR="$pkgdir/" \
-       PREFIX='/usr' \
-       install
-}

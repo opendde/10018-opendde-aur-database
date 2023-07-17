@@ -1,6 +1,0 @@
-package() {
-	install -m755 -d "${pkgdir}/etc/pacman.d/hooks"
-	install -m 644 "${srcdir}/mirror-kernel.hook" "${pkgdir}/etc/pacman.d/hooks/mirror-kernel.hook"
-	install -m755 -d "${pkgdir}/usr/bin"
-	install -m 755 "${srcdir}/boot-mirror.sh" "${pkgdir}/usr/bin/boot-mirror.sh"
-}

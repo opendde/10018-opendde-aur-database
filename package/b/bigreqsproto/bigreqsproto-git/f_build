@@ -1,9 +1,0 @@
-build() {
-  cd $_pkgname
-
-  msg2 "Starting autogen.sh..."
-  ./autogen.sh --prefix=/usr
-
-  msg2 "Starting make..."
-  make
-}

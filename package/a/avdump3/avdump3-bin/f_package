@@ -1,9 +1,0 @@
-package() {
-    install -d "${pkgdir}/opt/${_pkgname}"
-    install -d "${pkgdir}/usr/bin"
-    install -d "${pkgdir}/usr/share/licenses/${_pkgname}"
-
-    install -m644 "${_pkgname}_${pkgver}"/* -t "${pkgdir}/opt/${_pkgname}"
-    install -m755 "${_pkgname}.sh" "${pkgdir}/usr/bin/${_pkgname}"
-    install -m644 "${_pkgname}_LICENSE-MIT" "${pkgdir}/usr/share/licenses/${_pkgname}/LICENSE-MIT"
-}

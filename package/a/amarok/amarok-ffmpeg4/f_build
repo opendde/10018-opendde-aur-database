@@ -1,8 +1,0 @@
-build() {
-  cd "${srcdir}/amarok-${pkgver}/build"
-  cmake "${srcdir}/amarok-${pkgver}" \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
-    -DBUILD_TESTING=OFF -DPC_LIBAVCODEC_INCLUDEDIR=/usr/include/ffmpeg4.4 -DPC_LIBAVCODEC_LIBDIR=/usr/lib/ffmpeg4.4 -DPC_LIBAVFORMAT_INCLUDEDIR=/usr/include/ffmpeg4.4 -DPC_LIBAVFORMAT_LIBDIR=/usr/lib/ffmpeg4.4 -DPC_LIBAVUTIL_INCLUDEDIR=/usr/include/ffmpeg4.4 -DPC_LIBAVUTIL_LIBDIR=/usr/lib/ffmpeg4.4
-  make
-}

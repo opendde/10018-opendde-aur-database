@@ -1,7 +1,0 @@
-package() {
-    install -d "${pkgdir}"/usr/bin
-
-    for _arch in ${_architectures}; do
-        install -m 755 android-${_arch}-configure "${pkgdir}"/usr/bin/
-    done
-}

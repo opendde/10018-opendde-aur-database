@@ -1,5 +1,0 @@
-package() {
-  	cd "${srcdir}/${_pkgname}"
-    mkdir -p "${pkgdir}/usr/share/themes/"
-	cp -a "${srcdir}/${_pkgname}/Pkg/usr/share/themes/"* "${pkgdir}/usr/share/themes/"
-}

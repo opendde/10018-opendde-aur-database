@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tgz::https://archive.apache.org/dist/flink/flink-${_appver}/flink-${_appver}-bin-scala_${_scalaver}.tgz"

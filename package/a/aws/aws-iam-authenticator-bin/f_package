@@ -1,5 +1,0 @@
-package() {
-	install -D --mode 755 \
-		"${srcdir}/${pkgname%-bin}_${pkgver}_linux_amd64" \
-		"${pkgdir}/usr/bin/${pkgname%-bin}"
-}

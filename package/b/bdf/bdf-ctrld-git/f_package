@@ -1,6 +1,0 @@
-package() {
-  cd "$pkgname"
-  make fonts.dir
-  install -d -m755 "$pkgdir/usr/share/fonts/misc/"
-  install -m644 -t "$pkgdir/usr/share/fonts/misc/" *.pcf
-}

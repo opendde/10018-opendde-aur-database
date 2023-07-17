@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz::${_giturl}/archive/v${pkgver}${_rc}.tar.gz")

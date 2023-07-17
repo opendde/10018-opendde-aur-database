@@ -1,3 +1,0 @@
-prepare() {
-  bsdtar xvf "nlm${pkgver}_ipv4_ipv6_linux64.rpm"
-}

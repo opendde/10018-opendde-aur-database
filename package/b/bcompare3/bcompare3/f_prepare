@@ -1,5 +1,0 @@
-prepare() {
-  # Prepare license file
-  html2text --ignore-links --ignore-images --ignore-emphasis --body-width=80 < \
-    license.html | sed -n '/# LICENSE AGREEMENT (V3)/,/remain in full force and effect./p' > LICENSE
-}

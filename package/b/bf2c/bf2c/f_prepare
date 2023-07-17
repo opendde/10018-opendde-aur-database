@@ -1,3 +1,0 @@
-prepare() {
-  sed 's/env python/env python2/' -i bf2c.py
-}

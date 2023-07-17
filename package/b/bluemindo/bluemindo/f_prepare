@@ -1,6 +1,0 @@
-prepare() {
-  cd $pkgname-1.0RC1
-
-  # patch Makefile
-  patch -p1 -i ../bluemindo.patch
-}

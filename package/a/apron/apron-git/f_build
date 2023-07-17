@@ -1,8 +1,0 @@
-build() {
-
-  cd "$srcdir/apron"
-
-  ./configure -no-cxx -no-java -no-ocamlfind -no-ocaml-plugins
-  make
-
-}

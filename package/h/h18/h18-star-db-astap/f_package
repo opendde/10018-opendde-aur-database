@@ -1,4 +1,0 @@
-package() {
-    cd $srcdir
-    cp -Rf ./usr $pkgdir
-}

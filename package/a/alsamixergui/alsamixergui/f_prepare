@@ -1,8 +1,0 @@
-prepare() {
-  [ -f ${pkgname}_${pkgver}-1-9.1.diff ] || \
-    gzip -dc ${pkgname}_${pkgver}-1-9.1.diff.gz > ${pkgname}_${pkgver}-1-9.1.diff
-  cd ${pkgname}-$pkgver-1.orig
-  patch -Np1 -b -z .orig -i ../${pkgname}_${pkgver}-1-9.1.diff
-  patch -Np2 -b -z .was -i ../strsignal.patch
-  chmod +x configure
-}

@@ -1,4 +1,0 @@
-build() {
-  cd "$pkgname"
-  python UltiSnips/generate.py
-}

@@ -1,4 +1,0 @@
-prepare() {
-  cd ${srcdir}/${_gitname}
-  meson setup build -Dprefix=/usr -Dtests=false -Dhtml_user_doc=false --buildtype=release  
-}

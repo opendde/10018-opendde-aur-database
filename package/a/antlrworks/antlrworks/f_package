@@ -1,9 +1,0 @@
-package() {
-	cd "${srcdir}/${pkgname}${pkgver%%.*}"
-	chmod +x bin/antlrworks2
-	mkdir -p "${pkgdir}/"{etc,usr/{share/antlrworks,bin}}
-	cp -r * "${pkgdir}/usr/share/antlrworks"
-	#mv "${pkgdir}/usr/share/antlrworks/etc" "${pkgdir}/"
-	cd "${pkgdir}/usr/bin"
-	install -Dm 755 "${srcdir}/antlrworks" .
-}

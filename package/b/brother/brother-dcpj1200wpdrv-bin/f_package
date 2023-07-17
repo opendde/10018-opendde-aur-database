@@ -1,3 +1,0 @@
-package() {
-  tar -xf data.tar.gz -C "${pkgdir}"
-}

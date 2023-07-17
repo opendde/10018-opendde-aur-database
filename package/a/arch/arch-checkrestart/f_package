@@ -1,6 +1,0 @@
-package() {
-  cd ..
-  install -D ./checkrestart "${pkgdir}/usr/bin/checkrestart"
-  install -D ./checkrestart.1 "${pkgdir}/usr/share/man/man1/checkrestart.1"
-  gzip "${pkgdir}/usr/share/man/man1/checkrestart.1"
-}

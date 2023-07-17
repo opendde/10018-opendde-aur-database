@@ -1,4 +1,0 @@
-build() {
- cd $srcdir || return 1
- ar -x ${pkgname}_${pkgver}-1-0ubuntu1_${_a}.deb || return 1
-}

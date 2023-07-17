@@ -1,6 +1,0 @@
-build() {
-  cd "$_name"
-
-  python setup.py build
-  make man -C docs
-}

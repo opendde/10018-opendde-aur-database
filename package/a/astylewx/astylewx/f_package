@@ -1,6 +1,0 @@
-package() {
-    cd "${pkgname}_${pkgver}_linux/$pkgname/build/gcc"
-    make DESTDIR="$pkgdir" prefix="/usr" install
-    install -Dm644 ../../LICENSE.md "$pkgdir"/usr/share/licenses/"$pkgname"/LICENSE.md
-    install -Dm644 ../../README.md "$pkgdir"/usr/share/doc/"$pkgname"/README.md
-}

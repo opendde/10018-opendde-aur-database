@@ -1,7 +1,0 @@
-package_arc-solid-gtk-theme-git() {
-  pkgdesc="A flat theme suite without transparent elements."
-  conflicts=('arc-solid-gtk-theme')
-
-  cd "${_pkgname}"
-  DESTDIR="$pkgdir" meson install -C build-solid
-}

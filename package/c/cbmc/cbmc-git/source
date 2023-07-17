@@ -1,1 +1,0 @@
-('cbmc-git::git+https://github.com/diffblue/cbmc.git#branch=develop')

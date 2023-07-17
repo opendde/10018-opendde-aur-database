@@ -1,1 +1,0 @@
-("https://github.com/wagoodman/bashful/releases/download/v${pkgver}/${pkgname}_${pkgver}_linux_amd64.tar.gz")

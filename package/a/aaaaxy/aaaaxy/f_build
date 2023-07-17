@@ -1,6 +1,0 @@
-build() {
-  cd "$pkgname-$pkgver"
-  export GOFLAGS="-buildmode=pie -trimpath -ldflags=-linkmode=external -mod=readonly -modcacherw"
-  export AAAAXY_BUILD_USE_VERSION_FILE=true
-  make BUILDTYPE=release
-}

@@ -1,4 +1,0 @@
-prepare() {
-  cd astrometry.net-${pkgver}
-  sed -e 's/python/python2/' -i util/makefile.common blind/Makefile util/Makefile sdss/Makefile
-}

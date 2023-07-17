@@ -1,1 +1,0 @@
-("git+https://github.com/phacility/arcanist.git#commit=${_commit}")

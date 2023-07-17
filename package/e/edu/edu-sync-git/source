@@ -1,1 +1,0 @@
-("${pkgname%-git}::git+https://github.com/${pkgname%-git}/${pkgname%-git}")

@@ -1,5 +1,0 @@
-prepare() {
-  cd asciitosvg
-  go mod init 'github.com/asciitosvg/asciitosvg'
-  go mod tidy
-}

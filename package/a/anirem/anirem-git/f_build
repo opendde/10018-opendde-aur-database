@@ -1,8 +1,0 @@
-build() {
-  cd build
-
-  qmake "../$_pkgfqn/"
-  make qmake_all
-  make
-  make lrelease
-}

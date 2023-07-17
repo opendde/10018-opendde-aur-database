@@ -1,7 +1,0 @@
-package() {
-	cd "$srcdir/${pkgname%-git}"
-	make DESTDIR="$pkgdir/" install
-
-    # remove locale .mo files conflicting with extra/audacious-plugins
-    rm -r "$pkgdir/usr/share/locale"
-}

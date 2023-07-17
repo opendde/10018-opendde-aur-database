@@ -1,7 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname-$pkgver"
-  install -D -m0755 -t "${pkgdir}/usr/share/${pkgname}" \
-    "${pkgname}.sh"
-  install -D -m0644 -t "${pkgdir}/usr/share/licenses/${pkgname}" \
-    "LICENSE.md"
-}

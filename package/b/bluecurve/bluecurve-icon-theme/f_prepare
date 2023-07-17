@@ -1,6 +1,0 @@
-prepare() {
-  cd "$srcdir/$pkgname-$pkgver"
-  echo "  -> Run autoreconf & autoupdate (allows more architecture)"
-  autoreconf -fi
-  autoupdate
-}

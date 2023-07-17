@@ -1,1 +1,0 @@
-("${_pkgname}::${url}/releases/download/v$pkgver/${_pkgname}-linux-x86-64")

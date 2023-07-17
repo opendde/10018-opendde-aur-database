@@ -1,1 +1,0 @@
-("cudnn-${_cudaver}-linux-x64-v${pkgver}.tgz")

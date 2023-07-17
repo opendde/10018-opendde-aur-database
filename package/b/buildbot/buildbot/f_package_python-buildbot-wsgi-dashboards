@@ -1,8 +1,0 @@
-package_python-buildbot-wsgi-dashboards() {
-  python="python"
-  depends=('buildbot')
-  pkgdesc="Buildbot plugin to integrate flask or bottle dashboards to buildbot UI"
-  _name=${_names[6]}
-  extraver="-py2.py3"
-  install_whl
-}

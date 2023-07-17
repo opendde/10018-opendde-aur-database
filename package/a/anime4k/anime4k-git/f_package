@@ -1,9 +1,0 @@
-package() {
-  cd "${pkgdir}"
-  install -d "${pkgdir}"/usr/share/anime4k
-  install -d "${pkgdir}"/usr/share/man/man1
-  install "${srcdir}"/glsl.man -m 644 "${pkgdir}"/usr/share/man/man1/anime4k.1
-  install "${srcdir}"/glsladv.man -m 644 "${pkgdir}"/usr/share/man/man1/anime4k-advanced.1
-  cp -rf "${srcdir}"/anime4k/glsl/. "${pkgdir}"/usr/share/anime4k/.
-  cp -rf "${srcdir}"/anime4k/tensorflow/. "${pkgdir}"/usr/share/anime4k/tensorflow
-}

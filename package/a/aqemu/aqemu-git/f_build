@@ -1,7 +1,0 @@
-build() {
-    cd "$srcdir/aqemu"
-    mkdir builddir
-    cd builddir
-    meson --prefix=/usr/ --sysconfdir=/etc
-    ninja
-}

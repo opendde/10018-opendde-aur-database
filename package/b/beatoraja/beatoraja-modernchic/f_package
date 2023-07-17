@@ -1,7 +1,0 @@
-package() {
-	cd "$srcdir/"
-	mkdir "$pkgdir/opt"
-	cp -r "beatoraja${pkgver}-modernchic" "$pkgdir/opt/beatoraja"
-	chmod -R 777 "$pkgdir/opt/beatoraja"
-	install -D beatoraja.sh "$pkgdir/usr/bin/beatoraja"
-}

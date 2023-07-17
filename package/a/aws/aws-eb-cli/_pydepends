@@ -1,1 +1,0 @@
-("${_pydepends[@]//python-docker-compose/docker-compose}")

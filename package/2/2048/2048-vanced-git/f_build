@@ -1,4 +1,0 @@
-build() {
-    cd "2048-vanced"
-    bash build.sh
-}

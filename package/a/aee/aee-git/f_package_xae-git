@@ -1,6 +1,0 @@
-package_xae-git() {
-  depends=('libx11' 'aee-git')
-  provides=('xae')
-  cd ${pkgbase%-git}
-  install -Dpm755 xae "$pkgdir"/usr/bin/xae
-}

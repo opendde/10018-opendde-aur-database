@@ -1,8 +1,0 @@
-prepare() {
-  mkdir -p brave
-  tar xf data.tar.xz -C brave
-  # Delete unneeded cron job
-  rm -rf brave/opt/brave.com/brave-beta/cron
-  # Use our script to launch (allows overriding flags, sets up data dir)
-  sed -i "s/\/usr\/bin\/brave-browser-beta/\/usr\/bin\/brave-beta/g" brave/usr/share/applications/brave-browser-beta.desktop    
-}

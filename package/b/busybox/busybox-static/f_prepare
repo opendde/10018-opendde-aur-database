@@ -1,7 +1,0 @@
-prepare() {
-  cd "$_pkgname-$pkgver"
-  for i in ../*.patch; do
-    patch -p1 <$i
-  done
-  cp ../config ./.config
-}

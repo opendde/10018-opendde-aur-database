@@ -1,7 +1,0 @@
-build() {
-    cd "${srcdir}/${_pkgname}-v${pkgver}"
-    export RUSTUP_TOOLCHAIN=nightly
-    export CARGO_TARGET_DIR=target
-    export AMETHYST_CODENAME="${_codename}"
-    cargo build --frozen --release
-}

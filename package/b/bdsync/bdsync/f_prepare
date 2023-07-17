@@ -1,5 +1,0 @@
-prepare() {
-  cd "$pkgname"
-  sed -i -r 's|^CFLAGS=(.*)|CFLAGS:=\1 $(CFLAGS)|' Makefile
-  sed -i -r 's|$\(CRYPTO_LDFLAGS\)$|\0 $(LDFLAGS)|' Makefile
-}

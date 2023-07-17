@@ -1,6 +1,0 @@
-build() {
-  cd "$srcdir"/mod_auth_mellon-$pkgver
-  ./autogen.sh
-  ./configure
-  apxs -L/usr/lib -I/usr/include -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/libxml2 -I/usr/include/xmlsec1 -llasso -lcurl -c mod_auth_mellon.c auth_mellon_*.c
-}

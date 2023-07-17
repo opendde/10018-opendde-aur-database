@@ -1,1 +1,0 @@
-("$pkgname-$pkgver::git+https://github.com/ahpohl/convpot.git#tag=v${pkgver}")

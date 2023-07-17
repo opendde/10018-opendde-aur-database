@@ -1,4 +1,0 @@
-package() {
-    install -m644 -DT "koy.map.gz2" "$pkgdir/usr/share/kbd/keymaps/i386/adnw/koy.map.gz"
-    install -m644 -DT "adnw.map.gz" "$pkgdir/usr/share/kbd/keymaps/i386/adnw/adnw.map.gz"
-}

@@ -1,1 +1,0 @@
-("${pkgname}-ssd-${pkgver}.tar.gz"::"https://github.com/weiliu89/caffe/archive/refs/tags/ssdv${pkgver}.tar.gz"

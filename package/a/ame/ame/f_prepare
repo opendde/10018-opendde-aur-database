@@ -1,4 +1,0 @@
-prepare() {
-    cd "${srcdir}/${_pkgname}-v${pkgver}"
-    cargo fetch --locked --target "${CARCH}-unknown-linux-gnu"
-}

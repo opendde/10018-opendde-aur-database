@@ -1,4 +1,0 @@
-post_install() {
-    update-mime-database
-    update-desktop-database
-}

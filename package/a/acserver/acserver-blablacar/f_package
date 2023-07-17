@@ -1,6 +1,0 @@
-package() {
-    install -D -m644 $pkgname.service   "$pkgdir/usr/lib/systemd/system/$pkgname.service"
-    cd acserver
-    install -D -m755 bin/acserver       "$pkgdir/usr/bin/$pkgname"
-    install -d -m755                    "$pkgdir/var/aci/store"
-}

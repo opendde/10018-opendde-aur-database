@@ -1,4 +1,0 @@
-package() {
-  cd airpwn
-  make DESTDIR=$pkgdir install
-}

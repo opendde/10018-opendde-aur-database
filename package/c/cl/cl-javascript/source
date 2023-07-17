@@ -1,1 +1,0 @@
-("$pkgname::git+https://github.com/akapav/js#commit=$_commit")

@@ -1,4 +1,0 @@
-package() {
-  cd "$_sourcefolder"
-  make DESTDIR="$pkgdir" install
-}

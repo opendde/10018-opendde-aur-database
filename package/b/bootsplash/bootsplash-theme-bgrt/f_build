@@ -1,4 +1,0 @@
-build() {
-  cd "$srcdir"
-  sh ./bootsplash-bgrt.sh
-}

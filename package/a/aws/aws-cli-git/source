@@ -1,1 +1,0 @@
-("${_pybase}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz")

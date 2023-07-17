@@ -1,4 +1,0 @@
-package() {
-  cd $srcdir/Audacity-$pkgver-Source/build
-  make DESTDIR="${pkgdir}" install
-}

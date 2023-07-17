@@ -1,5 +1,0 @@
-package() {
-  install -Dm755 ${pkgname}-${pkgver}/bash_unit "$pkgdir/usr/bin/bash_unit"
-  install -dm755 ${pkgdir}/usr/share/man/man1
-  cp -dpr --no-preserve=ownership ${pkgname}-${pkgver}/docs/man/man1/*.1 "$pkgdir/usr/share/man/man1"
-}

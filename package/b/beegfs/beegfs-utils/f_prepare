@@ -1,7 +1,0 @@
-prepare() {
-    cd "$srcdir/$pkgname-$pkgver/ctl/source/"
-
-    find toolkit -type f -exec sed --in-place \
-        --expression='s|attr/xattr.h|sys/xattr.h|g' \
-        '{}' '+'
-}

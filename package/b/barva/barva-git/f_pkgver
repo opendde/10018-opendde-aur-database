@@ -1,5 +1,0 @@
-pkgver() {
-    cd "${srcdir}/${_pkgname}"
-    local _version="$(git describe --tags --match 'v*' | sed 's/-/.r/' | sed 's/-/./')"
-    printf "${_version#v}"
-}

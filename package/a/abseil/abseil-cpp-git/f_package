@@ -1,4 +1,0 @@
-package() {
-    cd "$_pkgname"
-    cmake --build build -- DESTDIR="$pkgdir" install
-}

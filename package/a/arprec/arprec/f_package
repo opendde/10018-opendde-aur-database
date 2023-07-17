@@ -1,6 +1,0 @@
-package() {
-	cd "${srcdir}/${pkgname}"
-	make DESTDIR="${pkgdir}/" install
-	install -Dm644 "${srcdir}/"${pkgname}/COPYING "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
-	catdoc "${srcdir}"/LBNL-BSD-License.doc > "${pkgdir}"/usr/share/licenses/${pkgname}/LBNL-BSD-License.txt
-}

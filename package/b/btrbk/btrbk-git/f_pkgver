@@ -1,4 +1,0 @@
-pkgver() {
-  cd "${srcdir}/btrbk"
-  git describe --long | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
-}

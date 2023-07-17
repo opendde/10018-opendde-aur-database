@@ -1,6 +1,0 @@
-pkgver() {
-  cd "trunk"
-
-  _ver="$(svnversion)"
-  printf "r%s" "${_ver//[[:alpha:]]}"
-}

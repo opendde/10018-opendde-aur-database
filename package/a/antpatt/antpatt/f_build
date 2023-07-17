@@ -1,7 +1,0 @@
-build() {
-  cd "$srcdir/"
-  tar -xvf "v$pkgver.tar.gz"
-  cd "$pkgname-$pkgver/build/"
-  cmake .. -GNinja -Wall -DCMAKE_INSTALL_PREFIX='/usr'
-  ninja
-}

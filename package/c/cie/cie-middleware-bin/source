@@ -1,1 +1,0 @@
-("https://github.com/italia/${pkgname%-bin}-linux/releases/download/${pkgver}/${pkgname%-bin}_${pkgver}.tar.gz"

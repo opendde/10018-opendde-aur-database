@@ -1,4 +1,0 @@
-build() {
-    cd "${srcdir}/${pkgfolder}"
-    python setup.py build || return 1
-}

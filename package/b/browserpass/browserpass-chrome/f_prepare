@@ -1,7 +1,0 @@
-prepare() {
-    # Create extension json
-    cat << EOF > "${_id}".json
-{
-    "external_crx": "/usr/lib/${pkgname}/${pkgname}-${pkgver}.crx",
-    "external_version": "${pkgver}"
-}

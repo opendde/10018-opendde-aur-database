@@ -1,4 +1,0 @@
-package() {
-    cd "${srcdir}/${_pkgname}"
-    install -vDm 755 bonsai.sh -t "${pkgdir}/usr/bin/"
-}

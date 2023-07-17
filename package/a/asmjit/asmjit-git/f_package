@@ -1,5 +1,0 @@
-package() {
-	# shellcheck disable=SC2154
-	DESTDIR="$pkgdir" cmake --install build
-	install -Dm644 -t "$pkgdir"/usr/share/licenses/$pkgname $_pkgname/LICENSE.md
-}

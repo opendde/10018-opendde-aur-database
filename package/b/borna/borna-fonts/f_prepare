@@ -1,6 +1,0 @@
-prepare() {
-	cd BFonts
-	for i in $(find . -type f -name "*[A-Z]*"); 
-		do mv "$i" "$(echo $i | tr A-Z a-z)"; 
-	done
-}

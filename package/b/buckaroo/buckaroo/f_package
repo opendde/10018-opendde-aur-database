@@ -1,8 +1,0 @@
-package() {
-  # Make telemetry an opt-in feature
-  mkdir -p "${pkgdir}/etc/profile.d"
-  echo "export BUCKAROO_TELEMETRY_OPT_OUT=1" > "${pkgdir}/etc/profile.d/buckaroo-telemetry-opt-out.sh"
-
-  # Install the binary
-  install -Dm755 buckaroo-linux "${pkgdir}/usr/bin/buckaroo"
-}

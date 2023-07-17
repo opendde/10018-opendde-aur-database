@@ -1,1 +1,0 @@
-('--program-transform-name=s/\([ec]tags\)/\1.emacs/')

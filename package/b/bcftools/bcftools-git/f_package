@@ -1,6 +1,0 @@
-package() {
-  cd "bcftools"
-
-  make DESTDIR="$pkgdir" install
-  install -Dm644 "LICENSE" -t "$pkgdir/usr/share/licenses/bcftools"
-}

@@ -1,5 +1,0 @@
-package() {
-  cd "${srcdir}/amdctl"
-  install -Dm755 amdctl -t "${pkgdir}/usr/bin/"
-  install -Dm755 ../amdctl.conf -t "${pkgdir}/etc/modules-load.d/"
-}

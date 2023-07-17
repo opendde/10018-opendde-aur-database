@@ -1,3 +1,0 @@
-package() {
-  install -m 755 -D configure.sh "$pkgdir"/usr/bin/$_target-configure
-}

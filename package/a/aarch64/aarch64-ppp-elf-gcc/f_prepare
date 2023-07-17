@@ -1,5 +1,0 @@
-prepare() {
-  ct-ng --version
-  unset CFLAGS
-  unset CXXFLAGS
-}

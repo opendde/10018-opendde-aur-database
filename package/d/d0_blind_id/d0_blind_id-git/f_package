@@ -1,9 +1,0 @@
-package() {
-  cd "$pkgname-$pkgver"
-
-  install -v  -Dm 755 "$pkgname"             -t "$pkgdir/usr/bin"
-  install -pv -Dm 644 map_gen.ini            -t "$pkgdir/usr/share/$pkgname"
-  install -pv -Dm 644 examples/*             -t "$pkgdir/usr/share/$pkgname/examples" 
-  install -p  -Dm 644 *.txt                  -t "$pkgdir/usr/share/doc/$pkgname"
-  install -p  -Dm 644 doc/*                  -t "$pkgdir/usr/share/doc/$pkgname" 
-}

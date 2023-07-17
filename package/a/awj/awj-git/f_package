@@ -1,6 +1,0 @@
-package() {
-    cd "$srcdir/$_pkgname"
-    install -Dm755 awj "${pkgdir}/usr/bin/awj"
-    mkdir -p "${pkgdir}/usr/share/licenses/awj-git/"
-    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/awj-git/LICENSE"
-}

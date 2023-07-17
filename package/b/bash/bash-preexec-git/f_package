@@ -1,5 +1,0 @@
-package() {
-	cd "$srcdir/$pkgname"
-	install -D -m0755 "$srcdir/$pkgname/bash-preexec.sh" "$pkgdir/usr/share/bash-preexec/bash-preexec.sh"
-	install -D -m0644 "$srcdir/$pkgname/LICENSE.md" "$pkgdir/usr/share/licenses/bash-preexec/LICENSE.md"
-}

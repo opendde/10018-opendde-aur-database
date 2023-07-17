@@ -1,4 +1,0 @@
-pkgver() {
-  cd beaker
-  git describe --tags | sed 's#-#+#g;s#+#+r#'
-}

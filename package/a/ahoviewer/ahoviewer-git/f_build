@@ -1,4 +1,0 @@
-build() {
-  arch-meson --auto-features=auto $_pkgname build
-  meson compile -C build
-}

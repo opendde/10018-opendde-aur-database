@@ -1,3 +1,0 @@
-package() {
-    make INSTALL_DIR="$pkgdir/usr/local/bin/" install
-}

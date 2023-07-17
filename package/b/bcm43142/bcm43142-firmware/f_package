@@ -1,5 +1,0 @@
-package() {
-  mkdir -p ${pkgdir}/usr/lib/firmware/brcm
-  install -m644 "${srcdir}/fw-0a5c_21d7.hcd" "${pkgdir}/usr/lib/firmware/fw-0a5c_21d7.hcd"
-  install -m644 "${srcdir}/fw-0a5c_21d7.hcd" "${pkgdir}/usr/lib/firmware/brcm/BCM.hcd"
-}

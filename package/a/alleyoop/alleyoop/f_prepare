@@ -1,5 +1,0 @@
-prepare() {
-  cd $pkgname-$pkgver
-  patch -Np1 -i ../git-fixes.patch
-  ./autogen.sh
-}

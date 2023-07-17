@@ -1,7 +1,0 @@
-package() {
-	install -d $pkgdir/opt/alvr
-	install -d $pkgdir/usr/bin
-	cp -a $srcdir/${pkgname%-git}/build/alvr_server_linux/* $pkgdir/opt/alvr
-	
-	ln -s /opt/alvr/bin/alvr_launcher $pkgdir/usr/bin/alvr
-}

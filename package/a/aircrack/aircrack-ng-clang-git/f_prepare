@@ -1,4 +1,0 @@
-prepare() {
-  cd "aircrack-ng"
-  autoreconf -f -i
-}

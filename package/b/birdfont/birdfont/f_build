@@ -1,5 +1,0 @@
-build() {
-	cd "$pkgname-$pkgver"
-	./configure -p /usr --ldflags="$(pkg-config --libs cairo-gobject)"
-	./build.py
-}

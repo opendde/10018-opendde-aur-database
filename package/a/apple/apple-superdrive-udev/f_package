@@ -1,6 +1,0 @@
-package() {
-	mkdir "${pkgdir}/etc"
-    mkdir "${pkgdir}/etc/udev"
-    mkdir "${pkgdir}/etc/udev/rules.d"
-    cp ./60-apple-superdrive.rules "${pkgdir}/etc/udev/rules.d"
-}

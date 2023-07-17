@@ -1,8 +1,0 @@
-prepare() {
-  ln -sf "$srcdir/i386" i686
-  ln -sf "$srcdir/amd64" x86_64
-  sed -i 's:$$${installation_path}:/opt/ankama:' \
-      "$srcdir/usr/share/polkit-1/actions/com.ankama.transitionupdateservice.policy"
-  # we only use usr/share/pixmaps/transition.png
-  rm -rf "$srcdir/usr/share/icons/"
-}

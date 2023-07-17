@@ -1,6 +1,0 @@
-package() {
-	cd "${srcdir}/${rpkgname}-${pkgver}"
-
-    # install binary
-	install -D -m0755 batz.sh "${pkgdir}/usr/bin/batz"
-}

@@ -1,6 +1,0 @@
-prepare() {
-  if containsElement "empris" "${_module_list[@]}"; then
-    sed -i '/PKG_CHECK_MODULES(E,/ s/enlightenment/& edbus/' "$srcdir/empris/configure.ac"
-    sed -i '1a #include <E_DBus.h>' "$srcdir/empris/src/e_mod_main.c"
-  fi
-}

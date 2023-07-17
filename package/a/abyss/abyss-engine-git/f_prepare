@@ -1,9 +1,0 @@
-prepare() {
-  if [ ! -d build ]; then
-    mkdir build
-  fi
-
-  # temporary workaround to disable tests
-  rm -rf "${pkgname%-git}"/tests/*
-  touch "${pkgname%-git}"/tests/CMakeLists.txt
-}

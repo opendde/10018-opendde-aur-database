@@ -1,7 +1,0 @@
-package() {
-    cd "$pkgdir"
-
-    tar -xvf "${srcdir}/data.tar.xz"
-    mkdir -p usr/bin
-    ln -s /opt/Binance/binance usr/bin/binance
-}

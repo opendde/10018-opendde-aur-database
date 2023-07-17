@@ -1,7 +1,0 @@
-package() {
-  cd "$pkgname"
-  if [ ! -d "$pkgdir/usr/bin" ]; then
-    mkdir -p "$pkgdir/usr/bin"
-  fi
-  install anytoggle "$pkgdir/usr/bin"
-}

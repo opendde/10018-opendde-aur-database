@@ -1,4 +1,0 @@
-build() {
-	cd "${_srcdir}"
-	make BV_DATA_LOCATION_DIR="/usr/share/${pkgname}" installable
-}

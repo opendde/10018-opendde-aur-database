@@ -1,4 +1,0 @@
-prepare() {
-  cd "bitcoin-$_pkgver"
-  autoreconf -fi
-}

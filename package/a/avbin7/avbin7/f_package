@@ -1,9 +1,0 @@
-package() {
-    _avlib=libavbin.so.7
-    mkdir $pkgdir/usr
-    mkdir $pkgdir/usr/lib
-    cp $srcdir/avbin-linux-x86-$_arch-7/$_avlib $pkgdir/usr/lib/ || return 1
-    cd $pkgdir/usr/lib
-    ln -sf $_avlib libavbin.so || return 1
-    chmod a+rx $_avlib || return 1
-}

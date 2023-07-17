@@ -1,6 +1,0 @@
-_replace_api_ref() {
-    find "$srcdir" \
-	 -type f \
-	 -name '*.html' \
-	 -exec sed -i "s,$1,file:///usr/share/doc/blender/api/," {} +
-}

@@ -1,8 +1,0 @@
-build() {
-  PKGVER=$pkgver CFLAGS="$CFLAGS -flto" CXXFLAGS="$CXXFLAGS -stdlib=libc++ -flto" LDFLAGS="$LDFLAGS -stdlib=libc++ -flto" ./generate_build.rb > build.ninja
-
-  # TODO: make BoringSSL build a subninja of the main build file
-  cd $srcdir/boringssl/build && cmake -GNinja ..; ninja
-
-  cd $srcdir && ninja
-}

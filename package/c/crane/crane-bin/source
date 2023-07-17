@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}::https://github.com/michaelsauter/crane/releases/download/v${pkgver}/crane_linux_amd64"

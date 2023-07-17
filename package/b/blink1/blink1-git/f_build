@@ -1,5 +1,0 @@
-build() {
-	cd ${srcdir}/blink1/commandline/
-
-	make
-}

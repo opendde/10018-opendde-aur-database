@@ -1,7 +1,0 @@
-package() {
-  cd "$srcdir/Audio-M4P"
-perl Makefile.PL
-make
-make test
-make install
-}

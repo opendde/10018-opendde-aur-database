@@ -1,5 +1,0 @@
-build() {
-  cd ${srcdir}/avr-libc-${pkgver}
-  ./configure --build=$(./config.guess) --host=avr --prefix=/usr
-  make
-}

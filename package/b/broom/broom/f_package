@@ -1,4 +1,0 @@
-package() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-  make install VERSION="${pkgver}" DESTDIR="${pkgdir}" || return 1
-}

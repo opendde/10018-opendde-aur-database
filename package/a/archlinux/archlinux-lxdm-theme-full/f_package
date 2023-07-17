@@ -1,4 +1,0 @@
-package() {
-  install -d "$pkgdir/usr/share/lxdm/themes/Archlinux"
-  cp -r $srcdir/lxdm-theme-archlinux/Archlinux "$pkgdir/usr/share/lxdm/themes"
-}

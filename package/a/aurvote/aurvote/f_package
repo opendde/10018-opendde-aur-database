@@ -1,5 +1,0 @@
-package() {
-  cd ${srcdir}/${pkgname}-${pkgver}
-  install -Dm 755 aurvote "${pkgdir}/usr/bin/aurvote"
-  install -Dm 644 zsh-completion "${pkgdir}/usr/share/zsh/site-functions/_aurvote"
-}

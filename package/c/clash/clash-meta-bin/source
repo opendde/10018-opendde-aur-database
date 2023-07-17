@@ -1,1 +1,0 @@
-("${pkgname}-amd64-v${pkgver}.gz::${url}/releases/download/v${pkgver}/Clash.Meta-linux-amd64-compatible-v${pkgver}.gz"

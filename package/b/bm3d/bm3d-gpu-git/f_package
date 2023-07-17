@@ -1,4 +1,0 @@
-package() {
-	mkdir -p "${pkgdir}/usr/bin"
-	cp "${srcdir}/bm3d-gpu/bm3d" "${pkgdir}/usr/bin"
-}

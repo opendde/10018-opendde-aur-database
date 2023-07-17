@@ -1,1 +1,0 @@
-("${pkgname}_linux_amd64.zip::${url}/releases/download/v${_version}/${pkgname}_linux_amd64.zip")

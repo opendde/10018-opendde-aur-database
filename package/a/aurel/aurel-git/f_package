@@ -1,7 +1,0 @@
-package() {
-  _pkg_emacs="$pkgdir/usr/share/emacs/site-lisp/"
-
-  cd "$srcdir/${pkgname%-git}"
-  install -d $_pkg_emacs
-  cp *.el $_pkg_emacs
-}

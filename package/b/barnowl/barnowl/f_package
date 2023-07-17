@@ -1,8 +1,0 @@
-package() {
-  cd $srcdir/$pkgname-$pkgver
-  make DESTDIR=$pkgdir install
-  mkdir -p $pkgdir/usr/share/$pkgname/examples
-  install -Dm644 COPYING $pkgdir/usr/share/licenses/$pkgname/COPYING
-  install -m644 doc/*.txt $pkgdir/usr/share/doc/$pkgname/
-  install -m644 examples/* $pkgdir/usr/share/$pkgname/examples/
-}

@@ -1,3 +1,0 @@
-package() {
-	install -D "$srcdir/$_gitname/output/linux-$CARCH/bannertool" "$pkgdir/usr/bin/bannertool"
-}

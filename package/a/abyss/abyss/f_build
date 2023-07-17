@@ -1,8 +1,0 @@
-build() {
-  cd "${pkgname}-${pkgver}"
-
-  ./autogen.sh
-  LDFLAGS="${LDFLAGS:-} -L/usr/lib/openmpi" \
-	  ./configure --prefix=/usr --disable-werror
-  make 
-}

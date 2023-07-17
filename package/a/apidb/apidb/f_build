@@ -1,7 +1,0 @@
-build() {
-    cd apidb-${pkgver}-${phase}
-    mkdir build
-    cd build
-    cmake -DCMAKE_INSTALL_PREFIX=/usr -DAPIDB_VERSION_STAGE=${phase} -DPLATFORM=LINUX_ARCH -DAPIDBBUILD="CORE;COMMANDS;GTK3" -DAPIDBINSTALL="CORE;COMMANDS;GTK3" ..
-    make
-}

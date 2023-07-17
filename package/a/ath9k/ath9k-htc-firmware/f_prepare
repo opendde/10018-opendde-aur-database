@@ -1,8 +1,0 @@
-prepare() {
-
-  cd $srcdir/open-ath9k-htc-firmware-$pkgver/target_firmware
-  mkdir -p build/{k2,magpie}
-
-  # fix gcc 4.8 aggressive loop optimizations "-faggressive-loop-optimizations"
-  #sed -i '\|mPhyCtrlState.validPhyRateIndex| s|= 0|= 0|' wlan/ratectrl_11n_ln.c
-}

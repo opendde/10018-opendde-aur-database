@@ -1,7 +1,0 @@
-build() {
-	_kernver="$(cat /usr/lib/modules/$_extramodules/version)"
-	cd "$srcdir"
-	# build ipoe module
-	msg2 'Ipoe module'
-	dkms --dkmsframework dkms.conf build "accel-ppp-ipoe/$pkgver" -k "$_kernver"
-}

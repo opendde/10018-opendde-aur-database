@@ -1,4 +1,0 @@
-package() {
-  tar xf data.tar.gz -C "${pkgdir}/"
-  _desktop_file=${pkgdir}/usr/share/applications/beam.desktop
-}

@@ -1,5 +1,0 @@
-package() {
-	cd "$srcdir/$pkgname"
-	install -Dm644 "bootsplash-manjaro-grey" "$pkgdir/usr/lib/firmware/bootsplash-themes/manjaro-grey/bootsplash"
-	install -Dm644 "bootsplash-manjaro-grey.initcpio_install" "$pkgdir/usr/lib/initcpio/install/bootsplash-manjaro-grey"
-}

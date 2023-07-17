@@ -1,3 +1,0 @@
-pkgver() {
-    git -C AVbin describe --long --tags | sed 's/^avbin-//;s/\([^-]*-g\)/r\1/;s/-/./g;s/^v//'
-}

@@ -1,1 +1,0 @@
-("${pkgname}_${pkgver}.tar.gz::https://github.com/animate1978/MB-Lab/archive/refs/tags/${pkgver//_/.}.tar.gz")

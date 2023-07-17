@@ -1,4 +1,0 @@
-package() {
-    cd "${srcdir}/${ghpkgname}-${pkgver}/"
-    install -Dm755 bcbasic -t "${pkgdir}/usr/bin/"
-}

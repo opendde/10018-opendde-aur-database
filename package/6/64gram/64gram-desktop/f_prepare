@@ -1,5 +1,0 @@
-prepare() {
-    cd $_pkgname-$pkgver-full
-    rm -rf Telegram/ThirdParty/libtgvoip/webrtc_dsp/absl
-    patch -Np1 --binary -i ../block-sponsored_messages.patch
-}

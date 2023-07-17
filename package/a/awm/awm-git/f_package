@@ -1,4 +1,0 @@
-package() {
-	cd awm
-	make DESTDIR="$pkgdir/" install
-}

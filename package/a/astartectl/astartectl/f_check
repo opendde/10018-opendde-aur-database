@@ -1,4 +1,0 @@
-check() {
-  cd "$pkgname-$pkgver"
-  go test -v ./...
-}

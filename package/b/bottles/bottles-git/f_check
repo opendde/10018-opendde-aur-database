@@ -1,3 +1,0 @@
-check () {
-  ninja test -C "$srcdir/${pkgname%-git}/build" || true
-}

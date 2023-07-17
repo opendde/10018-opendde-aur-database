@@ -1,7 +1,0 @@
-build() {
-  cd $_pkgname
-  mkdir build
-  cd build
-  cmake -DCMAKE_INSTALL_PREFIX=/usr ..
-  make
-}

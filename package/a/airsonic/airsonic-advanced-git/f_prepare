@@ -1,8 +1,0 @@
-prepare() {
-    cd "${srcdir}/airsonic-advanced"
-    sed -i 's/\/var\/airsonic/\/var\/lib\/airsonic/' \
-        "contrib/airsonic.service" \
-        "contrib/airsonic-systemd-env"
-    sed -i 's/\/etc\/sysconfig\/airsonic/\/etc\/airsonic\/airsonic.conf/' \
-        "contrib/airsonic.service"
-}

@@ -1,6 +1,0 @@
-package() {
-	pwd
-	ls -al
-	cd "$_name"
-	make DESTDIR="$pkgdir/" install
-}

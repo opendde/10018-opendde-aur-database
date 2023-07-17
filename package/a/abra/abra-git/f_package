@@ -1,5 +1,0 @@
-package() {
-	mkdir -p "$pkgdir/usr/bin"
-	install -p -m755 "$srcdir/go-abra/abra" "$pkgdir/usr/bin"
-	#install -Dm644 "$srcdir/go-abra/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-}

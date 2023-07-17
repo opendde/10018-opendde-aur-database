@@ -1,5 +1,0 @@
-package() {
-    mv deb-data/* "${pkgdir}/"
-    mkdir -p "${pkgdir}/usr/bin"
-    ln -sf /opt/alfaview/alfaview "${pkgdir}/usr/bin/alfaview"
-}

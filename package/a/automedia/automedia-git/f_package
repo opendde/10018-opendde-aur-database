@@ -1,8 +1,0 @@
-package() {
-  cd "$srcdir"
-  ./release.sh
-  install -Dm755 "automedia" "$pkgdir/usr/bin/automedia"
-  for file in plugins/*; do
-    install -Dm755 "$file" "$pkgdir/usr/share/automedia/$file"
-  done
-}

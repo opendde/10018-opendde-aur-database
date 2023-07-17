@@ -1,4 +1,0 @@
-install() {
-	cd "$pkgname-$pkgver"
-	make PREFIX="$pkgdir/usr/local" install
-}

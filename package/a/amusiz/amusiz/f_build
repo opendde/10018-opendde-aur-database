@@ -1,5 +1,0 @@
-build() {
-  cd "Amusiz-${pkgver}"
-  meson --prefix='/usr' build
-  ninja -C build
-}

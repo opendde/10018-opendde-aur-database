@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz"::"https://github.com/ampas/${_srcname}/archive/v${pkgver}.tar.gz"

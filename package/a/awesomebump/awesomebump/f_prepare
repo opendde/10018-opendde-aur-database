@@ -1,4 +1,0 @@
-prepare() {
-    cd "${srcdir}"
-    mv AwesomeBumpV5.1Bin64Ubuntu18.04 awesomebump
-}

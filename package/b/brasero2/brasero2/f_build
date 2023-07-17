@@ -1,8 +1,0 @@
-build() {
-  cd "${srcdir}/${_pkgname}-${pkgver}"
-  ./configure --prefix=/usr --sysconfdir=/etc \
-      --localstatedir=/var --disable-caches \
-      --disable-schemas-compile \
-      --disable-search
-  make LDFLAGS="$LDFLAGS -lICE"
-}

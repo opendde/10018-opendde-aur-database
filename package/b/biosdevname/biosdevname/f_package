@@ -1,7 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname-$pkgver"
-  make DESTDIR="$pkgdir/" install
-  mv $pkgdir/lib $pkgdir/usr
-  sed -i $pkgdir/usr/lib/udev/rules.d/71-biosdevname.rules \
-    -e 's!/sbin/!/bin/!'
-}

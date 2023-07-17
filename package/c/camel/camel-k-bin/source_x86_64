@@ -1,1 +1,0 @@
-("https://github.com/apache/camel-k/releases/download/v${pkgver}/camel-k-client-${pkgver}-linux-64bit.tar.gz")

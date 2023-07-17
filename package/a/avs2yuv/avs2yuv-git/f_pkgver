@@ -1,5 +1,0 @@
-pkgver() {
-  cd avs2yuv
-#   printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-  echo "$(git describe --long --tags | tr - .)"
-}

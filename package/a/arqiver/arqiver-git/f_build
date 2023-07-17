@@ -1,6 +1,0 @@
-build() {
-  cd build
-
-  qmake ../$_pkgname
-  make
-}

@@ -1,5 +1,0 @@
-build() {
-	cd "$srcdir/bashstyle-ng"
-	./configure --python=/usr/bin/python --no-postinstall
-	./make build
-}

@@ -1,3 +1,0 @@
-package() {
-    install -D -m 0644 "archlinux-${pkgver}-x86_64.iso" "${pkgdir}/opt/archlinux/archlinux-x86_64.iso"
-}

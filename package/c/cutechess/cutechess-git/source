@@ -1,1 +1,0 @@
-($pkgbase::git+https://github.com/${pkgbase%-git}/${pkgbase/-/.})

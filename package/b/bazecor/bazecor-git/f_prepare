@@ -1,5 +1,0 @@
-prepare() {
-    _ensure_local_nvm
-    nvm install 16
-    nvm use 16
-}

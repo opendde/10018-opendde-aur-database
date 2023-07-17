@@ -1,7 +1,0 @@
-package() {
-    mkdir "${pkgdir}/usr/bin" -p
-    mkdir "${pkgdir}/usr/share/man/man1" -p
-
-    cd "$_pkgname"
-    make DESTDIR="$pkgdir/" PREFIX="/usr/" install
-}

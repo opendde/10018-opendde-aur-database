@@ -1,5 +1,0 @@
-prepare() {
-  cd "$srcdir"
-
-  mkdir -p "_build"
-}

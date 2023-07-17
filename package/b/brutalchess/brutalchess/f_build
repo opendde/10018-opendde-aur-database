@@ -1,5 +1,0 @@
-build() {
-  cd $pkgname-$pkgver
-  ./configure --prefix=/usr --libexecdir=/usr/lib/$pkgname
-  make
-}

@@ -1,6 +1,0 @@
-prepare() {
-  cd "${srcdir}"
-  chmod +x ${_filename}
-  ${_filename} --appimage-extract
-  patch -Np0 < ./beekeeper-studio.desktop.patch
-}

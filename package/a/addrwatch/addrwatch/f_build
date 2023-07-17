@@ -1,5 +1,0 @@
-build() {
-  cd $pkgname-$pkgver
-  ./configure --prefix=/usr --mandir=/usr/share/man --sbindir=/usr/bin
-  make V=0
-}

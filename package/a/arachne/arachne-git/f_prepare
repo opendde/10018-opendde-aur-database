@@ -1,4 +1,0 @@
-prepare() {
-  cd Arachne
-  patch -p1 -i "$srcdir"/makefile.diff
-}

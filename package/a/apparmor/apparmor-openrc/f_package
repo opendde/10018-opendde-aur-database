@@ -1,4 +1,0 @@
-package() {
-   mv "$_filename" -v apparmor.initd
-   _inst_initd 'apparmor'
-}

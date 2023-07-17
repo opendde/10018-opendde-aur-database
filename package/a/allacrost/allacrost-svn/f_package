@@ -1,6 +1,0 @@
-package() {
-  install -D -m644 $srcdir/allacrost.desktop $pkgdir/usr/share/applications/allacrost.desktop
-  cd "$srcdir/allacrost"
-  make DESTDIR=$pkgdir install
-  install -D -m644 allacrost.png $pkgdir/usr/share/icons/allacrost.png
-}

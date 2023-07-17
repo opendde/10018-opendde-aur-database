@@ -1,5 +1,0 @@
-pkgver() {
-    cd "${pkgname}"
-    base_version=$(grep __version__  blink/__info__.py | sed 's|.*"\(.*\)".*|\1|')
-    printf "%s.r%s.%s" "${base_version}" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-}

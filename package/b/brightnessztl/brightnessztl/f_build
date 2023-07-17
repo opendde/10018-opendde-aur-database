@@ -1,4 +1,0 @@
-build() {
-  cd "${pkgname}-${pkgver}"
-  zig build -Drelease-safe=true
-}

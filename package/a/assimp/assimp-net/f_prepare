@@ -1,5 +1,0 @@
-prepare() {
-  cd "${srcdir}/$pkgname-$pkgver"
-  find . -type f -exec dos2unix {} \;
-  sed -i -e "s,Assimp32.so,libassimp.so,g" -e "s,Assimp64.so,libassimp.so,g" AssimpNet/Unmanaged/AssimpLibrary.cs
-}

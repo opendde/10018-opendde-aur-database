@@ -1,3 +1,0 @@
-build() {
-  chmod +x "argo_${pkgver}_${CARCH}"
-}

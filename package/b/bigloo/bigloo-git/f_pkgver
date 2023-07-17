@@ -1,4 +1,0 @@
-pkgver() {
-  cd ${pkgname%-git}
-  printf "%s.r%s.%s" $(grep ^release configure| cut -d= -f2) $(git rev-list --count HEAD) $(git rev-parse --short HEAD)
-}

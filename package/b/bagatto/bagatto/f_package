@@ -1,4 +1,0 @@
-package() {
-	cd "$srcdir/$pkgname-v$pkgver"
-        install -Dm755 build/bag "${pkgdir}/usr/bin/bag"
-}

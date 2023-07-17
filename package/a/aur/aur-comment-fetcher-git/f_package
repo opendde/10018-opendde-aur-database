@@ -1,6 +1,0 @@
-package() {
-  cd "${srcdir}/${_gitname}"
-
-  install -D aur-comment-fetch -t "${pkgdir}/usr/bin"
-  install -Dm644 bash_completion "${pkgdir}/usr/share/bash-completion/completions/aur-comment-fetch"
-}

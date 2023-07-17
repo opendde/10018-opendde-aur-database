@@ -1,5 +1,0 @@
-build () {
-	rm -rf build
-	arch-meson "${pkgname}" build -Dexamples=false
-	ninja -C build
-}

@@ -1,1 +1,0 @@
-(${url}/${pkgver}-${_pkgdate}/${_target}/${_compiler_name}-${pkgver}.${pkgrel}-${_pkgdate}-${arch}_${_target}.tar.xz)

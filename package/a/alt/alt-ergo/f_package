@@ -1,6 +1,0 @@
-package() {
-    cd "$pkgname-$pkgver"/sources
-
-    make DESTDIR="$pkgdir" install
-    make DESTDIR="$pkgdir" install-gui
-}

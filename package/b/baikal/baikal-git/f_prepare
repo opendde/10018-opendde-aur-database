@@ -1,5 +1,0 @@
-prepare() {
-  cd "${srcdir}/${_pkgname}"
-  sed -i '/zip -r baikal/d' Makefile
-  make
-}

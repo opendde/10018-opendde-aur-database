@@ -1,5 +1,0 @@
-prepare() {
-  cd "${srcdir}/${pkgname}"
-  patch -Np1 -i "${srcdir}"/0001-fix-for-GDCM-build.patch
-  mkdir -p antsBuild
-}

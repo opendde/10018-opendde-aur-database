@@ -1,8 +1,0 @@
-pkgver() {
-  if [[ -z "${_brackets_version}" ]]; then  
-    cd ${srcdir}/${_brackets}
-    echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
-  else
-    echo ${_brackets_version}
-  fi
-}

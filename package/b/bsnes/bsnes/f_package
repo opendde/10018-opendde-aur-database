@@ -1,5 +1,0 @@
-package() {
-  cd "bsnes-${pkgver}"
-
-  make -C bsnes prefix="${pkgdir}/usr" install
-}

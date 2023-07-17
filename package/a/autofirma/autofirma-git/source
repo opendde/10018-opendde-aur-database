@@ -1,1 +1,0 @@
-("${_pkgname}::git+https://github.com/ctt-gob-es/${_pkgname}.git"

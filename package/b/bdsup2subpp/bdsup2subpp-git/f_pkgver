@@ -1,4 +1,0 @@
-pkgver() {
-  cd bdsup2subpp
-  echo "$(git describe --long --tags | tr - .)"
-}

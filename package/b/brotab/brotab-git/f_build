@@ -1,6 +1,0 @@
-build() {
-	cd "${srcdir}/${_pkgname}"
-	sed -i '/^import pip$/d' setup.py || :
-	sed -i 's/==.*//' requirements/*.txt
-	python3 setup.py build
-}

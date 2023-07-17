@@ -1,5 +1,0 @@
-pkgver() {
-    printf "0.2.3_%s.%s" \
-        "$(git -C "${srcdir}/BeamerPresenter" rev-list --count HEAD)" \
-        "$(git -C "${srcdir}/BeamerPresenter" rev-parse --short HEAD)"
-}

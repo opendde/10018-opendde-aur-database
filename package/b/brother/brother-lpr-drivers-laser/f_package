@@ -1,5 +1,0 @@
-package() {
-  set -u
-  mv Arch/* "${pkgdir}"
-  set +u
-}

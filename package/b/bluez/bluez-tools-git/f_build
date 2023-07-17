@@ -1,7 +1,0 @@
-build() {
-  cd "bluez-tools"
-
-  ./autogen.sh \
-    --prefix="/usr"
-  make
-}

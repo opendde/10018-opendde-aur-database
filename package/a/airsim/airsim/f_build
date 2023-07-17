@@ -1,6 +1,0 @@
-build() {
-  mkdir -p "$srcdir/${_pkgname}-${pkgver}-linux/cmake/build"
-  cd "$srcdir/${_pkgname}-${pkgver}-linux/cmake/build"
-  cmake -DCMAKE_INSTALL_PREFIX="$pkgdir/opt" ..
-  make
-}

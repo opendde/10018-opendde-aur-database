@@ -1,7 +1,0 @@
-package() {
-	cd $_reponame
-	install -Dm 755 "$_pkgname" "${pkgdir}/usr/bin/${_pkgname}"
-	cd ..
-	mkdir -p "${pkgdir}/opt/${_reponame}"
-	cp -r "${_reponame}" "${pkgdir}/opt/"
-}

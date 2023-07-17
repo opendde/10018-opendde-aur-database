@@ -1,5 +1,0 @@
-build() {
-  cd "${srcdir}"
-  cmake -GNinja -B build -DCMAKE_BUILD_TYPE=MinSizeRel -DCMAKE_INSTALL_PREFIX=/usr "${srcdir}/AusweisApp2-${pkgver}"
-  cmake --build build
-}

@@ -1,5 +1,0 @@
-package() {
-  cd $srcdir/
-  mkdir -p $pkgdir/usr/share/applications 
-  cp $srcdir/mount-archive.desktop $pkgdir/usr/share/applications/  
-}

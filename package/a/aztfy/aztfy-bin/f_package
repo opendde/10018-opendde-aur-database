@@ -1,4 +1,0 @@
-package() {
-    install -d "${pkgdir}/usr/bin"
-    install -m755 "${srcdir}/aztfy" "${pkgdir}/usr/bin"
-}

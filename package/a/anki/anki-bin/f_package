@@ -1,7 +1,0 @@
-package() {
-	PIP_CONFIG_FILE=/dev/null pip install --isolated --root="$pkgdir" --ignore-installed --no-deps *.whl
-
-	install -Dm755 runanki-$pkgver.py "$pkgdir/usr/bin/anki"
-	install -Dm644 anki-$pkgver.desktop "$pkgdir/usr/share/applications/anki.desktop"
-	install -Dm644 anki-$pkgver.png "$pkgdir/usr/share/pixmaps/anki.png"
-}

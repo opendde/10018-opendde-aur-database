@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}::https://github.com/hopeseekr/bash-timer/archive/v${pkgver}.tar.gz")

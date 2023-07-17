@@ -1,4 +1,0 @@
-build() {
-	# modifying .desktop file
-	sed -i -E "s|Exec=AppRun|Exec=/usr/bin/${_pkgname}|" "squashfs-root/${_pkgname}.desktop"
-}

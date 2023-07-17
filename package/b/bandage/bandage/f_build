@@ -1,8 +1,0 @@
-build() {
-    cd "$srcdir/Bandage-$pkgver"
-    # QT5 is the current version in Arch, but I'll leave this here so we don't
-    # forget how to change the version when 6 comes out.
-    export QT_SELECT=5
-    qmake Bandage.pro
-    make
-}

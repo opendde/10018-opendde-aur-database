@@ -1,9 +1,0 @@
-pkgver() {
-	wget --no-remove-listing ftp://ftp.bgbilling.ru/pub/bgbilling/${_vermajor}/${_achivename}_${_vermajor}_*.zip
-	# -rw-r--r-- 9 500 100 31493131 Oct 25 19:32 BGBillingClient_6.0_1258.zip
-	_ver=$(grep -o -P "${_achivename}_(\d+)\.(\d+)_(\d+)" .listing)
-	# BGBillingClient_6.0_1258
-	_v1=$(echo ${_ver}|cut -d'_' -f2)
-	_v2=$(echo ${_ver}|cut -d'_' -f3)
-	echo "${_v1}.${_v2}"
-}

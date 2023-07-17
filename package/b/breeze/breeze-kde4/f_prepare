@@ -1,5 +1,0 @@
-prepare() {
-  mkdir -p build
-  cd breeze-$pkgver
-  patch -p1 < ../386d3b8ed1e0595c9fc6e21643ff748402171429.patch
-}

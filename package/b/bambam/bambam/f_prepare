@@ -1,7 +1,0 @@
-prepare() {
-	cd "${srcdir}/${pkgname}-master"
-
-	# allow bambam to be executed from a symlink
-	# remove these lines if/after a corresponding PR gets merged to master
-	sed -i -e 's/normpath/realpath/' bambam.py
-}

@@ -1,4 +1,0 @@
-check() {
-  cd "${pkgname%-git}"
-  cargo test --frozen
-}

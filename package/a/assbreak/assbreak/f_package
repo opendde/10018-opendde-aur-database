@@ -1,3 +1,0 @@
-package() {
-  cargo install --no-track --locked --all-features --root "$pkgdir/usr/" --git=https://github.com/L14ms111/assbreak
-}

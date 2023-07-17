@@ -1,4 +1,0 @@
-build() {
-  cd "${srcdir}/bookshelf-${pkgver}"
-  make
-}

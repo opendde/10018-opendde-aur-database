@@ -1,8 +1,0 @@
-package() {
-    install -d "$pkgdir/usr/share/licenses/$pkgname"    
-    install -d "$pkgdir/usr/bin"    
-
-    install -m755 "$srcdir/$pkgname/baudrate.py" "$pkgdir/usr/bin/baudrate"
-    install -m644 "$srcdir/$pkgname/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-
-}

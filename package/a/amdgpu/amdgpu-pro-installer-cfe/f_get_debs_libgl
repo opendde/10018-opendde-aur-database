@@ -1,3 +1,0 @@
-get_debs_libgl() {
-         bash ./GET-DEBS-LIBGL.sh
-}

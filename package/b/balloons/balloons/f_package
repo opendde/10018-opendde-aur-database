@@ -1,8 +1,0 @@
-package() {
-  cd $pkgname-0.1.8-3
-
-  make DESTDIR="$pkgdir/" install
-
-  install -D ../$pkgname.desktop "$pkgdir"/usr/share/applications/$pkgname.desktop
-  install -D ../HIGH.DAT "$pkgdir"/usr/share/$pkgname/data/HIGH.DAT
-}

@@ -1,8 +1,0 @@
-package() {
-  cd "$srcdir"
-  
-  install -d "$pkgdir/usr/share/java/apache-ant"
-  
-  install -m644 "maven-ant-tasks-${pkgver}.jar" "$pkgdir/usr/share/java/apache-ant"
-  ln -s "apache-ant/maven-ant-tasks-${pkgver}.jar" "$pkgdir/usr/share/java/maven-ant-tasks.jar"
-}

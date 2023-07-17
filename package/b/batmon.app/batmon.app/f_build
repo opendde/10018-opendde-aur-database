@@ -1,5 +1,0 @@
-build() {
-  cd "$_pkgname-$pkgver"
-  export GNUSTEP_MAKEFILES="$(gnustep-config --variable=GNUSTEP_MAKEFILES)"
-  make
-}

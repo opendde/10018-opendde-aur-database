@@ -1,5 +1,0 @@
-package() {
-    cd bitwise_invert
-    install -Dm755 build/binv "${pkgdir}/usr/bin/binv"
-    install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/$pkgname/LICENSE"
-}

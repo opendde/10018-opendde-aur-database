@@ -1,9 +1,0 @@
-build() {
-    cmake \
-        -B "${pkgname}/build" \
-        -S "${pkgname}" \
-        -DCMAKE_BUILD_TYPE='None' \
-        -DCMAKE_INSTALL_PREFIX='/usr' \
-        -Wno-dev
-    make -C "${pkgname}/build" all
-}

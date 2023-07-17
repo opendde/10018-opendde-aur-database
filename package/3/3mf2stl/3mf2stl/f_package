@@ -1,5 +1,0 @@
-package() {
-	cd "${srcdir}/3mf2stl"
-	mkdir -p "${pkgdir}/usr/bin"
-	cp 3mf2stl "${pkgdir}/usr/bin"
-}

@@ -1,9 +1,0 @@
-package() {
-  cd "${srcdir}/${_gitname}"
-
-  install -Dm644 README.md -t "${pkgdir}/usr/share/doc/${_gitname}/"
-  install -Dm644 LICENSE -t "${pkgdir}/usr/share/licenses/${_gitname}/"
-
-  cd dist/${_gitname}-1.0.0
-  python setup.py install --root="${pkgdir}" --optimize=1 --skip-build
-}

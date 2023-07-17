@@ -40,34 +40,9 @@ cd aur-all/$GITHUB_REF_NAME
 onekeyGetOnePkgCfg() {
     cd ~/10018-opendde-aur-database/
     file_content="$2"
-    var_list="$(echo "$file_content" | grep "=" | grep -v "make " | grep -v "^ " | grep -v "^#")"
-    save_link="./package/"$(echo $1 | cut -c1)"/"$(echo $1 | awk -F- '{print $1}')"/"$1"/var.json"
-    echo $save_link
-    echo '{' >$save_link
-    for ((i_var = 1; i_var <= $(echo "$var_list" | wc -l); i_var++)); do
-        var=$(echo "$var_list" | awk 'NR=='"$i_var"'{print}')
-        var_left=$(echo $var | awk -F= '{print $1}')
-        var_right=${var#*=}
-        if [ "$(echo $var_right | grep "(")" ]; then
-            var_right='['$(echo "$var_right" | sed -e 's#(##g' -e 's#)##g' -e 's# #,#g')']'
-        fi
-        if [ "$(echo "$var_right" | grep \')" ]; then
-            var_right=$(echo "$var_right" | sed -e s?\'?\"?g)
-        fi
-        #var_right=`echo $var_right|sed -e 's?x86_64?"x86_64"?'`
-        #加引号检测
-        if [ "$(echo $var_right | grep '^"')" ] || [ "$(echo $var_right | grep -E "[] []+")" ]; then
-            var_right=$var_right
-        else
-            var_right=\"$var_right\"
-        fi
-        #是否最后一项检测
-        if [ $i_var -lt $(echo "$var_list" | wc -l) ]; then
-            var_right=$var_right","
-        fi
-        echo \"$var_left'": '$var_right >>$save_link
-    done
-    echo '}' >>$save_link
+    var_list=$(cat $file_content | sed -n '/^[a-zA-Z_][a-zA-Z0-9_]*=/p')
+    save_link="./package/"$(echo $1 | cut -c1)"/"$(echo $1 | awk -F- '{print $1}')"/"$1"/var.sh"
+    echo $var_list > $save_link
     function_list="$(echo "$file_content" | grep "()" | sed 's#() {##g' | grep -v "^#")"
     for ((i_func = 1; i_func <= $(echo "$function_list" | wc -l); i_func++)); do
         a_function=$(echo "$function_list" | awk 'NR=='"$i_func"'{print}')

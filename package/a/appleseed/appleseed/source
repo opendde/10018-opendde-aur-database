@@ -1,1 +1,0 @@
-(appleseed_${_pkgver}.tgz::"${_github}/archive/${_pkgver}.tar.gz"

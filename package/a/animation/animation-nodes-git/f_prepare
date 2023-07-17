@@ -1,5 +1,0 @@
-prepare() {
-  cd "animation_nodes"
-  _blender_version=$(blender --version | grep -Po 'Blender \K[0-9]\...')
-  echo "{\"Copy Target\" : \"$pkgdir/usr/share/blender/$_blender_version/scripts/addons\"}" > conf.json
-}

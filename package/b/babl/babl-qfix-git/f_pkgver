@@ -1,9 +1,0 @@
-pkgver() {
-  cd ${srcdir}/${_pkgname}
-  printf "%d.%d.%d.r%s.%s" \
-    $(grep -Po '^#define BABL_MAJOR_VERSION \K[0-9]*$' ${srcdir}/build/config.h) \
-    $(grep -Po '^#define BABL_MINOR_VERSION \K[0-9]*$' ${srcdir}/build/config.h) \
-    $(grep -Po '^#define BABL_MICRO_VERSION \K[0-9]*$' ${srcdir}/build/config.h) \
-    $(git rev-list --count HEAD) \
-    $(git rev-parse --short HEAD)
-}

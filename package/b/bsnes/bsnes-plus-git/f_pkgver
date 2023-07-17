@@ -1,4 +1,0 @@
-pkgver() {
-  cd bsnes-plus
-  printf "0.73r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-}

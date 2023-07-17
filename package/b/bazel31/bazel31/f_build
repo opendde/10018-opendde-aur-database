@@ -1,7 +1,0 @@
-build() {
-  curl -L https://github.com/ll-h/bazel/commit/c814c1f908801795b99e19c5abc3d29213710a2e.patch|patch -p1
-  EMBED_LABEL=$pkgver EXTRA_BAZEL_ARGS="--host_javabase=@local_jdk//:jdk" ./compile.sh
-  ./output/bazel build scripts:bazel-complete.bash
-  cd output
-  ./bazel shutdown
-}

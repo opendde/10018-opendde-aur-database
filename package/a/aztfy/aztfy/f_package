@@ -1,5 +1,0 @@
-package() {
-	cd "$pkgname-$pkgver"
-	install -D "build/$pkgname" -t "$pkgdir/usr/bin/"
-	install -Dm644 README.md SECURITY.md -t "$pkgdir/usr/share/doc/$pkgname/"
-}

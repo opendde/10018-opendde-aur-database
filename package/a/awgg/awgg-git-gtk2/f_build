@@ -1,7 +1,0 @@
-build() {
-  cd $_gitname
-  cd components/uniqueinstance
-  lazbuild --bm=Release uniqueinstance_package.lpk
-  cd -
-  ./build.sh rel_notstandalone
-}

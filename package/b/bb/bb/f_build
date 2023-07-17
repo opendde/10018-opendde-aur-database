@@ -1,9 +1,0 @@
-build() {
-    cd "$srcdir/$pkgname-$pkgver.orig"
-
-    autoconf
-    ./configure --prefix=/usr
-
-    # enabling allegro or using clang doesn't help, ie CC='clang -D USE_ALLEGRO'
-    make
-}

@@ -1,4 +1,0 @@
-package() {
-  mkdir -p $pkgdir/usr/bin
-  install -m 0755 $srcdir/coloredlogcat.py $pkgdir/usr/bin
-}

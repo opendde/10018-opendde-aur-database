@@ -1,5 +1,0 @@
-prepare() {
-  cd "${srcdir}/abootimg-${pkgver}"
-  patch -p0 --binary < ../no-initrd.patch
-  patch -p1 --binary < ../abootimg_0.6-1.diff
-}

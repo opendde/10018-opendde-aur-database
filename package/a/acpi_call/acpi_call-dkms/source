@@ -1,1 +1,0 @@
-("acpi_call-v${pkgver}.tar.gz::https://github.com/mkottman/acpi_call/archive/v${pkgver}.tar.gz")

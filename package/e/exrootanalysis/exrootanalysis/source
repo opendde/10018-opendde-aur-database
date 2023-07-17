@@ -1,1 +1,0 @@
-("${pkgname}-r${pkgver##*.}.zip::https://cp3.irmp.ucl.ac.be/projects/ExRootAnalysis/changeset/${pkgver##*.}/trunk?old_path=%2F&format=zip"

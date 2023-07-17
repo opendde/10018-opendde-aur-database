@@ -1,3 +1,0 @@
-prepare() {
-  printf '%s\n' "${url}" > "${srcdir}/upstream.url"
-}

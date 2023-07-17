@@ -1,4 +1,0 @@
-package() {
-    install -dm 755 "${pkgdir}/usr/share/doc/${pkgname}/html"
-    cp --recursive --dereference --target-directory="${pkgdir}/usr/share/doc/${pkgname}" "${srcdir}/${_reponame}/docs/docsite/_build/html" 
-}

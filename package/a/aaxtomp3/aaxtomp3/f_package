@@ -1,7 +1,0 @@
-package() {
-	cd "AAXtoMP3-$pkgver"
-	install -Dv AAXtoMP3 interactiveAAXtoMP3 -t "$pkgdir/usr/bin/"
-	install -Dvm644 _config.yml -t "$pkgdir/usr/share/$pkgname/"
-	install -Dvm644 README.md -t "$pkgdir/usr/share/doc/$pkgname/"
-	install -Dvm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
-}

@@ -1,5 +1,0 @@
-build() {
-  patch "${srcdir}/${pkgname}-${pkgver}/ptui/ptui-ncurses.c" < "${startdir}/ptui-ncurses.c.patch"
-	cd ${srcdir}"/"${pkgname}"-"${pkgver}
-	make
-}

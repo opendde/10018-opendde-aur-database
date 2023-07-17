@@ -1,4 +1,0 @@
-package() {
-  cd brasero-$pkgver
-  make DESTDIR=$pkgdir install
-}

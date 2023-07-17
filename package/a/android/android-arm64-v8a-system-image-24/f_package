@@ -1,6 +1,0 @@
-package() {
-  mkdir -p "${pkgdir}/opt/android-sdk/system-images/android-${_sdkint}/default"
-  cp -dpr --no-preserve=ownership "${srcdir}" "${pkgdir}/opt/android-sdk/system-images/android-${_sdkint}/default"
-
-  chmod -R ugo+rX "${pkgdir}/opt"
-}

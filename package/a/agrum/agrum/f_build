@@ -1,6 +1,0 @@
-build() {
-  cd "$srcdir/aGrUM-$pkgver"
-  mkdir -p build && pushd build
-  cmake -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_PYTHON=ON ..
-  make
-}

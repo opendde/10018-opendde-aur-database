@@ -1,1 +1,0 @@
-("${_pkgdownload}-aarch64::https://github.com/moncho/$_pkgname/releases/download/v${pkgver}/$_pkgname-linux-arm64")

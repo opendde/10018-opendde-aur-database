@@ -1,7 +1,0 @@
-prepare() {
-  cd "${srcdir}/budgie-${pkgname}-${pkgver}"
-  mkdir -p build
-  cd "${srcdir}/budgie-${pkgname}-${pkgver}/build"
-  meson --prefix /usr --buildtype=plain ..
-  ninja
-}

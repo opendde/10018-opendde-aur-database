@@ -1,3 +1,0 @@
-package() {
-	install -DT "$srcdir/.go/bin/$pkgname" "$pkgdir/usr/bin/$pkgname"
-}

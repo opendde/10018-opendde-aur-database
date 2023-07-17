@@ -1,7 +1,0 @@
-prepare() {
-  cd "${pkgname}-${pkgver}-${pkgname}"
-  git clone https://git@github.com/monero-project/miniupnp.git external/miniupnp
-  git clone https://git@github.com/monero-project/unbound.git external/unbound
-  git -C external/miniupnp checkout monero
-  git -C external/unbound checkout monero
-}

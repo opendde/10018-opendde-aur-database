@@ -1,6 +1,0 @@
-package() {
-    cd "$srcdir"
-    mkdir -p boot/grub/themes
-    mv arch -t boot/grub/themes
-    cp -r ./*/ "$pkgdir"
-}

@@ -1,4 +1,0 @@
-package() {
-  cd "beast"
-	make DESTDIR="$pkgdir/" install
-}

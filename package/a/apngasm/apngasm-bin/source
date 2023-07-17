@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.zip::https://netix.dl.sourceforge.net/project/apngasm/${pkgver}/apngasm-${pkgver}-bin-linux.zip")

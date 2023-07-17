@@ -1,7 +1,0 @@
-prepare() {
-  mkdir -p build
-
-  sed 's|bdsup2sub++|bdsup2subpp|g' \
-    -i bdsup2subpp/meson.build \
-    -i bdsup2subpp/bundle/linux/bdsup2sub++.desktop
-}

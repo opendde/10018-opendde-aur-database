@@ -1,6 +1,0 @@
-build() {
-	cd $_pkgname
-
-	# Compile the window manager
-	make
-}

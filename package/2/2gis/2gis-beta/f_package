@@ -1,8 +1,0 @@
-package() {
-    for i in *.deb; do
-        bsdtar -Oxf $i data.tar.xz | bsdtar -C "$pkgdir" -xf -
-    done
-    mkdir -p $pkgdir/usr/share/licenses/2gis-beta
-    mv $pkgdir/usr/share/doc/2gis/copyright $pkgdir/usr/share/licenses/2gis-beta/LICENCE
-    rm -rf $pkgdir/usr/share/doc
-}

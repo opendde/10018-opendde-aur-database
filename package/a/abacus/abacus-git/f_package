@@ -1,5 +1,0 @@
-package() {
-    mkdir -p ${pkgdir}/usr/bin
-    cp "${srcdir}/${_gitname}-build/build/abacus" "${pkgdir}/usr/bin"
-    chmod +x "${pkgdir}/usr/bin/abacus"
-}

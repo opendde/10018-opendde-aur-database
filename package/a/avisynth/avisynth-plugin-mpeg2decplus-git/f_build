@@ -1,9 +1,0 @@
-build() {
-  cd build
-
-  cmake "../${_plug}/build" \
-   -DCMAKE_BUILD_TYPE=None \
-   -DCMAKE_INSTALL_PREFIX=/usr \
-
-  make
-}

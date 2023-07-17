@@ -1,7 +1,0 @@
-package() {
-    TEXMFDIST=$(kpsewhich -var-value=TEXMFDIST)
-    INSTALL_DIR="$pkgdir/$TEXMFDIST/${_pkgname}"
-    mkdir -p "$INSTALL_DIR"
-    cd "$srcdir/$pkgname"
-    cp *.sty *.cls "$INSTALL_DIR"
-}

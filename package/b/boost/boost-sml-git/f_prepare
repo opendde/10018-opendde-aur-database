@@ -1,3 +1,0 @@
-prepare() {
-  cd "${srcdir}/${pkgname}"
-}

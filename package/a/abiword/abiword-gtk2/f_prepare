@@ -1,9 +1,0 @@
-prepare() {
-  cd $_pkgname-$pkgver
-
-  # Replace deprecated enchant functions
-  patch -Np1 -i ../enchant-2.patch
-
-  # Fix for segfault when selecting/copying text
-  patch -Np1 -i ../glib2-segfault-fix.patch
-}

@@ -1,4 +1,0 @@
-build() {
-    cd bitwise_invert
-    cmake --build build
-}

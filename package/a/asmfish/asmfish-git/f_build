@@ -1,4 +1,0 @@
-build() {
-    cd "${srcdir}/${_pkgname}"
-    ./fasmg "x86/fish.asm" "asmfish" -e 100 -i "VERSION_OS='L'" -i "VERSION_POST = 'popcnt'"
-}

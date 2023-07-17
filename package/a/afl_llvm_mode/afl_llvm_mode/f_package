@@ -1,6 +1,0 @@
-package() {
-  cd afl-${pkgver}
-  install -D -m 755 -t "$pkgdir/usr/lib" afl-llvm-pass.so afl-llvm-rt.o
-  install -D -m 755 -t "$pkgdir/usr/bin" afl-clang-fast
-  ln -s afl-clang-fast "$pkgdir/usr/bin/afl-clang-fast++"
-}

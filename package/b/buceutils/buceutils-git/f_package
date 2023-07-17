@@ -1,4 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname"
-  make prefix=/usr sysconfdir=/etc localstatedir=/var DESTDIR="$pkgdir" install
-}

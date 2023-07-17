@@ -1,9 +1,0 @@
-pkgver() {
-  cd "${srcdir}/${pkgname}"
-  # We use the number of commits and the last commit hash because:
-  # - the repository has no tag.
-  # - there is no reference to a version number in the source code.
-  printf "r%s.%s" \
-      "$(git rev-list --count HEAD)" \
-      "$(git rev-parse --short HEAD)"
-}

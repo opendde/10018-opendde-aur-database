@@ -1,8 +1,0 @@
-package() {
-  cd ${srcdir}/${pkgname}-devel-${pkgver}
-  make -j1 DESTDIR=${pkgdir} install
-  install -Dm644 ${_name}.desktop ${pkgdir}/usr/share/xsessions/${_name}.desktop
-  
-  # fix permission
-  chmod 644 ${pkgdir}/usr/lib/*.a
-}

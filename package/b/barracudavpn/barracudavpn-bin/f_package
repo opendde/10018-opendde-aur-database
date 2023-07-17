@@ -1,4 +1,0 @@
-package() {
-    echo "${pkgdir}"
-    install -Dm 4755 ${srcdir}/usr/local/bin/barracudavpn ${pkgdir}/usr/bin/barracudavpn
-}

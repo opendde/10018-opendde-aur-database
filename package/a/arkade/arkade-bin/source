@@ -1,1 +1,0 @@
-("$pkgname-$pkgver::https://github.com/${_OWNER}/${_pkgname}/releases/download/${pkgver}/${provides}${_CARCH}")

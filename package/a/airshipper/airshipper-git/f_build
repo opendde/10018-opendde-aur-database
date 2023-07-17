@@ -1,4 +1,0 @@
-build() {
-    cd "$srcdir/$pkgname"
-    cargo build --release --bin airshipper
-}

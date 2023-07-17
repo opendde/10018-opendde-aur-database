@@ -1,4 +1,0 @@
-prepare() {
-  cd $pkgname-$pkgver
-  patch -Np1 -i "$srcdir/initcpio-dracut-arch.patch"
-}

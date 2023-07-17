@@ -1,7 +1,0 @@
-package() {
-  install -Dm644 btcmonster-qt.desktop "$pkgdir"/usr/share/applications/btcmonster.desktop
-  cd "$srcdir/$pkgname"
-  install -Dm755 src/qt/bitcoinmonster-qt "$pkgdir"/usr/bin/btcmonster-qt
-  install -Dm644 share/pixmaps/bitcoinmonster128.png "$pkgdir"/usr/share/pixmaps/bitcoinmonster128.png
-  install -Dm644 COPYING "$pkgdir/usr/share/licenses/$pkgname/COPYING"
-}

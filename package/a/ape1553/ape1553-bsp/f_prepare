@@ -1,6 +1,0 @@
-prepare() {
-
-	cd ${srcdir}/mil-std-1553-linux-bsp-${pkgver}/
-	patch -Np1 -i ${srcdir}/install.patch
-	patch -Np1 -i ${srcdir}/dma_set_mask.patch
-}

@@ -1,4 +1,0 @@
-prepare () {
-  cd ${srcdir}
-  gzip -cd backuppcfs.pl.gz > backuppcfs.pl
-}

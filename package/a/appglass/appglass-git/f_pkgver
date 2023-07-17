@@ -1,4 +1,0 @@
-pkgver() {
-  cd appglass
-  echo $(git describe --tags) | sed 's/[-: ]/./g'
-}

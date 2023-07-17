@@ -1,1 +1,0 @@
-("$_archive.tgz::https://github.com/$pkgname/$pkgname/archive/v${pkgver/_/-}.tar.gz")

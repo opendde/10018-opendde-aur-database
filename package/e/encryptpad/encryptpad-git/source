@@ -1,1 +1,0 @@
-("${_pkgname}-${pkgver}::git+git://${url#*//}.git")

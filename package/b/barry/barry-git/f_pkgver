@@ -1,4 +1,0 @@
-pkgver() {
-  cd ${srcdir}/${_realname}
-  git describe --long | sed -r 's/([^-]*-g)/r\1/;s/-/./g' | sed 's/barry.//g'
-}

@@ -1,5 +1,0 @@
-check() {
-	cd "./${pkgname}-${pkgver}/build"
-	./testcrypto all
-	./testx509
-}

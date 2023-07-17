@@ -1,6 +1,0 @@
-build() {
-    cd "$srcdir/${pkgname%-git}"
-    export YARN_CACHE_FOLDER="$srcdir/yarn-cache"
-    yarn install
-    yarn electron-builder -l pacman
-}

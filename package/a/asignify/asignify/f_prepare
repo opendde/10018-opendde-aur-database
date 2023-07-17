@@ -1,4 +1,0 @@
-prepare() {
-	patch -p1 -d "$pkgname-$pkgver" < 001-blake2.patch
-	sed -i '/mandir/s/prefix/datarootdir/' "$pkgname-$pkgver/docs/Makefile.am"
-}

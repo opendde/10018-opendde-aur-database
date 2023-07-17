@@ -1,7 +1,0 @@
-package() {
-	cd $pkgname/build
-	make install
-	install -Dm755 ./atta $pkgdir/usr/bin/atta
-	install -d $pkgdir/usr/include/
-	install -d $pkgdir/usr/lib/
-}

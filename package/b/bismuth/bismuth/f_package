@@ -1,7 +1,0 @@
-package() {
-  cd "${srcdir}/${_gitrepository}"
-  npm install
-  chmod +x scripts/sysdep-install.sh
-  npm run sysdep-install
-  npm run bi-install
-}

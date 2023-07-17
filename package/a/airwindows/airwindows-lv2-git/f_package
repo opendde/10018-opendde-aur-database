@@ -1,7 +1,0 @@
-package() {
-  cd "$srcdir/${pkgname%-git}"
-  meson install -C $srcdir/${pkgname%-git}/build --destdir ${pkgdir}
-
-  mkdir -p "${pkgdir}/usr/share/licenses/${pkgname}"
-  cp "../${pkgname%-git}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}

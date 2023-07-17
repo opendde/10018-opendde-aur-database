@@ -1,7 +1,0 @@
-package() {
-  install -Dm755 acl2 $pkgdir/usr/bin/acl2
-
-  cd $srcdir/acl2-$pkgver
-  install -d -m755 $pkgdir/opt/acl2
-  cp -r . $pkgdir/opt/acl2
-}

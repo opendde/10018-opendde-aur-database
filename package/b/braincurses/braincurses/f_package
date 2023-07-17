@@ -1,5 +1,0 @@
-package() {
-	cd "$pkgname-$pkgver"
-	install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-        install -D braincurses "${pkgdir}/usr/bin/${pkgname}"
-}

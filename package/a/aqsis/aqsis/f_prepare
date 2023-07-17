@@ -1,9 +1,0 @@
-prepare() {
-  cd "$srcdir"/$pkgname-$pkgver
-  # fix build with OpenEXR 2.0 (?)
-  patch -Np1 < "$srcdir/imfinputfile-forward-declaration.diff" || true
-  # fix build with boost 1.59
-  patch -Np1 < "$srcdir/pfto.patch"
-  # fix build for stricter iostream interface
-  patch -Np1 < "$srcdir/shadowmap_old.patch"
-}

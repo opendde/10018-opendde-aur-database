@@ -1,5 +1,0 @@
-check() {
-  lv2lint -Mpack -I build/$pkgname \
-    -t "UI Symbols" \
-    http://github.com/Dougal-s/Aether
-}

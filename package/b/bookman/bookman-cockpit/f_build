@@ -1,5 +1,0 @@
-build() {
-    javac "OperatingSystemUtil.java"
-    mv "$(dirname "$(readlink -f "OperatingSystemUtil.java")")/OperatingSystemUtil.class" "$srcdir"
-    unzip -p "bin/bookman-${pkgver}.jar" 'de/bookman/resources/icons/bookman.png' > bookman.png
-}

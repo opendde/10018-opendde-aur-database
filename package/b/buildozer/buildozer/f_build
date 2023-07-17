@@ -1,5 +1,0 @@
-build() {
-  cd "${srcdir}/${_pkgname}-${pkgver}"
-  "${srcdir}/${source[0]%%::*}" build "//${pkgname}:${pkgname}-linux"
-  "${srcdir}/${source[0]%%::*}" shutdown
-}

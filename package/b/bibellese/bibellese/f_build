@@ -1,9 +1,0 @@
-build() {
-  if [ ! -d bibellese/build ]; then
-    mkdir bibellese/build
-  fi
-  cd bibellese/build
-
-  cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=$pkgdir/usr ..
-  make
-}

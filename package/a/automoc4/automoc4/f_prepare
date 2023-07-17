@@ -1,7 +1,0 @@
-prepare() {
-  mkdir -p build
-
-# Fix CMake warnings with newer policies
-  cd $pkgname-$pkgver
-  patch -p1 -i ../fix-cmake-warnings.patch
-}

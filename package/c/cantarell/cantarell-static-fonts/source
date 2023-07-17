@@ -1,1 +1,0 @@
-("https://download.gnome.org/sources/${_pkgname}/${pkgver:0:5}/${_pkgname}-$pkgver.tar.xz"

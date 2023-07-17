@@ -1,4 +1,0 @@
-pkgver() {
-	cd archmap
-	git describe --tags | sed 's/^v//; s/-/-r/; s/-/./g'
-}

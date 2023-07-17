@@ -1,7 +1,0 @@
-build() {
-	cd "${gitname}"
-
-	rm -rf _build
-	meson setup _build --prefix=/usr
-	meson compile -C _build
-}

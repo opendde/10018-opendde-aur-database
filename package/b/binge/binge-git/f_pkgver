@@ -1,4 +1,0 @@
-pkgver() {
-    cd "$srcdir/application"
-    node -pe "require('./package.json').version"
-}

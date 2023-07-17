@@ -1,4 +1,0 @@
-package() {
-  cd ${_appname}-${pkgver}
-  install -D -m755 $_appname "$pkgdir"/usr/bin/$_appname
-}

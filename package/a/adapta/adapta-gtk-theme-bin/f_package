@@ -1,5 +1,0 @@
-package() {
-  cd "${srcdir}"
-  
-  tar -xJC "${pkgdir}" -f data.tar.xz
-}

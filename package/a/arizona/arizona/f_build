@@ -1,4 +1,0 @@
-build() {
-	cd "$pkgname-$_hash/src"
-	make
-}

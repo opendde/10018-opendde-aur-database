@@ -1,4 +1,0 @@
-package() {
-  mkdir -p ${pkgdir}/opt/bos/maps
-  mv *.map ${pkgdir}/opt/bos/maps
-}

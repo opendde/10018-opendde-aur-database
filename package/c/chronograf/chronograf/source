@@ -1,1 +1,0 @@
-("git+https://github.com/influxdata/chronograf#tag=${pkgver}"

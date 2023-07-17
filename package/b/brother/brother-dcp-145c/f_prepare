@@ -1,7 +1,0 @@
-prepare() {
-  cd "$srcdir/usr/" || return 1
-  patch -p1 < ../brother-dcp-145c.patch
-
-  cd "$srcdir" || return 1
-  "$srcdir/usr/local/Brother/Printer/dcp145c/cupswrapper/cupswrapperdcp145c"
-}

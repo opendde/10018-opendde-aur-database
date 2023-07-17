@@ -1,5 +1,0 @@
-package() {
-  cd "autoconf-archive"
-
-  make DESTDIR="$pkgdir" install
-}

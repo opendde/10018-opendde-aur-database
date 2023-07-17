@@ -1,4 +1,0 @@
-package() {
-  cd $_gitname
-  python2 setup.py install --prefix=/usr --root="$pkgdir"
-}

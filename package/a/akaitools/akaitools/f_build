@@ -1,5 +1,0 @@
-build() {
-	cd "${pkgname}-${pkgver}"
-	perl Makefile.PL
-	make
-}

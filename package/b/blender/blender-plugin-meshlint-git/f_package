@@ -1,6 +1,0 @@
-package() {
-	cd meshlint
-	addons="$pkgdir/usr/share/blender/$(blender -v | head -n1 | cut -f2 -d ' ')/scripts/addons"
-	install -dm755 ${addons}/meshlint
-	install -m644 meshlint.py ${addons}/meshlint
-}

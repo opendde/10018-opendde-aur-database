@@ -1,1 +1,0 @@
-("${pkgname}::git+git://git.savannah.gnu.org/diffutils.git")

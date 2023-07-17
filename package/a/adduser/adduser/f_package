@@ -1,5 +1,0 @@
-package() {
-  install -D -m755 adduser "${pkgdir}/usr/bin/adduser"
-  sed '/^###/q;1,2d;s/^# *//' adduser | head -n -2 > LICENSE
-  install -D LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}

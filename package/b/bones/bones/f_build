@@ -1,5 +1,0 @@
-build() {
-  cd "$pkgname-2015-09-29"
-  nasm -f elf64 bones-x86_64-linux.s -o bones.o
-  gcc -no-pie bones.o -o bones -lrt
-}

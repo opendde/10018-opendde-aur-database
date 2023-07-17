@@ -1,4 +1,0 @@
-prepare() {
-    cd httpd-$pkgver/
-    patch -p1 -i ../$pkgname-Makefile.patch
-}

@@ -1,6 +1,0 @@
-prepare() {
-	cd "$srcdir/${_pkgname}"
-	git submodule init
-	git config submodule.deps/keepassxc.url "$srcdir/keepassxc"
-	git submodule update
-}

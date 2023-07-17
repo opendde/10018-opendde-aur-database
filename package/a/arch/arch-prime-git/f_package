@@ -1,6 +1,0 @@
-package() {
-        install -dm 755 "${pkgdir}"/etc/prime/conf/
-        cp -r --no-preserve='ownership,mode' "${srcdir}"/ArchPrime/conf/* "${pkgdir}"/etc/prime/conf/
-	install -Dm755 "${srcdir}"/ArchPrime/prime-select "${pkgdir}"/usr/bin/prime-select
-	install -Dm755 "${srcdir}"/ArchPrime/prime-run "${pkgdir}"/usr/bin/prime-run
-}

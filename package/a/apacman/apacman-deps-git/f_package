@@ -1,3 +1,0 @@
-package() {
-  return 0
-}

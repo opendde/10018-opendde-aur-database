@@ -1,5 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname"
-  sed -i 's/\/usr\/local/\/usr/' "$srcdir/$pkgname/doc/BitchX.1"
-  make DESTDIR="$pkgdir/" install
-}

@@ -1,4 +1,0 @@
-package_resident-evil-2() {
-  depends+=("${_pkgbase}-leon"
-            "${_pkgbase}-claire")
-}

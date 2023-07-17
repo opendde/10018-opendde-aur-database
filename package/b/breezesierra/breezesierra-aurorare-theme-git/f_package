@@ -1,5 +1,0 @@
-package() {
-    
-  make -C ${srcdir}/${_gitname}/build DESTDIR="$pkgdir" install        
-
-}

@@ -1,6 +1,0 @@
-prepare() {
-        cd "${srcdir}/Bluto-master"
-        cd Bluto
-        sed -i 1d bluto
-        sed -i '1 i\#!/usr/bin/python2' bluto
-}

@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz::https://github.com/teejee2008/battery-monitor/archive/v${pkgver}.tar.gz")

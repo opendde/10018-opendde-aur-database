@@ -1,4 +1,0 @@
-prepare() {
-  cd "${pkgname%-git}"
-  NOCONFIGURE=1 ./autogen.sh
-}

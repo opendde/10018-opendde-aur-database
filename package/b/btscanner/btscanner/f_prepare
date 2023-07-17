@@ -1,6 +1,0 @@
-prepare() {
-  cd $pkgname-$pkgver
-  patch -Np1 -b -z .orig -i ../$pkgname.patch
-  mv configure.in configure.ac
-  autoreconf -fiv
-}

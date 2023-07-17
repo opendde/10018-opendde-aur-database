@@ -1,1 +1,0 @@
-("git+https://github.com/DNS-OARC/${pkgname%-git}.git")

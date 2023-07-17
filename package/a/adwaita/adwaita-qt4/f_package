@@ -1,6 +1,0 @@
-package() {
-  cd "${srcdir}/${_pkgname}-${pkgver}/build"
-  make DESTDIR="$pkgdir" install
-  install -Dm644 ../README.md "${pkgdir}/usr/share/doc/${pkgname}/README"
-  install -Dm644 ../LICENSE.LGPL2 "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}

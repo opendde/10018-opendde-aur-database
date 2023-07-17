@@ -1,5 +1,0 @@
-package() {
-  local _srcdir="$srcdir/${PROJECT_DIR_NAME:-$_reponame}"
-  install -Dm755 "${_srcdir}/blackwidowcontrol.py" "${pkgdir}/usr/bin/blackwidowcontrol"
-  install -Dm644 "${_srcdir}/razer_blackwidow.rules" "${pkgdir}/etc/udev/rules.d/70-razer_blackwidow.rules"
-}

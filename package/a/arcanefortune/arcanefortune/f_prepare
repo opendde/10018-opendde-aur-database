@@ -1,4 +1,0 @@
-prepare() {
-  # Fix clean-chroot build (use makepkg branch ref)
-  sed -i "s:include_str!(\"../../../.git/refs/heads/v${pkgver}\"):include_str!(\"../../../.git/refs/heads/makepkg\"):" arcanefortune/arcane_fortune/src/disp/version_status.rs
-}

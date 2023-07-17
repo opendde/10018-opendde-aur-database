@@ -1,5 +1,0 @@
-check() {
-  cd "amber-cmd-$pkgver"
-  crystal spec --no-debug -p
-  crystal eval 'STDIN.blocking = true'
-}

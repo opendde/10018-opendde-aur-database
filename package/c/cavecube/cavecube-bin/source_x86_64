@@ -1,1 +1,0 @@
-("${pkgname}_game_glfw_${pkgver}-${pkgrel}.tar.gz::https://github.com/PQCraft/CaveCube/releases/download/${pkgver}/cavecube_game_glfw_linux_x86_64.tar.gz")

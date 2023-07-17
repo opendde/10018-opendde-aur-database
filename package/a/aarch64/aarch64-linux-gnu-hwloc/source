@@ -1,1 +1,0 @@
-(https://www.open-mpi.org/software/hwloc/v${pkgver%.*}/downloads/${_pkgname}-${pkgver}.tar.bz2)

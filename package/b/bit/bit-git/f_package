@@ -1,8 +1,0 @@
-package() {
-  install -d "${pkgdir}/usr/bin"
-  install -d "${pkgdir}/usr/share/licenses"
-
-  install -Dm755 "${srcdir}/${pkgname}/bit" "${pkgdir}/usr/bin/bit"
-  install -Dm755 "${srcdir}/${pkgname}/bitcomplete/bitcomplete" "${pkgdir}/usr/bin/bitcomplete"
-  install -Dm644 "${srcdir}/${pkgname}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}

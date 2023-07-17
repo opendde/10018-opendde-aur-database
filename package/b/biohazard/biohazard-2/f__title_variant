@@ -1,5 +1,0 @@
-_title_variant() {
-  local title="${1}"
-  local variant="${2}"
-  echo "${title}: ${variant}"
-}

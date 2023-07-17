@@ -1,4 +1,0 @@
-prepare() {
-	cd $pkgname
-	git --work-tree . checkout -q tags/$pkgver
-}

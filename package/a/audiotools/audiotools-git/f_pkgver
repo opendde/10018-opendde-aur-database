@@ -1,4 +1,0 @@
-pkgver() {
-  cd audiotools
-  echo "$(git describe --long --tags | tr - .)"
-}

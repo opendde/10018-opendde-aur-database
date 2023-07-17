@@ -1,3 +1,0 @@
-package() {
-  install -D -m775 $srcdir/theme.cfg $pkgdir/usr/share/fluxbox/styles/$pkgname/theme.cfg
-}

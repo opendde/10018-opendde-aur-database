@@ -1,4 +1,0 @@
-package() {
-  install -Dm644 usr/share/zsh/plugins/betterzsh.zsh "${pkgdir}/usr/share/zsh/plugins/betterzsh.zsh"
-  install -Dm644 usr/share/licenses/${pkgname}/LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}

@@ -1,8 +1,0 @@
-prepare() {
-  cd "$srcdir"
-  test -d $pkgname-$pkgver || mkdir $pkgname-$pkgver
-  cd $pkgname-$pkgver
-  sh ../$pkgname-$pkgver.shar
-  tail -n22 README > LICENSE
-  ln -s 9menu.1 9menu.man
-}

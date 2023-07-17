@@ -1,9 +1,0 @@
-package() {
-  cd install/Aut2Exe
-
-  install -Dm644 Aut2exe.exe "$pkgdir/usr/bin/Aut2exe.exe"
-  install -Dm644 upx.exe "$pkgdir/usr/bin/upx.exe"
-  install -Dm755 "$srcdir/aut2exe.sh" "$pkgdir/usr/bin/aut2exe"
-  install -Dm644 "$srcdir/license.htm" \
-    "$pkgdir/usr/share/licenses/$pkgname/license.html"
-}

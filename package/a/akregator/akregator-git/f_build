@@ -1,5 +1,0 @@
-build() {
-  cmake -B build -S ${pkgname%-git} \
-    -DBUILD_TESTING=OFF
-  cmake --build build
-}

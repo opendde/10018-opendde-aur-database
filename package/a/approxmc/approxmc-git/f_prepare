@@ -1,5 +1,0 @@
-prepare() {
-  cd ApproxMC
-  # cmake is very stubborn about the DATAROOTDIR
-  sed -i 's|}/man/man1|}/share/man/man1|' CMakeLists.txt
-}

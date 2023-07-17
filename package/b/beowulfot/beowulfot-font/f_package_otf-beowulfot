@@ -1,5 +1,0 @@
-package_otf-beowulfot() {
-    provides=("$pkgbase")
-    cd "$_archive"
-    install -Dm0644 -t "$pkgdir/usr/share/fonts/OTF/" font/*.otf
-}

@@ -1,7 +1,0 @@
-pkgver() {
-  cd ${_pkgname}
-  printf "%s.%s.%s" \
-    "$(git tag -l|grep -P '.+\..+\.\d+'|sed -r 's|v?([0-9\.]+)(-.+)?|\1|g'|sort -V -r|head -n1)" \
-    "$(git rev-list --count HEAD)" \
-    "$(git rev-parse --short HEAD)"
-}

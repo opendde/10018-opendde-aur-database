@@ -1,4 +1,0 @@
-prepare() {
-    cd "$srcdir/$pkgname-$pkgver"
-    patch --strip=1 < ../als.patch
-}

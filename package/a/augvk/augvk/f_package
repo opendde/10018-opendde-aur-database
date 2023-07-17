@@ -1,7 +1,0 @@
-package() {
-    cd AugBK-Messenger
-
-    mkdir -p $pkgdir/usr/share/pixmaps/
-    cp logo.png $pkgdir/usr/share/pixmaps/augvk.png
-    install -Dm0755 augvk "$pkgdir/usr/bin/augvk"
-}

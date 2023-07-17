@@ -1,6 +1,0 @@
-build() {
-    cd "barnyard2"
-    ./autogen.sh
-    ./configure --prefix=/usr --sysconfdir=/etc/ --with-mysql --with-mysql-libraries=/usr/lib/
-    make
-}

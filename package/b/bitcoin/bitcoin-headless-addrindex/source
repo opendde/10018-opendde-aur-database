@@ -1,1 +1,0 @@
-($pkgname-$pkgver.tar.gz::https://github.com/btcdrak/bitcoin/releases/download/v0.13.2-addrindex/bitcoin-$pkgver-addrindex.tar.gz)

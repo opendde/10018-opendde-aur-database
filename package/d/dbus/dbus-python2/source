@@ -1,1 +1,0 @@
-(https://dbus.freedesktop.org/releases/${_pkgname}/${_pkgname}-${pkgver}.tar.gz{,.asc})

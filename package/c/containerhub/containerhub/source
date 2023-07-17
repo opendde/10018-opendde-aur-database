@@ -1,1 +1,0 @@
-("containerhub::git+https://github.com/xengi/containerhub/archive/v$pkgver.tar.gz")

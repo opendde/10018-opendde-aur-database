@@ -1,8 +1,0 @@
-package() {
-  cd "${srcdir}/${pkgname}"
-  make DESTDIR="${pkgdir}" install
-
-  #fixes for the archlinux /usr/bin move
-  mv "${pkgdir}"/sbin/* "${pkgdir}"/usr/bin/
-  rmdir "${pkgdir}"/sbin
-}

@@ -1,5 +1,0 @@
-package() {
-  cd $pkgname-$pkgver
-  mkdir -p "$pkgdir/usr/bin"
-  cp -v ./ath "$pkgdir/usr/bin"
-}

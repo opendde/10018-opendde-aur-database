@@ -1,4 +1,0 @@
-prepare() {
-  cd "boost_1_71_0"
-  ./bootstrap.sh
-}

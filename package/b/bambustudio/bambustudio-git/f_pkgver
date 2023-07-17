@@ -1,5 +1,0 @@
-pkgver() {
-  ln -sf BambuStudio "BambuStudio"
-  cd "BambuStudio"
-  printf "%s" "$(git describe --long --tags | sed 's/v//; s/-/./g')"
-}

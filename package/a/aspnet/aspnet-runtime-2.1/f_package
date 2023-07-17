@@ -1,6 +1,0 @@
-package() {
-  install -dm 755 "${pkgdir}"/usr/share/{dotnet/shared,licenses}
-  cp -dr --no-preserve='ownership' shared/Microsoft.AspNetCore.App "${pkgdir}"/usr/share/dotnet/shared/
-  cp -dr --no-preserve='ownership' shared/Microsoft.AspNetCore.All "${pkgdir}"/usr/share/dotnet/shared/
-  ln -s dotnet-host-2.1 "${pkgdir}"/usr/share/licenses/aspnet-runtime-2.1
-}

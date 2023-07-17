@@ -1,5 +1,0 @@
-build() {
-	cd ${srcdir}/mil-std-1553-linux-bsp-${pkgver}/
-
-	PREFIX=${pkgdir}/usr ./install.sh build --verbose
-}

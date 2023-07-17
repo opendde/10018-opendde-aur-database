@@ -1,4 +1,0 @@
-package () {
-  install -Dm555 "$srcdir/$jarname" "$pkgdir/usr/share/java/bundletool/bundletool.jar"
-  install -Dm755 "$srcdir/bundletool" "$pkgdir/usr/bin/bundletool"
-}

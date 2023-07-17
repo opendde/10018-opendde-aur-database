@@ -1,8 +1,0 @@
-package() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-  install -D -m644 systemd/beautifuldnsd.service "${pkgdir}/usr/lib/systemd/system/${pkgname}.service"
-  install -D -m644 systemd/tmpfiles.conf "${pkgdir}/usr/lib/tmpfiles.d/${pkgname}.conf"
-  install -D -m644 beautifuldnsd.yaml "${pkgdir}/etc/${pkgname}.yaml"
-  install -D -m755 beautifuldnsd "${pkgdir}/usr/bin/${pkgname}"
-  install -D -m644 README.md "${pkgdir}/usr/share/doc/${pkgname}/READEMD.md"
-}

@@ -1,1 +1,0 @@
-("$pkgname-$_pkgver".tar.bz2::https://github.com/brave/browser-laptop/releases/download/v"$pkgver""$chan"/Brave.tar.bz2

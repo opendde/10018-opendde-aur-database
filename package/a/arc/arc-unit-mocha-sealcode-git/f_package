@@ -1,4 +1,0 @@
-package() {
-  install -d "$pkgdir/usr/share/php/$_pkgname/"
-  cp -a $_pkgname/* "$pkgdir/usr/share/php/$_pkgname/"
-}

@@ -1,6 +1,0 @@
-check() {
-	cd "$pkgname-$pkgver"
-    export GOPATH="${srcdir}/fakegopath"
-    cd "${GOPATH}"/src/github.com/jamesridgway/bsearch
-    go test
-}

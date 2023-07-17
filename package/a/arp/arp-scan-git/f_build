@@ -1,6 +1,0 @@
-build() {
-	cd arp-scan
-	autoreconf --install
-	./configure --prefix=/usr
-	make
-}

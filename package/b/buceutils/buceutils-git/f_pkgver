@@ -1,6 +1,0 @@
-pkgver() {
-  cd "$srcdir/$pkgname"
-  if ! git describe --tags 2>/dev/null; then
-    echo "0.r$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
-  fi | sed 's/-/.r/; s/-/./g'
-}

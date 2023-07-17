@@ -1,6 +1,0 @@
-build() {
-	cd "$pkgbase"
-	mkdir -p build
-	cd build
-	cmake .. -DCMAKE_INSTALL_PREFIX= -DBUILD_EXAMPLES=ON
-}

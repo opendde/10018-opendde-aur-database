@@ -1,6 +1,0 @@
-prepare() {
-  cd "${srcdir}/${pkgname}"
-
-  # Checkout the latest branch
-  git checkout "$(git for-each-ref --format='%(refname:short)' --sort=-refname:short "*/*/*/aufs[0-9].[0-9]*" --count=1)"
-}

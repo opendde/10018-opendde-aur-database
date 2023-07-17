@@ -1,4 +1,0 @@
-pkgver() {
-  cd ${srcdir}/azclient
-  git rev-list --count HEAD
-}

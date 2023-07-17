@@ -1,4 +1,0 @@
-pkgver() {
-  cd "blackchocobo"
-  git describe --long | cut -c2-9 | sed 's/-/./g'
-}

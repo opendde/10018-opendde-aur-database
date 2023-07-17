@@ -1,7 +1,0 @@
-package () {
-	install -Dm755 "${srcdir}/${pkgname}/assets/box/"* -t "${pkgdir}/usr/lib/box"
-	install -Dm644 "${srcdir}/${pkgname}/assets/box.1" -t "${pkgdir}/usr/share/man/man1"
-
-	mkdir "${pkgdir}/usr/bin"
-	ln --symbolic "/usr/lib/box/_box" "${pkgdir}/usr/bin/box"
-}

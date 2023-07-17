@@ -1,9 +1,0 @@
-prepare() {
-    cd "${pkgname}-${pkgver}"
-
-    rm -f man/en/system-login-ac.5
-
-    patch --verbose -p1 <"$srcdir"/0001-Adapt-to-Arch-Linux.patch
-
-    autoreconf -fi
-}

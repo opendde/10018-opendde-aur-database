@@ -1,4 +1,0 @@
-prepare() {
-  cd ${srcdir}/opt/brother/Printers/dcpl8400cdn/cupswrapper
-  patch < ${srcdir}/cupswrapper.patch
-}

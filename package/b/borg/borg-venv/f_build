@@ -1,5 +1,0 @@
-build() {
-  cd "$srcdir/$_pkgname-$pkgver"
-  local venvdir="$srcdir/venv-$_pkgname-$pkgver"
-  "$venvdir/bin/python" setup.py build
-}

@@ -1,3 +1,0 @@
-prepare() {
-    cd binaryen-version_${pkgver}
-}

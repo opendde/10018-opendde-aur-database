@@ -1,1 +1,0 @@
-("${_pkgname}_${pkgver}_amd64.deb"::"https://dl.4kdownload.com/app/${_pkgname}_${_pkgver}-${pkgrel}_amd64.deb")

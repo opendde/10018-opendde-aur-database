@@ -1,5 +1,0 @@
-build() {
-  find .
-  cd "$srcdir/${_pkgname}-${pkgver}"
-  make
-}

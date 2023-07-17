@@ -1,6 +1,0 @@
-prepare() {
-	cd "${srcdir}/${pkgname%-*}" || exit
-	for size in "${_iconsizes[@]}"; do
-		convert assets/Icon1024.png -resize "${size}x${size}" "assets/aporia-${size}.png"
-	done
-}

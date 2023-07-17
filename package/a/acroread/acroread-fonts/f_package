@@ -1,5 +1,0 @@
-package() {
-    mkdir -p "${pkgdir}/${_prefix}"    
-    mv "${srcdir}"/Adobe/Reader9/Resource "${pkgdir}/${_prefix}"/    
-    install -Dm644 "$srcdir/JPNKIT/LICREAD.TXT" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-}

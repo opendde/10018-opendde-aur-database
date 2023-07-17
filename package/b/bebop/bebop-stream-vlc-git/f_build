@@ -1,4 +1,0 @@
-build() {
-	cd "$srcdir/application_notes/BebopStreamVLC"
-	make
-}

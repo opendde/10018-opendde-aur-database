@@ -1,9 +1,0 @@
-build() {
-  cd ${pkgname}-${pkgver}
-
-#FS#70533
-  CFLAGS="-fgnu89-inline -fcommon"  
-
-  ./configure --prefix=/usr
-  make
-}

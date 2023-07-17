@@ -1,5 +1,0 @@
-package() {
-  cd "${pkgname}"
-
-  install -Dm0755 -t "${pkgdir}/usr/bin" target/release/bottomify
-}

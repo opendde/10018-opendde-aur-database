@@ -1,5 +1,0 @@
-prepare() {
-  cd "${srcdir}/${_pkgsrcname}-${pkgver}"
-  patch -Ni "${srcdir}/agent-transfer.patch"
-
-}

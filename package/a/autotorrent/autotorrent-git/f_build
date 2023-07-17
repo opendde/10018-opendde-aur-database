@@ -1,5 +1,0 @@
-build() {
-    go get -u github.com/spf13/viper github.com/pkg/errors github.com/zeebo/bencode
-    cd mktorrent/autotorrent
-    go build
-}

@@ -1,5 +1,0 @@
-build() {
-    echo $'BrotherADS2200\nBrotherADS2700' > $srcdir/brscanads2200ads2700w.conf
-    udev_rule='ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="04f9", ATTR{idProduct}=="03fb", MODE="0664", ENV{libsane_matched}="yes"'
-    echo $udev_rule > $srcdir/40-brscanads2200ads2700w.rules
-}

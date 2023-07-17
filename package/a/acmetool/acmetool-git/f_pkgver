@@ -1,3 +1,0 @@
-pkgver() {
-	date +%Y%m%d
-}

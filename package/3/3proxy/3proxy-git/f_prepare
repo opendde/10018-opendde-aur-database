@@ -1,4 +1,0 @@
-prepare() {
-    cd ${srcdir}/${_pkgname}
-    patch -p1 < ${srcdir}/pkging.patch
-}

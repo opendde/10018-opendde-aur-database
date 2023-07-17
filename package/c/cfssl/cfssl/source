@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz::https://github.com/cloudflare/${pkgname}/archive/v${pkgver}.tar.gz")

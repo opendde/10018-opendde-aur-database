@@ -1,4 +1,0 @@
-package() {
-  cd althreat
-  make DESTDIR="$pkgdir/" install
-}

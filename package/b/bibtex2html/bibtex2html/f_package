@@ -1,6 +1,0 @@
-package() {
-  cd $pkgname
-  make prefix="$pkgdir"/usr install 
-  install -Dm644 manual.pdf "$pkgdir"/usr/share/doc/$pkgname/$pkgname.pdf
-  install -Dm644 manual.html "$pkgdir"/usr/share/doc/$pkgname/$pkgname.html
-}

@@ -1,1 +1,0 @@
-("${_date}-${_filename}.tar.bz2::${_baseurl}${_filename}-x86_64.tar.bz2"

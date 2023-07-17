@@ -1,5 +1,0 @@
-package() {
-  mkdir -p "$pkgdir/usr/share/blender/$_blender/scripts/addons/"
-  cd "HDRI-lighting-Shortcut-$_h"
-  cp -r . "$pkgdir/usr/share/blender/$_blender/scripts/addons/hdri_lighting_shortcut"
-}

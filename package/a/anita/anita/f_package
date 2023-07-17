@@ -1,9 +1,0 @@
-package() {
-  cd $pkgname-$pkgver
-  install -dm775 "$pkgdir/usr/share/licenses/$pkgname"
-  install -m644 COPYRIGHT "$pkgdir/usr/share/licenses/$pkgname"
-  python setup.py install --root="$pkgdir/" --optimize=1 --skip-build
-
-  # The NetBSD man page isn't in the same location that Arch wants.
-  mv $pkgdir/usr/man $pkgdir/usr/share
-}

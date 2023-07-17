@@ -1,5 +1,0 @@
-build() {
-  cd "$_name"
-  cargo build --release
-  icotool "resources/windows/ajour.ico" -x
-}

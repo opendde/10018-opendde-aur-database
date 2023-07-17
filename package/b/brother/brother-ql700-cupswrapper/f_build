@@ -1,6 +1,0 @@
-build() {
-        cd $srcdir
-        rpmextract.sh "$_pkgname-$pkgver-$_brotherrel.i386.rpm"
-
-        rm -f $_pkgname-$pkgver-$_brotherrel.i386.rpm
-}

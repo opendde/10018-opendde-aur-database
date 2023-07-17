@@ -1,6 +1,0 @@
-package() {
-  mkdir -p "${pkgdir}/opt/android-sdk/platforms/"
-  mv "${srcdir}/android-${pkgver}-linux" "${pkgdir}/opt/android-sdk/platforms/android-13"
-
-  chmod -R ugo+rX "${pkgdir}/opt"
-}

@@ -1,6 +1,0 @@
-pkgver() {
-  cd "${srcdir}/${_pkgname}"
-
-  local ver=`grep "^VERSION" wscript | cut -d "'" -f 2`
-  echo "$ver.r$(git rev-list --count HEAD).$(git rev-parse --short HEAD)"
-}

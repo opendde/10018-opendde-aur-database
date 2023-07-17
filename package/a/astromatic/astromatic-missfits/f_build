@@ -1,6 +1,0 @@
-build() {
-
-	cd $srcdir/${_pkgname}-${pkgver}
-	./configure --prefix=/usr $_COPTS
-	make
-}

@@ -1,8 +1,0 @@
-prepare() {
-    if [ -d bugzoo ];then
-        cd bugzoo
-        git pull
-    else
-        git clone https://github.com/squareslab/bugzoo.git --depth 1
-    fi
-}

@@ -1,5 +1,0 @@
-build() {
-  cd "$srcdir/arc-firefox-theme-$_pkgver"
-  ./autogen.sh --prefix=/usr
-  make
-}

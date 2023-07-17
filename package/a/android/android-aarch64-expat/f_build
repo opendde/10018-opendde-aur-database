@@ -1,7 +1,0 @@
-build() {
-    cd "${srcdir}"/libexpat-R_${pkgver//./_}/expat
-    source android-env ${_android_arch}
-
-    android-${_android_arch}-cmake .
-    make $MAKEFLAGS
-}

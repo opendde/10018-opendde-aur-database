@@ -1,3 +1,0 @@
-prepare() {
-  _fix_python_invocations
-}

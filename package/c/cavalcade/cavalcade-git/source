@@ -1,1 +1,0 @@
-("${pkgname}::git+https://github.com/worron/cavalcade.git#branch=devel")

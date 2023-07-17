@@ -1,4 +1,0 @@
-prepare() {
-    cd "${srcdir}/${_name}-${pkgver}"
-    patch -p1 -i "${srcdir}/${_name}.xdg.patch"
-}

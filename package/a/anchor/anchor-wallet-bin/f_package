@@ -1,9 +1,0 @@
-package() {
-  mv usr "$pkgdir"
-  mv opt "$pkgdir"
-
-  sed -i "/Name=anchor-wallet/c\Name=Anchor Wallet" "$pkgdir/usr/share/applications/anchor-wallet.desktop"
-
-  mkdir -p "$pkgdir/usr/bin"
-  ln -sf "/opt/Anchor Wallet/anchor-wallet" "$pkgdir/usr/bin/anchor-wallet"
-}

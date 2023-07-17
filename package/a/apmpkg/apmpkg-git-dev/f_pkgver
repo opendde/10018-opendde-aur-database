@@ -1,5 +1,0 @@
-pkgver() {
-  cd "$_pkgname"
-  git checkout develop >/dev/null
-  echo "$(git rev-list --count HEAD).$(git rev-parse --short HEAD)"
-}

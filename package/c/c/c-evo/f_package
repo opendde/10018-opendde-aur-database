@@ -1,5 +1,0 @@
-package() {
-  cd "${srcdir}"
-  install -d "${pkgdir}"/usr/lib/firmware/
-  b43-fwcutter -w "${pkgdir}"/usr/lib/firmware/ wl_apsta-${pkgver}.o
-}

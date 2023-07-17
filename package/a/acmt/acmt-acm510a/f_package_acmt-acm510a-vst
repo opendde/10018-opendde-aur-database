@@ -1,5 +1,0 @@
-package_acmt-acm510a-vst() {
-	groups=('pro-audio' 'vst-plugins')
-	pkgdesc="ACM510AA Channel Dynamics (VST)"
-	install -Dm755 ${srcdir}/plugin-binaries/VST/ACM510A.so ${pkgdir}/usr/lib/vst/ACM510A.so
-}

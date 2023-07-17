@@ -1,5 +1,0 @@
-package () {
-  install -d "${pkgdir}/usr/share/fonts/amaranth"
-  install -m644 *.ttf "${pkgdir}/usr/share/fonts/amaranth/"
-  install -m644 OFL.txt "${pkgdir}/usr/share/fonts/amaranth/"
-}

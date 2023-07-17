@@ -1,4 +1,0 @@
-package() {
-  cd "$srcdir/ASL-$pkgver/build"
-  make DESTDIR="$pkgdir/" install
-}

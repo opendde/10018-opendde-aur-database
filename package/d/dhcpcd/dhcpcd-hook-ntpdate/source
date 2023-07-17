@@ -1,1 +1,0 @@
-("git+https://github.com/eworm-de/dhcpcd-hook-ntpdate.git#tag=${pkgver}?signed")

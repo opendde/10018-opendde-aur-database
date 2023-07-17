@@ -1,7 +1,0 @@
-build() {
-	cd "$_name"
-	autoheader
-	./autogen.sh
-	./configure --prefix=/usr --mandir=/usr/share/man
-	make
-}

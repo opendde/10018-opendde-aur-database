@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}::https://github.com/documize/community/releases/download/v${pkgver}/documize-community-linux-amd64")

@@ -1,4 +1,0 @@
-pkgver() {
-	cd "${srcdir}/${pkgname%2-git}"
-	git describe --tags --always | sed 's/-[[:digit:]]*-/./g'
-}

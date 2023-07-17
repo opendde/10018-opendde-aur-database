@@ -1,7 +1,0 @@
-package() {
-  cd "${pkgname%-a52pcm}-$pkgver"
-  make DESTDIR="$pkgdir" install
-  make DESTDIR="$pkgdir" install -C doc
-  install -vDm 644 {MEMORY-LEAK,TODO,NOTES,ChangeLog,doc/asoundrc.txt} \
-    -t "${pkgdir}/usr/share/doc/${pkgname}"
-}

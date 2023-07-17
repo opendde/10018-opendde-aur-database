@@ -1,3 +1,0 @@
-package() {
-	tar -xf $srcdir/barrier-${pkgver}-${CARCH}.tar.gz -C $pkgdir --exclude=".*"
-}

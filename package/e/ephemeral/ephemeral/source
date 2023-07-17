@@ -1,1 +1,0 @@
-("${pkgname}_${pkgver}.tar.gz::https://github.com/cassidyjames/${pkgname}/archive/${pkgver}.tar.gz"

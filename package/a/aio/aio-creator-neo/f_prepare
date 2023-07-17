@@ -1,3 +1,0 @@
-prepare() {
-  innoextract -d "${srcdir}" "${pkgname}-${pkgver}-installer.exe"
-}

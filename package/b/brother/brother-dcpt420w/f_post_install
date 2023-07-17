@@ -1,3 +1,0 @@
-post_install() {
-  /opt/brother/Printers/dcpt420w/cupswrapper/cupswrapperdcpt420w
-}

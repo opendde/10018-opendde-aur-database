@@ -1,7 +1,0 @@
-_launcher() {
-  local _pkgbase="${1}"
-  local _app_id="${2}"
-  cp launcher "${_pkgbase}"
-  sed -i "s/%app_id%/${_app_id}/g" "${_pkgbase}"
-  sed -i "s/%pkgbase%/${_pkgbase}/g" "${_pkgbase}"
-}

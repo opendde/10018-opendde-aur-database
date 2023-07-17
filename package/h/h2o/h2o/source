@@ -1,1 +1,0 @@
-($pkgname-$pkgver.tar.gz::https://codeload.github.com/h2o/$pkgname/tar.gz/v${pkgver/_/-}

@@ -1,8 +1,0 @@
-package() {
-    cd $srcdir/Breeze_Amber
-    install -d $pkgdir/usr/share/icons/Breeze_Amber
-    cp -rf *   $pkgdir/usr/share/icons/Breeze_Amber
-    chmod -R 644 $pkgdir/usr/share/icons/Breeze_Amber/*
-    chmod 755 $pkgdir/usr/share/icons/Breeze_Amber
-    chmod 755 $pkgdir/usr/share/icons/Breeze_Amber/cursors
-}

@@ -1,5 +1,0 @@
-prepare() {
-  export GOPATH="$srcdir"
-  git clone "$srcdir/btcd" "$GOPATH/src/github.com/btcsuite/btcd"
-  git clone "$srcdir/btcwallet" "$GOPATH/src/github.com/btcsuite/btcwallet"
-}

@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}-${pkgrel}-arm::https://assets.checkra.in/downloads/linux/cli/arm/${sha256sums_arm[0]}/checkra1n")

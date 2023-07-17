@@ -1,5 +1,0 @@
-prepare() {
-    #cd "bamf-${_actual_ver}${_extra_ver}"
-
-    sed -i 's/-Werror/-Wno-error/g' configure.ac
-}

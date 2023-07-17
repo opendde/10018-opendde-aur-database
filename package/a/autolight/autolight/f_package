@@ -1,5 +1,0 @@
-package() {
-        cd "$pkgname-$pkgver"
-        install -m755 -D "$pkgname" "$pkgdir/usr/bin/$pkgname"
-        install -m644 -D "$srcdir/$pkgname-$pkgver/config" "${pkgdir}/etc/$pkgname/config"
-}

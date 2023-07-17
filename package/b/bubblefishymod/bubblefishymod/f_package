@@ -1,4 +1,0 @@
-package() {
-  cd "$srcdir/bfm-$pkgver"
-  install -D -m644 gkrellm-bfm.so "$pkgdir/usr/lib/gkrellm2/plugins/gkrellm-bfm.so"
-}

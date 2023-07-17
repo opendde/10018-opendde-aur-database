@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz::https://github.com/justforlxz/deepin-wayland-protocols/archive/refs/tags/${_pkgver}.tar.gz")

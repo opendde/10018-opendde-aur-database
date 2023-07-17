@@ -1,6 +1,0 @@
-package() {
-  install -d "${pkgdir}"/etc/makepkg.d/backports-patched/patches
-  install -m0644 "${srcdir}/${_p1}" "${pkgdir}"/etc/makepkg.d/backports-patched/patches/${_p1}
-  install -m0644 "${srcdir}/${_p2}" "${pkgdir}"/etc/makepkg.d/backports-patched/patches/${_p2}
-  install -m0644 "${srcdir}/${_p3}" "${pkgdir}"/etc/makepkg.d/backports-patched/patches/${_p3}
-}

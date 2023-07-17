@@ -1,4 +1,0 @@
-package() {
-  cd "${srcdir}/${_dir}/build"
-  make --silent DESTDIR="${pkgdir}/" install
-}

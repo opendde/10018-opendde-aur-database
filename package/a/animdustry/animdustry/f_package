@@ -1,5 +1,0 @@
-package() {
-	install -Dm 755 "$srcdir/animdustry_1_1_linux" "$pkgdir/usr/bin/animdustry"
-	install -Dm 644 "$srcdir/icon.png" "$pkgdir/usr/share/animdustry/icon.png"
-	install -Dm 644 "$srcdir/animdustry.desktop" "$pkgdir/usr/share/applications/animdustry.desktop"
-}

@@ -1,5 +1,0 @@
-package() {
-	cd c-bsp
-	make install DESTDIR="$pkgdir" prefix="/usr"
-	install -Dm644 COPYING "$pkgdir/usr/share/licenses/$pkgname/COPYING"
-}

@@ -1,5 +1,0 @@
-build() {
-  cd "${_pkgname}-${pkgver}"
-  export PATH="/usr/lib/jvm/java-11-openjdk/bin/:$PATH"
-  mvn clean install -Denv=install -Dmaven.test.skip=true
-}

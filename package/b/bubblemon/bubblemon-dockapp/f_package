@@ -1,7 +1,0 @@
-package() {
-  cd "$srcdir/$pkgname-$pkgver"
-  mkdir -p "$pkgdir/usr/bin/"
-  make DESTDIR="$pkgdir" install
-  mkdir -p "$pkgdir/usr/share/doc/$pkgname/"
-  install -c README "$pkgdir/usr/share/doc/$pkgname/README"
-}

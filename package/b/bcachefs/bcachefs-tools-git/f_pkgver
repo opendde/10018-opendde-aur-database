@@ -1,5 +1,0 @@
-pkgver() {
-    cd "$srcdir/$_reponame"
-
-    echo "$(git rev-list --count HEAD)"
-}

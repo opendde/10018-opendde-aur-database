@@ -1,6 +1,0 @@
-package() {
-  cd ${srcdir}
-  install -D -m644 Bertini_License -t "${pkgdir}/usr/share/licenses/${pkgname}"
-  cd ${pkgname}-${pkgver}
-  make DESTDIR="${pkgdir}" install
-}

@@ -1,8 +1,0 @@
-package() {
-  cd ${srcdir}/${pkgname}-${pkgver}
-
-  install -dm755 ${pkgdir}/usr/bin
-  install -dm755 ${pkgdir}/usr/share/applications
-  install -m755 3dfsb ${pkgdir}/usr/bin/3dfsb
-  install -m644 ../3dfsb.desktop ${pkgdir}/usr/share/applications/3dfsb.desktop
-}

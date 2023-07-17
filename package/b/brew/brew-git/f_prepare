@@ -1,4 +1,0 @@
-prepare() {
-  cd ${srcdir}/${_base}
-  patch -p1 -i ../brew4archlinux.patch
-}

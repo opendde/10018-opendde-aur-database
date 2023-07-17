@@ -1,8 +1,0 @@
-package() {
-	mkdir -p "${pkgdir}/usr/share/applications/"
-	mkdir "${pkgdir}/opt/"
-	cp bitmask.desktop "${pkgdir}/usr/share/applications/"
-	tar -zxf Bitmask-linux64-latest.tar.gz -C "${pkgdir}/opt/"
-	cp -r "${pkgdir}/opt/bitmask-0.10.2" "${pkgdir}/opt/bitmask"
-	wget -O "${pkgdir}/opt/bitmask/icon.png" https://bitmask.readthedocs.io/en/latest/_static/bitmask-sidebar.png
-}

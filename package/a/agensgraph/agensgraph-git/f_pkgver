@@ -1,6 +1,0 @@
-pkgver() {
-  set -u
-  cd "${srcdir}/${_pkgname}"
-   printf "%s.r%s.%s\n" "$(git for-each-ref refs/tags --sort=-taggerdate --format='%(refname:short)' --count=1 | sed -e 's/^v//g' -e 's/\([^-]*-g\)/r\1/' -e 's/-/./g')" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-  set +u
-}

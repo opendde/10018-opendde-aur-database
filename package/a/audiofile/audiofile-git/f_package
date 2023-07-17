@@ -1,5 +1,0 @@
-package() {
-  cd "audiofile"
-
-  make DESTDIR="$pkgdir" install
-}

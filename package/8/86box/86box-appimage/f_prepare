@@ -1,4 +1,0 @@
-prepare() {
-    chmod +x "${_pkgname}-${pkgver}-${CARCH}.appimage"
-    "./${_pkgname}-${pkgver}-${CARCH}.appimage" --appimage-extract
-}

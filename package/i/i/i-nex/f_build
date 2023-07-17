@@ -1,7 +1,0 @@
-build() {
-    cd "${srcdir}/I-Nex-${pkgver}"
-    cd "I-Nex"
-    ./configure --prefix=/usr
-    cd ..
-    MAGICK_OCL_DEVICE=OFF make -j1
-}

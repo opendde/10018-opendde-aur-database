@@ -1,7 +1,0 @@
-package() {
-       cp -R $srcdir/usr "$pkgdir"
-
-			 if [ -d $srcdir/opt ]; then cp -R $srcdir/opt $pkgdir; fi
-
-       install -D "$pkgdir"/opt/brother/Printers/mfcj805dw/LICENSE_ENG.txt "$pkgdir/usr/share/licenses/$pkgname"
-}

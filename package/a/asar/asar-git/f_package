@@ -1,3 +1,0 @@
-package() {
-    install -Dm755 "$srcdir/asar/asar/bin/asar" "$pkgdir/usr/bin/asar"
-}

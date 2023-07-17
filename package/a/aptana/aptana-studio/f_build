@@ -1,7 +1,0 @@
-build() {
-  cd $srcdir
-  mkdir -p Aptana_Studio_3
-  bsdtar -xf *.zip -C Aptana_Studio_3
-  mkdir -p $srcdir/usr/bin/
-  echo 'exec /usr/lib/aptana/AptanaStudio3' > $srcdir/usr/bin/aptana-studio
-}

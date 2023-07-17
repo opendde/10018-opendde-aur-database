@@ -1,4 +1,0 @@
-package() {
-  cd ADIOS2-$pkgver/build
-  make DESTDIR="$pkgdir" install
-}

@@ -1,5 +1,0 @@
-build() {
-    msg2 'Build program'
-    cd "$srcdir/$_gosrcpkg"
-    GOPATH="$srcdir" go build -a -o "$srcdir/$_pkg" "$_pkg.go"
-}

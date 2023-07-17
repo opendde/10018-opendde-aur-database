@@ -1,9 +1,0 @@
-package() {
-  cd "${srcdir}/${_pkgname}-${pkgver}"
-
-  python2 waf --destdir="${pkgdir}" install
-
-  # Install freedesktop.org compatible application starter desktop file
-  install -Dm644 "$srcdir/${_pkgname}.desktop" \
-    "${pkgdir}/usr/share/applications/${_pkgname}.desktop"
-}

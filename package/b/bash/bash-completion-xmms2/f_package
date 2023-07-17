@@ -1,5 +1,0 @@
-package() {
-  install -Dm644 \
-	"$srcdir/xmms2_completion" \
-	"$pkgdir/usr/share/bash-completion/completions/xmms2"
-}

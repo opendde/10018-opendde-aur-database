@@ -1,7 +1,0 @@
-prepare() {
-    cd "$srcdir/${_pkgname}"
-    # electron builder enforces email and homepage
-    jq '.author|={"name":"athensresearch" , "email":"athensresearch@gmail.com"}' package.json >tmp.json && mv tmp.json package.json
-    jq '.homepage="https://github.com/athensresearch/athens"' package.json >tmp.json && mv tmp.json package.json
-    yarn upgrade electron@"$(</usr/lib/electron/version)"
-}

@@ -1,4 +1,0 @@
-pkgver() {
-  cd atkmm
-  git describe --tags | sed 's/-/+/g'
-}

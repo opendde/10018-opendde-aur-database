@@ -1,4 +1,0 @@
-prepare() {
-  cd "${srcdir}/${pkgname}-${pkgver}/src"
-  patch "${pkgname}.cpp" "${srcdir}/${pkgname}.cpp.patch"
-}

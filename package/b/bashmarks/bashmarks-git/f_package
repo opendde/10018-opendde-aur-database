@@ -1,5 +1,0 @@
-package() {
-    cd "$srcdir/$_pkgname"
-    install -Dm644 bashmarks.sh $pkgdir/usr/share/$_pkgname/${_pkgname}.sh
-    install -Dm644 LICENSE "$pkgdir/usr/share/licenses/${_pkgname}/LICENSE"
-}

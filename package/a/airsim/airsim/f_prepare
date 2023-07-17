@@ -1,3 +1,0 @@
-prepare() {
-    patch -s -p0 < CMakeLists.patch
-}

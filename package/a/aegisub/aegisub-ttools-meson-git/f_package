@@ -1,6 +1,0 @@
-package() {
-  cd "$_srcname"
-
-  DESTDIR="${pkgdir}" ninja -C builddir install
-  install -Dm 644 LICENCE -t "${pkgdir}/usr/share/licenses/$pkgname/"
-}

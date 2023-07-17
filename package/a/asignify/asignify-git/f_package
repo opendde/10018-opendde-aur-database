@@ -1,5 +1,0 @@
-package() {
-	cd "$pkgname"
-	make install DESTDIR="$pkgdir/"
-	install -Dm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
-}

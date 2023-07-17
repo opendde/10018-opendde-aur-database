@@ -1,4 +1,0 @@
-package() {
-    install -d $pkgdir/usr
-    cp -rf $srcdir/$pkgname-$pkgver/usr $pkgdir
-}

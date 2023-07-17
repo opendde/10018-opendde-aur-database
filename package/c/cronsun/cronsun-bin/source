@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.zip::${url}/releases/download/v${pkgver}/cronsun-v${pkgver}-linux-amd64.zip")

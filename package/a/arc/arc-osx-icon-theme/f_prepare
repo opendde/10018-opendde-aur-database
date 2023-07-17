@@ -1,5 +1,0 @@
-prepare() {
-    cd "${_pkgname}-${pkgver}"
-    sed -i 's|Name=Arc|Name=Arc-OSX-D|' "src/Arc-OSX-D/index.theme"
-    sed -i 's|Name=Arc|Name=Arc-OSX-P|' "src/Arc-OSX-P/index.theme"
-}

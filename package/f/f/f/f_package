@@ -1,7 +1,0 @@
-package() {
-  cd ${srcdir}/${pkgname}-${pkgver}
-  install -Dm755 $runname ${pkgdir}/usr/bin/${runname}
-  install -Dm755 ead.py ${pkgdir}/usr/bin/ead-cli.py
-  install -Dm644 ../eadditives.sqlite3 ${pkgdir}/usr/share/${pkgname}/eadditives.sqlite3
-  install -Dm644 LICENSE ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE
-}

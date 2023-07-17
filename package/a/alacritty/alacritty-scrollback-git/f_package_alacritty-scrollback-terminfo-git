@@ -1,9 +1,0 @@
-package_alacritty-scrollback-terminfo-git() {
-  pkgdesc='Terminfo files for the alacritty terminal emulator (scrollback branch)'
-  provides=(alacritty-terminfo)
-  conflicts=(alacritty-terminfo)
-
-  cd alacritty
-  install -d "$pkgdir"/usr/share/terminfo/a
-  tic -o "$pkgdir"/usr/share/terminfo alacritty.info
-}

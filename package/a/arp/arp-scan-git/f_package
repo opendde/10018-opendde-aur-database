@@ -1,4 +1,0 @@
-package() {
-	cd arp-scan
-	make install DESTDIR="$pkgdir"
-}

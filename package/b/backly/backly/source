@@ -1,1 +1,0 @@
-($pkgname::git+https://git.bradleylaboon.com/lb.laboon/$pkgname.git#tag=v${pkgver})

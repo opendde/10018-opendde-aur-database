@@ -1,5 +1,0 @@
-package() {
-  install -dm755 "$pkgdir/usr/share/awesome/lib/blingbling"
-  rm -r blingbling/{doc,config_example}
-  cp -a blingbling "$pkgdir/usr/share/awesome/lib/"
-}

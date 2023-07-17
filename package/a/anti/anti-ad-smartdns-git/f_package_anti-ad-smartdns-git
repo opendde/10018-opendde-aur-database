@@ -1,5 +1,0 @@
-package_anti-ad-smartdns-git() {
-    pkgdesc="Configuration for adblocking via SmartDNS"
-    depends=('smartdns')
-    install -Dm644 anti-AD/anti-ad-smartdns.conf "$pkgdir/etc/smartdns/anti-ad-smartdns.conf"
-}

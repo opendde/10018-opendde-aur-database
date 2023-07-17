@@ -1,4 +1,0 @@
-package() {
-  install -Dm755 buildg "$pkgdir/usr/bin/buildg"
-  install -Dm755 buildg.sh "$pkgdir/usr/bin/buildg.sh"
-}

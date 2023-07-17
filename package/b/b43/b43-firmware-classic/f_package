@@ -1,6 +1,0 @@
-package() {
-    cd "g-$pkgver"
-    install -Dm755 f "${pkgdir}/usr/bin/f"
-    mkdir -p "${pkgdir}/usr/share/licenses/f"
-    sed -n 5,28p f | sed -e 's/^..//' | sed -e 's/^#//' > "${pkgdir}/usr/share/licenses/f/LICENSE"
-}

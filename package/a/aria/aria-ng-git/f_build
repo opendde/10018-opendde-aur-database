@@ -1,7 +1,0 @@
-build() {
-    cd "${srcdir}/${_pkgname}"
-
-    npm install
-    bower install
-    gulp clean build
-}

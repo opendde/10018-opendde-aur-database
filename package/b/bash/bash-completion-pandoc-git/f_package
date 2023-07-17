@@ -1,4 +1,0 @@
-package() {
-	install -d "${pkgdir}/etc/bash_completion.d"
-	install "${srcdir}/${pkgname}/pandoc-completion.bash" "${pkgdir}/etc/bash_completion.d/pandoc"
-}

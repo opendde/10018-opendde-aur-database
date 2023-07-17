@@ -1,4 +1,0 @@
-build() {
-    cd "$srcdir/bCNC"
-    python2 -O -m py_compile *.py
-}

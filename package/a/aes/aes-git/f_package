@@ -1,4 +1,0 @@
-package() {
-	cd "$srcdir"
-	install -Dm755 "$srcdir/${pkgname%-git}/build/aes" "$pkgdir/usr/bin/aes"
-}

@@ -1,4 +1,0 @@
-prepare() {
-    cd "${srcdir}"/x264
-    patch -Np1 -i ../soname.patch
-}

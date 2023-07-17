@@ -1,5 +1,0 @@
-package() {
-  cd "${srcdir}/btrbk"
-  make DESTDIR="${pkgdir}" BINDIR="/usr/bin" install
-  #install -Dm644 COPYING "$pkgdir/usr/share/licenses/btrbk/COPYING"
-}

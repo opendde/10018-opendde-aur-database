@@ -1,6 +1,0 @@
-prepare() {
-    cd "${srcdir}"
-    7z x "${srcdir}/$_upkgname-$pkgver-$CARCH.AppImage" $_pkgname.desktop
-    sed -i 's/default/bitbox/' $_pkgname.desktop
-    sed -i 's/Exec=BitBox/Exec=\/opt\/BitBox\/BitBox.AppImage/' $_pkgname.desktop
-}

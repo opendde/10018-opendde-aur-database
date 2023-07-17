@@ -1,4 +1,0 @@
-prepare() {
-  cd ${srcdir}/${name}-${pkgver}
-# patch -Np1 -i ${srcdir}/fix-colision-with-git-package.patch
-}

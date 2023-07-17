@@ -1,8 +1,0 @@
-build() {
-  meson \
-    -Dprefix=/usr \
-    -Dstatic_rnnoise=false \
-    -Dconfig_dir=/etc/alsa/conf.d/ \
-    build "alsa_rnnoise-v${pkgver}"
-  ninja -C build
-}

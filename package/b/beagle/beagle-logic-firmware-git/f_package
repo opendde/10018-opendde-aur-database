@@ -1,7 +1,0 @@
-package() {
-    mkdir -p "${pkgdir}/lib/firmware/"
-    cd "${srcdir}/beagle-logic/firmware/build"
-
-    install -Dm644 "beaglelogic-pru0" "${pkgdir}/lib/firmware/beaglelogic-pru0-fw"
-    install -Dm644 "beaglelogic-pru1" "${pkgdir}/lib/firmware/beaglelogic-pru1-fw"
-}

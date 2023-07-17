@@ -1,1 +1,0 @@
-("git+https://github.com/buildkite/agent.git#tag=v$pkgver"

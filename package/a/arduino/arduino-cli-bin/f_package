@@ -1,4 +1,0 @@
-package() {
-	install -D -m755 "${srcdir}/arduino-cli" "${pkgdir}/usr/bin/arduino-cli"
-	install -D -m644 "${srcdir}/LICENSE.txt" "${pkgdir}/usr/share/licenses/${_pkgname}/LICENSE"
-}

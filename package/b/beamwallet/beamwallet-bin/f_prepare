@@ -1,3 +1,0 @@
-prepare() {
-  tar xf control.tar.gz
-}

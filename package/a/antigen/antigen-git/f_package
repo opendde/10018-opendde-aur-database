@@ -1,5 +1,0 @@
-package() {
-    cd $srcdir/$_pkgname
-    make PREFIX=$pkgdir/usr/share/zsh build
-    make PREFIX=$pkgdir/usr/share/zsh install
-}

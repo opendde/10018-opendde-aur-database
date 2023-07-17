@@ -1,1 +1,0 @@
-(http://$pkgname.ca/distribution/$pkgname-${pkgver/_/-}.tgz)

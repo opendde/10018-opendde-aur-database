@@ -1,6 +1,0 @@
-package() {
-  install -Ddm755 "$pkgdir/opt"
-  mv "$_pkg-$pkgver" "$pkgdir/opt/$_pkg"
-
-  install -Dm755 android-ndk.sh "$pkgdir/etc/profile.d/android-ndk.sh"
-}

@@ -1,4 +1,0 @@
-prepare() {
-  cd "${srcdir}"
-  patch --follow-symlinks < ../act_mirred-connmark.patch
-}

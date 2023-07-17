@@ -1,3 +1,0 @@
-pkgver() {
-	cat "$pkgname/build-linux-64/newview/viewer_version.txt"
-}

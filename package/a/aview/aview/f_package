@@ -1,4 +1,0 @@
-package() {
-  cd $srcdir/$pkgname-1.3.0
-  make prefix=$pkgdir/usr mandir=$pkgdir/usr/share/man install
-}

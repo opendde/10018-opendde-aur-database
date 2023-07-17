@@ -1,7 +1,0 @@
-build() {
-    cd "${srcdir}"/"AriaNg-${pkgver}"/
-    source /usr/share/nvm/init-nvm.sh
-    nvm install 8.17.0
-    npm install --devDependencies
-    node_modules/gulp/bin/gulp.js clean build-bundle
-}

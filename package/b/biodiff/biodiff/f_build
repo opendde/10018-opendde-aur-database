@@ -1,6 +1,0 @@
-build() {
-    cd "$pkgname-$pkgver"
-    export RUSTUP_TOOLCHAIN=nightly
-    export CARGO_TARGET_DIR=target
-    cargo +nightly build --frozen --release --all-features
-}

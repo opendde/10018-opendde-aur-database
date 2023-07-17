@@ -1,4 +1,0 @@
-package() {
-	cd "$pkgname"/gr-tnc_nx/build
-	make DESTDIR="$pkgdir/" install
-}

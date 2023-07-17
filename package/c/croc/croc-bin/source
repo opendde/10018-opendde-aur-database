@@ -1,1 +1,0 @@
-("${url}/releases/download/v${pkgver}/${provides[0]}_${pkgver}_linux-64bit.tar.gz"

@@ -1,1 +1,0 @@
-("${url}/releases/download/V${pkgver}/feathernotes-${pkgver}.tar.xz"{,.asc})

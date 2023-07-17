@@ -1,7 +1,0 @@
-package() {
-  cd ${pkgdir}
-  tar -xvf ${startdir}/src/data.tar.xz
-  mv -v opt/bibfilex opt/${pkgname}
-  mv -v usr/share/applications/Bibfilex.desktop usr/share/applications/${pkgname}.desktop
-  mv -v usr/share/doc/bibfilex usr/share/doc/${pkgname}
-}

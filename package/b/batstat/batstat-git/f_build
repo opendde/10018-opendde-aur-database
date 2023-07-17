@@ -1,4 +1,0 @@
-build() {
-  cd "${srcdir}/${_pkgname}/"
-  g++ main.cpp -lncurses -pthread -std=c++11 -o batstat
-}

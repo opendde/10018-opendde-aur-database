@@ -1,4 +1,0 @@
-check() {
-	cd "$srcdir/$_src"
-	cargo test --release --locked --features sqlite
-}

@@ -1,1 +1,0 @@
-("${_pkgname}-${pkgver}-armv7.appimage::${url}/releases/download/${pkgver}/${_pkgname}-armhf.AppImage")

@@ -1,4 +1,0 @@
-package() {
-  install -Dm755 "$pkgname-$pkgver-$CARCH" "$pkgdir/usr/bin/akamai"
-  install -Dm644 "LICENSE" "$pkgdir/usr/share/licenses/$pkgname"
-}

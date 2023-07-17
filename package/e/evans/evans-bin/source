@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz::https://github.com/ktr0731/evans/releases/download/v${pkgver}/evans_linux_amd64.tar.gz"

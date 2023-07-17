@@ -1,4 +1,0 @@
-pkgver() {
-  cd $srcdir  
-  cat version.txt| cut -d' ' -f 1
-}

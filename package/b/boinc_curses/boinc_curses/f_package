@@ -1,3 +1,0 @@
-package() {
-  install -D -m755 "$srcdir/$pkgname-$pkgver/$pkgname" "$pkgdir/usr/bin/$pkgname"
-}

@@ -1,4 +1,0 @@
-build() {
-	cd "$_archive"
-	make all
-}

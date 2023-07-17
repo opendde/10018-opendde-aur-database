@@ -1,6 +1,0 @@
-build() {
-  cd "$srcdir/${pkgname%-git}"
-  ./bootstrap
-  ./configure --build=$(./config.guess) --host=avr --prefix=/usr
-  make
-}

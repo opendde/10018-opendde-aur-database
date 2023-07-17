@@ -1,5 +1,0 @@
-package() {
-	cd ${srcdir}/${pkgname}-${pkgver}
-	install -D -o root -g root -m 0755 bing ${pkgdir}/usr/bin/bing
-	install -D -o root -g root -m 0644 unix/bing.8.gz ${pkgdir}/usr/share/man/man8/bing.8.gz
-}

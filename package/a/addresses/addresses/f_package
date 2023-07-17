@@ -1,5 +1,0 @@
-package() {
-  cd "$_pkgname"
-  make DESTDIR="$pkgdir" install
-  install -Dm644 "$pkgdir/usr/lib/GNUstep/Applications/AddressManager.app/Resources/AddressManager.desktop" "$pkgdir/usr/share/applications/$_pkgname.desktop"
-}

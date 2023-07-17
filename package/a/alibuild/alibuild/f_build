@@ -1,4 +1,0 @@
-build() {
-  cd "$srcdir/$pkgname-$pkgver"
-  sed -i "s/LAST_TAG/$pkgver/g" alibuild_helpers/__init__.py
-}

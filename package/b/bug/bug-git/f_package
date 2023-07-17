@@ -1,6 +1,0 @@
-package() {
-  cd "$srcdir"
-  install -Dm755 bin/bug "$pkgdir/usr/bin/bug"
-  install -Dm644 src/${_gourl}/README.md $pkgdir/usr/share/doc/${pkgname%-*}/README.md
-  install -Dm644 src/${_gourl}/LICENSE $pkgdir/usr/share/licenses/${pkgname%-*}/LICENSE
-}

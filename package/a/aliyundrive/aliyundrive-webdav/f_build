@@ -1,5 +1,0 @@
-build() {
-	cd "$pkgname-$pkgver"
-	CFLAGS+=" -ffat-lto-objects"
-	cargo build --frozen --release --all-features
-}

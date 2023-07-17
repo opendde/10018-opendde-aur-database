@@ -1,8 +1,0 @@
-package() {
-	cd "$pkgbase-$pkgver"		
-	install -Dm755 aemet-cli /$pkgdir/usr/bin/aemet-cli
-	install -Dm755 aemet.json /$pkgdir/var/lib/aemet-cli/aemet.json
-	gzip aemet-cli.1
-	install -Dm755 aemet-cli.1.gz /$pkgdir/usr/share/man/man1/aemet-cli.1.gz
-	install -Dm755 LICENSE /$pkgdir/usr/share/licenses/aemet-cli/LICENSE
-}

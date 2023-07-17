@@ -1,7 +1,0 @@
-prepare() {
-  [[ ! -d gcc ]] && ln -s gcc-${pkgver/+/-} gcc
-  cd gcc
-
-  rm -rf "$srcdir"/gcc-build
-  mkdir "$srcdir"/gcc-build
-}

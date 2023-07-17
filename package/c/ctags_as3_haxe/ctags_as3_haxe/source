@@ -1,1 +1,0 @@
-("https://downloads.sourceforge.net/sourceforge/${pkgname%%_*}/${pkgname%%_*}-${pkgver}.tar.gz"

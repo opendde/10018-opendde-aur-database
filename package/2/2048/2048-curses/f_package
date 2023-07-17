@@ -1,3 +1,0 @@
-package() {
-	install "${srcdir}/${pkgname}/src/${pkgname}" -D "${pkgdir}/usr/bin/${pkgname}"
-}

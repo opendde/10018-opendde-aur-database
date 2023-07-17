@@ -1,6 +1,0 @@
-package() {
-  install -d /$pkgdir/usr/share/wallpapers
-
-  cp -R $pkgname/* /$pkgdir/usr/share/wallpapers/
-
-}

@@ -1,6 +1,0 @@
-prepare() {
-  cd "${_pkgname}-${pkgver}"
-
-  patch -Np1 -i "${srcdir}/warning-fix.patch"
-  patch -Np1 -i "${srcdir}/remove-analytics.patch"
-}

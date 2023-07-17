@@ -1,7 +1,0 @@
-package() {
-  cd $pkgname-$pkgver
-
-  install -Dm0644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
-  install -Dm0644 plugins/modules/aur.py \
-    "$pkgdir/usr/share/ansible/plugins/modules/aur.py"
-}

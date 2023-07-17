@@ -1,5 +1,0 @@
-pkgver() {
-  cd $_pkgname    
-
-  echo $(git describe --long | cut -d "-" -f2-3 | tr - .).r$(git rev-list HEAD --count).$(git describe --long | cut -d "-" -f4)
-}

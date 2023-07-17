@@ -1,7 +1,0 @@
-package() {
-  cd $_srcdir
-
-  pushd build-$_target
-  DESTDIR="$pkgdir" ninja install
-  popd
-}

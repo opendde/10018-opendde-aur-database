@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.AppImage::https://github.com/ananas-analytics/ananas-desktop/releases/download/v${pkgver}/Ananas.Analytics.Desktop.Edition.${pkgver}.linux.AppImage")

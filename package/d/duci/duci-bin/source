@@ -1,1 +1,0 @@
-("${pkgname}-${pkgver}.tar.gz::${url}/releases/download/v${pkgver}/duci_${pkgver}_linux_amd64.tar.gz")

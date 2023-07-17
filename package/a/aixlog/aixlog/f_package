@@ -1,4 +1,0 @@
-package() {
-    cd "${pkgname}-${pkgver}"
-    install -Dm644 -g root -o root include/aixlog.hpp "${pkgdir}/usr/include/aixlog.hpp"
-}

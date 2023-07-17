@@ -1,4 +1,0 @@
-check() {
-  cd "${_gitname}"
-  cargo test --release --locked
-}

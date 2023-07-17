@@ -1,3 +1,0 @@
-package() {
-  install -m 755 -D environment.sh "$pkgdir"/usr/bin/$_target-environment
-}

@@ -1,6 +1,0 @@
-build() {
-	mkdir -p "$srcdir/build"
-	cd "$srcdir/build" || exit
-	cmake "$srcdir/blt4l"
-	make
-}

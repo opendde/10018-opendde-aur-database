@@ -1,4 +1,0 @@
-package() {
-  cd "$srcdir/autopano-sift-C"
-  make DESTDIR="$pkgdir" install
-}

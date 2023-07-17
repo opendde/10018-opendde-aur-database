@@ -1,4 +1,0 @@
-check() {
-  cd agg-$pkgver
-  cargo test --all --release --locked
-}

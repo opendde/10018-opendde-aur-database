@@ -1,7 +1,0 @@
-package() {
-  install -d "${pkgdir}/opt" "${pkgdir}/usr/bin"
-  mv "${srcdir}/${_pkgname}" "${pkgdir}/opt/${_pkgname}"
-  ln -s /opt/${_pkgname}/Slicer "${pkgdir}/usr/bin"
-  install -Dm644 "${srcdir}/${_pkgname}.desktop" "${pkgdir}/usr/share/applications/${_pkgname}.desktop"
-  install -Dm644 "${srcdir}/${_pkgname}.svg" "${pkgdir}/usr/share/pixmaps/${_pkgname}.svg"
-}

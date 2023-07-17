@@ -1,6 +1,0 @@
-build() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-  sed -i '/#include <alsa\/iatomic.h>/ s/^/\/\//' libbristolaudio/audioEngineJack.c # disable alsa/iatomic
-  ./configure --prefix=/usr --disable-version-check --enable-jack-default-audio # --enable-jack-default-midi
-  make
-}

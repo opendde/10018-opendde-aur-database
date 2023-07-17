@@ -1,7 +1,0 @@
-package() {
-  install -Dm644 bitcore-qt.desktop "$pkgdir"/usr/share/applications/bitcore.desktop
-  cd "$srcdir/$pkgname"
-  install -Dm755 src/qt/bitcore-qt "$pkgdir"/usr/bin/bitcore-qt
-  install -Dm644 share/pixmaps/bitcore128.png "$pkgdir"/usr/share/pixmaps/bitcore128.png
-  install -Dm644 COPYING "$pkgdir/usr/share/licenses/$pkgname/COPYING"
-}

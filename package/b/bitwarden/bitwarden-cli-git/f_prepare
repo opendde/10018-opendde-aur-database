@@ -1,5 +1,0 @@
-prepare() {
-  rmdir "${srcdir}/${_pkgname}-git-repo/jslib"
-  ln -s "${srcdir}/jslib-git-repo" "${srcdir}/${_pkgname}-git-repo/jslib"
-  sed -i 's/"postinstall": "npm run sub:init",//' "${_pkgname}-git-repo/package.json"
-}

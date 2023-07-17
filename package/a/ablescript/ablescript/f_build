@@ -1,5 +1,0 @@
-build() {
-  cd "$cratename-$pkgver"
-  CARGO_TARGET_DIR=target \
-    cargo build --frozen --release
-}

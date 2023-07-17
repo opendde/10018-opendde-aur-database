@@ -1,4 +1,0 @@
-package() {
-  cd $pkgname-$pkgver
-  install -Dm755 target/release/bacon "$pkgdir"/usr/bin/bacon
-}

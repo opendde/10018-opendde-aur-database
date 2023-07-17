@@ -1,3 +1,0 @@
-prepare() {
-  sed -i 's/libdir=.*progdir/libdir="\/usr\/share\/'${pkgname}'/' apktool
-}

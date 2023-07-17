@@ -1,7 +1,0 @@
-package() {
-	install -D -t "${pkgdir}/usr/bin" -m 755 7zz
-	install -D -t "${pkgdir}/usr/bin" -m 755 7zzs
-	install -D -t "${pkgdir}/usr/share/doc/${pkgname%-bin}" -m 644 History.txt readme.txt
-	cp -r MANUAL  "${pkgdir}/usr/share/doc/${pkgname%-bin}/manual"
-	install -D -m 644 License.txt "${pkgdir}/usr/share/licenses/${pkgname%-bin}/LICENSE"
-}

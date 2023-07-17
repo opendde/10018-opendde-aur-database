@@ -1,4 +1,0 @@
-build() {
-        cd "$_pkgname"
-	meson --prefix /usr build
-}

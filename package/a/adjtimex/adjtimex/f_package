@@ -1,4 +1,0 @@
-package() {
-	cd "$pkgname-debian-${pkgver//_/-}"
-	make prefix="$pkgdir/usr" bindir="$pkgdir/usr/bin" install
-}

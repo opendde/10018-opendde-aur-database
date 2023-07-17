@@ -1,1 +1,0 @@
-("https://snapshot.debian.org/archive/debian/${_snapshot}/pool/main/e/edk2/qemu-efi-aarch64_${pkgver//_/\~}-${_pkgrel}_all.deb")

@@ -1,9 +1,0 @@
-package() {
-    cd "${srcdir}/${_pkgname}/"
-
-    install -d "${pkgdir}/usr/bin"
-    install -d "${pkgdir}/usr/share/man/man3"
-    install -d "${pkgdir}/usr/share/zsh/site-functions/"
-    install -d "${pkgdir}/etc/bash_completion.d"
-    make prefix="${pkgdir}/usr" install
-}

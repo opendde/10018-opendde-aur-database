@@ -1,6 +1,0 @@
-pkgver() {
-    cd "aswrapper"
-    _commit=$(git rev-list --count master)
-    _hash=$(git rev-parse --short HEAD)
-    echo "r$_commit.$_hash"
-}

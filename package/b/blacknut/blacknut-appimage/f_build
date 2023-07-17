@@ -1,5 +1,0 @@
-build() {
-	cd "$srcdir"
-	sed -i "s/^Exec=AppRun$/Exec=blacknut/" blacknut.desktop
-	sed -i "s/BLACKNUT_VERSION=\"x.y.z\"/BLACKNUT_VERSION=\"${pkgver}\"/" blacknut
-}

@@ -1,4 +1,0 @@
-build() {
-  cd "$srcdir/$pkgname"
-  sed -i 's|^#!/usr/bin/python|&2|' *.py
-}

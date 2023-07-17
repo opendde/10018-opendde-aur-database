@@ -1,7 +1,0 @@
-build() {
-  cd blatSrc
-  _set_machtype
-  _destdir=`mktemp -d`
-  mkdir $_destdir/bin
-  make DESTDIR="$_destdir/" BINDIR=bin MACHTYPE=$_machtype 
-}

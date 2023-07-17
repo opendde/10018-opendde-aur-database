@@ -1,6 +1,0 @@
-build() {
-  cd "${_pkgname}"
-  make electron-develop
-  npm run webpack
-  npm prune --production
-}

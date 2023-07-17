@@ -1,5 +1,0 @@
-build() {
-	cd "${srcdir}"
-	echo -e "$_apertium_viewer_desktop" | tee apertium-viewer.desktop
-	echo "java -Xmx500m -jar /usr/share/apertium/apertium-viewer.jar" > apertium-viewer
-}

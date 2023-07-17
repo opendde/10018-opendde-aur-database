@@ -1,7 +1,0 @@
-package() {
-    install -Dm755 alist ${pkgdir}/usr/bin/alist
-    install -Dm644 alist.service -t ${pkgdir}/usr/lib/systemd/system/
-    install -Dm644 config.json -t ${pkgdir}/etc/alist
-    install -d ${pkgdir}/var/lib/alist
-    ln -s /etc/alist/config.json ${pkgdir}/var/lib/alist/config.json
-}

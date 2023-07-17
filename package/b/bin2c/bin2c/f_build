@@ -1,4 +1,0 @@
-build() {
-    cd "$pkgbase"
-    gcc -o bin2c bin2c.c
-}

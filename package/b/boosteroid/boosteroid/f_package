@@ -1,8 +1,0 @@
-package() {
-  cd "$srcdir"
-  install -dm755 "$pkgdir"/usr/bin
-  install -m755 "opt/BoosteroidGamesS.R.L./bin/Boosteroid" "$pkgdir"/usr/bin/"$pkgname"
-  install -dm755 "$pkgdir"/usr/share/{applications,icons/Boosteroid}
-  install -m644 usr/share/applications/Boosteroid.desktop "$pkgdir"/usr/share/applications/Boosteroid.desktop
-  install -m644 usr/share/icons/Boosteroid/icon.svg "$pkgdir"/usr/share/icons/Boosteroid/icon.svg
-}

@@ -1,5 +1,0 @@
-prepare() {
-  cd "$srcdir/${pkgname%}"
-  rm LICENSE.md
-  rm README.md
-}

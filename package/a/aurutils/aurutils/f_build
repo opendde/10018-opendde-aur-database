@@ -1,4 +1,0 @@
-build() {
-    cd "$pkgname-$pkgver"
-    make AURUTILS_VERSION="$pkgver"
-}

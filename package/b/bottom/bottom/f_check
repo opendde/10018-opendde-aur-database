@@ -1,4 +1,0 @@
-check() {
-    cd $pkgname-$pkgver
-    CARGO_HUSKY_DONT_INSTALL_HOOKS=true cargo test --release --locked --no-default-features
-}

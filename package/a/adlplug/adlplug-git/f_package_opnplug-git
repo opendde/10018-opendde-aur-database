@@ -1,9 +1,0 @@
-package_opnplug-git() {
-  pkgdesc="FM synthesizer for OPNMIDI with OPN2 chip emulation"
-  provides=('opnplug')
-  conflicts=('opnplug')
-
-  cd "${srcdir}/${_pkgname}-opn"
-  make -C build DESTDIR="${pkgdir}/" install
-  install -vDm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
-}

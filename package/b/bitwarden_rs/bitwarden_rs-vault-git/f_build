@@ -1,7 +1,0 @@
-build() {
-	# build vault webinterface
-	cd "$srcdir/web"
-	npm install --cache "${srcdir}/npm-cache" 
-	npm run sub:init --cache "${srcdir}/npm-cache" 
-	npm run dist --cache "${srcdir}/npm-cache" 
-}

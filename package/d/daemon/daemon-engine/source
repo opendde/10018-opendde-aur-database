@@ -1,1 +1,0 @@
-("daemon_${pkgver}.tar.gz::https://github.com/DaemonEngine/Daemon/archive/${_daemonver}.tar.gz"

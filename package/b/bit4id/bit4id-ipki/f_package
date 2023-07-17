@@ -1,4 +1,0 @@
-package() {
-	ar -xv $_file_name || return 1
-	tar -xvf data.tar.[xg]z -C $pkgdir || return 1
-}

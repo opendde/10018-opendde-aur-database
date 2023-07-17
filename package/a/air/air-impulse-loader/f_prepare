@@ -1,6 +1,0 @@
-prepare () {
-	## Extract AIR Impulse Response
-	_archive="`xdg-user-dir DOWNLOAD`/aIR Impulse Loader 1.0.3a.zip"
-	ln -srf "${_archive}" "$srcdir/`basename "${_archive}"`"
-	unzip "$srcdir/`basename "${_archive}"`"
-}

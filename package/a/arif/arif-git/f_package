@@ -1,7 +1,0 @@
-package() {
-  cd "$srcdir/build"
-  make DESTDIR="$pkgdir/" install
-  local docdest="$pkgdir/usr/share/doc/$pkgname/"
-  mkdir -p "$docdest"
-  cp "$srcdir/$_gitname/README" "$docdest"
-}

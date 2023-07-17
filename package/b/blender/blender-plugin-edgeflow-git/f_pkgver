@@ -1,4 +1,0 @@
-pkgver() {
-  git -C "$srcdir/$pkgname" describe --tags --abbrev=10 | sed 's/-/+/; s/-/./'
-#echo $(git rev-list --count master).$(git rev-parse --short master)
-}

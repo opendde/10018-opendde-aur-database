@@ -1,4 +1,0 @@
-package() {
-    install -dm755 "$pkgdir/etc/init.d"
-    install -Dm755 "$srcdir/g15composer.initd" "$pkgdir/etc/init.d/g15composer"
-}

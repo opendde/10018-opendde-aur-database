@@ -1,5 +1,0 @@
-package() {
-    cd "$srcdir/$pkgname"
-    make DESTDIR="$pkgdir" install
-    install -Dm644 .bochsrc "$pkgdir/etc/bochsrc-sample.txt"
-}

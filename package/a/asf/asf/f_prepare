@@ -1,4 +1,0 @@
-prepare() {
-    cd ${srcdir}/asf/ArchiSteamFarm/overlay/variant-base/linux
-    patch --forward --input="${srcdir}/service.patch"
-}

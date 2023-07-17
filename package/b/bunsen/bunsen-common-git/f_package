@@ -1,6 +1,0 @@
-package() {
-  cd "$srcdir/${pkgname%-git}"
-  install -Dm 644 bl-include.cfg                  "${pkgdir}/usr/lib/bunsen/common/bl-include.cfg"
-  install -Dm 644 yad-includes                    "${pkgdir}/usr/lib/bunsen/common/yad-includes"
-  install -Dm 644 distributor-logo-bunsenlabs.svg "${pkgdir}/usr/share/icons/hicolor/scalable/places/distributor-logo-bunsenlabs.svg"
-}

@@ -1,7 +1,0 @@
-prepare() {
-  if [[ -z $RUSTUP_TOOLCHAIN ]]; then
-    export RUSTUP_TOOLCHAIN=stable
-  fi
-  cd "${pkgname}"
-  cargo fetch --locked --target "$CARCH-unknown-linux-gnu"
-}

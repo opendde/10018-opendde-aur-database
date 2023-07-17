@@ -1,8 +1,0 @@
-prepare() {
-  cd "${srcdir}"/$pkgname-$pkgver
-
-# Fixes gcc 4.3 compilation
-  patch -Np0 -i "${srcdir}"/$pkgname-gcc.patch
-# Fixes libpng compilation problem
-  patch -Np1 -i "${srcdir}"/$pkgname-libpng.patch
-}

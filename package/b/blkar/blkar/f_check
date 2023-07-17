@@ -1,4 +1,0 @@
-check() {
-  cd "blockyarchive-$pkgver"
-  cargo test --release --locked
-}

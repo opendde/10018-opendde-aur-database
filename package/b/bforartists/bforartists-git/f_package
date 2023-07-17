@@ -1,8 +1,0 @@
-package() {
-  cd $srcdir/bforartists-build
-  make DESTDIR="$pkgdir" install
-  python -m compileall \
-  $pkgdir/usr/share/bforartists/$bfa_version/scripts/startup \
-  $pkgdir/usr/share/bforartists/$bfa_version/scripts/modules \
-  $pkgdir/usr/share/bforartists/$bfa_version/scripts/addons
-}

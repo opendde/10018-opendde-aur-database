@@ -1,9 +1,0 @@
-prepare() {
-  cd $pkgname-0.1.8-3
-
-  # fix compiler error
-  patch -Np0 < ../scoreList.diff
-
-  # set folder
-  sed -i 's|#define DATA_PREFIX "data|#define DATA_PREFIX "/usr/share/balloons|' src/main.h
-}

@@ -1,5 +1,0 @@
-package () {
-    cd "${srcdir}/${_pkgname}"
-    make PREFIX=/usr DESTDIR=$pkgdir install
-    install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/aerc/"
-}

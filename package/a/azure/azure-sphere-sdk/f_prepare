@@ -1,3 +1,0 @@
-prepare() {
-  tar -zxf "Azure_Sphere_SDK.tar.gz"
-}

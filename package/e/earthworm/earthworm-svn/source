@@ -1,1 +1,0 @@
-("${pkgname%-svn}::svn+svn://svn.isti.com/${pkgname%-svn}/trunk"

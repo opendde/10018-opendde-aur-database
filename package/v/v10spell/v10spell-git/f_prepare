@@ -1,4 +1,0 @@
-prepare() {
-  cd "$srcdir/$pkgname"
-  sed -i 's@/usr/local/lib/v10spell@/usr/lib/v10spell@g' spell.1
-}

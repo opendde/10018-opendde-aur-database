@@ -1,9 +1,0 @@
-package() {
-    cd "an-anime-game-aur"
-    install -dm755 "${pkgdir}/usr/lib/${pkgname}"
-    cp -dr --no-preserve=ownership app.asar "${pkgdir}/usr/lib/${pkgname}/"
-
-    install -Dm644 "${srcdir}/icon.png" "${pkgdir}/usr/share/pixmaps/${pkgname}.png"
-    install -Dm755 "${srcdir}/an-anime-game-launcher.sh" "${pkgdir}/usr/bin/${pkgname}"
-    install -Dm644 "${srcdir}/an-anime-game-launcher.desktop" -t "${pkgdir}/usr/share/applications"
-}

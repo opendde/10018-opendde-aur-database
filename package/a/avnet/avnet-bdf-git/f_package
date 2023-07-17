@@ -1,9 +1,0 @@
-package() {
-    cd "${srcdir}/bdf" || exit
-
-    for vivado_version in 2017.4 2018.2 2018.3 2019.1 2019.2 2020.1; do
-        local board_files_dir="${pkgdir}/opt/Xilinx/Vivado/${vivado_version}/data/boards/board_files"
-        mkdir -p "${board_files_dir}"
-        cp -rv . "${board_files_dir}"
-    done
-}

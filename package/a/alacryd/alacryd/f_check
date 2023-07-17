@@ -1,6 +1,0 @@
-check() {
-  cd "$srcdir/$pkgname-$pkgver"
-
-  msg2 'Running tests...'
-  PERL6LIB=lib prove -r -e perl6
-}

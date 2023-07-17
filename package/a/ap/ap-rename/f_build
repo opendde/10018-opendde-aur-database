@@ -1,4 +1,0 @@
-build() {
-  cd "rename-$pkgver"
-  pod2man --utf8 rename rename.1
-}

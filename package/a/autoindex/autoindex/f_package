@@ -1,8 +1,0 @@
-package() {
-
-    cd $srcdir/AutoIndex-${pkgver}
-    mkdir -p $pkgdir/srv/http/autoindex
-    cp -r * ${pkgdir}/srv/http/autoindex
-  
-    
-}

@@ -1,7 +1,0 @@
-prepare() {
-  cd "${pkgname}"
-  # Remove insecure RPATH
-  chrpath --delete "${pkgname}-bin"
-  # Fix symlink path
-  patch -p1 -i "${srcdir}/fix_symlink_path.patch"
-}

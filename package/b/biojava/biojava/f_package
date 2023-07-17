@@ -1,5 +1,0 @@
-package() {
-  mkdir -p $pkgdir/usr/lib/jvm/java-7-openjdk/jre/lib/ext
-  cp $srcdir/$pkgname-$pkgver/*/target/biojava*.jar 
-"$pkgdir/usr/lib/jvm/java-7-openjdk/jre/lib/ext/."
-}

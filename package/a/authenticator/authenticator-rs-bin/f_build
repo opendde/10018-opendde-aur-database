@@ -1,4 +1,0 @@
-build() {
-	rm control.tar.xz
-	tar xvf data.tar.xz
-}

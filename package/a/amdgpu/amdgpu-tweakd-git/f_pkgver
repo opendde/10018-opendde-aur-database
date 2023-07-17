@@ -1,4 +1,0 @@
-pkgver() {
-    cd $pkgname
-    python setup.py --version
-}

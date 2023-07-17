@@ -1,4 +1,0 @@
-pkgver() {
-  cd "$srcdir/blender"
-  printf "%s.r%s.g%s" "$(grep -Po "BLENDER_VERSION *\K[0-9]{3}" source/blender/blenkernel/BKE_blender_version.h|sed 's/./&./1')" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-}

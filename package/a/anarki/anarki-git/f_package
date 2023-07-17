@@ -1,7 +1,0 @@
-package() {
-  install -d "$pkgdir"/usr/{bin,share/licenses/$pkgname} 
-  cp -R "${_pkgname}" "$pkgdir/usr/share/${_pkgname}"
-  rm -rf "$pkgdir"/usr/share/${_pkgname}/.git
-  ln -s "/usr/share/${_pkgname}/arc.sh" "$pkgdir/usr/bin/arc"
-  install -Dm755 "${_pkgname}"/copyright "$pkgdir"/usr/share/licenses/$pkgname/copyright
-}

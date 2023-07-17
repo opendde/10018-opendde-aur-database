@@ -1,5 +1,0 @@
-prepare() {
-    cd $_pkgname
-    patch -Np 1 -i ${srcdir}/accountsservice-enable-elogind.patch
-    NOCONFIGURE=1 ./autogen.sh
-}

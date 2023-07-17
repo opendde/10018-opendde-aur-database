@@ -1,8 +1,0 @@
-package_python2-bareos() {
-  pkgdesc="${pkgdesc} - python-bareos is a Python2 module to access a backup system."
-  depends=('python2' 'python2-sslpsk' 'jansson')
-  conflicts=("python-bareos")
-
-  cd "${srcdir}/${pkgbase}/python-bareos"
-  python2 setup.py install --skip-build --root="${pkgdir}" --optimize='1'
-}

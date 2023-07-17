@@ -1,5 +1,0 @@
-package_alterlinux-plasma-bookmarks() {
-    pkgdesc="Simple script to automatically generate Plasma bookmarks"
-    install_files
-    install_license
-}

@@ -1,4 +1,0 @@
-prepare() {
-  cd "$pkgname"
-  sed -i 's|/root/.local/bin|/usr/bin|' sample/systemd/borgmatic.service
-}

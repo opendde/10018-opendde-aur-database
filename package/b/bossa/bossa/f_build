@@ -1,4 +1,0 @@
-build() {
-  cd "$srcdir/BOSSA-$pkgver"
-  VERSION=$pkgver make
-}

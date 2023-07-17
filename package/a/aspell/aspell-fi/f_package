@@ -1,4 +1,0 @@
-package() {
-  cd "$srcdir/aspell6-fi-$pkgver-0"
-  make DESTDIR="$pkgdir" install
-}

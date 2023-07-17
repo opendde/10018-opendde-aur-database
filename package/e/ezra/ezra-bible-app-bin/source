@@ -1,1 +1,0 @@
-("$url/releases/download/$pkgver/${pkgname%-bin}_opensuse_leap-$pkgver.rpm")

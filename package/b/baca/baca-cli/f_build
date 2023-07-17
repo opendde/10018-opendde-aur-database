@@ -1,4 +1,0 @@
-build() {
-	cd "${pkgname}"
-	RUSTUP_TOOLCHAIN=stable cargo build --release --frozen --all-features --target-dir=target
-}

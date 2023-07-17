@@ -1,4 +1,0 @@
-build() {
-	cd "$appname"
-	yarn build && yarn electron-builder --linux dir --publish never
-}

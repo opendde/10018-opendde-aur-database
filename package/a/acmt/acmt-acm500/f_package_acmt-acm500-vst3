@@ -1,7 +1,0 @@
-package_acmt-acm500-vst3() {
-	groups=('pro-audio' 'vst-plugins')
-	pkgdesc="ACM500 Channel EQ (VST3)"
-	mkdir -p ${pkgdir}/usr/lib/vst3
-	rm -r ${srcdir}/plugin-binaries/VST3/ACM500.vst3/Contents/Resources
-	cp -r ${srcdir}/plugin-binaries/VST3/ACM500.vst3 ${pkgdir}/usr/lib/vst3/ACM500.vst3
-}

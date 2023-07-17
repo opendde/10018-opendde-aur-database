@@ -1,4 +1,0 @@
-pkgver() {
-  cd "$srcdir/$_gitname"
-  git rev-parse --short HEAD
-}

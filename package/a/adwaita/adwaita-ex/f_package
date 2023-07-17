@@ -1,4 +1,0 @@
-package() {
-  mkdir -p "$pkgdir/usr/share/icons"
-  cp -a "$srcdir/$pkgname-$pkgver" "$pkgdir/usr/share/icons/AdwaitaEX"
-}

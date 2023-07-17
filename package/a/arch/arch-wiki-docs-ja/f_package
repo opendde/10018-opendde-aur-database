@@ -1,4 +1,0 @@
-package() {
-  install -dm755 "$pkgdir/usr/share/doc/arch-wiki-jp/html"
-  cp -r "$srcdir"/build_wiki/* "$pkgdir/usr/share/doc/arch-wiki-jp/html/"
-}

@@ -1,7 +1,0 @@
-package() {
-    cd "${srcdir}/2ManDVD"
-
-    sed -i "s|chmod -R 755 /usr/share/2ManDVD|chmod -R 755 \$(INSTALL_ROOT)/usr/share/2ManDVD|" Makefile
-
-    make INSTALL_ROOT=${pkgdir} install
-}

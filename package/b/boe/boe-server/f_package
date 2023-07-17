@@ -1,6 +1,0 @@
-package() {
-  rm -R usr/lib/boe/client
-  rm usr/bin/boe
-  rm -R usr/share/
-  cp -R usr/ $pkgdir
-}

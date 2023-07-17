@@ -1,4 +1,0 @@
-package() {
-  cd AbiWord
-  make DESTDIR="$pkgdir/" install
-}

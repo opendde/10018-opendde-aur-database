@@ -1,3 +1,0 @@
-package() {
-  install -Dm 644 android.img "$pkgdir/var/lib/anbox/android.img"
-}

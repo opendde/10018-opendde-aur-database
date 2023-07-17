@@ -1,5 +1,0 @@
-check() {
-  cd "acl"
-
-  make check
-}

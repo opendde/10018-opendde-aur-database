@@ -1,1 +1,0 @@
-(https://github.com/apple/cups/releases/download/v${pkgver}/cups-${pkgver}-source.tar.gz{,.sig}

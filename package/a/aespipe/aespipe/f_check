@@ -1,4 +1,0 @@
-check() {
-  cd "$srcdir/$pkgname-v$pkgver"
-  make tests
-}

@@ -1,7 +1,0 @@
-package() {
-    cd "${_pkgname}-v${pkgver}"
-    install -d ${pkgdir}/usr/share/{icons/Arc-X-D,icons/Arc-X-P,licenses/${pkgname}}
-    cp -a src/Arc-OSX-D/* "${pkgdir}/usr/share/icons/Arc-X-D/"
-    cp -a src/Arc-OSX-P/* "${pkgdir}/usr/share/icons/Arc-X-P/"
-    install -D -m644 ./{LICENSE,COPYING} "${pkgdir}/usr/share/licenses/${pkgname}/"
-}

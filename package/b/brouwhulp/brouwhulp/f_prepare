@@ -1,3 +1,0 @@
-prepare() {
-    tar -xaf data.tar.xz
-}

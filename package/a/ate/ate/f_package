@@ -1,5 +1,0 @@
-package() {
-  cd $pkgname-$pkgver
-  mkdir -p $pkgdir/usr/bin
-  install -m 755 ./ate $pkgdir/usr/bin/
-}

@@ -1,4 +1,0 @@
-pkgver() {
-  cd ${_pkgname}
-  git describe --long | sed -e 's/v//;s/-/.r/;s/-/./'
-}

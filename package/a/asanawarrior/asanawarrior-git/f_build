@@ -1,5 +1,0 @@
-build() {
-  cd "$_pkgname"
-  GOPATH="$srcdir" go get -fix -v -x ${_gourl}
-  GOPATH="$srcdir" go build
-}

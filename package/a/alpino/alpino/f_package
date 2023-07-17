@@ -1,9 +1,0 @@
-package() {
-  install -dm 755 "${pkgdir}"/usr/lib
-  cp -R "$srcdir"/Alpino "${pkgdir}"/usr/lib/alpino
-
-  install -Dm 755 "$srcdir"/alpino.sh "${pkgdir}"/usr/bin/alpino
-  install -Dm 644 "$srcdir"/alpino.desktop "$pkgdir"/usr/share/applications/alpino.desktop
-  install -Dm 644 "$srcdir"/alpino.png "$pkgdir"/usr/share/pixmaps/alpino.png
-  install -Dm 644 "$srcdir"/README.hidpi "${pkgdir}"/usr/share/doc/alpino/README.hidpi
-}

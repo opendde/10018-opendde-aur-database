@@ -1,5 +1,0 @@
-prepare() {
-  cd $_srcdir
-
-  grep -A 24 '^  Copyright' zlib.h >LICENSE
-}

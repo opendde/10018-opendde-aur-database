@@ -1,9 +1,0 @@
-prepare() {
-  mkdir -p build
-
-  cd "${_plug}"
-  patch -p1 -i "${srcdir}/esee"
-
-  git config submodule.include/lodepng.url "${srcdir}/lodepng"
-  git submodule update --init include/lodepng
-}

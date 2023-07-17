@@ -1,9 +1,0 @@
-prepare() {
-	cd "${_srcdir}"
-	rm -rf 'source/lib'
-	sed -i 's|CUBE_DIR=./|CUBE_DIR=$(dirname "$(readlink -f "${0}")")|' 'server.sh'
-	sed -i 's|CUBE_OPTIONFILE=-Cconfig/servercmdline.txt|CUBE_OPTIONFILE=-C/etc/actionfps/servercmdline.txt|' 'server.sh'
-	cd 'source/src'
-	sed -i 's|static inline float round|//static inline float round|' 'tools.h'
-	make
-}

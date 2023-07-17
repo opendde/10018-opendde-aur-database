@@ -1,1 +1,0 @@
-("${pkgname}::svn+https://github.com/freedict/fd-dictionaries/trunk/${_lang}")

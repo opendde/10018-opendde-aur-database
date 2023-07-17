@@ -1,4 +1,0 @@
-package() {
-  mkdir -p "$pkgdir/usr/bin"
-  cp "$srcdir/$pkgname-$pkgver/target/release/evm" "$pkgdir/usr/bin/"
-}

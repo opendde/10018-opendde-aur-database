@@ -1,1 +1,0 @@
-("styleguide::git+https://github.com/google/styleguide.git#commit=$_commit")

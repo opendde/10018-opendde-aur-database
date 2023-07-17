@@ -1,5 +1,0 @@
-pkgver() {
-  cd "$_svnname"
-  local ver="$(svnversion)"
-  printf "r%s" "${ver//[[:alpha:]]}"
-}

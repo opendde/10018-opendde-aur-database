@@ -1,7 +1,0 @@
-package() {
-  cd "$pkgname-${pkgver}"
-
-  make DESTDIR="${pkgdir}" prefix=/usr install
-  install -dm 755 "${pkgdir}"/usr/share/licenses/autorevision
-  install -m 444 COPYING "${pkgdir}"/usr/share/licenses/autorevision
-}

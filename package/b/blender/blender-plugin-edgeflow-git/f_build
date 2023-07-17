@@ -1,4 +1,0 @@
-build() {
-  # we don't care about those and they're extremely heavy
-  rm -rf "$srcdir/$pkgname"/docs
-}

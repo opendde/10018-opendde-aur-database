@@ -1,6 +1,0 @@
-check() {
-	cd "${pkgname}-${pkgver}"
-	./configure --prefix=/usr --enable-unit-tests --with-seed=123
-	make
-	make check
-}

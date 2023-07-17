@@ -1,4 +1,0 @@
-package() {
-  install -Dm 755 as-tree -t "$pkgdir/usr/bin"
-  install -Dm 644 LICENSE.md -t "$pkgdir/usr/share/licenses/$pkgname/"
-}

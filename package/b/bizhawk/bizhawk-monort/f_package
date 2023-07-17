@@ -1,9 +1,0 @@
-package() {
-	cd "$srcdir"
-	mkdir opt
-	tar -xf BizHawk*.tar.gz -C opt
-	cd opt
-	find . -type d                 -exec install -D -ggames -m775 -d "$pkgdir/opt/$_providesName/{}" \;
-	find . -type f -not -name *.sh -exec install -D -ggames -m664 "{}" "$pkgdir/opt/$_providesName/{}" \;
-	find . -type f      -name *.sh -exec install -D -ggames -m774 "{}" "$pkgdir/opt/$_providesName/{}" \;
-}

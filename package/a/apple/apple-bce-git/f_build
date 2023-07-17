@@ -1,5 +1,0 @@
-build() {
-	cd "$_pkgbase"
-	_kernver=$(</usr/src/linux-mbp/version)
-	make KVERSION=${_kernver}
-}

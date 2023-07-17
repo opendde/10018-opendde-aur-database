@@ -1,5 +1,0 @@
-prepare() {
-  cd ${pkgname}_v$pkgver
-  patch -p1 --verbose -i $srcdir/shogidokoro_usi_20140611.patch
-  patch -p1 --verbose -i $srcdir/Makefile.patch
-}

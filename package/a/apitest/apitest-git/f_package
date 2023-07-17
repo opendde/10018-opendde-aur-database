@@ -1,9 +1,0 @@
-package() {
-  cd "$srcdir"/apitest/
-  install -Dm755 LICENSE "$pkgdir"/usr/share/licenses/apitest/LICENSE
-  
-  cd bin
-  install -Dm755 ${_pkgname} -t ${pkgdir}/usr/bin
-  install -d "$pkgdir"/usr/share/${_pkgname}
-  cp -rf Media Shaders "$pkgdir"/usr/share/${_pkgname}
-}

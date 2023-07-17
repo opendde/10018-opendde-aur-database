@@ -1,6 +1,0 @@
-build() {
-  set -u
-  cd "${_srcdir}"
-  make -s -j1 # too small for parallel make
-  set +u
-}

@@ -1,8 +1,0 @@
-package() {
-    cd "${srcdir}"
-    install -Dm755 "$_pkgname-$arch.AppImage"                                        "${pkgdir}/opt/$_upkgname/$_upkgname.AppImage"
-    install -Dm644 "${srcdir}/usr/share/applications/$_upkgname.desktop"             "${pkgdir}/usr/share/applications/$_upkgname.desktop"
-    install -Dm644 "${srcdir}/usr/share/icons/hicolor/512x512/apps/$_upkgname.png"   "${pkgdir}/usr/share/icons/hicolor/512x512/apps/$_upkgname.png"
-    mkdir "${pkgdir}/usr/bin"
-    ln -s "/opt/$_upkgname/$_upkgname.AppImage"                                      "${pkgdir}/usr/bin/$_upkgname"
-}

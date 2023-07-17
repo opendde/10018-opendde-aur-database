@@ -1,6 +1,0 @@
-pkgver() {
-  FILENAME=`curl -s https://bgerp.ru/download/3.0/ | grep bgerp | awk -F\" '{print $2}' | tail -n1`
-  major=`echo $FILENAME | awk -F\_ '{print $2}'`
-  minor=`echo $FILENAME | awk -F\. '{print $2}' | awk -F\_ '{print $2}'`
-  printf "$major.$minor"
-}

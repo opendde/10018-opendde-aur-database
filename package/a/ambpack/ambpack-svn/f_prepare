@@ -1,4 +1,0 @@
-prepare() {
-	cd ${srcdir}"/trunk/"
-	sed -n '/.*LICENSE.*/,$p' ${_pkgname}.txt > LICENSE
-}
