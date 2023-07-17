@@ -72859,6 +72859,7 @@ python-macholib
 python-macreg-git
 python-macropy
 python-macs
+python-macs3
 python-magcode-core
 python-magic-ahupp
 python-magic-filter
