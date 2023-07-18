@@ -15,9 +15,9 @@ aur_Mkdir-All-Pkg() {
     if [ ! -f pkglist.txt ]; then
         ./lib-change-branch.dll.sh --getbranch >pkglist.txt
     fi
-    pkg_list = $(cat pkglist.txt)
+    pkg_list=$(cat pkglist.txt)
     if [ -n "$textstart" ]; then
-        pkg_list = $(echo $pkg_list | grep "^$textstart")
+        pkg_list=$(echo $pkg_list | grep "^$textstart")
     fi
     for ((i_mkdir = 1; i_mkdir <= $(echo $pkg_list | wc -l); i_mkdir++)); do
         pkgname=$(echo $pkg_list | awk 'NR=='"$i_mkdir"'{print}')
