@@ -29,13 +29,13 @@ git clone git@github.com:opendde/10018-opendde-aur-database.git
 cd 10018-opendde-aur-database
 ls -al 
 
-#./101.aur.all.list.gen.sh
-#./8.aur.index.sh
+./101.aur.all.list.gen.sh
+./8.aur.index.sh
 
 
 
 
-#cd aur-all/$GITHUB_REF_NAME
+cd aur-all/$GITHUB_REF_NAME
 
 
 
