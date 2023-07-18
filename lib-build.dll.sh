@@ -23,7 +23,7 @@ aur_Mkdir-All-Pkg() {
         pkgname=$(echo $pkg_list | awk 'NR=='"$i_mkdir"'{print}')
         dir_path="./package/"$(echo $pkgname | cut -c1)"/"$(echo $pkgname | awk -F- '{print $1}')"/"$pkgname
         if [ ! -d "$dir_path" ]; then
-            mkdir -vp $dir_path
+            mkdir -p $dir_path
             echo "Y:" $dir_path
         fi
         
@@ -43,7 +43,7 @@ aur_get-Single-Pkg-Cfg-Content(){
     done
     case "$type" in
         "git")
-            cat ../aur-list/PKGBUILD 1>&1 2>&2
+            cat ../aur/PKGBUILD 1>&1 2>&2
         ;;
         "web")
             wget -qO- "https://github.com/archlinux/aur/raw/$package_name/PKGBUILD" 1>&1 2>&2
