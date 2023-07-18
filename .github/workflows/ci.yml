@@ -21,6 +21,7 @@ jobs:
           known_hosts: "just-a-placeholder-so-we-dont-get-errors"
       - name: 2. build
         run: |
+          # 展开
           echo "::group::Set github-actions bot"
           git config --global user.name "github-actions[bot]"
           git config --global user.email "actions@github.com"
@@ -30,9 +31,7 @@ jobs:
           ssh-keyscan "github.com" >> /root/.ssh/known_hosts
           cat /root/.ssh/known_hosts
           echo "::group::Build"
-          source ./lib-build.dll.sh
-          aur_Mkdir-All-Pkg --start "0"
-          aut_get-All-Pkg-Cfg-Write-To-File --type git --start "0"
+          ./build-for-github.sh
           echo "::group::Push To GitHub"
           git add .
           git commit -a -m "add"
