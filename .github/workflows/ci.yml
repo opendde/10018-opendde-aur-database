@@ -20,4 +20,4 @@ jobs:
           known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
       - uses: actions/checkout@v2
       - name: 2.build
-        run: ./6.ci.sh
+        run: ./build-for-github.sh
