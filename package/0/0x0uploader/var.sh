@@ -1,1 +1,12 @@
-
+pkgname=0x0uploader
+pkgver=1.1
+pkgrel=1
+pkgdesc='Uploader for the 0x0 file sharing service.'
+arch=('any')
+url="https://codeberg.org/MorsMortium/${pkgname}"
+license=('GPL3')
+conflicts=('0x0uploader')
+depends=('bash' 'curl')
+optdepends=('xclip: X clipboard'
+source=("$pkgname-$pkgver.tar.gz::https://codeberg.org/MorsMortium/$pkgname/archive/$pkgver.tar.gz")
+sha1sums=('a06c5a99d5527d6caae1c92ed2098acbf51b378f')

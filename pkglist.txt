@@ -67051,6 +67051,7 @@ postal-git
 postbird-appimage
 postbird-bin
 postcat-appimage
+postcat-bin
 poster
 posterazor-git
 posterazor-qt5
