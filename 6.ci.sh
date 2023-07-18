@@ -2,7 +2,7 @@
 
 set -x
 # set -Eeu
-
+source lib-build.dll.sh
 
 export CMD_PATH=$(cd `dirname $0`; pwd)
 export PROJECT_NAME="${CMD_PATH##*/}"
@@ -29,29 +29,15 @@ git clone git@github.com:opendde/10018-opendde-aur-database.git
 cd 10018-opendde-aur-database
 ls -al 
 
-./101.aur.all.list.gen.sh
+#./101.aur.all.list.gen.sh
 #./8.aur.index.sh
 
 
 
 
-cd aur-all/$GITHUB_REF_NAME
+#cd aur-all/$GITHUB_REF_NAME
 
-onekeyGetOnePkgCfg() {
-    cd ~/10018-opendde-aur-database/
-    file_content=$(echo "$2"|| sed 's/#.*$//' | tr -s '\n' )
-    mkdir -p "./package/"$(echo $1 | cut -c1)"/"$(echo $1 | awk -F- '{print $1}')"/"$1
-    var_list="$(echo $file_content | sed -n '/^[a-zA-Z_][a-zA-Z0-9_]*=/p')"
-    save_link="./package/"$(echo $1 | cut -c1)"/"$(echo $1 | awk -F- '{print $1}')"/"$1"/var.sh"
-    echo "$var_list" > $save_link
-    function_list="$(echo "$file_content" | grep "()" | sed 's#() {##g' | grep -v "^#")"
-    for ((i_func = 1; i_func <= $(echo "$function_list" | wc -l); i_func++)); do
-        a_function=$(echo "$function_list" | awk 'NR=='"$i_func"'{print}')
-        save_link="./package/"$(echo $1 | cut -c1)"/"$(echo $1 | awk -F- '{print $1}')"/"$1"/f_"$(echo $a_function)
-        #echo $save_link
-        echo "$(echo "$file_content" | sed -n '/'"$a_function"'()/,/^}/p')" >$save_link
-    done
-}
+
 
 parse_pkgbuild()
 {
@@ -59,24 +45,12 @@ parse_pkgbuild()
     cd ~/aur
     git checkout $1
     content=$(cat PKGBUILD)
-    onekeyGetOnePkgCfg $1 "$content"
+    echo "$content" | aur_split-Pkg-Cfg-Write-To-File --name $1
+    #onekeyGetOnePkgCfg $1
     # Todo 解析文件 生成文件到package文件夹
 }
 
-onekeyMkdir() {
-    if [ ! -f pkglist.txt ]; then
-        onekeyUpdateList
-    fi
-    for ((i_mkdir = 1; i_mkdir <= $(cat pkglist.txt | wc -l); i_mkdir++)); do
-        pkgname=$(cat pkglist.txt | awk 'NR=='"$i_mkdir"'{print}')
-        save_link="./package/"$(echo $pkgname | cut -c1)"/"$(echo $pkgname | awk -F- '{print $1}')"/"$pkgname
-        mkdir -p $save_link
-        echo "Y:" $save_link
-    done
-}
-onekeyUpdateList() {
-    ./ctl-git-aur --getbranch >pkglist.txt
-}
+
 
 for pkg in `ls`
 do

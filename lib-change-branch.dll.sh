@@ -1,12 +1,12 @@
 #!/bin/bash
 # AUR-Database Ctl-Git
 #prepare
-if [ -d "../aur-list" ]; then
-    cd ../aur-list
+if [ -d "../aur" ]; then
+    cd ../aur
 else
-    git clone https://github.com/opendde/10006-opendde-aur-ci ../aur-list -b main
+    git clone https://github.com/archlinux/aur ../aur -b main
     if [ $? = 0 ]; then
-        cd ../aur-list
+        cd ../aur
     else
         exit 1
     fi
