@@ -43,7 +43,7 @@ aur_get-Single-Pkg-Cfg-Content(){
     done
     case "$type" in
         "git")
-            ./ctl-git-aur --setbranch $package_name
+            ./lib-change-branch.dll.sh --setbranch $package_name
             cat ../aur/PKGBUILD 1>&1 2>&2
         ;;
         "web")
