@@ -67138,8 +67138,10 @@ postsrsd
 postsrsd-git
 postybirb
 postybirb-appimage
+postybirb-bin
 postybirb-plus
 postybirb-plus-appimage
+postybirb-plus-bin
 posy-cursors
 posy-improved-cursors
 pot
