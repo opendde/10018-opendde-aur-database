@@ -21426,6 +21426,7 @@ fcgi-cgi
 fcgu-keyring
 fchat-appimage
 fchat-pidgin-git
+fchat-rising
 fchat-rising-appimage
 fchinanet-sh
 fcitx-baidupinyin
@@ -67048,6 +67049,7 @@ postage-bin
 postal
 postal-git
 postbird-appimage
+postbird-bin
 postcat-appimage
 poster
 posterazor-git
