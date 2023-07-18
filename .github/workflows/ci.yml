@@ -33,6 +33,7 @@ jobs:
           echo "::group::Build"
           ./build-for-github.sh
           echo "::group::Push To GitHub"
+          git config --global --add safe.directory /__w/10018-opendde-aur-database/10018-opendde-aur-database
           git add .
           git commit -a -m "add"
           git push origin HEAD
