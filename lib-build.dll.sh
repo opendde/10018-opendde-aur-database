@@ -62,9 +62,10 @@ aur_split-Pkg-Cfg-Write-To-File(){
             *) break ;;
         esac
     done
-    file_content=$(cat /dev/stdin | sed 's/#.*$//' | tr -s '\n' )
-    var_list="$(echo $file_content | sed -n '/^[a-zA-Z_][a-zA-Z0-9_]*=/p')"
+    file_content="$(cat /dev/stdin | sed 's/#.*$//' | tr -s '\n' )"
+    var_list="$(echo "$file_content" | sed -n '/^[a-zA-Z_][a-zA-Z0-9_]*=/p')"
     save_link="./package/"$(echo $package_name | cut -c1)"/"$(echo $1 | awk -F- '{print $1}')"/"$package_name"/var.sh"
+    echo "$var_list" > $save_link
 }
 
 # --type  = Type (Web/Git)
