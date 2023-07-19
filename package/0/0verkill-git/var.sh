@@ -1,4 +1,3 @@
-branch '0verkill-git' set up to track 'origin/0verkill-git'.
 pkgname=0verkill-git
 pkgver=r149.cfcb3fd
 pkgrel=1
@@ -12,25 +11,3 @@ provides=('0verkill')
 source=('git+https://github.com/patlefort/0verkill.git')
 sha256sums=('SKIP')
 _name='0verkill'
-pkgver() {
-	cd "$_name"
-	( set -o pipefail
-	  git describe --long 2>/dev/null | sed 's/\([^-]*-g\)/r\1/;s/-/./g' ||
-	  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-	)
-}
-prepare() {
-	cd "$_name"
-	autoupdate
-	autoreconf
-}
-build() {
-	cd "$_name"
-	./configure --prefix=/usr --with-x
-	make
-}
-package() {
-	cd "$_name"
-	make DESTDIR="$pkgdir" install
-	install -Dpm644 'doc/COPYING' -t "${pkgdir}/usr/share/licenses/${_name}/"
-}

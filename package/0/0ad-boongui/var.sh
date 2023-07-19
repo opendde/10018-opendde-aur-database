@@ -1,4 +1,3 @@
-branch '0ad-boongui' set up to track 'origin/0ad-boongui'.
 _modname=boongui
 pkgname=0ad-${_modname}
 pkgver=2.4.1
@@ -11,16 +10,3 @@ makedepends=('unzip')
 source=("${url}/releases/latest/download/${_modname}.pyromod")
 noextract=("${source[@]##*/}")
 sha256sums=('SKIP')
-pkgver() {
-    cd "${srcdir}"
-    unzip -oq "${_modname}.pyromod" "mod.json"
-    cat "mod.json" | grep -oP '(?<="version": ")[^"]*' 
-}
-package() {
-  cd "${srcdir}"
-  unzip -o "${_modname}.pyromod" "ARTWORK_and_LICENSE.txt"
-  install -Dm644 "ARTWORK_and_LICENSE.txt" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"  
-  install -Dm644 "${_modname}.pyromod" -t "${pkgdir}/usr/share/0ad/data/mods/${_modname}"
-  cd "${pkgdir}/usr/share/0ad/data/mods/${_modname}"
-  unzip -o "${_modname}.pyromod" "mod.json"
-}

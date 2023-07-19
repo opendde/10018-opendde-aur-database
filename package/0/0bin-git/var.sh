@@ -1,4 +1,3 @@
-branch '0bin-git' set up to track 'origin/0bin-git'.
 pkgname=0bin-git
 pkgver=r229.7da1615
 pkgrel=1
@@ -11,17 +10,3 @@ makedepends=('git')
 backup=('usr/lib/python2.7/site-packages/zerobin/default_settings.py')
 source=("$pkgname"::'git+https://github.com/sametmax/0bin.git#revision=66fe5d4088692bed0b9e2740dee9991d3c41e2b4' 'LICENSE' 'zerobin.install' 'zerobin.service')
 md5sums=('SKIP'
-         '1b71aebc25e7533ebaa5b320a20e7ed2'
-         'fe5002a67ee21f5cd66f6d8f709607bc'
-         'a8650e18bde8928f49c1d4cd6e0327be')
-	 
-pkgver() {
-  cd "$srcdir/$pkgname"
-  printf 'r%s.%s' "$(git rev-list --count HEAD)" "$(git describe --always)"
-}
-package() {
-   cd "$srcdir/$pkgname"
-   python2 setup.py install --root="$pkgdir/" --optimize=1
-   install -D -m644 "${srcdir}"/LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-   install -Dm644 ../zerobin.service "${pkgdir}"/usr/lib/systemd/system/zerobin.service
-}
