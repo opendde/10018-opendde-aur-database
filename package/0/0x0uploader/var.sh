@@ -1,5 +1,4 @@
 branch '0x0uploader' set up to track 'origin/0x0uploader'.
-
 pkgname=0x0uploader
 pkgver=1.1
 pkgrel=1
@@ -14,7 +13,6 @@ optdepends=('xclip: X clipboard'
     'libnotify: Notifications')
 source=("$pkgname-$pkgver.tar.gz::https://codeberg.org/MorsMortium/$pkgname/archive/$pkgver.tar.gz")
 sha1sums=('a06c5a99d5527d6caae1c92ed2098acbf51b378f')
-
 package() {
   cd "${srcdir}/${pkgname}"
   install -Dm 644 ${pkgname}.svg ${pkgdir}/usr/share/icons/hicolor/scalable/apps/${pkgname}.svg

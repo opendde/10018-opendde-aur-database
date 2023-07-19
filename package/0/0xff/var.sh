@@ -1,5 +1,4 @@
 branch '0xff' set up to track 'origin/0xff'.
-
 pkgname=0xff
 pkgver=1.1.0
 pkgrel=3
@@ -11,7 +10,6 @@ source=("git+https://github.com/XenGi/0xff#tag=v${pkgver}")
 sha256sums=('SKIP')
 install='0xff.install'
 makedepends=('go')
-
 build() {
   cd "${srcdir}/${pkgname}"
   GOPATH="${srcdir}" go get -u github.com/labstack/echo/...
@@ -19,7 +17,6 @@ build() {
   GOPATH="${srcdir}" go get -u github.com/satori/go.uuid
   GOPATH="${srcdir}" go build 0xff.go
 }
-
 package() {
   cd "${srcdir}/${pkgname}"
   install -Dm 755 0xff "${pkgdir}/usr/bin/0xff"
