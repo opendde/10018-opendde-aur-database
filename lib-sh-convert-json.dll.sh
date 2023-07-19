@@ -18,7 +18,7 @@ if [ -z "$file_content" ]; then
 fi
 echo "$file_content" > .tmp_var_file.sh
 
-source .tmp_var_file.sh
+source _tmp_var_file.sh
 json='{}'
 for ((i_add_json = 1; i_add_json <= $(echo "$file_content" | wc -l); i_add_json++)); do
     var_name="$(echo "$file_content" | cut -d '=' -f 1 | sed -n $i_add_json'p')"
@@ -32,4 +32,4 @@ for ((i_add_json = 1; i_add_json <= $(echo "$file_content" | wc -l); i_add_json+
     fi
 done
 echo "$json" 1>&1 2>&2
-rm .tmp_var_file.sh
+rm _tmp_var_file.sh

@@ -67,8 +67,8 @@ aur_split-Pkg-Cfg-Write-To-File(){
         esac
     done
     #file_content="$(cat /dev/stdin | sed 's/#.*$//' | tr -s '\n' )"
-    file_content_full="$(cat /dev/stdin)"
-    file_content="$file_content_full" #通过文件隧道存放变量
+    file_content_full="$(cat /dev/stdin)" #通过文件隧道存放变量
+    file_content=$(echo "$file_content_full"| tr -s '\n' ) 
     dir_path="./package/"$(echo $package_name | cut -c1)"/"$package_name #文件存储路径
     var_list="$(echo "$file_content" | sed -n '/^[a-zA-Z_][a-zA-Z0-9_]*=/p')" #先取出与变量有关的内容
     var_list="$(echo "$file_content" | grep -v '^#')" #然后去除开头的注释
