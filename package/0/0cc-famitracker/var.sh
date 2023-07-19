@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 pkgname=0cc-famitracker
 _pkgname='0CC-FamiTracker'
 pkgver=0.3.15.3
@@ -12,3 +13,6 @@ source=(http://hertzdevil.info/programs/$_filename.7z
 noextract=($filename.7z)
 md5sums=('bce2b475b8894d6b4693138625d4e422'
 license=('GPL')
+=======
+
+>>>>>>> df51e9d526f06fb909cc409ad45a807e958b0120

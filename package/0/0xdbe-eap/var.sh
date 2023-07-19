@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 pkgname=0xdbe-eap
 _pkgname=0xdbe
 pkgver=143.1301.4
@@ -11,3 +12,6 @@ license=('Commercial')
 depends=('java-environment' 'giflib')
 source=("http://download.jetbrains.com/dbe/${_pkgname}-${_buildver}.tar.gz" \
 md5sums=('f82191827ba65d431601f3c71b9f05f3'
+=======
+
+>>>>>>> df51e9d526f06fb909cc409ad45a807e958b0120

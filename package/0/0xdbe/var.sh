@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 pkgname=0xdbe
 _pkgname=0xDBE
 pkgver=1.0
@@ -11,3 +12,6 @@ license=('Commercial')
 depends=('java-environment>=6')
 source=(https://download.jetbrains.com/dbe/${pkgname}-${_pkgver}.tar.gz
 sha256sums=('f9cd4e649ed7ce745be1c9d73f9863dab4297fc59871d6223dcf5c64bb7e97a1'
+=======
+
+>>>>>>> df51e9d526f06fb909cc409ad45a807e958b0120

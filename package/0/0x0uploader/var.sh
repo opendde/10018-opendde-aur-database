@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 pkgname=0x0uploader
 pkgver=1.1
 pkgrel=1
@@ -10,3 +11,6 @@ depends=('bash' 'curl')
 optdepends=('xclip: X clipboard'
 source=("$pkgname-$pkgver.tar.gz::https://codeberg.org/MorsMortium/$pkgname/archive/$pkgver.tar.gz")
 sha1sums=('a06c5a99d5527d6caae1c92ed2098acbf51b378f')
+=======
+
+>>>>>>> df51e9d526f06fb909cc409ad45a807e958b0120

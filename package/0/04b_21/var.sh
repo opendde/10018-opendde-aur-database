@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 pkgname=04b_21
 pkgver=1
 pkgrel=2
@@ -9,3 +10,6 @@ depends=('fontconfig' 'xorg-font-utils')
 install=$pkgname.install
 source=("$pkgname.zip::http://www.urbanfonts.com/download.php?fid=8330&file=$pkgname.zip")
 md5sums=('59fbc7f2dc53baa8b71034e8364ba910')
+=======
+
+>>>>>>> df51e9d526f06fb909cc409ad45a807e958b0120

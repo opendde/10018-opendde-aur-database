@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 pkgname=0x-git
 pkgver=r1.8070704
 pkgrel=2
@@ -11,3 +12,6 @@ provides=("${pkgname%-git}")
 conflicts=("${pkgname%-git}")
 source=("$pkgname::git+$url")
 sha256sums=('SKIP')
+=======
+
+>>>>>>> df51e9d526f06fb909cc409ad45a807e958b0120
