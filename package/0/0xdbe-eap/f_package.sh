@@ -5,7 +5,7 @@ package() {
   chown -R root:root "${pkgdir}/usr/share"
   find "$pkgdir/usr/share/$_pkgname" -type d -exec chmod 0755 {} ';'
   find "$pkgdir/usr/share/$_pkgname" -type f -exec chmod 0644 {} ';'
-  
+  # never wait on user input when starting idea; copied from -ce PKGBUILD
   sed -i '/.*read IGNORE.*/ d' "${pkgdir}"/usr/share/$_pkgname/bin/${_pkgname}.sh
   chmod +x "$pkgdir"/usr/share/$_pkgname/bin/${_pkgname}.sh
   chmod +x "$pkgdir"/usr/share/$_pkgname/bin/fsnotifier
