@@ -68,14 +68,14 @@ aur_split-Pkg-Cfg-Write-To-File(){
     done
     #file_content="$(cat /dev/stdin | sed 's/#.*$//' | tr -s '\n' )"
     file_content_full="$(cat /dev/stdin)" #通过文件隧道存放变量
-    file_content=$(echo "$file_content_full"| tr -s '\n' ) 
+
+    file_content=$(echo "$file_content_full" | tr -s '\n' ) 
     dir_path="./package/"$(echo $package_name | cut -c1)"/"$package_name #文件存储路径
-    var_list="$(echo "$file_content" | sed -n '/^[a-zA-Z_][a-zA-Z0-9_]*=/p')" #先取出与变量有关的内容
-    var_list="$(echo "$file_content" | grep -v '^#')" #然后去除开头的注释
+    var_list="$(echo "$file_content" | sed -n '/^[a-zA-Z_][a-zA-Z0-9_]*=/p' | grep -v '^#')" #先取出与变量有关的内容 然后去除开头的注释
     echo "$var_list" > $dir_path"/var.sh" #最后输出
     echo "$var_list" | ./lib-sh-convert-json.dll.sh | jq . > $dir_path"/var.json" #直接转换成JSON
     
-    file_content="$(echo "$file_content_full" | sed 's/#.*$//' | tr -s '\n' )" #重新获取并去除所有关于注释的（可能会误杀到一些东西）
+    file_content="$(echo "$file_content_full" | tr -s '\n' )" #重新获取
     function_list="$(echo "$file_content" | grep "()" | sed 's#() {##g' | grep -v "^#")" #获取与func有关的内容
     for ((i_func = 1; i_func <= $(echo "$function_list" | wc -l); i_func++)); do 
         a_function=$(echo "$function_list" | awk 'NR=='"$i_func"'{print}') #取出一个func
