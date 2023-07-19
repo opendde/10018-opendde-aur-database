@@ -5402,6 +5402,7 @@ baru-bin
 barva-git
 barvinok
 bas
+bas-celik
 bas21-bin
 basalt-monado-git
 base-devel
@@ -17273,6 +17274,7 @@ downpour
 downzemall
 dowse
 dowse-git
+doxide
 doxy2man-git
 doxygen-clang
 doxygen-git
@@ -22965,6 +22967,7 @@ fldiff
 fldigi
 fldigi-docs
 fldigi-git
+flecli-git
 fleek
 fleek-bin
 fleep-bin
@@ -27451,6 +27454,7 @@ gnome-shell-extension-background-logo-git
 gnome-shell-extension-backlight-control
 gnome-shell-extension-backslide-3.18-git
 gnome-shell-extension-backslide-git
+gnome-shell-extension-battery-health-charging-git
 gnome-shell-extension-battery-percentage-git
 gnome-shell-extension-battery-status-git
 gnome-shell-extension-battery-time-git
@@ -28531,6 +28535,7 @@ gog-duke-nukem-3d
 gog-dustforce-dx
 gog-enter-the-gungeon
 gog-factorio
+gog-firewatch
 gog-flatout
 gog-flatout-2
 gog-freedom-planet
@@ -28610,6 +28615,8 @@ gog-sid-meier-s-colonization
 gog-silent-service-1
 gog-silent-service-2
 gog-slain-back-from-hell
+gog-slay-the-princess-demo
+gog-slender-threads-prologue
 gog-space-haven
 gog-spacechem
 gog-starbound
@@ -35525,6 +35532,7 @@ jameica
 jameica-nightly
 jamesdsp
 jamesdsp-git
+jamesdsp-pipewire-bin
 jamesdsp-pulse
 jamesdsp-pulse-git
 jamestown
@@ -37964,6 +37972,7 @@ kicad-symbols
 kicad-symbols-git
 kicad-templates
 kicad-templates-git
+kicad-wayland
 kicad6
 kicadlibrarian
 kicadlibrarian-git
@@ -40804,6 +40813,7 @@ lib32-nvidia-utils-beta
 lib32-nvidia-utils-llb
 lib32-nvidia-utils-vulkan-beta
 lib32-nvidia-utils-vulkan-developer-beta
+lib32-onetbb
 lib32-oniguruma
 lib32-openal-git
 lib32-openal-minimal-git
@@ -45189,6 +45199,7 @@ lkvm-git
 llama
 llama-app-bin
 llama-bin
+llama-cpp
 llama-git
 llama-rs-git
 llama.cpp-git
@@ -46741,6 +46752,7 @@ mailman-rss
 mailman-suite-git
 mailman3
 mailman3-public-inbox
+mailmaster-bin
 mailmotion
 mailmotiond
 mailnag
@@ -67452,6 +67464,7 @@ pridefetch-laureegrd-git
 prideflag
 prideflags-wallpapers
 primate-appimage
+primate-bin
 prime
 prime-gpuchooser
 prime-switcher
@@ -67910,6 +67923,7 @@ protocol-tool-git
 protodata-git
 protolint
 protoman-appimage
+protoman-bin
 proton
 proton-caller
 proton-caller-git
@@ -68318,6 +68332,7 @@ public-sans-font
 public_suffix_list
 publii
 publii-appimage
+publii-bin
 publisher
 publishr-gimp
 pubs
@@ -72727,6 +72742,7 @@ python-libtc
 python-libtcod
 python-libtcod-cffi
 python-libthumbor
+python-libtimed
 python-libtmux
 python-libtorrent-rasterbar
 python-libusb-package
@@ -72780,6 +72796,7 @@ python-litex-git
 python-littleutils
 python-livereload
 python-lizard
+python-llama-cpp
 python-llfuse
 python-llvmcpy
 python-llvmcpy-git
@@ -76775,6 +76792,7 @@ python-time_uuid
 python-timeago
 python-timebudget
 python-timebudget-git
+python-timedctl
 python-timelib
 python-timelib-git
 python-timeloop
@@ -81892,6 +81910,7 @@ quasar-icongenie
 quasar-server
 quasar-single
 quasar-todo-appimage
+quasar-todo-bin
 quassel
 quassel-client-lighter-git
 quassel-core-lighter-git
@@ -81911,6 +81930,7 @@ quazip-legacy
 quazip-qt4
 quazip-qt5
 quba-appimage
+quba-bin
 qube-hib
 qubes-core-agent-linux
 qubes-db-vm
@@ -87209,6 +87229,7 @@ redis-git
 redis-graph
 redis-graph-git
 redis-gui-appimage
+redis-gui-bin
 redis-insight-bin
 redis-json
 redis-munin-git
@@ -87223,6 +87244,7 @@ redis4
 redis5
 redis6
 redisfish-appimage
+redisfish-bin
 redisinsight
 redispp-git
 redkite
@@ -93677,6 +93699,7 @@ saba-git
 saba-meeting-client-bin
 sabaki
 sabaki-appimage
+sabaki-bin
 sabaki-electron
 sabayon
 saber
@@ -94084,6 +94107,7 @@ sbctl-git
 sbctl-initcpio-post-hook
 sbd
 sbe-appimage
+sbe-bin
 sbf_flash
 sbkeys
 sblg
@@ -98902,6 +98926,7 @@ stitchy-git
 stjerm
 stk11xx-svn
 stklos
+stl-c
 stl-thumb
 stl-thumb-kde
 stl-thumbnailer
@@ -105178,6 +105203,7 @@ ttrv-git
 tts
 tts-now-appimage
 tts-tengwar-sindarin
+tts-vue
 tts-vue-appimage
 ttsdecker
 ttt2
@@ -105758,6 +105784,7 @@ ucanaccess
 ucc
 ucdavisthesis
 ucesb-git
+ucf
 ucg
 ucg-git
 ucglib-git
