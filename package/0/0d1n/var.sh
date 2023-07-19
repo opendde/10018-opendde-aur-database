@@ -14,7 +14,6 @@ build() {
            cd "${pkgname}-master"
            make
 }
-
 package() {
            cd "${srcdir}"
            install -dm755 "${pkgdir}/usr/share/${pkgname}"
