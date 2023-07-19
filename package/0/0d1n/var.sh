@@ -1,14 +1,1 @@
-<<<<<<< HEAD
-pkgname='0d1n'
-pkgver='2.1'
-pkgrel=1
-pkgdesc='A web security tool to make fuzzing at HTTP inputs'
-arch=('any')
-url='https://github.com/CoolerVoid/0d1n/'
-license=('GPL3')
-depends=('curl' 'libcurl-compat')
-source=('https://github.com/CoolerVoid/0d1n/archive/master.zip')
-md5sums=('822e01669bce3b7f6c9391837d1bc51e')
-=======
 
->>>>>>> df51e9d526f06fb909cc409ad45a807e958b0120

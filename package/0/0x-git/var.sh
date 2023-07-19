@@ -1,17 +1,1 @@
-<<<<<<< HEAD
-pkgname=0x-git
-pkgver=r1.8070704
-pkgrel=2
-pkgdesc='Colorized hex dump viewer'
-arch=('x86_64')
-url='https://github.com/mcy/0x'
-license=('Apache')
-depends=('gcc-libs')
-makedepends=('cargo' 'git')
-provides=("${pkgname%-git}")
-conflicts=("${pkgname%-git}")
-source=("$pkgname::git+$url")
-sha256sums=('SKIP')
-=======
 
->>>>>>> df51e9d526f06fb909cc409ad45a807e958b0120

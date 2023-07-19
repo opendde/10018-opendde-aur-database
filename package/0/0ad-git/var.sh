@@ -1,17 +1,1 @@
-<<<<<<< HEAD
-pkgname=('0ad-git' '0ad-data-git')
-_pkgname=0ad
-epoch=1
-pkgver=A26.r63.g43444ea887
-pkgrel=1
-pkgdesc="Cross-platform, 3D and historically-based real-time strategy game - built from git development version."
-arch=('i686' 'x86_64')
-url="http://play0ad.com/"
-license=('GPL2' 'CCPL')
-makedepends=('boost' 'cmake' 'mesa' 'zip' 'libsm' 'rust' 'python' 'clang' 'git'
-options=('!lto') # breaks spidermonkey linking (https://bugs.gentoo.org/746947)
-source=("git+https://github.com/0ad/0ad.git")
-md5sums=('SKIP')
-=======
 
->>>>>>> df51e9d526f06fb909cc409ad45a807e958b0120
