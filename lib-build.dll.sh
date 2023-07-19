@@ -25,7 +25,7 @@ aur_Mkdir-All-Pkg() {
     fi
     for ((i_mkdir = 1; i_mkdir <= $(echo "$pkg_list" | wc -l); i_mkdir++)); do
         pkgname=$(echo "$pkg_list" | awk 'NR=='"$i_mkdir"'{print}')
-        dir_path="./package/"$(echo $pkgname | cut -c1)"/"$(echo $pkgname | awk -F- '{print $1}')"/"$pkgname
+        dir_path="./package/"$(echo $pkgname | cut -c1)"/"$pkgname
         if [ ! -d "$dir_path" ]; then
             mkdir -p $dir_path
             echo "Y:" $dir_path
