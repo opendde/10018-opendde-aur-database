@@ -1,3 +1,0 @@
-prepare() {
-  sed -i 's|
-}
