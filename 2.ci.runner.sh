@@ -5,6 +5,7 @@ export PROJECT_NAME="${CMD_PATH##*/}"
 
 cd $CMD_PATH
 
+env
 set -x 
 
 if [ ! -z $GITHUB_REF_NAME ];then
@@ -45,8 +46,10 @@ for (( i = 0; i < total_batches; i++ )); do
     wait
 done
 
-echo "::group::Push To GitHub"
-git config --global --add safe.directory $CMD_PATH
-git add .
-git commit -a -m "add"
-git push origin HEAD
+if [ ! -z $GITHUB_REF_NAME ];then
+  echo "::group::Push To GitHub"
+  git config --global --add safe.directory $CMD_PATH
+  git add .
+  git commit -a -m "add"
+  git push origin HEAD
+fi
