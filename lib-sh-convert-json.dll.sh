@@ -43,4 +43,4 @@ for ((i_add_json = 1; i_add_json <= $(echo "$var_name_list" | wc -l); i_add_json
     fi
 done
 echo "$json" 1>&1 2>&2
-rm $PROCESS_NAME"_tmp_var_file.sh
+rm $PROCESS_NAME"_tmp_var_file.sh"
