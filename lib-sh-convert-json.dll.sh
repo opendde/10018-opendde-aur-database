@@ -16,9 +16,9 @@ if [ -z "$file_content" ]; then
         exit 1
     fi
 fi
-echo "$file_content" > _tmp_var_file.sh
-chmod +x _tmp_var_file.sh
-source _tmp_var_file.sh
+echo "$file_content" > $PROCESS_NAME"_tmp_var_file.sh"
+chmod +x $PROCESS_NAME"_tmp_var_file.sh"
+source $PROCESS_NAME"_tmp_var_file.sh"
 while IFS= read -r line; do
     # 判断是否包含等号
     if [[ "$line" == *"="* ]]; then

@@ -84,7 +84,7 @@ aur_split-Pkg-Cfg-Write-To-File(){
     var_list="$(echo "$var_list" | sed -n "1,"$(echo "$var_list" | grep -n '() {'|  cut -d':' -f1 | sed -n 1p)"p" | grep -v '() {' )" #
     #var_list="$(echo "$var_list")"
     echo "$var_list" > $dir_path"/var.sh" #最后输出
-    echo "$var_list" | ./lib-sh-convert-json.dll.sh | jq . > $dir_path"/var.json" #直接转换成JSON
+    echo "$var_list" | env THREAD_NAME=${THREAD_NAME:-""} ./lib-sh-convert-json.dll.sh | jq . > $dir_path"/var.json" #直接转换成JSON
     
     file_content="$(echo "$file_content_full" | tr -s '\n' )" #重新获取
     function_list="$(echo "$file_content" | grep "()" | sed 's#() {##g' | grep -v "^#")" #获取与func有关的内容
