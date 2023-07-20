@@ -47,7 +47,7 @@ aur_get-Single-Pkg-Cfg-Content(){
     done
     case "$type" in
         "git")
-            ./lib-change-branch.dll.sh --setbranch $package_name
+            ./lib-change-branch.dll.sh --setbranch $package_name >/dev/null
             cat ../aur/PKGBUILD 1>&1 2>&2
         ;;
         "web")
@@ -71,7 +71,9 @@ aur_split-Pkg-Cfg-Write-To-File(){
 
     file_content=$(echo "$file_content_full" | tr -s '\n' ) 
     dir_path="./package/"$(echo $package_name | cut -c1)"/"$package_name #文件存储路径
-    var_list="$(echo "$file_content)" | awk 'BEGIN{RS=""; FS="\n"} /^[a-zA-Z_][a-zA-Z0-9_]*=/{ print $0 }' | grep -v '^#')" #先取出与变量有关的内容 然后去除开头的注释
+    var_list="$(echo "$file_content" | grep -v '^#' )" #先去注释
+    var_list="$(echo "$var_list" | sed -n "1,"$(echo "$var_list" | grep -n '() {'|  cut -d':' -f1 | sed -n 1p)"p" | grep -v '() {' )" #
+    #var_list="$(echo "$var_list")"
     echo "$var_list" > $dir_path"/var.sh" #最后输出
     echo "$var_list" | ./lib-sh-convert-json.dll.sh | jq . > $dir_path"/var.json" #直接转换成JSON
     

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 _modname="0ad_Delenda_Est_A25"
 pkgname="0ad-delenda-est"
 pkgver=0.25.0
@@ -11,6 +10,3 @@ makedepends=('unzip')
 source=("https://binary.lge.modcdn.io/mods/698d/111/0ad_delenda_est_a25.zip")
 noextract=("${source[@]##*/}")
 sha256sums=('1fe55b05dae4d2910060019398c5e3a0738c87b7e4ba63fa449e7376ae03302d')
-=======
-
->>>>>>> df51e9d526f06fb909cc409ad45a807e958b0120

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 pkgname=0ad-zh-lang
 _pkgver=0.0.26
 pkgver=a26
@@ -10,6 +9,3 @@ license=('GPL')
 depends=(0ad=${pkgver} 0ad-data=${pkgver})
 source=(${pkgname}-${_pkgver}.zip::"http://releases.wildfiregames.com/locales/zh-lang-${_pkgver}.pyromod")
 sha256sums=('1e47709831baaa5ff03df9ecd846a80eda643f78deb461cc797b9872f5787fdc')
-=======
-
->>>>>>> df51e9d526f06fb909cc409ad45a807e958b0120

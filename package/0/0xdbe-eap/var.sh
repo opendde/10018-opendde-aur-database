@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 pkgname=0xdbe-eap
 _pkgname=0xdbe
 pkgver=143.1301.4
@@ -11,7 +10,8 @@ backup=("usr/share/${_pkgname}/bin/${_pkgname}.vmoptions" "usr/share/${_pkgname}
 license=('Commercial')
 depends=('java-environment' 'giflib')
 source=("http://download.jetbrains.com/dbe/${_pkgname}-${_buildver}.tar.gz" \
+        "${_pkgname}.sh" \
+        "${_pkgname}.desktop")
 md5sums=('f82191827ba65d431601f3c71b9f05f3'
-=======
-
->>>>>>> df51e9d526f06fb909cc409ad45a807e958b0120
+         '864c5bb6071568a1a9f26573e090207b'
+         'e520ed91c5c0578cc93df0cd7e03166b')

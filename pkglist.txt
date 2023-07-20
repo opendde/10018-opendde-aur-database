@@ -1,3 +1,21 @@
+  010editor
+  04b_21
+  0ad-boongui
+  0ad-community-maps-2
+  0ad-delenda-est
+  0ad-git
+  0ad-zh-lang
+  0bin-git
+  0cc-famitracker
+  0d1n
+  0trace
+  0verkill-git
+  0x-git
+  0x0uploader
+  0xdbe
+  0xdbe-eap
+  0xff
+* 0xffff
 010editor
 04b_21
 0ad-boongui
@@ -3687,6 +3705,7 @@ arprec
 arpreply-git
 arptables
 arptables-git
+arqiver
 arqiver-git
 arqiver-qt5-git
 arqiver-qt6-git
@@ -5794,6 +5813,7 @@ bcrypt-sandbox-bin
 bcrypt-tool
 bctoolbox
 bctoolbox-git
+bcu-git
 bcunit
 bcunit-cunit-compat
 bcunit-git
@@ -10260,6 +10280,7 @@ ch341eeprom-git
 ch341eepromtool
 ch341prog-git
 ch343-dkms
+ch343ser-git
 ch34x-dkms-git
 ch552isptool-git
 ch9344-dkms
@@ -10417,6 +10438,7 @@ check_email_delivery
 check_ipmi_sensor
 check_lm_sensors
 check_lsi_raid-git
+check_mate-bin
 check_md_raid
 check_mk
 check_mk-agent
@@ -17842,6 +17864,7 @@ dune-configurator
 dune-core
 dune-curvedgeometry
 dune-fem
+dune-fem-dg
 dune-foamgrid
 dune-functions
 dune-geometry
@@ -17858,6 +17881,7 @@ dune-spgrid
 dune-subgrid
 dune-typetree
 dune-uggrid
+dune-vem
 dune-vtk
 dune2
 dune2-data
@@ -34674,6 +34698,7 @@ intel-cpu-runtime
 intel-daal
 intel-decimalfp
 intel-dnnl
+intel-ethernet-722smc
 intel-gmmlib-git
 intel-gpa-bin
 intel-gpu-tools-git
@@ -55778,6 +55803,7 @@ ntfs3-dkms-git
 ntfsfixboot
 ntfsprogs-ntfs3
 ntfy
+ntfy-alertmanager
 ntfy-git
 ntfysh
 ntfysh-bin
@@ -56896,6 +56922,7 @@ ocaml-taglib
 ocaml-textutils
 ocaml-textutils_kernel
 ocaml-theora
+ocaml-thread-table
 ocaml-time_now
 ocaml-timezone
 ocaml-topkg
@@ -57409,6 +57436,7 @@ olive-nightly-bin
 olivetin
 olivetin-bin
 olivia
+ollama
 olliolli-hib
 ollydbg-bin
 olpw
@@ -59324,6 +59352,7 @@ otf-cm-unicode
 otf-code-new-roman
 otf-coelacanth
 otf-comic-shanns
+otf-commit-mono
 otf-cool_digits
 otf-cooper-hewitt
 otf-cp-mono
@@ -60143,6 +60172,7 @@ pacsync-git
 pacsync-hg
 pact
 pact-cli-bin
+pact-git
 pactest-git
 pactory-git
 pactray
@@ -65925,6 +65955,7 @@ plank-theme-window
 plank-theme-window-soft
 plank-theme-wingy2r
 plank-theme-y-ru-git
+plann
 plann-git
 planner
 planner-eos
@@ -112203,6 +112234,7 @@ xdg-desktop-portal-kde-git
 xdg-desktop-portal-kde-steamos-kiofusefix
 xdg-desktop-portal-liri-git
 xdg-desktop-portal-lxqt-git
+xdg-desktop-portal-pantheon-git
 xdg-desktop-portal-rs
 xdg-desktop-portal-shana
 xdg-desktop-portal-termfilechooser-git
@@ -113180,6 +113212,7 @@ xpilot-atoms-git
 xpilot-ng
 xping
 xping-git
+xpipe
 xpipe-git
 xplane-sdk-devel
 xplanet-svn
@@ -113378,6 +113411,7 @@ xstarfish
 xstarter
 xstatus-git
 xstdcmap
+xstop
 xstow
 xstow++
 xstream

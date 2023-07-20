@@ -1,0 +1,27 @@
+{
+  "_modname": "boongui",
+  "pkgname": "0ad-boongui",
+  "pkgver": "2.4.1",
+  "pkgrel": "1",
+  "pkgdesc": "User interface mod for the RTS game 0 A.D.",
+  "arch": [
+    "any"
+  ],
+  "url": "https://github.com/LangLangBart/boonGUI",
+  "license": [
+    "MIT",
+    "CCPL"
+  ],
+  "makedepends": [
+    "unzip"
+  ],
+  "source": [
+    "https://github.com/LangLangBart/boonGUI/releases/latest/download/boongui.pyromod"
+  ],
+  "noextract": [
+    "boongui.pyromod"
+  ],
+  "sha256sums": [
+    "SKIP"
+  ]
+}
