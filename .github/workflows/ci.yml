@@ -32,6 +32,39 @@ jobs:
           cat /root/.ssh/known_hosts
           echo "::group::Prepare Build"
           ./init.sh
+<<<<<<< HEAD
+          
+          echo "::group::Generate Start Text (0-9)"
+          for (( i = 48; i <= 57; i++ )); do
+            characters+=($(printf \\$(printf '%03o' $i)))
+          done
+          echo "::group::Multi Thread Build (0-9)"
+          for (( i = 0; i < ${#characters[@]}; i++ )); do
+            env THREAD_NUM=$i ./build-for-github.sh --start "${characters[$i]}" &
+          done
+          echo "::group::Checking Multi Thread Build is Done (0-9)"
+          while true; do
+            jobs_count=$(jobs | wc -l)
+            if [ "$jobs_count" -eq 0 ]; then
+              echo "没有正在运行的任务，跳出循环。"
+              characters=()
+              break
+            else
+              echo "当前运行的任务数量为: $jobs_count"
+              sleep 10
+            fi
+          done
+
+          echo "::group::Generate Start Text (a-j)"
+          for (( i = 97; i <= 106; i++ )); do
+            characters+=($(printf \\$(printf '%03o' $i)))
+          done
+          echo "::group::Multi Thread Build (a-j)"
+          for (( i = 0; i < ${#characters[@]}; i++ )); do
+            env THREAD_NUM=$i ./build-for-github.sh --start "${characters[$i]}" &
+          done
+          echo "::group::Checking Multi Thread Build is Done (a-i)"
+=======
           echo "::group::Multi Thread Build"
           for (( i = 48; i <= 57; i++ )); do
             characters+=($(printf \\$(printf '%03o' $i)))
@@ -43,16 +76,28 @@ jobs:
             env THREAD_NUM=$i ./build-for-github.sh --start "${characters[$i]}" &
           done
           echo "::group::Checking Multi Thread Build is Done"
+>>>>>>> 7ed8f7ec4ceb287ab68ddc9e19a2c851c870ca28
           while true; do
             jobs_count=$(jobs | wc -l)
             if [ "$jobs_count" -eq 0 ]; then
               echo "没有正在运行的任务，跳出循环。"
+<<<<<<< HEAD
+              characters=()
+              break
+            else
+              echo "当前运行的任务数量为: $jobs_count"
+              sleep 10
+            fi
+          done
+
+=======
               break
             else
               echo "当前运行的任务数量为: $jobs_count"
               sleep 2
             fi
           done
+>>>>>>> 7ed8f7ec4ceb287ab68ddc9e19a2c851c870ca28
           echo "::group::Push To GitHub"
           git config --global --add safe.directory /__w/10018-opendde-aur-database/10018-opendde-aur-database
           git add .
