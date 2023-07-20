@@ -1,0 +1,15 @@
+pkgname=1pass-git
+_pkgname=1pass
+pkgver=r68.93e14d8
+pkgrel=1
+pkgdesc="A caching wrapper for the 1Password CLI"
+arch=('any')
+url="https://github.com/dcreemer/1pass.git"
+license=('GPL3')
+depends=('1password-cli' 'jq' 'gnupg')
+makedepends=('git')
+optdepends=()
+provides=("$_pkgname")
+conflicts=("$_pkgname")
+source=("$pkgname::git+https://github.com/dcreemer/1pass.git")
+md5sums=('SKIP')

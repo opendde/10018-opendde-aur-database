@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image:  ghcr.io/archlinux365/9318-archlinux-docker-root:latest
+      image: ghcr.io/archlinux365/9318-archlinux-docker-root:latest
       volumes:
         - /home/runner/work/alterdir/alterdir:/tmp/alterdir
       options: "--privileged"
@@ -30,8 +30,29 @@ jobs:
           ssh-keygen -f "/root/.ssh/known_hosts" -R "github.com"
           ssh-keyscan "github.com" >> /root/.ssh/known_hosts
           cat /root/.ssh/known_hosts
-          echo "::group::Build"
-          ./build-for-github.sh
+          echo "::group::Prepare Build"
+          ./init.sh
+          echo "::group::Multi Thread Build"
+          for (( i = 48; i <= 57; i++ )); do
+            characters+=($(printf \\$(printf '%03o' $i)))
+          done
+          for (( i = 97; i <= 122; i++ )); do
+            characters+=($(printf \\$(printf '%03o' $i)))
+          done
+          for (( i = 0; i < ${#characters[@]}; i++ )); do
+            env THREAD_NUM=$i ./build-for-github.sh --start "${characters[$i]}" &
+          done
+          echo "::group::Checking Multi Thread Build is Done"
+          while true; do
+            jobs_count=$(jobs | wc -l)
+            if [ "$jobs_count" -eq 0 ]; then
+              echo "没有正在运行的任务，跳出循环。"
+              break
+            else
+              echo "当前运行的任务数量为: $jobs_count"
+              sleep 2
+            fi
+          done
           echo "::group::Push To GitHub"
           git config --global --add safe.directory /__w/10018-opendde-aur-database/10018-opendde-aur-database
           git add .

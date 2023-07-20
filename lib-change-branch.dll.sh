@@ -1,12 +1,16 @@
 #!/bin/bash
-# AUR-Database Ctl-Git
-#prepare
-if [ -d "../aur" ]; then
-    cd ../aur
+# env
+# THREAD_NAME=线程名称 从build-for-github 获取
+
+# AUR-Database Ctrl-Git
+# prepare
+
+if [ -d "../aur"$THREAD_NAME ]; then
+    cd "../aur"$THREAD_NAME
 else
-    git clone https://github.com/archlinux/aur ../aur -b main
+    git clone -b main  https://github.com/archlinux/aur ../aur$THREAD_NAME 
     if [ $? = 0 ]; then
-        cd ../aur
+        cd ../aur$THREAD_NAME
     else
         exit 1
     fi

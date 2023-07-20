@@ -1,0 +1,22 @@
+{
+  "pkgname": "115upload",
+  "pkgver": "1.1.8",
+  "pkgrel": "1",
+  "epoch": "1",
+  "pkgdesc": "115.com big file upload control",
+  "url": "http://115.com",
+  "arch": [
+    "i686",
+    "x86_64"
+  ],
+  "license": [
+    "unknown"
+  ],
+  "depends": [
+    ""
+  ],
+  "if [ \"$CARCH\" ": "",
+  "\tsource": "",
+  "\tmd5sums": "",
+  "elif [ \"$CARCH\" ": ""
+}
