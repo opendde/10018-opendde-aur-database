@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 pkgname=0bin-git
 pkgver=r229.7da1615
 pkgrel=1
@@ -15,6 +16,9 @@ md5sums=('SKIP'
          'fe5002a67ee21f5cd66f6d8f709607bc'
          'a8650e18bde8928f49c1d4cd6e0327be')
 	 
+=======
+
+>>>>>>> 633d50acfd61d13f47b9299ea333b00630c7e466
 =======
 
 >>>>>>> 633d50acfd61d13f47b9299ea333b00630c7e466
