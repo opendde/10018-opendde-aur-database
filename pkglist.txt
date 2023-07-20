@@ -6379,6 +6379,7 @@ bindmap-git
 bindtointerface
 binfetch-git
 binfmt-java
+binfmt-perl
 binfmt-python
 binfmt-qemu
 binfmt-qemu-all-arch
@@ -25271,6 +25272,7 @@ gcviewer-git
 gcw0-toolchain
 gd-git
 gd-headless
+gd-tools-git
 gd32-dfu-utils
 gd32-isp-console-bin
 gdal-curl
@@ -113907,6 +113909,8 @@ yay-powerpill-git
 yayfzf
 yayim
 yaze
+yazi
+yazi-git
 ybacklight
 ycash-bin
 ycat
