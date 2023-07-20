@@ -16,9 +16,9 @@ if [ -z "$file_content" ]; then
         exit 1
     fi
 fi
-echo "$file_content" > _tmp_var_file.sh
-chmod +x _tmp_var_file.sh
-source _tmp_var_file.sh
+echo "$file_content" > $PROCESS_NAME"_tmp_var_file.sh"
+chmod +x $PROCESS_NAME"_tmp_var_file.sh"
+source $PROCESS_NAME"_tmp_var_file.sh"
 while IFS= read -r line; do
     # 判断是否包含等号
     if [[ "$line" == *"="* ]]; then
@@ -43,4 +43,4 @@ for ((i_add_json = 1; i_add_json <= $(echo "$var_name_list" | wc -l); i_add_json
     fi
 done
 echo "$json" 1>&1 2>&2
-rm _tmp_var_file.sh
+rm $PROCESS_NAME"_tmp_var_file.sh
