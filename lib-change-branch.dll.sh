@@ -9,6 +9,7 @@ if [ -d "../aur"$THREAD_NAME ]; then
     cd "../aur"$THREAD_NAME
 else
     if [ ! -d ../aur ];then
+        set -x
         git clone -b main --depth=1 https://github.com/archlinux/aur ../aur
         cd ../aur
         git remote set-branches origin '*'
@@ -16,6 +17,7 @@ else
         du -hs 
         df -h
         cd -
+        set +x
     fi
     rsync -avzP ../aur/ ../aur$THREAD_NAME/ 
     if [ $? = 0 ]; then
