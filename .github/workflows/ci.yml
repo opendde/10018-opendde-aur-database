@@ -33,46 +33,28 @@ jobs:
           echo "::group::Prepare Build"
           ./init.sh
           
-          echo "::group::Generate Start Text (0-9)"
-          for (( i = 48; i <= 57; i++ )); do
-            characters+=($(printf \\$(printf '%03o' $i)))
+          # 定义字符数组
+          characters=()
+          for (( i = 48; i <= 122; i++ )); do
+              if (( i <= 57 )) || (( i >= 97 )); then
+                  characters+=($(printf \\$(printf '%03o' $i)))
+              fi
           done
-          echo "::group::Multi Thread Build (0-9)"
-          for (( i = 0; i < ${#characters[@]}; i++ )); do
-            env THREAD_NUM=$i ./build-for-github.sh --start "${characters[$i]}" &
-          done
-          echo "::group::Checking Multi Thread Build is Done (0-9)"
-          while true; do
-            jobs_count=$(jobs | wc -l)
-            if [ "$jobs_count" -le 1 ]; then
-              echo "没有正在运行的任务，跳出循环。"
-              characters=()
-              break
-            else
-              echo "当前运行的任务数量为: $jobs_count"
-              sleep 10
-            fi
-          done
-
-          echo "::group::Generate Start Text (a-j)"
-          for (( i = 97; i <= 106; i++ )); do
-            characters+=($(printf \\$(printf '%03o' $i)))
-          done
-          echo "::group::Multi Thread Build (a-j)"
-          for (( i = 0; i < ${#characters[@]}; i++ )); do
-            env THREAD_NUM=$i ./build-for-github.sh --start "${characters[$i]}" &
-          done
-          echo "::group::Checking Multi Thread Build is Done (a-i)"
-          while true; do
-            jobs_count=$(jobs | wc -l)
-            if [ "$jobs_count" -le 1 ]; then
-              echo "没有正在运行的任务，跳出循环。"
-              characters=()
-              break
-            else
-              echo "当前运行的任务数量为: $jobs_count"
-              sleep 10
-            fi
+          # 定义每个批次中的线程数
+          threads_per_batch=4
+          # 计算总共的批次数
+          total_batches=$(( ( ${#characters[@]} + threads_per_batch - 1) / threads_per_batch ))
+          # 执行批次任务
+          for (( i = 0; i < total_batches; i++ )); do
+              for (( j = i*threads_per_batch; j < (i+1)*threads_per_batch; j++ )); do
+                  if (( j < ${#characters[@]} )); then
+                      env THREAD_NUM=$j ./build-for-github.sh --start "${characters[j]}" &
+                  else
+                      break
+                  fi
+              done
+              # 等待当前批次中的所有任务完成
+              wait
           done
 
           echo "::group::Push To GitHub"
