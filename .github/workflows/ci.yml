@@ -44,7 +44,7 @@ jobs:
           echo "::group::Checking Multi Thread Build is Done (0-9)"
           while true; do
             jobs_count=$(jobs | wc -l)
-            if [ "$jobs_count" -eq 0 ]; then
+            if [ "$jobs_count" -le 1 ]; then
               echo "没有正在运行的任务，跳出循环。"
               characters=()
               break
@@ -65,7 +65,7 @@ jobs:
           echo "::group::Checking Multi Thread Build is Done (a-i)"
           while true; do
             jobs_count=$(jobs | wc -l)
-            if [ "$jobs_count" -eq 0 ]; then
+            if [ "$jobs_count" -le 1 ]; then
               echo "没有正在运行的任务，跳出循环。"
               characters=()
               break
