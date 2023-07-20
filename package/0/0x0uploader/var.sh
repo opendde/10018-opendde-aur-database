@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 pkgname=0x0uploader
 pkgver=1.1
 pkgrel=1
@@ -14,9 +12,3 @@ optdepends=('xclip: X clipboard'
     'libnotify: Notifications')
 source=("$pkgname-$pkgver.tar.gz::https://codeberg.org/MorsMortium/$pkgname/archive/$pkgver.tar.gz")
 sha1sums=('a06c5a99d5527d6caae1c92ed2098acbf51b378f')
-=======
-
->>>>>>> 633d50acfd61d13f47b9299ea333b00630c7e466
-=======
-
->>>>>>> 633d50acfd61d13f47b9299ea333b00630c7e466
