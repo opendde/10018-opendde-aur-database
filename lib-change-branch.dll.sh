@@ -13,9 +13,7 @@ else
         git clone -b main --depth=1 https://github.com/archlinux/aur ../aur
         cd ../aur
         git remote set-branches origin '*'
-        git fetch -v --depth=1
-        du -hs 
-        df -h
+        git fetch -v --depth=1 >/dev/null 2>&1
         cd -
         set +x
     fi
