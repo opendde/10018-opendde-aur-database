@@ -1,3 +1,21 @@
+  010editor
+  04b_21
+  0ad-boongui
+  0ad-community-maps-2
+  0ad-delenda-est
+  0ad-git
+  0ad-zh-lang
+  0bin-git
+  0cc-famitracker
+  0d1n
+  0trace
+  0verkill-git
+  0x-git
+  0x0uploader
+  0xdbe
+  0xdbe-eap
+  0xff
+* 0xffff
 010editor
 04b_21
 0ad-boongui
@@ -3987,7 +4005,6 @@ aspell5-ro
 aspell6-fa
 aspell6-ky
 aspera
-aspia-client
 aspic
 asplib
 aspnet-runtime-2.1
@@ -30949,7 +30966,6 @@ hadolint
 hadolint-bin
 hadolint-git
 hadoop
-hagrid-git
 haguichi
 haguichi-bzr
 haguichi-git

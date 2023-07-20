@@ -12,6 +12,7 @@ aur_Mkdir-All-Pkg() {
     while true; do
         case "${1}" in
             --start) textstart="${2}"; shift 2 ;;
+            --only-package-name-folder ) package_name_folder="${2}"; shift 2 ;;
             --) shift; break ;;
             *) break ;;
         esac
@@ -28,9 +29,17 @@ aur_Mkdir-All-Pkg() {
         dir_path="./package/"$(echo $pkgname | cut -c1)"/"$pkgname
         if [ ! -d "$dir_path" ]; then
             mkdir -p $dir_path
-            echo "Y:" $dir_path
         fi
-        
+        if [ -n "$package_name_folder" ]; then
+            dir_path="./"$package_name_folder"/"$(echo $pkgname | cut -c1)
+            if [ ! -d "$dir_path" ]; then
+                mkdir -p $dir_path
+            fi
+            file_path=$dir_path"/"$pkgname
+            if [ ! -e "$file_path" ]; then
+                echo "$pkgname" > $file_path
+            fi
+        fi
     done
 }
 
