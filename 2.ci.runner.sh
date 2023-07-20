@@ -43,6 +43,7 @@ for (( i = 0; i < total_batches; i++ )); do
         fi
     done
     # 等待当前批次中的所有任务完成
+    sleep 360
     df -h
     wait
 done
