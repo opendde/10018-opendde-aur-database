@@ -1,0 +1,34 @@
+{
+  "pkgname": "1password",
+  "_tarver": "8.10.8",
+  "_tar": "1password-8.10.8.x64.tar.gz",
+  "pkgver": "8.10.8",
+  "pkgrel": "45",
+  "conflicts": [
+    "1password-beta",
+    "1password-beta-bin"
+  ],
+  "pkgdesc": "Password manager and secure wallet",
+  "arch": [
+    "x86_64"
+  ],
+  "url": "https://1password.com",
+  "license": [
+    "LicenseRef-1Password-Proprietary"
+  ],
+  "options": [
+    "!strip"
+  ],
+  "install": "1password.install",
+  "source": [
+    "https://downloads.1password.com/linux/tar/stable//1password-8.10.8.x64.tar.gz",
+    "https://downloads.1password.com/linux/tar/stable//1password-8.10.8.x64.tar.gz.sig"
+  ],
+  "sha256sums": [
+    "13b957cb1a012f6ce2308222b2c909261679ca62b2bafe335c4aa2814b54e352",
+    "99e5d9dc9b348d96d8349d68f2a45d11461e2fd2e5c948ad9f4a2c5fcf6af259"
+  ],
+  "validpgpkeys": [
+    "3FEF9748469ADBE15DA7CA80AC2D62742012EA22"
+  ]
+}

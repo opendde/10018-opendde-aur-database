@@ -35,10 +35,10 @@ aur_Mkdir-All-Pkg() {
             if [ ! -d "$dir_path" ]; then
                 mkdir -p $dir_path
             fi
-            file_path=$dir_path"/"$pkgname
-            if [ ! -e "$file_path" ]; then
-                echo "$pkgname" > $file_path
-            fi
+            #file_path=$dir_path"/"$pkgname
+            #if [ ! -e "$file_path" ]; then
+                #echo "$pkgname" > $file_path
+            #fi
         fi
     done
 }
@@ -56,8 +56,8 @@ aur_get-Single-Pkg-Cfg-Content(){
     done
     case "$type" in
         "git")
-            ./lib-change-branch.dll.sh --setbranch $package_name >/dev/null
-            cat ../aur/PKGBUILD 1>&1 2>&2
+            env THREAD_NAME="$THREAD_NAME" ./lib-change-branch.dll.sh --setbranch $package_name >/dev/null
+            cat ../aur$THREAD_NAME/PKGBUILD 1>&1 2>&2
         ;;
         "web")
             wget -qO- "https://github.com/archlinux/aur/raw/$package_name/PKGBUILD" 1>&1 2>&2

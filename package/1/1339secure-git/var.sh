@@ -1,0 +1,11 @@
+pkgname=1339secure-git
+pkgver=r21.bc2bbee
+pkgrel=1
+pkgdesc="Encrypted uploads to any pomf.se clone"
+arch=('any')
+url="https://github.com/AdrianKoshka/1339secure"
+license=('GPL3')
+makedepends=('git')
+depends=('bash' 'curl' 'gnupg')
+source=('git+https://github.com/AdrianKoshka/1339secure.git')
+sha256sums=('SKIP')
