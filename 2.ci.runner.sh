@@ -30,7 +30,7 @@ for (( i = 48; i <= 122; i++ )); do
     fi
 done
 # 定义每个批次中的线程数
-threads_per_batch=20
+threads_per_batch=30
 # 计算总共的批次数
 total_batches=$(( ( ${#characters[@]} + threads_per_batch - 1) / threads_per_batch ))
 # 执行批次任务

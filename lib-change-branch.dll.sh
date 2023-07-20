@@ -8,9 +8,11 @@
 if [ -d "../aur"$THREAD_NAME ]; then
     cd "../aur"$THREAD_NAME
 else
-    git clone -b main  https://github.com/archlinux/aur ../aur$THREAD_NAME 
+    git clone -b main --depth=1 https://github.com/archlinux/aur ../aur$THREAD_NAME 
     if [ $? = 0 ]; then
         cd ../aur$THREAD_NAME
+        git remote set-branches origin '*'
+        git fetch -v --depth=1
     else
         exit 1
     fi
