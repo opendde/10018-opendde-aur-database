@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 _modname=boongui
 pkgname=0ad-${_modname}
 pkgver=2.4.1
@@ -10,3 +11,6 @@ makedepends=('unzip')
 source=("${url}/releases/latest/download/${_modname}.pyromod")
 noextract=("${source[@]##*/}")
 sha256sums=('SKIP')
+=======
+
+>>>>>>> 633d50acfd61d13f47b9299ea333b00630c7e466

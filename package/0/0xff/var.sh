@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 pkgname=0xff
 pkgver=1.1.0
 pkgrel=3
@@ -9,3 +10,6 @@ source=("git+https://github.com/XenGi/0xff#tag=v${pkgver}")
 sha256sums=('SKIP')
 install='0xff.install'
 makedepends=('go')
+=======
+
+>>>>>>> 633d50acfd61d13f47b9299ea333b00630c7e466

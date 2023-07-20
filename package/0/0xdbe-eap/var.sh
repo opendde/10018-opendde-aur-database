@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 pkgname=0xdbe-eap
 _pkgname=0xdbe
 pkgver=143.1301.4
@@ -15,3 +16,6 @@ source=("http://download.jetbrains.com/dbe/${_pkgname}-${_buildver}.tar.gz" \
 md5sums=('f82191827ba65d431601f3c71b9f05f3'
          '864c5bb6071568a1a9f26573e090207b'
          'e520ed91c5c0578cc93df0cd7e03166b')
+=======
+
+>>>>>>> 633d50acfd61d13f47b9299ea333b00630c7e466

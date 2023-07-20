@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 pkgname=0xdbe
 _pkgname=0xDBE
 pkgver=1.0
@@ -13,3 +14,6 @@ source=(https://download.jetbrains.com/dbe/${pkgname}-${_pkgver}.tar.gz
         jetbrains-0xdbe.desktop)
 sha256sums=('f9cd4e649ed7ce745be1c9d73f9863dab4297fc59871d6223dcf5c64bb7e97a1'
             'b138f90cdeaa4dcc6cbc8cf911d65a3265938824abe64c734b1ff76e580e42c3')
+=======
+
+>>>>>>> 633d50acfd61d13f47b9299ea333b00630c7e466

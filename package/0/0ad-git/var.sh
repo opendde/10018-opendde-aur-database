@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 pkgname=('0ad-git' '0ad-data-git')
 _pkgname=0ad
 epoch=1
@@ -14,3 +15,6 @@ makedepends=('boost' 'cmake' 'mesa' 'zip' 'libsm' 'rust' 'python' 'clang' 'git'
 options=('!lto') # breaks spidermonkey linking (https://bugs.gentoo.org/746947)
 source=("git+https://github.com/0ad/0ad.git")
 md5sums=('SKIP')
+=======
+
+>>>>>>> 633d50acfd61d13f47b9299ea333b00630c7e466

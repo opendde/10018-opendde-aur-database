@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 pkgname=0verkill-git
 pkgver=r149.cfcb3fd
 pkgrel=1
@@ -11,3 +12,6 @@ provides=('0verkill')
 source=('git+https://github.com/patlefort/0verkill.git')
 sha256sums=('SKIP')
 _name='0verkill'
+=======
+
+>>>>>>> 633d50acfd61d13f47b9299ea333b00630c7e466

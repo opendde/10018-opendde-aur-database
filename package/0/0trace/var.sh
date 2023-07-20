@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 buildarch=1
 pkgname=0trace
 pkgver=20070125
@@ -9,3 +10,6 @@ license=('GPL3')
 depends=('libdnet' 'python2-dpkt' 'python2-pypcap' 'python2')
 source=('https://jon.oberheide.org/files/0trace.py')
 sha512sums=('790d8d96c98fffe0e79890688d137ad8e97ed6e9661cc3b764ec62ea74f4897c28a7f2e71d17720bb7957c4ee39decb3b6bceeb29d339e7fe765c3f12a7aa677')
+=======
+
+>>>>>>> 633d50acfd61d13f47b9299ea333b00630c7e466
