@@ -7,7 +7,7 @@ cd $CMD_PATH
 
 env
 set -x 
-
+df -h
 if [ ! -z $GITHUB_REF_NAME ];then
   echo "::group::Set github-actions bot"
   git config --global user.name "github-actions[bot]"
