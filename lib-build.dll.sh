@@ -35,10 +35,10 @@ aur_Mkdir-All-Pkg() {
             if [ ! -d "$dir_path" ]; then
                 mkdir -p $dir_path
             fi
-            #file_path=$dir_path"/"$pkgname
-            #if [ ! -e "$file_path" ]; then
-                #echo "$pkgname" > $file_path
-            #fi
+            file_path=$dir_path"/"$pkgname
+            if [ ! -e "$file_path" ]; then
+                echo "$pkgname" > $file_path
+            fi
         fi
     done
 }

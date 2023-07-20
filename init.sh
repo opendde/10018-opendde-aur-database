@@ -10,6 +10,6 @@ rm -rf ./aur-all
 
 ./lib-change-branch.dll.sh --getbranch > pkglist.txt
 
-./8.aur.index.sh
+#./8.aur.index.sh
 
 mkdir ../output
